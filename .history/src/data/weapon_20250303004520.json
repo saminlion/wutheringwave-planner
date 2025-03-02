@@ -576,16 +576,6 @@
         "forgery": "metallic_drip"
     },
 
-    "bloodpacts_pledge":{
-        "game_id": 43105004,
-        "display_name": "Bloodpact's Pledge",
-        "rarity":5,
-        "type":"sword",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.webp",
-        "common": "howler_core",
-        "forgery": "metallic_drip"
-    },
-
     "static_mist": {
         "game_id": 43405001,
         "display_name": "Static Mist",

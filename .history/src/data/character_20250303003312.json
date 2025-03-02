@@ -1371,57 +1371,9 @@
         "weapon": "sword",
         "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.webp",
         "rarity": 5,
-        "common": "residuum",
-        "forgery": "metallic_drip",
-        "ascension": 41301014,
-        "boss": 41402003,
-        "weeklyBoss": 41502001,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-
-    "Cantarella": {
-        "game_id": 4250502021,
-        "display_name": "Cantarella",
-        "element": "havoc",
-        "weapon": "rectifier",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.webp",
-        "rarity": 5,
-        "common": "polyphonic",
+        "common": "whisperin_core",
         "forgery": "helix",
-        "ascension": 41301015,
+        "ascension": 41301013,
         "boss": 41402002,
         "weeklyBoss": 41501004,
         "bonus_stats": [
@@ -1460,17 +1412,17 @@
         ]
     },
 
-    "Rover_Aero": {
-        "game_id": 4230102030,
-        "display_name": "Rover (Aero)",
-        "element": "aero",
-        "weapon": "sword",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.webp",
+    "Phoebe": {
+        "game_id": 4260502022,
+        "display_name": "Phoebe",
+        "element": "spectro",
+        "weapon": "rectifier",
+        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.webp",
         "rarity": 5,
         "common": "whisperin_core",
-        "forgery": "metallic_drip",
-        "ascension": 41301004,
-        "boss": 41401001,
+        "forgery": "helix",
+        "ascension": 41301013,
+        "boss": 41402002,
         "weeklyBoss": 41501004,
         "bonus_stats": [
             {
@@ -1506,5 +1458,53 @@
                 "value": 0.056
             }
         ]
-    }
+    },
+
+    "Phoebe": {
+        "game_id": 4260502022,
+        "display_name": "Phoebe",
+        "element": "spectro",
+        "weapon": "rectifier",
+        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.webp",
+        "rarity": 5,
+        "common": "whisperin_core",
+        "forgery": "helix",
+        "ascension": 41301013,
+        "boss": 41402002,
+        "weeklyBoss": 41501004,
+        "bonus_stats": [
+            {
+                "stat": "crit_dmg",
+                "value": 0.024
+            },
+            {
+                "stat": "atk",
+                "value": 0.018
+            },
+            {
+                "stat": "atk",
+                "value": 0.018
+            },
+            {
+                "stat": "crit_dmg",
+                "value": 0.024
+            },
+            {
+                "stat": "crit_dmg",
+                "value": 0.056
+            },
+            {
+                "stat": "atk",
+                "value": 0.042
+            },
+            {
+                "stat": "atk",
+                "value": 0.042
+            },
+            {
+                "stat": "crit_dmg",
+                "value": 0.056
+            }
+        ]
+    },
 }

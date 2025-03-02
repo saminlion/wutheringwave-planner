@@ -576,16 +576,6 @@
         "forgery": "metallic_drip"
     },
 
-    "bloodpacts_pledge":{
-        "game_id": 43105004,
-        "display_name": "Bloodpact's Pledge",
-        "rarity":5,
-        "type":"sword",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.webp",
-        "common": "howler_core",
-        "forgery": "metallic_drip"
-    },
-
     "static_mist": {
         "game_id": 43405001,
         "display_name": "Static Mist",
@@ -666,32 +656,13 @@
         "forgery": "helix"
     },
 
+
     "rime_draped_sprouts": {
         "game_id": 43505004,
         "display_name": "Rime-Draped Sprouts",
         "rarity": 5,
         "type": "rectifier",
         "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/rime-draped-sprouts-icon.webp",
-        "common": "ring",
-        "forgery": "helix"
-    },
-    
-    "luminous_hymn": {
-        "game_id": 43505005,
-        "display_name": "Luminous Hymn",
-        "rarity": 5,
-        "type": "rectifier",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.webp",
-        "common": "ring",
-        "forgery": "helix"
-    },
-
-    "whispers_of_sirens": {
-        "game_id": 43505006,
-        "display_name": "Whispers of Sirens",
-        "rarity": 5,
-        "type": "rectifier",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.webp",
         "common": "ring",
         "forgery": "helix"
     }

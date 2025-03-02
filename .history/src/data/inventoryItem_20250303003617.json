@@ -477,14 +477,6 @@
             "Category": "ascension",
             "SubCategory": "ascension",
             "rarity": 3
-        },
-        "seaside_cendrelis":{
-            "game_id": 41301015,
-            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_035_UI.webp",
-            "label": "Seaside Cendrelis",
-            "Category": "ascension",
-            "SubCategory": "ascension",
-            "rarity": 3
         }
     },
     "boss": {

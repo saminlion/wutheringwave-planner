@@ -477,14 +477,6 @@
             "Category": "ascension",
             "SubCategory": "ascension",
             "rarity": 3
-        },
-        "seaside_cendrelis":{
-            "game_id": 41301015,
-            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_035_UI.webp",
-            "label": "Seaside Cendrelis",
-            "Category": "ascension",
-            "SubCategory": "ascension",
-            "rarity": 3
         }
     },
     "boss": {
@@ -591,14 +583,6 @@
             "Category": "boss",
             "SubCategory": "boss",
             "rarity": 4
-        },
-        "blazing_bone": {
-            "game_id": 41402003,
-            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_008_UI.webp",
-            "label": "Blazing Bone",
-            "Category": "boss",
-            "SubCategory": "boss",
-            "rarity": 4
         }
     },
     "weeklyBoss": {
@@ -634,10 +618,10 @@
             "SubCategory": "weeklyboss",
             "rarity": 4
         },
-        "the_netherworlds_stare": {
+        "the_joy_of_the_dark_door": {
             "game_id": 41502001,
             "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_007_UI.webp",
-            "label": "The Netherworld's Stare",
+            "label": "The Joy of the Dark Door",
             "Category": "weeklyBoss",
             "SubCategory": "weeklyboss",
             "rarity": 4
