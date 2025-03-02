@@ -1,0 +1,202 @@
+[
+    {
+        "Aalto": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconQiushui/SP_IconQiushuiB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconQiushui/SP_IconQiushuiC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconQiushui/SP_IconQiushuiQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconQiushui/SP_IconQiushuiY.png",
+            "element": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "power": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconQiushui/SP_IconQiushuiD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconQiushui/SP_IconQiushuiD2.png"
+        },
+        "Baizhi": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconBailian/SP_IconBailianB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconBailian/SP_IconBailianC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconBailian/SP_IconBailianQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconBailian/SP_IconBailianY.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconBailian/SP_IconBailianD2.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconBailian/SP_IconBailianD1.png"
+        },
+        "Calcharo": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconKakaluo/SP_IconKakaluoB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconKakaluo/SP_IconKakaluoC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconKakaluo/SP_IconKakaluoQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconKakaluo/SP_IconKakaluoY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconKakaluo/SP_IconKakaluoD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconKakaluo/SP_IconKakaluoD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Chixia": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMaxiaofangB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMaxiaofangC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMaxiaofangQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMaxiaofangY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMaxiaofangD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMaxiaofangD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Danjin": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconMicai/SP_IconMicaiB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconMicai/SP_IconMicaiC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconMicai/SP_IconMicaiQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconMicai/SP_IconMicaiY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMicaiD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconMaxiaofang/SP_IconMicaiD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Encore": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconAnke/SP_IconAnkeB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconAnke/SP_IconAnkeC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconAnke/SP_IconAnkeQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconAnke/SP_IconAnkeY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconAnke/SP_IconAnkeD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconAnke/SP_IconAnkeD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Jianxin": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconJianxin/SP_IconJianxinD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Jiyan": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconJiyan/SP_IconJiyanB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconJiyan/SP_IconJiyanC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconJiyan/SP_IconJiyanQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconJiyan/SP_IconJiyanY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconJiyan/SP_IconJiyanD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconJiyan/SP_IconJiyanD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Lingyang": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconLingyang/SP_IconLingyangB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconLingyang/SP_IconLingyangC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconLingyang/SP_IconLingyangQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconLingyang/SP_IconLingyangY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconLingyang/SP_IconLingyangD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconLingyang/SP_IconLingyangD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Mortefi": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconMotefei/SP_IconMotefeiB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconMotefei/SP_IconMotefeiC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconMotefei/SP_IconMotefeiQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconMotefei/SP_IconMotefeiY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconMotefei/SP_IconMotefeiD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconMotefei/SP_IconMotefeiD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Rover (Havoc)": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconZhujueDark/SP_IconZhujueDarkB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconZhujueDark/SP_IconZhujueDarkC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconZhujueDark/SP_IconZhujueDarkQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconZhujueDark/SP_IconZhujueDarkY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconZhujueDark/SP_IconZhujueDarkD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconZhujueDark/SP_IconZhujueDarkD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Rover (Spectro)": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconZhujue/SP_IconZhujueB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconZhujue/SP_IconZhujueC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconZhujue/SP_IconZhujueQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconZhujue/SP_IconZhujueY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconZhujue/SP_IconZhujueD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconZhujue/SP_IconZhujueD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Sanhua": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconSanhua/SP_IconSanhuaB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconSanhua/SP_IconSanhuaC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconSanhua/SP_IconSanhuaQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconSanhua/SP_IconSanhuaY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconSanhua/SP_IconSanhuaD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconSanhua/SP_IconSanhuaD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Taoqi": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconTaohua/SP_IconTaoHuaB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconTaohua/SP_IconTaoHuaC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconTaohua/SP_IconTaoHuaQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconTaohua/SP_IconTaoHuaY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconTaohua/SP_IconTaoHuaD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconTaohua/SP_IconTaoHuaD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Verina": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconJueyuan/SP_IconJueyuanB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconJueyuan/SP_IconJueyuanC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconJueyuan/SP_IconJueyuanQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconJueyuan/SP_IconJueyuanY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconJueyuan/SP_IconJueyuanD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconJueyuan/SP_IconJueyuanD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Yangyang": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconYangyang/SP_IconYangyangB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconYangyang/SP_IconYangyangC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconYangyang/SP_IconYangyangQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconYangyang/SP_IconYangyangY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconYangyang/SP_IconYangyangD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconYangyang/SP_IconYangyangD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Yinlin": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconYinlin/SP_IconYinlinB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconYinlin/SP_IconYinlinC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconYinlin/SP_IconYinlinQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconYinlin/SP_IconYinlinY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconYinlin/SP_IconYinlinD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconYinlin/SP_IconYinlinD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        },
+        "Yuanwu": {
+            "basic": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png",
+            "skill": "Common/Atlas/SkillIcon/SkillIconYuanwu/SP_IconYuanwuB1.png",
+            "liberation": "Common/Atlas/SkillIcon/SkillIconYuanwu/SP_IconYuanwuC1.png",
+            "intro": "Common/Atlas/SkillIcon/SkillIconYuanwu/SP_IconYuanwuQTE.png",
+            "forte": "Common/Atlas/SkillIcon/SkillIconYuanwu/SP_IconYuanwuY.png",
+            "inherent1": "Common/Atlas/SkillIcon/SkillIconYuanwu/SP_IconYuanwuD1.png",
+            "inherent2": "Common/Atlas/SkillIcon/SkillIconYuanwu/SP_IconYuanwuD2.png",
+            "stat1": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff4_1.png",
+            "stat2": "Common/Atlas/SkillIcon/SkillIconRogue/SP_RogueSkill_Buff10.png"
+        }
+    }
+]

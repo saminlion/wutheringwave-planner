@@ -1,0 +1,68 @@
+{
+    "broadblade_of_night": {
+        "game_id": 43203001,
+        "display_name": "Broadblade of Night",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/broadblade-of-night-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+    "broadblade_of_voyager": {
+        "game_id": 43203002,
+        "display_name": "Broadblade of Voyager",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/broadblade-of-voyager-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+    "guardian_broadblade": {
+        "game_id": 43203003,
+        "display_name": "Guardian Broadblade",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/guardian-broadblade-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "beguiling_melody": {
+        "game_id": 43203004,
+        "display_name": "Beguiling Melody",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/beguiling-melody-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+    "originite_type_i": {
+        "game_id": 43203005,
+        "display_name": "Originite: Type I",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/originite-type-i-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "sword_of_night": {
+        "game_id": 43103001,
+        "display_name": "Sword of Night",
+        "rarity": 3,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/sword-of-night-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "originite_type_ii": {
+        "game_id": 43103002,
+        "display_name": "Originite: Type II",
+        "rarity": 3,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/originite-type-ii-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+}

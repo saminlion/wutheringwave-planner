@@ -1,0 +1,350 @@
+[
+    {
+        "character": {
+            "level": {
+                "1": {
+                    "player_exp": 0,
+                    "credit": 0
+                },
+                "20": {
+                    "player_exp": 33000,
+                    "credit": 12000
+                },
+                "20A": {
+                    "common": [
+                        4,
+                        2
+                    ],
+                    "credit": 5000
+                },
+                "40": {
+                    "player_exp": 176000,
+                    "credit": 61000
+                },
+                "40A": {
+                    "common": [
+                        4,
+                        3
+                    ],
+                    "ascension": 4,
+                    "boss": 3,
+                    "credit": 10000
+                },
+                "50": {
+                    "player_exp": 188000,
+                    "credit": 66000
+                },
+                "50A": {
+                    "common": [
+                        8,
+                        3
+                    ],
+                    "ascension": 8,
+                    "boss": 6,
+                    "credit": 15000
+                },
+                "60": {
+                    "player_exp": 287000,
+                    "credit": 100000
+                },
+                "60A": {
+                    "common": [
+                        4,
+                        4
+                    ],
+                    "ascension": 12,
+                    "boss": 9,
+                    "credit": 20000
+                },
+                "70": {
+                    "player_exp": 413000,
+                    "credit": 145000
+                },
+                "70A": {
+                    "common": [
+                        8,
+                        4
+                    ],
+                    "ascension": 16,
+                    "boss": 12,
+                    "credit": 40000
+                },
+                "80": {
+                    "player_exp": 572000,
+                    "credit": 200000
+                },
+                "80A": {
+                    "common": [
+                        4,
+                        5
+                    ],
+                    "ascension": 20,
+                    "boss": 16,
+                    "credit": 80000
+                },
+                "90": {
+                    "player_exp": 769000,
+                    "credit": 269000
+                }
+            },
+            "skill": {
+                "2": {
+                    "common": [
+                        2,
+                        2
+                    ],
+                    "forgery": [
+                        2,
+                        2
+                    ],
+                    "credit": 2000
+                },
+                "3": {
+                    "common": [
+                        3,
+                        2
+                    ],
+                    "forgery": [
+                        3,
+                        2
+                    ],
+                    "credit": 2000
+                },
+                "4": {
+                    "common": [
+                        2,
+                        3
+                    ],
+                    "forgery": [
+                        2,
+                        3
+                    ],
+                    "credit": 5000
+                },
+                "5": {
+                    "common": [
+                        3,
+                        3
+                    ],
+                    "forgery": [
+                        3,
+                        3
+                    ],
+                    "credit": 6000
+                },
+                "6": {
+                    "common": [
+                        2,
+                        4
+                    ],
+                    "forgery": [
+                        3,
+                        4
+                    ],
+                    "credit": 16000
+                },
+                "7": {
+                    "common": [
+                        3,
+                        4
+                    ],
+                    "forgery": [
+                        5,
+                        4
+                    ],
+                    "weeklyBoss": 1,
+                    "credit": 50000
+                },
+                "8": {
+                    "common": [
+                        2,
+                        5
+                    ],
+                    "forgery": [
+                        2,
+                        5
+                    ],
+                    "weeklyBoss": 1,
+                    "credit": 50000
+                },
+                "9": {
+                    "common": [
+                        3,
+                        5
+                    ],
+                    "forgery": [
+                        3,
+                        5
+                    ],
+                    "weeklyBoss": 1,
+                    "credit": 70000
+                },
+                "10": {
+                    "common": [
+                        4,
+                        5
+                    ],
+                    "forgery": [
+                        6,
+                        5
+                    ],
+                    "weeklyBoss": 1,
+                    "credit": 100000
+                }
+            },
+            "passive": {
+                "skill": {
+                    "1": {
+                        "common": [
+                            3,
+                            3
+                        ],
+                        "forgery": [
+                            3,
+                            3
+                        ],
+                        "weeklyBoss": 1,
+                        "credit": 10000
+                    },
+                    "2": {
+                        "common": [
+                            3,
+                            4
+                        ],
+                        "forgery": [
+                            3,
+                            4
+                        ],
+                        "weeklyBoss": 1,
+                        "credit": 20000
+                    }
+                },
+                "stat": {
+                    "1": {
+                        "common": [
+                            3,
+                            4
+                        ],
+                        "forgery": [
+                            3,
+                            4
+                        ],
+                        "credit": 50000
+                    },
+                    "2": {
+                        "common": [
+                            3,
+                            5
+                        ],
+                        "forgery": [
+                            3,
+                            5
+                        ],
+                        "weeklyBoss": 1,
+                        "credit": 100000
+                    }
+                }
+            }
+        },
+        "weapon": {
+            "level_3": {
+                "1": {
+                    "weapon_exp": 0,
+                    "credit": 0
+                },
+                "20": {
+                    "weapon_exp": 24660,
+                    "credit": 9864
+                },
+                "20A": {
+                    "common": [
+                        4,
+                        2
+                    ],
+                    "credit": 6000
+                },
+                "40": {
+                    "weapon_exp": 95340,
+                    "credit": 38136
+                },
+                "40A": {
+                    "common": [
+                        4,
+                        3
+                    ],
+                    "forgery": [
+                        4,
+                        2
+                    ],
+                    "credit": 12000
+                },
+                "50": {
+                    "weapon_exp": 94440,
+                    "credit": 37776
+                },
+                "50A": {
+                    "common": [
+                        3,
+                        4
+                    ],
+                    "forgery": [
+                        5,
+                        3
+                    ],
+                    "credit": 24000
+                },
+                "60": {
+                    "weapon_exp": 142260,
+                    "credit": 56904
+                },
+                "60A": {
+                    "common": [
+                        4,
+                        4
+                    ],
+                    "forgery": [
+                        4,
+                        4
+                    ],
+                    "credit": 36000
+                },
+                "70": {
+                    "weapon_exp": 207600,
+                    "credit": 83040
+                },
+                "70A": {
+                    "common": [
+                        3,
+                        5
+                    ],
+                    "forgery": [
+                        5,
+                        5
+                    ],
+                    "credit": 48000
+                },
+                "80": {
+                    "weapon_exp": 296880,
+                    "credit": 118752
+                },
+                "80A": {
+                    "common": [
+                        5,
+                        5
+                    ],
+                    "forgery": [
+                        8,
+                        5
+                    ],
+                    "credit": 72000
+                },
+                "90": {
+                    "weapon_exp": 512340,
+                    "credit": 204936
+                }
+            }
+        },
+        "characterLevel": {},
+        "weaponLevel": {}
+    }
+]

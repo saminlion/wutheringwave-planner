@@ -1,0 +1,443 @@
+{
+    "broadblade_of_night": {
+        "game_id": 43203001,
+        "display_name": "Broadblade of Night",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/broadblade-of-night-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+    "broadblade_of_voyager": {
+        "game_id": 43203002,
+        "display_name": "Broadblade of Voyager",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/broadblade-of-voyager-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+    "guardian_broadblade": {
+        "game_id": 43203003,
+        "display_name": "Guardian Broadblade",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/guardian-broadblade-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "beguiling_melody": {
+        "game_id": 43203004,
+        "display_name": "Beguiling Melody",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/beguiling-melody-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+    "originite_type_i": {
+        "game_id": 43203005,
+        "display_name": "Originite: Type I",
+        "rarity": 3,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/originite-type-i-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "sword_of_night": {
+        "game_id": 43103001,
+        "display_name": "Sword of Night",
+        "rarity": 3,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/sword-of-night-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "originite_type_ii": {
+        "game_id": 43103002,
+        "display_name": "Originite: Type II",
+        "rarity": 3,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/originite-type-ii-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "sword_of_voyager": {
+        "game_id": 43103003,
+        "display_name": "Sword of Voyager",
+        "rarity": 3,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/sword-of-voyager-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "guardian_sword": {
+        "game_id": 43103004,
+        "display_name": "Guardian Sword",
+        "rarity": 3,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/guardian-sword-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "pistols_of_night": {
+        "game_id": 43403001,
+        "display_name": "Pistols of Night",
+        "rarity": 3,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/pistols-of-night-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "originite_type_iii": {
+        "game_id": 43403002,
+        "display_name": "Originite: Type III",
+        "rarity": 3,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/originite-type-iii-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "pistols_of_voyager": {
+        "game_id": 43403003,
+        "display_name": "Pistols of Voyager",
+        "rarity": 3,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/pistols-of-voyager-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "guardian_pistols": {
+        "game_id": 43403004,
+        "display_name": "Guardian Pistols",
+        "rarity": 3,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/guardian-pistols-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "gauntlets_of_night": {
+        "game_id": 43303001,
+        "display_name": "Gauntlets of Night",
+        "rarity": 3,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/gauntlets-of-night-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "originite_type_iv": {
+        "game_id": 43303002,
+        "display_name": "Originite: Type IV",
+        "rarity": 3,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/originite-type-iv-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "gauntlets_of_voyager": {
+        "game_id": 43303003,
+        "display_name": "Gauntlets of Voyager",
+        "rarity": 3,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/gauntlets-of-voyager-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "guardian_gauntlets": {
+        "game_id": 43303004,
+        "display_name": "Guardian Gauntlets",
+        "rarity": 3,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/guardian-gauntlets-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "rectifier_of_night": {
+        "game_id": 43503001,
+        "display_name": "Rectifier of Night",
+        "rarity": 3,
+        "type": "rectifier",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/rectifier-of-night-icon.webp",
+        "common": "ring",
+        "forgery": "helix"
+    },
+
+    "originite_type_v": {
+        "game_id": 43503002,
+        "display_name": "Originite: Type V",
+        "rarity": 3,
+        "type": "rectifier",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/originite-type-v-icon.webp",
+        "common": "ring",
+        "forgery": "helix"
+    },
+
+    "rectifier_of_voyager": {
+        "game_id": 43503003,
+        "display_name": "Rectifier of Voyager",
+        "rarity": 3,
+        "type": "rectifier",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/rectifier-of-voyager-icon.webp",
+        "common": "ring",
+        "forgery": "helix"
+    },
+
+    "guardian_rectifier": {
+        "game_id": 43503004,
+        "display_name": "Guardian Rectifier",
+        "rarity": 3,
+        "type": "rectifier",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/guardian-rectifier-icon.webp",
+        "common": "ring",
+        "forgery": "helix"
+    },
+
+    "discord": {
+        "game_id": 43204001,
+        "display_name": "Discord",
+        "rarity": 4,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/discord-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "abroadblade41": {
+        "game_id": 43204002,
+        "display_name": "Broadblade#41",
+        "rarity": 4,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/broadblade-41-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "dauntless_evernight": {
+        "game_id": 43204003,
+        "display_name": "Dauntless Evernight",
+        "rarity": 4,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/dauntless-evernight-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "autumntrace": {
+        "game_id": 43204004,
+        "display_name": "Autumntrace",
+        "rarity": 4,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/autumntrace-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "waning_redshift": {
+        "game_id": 43204005,
+        "display_name": "Waning Redshift",
+        "rarity": 4,
+        "type": "broadblade",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/waning-redshift-icon.webp",
+        "common": "whisperin_core",
+        "forgery": "waveworn_residue"
+    },
+
+    "overture": {
+        "game_id": 43104001,
+        "display_name": "Overture",
+        "rarity": 4,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/overture-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "sword18": {
+        "game_id": 43104002,
+        "display_name": "Sword#18",
+        "rarity": 4,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/sword-18-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "commando_of_conviction": {
+        "game_id": 43104003,
+        "display_name": "Commando of Conviction",
+        "rarity": 4,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/commando-of-conviction-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "lunar_cutter": {
+        "game_id": 43104004,
+        "display_name": "Lunar Cutter",
+        "rarity": 4,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/lunar-cutter-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "lumingloss": {
+        "game_id": 43104005,
+        "display_name": "Lumingloss",
+        "rarity": 4,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/lumingloss-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "endless_collapse": {
+        "game_id": 43104006,
+        "display_name": "Endless Collapse",
+        "rarity": 4,
+        "type": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/endless-collapse-icon.webp",
+        "common": "howler_core",
+        "forgery": "metallic_drip"
+    },
+
+    "cadenza": {
+        "game_id": 43404001,
+        "display_name": "Cadenza",
+        "rarity": 4,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/cadenza-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "pistols26": {
+        "game_id": 43404002,
+        "display_name": "Pistols#26",
+        "rarity": 4,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/pistols-26-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "undying_flame": {
+        "game_id": 43404003,
+        "display_name": "Undying Flame",
+        "rarity": 4,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/undying-flame-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+  
+    "novaburst": {
+        "game_id": 43404004,
+        "display_name": "Novaburst",
+        "rarity": 4,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/novaburst-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "thunderbolt": {
+        "game_id": 43404005,
+        "display_name": "Thunderbolt",
+        "rarity": 4,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/thunderbolt-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "relativistic_jet": {
+        "game_id": 43404006,
+        "display_name": "Relativistic Jet",
+        "rarity": 4,
+        "type": "pistols",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/relativistic-jet-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+    "marcato": {
+        "game_id": 43304001,
+        "display_name": "Marcato",
+        "rarity": 4,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/marcato-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "gauntlets21d": {
+        "game_id": 43304002,
+        "display_name": "Gauntlets#21D",
+        "rarity": 4,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/gauntlets-21d-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "amity_accord": {
+        "game_id": 43304003,
+        "display_name": "Amity Accord",
+        "rarity": 4,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/amity-accord-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "hollow_mirage": {
+        "game_id": 43304004,
+        "display_name": "Hollow Mirage",
+        "rarity": 4,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/hollow-mirage-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "stonard": {
+        "game_id": 43304005,
+        "display_name": "Stonard",
+        "rarity": 4,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/stonard-icon.webp",
+        "common": "howler_core",
+        "forgery": "cadence"
+    },
+
+    "celestial_spiral": {
+        "game_id": 43304006,
+        "display_name": "Celestial Spiral",
+        "rarity": 4,
+        "type": "gauntlets",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/weapons\/celestial-spiral-icon.webp",
+        "common": "ring",
+        "forgery": "phlogiston"
+    },
+
+
+
+
+
+}

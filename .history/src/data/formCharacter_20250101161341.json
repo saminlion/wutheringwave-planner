@@ -1,0 +1,25 @@
+[
+    {
+        "id":0,
+        "name": "",
+        "rarity": 0,
+        "current_level":"0",
+        "target_level":"0",
+        "active_skill":{
+            "current_level": 1,
+            "target_level": 1
+        },
+        "passive_skill":{
+            "passive_ability_1": false,
+            "passive_ability_2": false,
+            "bonus_stats_1_1": false,
+            "bonus_stats_1_2": false,
+            "bonus_stats_1_3": false,
+            "bonus_stats_1_4": false,
+            "bonus_stats_2_1": false,
+            "bonus_stats_2_2": false,
+            "bonus_stats_2_3": false,
+            "bonus_stats_2_4": false
+        }
+    }
+]

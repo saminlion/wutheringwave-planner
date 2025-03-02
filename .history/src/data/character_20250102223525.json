@@ -1,0 +1,97 @@
+{
+    "sanhua": {
+        "game_id": 4210101001,
+        "display_name": "Sanhua",
+        "element": "glacio",
+        "weapon": "sword",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/sanhua-icon.webp",
+        "rarity": 4,
+        "common": "whisperin_core",
+        "ascension": 41301007,
+        "forgery": "metallic_drip",
+        "boss": 41401008,
+        "weeklyBoss": 41501002,
+        "bonus_stats": [
+            {
+                "stat": "glacio_dmg_bonus",
+                "value": 0.018
+            },
+            {
+                "stat": "atk",
+                "value": 0.018
+            },
+            {
+                "stat": "glacio_dmg_bonus",
+                "value": 0.018
+            },
+            {
+                "stat": "glacio_dmg_bonus",
+                "value": 0.042
+            },
+            {
+                "stat": "atk",
+                "value": 0.042
+            },
+            {
+                "stat": "atk",
+                "value": 0.042
+            },
+            {
+                "stat": "glacio_dmg_bonus",
+                "value": 0.042
+            },
+            {
+                "stat": "atk",
+                "value": 0.018
+            }
+        ]
+    },
+    "baizhi": {
+        "game_id": 4210501001,
+        "display_name": "Baizhi",
+                "element": "glacio",
+"weapon": "rectifier",
+        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/baizhi-icon.webp",
+        "rarity": 4,
+        "common": "howler_core",
+        "ascension": 42300050,
+        "forgery": "helix",
+        "boss": 41400074,
+        "weeklyBoss": 41400094,
+        "bonus_stats": [
+            {
+                "stat": "healing_bonus",
+                "value": 0.018
+            },
+            {
+                "stat": "hp",
+                "value": 0.018
+            },
+            {
+                "stat": "hp",
+                "value": 0.018
+            },
+            {
+                "stat": "healing_bonus",
+                "value": 0.018
+            },
+            {
+                "stat": "healing_bonus",
+                "value": 0.042
+            },
+            {
+                "stat": "hp",
+                "value": 0.042
+            },
+            {
+                "stat": "hp",
+                "value": 0.042
+            },
+            {
+                "stat": "healing_bonus",
+                "value": 0.042
+            }
+        ]
+    },
+
+}

@@ -1,0 +1,690 @@
+{
+    "credit": {
+        "credit": {
+            "game_id": 41001001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/shell-credit-2.webp",
+            "label": "Shell Credit",
+            "Category": "credit",
+            "SubCategory": "credit",
+            "rarity": 2
+        }
+    },
+    "common": {
+        "lf_whisperin_core": {
+            "game_id": 41101001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/lf-whisperin-core-41100011.webp",
+            "label": "LF Whisperin Core",
+            "Category": "common",
+            "SubCategory": "whisperin_core",
+            "rarity": 2
+        },
+        "mf_whisperin_core": {
+            "game_id": 41101002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/mf-whisperin-core-41100012.webp",
+            "label": "MF Whisperin Core",
+            "Category": "common",
+            "SubCategory": "whisperin_core",
+            "rarity": 3
+        },
+        "hf_whisperin_core": {
+            "game_id": 41101003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/hf-whisperin-core-41100013.webp",
+            "label": "HF Whisperin Core",
+            "Category": "common",
+            "SubCategory": "whisperin_core",
+            "rarity": 4
+        },
+        "ff_whisperin_core": {
+            "game_id": 41101004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/ff-whisperin-core-41100014.webp",
+            "label": "FF Whisperin Core",
+            "Category": "common",
+            "SubCategory": "whisperin_core",
+            "rarity": 5
+        },
+        "lf_howler_core": {
+            "game_id": 41102001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/lf-howler-core-41100021.webp",
+            "label": "LF Howler Core",
+            "Category": "common",
+            "SubCategory": "howler_core",
+            "rarity": 2
+        },
+        "mf_howler_core": {
+            "game_id": 41102002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/mf-howler-core-41100022.webp",
+            "label": "MF Howler Core",
+            "Category": "common",
+            "SubCategory": "howler_core",
+            "rarity": 3
+        },
+        "hf_howler_core": {
+            "game_id": 41102003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/hf-howler-core-41100023.webp",
+            "label": "HF Howler Core",
+            "Category": "common",
+            "SubCategory": "howler_core",
+            "rarity": 4
+        },
+        "ff_howler_core": {
+            "game_id": 41102004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/ff-howler-core-41100024.webp",
+            "label": "FF Howler Core",
+            "Category": "common",
+            "SubCategory": "howler_core",
+            "rarity": 5
+        },
+        "crude_ring": {
+            "game_id": 41103001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/crude-ring-41100031.webp",
+            "label": "Crude Ring",
+            "Category": "common",
+            "SubCategory": "ring",
+            "rarity": 2
+        },
+        "basic_ring": {
+            "game_id": 41103002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/basic-ring-41100032.webp",
+            "label": "Basic Ring",
+            "Category": "common",
+            "SubCategory": "ring",
+            "rarity": 3
+        },
+        "improved_ring": {
+            "game_id": 41103003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/improved-ring-41100033.webp",
+            "label": "Improved Ring",
+            "Category": "common",
+            "SubCategory": "ring",
+            "rarity": 4
+        },
+        "tailored_ring": {
+            "game_id": 41103004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/tailored-ring-41100034.webp",
+            "label": "Tailored Ring",
+            "Category": "common",
+            "SubCategory": "ring",
+            "rarity": 5
+        },
+        "mask_of_constraint": {
+            "game_id": 41104001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/mask-of-constraint-41200031.webp",
+            "label": "Mask of Constraint",
+            "Category": "common",
+            "SubCategory": "mask",
+            "rarity": 2
+        },
+        "mask_of_erosion": {
+            "game_id": 41104002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/mask-of-erosion-41200032.webp",
+            "label": "Mask of Erosion",
+            "Category": "common",
+            "SubCategory": "mask",
+            "rarity": 3
+        },
+        "mask_of_distortion": {
+            "game_id": 41104003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/mask-of-distortion-41200033.webp",
+            "label": "Mask of Distortion",
+            "Category": "common",
+            "SubCategory": "mask",
+            "rarity": 4
+        },
+        "mask_of_insanity": {
+            "game_id": 41104004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/mask-of-insanity-41200034.webp",
+            "label": "Mask of Insanity",
+            "Category": "common",
+            "SubCategory": "mask",
+            "rarity": 5
+        },
+        "low_frequency_polyphonic_core": {
+            "game_id": 41105001,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_1_UI.webp",
+            "label": "Low frequency polyphonic core",
+            "Category": "common",
+            "SubCategory": "polyphonic",
+            "rarity": 2
+        },
+        "mid_frequency_polyphonic_core": {
+            "game_id": 41105002,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_2_UI.webp",
+            "label": "Mid frequency polyphonic core",
+            "Category": "common",
+            "SubCategory": "polyphonic",
+            "rarity": 3
+        },
+        "high_frequency_polyphonic_core": {
+            "game_id": 41105003,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_3_UI.webp",
+            "label": "High frequency polyphonic core",
+            "Category": "common",
+            "SubCategory": "polyphonic",
+            "rarity": 4
+        },
+        "full_frequency_polyphonic_core": {
+            "game_id": 41105004,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_4_UI.webp",
+            "label": "Full frequency polyphonic core",
+            "Category": "common",
+            "SubCategory": "polyphonic",
+            "rarity": 5
+        },
+        "lf_tidal_residuum": {
+            "game_id": 41106001,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_1_UI.webp",
+            "label": "Low frequency Tidal Residuum",
+            "Category": "common",
+            "SubCategory": "residuum",
+            "rarity": 2
+        },
+        "mf_tidal_residuum": {
+            "game_id": 41106002,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_2_UI.webp",
+            "label": "Mid frequency Tidal Residuum",
+            "Category": "common",
+            "SubCategory": "residuum",
+            "rarity": 3
+        },
+        "hf_tidal_residuum": {
+            "game_id": 41106003,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_3_UI.webp",
+            "label": "High frequency Tidal Residuum",
+            "Category": "common",
+            "SubCategory": "residuum",
+            "rarity": 4
+        },
+        "ff_tidal_residuum": {
+            "game_id": 41106004,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_4_UI.webp",
+            "label": "Full frequency Tidal Residuum",
+            "Category": "common",
+            "SubCategory": "residuum",
+            "rarity": 5
+        }
+    },
+    "forgery": {
+        "inert_metallic_drip": {
+            "game_id": 41201001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/inert-metallic-drip-43020011.webp",
+            "label": "Inert Metallic Drip",
+            "Category": "forgery",
+            "SubCategory": "metallic_drip",
+            "rarity": 2
+        },
+        "reactive_metallic_drip": {
+            "game_id": 41201002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/reactive-metallic-drip-43020012.webp",
+            "label": "Reactive Metallic Drip",
+            "Category": "forgery",
+            "SubCategory": "metallic_drip",
+            "rarity": 3
+        },
+        "polarized_metallic_drip": {
+            "game_id": 41201003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/polarized-metallic-drip-43020013.webp",
+            "label": "Polarized Metallic Drip",
+            "Category": "forgery",
+            "SubCategory": "metallic_drip",
+            "rarity": 4
+        },
+        "heterized_metallic_drip": {
+            "game_id": 41201004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/heterized-metallic-drip-43020014.webp",
+            "label": "Heterized Metallic Drip",
+            "Category": "forgery",
+            "SubCategory": "metallic_drip",
+            "rarity": 5
+        },
+        "impure_phlogiston": {
+            "game_id": 41202001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/impure-phlogiston-43020021.webp",
+            "label": "Impure Phlogiston",
+            "Category": "forgery",
+            "SubCategory": "phlogiston",
+            "rarity": 2
+        },
+        "extracted_phlogiston": {
+            "game_id": 41202002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/extracted-phlogiston-43020022.webp",
+            "label": "Extracted Phlogiston",
+            "Category": "forgery",
+            "SubCategory": "phlogiston",
+            "rarity": 3
+        },
+        "refined_phlohiston": {
+            "game_id": 41202003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/refined-phlohiston-43020023.webp",
+            "label": "Refined Phlohiston",
+            "Category": "forgery",
+            "SubCategory": "phlogiston",
+            "rarity": 4
+        },
+        "flawless_phlohiston": {
+            "game_id": 41202004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/flawless-phlohiston-43020024.webp",
+            "label": "Flawless Phlohiston",
+            "Category": "forgery",
+            "SubCategory": "phlogiston",
+            "rarity": 5
+        },
+        "lento_helix": {
+            "game_id": 41203001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/lento-helix-43020031.webp",
+            "label": "Lento Helix",
+            "Category": "forgery",
+            "SubCategory": "helix",
+            "rarity": 2
+        },
+        "adagio_helix": {
+            "game_id": 41203002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/adagio-helix-43020032.webp",
+            "label": "Adagio Helix",
+            "Category": "forgery",
+            "SubCategory": "helix",
+            "rarity": 3
+        },
+        "andante_helix": {
+            "game_id": 41203003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/andante-helix-43020033.webp",
+            "label": "Andante Helix",
+            "Category": "forgery",
+            "SubCategory": "helix",
+            "rarity": 4
+        },
+        "presto_helix": {
+            "game_id": 41203004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/presto-helix-43020034.webp",
+            "label": "Presto Helix",
+            "Category": "forgery",
+            "SubCategory": "helix",
+            "rarity": 5
+        },
+        "waveworn_residue_210": {
+            "game_id": 41204001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/waveworn-residue-210-43020041.webp",
+            "label": "Waveworn Residue 210",
+            "Category": "forgery",
+            "SubCategory": "waveworn_residue",
+            "rarity": 2
+        },
+        "waveworn_residue_226": {
+            "game_id": 41204002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/waveworn-residue-226-43020042.webp",
+            "label": "Waveworn Residue 226",
+            "Category": "forgery",
+            "SubCategory": "waveworn_residue",
+            "rarity": 3
+        },
+        "waveworn_residue_235": {
+            "game_id": 41204003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/waveworn-residue-235-43020043.webp",
+            "label": "Waveworn Residue 235",
+            "Category": "forgery",
+            "SubCategory": "waveworn_residue",
+            "rarity": 4
+        },
+        "waveworn_residue_239": {
+            "game_id": 41204004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/waveworn-residue-239-43020044.webp",
+            "label": "Waveworn Residue 239",
+            "Category": "forgery",
+            "SubCategory": "waveworn_residue",
+            "rarity": 5
+        },
+        "cadence_seed": {
+            "game_id": 41205001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/cadence-seed-43020051.webp",
+            "label": "Cadence Seed",
+            "Category": "forgery",
+            "SubCategory": "cadence",
+            "rarity": 2
+        },
+        "cadence_bud": {
+            "game_id": 41205002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/cadence-bud-43020052.webp",
+            "label": "Cadence Bud",
+            "Category": "forgery",
+            "SubCategory": "cadence",
+            "rarity": 3
+        },
+        "cadence_leaf": {
+            "game_id": 41205003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/cadence-leaf-43020053.webp",
+            "label": "Cadence Leaf",
+            "Category": "forgery",
+            "SubCategory": "cadence",
+            "rarity": 4
+        },
+        "cadence_blossom": {
+            "game_id": 41205004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/cadence-blossom-43020054.webp",
+            "label": "Cadence Blossom",
+            "Category": "forgery",
+            "SubCategory": "cadence",
+            "rarity": 5
+        }
+    },
+    "ascension": {
+        "iris": {
+            "game_id": 41301001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/iris-42300030.webp",
+            "label": "Iris",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "terraspawn_fungus": {
+            "game_id": 41301002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/terraspawn-fungus-42300040.webp",
+            "label": "Terraspawn Fungus",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "lanternberry": {
+            "game_id": 41301003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/lanternberry-42300050.webp",
+            "label": "Lanternberry",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "pecok_flower": {
+            "game_id": 41301004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/pecok-flower-42300060.webp",
+            "label": "Pecok Flower",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "belle_poppy": {
+            "game_id": 41301005,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/belle-poppy-42300070.webp",
+            "label": "Belle Poppy",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "coriolus": {
+            "game_id": 41301006,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/coriolus-42300080.webp",
+            "label": "Coriolus",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "wintry_bell": {
+            "game_id": 41301007,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/wintry-bell-42300090.webp",
+            "label": "Wintry Bell",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "violet_coral": {
+            "game_id": 41301008,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/violet-coral-42300100.webp",
+            "label": "Violet Coral",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "pavo_plum": {
+            "game_id": 41301009,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/pavo-plum-42310200.webp",
+            "label": "Pavo Plum",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "loongs_pearl": {
+            "game_id": 41301010,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/loong-s-pearl-42310210.webp",
+            "label": "Loong's Pearl",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "nova": {
+            "game_id": 41301011,
+            "icon": "https://https://api.hakush.in/ww/UI/UIResources/Common/Image/IconTask/T_IconTask_Task_084_UI.webp",
+            "label": "Nova",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "acorus_calamus": {
+            "game_id": 41301012,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_044_UI.webp",
+            "label": "Acorus Calamus",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        },
+        "fireworks_capsule": {
+            "game_id": 41301013,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_043_UI.webp",
+            "label": "Fireworks Capsule",
+            "Category": "ascension",
+            "SubCategory": "ascension",
+            "rarity": 3
+        }
+    },
+    "boss": {
+        "mysterious_code": {
+            "game_id": 41401001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/mysterious-code-41300005.webp",
+            "label": "Mysterious Code",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "strife_tacet_core": {
+            "game_id": 41401002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/strife-tacet-core-41400014.webp",
+            "label": "Strife Tacet Core",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "thundering_tacet_core": {
+            "game_id": 41401003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/thundering-tacet-core-41400024.webp",
+            "label": "Thundering Tacet Core",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "elegy_tacet_core": {
+            "game_id": 41401004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/elegy-tacet-core-41400034.webp",
+            "label": "Elegy Tacet Core",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "rage_tacet_core": {
+            "game_id": 41401005,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/rage-tacet-core-41400044.webp",
+            "label": "Rage Tacet Core",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "roaring_rock_fist": {
+            "game_id": 41401006,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/roaring-rock-fist-41400054.webp",
+            "label": "Roaring Rock Fist",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "gold_dissolving_feather": {
+            "game_id": 41401007,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/gold-dissolving-feather-41400064.webp",
+            "label": "Gold-Dissolving Feather",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "sound_keeping_tacet_core": {
+            "game_id": 41401008,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/sound-keeping-tacet-core-41400074.webp",
+            "label": "Sound-Keeping Tacet Core",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "group_abomination_tacet_core": {
+            "game_id": 41401009,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/group-abomination-tacet-core-41400084.webp",
+            "label": "Group Abomination Tacet Core",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "hidden_thunder_tacet_core": {
+            "game_id": 41401010,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/hidden-thunder-tacet-core-41400134.webp",
+            "label": "Hidden Thunder Tacet Core",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "topological_confinement": {
+            "game_id": 41401011,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/topological-singularity-41400154.webp",
+            "label": "Topological Confinement",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "platinum_movement": {
+            "game_id": 41402001,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_006_UI.webp",
+            "label": "Platinum movement",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        },
+        "purgatory_conch": {
+            "game_id": 41402002,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_009_UI.webp",
+            "label": "Purgatory Conch",
+            "Category": "boss",
+            "SubCategory": "boss",
+            "rarity": 4
+        }
+    },
+    "weeklyBoss": {
+        "monument_bell": {
+            "game_id": 41501001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/monument-bell-41400094.webp",
+            "label": "Monument Bell",
+            "Category": "weeklyBoss",
+            "SubCategory": "weeklyboss",
+            "rarity": 4
+        },
+        "unending_destruction": {
+            "game_id": 41501002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/unending-destruction-41400114.webp",
+            "label": "Unending Destruction",
+            "Category": "weeklyBoss",
+            "SubCategory": "weeklyboss",
+            "rarity": 4
+        },
+        "dreamless_feather": {
+            "game_id": 41501003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/dreamless-feather-41400124.webp",
+            "label": "Dreamless Feather",
+            "Category": "weeklyBoss",
+            "SubCategory": "weeklyboss",
+            "rarity": 4
+        },
+        "sentinels_dagger": {
+            "game_id": 41501004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/sentinel-s-dagger-41400144.webp",
+            "label": "Sentinel's Dagger",
+            "Category": "weeklyBoss",
+            "SubCategory": "weeklyboss",
+            "rarity": 4
+        },
+        "the_joy_of_the_dark_door": {
+            "game_id": 41502001,
+            "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_007_UI.webp",
+            "label": "The Joy of the Dark Door",
+            "Category": "weeklyBoss",
+            "SubCategory": "weeklyboss",
+            "rarity": 4
+        }
+    },
+    "player_exp": {
+        "basic_resonance_potion": {
+            "game_id": 41601001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/basic-resonance-potion-43010001.webp",
+            "label": "Basic Resonance Potion",
+            "Category": "resonator_exp_material",
+            "SubCategory": "player_exp",
+            "rarity": 2
+        },
+        "medium_resonance_potion": {
+            "game_id": 41601002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/medium-resonance-potion-43010002.webp",
+            "label": "Medium Resonance Potion",
+            "Category": "resonator_exp_material",
+            "SubCategory": "player_exp",
+            "rarity": 3
+        },
+        "advanced_resonance_potion": {
+            "game_id": 41601003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/advanced-resonance-potion-43010003.webp",
+            "label": "Advanced Resonance Potion",
+            "Category": "resonator_exp_material",
+            "SubCategory": "player_exp",
+            "rarity": 4
+        },
+        "premium_resonance_potion": {
+            "game_id": 41601004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/premium-resonance-potion-43010004.webp",
+            "label": "Premium Resonance Potion",
+            "Category": "resonator_exp_material",
+            "SubCategory": "player_exp",
+            "rarity": 5
+        }
+    },
+    "weapon_exp_material": {
+        "basic_energy_core": {
+            "game_id": 41701001,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/basic-energy-core-43020001.webp",
+            "label": "Basic Energy Core",
+            "Category": "weapon_exp_material",
+            "SubCategory": "weaponexp",
+            "rarity": 2
+        },
+        "medium_energy_core": {
+            "game_id": 41701002,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/medium-energy-core-43020002.webp",
+            "label": "Medium Energy Core",
+            "Category": "weapon_exp_material",
+            "SubCategory": "weaponexp",
+            "rarity": 3
+        },
+        "advanced_energy_core": {
+            "game_id": 41701003,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/advanced-energy-core-43020003.webp",
+            "label": "Advanced Energy Core",
+            "Category": "weapon_exp_material",
+            "SubCategory": "weaponexp",
+            "rarity": 4
+        },
+        "premium_energy_core": {
+            "game_id": 41701004,
+            "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/items\/premium-energy-core-43020004.webp",
+            "label": "Premium Energy Core",
+            "Category": "weapon_exp_material",
+            "SubCategory": "weaponexp",
+            "rarity": 5
+        }
+    }
+}

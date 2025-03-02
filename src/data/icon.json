@@ -1,0 +1,19 @@
+{
+    "level": "UiRole/Atlas/SP_RoleTabiconshuxing.png",
+    "weapon": "UiRole/Atlas/SP_RoleTabiconwuqi.png",
+    "skill": "UiRole/Atlas/SP_RoleTabiconzhanji.png",
+    "echo": "UiRole/Atlas/SP_RoleTabiconyiyin.png",
+    "cons": "UiRole/Atlas/SP_RoleTabicongongminglian.png",
+    "Aero": "Common/Image/IconElement/T_IconElementWind3.png",
+    "Glacio": "Common/Image/IconElement/T_IconElementIce3.png",
+    "Electro": "Common/Image/IconElement/T_IconElementThunder3.png",
+    "Spectro": "Common/Image/IconElement/T_IconElementLight3.png",
+    "Fusion": "Common/Image/IconElement/T_IconElementFire3.png",
+    "Havoc": "Common/Image/IconElement/T_IconElementDark3.png",
+    "Gauntlets": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorFist.png",
+    "Pistols": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorGun.png",
+    "Sword": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorKnife.png",
+    "Rectifier": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorMagic.png",
+    "Broadblade": "Common/Atlas/SkillIcon/SkillIconNor/SP_IconNorSword.png",
+    "QuestionMark": "Common/Atlas/WorldMapIcon/SP_IconMap_Task_03_1_UI.png"
+}

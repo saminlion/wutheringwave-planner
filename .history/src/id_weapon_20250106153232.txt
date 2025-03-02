@@ -1,0 +1,28 @@
+ID 규칙
+43 | 10 | 10 | 10 | 01
+
+고유번호 | 무기 속성 | 무기 타입 | 무기 희귀도 | 무기 번호
+
+#[Weapon]
+속성
+10은 Glacio / 얼음
+20은 Fusion / 용융
+30은 Aero / 기류
+40은 Electro / 전도
+50은 Havoc / 인멸
+60은 Spectro / 회절
+
+무기
+10은 Sword / 검
+20은 Broadblade / 대검
+30은 Gauntlets / 권갑
+40은 Pistols / 권총
+50은 Rectifier / 공명기
+
+희귀도
+10은 3성
+20은 4성
+30은 5성
+
+무기 번호
+1부터
