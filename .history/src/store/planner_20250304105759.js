@@ -185,9 +185,6 @@ export const usePlannerStore = defineStore('planner', {
 
     calculateCharacterMaterials(characterId) {
       const settings = this.characterSettings[characterId];
-
-      console.error("enter", settings);
-
       if (!settings) {
         console.error(`Character settings not found for ID: ${characterId}`);
         return {};
@@ -201,8 +198,6 @@ export const usePlannerStore = defineStore('planner', {
 
       // 작업별 캐시 분리
       const materials = { level: {}, skill: {}, passive: {} };
-
-      console.log("enter");
 
       // 1. 레벨업 재료 계산
       const levelsToFarm = getLevelRangeDiff(
@@ -219,7 +214,7 @@ export const usePlannerStore = defineStore('planner', {
       // 2. 스킬 레벨업 재료 계산
       Object.keys(settings.activeSkills).forEach((skillKey) => {
 
-        console.log("Processing skillKey:", skillKey);
+        console.log("skillKey", skillKey);
 
         if (skillKey.endsWith('_current_level')) {
           const baseKey = skillKey.replace('_current_level', '');
@@ -228,28 +223,15 @@ export const usePlannerStore = defineStore('planner', {
           const current = parseInt(settings.activeSkills[skillKey], 10);
           const target = parseInt(settings.activeSkills[targetKey], 10);
 
-          console.log("Current Level:", current, "Target Level:", target);
-
-          if (isNaN(current) || isNaN(target) || current >= target)
-          {
-            console.warn(`Skipping skill: ${skillKey} (Invalid levels or already maxed)`);
-            return;
-          }
+          if (isNaN(current) || isNaN(target) || current >= target) return;
 
           for (let level = current + 1; level <= target; level++) {
             const skillCosts = costs[0].character.skill[level];
-
-            console.log(`Skill Costs for level ${level}:`, skillCosts);
-console.log(`Skill Costs Entries:`, Object.entries(skillCosts));
-
-try {
-  Object.entries(skillCosts).forEach(([key, value]) => {
-    console.log(`Processing material: ${key} => ${value}`);
-    processMaterials(materials.skill, key, value, characterInfo);
-  });
-} catch (error) {
-  console.error(`Error processing materials for level ${level}`, error);
-}
+            if (skillCosts) {
+              Object.entries(skillCosts).forEach(([key, value]) => {
+                processMaterials(materials.skill, key, value, characterInfo);
+              });
+            }
           }
         }
       });

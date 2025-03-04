@@ -103,10 +103,10 @@ export const processMaterials = (materials, key, value, characterInfo) => {
     const materialKey = `${key}-${JSON.stringify(value)}`;
     console.log(`[Debug] processMaterials Material key: ${key}`);
 
-    // if (materials.processed.has(materialKey)) {
-    //     console.log(`Skipping duplicate material: ${materialKey}`);
-    //     return;
-    // }
+    if (materials.processed.has(materialKey)) {
+        console.log(`Skipping duplicate material: ${materialKey}`);
+        return;
+    }
 
     materials.processed.add(materialKey);
 

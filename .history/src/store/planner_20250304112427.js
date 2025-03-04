@@ -238,18 +238,11 @@ export const usePlannerStore = defineStore('planner', {
 
           for (let level = current + 1; level <= target; level++) {
             const skillCosts = costs[0].character.skill[level];
-
-            console.log(`Skill Costs for level ${level}:`, skillCosts);
-console.log(`Skill Costs Entries:`, Object.entries(skillCosts));
-
-try {
-  Object.entries(skillCosts).forEach(([key, value]) => {
-    console.log(`Processing material: ${key} => ${value}`);
-    processMaterials(materials.skill, key, value, characterInfo);
-  });
-} catch (error) {
-  console.error(`Error processing materials for level ${level}`, error);
-}
+            if (skillCosts) {
+              Object.entries(skillCosts).forEach(([key, value]) => {
+                processMaterials(materials.skill, key, value, characterInfo);
+              });
+            }
           }
         }
       });
