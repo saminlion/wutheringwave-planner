@@ -25,11 +25,12 @@
 
                         <h3 v-if="category.name !== subCategory.name">{{ subCategory.name }}</h3>
 
-                        <div class="estimate-container" v-if="(estimate = getEstimates(category, subCategory))">
-                            <p>예상 런 횟수: {{ estimate.run }}</p>
-                            <p>예상 레진 소모: {{ estimate.resin }}</p>
-                            <p v-if="subCategory.name !== 'weeklyboss'">예상 완료 시간: <span class="font-semibold">{{estimate.date}}일</span></p>
-                            <p v-else>예상 완료 시간: <span class="font-semibold">{{ estimate.date  }}주</span></p>
+                        <div class="estimate-container">
+                            <p>예상 런 횟수: {{ esimatedRun(category) }}</p>
+                            <p>예상 레진 소모: {{ esimatedResin(category) }}</p>
+                            <p v-if="subCategory.name !== 'weeklyboss'">예상 완료 시간: <span class="font-semibold">{{
+                                esimatedDate(category) }}일</span></p>
+                            <p v-else>예상 완료 시간: <span class="font-semibold">{{ esimatedDate(category) }}주</span></p>
                         </div>
 
                         <ul class="materials-grid">
@@ -72,7 +73,8 @@
                                             <span class="badge badge-need" v-if="task.need > 0">
                                                 필요: {{ task.need }}
                                             </span>
-                                            <span class="badge" :class="{
+                                            <span class="badge"
+                                            :class="{
                                                 'badge-owned-green': getMaterialQuantity(task.id) >= task.need,
                                                 'badge-owned-red': getMaterialQuantity(task.id) < task.need,
                                             }">
@@ -101,7 +103,8 @@
                                             <span class="badge badge-synthesize" v-if="task.synthesize > 0">
                                                 합성: {{ task.synthesize }}
                                             </span>
-                                            <span class="badge" :class="{
+                                            <span class="badge"
+                                            :class="{
                                                 'badge-owned-green': (getMaterialQuantity(task.id) + task.synthesize) >= task.need,
                                                 'badge-owned-red': (getMaterialQuantity(task.id) + task.synthesize) < task.need,
                                             }">
@@ -146,20 +149,6 @@ const resetCaches = () => {
     runCache.value = {};  // 캐시 초기화
     resinCache.value = {};
     dateCache.value = {};
-};
-
-const getEstimates = (category, subCategory) => {
-    const data = {
-        name: category.name,
-        subcategory: subCategory.id,
-        subCategories: {[subCategory.id]: subCategory}
-    };
-
-    return {
-        run: esimatedDate.value(data),
-        resin: esimatedResin.value(data),
-        date: esimatedDate.value(data),
-    };
 };
 
 const totalValues = reactive({
@@ -538,18 +527,14 @@ const CalculateTotalResinAndDate = () => {
     let totalResin = 0;
 
     // `categorizedMaterials` 배열 순회
-    categorizedMaterials.value.forEach((category) => {
-        category.subCategories.forEach((subCategory) => {
+    categorizedMaterials.value.forEach((material) => {
+        const subCategory = material.subcategory;
 
-            // 예상 레진 계산
-            const resin = parseInt(CalculateEstimatedResin({
-                name: category.name,
-                subCategory: subCategory.id,
-                subCategories: { [subCategory.id]: subCategory }
-            }), 10);
+        console.log(`[Debug] Get Material Data Before Send: ${JSON.stringify(material)}`);
 
-            if (!isNaN(resin)) totalResin += resin; // NaN 방지
-        });
+        // 예상 레진 계산
+        const resin = parseInt(CalculateEstimatedResin(material), 10);
+        if (!isNaN(resin)) totalResin += resin; // NaN 방지
     });
 
     // 총 레진을 하루 레진 사용량으로 나누어 완료 일수 계산
@@ -726,21 +711,19 @@ onMounted(() => {
     color: white;
 }
 
-.badge-owned {
+.badge-owned{
     background-color: #27ae60;
     color: white;
 }
 
 .badge-owned-green {
-    background-color: #27ae60;
-    /* 초록색 */
-    color: white;
+  background-color: #27ae60; /* 초록색 */
+  color: white;
 }
 
 .badge-owned-red {
-    background-color: #e74c3c;
-    /* 빨간색 */
-    color: white;
+  background-color: #e74c3c; /* 빨간색 */
+  color: white;
 }
 
 .material-quantity-container {

@@ -290,7 +290,7 @@ export const usePlannerStore = defineStore('planner', {
       });
       // 최종 재료 병합
       //const finalMaterials = { ...materials.level, ...materials.skill, ...materials.passive };
-      const finalMaterials = this.mergeMaterials(materials.level, materials.skill, materials.passive)
+      const finalMaterials = mergeMaterials(materials.level, materials.skill, materials.passive)
       console.log('[Debug] Merged Materials:', finalMaterials);
       this.materialsCache[characterId] = finalMaterials;
 

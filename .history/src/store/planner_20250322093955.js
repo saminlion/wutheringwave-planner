@@ -208,9 +208,9 @@ export const usePlannerStore = defineStore('planner', {
 
       console.log('[Level] Level range to farm:', levelsToFarm.map((l) => l.level));
 
-      levelsToFarm.forEach((levelData, idx) => {
+      levelsToFarm.forEach((levelData) => {
 
-        console.log(`[Level] Processing LevelData ${idx + 1}:`, levelData);
+        console.log(`[Level] Processing LevelData `, levelData);
 
         Object.entries(levelData).forEach(([key, value]) => {
           if (key === 'level') return; // level 자체는 재료 아님
@@ -290,7 +290,7 @@ export const usePlannerStore = defineStore('planner', {
       });
       // 최종 재료 병합
       //const finalMaterials = { ...materials.level, ...materials.skill, ...materials.passive };
-      const finalMaterials = this.mergeMaterials(materials.level, materials.skill, materials.passive)
+      const finalMaterials = mergeMaterials(materials.level, materials.skill, materials.passive)
       console.log('[Debug] Merged Materials:', finalMaterials);
       this.materialsCache[characterId] = finalMaterials;
 

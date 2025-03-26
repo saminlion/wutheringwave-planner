@@ -98,7 +98,8 @@ export const usePlannerStore = defineStore('planner', {
       }
     },
 
-    saveSettings(gameId) {
+    saveSettings(gameId)
+    {
       if (!gameId) return;
       const charStorageKey = this.getStorageKey('character', gameId);
       const weaponStorageKey = this.getStorageKey('weapon', gameId);
@@ -107,7 +108,8 @@ export const usePlannerStore = defineStore('planner', {
       localStorage.setItem(weaponStorageKey, JSON.stringify(this.weaponSettings));
     },
 
-    loadSettings(gameId) {
+    loadSettings(gameId)
+    {
       if (!gameId) return;
       const charStorageKey = this.getStorageKey('character', gameId);
       const weaponStorageKey = this.getStorageKey('weapon', gameId);
@@ -119,9 +121,10 @@ export const usePlannerStore = defineStore('planner', {
       this.weaponSettings = storedWeaponSettings ? JSON.parse(storedWeaponSettings) : {};
     },
 
-    hydrate() {
-      this.loadGoals(this.currentGameId);
-      this.loadSettings(this.currentGameId);
+    hydrate(gameId) {
+      this.currentGameId = gameId;
+      this.loadGoals(gameId);
+      this.loadSettings(gameId);
     },
 
     calculateAllMaterials(id, type) {
@@ -183,6 +186,8 @@ export const usePlannerStore = defineStore('planner', {
     calculateCharacterMaterials(characterId) {
       const settings = this.characterSettings[characterId];
 
+      console.error("enter", settings);
+
       if (!settings) {
         console.error(`Character settings not found for ID: ${characterId}`);
         return {};
@@ -197,7 +202,7 @@ export const usePlannerStore = defineStore('planner', {
       // 작업별 캐시 분리
       const materials = { level: {}, skill: {}, passive: {} };
 
-      console.log("enter", settings);
+      console.log("enter");
 
       // 1. 레벨업 재료 계산
       const levelsToFarm = getLevelRangeDiff(
@@ -205,20 +210,11 @@ export const usePlannerStore = defineStore('planner', {
         settings.currentLevel,
         settings.targetLevel
       );
-
-      console.log('[Level] Level range to farm:', levelsToFarm.map((l) => l.level));
-
-      levelsToFarm.forEach((levelData, idx) => {
-
-        console.log(`[Level] Processing LevelData ${idx + 1}:`, levelData);
-
+      levelsToFarm.forEach((levelData) => {
         Object.entries(levelData).forEach(([key, value]) => {
-          if (key === 'level') return; // level 자체는 재료 아님
-          console.log(`[Level] → Material Key: ${key}, Value: ${JSON.stringify(value)}`);
           processMaterials(materials.level, key, value, characterInfo);
         });
       });
-      console.log('[Level] Final Level Materials:', materials.level);
 
       // 2. 스킬 레벨업 재료 계산
       Object.keys(settings.activeSkills).forEach((skillKey) => {
@@ -234,7 +230,8 @@ export const usePlannerStore = defineStore('planner', {
 
           console.log("Current Level:", current, "Target Level:", target);
 
-          if (isNaN(current) || isNaN(target) || current >= target) {
+          if (isNaN(current) || isNaN(target) || current >= target)
+          {
             console.warn(`Skipping skill: ${skillKey} (Invalid levels or already maxed)`);
             return;
           }
@@ -243,16 +240,16 @@ export const usePlannerStore = defineStore('planner', {
             const skillCosts = costs[0].character.skill[level];
 
             console.log(`Skill Costs for level ${level}:`, skillCosts);
-            console.log(`Skill Costs Entries:`, Object.entries(skillCosts));
+console.log(`Skill Costs Entries:`, Object.entries(skillCosts));
 
-            try {
-              Object.entries(skillCosts).forEach(([key, value]) => {
-                console.log(`Processing material: ${key} => ${value}`);
-                processMaterials(materials.skill, key, value, characterInfo);
-              });
-            } catch (error) {
-              console.error(`Error processing materials for level ${level}`, error);
-            }
+try {
+  Object.entries(skillCosts).forEach(([key, value]) => {
+    console.log(`Processing material: ${key} => ${value}`);
+    processMaterials(materials.skill, key, value, characterInfo);
+  });
+} catch (error) {
+  console.error(`Error processing materials for level ${level}`, error);
+}
           }
         }
       });
@@ -289,23 +286,11 @@ export const usePlannerStore = defineStore('planner', {
         }
       });
       // 최종 재료 병합
-      //const finalMaterials = { ...materials.level, ...materials.skill, ...materials.passive };
-      const finalMaterials = this.mergeMaterials(materials.level, materials.skill, materials.passive)
-      console.log('[Debug] Merged Materials:', finalMaterials);
+      const finalMaterials = { ...materials.level, ...materials.skill, ...materials.passive };
       this.materialsCache[characterId] = finalMaterials;
 
       console.log('Final Materials:', finalMaterials);
       return finalMaterials;
-    },
-
-    mergeMaterials(...materialSources) {
-      const merged = {};
-      materialSources.forEach((source) => {
-        Object.entries(source).forEach(([material, amount]) => {
-          merged[material] = (merged[material] || 0) + amount;
-        });
-      });
-      return merged;
     },
 
     selectCharacter(character) {

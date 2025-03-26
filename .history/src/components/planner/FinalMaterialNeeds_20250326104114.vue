@@ -25,11 +25,12 @@
 
                         <h3 v-if="category.name !== subCategory.name">{{ subCategory.name }}</h3>
 
-                        <div class="estimate-container" v-if="(estimate = getEstimates(category, subCategory))">
-                            <p>예상 런 횟수: {{ estimate.run }}</p>
-                            <p>예상 레진 소모: {{ estimate.resin }}</p>
-                            <p v-if="subCategory.name !== 'weeklyboss'">예상 완료 시간: <span class="font-semibold">{{estimate.date}}일</span></p>
-                            <p v-else>예상 완료 시간: <span class="font-semibold">{{ estimate.date  }}주</span></p>
+                        <div class="estimate-container">
+                            <p>예상 런 횟수: {{ esimatedRun(category) }}</p>
+                            <p>예상 레진 소모: {{ esimatedResin(category) }}</p>
+                            <p v-if="subCategory.name !== 'weeklyboss'">예상 완료 시간: <span class="font-semibold">{{
+                                esimatedDate(category) }}일</span></p>
+                            <p v-else>예상 완료 시간: <span class="font-semibold">{{ esimatedDate(category) }}주</span></p>
                         </div>
 
                         <ul class="materials-grid">
@@ -146,20 +147,6 @@ const resetCaches = () => {
     runCache.value = {};  // 캐시 초기화
     resinCache.value = {};
     dateCache.value = {};
-};
-
-const getEstimates = (category, subCategory) => {
-    const data = {
-        name: category.name,
-        subcategory: subCategory.id,
-        subCategories: {[subCategory.id]: subCategory}
-    };
-
-    return {
-        run: esimatedDate.value(data),
-        resin: esimatedResin.value(data),
-        date: esimatedDate.value(data),
-    };
 };
 
 const totalValues = reactive({
