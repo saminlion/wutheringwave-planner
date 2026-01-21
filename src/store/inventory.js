@@ -1,6 +1,8 @@
 import { defineStore } from 'pinia';
+import logger from '@/utils/logger';
+import errorHandler from '@/utils/errorHandler';
 
-const GLOBAL_STORAGE_KEY = 'Inventory';
+const GLOBAL_STORAGE_KEY = 'wwplanner_inventory';
 
 export const useInventoryStore = defineStore('inventory', {
   state: () => ({
@@ -18,13 +20,14 @@ export const useInventoryStore = defineStore('inventory', {
   actions: {
     getStorageKey(gameId)
     {
+        if (!gameId) return null;
       return `${GLOBAL_STORAGE_KEY}_${gameId}`;
     },
 
     // Add materials to the inventory
     addMaterial(materialId, quantity) {
       if (!materialId || quantity <= 0) {
-        console.warn(`[Inventory] Invalid material or quantity: ${materialId}, ${quantity}`);
+        logger.warn(`Invalid material or quantity: ${materialId}, ${quantity}`);
         return;
       }
       if (this.inventory[materialId]) {
@@ -32,7 +35,7 @@ export const useInventoryStore = defineStore('inventory', {
       } else {
         this.inventory[materialId] = quantity;
       }
-      console.log(`[Inventory] Added: ${quantity} of ${materialId}. Total: ${this.inventory[materialId]}`);
+      logger.debug(`Added: ${quantity} of ${materialId}. Total: ${this.inventory[materialId]}`);
 
       this.saveInventory(this.currentGameId);
     },
@@ -40,14 +43,14 @@ export const useInventoryStore = defineStore('inventory', {
     // Remove materials from the inventory
     removeMaterial(materialId, quantity) {
       if (!this.inventory[materialId]) {
-        console.warn(`[Inventory] Material not found: ${materialId}`);
+        logger.warn(`Material not found: ${materialId}`);
         return;
       }
       this.inventory[materialId] -= quantity;
       if (this.inventory[materialId] <= 0) {
         delete this.inventory[materialId]; // Remove material if quantity is zero or less
       }
-      console.log(`[Inventory] Removed: ${quantity} of ${materialId}. Remaining: ${this.inventory[materialId] || 0}`);
+      logger.debug(`Removed: ${quantity} of ${materialId}. Remaining: ${this.inventory[materialId] || 0}`);
 
       this.saveInventory(this.currentGameId);
     },
@@ -55,46 +58,50 @@ export const useInventoryStore = defineStore('inventory', {
     // Set materials directly (e.g., for initializing)
     setInventory(newInventory) {
       this.inventory = { ...newInventory };
-      console.log(`[Inventory] Set new inventory:`, this.inventory);
+      logger.debug('Set new inventory:', this.inventory);
     },
 
     saveInventory(gameId)
     {
       if (!gameId) return;
 
-      const storageKey = this.getStorageKey(gameId);
-
-      localStorage.setItem(storageKey, JSON.stringify(this.inventory));
-
-      console.log(`[Storage] Inventory saved for ${gameId}:`, this.inventory);
+      try {
+        const storageKey = this.getStorageKey(gameId);
+        localStorage.setItem(storageKey, JSON.stringify(this.inventory));
+        logger.debug(`Inventory saved for ${gameId}:`, this.inventory);
+      } catch (error) {
+        errorHandler.handle(error, 'saveInventory');
+      }
     },
 
     loadInventory(gameId)
     {
       if (!gameId) return;
 
-      const storageKey = this.getStorageKey(gameId);
-      const storageInventory = localStorage.getItem(storageKey);
+      try {
+        const storageKey = this.getStorageKey(gameId);
+        const storageInventory = localStorage.getItem(storageKey);
 
-      if (storageInventory)
-      {
-        this.inventory = JSON.parse(storageInventory);
-
-        console.log(`[Storage] Inventory loaded for ${gameId}:`, this.inventory);
-      }
-
-      else
-      {
+        if (storageInventory)
+        {
+          this.inventory = JSON.parse(storageInventory);
+          logger.debug(`Inventory loaded for ${gameId}:`, this.inventory);
+        }
+        else
+        {
+          this.inventory = {};
+        }
+      } catch (error) {
+        errorHandler.handle(error, 'loadInventory');
         this.inventory = {};
       }
     },
 
     hydrate(gameId)
     {
-      console.log(`[Storage] Inventory gameID ${gameId}:`, this.inventory);
-
+      logger.debug(`Inventory gameID ${gameId}:`, this.inventory);
       this.currentGameId = gameId;
-      this.loadInventory(gameId);      
+      this.loadInventory(gameId);
     }
   },
 });

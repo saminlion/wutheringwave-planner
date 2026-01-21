@@ -22,4 +22,6 @@ export default defineConfig({
     //   cert: fs.readFileSync('./localhost.pem'),
     // }
   },
+  logLevel: 'warn', // 'error' | 'warn' | 'info' | 'silent'
+  clearScreen: false, // 화면 지우기 비활성화
 });

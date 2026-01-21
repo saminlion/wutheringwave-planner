@@ -4,6 +4,7 @@ import PlannerView from '../views/PlannerView.vue';
 import CharacterView from '../views/CharacterView.vue';
 import InventoryView from '../views/InventoryView.vue';
 import WeaponView from '../views/WeaponView.vue';
+import SettingsView from '../views/SettingsView.vue';
 
 const routes = [
   {
@@ -30,6 +31,11 @@ const routes = [
     path: '/weapon',
     name: 'weapon',
     component: WeaponView,
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    component: SettingsView,
   },
 ];
 

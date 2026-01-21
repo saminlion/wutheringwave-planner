@@ -34,11 +34,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
 import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import { useInventoryStore } from '../store/inventory.js';
-import inventoryItem from '../data/inventoryItem.json';
+import { inventoryMaterials as inventoryItem } from '@/games/wutheringwave';
+import logger from '@/utils/logger';
 
 const inventoryStore = useInventoryStore();
 
@@ -53,22 +54,56 @@ const quantities = ref(
   }, {})
 );
 
+// Watch inventory changes and sync to quantities
+watch(
+  inventory,
+  (newInventory) => {
+    materials.forEach((material) => {
+      quantities.value[material.game_id] = newInventory[material.game_id] || 0;
+    });
+  },
+  { deep: true }
+);
+
+// Initialize quantities on mount
+onMounted(() => {
+  // Ensure inventory is loaded from localStorage first
+  inventoryStore.hydrate('wutheringwave');
+
+  // Then sync quantities with loaded inventory
+  materials.forEach((material) => {
+    quantities.value[material.game_id] = inventory.value[material.game_id] || 0;
+  });
+
+  logger.debug('Inventory loaded and quantities synced:', inventory.value);
+});
+
 const logMessage = (material) => {
-  console.log(`Check Material Set: ${JSON.stringify(material)}`);
+  logger.debug('Check Material Set:', material);
 };
 
-// 디바운스된 업데이트 함수 생성
-const debouncedUpdateMaterial = useDebounceFn((id, quantity) => {
-
+// Debounced function for adding materials
+const debouncedAddMaterial = useDebounceFn((id, quantity) => {
   inventoryStore.addMaterial(id, quantity);
   quantities.value[id] = inventory.value[id]; // Sync local state
 
-  toast.success(`Item updated successfully: ${id}, Quantitiy: ${quantity}`, {
+  toast.success(`Item updated successfully: ${id}, Quantity: ${quantity}`, {
     position: 'bottom-center',
     autoClose: 2000,
     theme: 'dark',
   });
+}, 1000);
 
+// Debounced function for removing materials
+const debouncedRemoveMaterial = useDebounceFn((id, quantity) => {
+  inventoryStore.removeMaterial(id, quantity);
+  quantities.value[id] = inventory.value[id]; // Sync local state
+
+  toast.success(`Item updated successfully: ${id}, Quantity: ${quantity}`, {
+    position: 'bottom-center',
+    autoClose: 2000,
+    theme: 'dark',
+  });
 }, 1000);
 
 const groupedMaterials = computed(()=>{
@@ -91,45 +126,57 @@ const groupedMaterials = computed(()=>{
 // Add material
 const add = (materialId, quantity) => {
   if (!materialId || quantity <= 0) {
-    console.warn(`[Inventory] Invalid input for adding material: ${materialId}, ${quantity}`);
+    logger.warn(`Invalid input for adding material: ${materialId}, ${quantity}`);
     return;
   }
 
-  debouncedUpdateMaterial(materialId, quantity);
+  debouncedAddMaterial(materialId, quantity);
 };
 
 // Remove material
 const remove = (materialId, quantity) => {
   if (!materialId || quantity <= 0) {
-    console.warn(`[Inventory] Invalid input for removing material: ${materialId}, ${quantity}`);
+    logger.warn(`Invalid input for removing material: ${materialId}, ${quantity}`);
     return;
   }
 
-  debouncedUpdateMaterial(materialId, quantity);
+  debouncedRemoveMaterial(materialId, quantity);
 };
 
 
-// Update material quantity directly
+// Update material quantity directly (without debounce for immediate save)
 const update = (materialId) => {
   const newQuantity = quantities.value[materialId];
   const currentQuantity = inventory.value[materialId] || 0;
   const difference = newQuantity - currentQuantity;
 
   if (difference > 0) {
-    add(materialId, difference);
+    // Add directly without debounce
+    inventoryStore.addMaterial(materialId, difference);
+    toast.success(`Item updated: ${materialId}, Quantity: ${newQuantity}`, {
+      position: 'bottom-center',
+      autoClose: 2000,
+      theme: 'dark',
+    });
   } else if (difference < 0) {
-    remove(materialId, Math.abs(difference));
+    // Remove directly without debounce
+    inventoryStore.removeMaterial(materialId, Math.abs(difference));
+    toast.success(`Item updated: ${materialId}, Quantity: ${newQuantity}`, {
+      position: 'bottom-center',
+      autoClose: 2000,
+      theme: 'dark',
+    });
   }
 };
 </script>
 
 <style>
-/* 전체 컨테이너 스타일 */
+/* Main container style */
 .inventory-container {
   padding: 16px;
 }
 
-/* 카테고리 제목 */
+/* Category title */
 .category-title {
   font-size: 24px;
   margin-top: 16px;
@@ -137,7 +184,7 @@ const update = (materialId) => {
   border-bottom: 2px solid #333;
 }
 
-/* 서브카테고리 제목 */
+/* Subcategory title */
 .subcategory-title {
   font-size: 20px;
   margin-top: 12px;

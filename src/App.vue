@@ -8,6 +8,7 @@
         <router-link to="/inventory">Inventory</router-link>
         <router-link to="/character">Character</router-link>
         <router-link to="/weapon">Weapon</router-link>
+        <router-link to="/settings">Settings</router-link>
       </nav>
     </header>
     <main>
@@ -16,10 +17,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
-};
+<script setup>
+import { onMounted } from 'vue';
+import { usePlannerStore } from './store/planner.js';
+import { useInventoryStore } from './store/inventory.js';
+
+const plannerStore = usePlannerStore();
+const inventoryStore = useInventoryStore();
+
+// 앱 시작 시 localStorage에서 데이터 복원
+onMounted(() => {
+  const gameId = 'wutheringwave';
+  plannerStore.hydrate();
+  inventoryStore.hydrate(gameId);
+  console.log('[App] Data loaded from localStorage');
+});
 </script>
 
 <style>

@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(for file in *.js)",
+      "Bash(do sed -i '1s/^\\\\xEF\\\\xBB\\\\xBF//' \"$file\")",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(xargs:*)",
+      "Bash(node:*)",
+      "Bash(file:*)",
+      "Bash(wc:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

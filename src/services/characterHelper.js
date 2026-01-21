@@ -1,4 +1,5 @@
-import characterRaw from '../data/character.json';
+import { characterData as characterRaw } from '@/games/wutheringwave';
+import logger from '@/utils/logger';
 
 /**
  * Extracts specific data (e.g., icon, label, id) from character.
@@ -9,24 +10,23 @@ import characterRaw from '../data/character.json';
  */
 export const getCharacterField = (id, field = null) => {
     const characterData = Object.values(characterRaw).find(
-      (item) => String(item.game_id) === String(id) // Match by game_id
+      (item) => String(item.game_id) === String(id)
     );
-  
+
     if (!characterData) {
-      console.warn(`[Warning] Character with ID "${id}" not found in characterRaw.`);
+      logger.warn(`Character with ID "${id}" not found in characterRaw.`);
       return null;
     }
-  
+
     if (field) {
       if (characterData[field] == null) {
-        console.warn(`[Warning] Field "${field}" not found in characterData for ID "${id}".`);
+        logger.warn(`Field "${field}" not found in characterData for ID "${id}".`);
         return null;
       }
-      console.log(`[Debug] Retrieved field "${field}": ${characterData[field]}`);
+      logger.debug(`Retrieved field "${field}":`, characterData[field]);
       return characterData[field];
     }
-  
-    // Return entire character object if no field is specified
-    console.log(`[Debug] Retrieved entire character data for ID "${id}":`, characterData);
+
+    logger.debug('Retrieved entire character data for ID:', id, characterData);
     return characterData;
   };
