@@ -9,7 +9,7 @@
                 <p>{{ totalValues.totalResin }}</p>
             </div>
             <div class="summary-card">
-                <h3><i class="fas fa-clock"></i> ?덉긽 ?꾨즺 ?쒓컙</h3>
+                <h3><i class="fas fa-clock"></i> Estimated Days Required</h3>
                 <p>{{ totalValues.totalDays }} </p>
             </div>
         </div>
@@ -26,14 +26,14 @@
                         <h3 v-if="category.name !== subCategory.name">{{ subCategory.name }}</h3>
 
                                                 <div class="estimate-container" v-if="(estimate = getEstimates(category, subCategory))">
-                            <p>예상 반복 횟수: {{ estimate.run }}</p>
-                            <p>예상 소모 레진: {{ estimate.resin }}</p>
+                            <p>Estimated Runs: {{ estimate.run }}</p>
+                            <p>Estimated Resin: {{ estimate.resin }}</p>
                             <p v-if="subCategory.name !== 'weeklyboss'">
-                                예상 완료 시간:
+                                Estimated Time:
                                 <span class="font-semibold">{{ estimate.date }}</span>
                             </p>
                             <p v-else>
-                                예상 완료 일자:
+                                Estimated Date:
                                 <span class="font-semibold">{{ estimate.date }}</span>
                             </p>
                         </div>
@@ -42,7 +42,7 @@
                             <!-- player_exp ?먮뒗 weapon_exp 泥섎━ -->
                                                         <template v-if="category.name === 'player_exp' || category.name === 'weapon_exp'">
                                 <li class="material-set" v-if="totalExpNeed(category) > 0">
-                                    필요: {{ totalExpNeed(category) }}
+                                    Need: {{ totalExpNeed(category) }}
                                 </li>
                                 <li class="material-card" v-for="(expDetails, id) in player_exp_material" :key="id">
                                     <div class="material-info">
@@ -51,10 +51,10 @@
 
                                         <div class="material-quantity-container">
                                             <span class="badge badge-synthesize" v-if="expDetails.synthesize > 0">
-                                                합성: {{ expDetails.synthesize }}
+                                                Synthesize: {{ expDetails.synthesize }}
                                             </span>
                                             <span class="badge badge-owned">
-                                                보유: {{ getMaterialQuantity(id) }}
+                                                Owned: {{ getMaterialQuantity(id) }}
                                             </span>
                                             <input class="material-quantity-input" type="number"
                                                 @blur="setMaterialQuantity(id, $event.target.value)" />
@@ -80,7 +80,7 @@
                                             }">
                                                 Owned: {{ getMaterialQuantity(task.id) }}
                                             </span>
-                                            <!-- Additional ?낅젰 -->
+                                            <!-- Additional input -->
                                             <input class="material-quantity-input" type="number"
                                                 @blur="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
@@ -95,11 +95,11 @@
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- ?꾩슂 諭껋? -->
+                                            <!-- Need badge -->
                                             <span class="badge badge-need" v-if="task.need > 0">
                                                 Need: {{ task.need }}
                                             </span>
-                                            <!-- ?⑹꽦 諭껋? -->
+                                            <!-- Synthesize badge -->
                                             <span class="badge badge-synthesize" v-if="task.synthesize > 0">
                                                 Synthesize: {{ task.synthesize }}
                                             </span>
@@ -109,7 +109,7 @@
                                             }">
                                                 Owned: {{ getMaterialQuantity(task.id) }}
                                             </span>
-                                            <!-- Additional ?낅젰 -->
+                                            <!-- Additional input -->
                                             <input class="material-quantity-input" type="number"
                                                 @blur="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
@@ -255,7 +255,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
     // 理쒖쥌 JSON ?곗씠?곕? ??ν븷 媛앹껜
     const groupedMaterialsMap = {};
 
-    // materials 媛앹껜 異붿텧
+        // Extract materials object
     const materials = data?.materials || data || {};
 
     for (const [materialId, details] of Object.entries(materials)) {
@@ -271,7 +271,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
         if (materialId === 'player_exp' || materialId === 'weapon_exp') {
             subCategory = materialId;
             category = materialId;
-            name = materialId; // ?대쫫 Additional
+                        name = materialId; // Name additional
             owned = details.owned || 0;
             synthesize = details.synthesize || 0;
             need = details.need || 0;
@@ -279,16 +279,16 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
 
         // ?쇰컲 ?щ즺 泥섎━
         else {
-            // ?꾩슂???곗씠??異붿텧
+                        // Extract required data
             subCategory = getMaterialFieldById(materialId, 'SubCategory');
             category = getMaterialFieldById(materialId, 'Category');
-            name = getMaterialFieldById(materialId, 'label'); // ?대쫫 Additional
+                        name = getMaterialFieldById(materialId, "label"); // Name additional
             owned = details.owned || 0;
             synthesize = details.synthesize || 0;
             need = details.need || 0;
         }
 
-        // category 珥덇린??
+                // Initialize category
         if (!groupedMaterialsMap[category]) {
             groupedMaterialsMap[category] = {
                 id: category,
@@ -297,7 +297,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             };
         }
 
-        // subcategory 珥덇린??
+                // Initialize subcategory
         if (!groupedMaterialsMap[category].subCategories[subCategory]) {
             groupedMaterialsMap[category].subCategories[subCategory] = {
                 id: subCategory,
@@ -306,7 +306,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             };
         }
 
-        // task ?곗씠??Additional
+                // Add task data
         groupedMaterialsMap[category].subCategories[subCategory].task.push({
             id: materialId,
             name: name,
@@ -326,14 +326,14 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
     categorizedMaterials.value = groupedMaterials;
 };
 
-// 怨꾩궛 ?⑥닔 ?몄텧 諛?媛??낅뜲?댄듃
+// Execute calculation function and update values
 const updateTotalValues = () => {
     const { totalResin, totalDays } = CalculateTotalResinAndDate();
     totalValues.totalResin = totalResin;
     totalValues.totalDays = totalDays;
 };
 
-// 移댄뀒怨좊━蹂??쒕엻瑜?諛??덉쭊 媛?怨꾩궛
+// Calculate drops and resin values per category
 const GetRateValueForCategory = (data) => {
     let drops = 0, resin = 0, unobtainable = false, categoryName = "";
 
@@ -383,7 +383,7 @@ const esimatedRun = computed(() => (data) => {
     return CalculateEstimatedRun(data);
 });
 
-// ?덉긽 ??怨꾩궛
+// Calculate runs
 const CalculateEstimatedRun = (data) => {
     if (runCache.value[data.subcategory]) return runCache.value[data.subcategory];
 
@@ -393,7 +393,7 @@ const CalculateEstimatedRun = (data) => {
 
     //console.log(`[Debug] Data: ${JSON.stringify(data)}`);
 
-    // `subCategories`瑜??쒗쉶
+        // Iterate subCategories
     Object.entries(data.subCategories).forEach(([subcategoryName, subcategoryData]) => {
         if (!unobtainable) {
 
@@ -486,7 +486,7 @@ const esimatedResin = computed(() => (subCategory) => {
     return CalculateEstimatedResin(subCategory);
 });
 
-// ?덉긽 ?덉쭊 怨꾩궛
+// Calculate resin
 const CalculateEstimatedResin = (data) => {
     if (resinCache.value[data.subcategory]) return resinCache.value[data.subcategory];
 
@@ -503,7 +503,7 @@ const esimatedDate = computed(() => (subCategory) => {
     return CalculateEstimatedDate(subCategory);
 });
 
-// ?덉긽 ?꾨즺 ?쒓컙 怨꾩궛
+// Estimated Days Required 怨꾩궛
 const CalculateEstimatedDate = (data) => {
     if (dateCache.value[data.subcategory]) return dateCache.value[data.subcategory];
 
@@ -519,27 +519,27 @@ const CalculateEstimatedDate = (data) => {
     return date;
 };
 
-// ?꾩껜 ?덉쭊怨??좎쭨瑜?怨꾩궛?섎뒗 ?⑥닔
+// Calculate total
 const CalculateTotalResinAndDate = () => {
     const DAILY_RESIN_LIMIT = 240; // ?섎（??理쒕? ?ъ슜?????덈뒗 ?덉쭊
     let totalResin = 0;
 
-    // `categorizedMaterials` 諛곗뿴 ?쒗쉶
+        // Iterate categorizedMaterials
     categorizedMaterials.value.forEach((category) => {
         category.subCategories.forEach((subCategory) => {
 
-            // ?덉긽 ?덉쭊 怨꾩궛
+            // Calculate resin
             const resin = parseInt(CalculateEstimatedResin({
                 name: category.name,
                 subCategory: subCategory.id,
                 subCategories: { [subCategory.id]: subCategory }
             }), 10);
 
-            if (!isNaN(resin)) totalResin += resin; // NaN 諛⑹?
+                        if (!isNaN(resin)) totalResin += resin; // Prevent NaN
         });
     });
 
-    // 珥??덉쭊???섎（ ?덉쭊 ?ъ슜?됱쑝濡??섎늻???꾨즺 ?쇱닔 怨꾩궛
+        // Calculate days from total resin
     const totalDays = Math.ceil(totalResin / DAILY_RESIN_LIMIT);
 
     return { totalResin, totalDays };
@@ -554,11 +554,11 @@ onMounted(() => {
 
   //  console.log(`[Debug] Get materials: ${JSON.stringify(props.materials)}`);
 
-    // 移댄뀒怨좊━蹂꾨줈 ?щ즺 洹몃９??
+        // Group by category
     //groupMaterialsByCategoryAndSubCategory(Object.values(props.materials));
     groupMaterialsByCategoryAndSubCategory(props.materials);
 
-    // 珥앺빀 怨꾩궛 ?ㅽ뻾
+        // Execute totals
     updateTotalValues(props.materials);
 });
 

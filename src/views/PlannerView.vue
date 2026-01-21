@@ -98,7 +98,7 @@
               </div>
             </div>
 
-            <!-- ?щ즺 由ъ뒪??-->
+            <!-- Materials List -->
             <div class="goal-materials">
               <div class="materials-grid">
                 <div class="material-card" v-for="(qty, mat) in filterProcessed(goal.materials)" :key="mat">
@@ -210,12 +210,12 @@ const getRawData = (id) => {
   }
 };
 
-// ?붾컮?댁뒪???낅뜲?댄듃 ?⑥닔 ?앹꽦
+// Debounced function to update materials
 const debouncedUpdateMaterial = useDebounceFn((id, quantity) => {
 
   inventoryStore.addMaterial(id, quantity); // ?낅뜲?댄듃 硫붿꽌???몄텧
-  updateFinalMaterialNeeds(); // Material Needs ?ш퀎??
-  refreshFinalMaterialNeeds(); // 媛뺤젣 ?щ젋?붾쭅
+    updateFinalMaterialNeeds(); // Recalculate Material Needs
+    refreshFinalMaterialNeeds(); // Force refresh
 
   toast.success(`Item updated successfully: ${id}, Quantitiy: ${quantity}`, {
     position: 'bottom-center',
@@ -413,12 +413,12 @@ const openDialog = (goal) => {
   dialogVisible.value = true;
 };
 
-// ?④? ?댁젣
+// Remove goal
 const removeGoal = (id, type) => {
   plannerStore.removeGoal(id, type);
 };
 
-// ?④?
+// Hide goal
 const hideGoal = (id, type) => {
   if (!hiddenGoals.value[id]) {
     plannerStore.hideGoal(id, type);
@@ -435,7 +435,7 @@ const updateCharacter = () => {
 
   const characterId = selectedCharacter.value.game_id;
 
-  // ?ㅼ젙媛??낅뜲?댄듃
+  // Update settings
   plannerStore.updateCharacterSettings(characterId, currentSettings.value);
 
   logger.debug('Updated Settings:', currentSettings.value);
@@ -452,13 +452,13 @@ const updateCharacter = () => {
   logger.debug('Updated Goals:', plannerStore.goals);
 };
 
-// 臾닿린 ?낅뜲?댄듃
+// Update weapon
 const updateweapon = () => {
   if (!selectedWeapon.value) return;
 
   const weaponId = selectedWeapon.value.game_id;
 
-  // ?ㅼ젙媛??낅뜲?댄듃
+  // Update settings
   plannerStore.updateWeaponSettings(weaponId, currentSettings.value);
 
   logger.debug('Updated Settings:', currentSettings.value);
@@ -475,6 +475,165 @@ const updateweapon = () => {
   logger.debug('Updated Goals:', plannerStore.goals);
 };
 
+/**
+ * Validate if materials can be satisfied with current inventory and synthesis.
+ * Returns validation result with shortages and synthesis plan.
+ */
+const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tieredMaterialsData) => {
+  const inventoryCopy = { ...currentInventory };
+  const synthesisNeeded = [];
+  const shortages = [];
+
+  // Process each required material
+  for (const [materialId, requiredQty] of Object.entries(requiredMaterials)) {
+    if (materialId === 'processed') continue;
+
+    // Skip player_exp and weapon_exp - they use special calculation logic
+    if (materialId === 'player_exp' || materialId === 'weapon_exp') {
+      // Calculate if player exp is sufficient using the same logic as calculatePlayerExp
+      if (materialId === 'player_exp') {
+        const totalExpAvailable =
+          (currentInventory[41601001] || 0) * 1000 +
+          (currentInventory[41601002] || 0) * 3000 +
+          (currentInventory[41601003] || 0) * 8000 +
+          (currentInventory[41601004] || 0) * 20000;
+
+        if (totalExpAvailable < requiredQty) {
+          shortages.push({
+            materialId,
+            materialName: 'Player EXP',
+            needed: requiredQty - totalExpAvailable,
+          });
+        }
+      }
+      continue;
+    }
+
+    const available = inventoryCopy[materialId] || 0;
+
+    if (available >= requiredQty) {
+      // Sufficient materials available directly
+      continue;
+    }
+
+    // Check if this material can be synthesized from lower tiers
+    const shortage = requiredQty - available;
+    const subcategory = getMaterialFieldById(materialId, 'SubCategory');
+
+    if (!subcategory || !tieredMaterialsData[subcategory]) {
+      // Cannot synthesize, mark as shortage
+      shortages.push({
+        materialId,
+        materialName: getMaterialFieldById(materialId, 'label') || materialId,
+        needed: shortage,
+      });
+      continue;
+    }
+
+    // Find the tier of this material
+    const materialTierData = tieredMaterialsData[subcategory];
+    let currentTier = null;
+    for (const [tier, data] of Object.entries(materialTierData)) {
+      if (data.game_id === parseInt(materialId)) {
+        currentTier = parseInt(tier);
+        break;
+      }
+    }
+
+    if (!currentTier || currentTier === 1) {
+      // Tier 1 materials cannot be synthesized from lower tiers
+      shortages.push({
+        materialId,
+        materialName: getMaterialFieldById(materialId, 'label') || materialId,
+        needed: shortage,
+      });
+      continue;
+    }
+
+    // Try to synthesize from lower tiers
+    let remainingShortage = shortage;
+    const synthesisSteps = [];
+
+    // Check each lower tier
+    for (let tier = currentTier - 1; tier >= 1; tier--) {
+      if (remainingShortage <= 0) break;
+
+      const lowerTierMaterial = materialTierData[tier];
+      if (!lowerTierMaterial) continue;
+
+      const lowerTierGameId = lowerTierMaterial.game_id;
+      const lowerTierAvailable = inventoryCopy[lowerTierGameId] || 0;
+      const synthesisRatio = lowerTierMaterial.synthesizable?.count || 3;
+
+      // Calculate how many we can synthesize from this tier
+      const neededFromThisTier = remainingShortage * Math.pow(synthesisRatio, currentTier - tier);
+      const canSynthesize = Math.floor(lowerTierAvailable / synthesisRatio);
+
+      if (canSynthesize > 0) {
+        const willSynthesize = Math.min(canSynthesize, Math.ceil(neededFromThisTier / Math.pow(synthesisRatio, currentTier - tier - 1)));
+
+        synthesisSteps.push({
+          fromMaterialId: lowerTierGameId,
+          toMaterialId: materialId,
+          fromTier: tier,
+          toTier: currentTier,
+          quantity: willSynthesize,
+          ratio: synthesisRatio,
+        });
+
+        inventoryCopy[lowerTierGameId] -= willSynthesize * synthesisRatio;
+        const synthesizedAmount = Math.floor(willSynthesize / Math.pow(synthesisRatio, currentTier - tier - 1));
+        remainingShortage -= synthesizedAmount;
+      }
+    }
+
+    if (remainingShortage > 0) {
+      // Still short after attempting synthesis
+      shortages.push({
+        materialId,
+        materialName: getMaterialFieldById(materialId, 'label') || materialId,
+        needed: remainingShortage,
+      });
+    }
+
+    if (synthesisSteps.length > 0) {
+      synthesisNeeded.push({
+        materialId,
+        materialName: getMaterialFieldById(materialId, 'label') || materialId,
+        steps: synthesisSteps,
+      });
+    }
+  }
+
+  const canComplete = shortages.length === 0;
+
+  return {
+    canComplete,
+    shortages,
+    synthesisNeeded,
+  };
+};
+
+/**
+ * Perform material synthesis based on synthesis plan.
+ */
+const performSynthesis = (synthesisNeeded) => {
+  for (const { materialId, materialName, steps } of synthesisNeeded) {
+    for (const step of steps) {
+      const { fromMaterialId, toMaterialId, quantity, ratio } = step;
+
+      // Deduct lower tier materials
+      const usedQty = quantity * ratio;
+      inventoryStore.removeMaterial(fromMaterialId, usedQty);
+
+      // Add higher tier materials
+      inventoryStore.addMaterial(toMaterialId, quantity);
+
+      logger.info(`Synthesized ${quantity}x ${getMaterialFieldById(toMaterialId, 'label')} from ${usedQty}x ${getMaterialFieldById(fromMaterialId, 'label')}`);
+    }
+  }
+};
+
 // Complete goal: Update current levels to target and deduct materials from inventory
 const completeGoal = (id, type) => {
   const goal = goals.value.find(g => g.id === id);
@@ -487,10 +646,6 @@ const completeGoal = (id, type) => {
     ? getCharacterField(id, 'display_name')
     : getWeaponField(id, 'display_name');
 
-  if (!confirm(`Complete goal for ${entityName}?\n\nThis will:\n- Update current level/skills to target\n- Deduct required materials from inventory\n- Hide this goal from planner\n\nContinue?`)) {
-    return;
-  }
-
   try {
     // Get current settings
     const settings = type === 'character'
@@ -500,6 +655,54 @@ const completeGoal = (id, type) => {
     if (!settings) {
       toast.error('Settings not found for this goal');
       return;
+    }
+
+    // Validate materials with synthesis check
+    const validation = validateMaterialsWithSynthesis(
+      goal.materials || {},
+      inventory.value,
+      tieredMaterials
+    );
+
+    if (!validation.canComplete) {
+      // Show detailed shortage message
+      const shortageDetails = validation.shortages
+        .map(s => `  • ${s.materialName}: Need ${s.needed} more`)
+        .join('\n');
+
+      toast.error(`Insufficient materials!\n\n${shortageDetails}`, {
+        position: 'top-center',
+        autoClose: 5000,
+      });
+
+      logger.warn('Cannot complete goal due to material shortage:', validation.shortages);
+      return;
+    }
+
+    // Show confirmation with synthesis info if needed
+    let confirmMessage = `Complete goal for ${entityName}?\n\nThis will:\n- Update current level/skills to target\n- Deduct required materials from inventory`;
+
+    if (validation.synthesisNeeded.length > 0) {
+      confirmMessage += '\n\nAuto-synthesis will be performed:';
+      validation.synthesisNeeded.forEach(syn => {
+        confirmMessage += `\n• ${syn.materialName} (from lower tier materials)`;
+      });
+    }
+
+    confirmMessage += '\n- Hide this goal from planner\n\nContinue?';
+
+    if (!confirm(confirmMessage)) {
+      return;
+    }
+
+    // Perform synthesis if needed
+    if (validation.synthesisNeeded.length > 0) {
+      logger.info('Performing auto-synthesis before goal completion');
+      performSynthesis(validation.synthesisNeeded);
+      toast.info('Materials synthesized automatically', {
+        position: 'bottom-center',
+        autoClose: 2000,
+      });
     }
 
     // Update current levels to match target
@@ -540,6 +743,67 @@ const completeGoal = (id, type) => {
     Object.entries(goal.materials || {}).forEach(([materialId, quantity]) => {
       if (materialId === 'processed') return; // Skip processed marker
 
+      // Special handling for player_exp - deduct from individual potions
+      if (materialId === 'player_exp') {
+        let remainingExp = quantity;
+        const potions = [
+          { id: 41601004, value: 20000 }, // Largest first
+          { id: 41601003, value: 8000 },
+          { id: 41601002, value: 3000 },
+          { id: 41601001, value: 1000 },
+        ];
+
+        for (const potion of potions) {
+          const available = inventory.value[potion.id] || 0;
+          const needed = Math.ceil(remainingExp / potion.value);
+          const toUse = Math.min(available, needed);
+
+          if (toUse > 0) {
+            inventoryStore.removeMaterial(potion.id, toUse);
+            remainingExp -= toUse * potion.value;
+            logger.debug(`Deducted ${toUse}x ${getMaterialFieldById(potion.id, 'label')} (${toUse * potion.value} exp)`);
+          }
+
+          if (remainingExp <= 0) break;
+        }
+
+        if (remainingExp > 0) {
+          logger.warn(`Could not deduct all player_exp: ${remainingExp} exp remaining`);
+        }
+        return;
+      }
+
+      // Special handling for weapon_exp - deduct from individual cores
+      if (materialId === 'weapon_exp') {
+        let remainingExp = quantity;
+        const cores = [
+          { id: 41701004, value: 20000 },
+          { id: 41701003, value: 8000 },
+          { id: 41701002, value: 3000 },
+          { id: 41701001, value: 1000 },
+        ];
+
+        for (const core of cores) {
+          const available = inventory.value[core.id] || 0;
+          const needed = Math.ceil(remainingExp / core.value);
+          const toUse = Math.min(available, needed);
+
+          if (toUse > 0) {
+            inventoryStore.removeMaterial(core.id, toUse);
+            remainingExp -= toUse * core.value;
+            logger.debug(`Deducted ${toUse}x ${getMaterialFieldById(core.id, 'label')} (${toUse * core.value} exp)`);
+          }
+
+          if (remainingExp <= 0) break;
+        }
+
+        if (remainingExp > 0) {
+          logger.warn(`Could not deduct all weapon_exp: ${remainingExp} exp remaining`);
+        }
+        return;
+      }
+
+      // Normal materials
       inventoryStore.removeMaterial(materialId, quantity);
       logger.debug(`Deducted ${quantity} of ${materialId} from inventory`);
     });
@@ -591,7 +855,7 @@ onMounted(() => {
 
 .goal-border.hidden {
   filter: grayscale(100%) !important; /* ?묐갚 泥섎━ */
-  opacity: 0.6 !important; /* ?쎄컙 ?щ챸 */
+  opacity: 0.6 !important; /* Reduced opacity */
 }
 .goal-card {
   background-color: #f4f4f4;
@@ -605,7 +869,7 @@ onMounted(() => {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  /* ?꾩씠??媛?媛꾧꺽 異붽? */
+  /* Additional spacing between icons */
 }
 
 .character-icon {
@@ -617,15 +881,15 @@ onMounted(() => {
 
 .icon-container {
   display: flex;
-  /* ?꾩씠肄??뺣젹???꾪븳 ?뚮젆??諛뺤뒪 */
+  /* Flexbox for icon alignment */
   align-items: center;
-  /* ?몃줈 以묒븰 ?뺣젹 */
+  /* Vertical center alignment */
   justify-content: flex-start;
   /* ?쇱そ ?뺣젹 (?먰븯??寃쎌슦 center濡?蹂寃?媛?? */
   flex-wrap: nowrap;
-  /* ??以꾨줈 媛뺤젣 ?뺣젹 */
+  /* Force single line alignment */
   gap: 8px;
-  /* ?꾩씠肄?媛꾧꺽 */
+  /* Icon spacing */
 }
 
 .icon-6 {
@@ -653,7 +917,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* ?꾩씠肄??섑룊 ?뺣젹 */
+  /* Center icon alignment */
   cursor: pointer;
   /* ?대┃ 媛?ν븳 紐⑥뼇 */
 }

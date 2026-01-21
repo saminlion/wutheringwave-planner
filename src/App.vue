@@ -1,13 +1,17 @@
 <template>
   <div id="app">
     <header>
-      <h1>Wuthering Waves Planner</h1>
+      <div class="header-content">
+        <h1>Multi-Game Planner</h1>
+        <GameSelector />
+      </div>
       <nav>
         <router-link to="/">Home</router-link>
         <router-link to="/planner">Planner</router-link>
         <router-link to="/inventory">Inventory</router-link>
         <router-link to="/character">Character</router-link>
         <router-link to="/weapon">Weapon</router-link>
+        <router-link to="/endfield-data">Endfield Data</router-link>
         <router-link to="/settings">Settings</router-link>
       </nav>
     </header>
@@ -21,16 +25,19 @@
 import { onMounted } from 'vue';
 import { usePlannerStore } from './store/planner.js';
 import { useInventoryStore } from './store/inventory.js';
+import { useGameRegistryStore } from './store/gameRegistry.js';
+import GameSelector from './components/common/GameSelector.vue';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
+const gameRegistry = useGameRegistryStore();
 
-// 앱 시작 시 localStorage에서 데이터 복원
+// Load data from localStorage on app start
 onMounted(() => {
-  const gameId = 'wutheringwave';
+  const gameId = gameRegistry.currentGameId || 'wutheringwave';
   plannerStore.hydrate();
   inventoryStore.hydrate(gameId);
-  console.log('[App] Data loaded from localStorage');
+  console.log(`[App] Data loaded for game: ${gameId}`);
 });
 </script>
 
@@ -46,6 +53,15 @@ header {
   background-color: #f8f9fa;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 header h1 {

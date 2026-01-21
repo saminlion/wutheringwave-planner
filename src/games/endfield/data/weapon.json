@@ -1,0 +1,11 @@
+{
+  "example_weapon": {
+    "game_id": 53203001,
+    "display_name": "Example Weapon",
+    "rarity": 5,
+    "type": "unknown",
+    "icon": "",
+    "common": "example_common",
+    "forgery": "example_forgery"
+  }
+}

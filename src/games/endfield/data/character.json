@@ -1,0 +1,16 @@
+{
+  "example_character": {
+    "game_id": 5210101001,
+    "display_name": "Example Character",
+    "element": "unknown",
+    "weapon": "unknown",
+    "icon": "",
+    "rarity": 5,
+    "common": "example_common",
+    "forgery": "example_forgery",
+    "ascension": 51301001,
+    "boss": 51401001,
+    "weeklyBoss": 51501001,
+    "bonus_stats": []
+  }
+}

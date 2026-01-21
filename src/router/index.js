@@ -5,6 +5,7 @@ import CharacterView from '../views/CharacterView.vue';
 import InventoryView from '../views/InventoryView.vue';
 import WeaponView from '../views/WeaponView.vue';
 import SettingsView from '../views/SettingsView.vue';
+import EndfieldDataView from '../views/EndfieldDataView.vue';
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     path: '/settings',
     name: 'settings',
     component: SettingsView,
+  },
+  {
+    path: '/endfield-data',
+    name: 'endfield-data',
+    component: EndfieldDataView,
   },
 ];
 
