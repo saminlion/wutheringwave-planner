@@ -32,7 +32,7 @@ export const processMaterials = (materials, key, value, characterInfo) => {
         let gameId = characterInfo[key];
 
         if (key == 'credit') {
-            gameId = 41001001;
+            gameId = 4100000001;
         }
 
         const material = findMaterial(key, gameId, null, true);

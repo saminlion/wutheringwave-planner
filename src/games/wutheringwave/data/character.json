@@ -1,1510 +1,660 @@
 {
-    "sanhua": {
-        "game_id": 4210101021,
-        "display_name": "Sanhua",
-        "element": "glacio",
-        "weapon": "sword",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/sanhua-icon.webp",
-        "rarity": 4,
-        "common": "whisperin_core",
-        "forgery": "metallic_drip",
-        "ascension": 41301007,
-        "boss": 41401008,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            }
-        ]
-    },
-    "baizhi": {
-        "game_id": 4210501021,
-        "display_name": "Baizhi",
-        "element": "glacio",
-        "weapon": "rectifier",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/baizhi-icon.webp",
-        "rarity": 4,
-        "common": "howler_core",
-        "forgery": "helix",
-        "ascension": 41301003,
-        "boss": 41401008,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "healing_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "hp",
-                "value": 0.018
-            },
-            {
-                "stat": "hp",
-                "value": 0.018
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "hp",
-                "value": 0.042
-            },
-            {
-                "stat": "hp",
-                "value": 0.042
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "chixia": {
-        "game_id": 4220301021,
-        "display_name": "Chixia",
-        "element": "fusion",
-        "weapon": "pistols",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/chixia-icon.webp",
-        "rarity": 4,
-        "common": "whisperin_core",
-        "forgery": "phlogiston",
-        "ascension": 41301005,
-        "boss": 41401005,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "mortefi": {
-        "game_id": 4220301011,
-        "display_name": "Mortefi",
-        "element": "fusion",
-        "weapon": "pistols",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/mortefi-icon.webp",
-        "rarity": 4,
-        "common": "whisperin_core",
-        "forgery": "phlogiston",
-        "ascension": 41301006,
-        "boss": 41401005,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "yuanwu": {
-        "game_id": 4240301011,
-        "display_name": "Yuanwu",
-        "element": "electro",
-        "weapon": "gauntlets",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/yuanwu-icon.webp",
-        "rarity": 4,
-        "common": "ring",
-        "forgery": "cadence",
-        "ascension": 41301002,
-        "boss": 41401010,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "electro_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "def",
-                "value": 0.023
-            },
-            {
-                "stat": "def",
-                "value": 0.023
-            },
-            {
-                "stat": "electro_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "electro_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "def",
-                "value": 0.053
-            },
-            {
-                "stat": "def",
-                "value": 0.053
-            },
-            {
-                "stat": "electro_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "yangyang": {
-        "game_id": 4230101021,
-        "display_name": "Yangyang",
-        "element": "aero",
-        "weapon": "sword",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/yangyang-icon.webp",
-        "rarity": 4,
-        "common": "ring",
-        "forgery": "metallic_drip",
-        "ascension": 41301007,
-        "boss": 41401006,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            }
-        ]
-    },
-    "aalto": {
-        "game_id": 4230401011,
-        "display_name": "Aalto",
-        "element": "aero",
-        "weapon": "pistols",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/aalto-icon.webp",
-        "rarity": 4,
-        "common": "howler_core",
-        "forgery": "phlogiston",
-        "ascension": 41301007,
-        "boss": 41401006,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "aero_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "danjin": {
-        "game_id": 4250101021,
-        "display_name": "Danjin",
-        "element": "havoc",
-        "weapon": "sword",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/danjin-icon.webp",
-        "rarity": 4,
-        "common": "ring",
-        "forgery": "metallic_drip",
-        "ascension": 41301005,
-        "boss": 41401002,
-        "weeklyBoss": 41501003,
-        "bonus_stats": [
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "taoqi": {
-        "game_id": 4250201021,
-        "display_name": "Taoqi",
-        "element": "havoc",
-        "weapon": "broadblade",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/taoqi-icon.webp",
-        "rarity": 4,
-        "common": "howler_core",
-        "forgery": "waveworn_residue",
-        "ascension": 41301001,
-        "boss": 41401007,
-        "weeklyBoss": 41501003,
-        "bonus_stats": [
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "def",
-                "value": 0.023
-            },
-            {
-                "stat": "def",
-                "value": 0.023
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "def",
-                "value": 0.053
-            },
-            {
-                "stat": "def",
-                "value": 0.053
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "youhu": {
-        "game_id": 4210301021,
-        "display_name": "Youhu",
-        "element": "glacio",
-        "weapon": "gauntlets",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/youhu-icon.webp",
-        "rarity": 4,
-        "common": "ring",
-        "forgery": "cadence",
-        "ascension": 41301008,
-        "boss": 41401011,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            }
-        ]
-    },
-    "Lumi": {
-        "game_id": 4240201021,
-        "display_name": "Lumi",
-        "element": "electro",
-        "weapon": "broadblade",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_30_UI.webp",
-        "rarity": 4,
-        "common": "howler_core",
-        "forgery": "waveworn_residue",
-        "ascension": 41301002,
-        "boss": 41401003,
-        "weeklyBoss": 41501004,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-    "rover_havoc": {
-        "game_id": 4250102011,
-        "display_name": "Rover (Havoc)",
-        "element": "havoc",
-        "weapon": "sword",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/rover-male-icon.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "metallic_drip",
-        "ascension": 41301004,
-        "boss": 41401001,
-        "weeklyBoss": 41501003,
-        "bonus_stats": [
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "rover_spectro": {
-        "game_id": 4260102021,
-        "display_name": "Rover (Spectro)",
-        "element": "spectro",
-        "weapon": "sword",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_5_UI.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "metallic_drip",
-        "ascension": 41301004,
-        "boss": 41401001,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "spectro_dmg_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "encore": {
-        "game_id": 4220502021,
-        "display_name": "Encore",
-        "element": "fusion",
-        "weapon": "rectifier",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/encore-icon.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "helix",
-        "ascension": 41301004,
-        "boss": 41401005,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "fusion_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            }
-        ]
-    },
-    "lingyang": {
-        "game_id": 4210402011,
-        "display_name": "Lingyang",
-        "element": "glacio",
-        "weapon": "gauntlets",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/lingyang-icon.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "cadence",
-        "ascension": 41301006,
-        "boss": 41401008,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "glacio_dmg_bonus",
-                "value": 0.018
-            }
-        ]
-    },
-    "calcharo": {
-        "game_id": 4240202011,
-        "display_name": "Calcharo",
-        "element": "electro",
-        "weapon": "broadblade",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/calcharo-icon.webp",
-        "rarity": 5,
-        "common": "ring",
-        "forgery": "waveworn_residue",
-        "ascension": 41301001,
-        "boss": 41401003,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            }
-        ]
-    },
-    "jianxin": {
-        "game_id": 4230302021,
-        "display_name": "Jianxin",
-        "element": "aero",
-        "weapon": "gauntlets",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/jianxin-icon.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "cadence",
-        "ascension": 41301003,
-        "boss": 41401006,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            }
-        ]
-    },
-    "verina": {
-        "game_id": 4260502021,
-        "display_name": "Verina",
-        "element": "spectro",
-        "weapon": "rectifier",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/verina-icon.webp",
-        "rarity": 5,
-        "common": "howler_core",
-        "forgery": "helix",
-        "ascension": 41301005,
-        "boss": 41401004,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "healing_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.018
-            }
-        ]
-    },
-    "jiyan": {
-        "game_id": 4230202011,
-        "display_name": "Jiyan",
-        "element": "aero",
-        "weapon": "broadblade",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/jiyan-icon.webp",
-        "rarity": 5,
-        "common": "howler_core",
-        "forgery": "waveworn_residue",
-        "ascension": 41301004,
-        "boss": 41401006,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            }
-        ]
-    },
-    "yinlin": {
-        "game_id": 4240502021,
-        "display_name": "Yinlin",
-        "element": "electro",
-        "weapon": "rectifier",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/yinlin-icon.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "helix",
-        "ascension": 41301006,
-        "boss": 41401009,
-        "weeklyBoss": 41501003,
-        "bonus_stats": [
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            }
-        ]
-    },
-    "jinhsi": {
-        "game_id": 4260202011,
-        "display_name": "Jinhsi",
-        "element": "spectro",
-        "weapon": "broadblade",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/jinhsi-icon.webp",
-        "rarity": 5,
-        "common": "howler_core",
-        "forgery": "waveworn_residue",
-        "ascension": 41301010,
-        "boss": 41401004,
-        "weeklyBoss": 41501004,
-        "bonus_stats": [
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            }
-        ]
-    },
-    "changli": {
-        "game_id": 4220102021,
-        "display_name": "Changli",
-        "element": "fusion",
-        "weapon": "sword",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/changli-icon.webp",
-        "rarity": 5,
-        "common": "ring",
-        "forgery": "metallic_drip",
-        "ascension": 41301009,
-        "boss": 41401005,
-        "weeklyBoss": 41501004,
-        "bonus_stats": [
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            }
-        ]
-    },
-    "xiangli_yao": {
-        "game_id": 4240302011,
-        "display_name": "Xiangli Yao",
-        "element": "electro",
-        "weapon": "gauntlets",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/xiangli-yao-icon.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "cadence",
-        "ascension": 41301008,
-        "boss": 41401010,
-        "weeklyBoss": 41501002,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-    "zhezhi": {
-        "game_id": 4210502021,
-        "display_name": "Zhezhi",
-        "element": "glacio",
-        "weapon": "rectifier",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/zhezhi-icon.webp",
-        "rarity": 5,
-        "common": "howler_core",
-        "forgery": "helix",
-        "ascension": 41301003,
-        "boss": 41401008,
-        "weeklyBoss": 41501001,
-        "bonus_stats": [
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.012
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_rate",
-                "value": 0.028
-            }
-        ]
-    },
-    "shorekeeper": {
-        "game_id": 4260502022,
-        "display_name": "Shorekeeper",
-        "element": "spectro",
-        "weapon": "rectifier",
-        "icon": "https:\/\/static.dotgg.gg\/wuthering-waves\/characters\/shorekeeper-icon.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "helix",
-        "ascension": 41301011,
-        "boss": 41401011,
-        "weeklyBoss": 41501004,
-        "bonus_stats": [
-            {
-                "stat": "healing_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "hp",
-                "value": 0.018
-            },
-            {
-                "stat": "hp",
-                "value": 0.018
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "hp",
-                "value": 0.042
-            },
-            {
-                "stat": "hp",
-                "value": 0.042
-            },
-            {
-                "stat": "healing_bonus",
-                "value": 0.042
-            }
-        ]
-    },
-    "Camellya": {
-        "game_id": 4250102021,
-        "display_name": "Camellya",
-        "element": "havoc",
-        "weapon": "sword",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_29_UI.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "metallic_drip",
-        "ascension": 41301011,
-        "boss": 41401011,
-        "weeklyBoss": 41501003,
-        "bonus_stats": [
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.018
-            },
-            {
-                "stat": "havoc_dmg_bonus",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            }
-        ]
-    },
-    "Carlotta": {
-        "game_id": 4210402021,
-        "display_name": "Carlotta",
-        "element": "glacio",
-        "weapon": "pistols",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_UI.webp",
-        "rarity": 5,
-        "common": "polyphonic",
-        "forgery": "phlogiston",
-        "ascension": 41301012,
-        "boss": 41402001,
-        "weeklyBoss": 41502001,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-    "Roccia": {
-        "game_id": 4250302021,
-        "display_name": "Roccia",
-        "element": "havoc",
-        "weapon": "gauntlets",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.webp",
-        "rarity": 5,
-        "common": "residuum",
-        "forgery": "cadence",
-        "ascension": 41301013,
-        "boss": 41402002,
-        "weeklyBoss": 41502001,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-
-    "Phoebe": {
-        "game_id": 4260502023,
-        "display_name": "Phoebe",
-        "element": "spectro",
-        "weapon": "rectifier",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "helix",
-        "ascension": 41301013,
-        "boss": 41402002,
-        "weeklyBoss": 41501004,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-
-    "Brant": {
-        "game_id": 4220102011,
-        "display_name": "Brant",
-        "element": "fusion",
-        "weapon": "sword",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.webp",
-        "rarity": 5,
-        "common": "residuum",
-        "forgery": "metallic_drip",
-        "ascension": 41301014,
-        "boss": 41402003,
-        "weeklyBoss": 41502001,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-
-    "Cantarella": {
-        "game_id": 4250502021,
-        "display_name": "Cantarella",
-        "element": "havoc",
-        "weapon": "rectifier",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.webp",
-        "rarity": 5,
-        "common": "polyphonic",
-        "forgery": "helix",
-        "ascension": 41301015,
-        "boss": 41402002,
-        "weeklyBoss": 41501004,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    },
-
-    "Rover_Aero": {
-        "game_id": 4230102030,
-        "display_name": "Rover (Aero)",
-        "element": "aero",
-        "weapon": "sword",
-        "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.webp",
-        "rarity": 5,
-        "common": "whisperin_core",
-        "forgery": "metallic_drip",
-        "ascension": 41301004,
-        "boss": 41401001,
-        "weeklyBoss": 41501004,
-        "bonus_stats": [
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "atk",
-                "value": 0.018
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.024
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "atk",
-                "value": 0.042
-            },
-            {
-                "stat": "crit_dmg",
-                "value": 0.056
-            }
-        ]
-    }
+  "sanhua": {
+    "game_id": 4240100001,
+    "display_name": "Sanhua",
+    "element": "glacio",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_UI.webp",
+    "rarity": 4,
+    "common": "whisperin_core",
+    "forgery": "metallic_drip",
+    "ascension": 4130010007,
+    "boss": 4140010008,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "baizhi": {
+    "game_id": 4240100002,
+    "display_name": "Baizhi",
+    "element": "glacio",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_6_UI.webp",
+    "rarity": 4,
+    "common": "howler_core",
+    "forgery": "helix",
+    "ascension": 4130010003,
+    "boss": 4140010008,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "lingyang": {
+    "game_id": 4250100003,
+    "display_name": "Lingyang",
+    "element": "glacio",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_14_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "cadence",
+    "ascension": 4130010006,
+    "boss": 4140010008,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "zhezhi": {
+    "game_id": 4250100004,
+    "display_name": "Zhezhi",
+    "element": "glacio",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_27_UI.webp",
+    "rarity": 5,
+    "common": "howler_core",
+    "forgery": "helix",
+    "ascension": 4130010003,
+    "boss": 4140010008,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "youhu": {
+    "game_id": 4240100005,
+    "display_name": "Youhu",
+    "element": "glacio",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_31_UI.webp",
+    "rarity": 4,
+    "common": "ring",
+    "forgery": "cadence",
+    "ascension": 4130010008,
+    "boss": 4140010011,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "carlotta": {
+    "game_id": 4250100006,
+    "display_name": "Carlotta",
+    "element": "glacio",
+    "weapon": "pistol",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_UI.webp",
+    "rarity": 5,
+    "common": "polygon",
+    "forgery": "phlogiston",
+    "ascension": 4130010013,
+    "boss": 4140020013,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "chixia": {
+    "game_id": 4240200007,
+    "display_name": "Chixia",
+    "element": "fusion",
+    "weapon": "pistol",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_2_UI.webp",
+    "rarity": 4,
+    "common": "whisperin_core",
+    "forgery": "phlogiston",
+    "ascension": 4130010005,
+    "boss": 4140010005,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "encore": {
+    "game_id": 4250200008,
+    "display_name": "Encore",
+    "element": "fusion",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_8_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "helix",
+    "ascension": 4130010004,
+    "boss": 4140010005,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "mortefi": {
+    "game_id": 4240200009,
+    "display_name": "Mortefi",
+    "element": "fusion",
+    "weapon": "pistol",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_13_UI.webp",
+    "rarity": 4,
+    "common": "whisperin_core",
+    "forgery": "phlogiston",
+    "ascension": 4130010006,
+    "boss": 4140010005,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "changli": {
+    "game_id": 4250200010,
+    "display_name": "Changli",
+    "element": "fusion",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_UI.webp",
+    "rarity": 5,
+    "common": "ring",
+    "forgery": "metallic_drip",
+    "ascension": 4130010009,
+    "boss": 4140010005,
+    "weeklyBoss": 4150010004,
+    "bonus_stats": []
+  },
+  "calcharo": {
+    "game_id": 4250400011,
+    "display_name": "Calcharo",
+    "element": "electro",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_18_UI.webp",
+    "rarity": 5,
+    "common": "ring",
+    "forgery": "residue",
+    "ascension": 4130010001,
+    "boss": 4140010003,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "yinlin": {
+    "game_id": 4250400012,
+    "display_name": "Yinlin",
+    "element": "electro",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_17_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "helix",
+    "ascension": 4130010006,
+    "boss": 4140010009,
+    "weeklyBoss": 4150010003,
+    "bonus_stats": []
+  },
+  "yuanwu": {
+    "game_id": 4240400013,
+    "display_name": "Yuanwu",
+    "element": "electro",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_15_UI.webp",
+    "rarity": 4,
+    "common": "ring",
+    "forgery": "cadence",
+    "ascension": 4130010002,
+    "boss": 4140010010,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "jinshi": {
+    "game_id": 4250600014,
+    "display_name": "Jinshi",
+    "element": "spectro",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_24_UI.webp",
+    "rarity": 5,
+    "common": "howler_core",
+    "forgery": "residue",
+    "ascension": 4130010010,
+    "boss": 4140010004,
+    "weeklyBoss": 4150010004,
+    "bonus_stats": []
+  },
+  "xiangli_yao": {
+    "game_id": 4250400015,
+    "display_name": "Xiangli Yao",
+    "element": "electro",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_25_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "cadence",
+    "ascension": 4130010008,
+    "boss": 4140010010,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "yangyang": {
+    "game_id": 4240300016,
+    "display_name": "Yangyang",
+    "element": "aero",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_1_UI.webp",
+    "rarity": 4,
+    "common": "ring",
+    "forgery": "metallic_drip",
+    "ascension": 4130010007,
+    "boss": 4140010006,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "aalto": {
+    "game_id": 4240300017,
+    "display_name": "Aalto",
+    "element": "aero",
+    "weapon": "pistol",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_12_UI.webp",
+    "rarity": 4,
+    "common": "howler_core",
+    "forgery": "phlogiston",
+    "ascension": 4130010007,
+    "boss": 4140010006,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "jiyan": {
+    "game_id": 4250300018,
+    "display_name": "Jiyan",
+    "element": "aero",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_11_UI.webp",
+    "rarity": 5,
+    "common": "howler_core",
+    "forgery": "residue",
+    "ascension": 4130010004,
+    "boss": 4140010006,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "jianxin": {
+    "game_id": 4250300019,
+    "display_name": "Jianxin",
+    "element": "aero",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "cadence",
+    "ascension": 4130010003,
+    "boss": 4140010006,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "rover_spectro": {
+    "game_id": 4250600020,
+    "display_name": "Rover (Spectro)",
+    "element": "spectro",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "metallic_drip",
+    "ascension": 4130010004,
+    "boss": 4140010001,
+    "weeklyBoss": 4150010002,
+    "bonus_stats": []
+  },
+  "rover_havoc": {
+    "game_id": 4250500021,
+    "display_name": "Rover (Havoc)",
+    "element": "havoc",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "metallic_drip",
+    "ascension": 4130010004,
+    "boss": 4140010001,
+    "weeklyBoss": 4150010003,
+    "bonus_stats": []
+  },
+  "rover_aero": {
+    "game_id": 4250300022,
+    "display_name": "Rover (Aero)",
+    "element": "aero",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_4_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "metallic_drip",
+    "ascension": 4130010004,
+    "boss": 4140010001,
+    "weeklyBoss": 4150020006,
+    "bonus_stats": []
+  },
+  "verina": {
+    "game_id": 4250600023,
+    "display_name": "Verina",
+    "element": "spectro",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_3_UI.webp",
+    "rarity": 5,
+    "common": "howler_core",
+    "forgery": "helix",
+    "ascension": 4130010005,
+    "boss": 4140010004,
+    "weeklyBoss": 4150010001,
+    "bonus_stats": []
+  },
+  "shorekeeper": {
+    "game_id": 4250600024,
+    "display_name": "Shorekeeper",
+    "element": "spectro",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_28_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "helix",
+    "ascension": 4130010011,
+    "boss": 4140010011,
+    "weeklyBoss": 4150010004,
+    "bonus_stats": []
+  },
+  "taoqi": {
+    "game_id": 4240500025,
+    "display_name": "Taoqi",
+    "element": "havoc",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_9_UI.webp",
+    "rarity": 4,
+    "common": "howler_core",
+    "forgery": "residue",
+    "ascension": 4130010001,
+    "boss": 4140010007,
+    "weeklyBoss": 4150010003,
+    "bonus_stats": []
+  },
+  "danjin": {
+    "game_id": 4240500026,
+    "display_name": "Danjin",
+    "element": "havoc",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_10_UI.webp",
+    "rarity": 4,
+    "common": "ring",
+    "forgery": "metallic_drip",
+    "ascension": 4130010005,
+    "boss": 4140010002,
+    "weeklyBoss": 4150010003,
+    "bonus_stats": []
+  },
+  "camellya": {
+    "game_id": 4250500027,
+    "display_name": "Camellya",
+    "element": "havoc",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_29_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "metallic_drip",
+    "ascension": 4130010011,
+    "boss": 4140010011,
+    "weeklyBoss": 4150010003,
+    "bonus_stats": []
+  },
+  "lumi": {
+    "game_id": 4240500028,
+    "display_name": "Lumi",
+    "element": "havoc",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_30_UI.webp",
+    "rarity": 4,
+    "common": "howler_core",
+    "forgery": "residue",
+    "ascension": 4130010002,
+    "boss": 4140010003,
+    "weeklyBoss": 4150010004,
+    "bonus_stats": []
+  },
+  "roccia": {
+    "game_id": 4250500029,
+    "display_name": "Roccia",
+    "element": "havoc",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_33_UI.webp",
+    "rarity": 5,
+    "common": "residuum",
+    "forgery": "cadence",
+    "ascension": 4130010014,
+    "boss": 4140020012,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "phoebe": {
+    "game_id": 4250600030,
+    "display_name": "Phoebe",
+    "element": "spectro",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "helix",
+    "ascension": 4130010014,
+    "boss": 4140020012,
+    "weeklyBoss": 4150010004,
+    "bonus_stats": []
+  },
+  "brant": {
+    "game_id": 4250200031,
+    "display_name": "Brant",
+    "element": "fusion",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.webp",
+    "rarity": 5,
+    "common": "residuum",
+    "forgery": "metallic_drip",
+    "ascension": 4130010012,
+    "boss": 4140020014,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "cantarella": {
+    "game_id": 4250500032,
+    "display_name": "Cantarella",
+    "element": "havoc",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_34_UI.webp",
+    "rarity": 5,
+    "common": "polygon",
+    "forgery": "helix",
+    "ascension": 4130010015,
+    "boss": 4140020012,
+    "weeklyBoss": 4150020006,
+    "bonus_stats": []
+  },
+  "zani": {
+    "game_id": 4250600033,
+    "display_name": "Zani",
+    "element": "spectro",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_38_UI.webp",
+    "rarity": 5,
+    "common": "polygon",
+    "forgery": "cadence",
+    "ascension": 4130010013,
+    "boss": 4140020013,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "ciaccona": {
+    "game_id": 4250300034,
+    "display_name": "Ciaccona",
+    "element": "aero",
+    "weapon": "pistol",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_37_UI.webp",
+    "rarity": 5,
+    "common": "residuum",
+    "forgery": "phlogiston",
+    "ascension": 4130010012,
+    "boss": 4140020014,
+    "weeklyBoss": 4150020006,
+    "bonus_stats": []
+  },
+  "lupa": {
+    "game_id": 4250200035,
+    "display_name": "Lupa",
+    "element": "fusion",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_46_UI.webp",
+    "rarity": 5,
+    "common": "howler_core",
+    "forgery": "residue",
+    "ascension": 4130010017,
+    "boss": 4140020015,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "cartethyia": {
+    "game_id": 4250300036,
+    "display_name": "Cartethyia",
+    "element": "aero",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_40_UI.webp",
+    "rarity": 5,
+    "common": "residuum",
+    "forgery": "metallic_drip",
+    "ascension": 4130010016,
+    "boss": 4140020015,
+    "weeklyBoss": 4150020006,
+    "bonus_stats": []
+  },
+  "phrolova": {
+    "game_id": 4250500037,
+    "display_name": "Phrolova",
+    "element": "havoc",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_41_UI.webp",
+    "rarity": 5,
+    "common": "polygon",
+    "forgery": "helix",
+    "ascension": 4130010018,
+    "boss": 4140020016,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "augusta": {
+    "game_id": 4250400038,
+    "display_name": "Augusta",
+    "element": "electro",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_51_UI.webp",
+    "rarity": 5,
+    "common": "residuum",
+    "forgery": "residue",
+    "ascension": 4130010021,
+    "boss": 4140020017,
+    "weeklyBoss": 4150020006,
+    "bonus_stats": []
+  },
+  "iuno": {
+    "game_id": 4250300039,
+    "display_name": "Iuno",
+    "element": "aero",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_48_UI.webp",
+    "rarity": 5,
+    "common": "polygon",
+    "forgery": "cadence",
+    "ascension": 4130010020,
+    "boss": 4140020018,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "galbrena": {
+    "game_id": 4250200040,
+    "display_name": "Galbrena",
+    "element": "fusion",
+    "weapon": "pistol",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_55_UI.webp",
+    "rarity": 5,
+    "common": "residuum",
+    "forgery": "phlogiston",
+    "ascension": 4130010019,
+    "boss": 4140020017,
+    "weeklyBoss": 4150020007,
+    "bonus_stats": []
+  },
+  "qiuyuan": {
+    "game_id": 4250300041,
+    "display_name": "Qiuyuan",
+    "element": "aero",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_56_UI.webp",
+    "rarity": 5,
+    "common": "whisperin_core",
+    "forgery": "metallic_drip",
+    "ascension": 4130010007,
+    "boss": 4140020016,
+    "weeklyBoss": 4150020007,
+    "bonus_stats": []
+  },
+  "chisa": {
+    "game_id": 4250500042,
+    "display_name": "Chisa",
+    "element": "havoc",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_57_UI.webp",
+    "rarity": 5,
+    "common": "polygon",
+    "forgery": "residue",
+    "ascension": 4130010022,
+    "boss": 4140020018,
+    "weeklyBoss": 4150020006,
+    "bonus_stats": []
+  },
+  "buling": {
+    "game_id": 4240400042,
+    "display_name": "Buling",
+    "element": "electro",
+    "weapon": "rectifier",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_58_UI.webp",
+    "rarity": 4,
+    "common": "whisperin_core",
+    "forgery": "helix",
+    "ascension": 4130010004,
+    "boss": 4140020017,
+    "weeklyBoss": 4150020007,
+    "bonus_stats": []
+  },
+  "lynae": {
+    "game_id": 4250600043,
+    "display_name": "Lynae",
+    "element": "spectro",
+    "weapon": "pistol",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_60_UI.webp",
+    "rarity": 5,
+    "common": "exoswarm",
+    "forgery": "combustor",
+    "ascension": 4130010024,
+    "boss": 4140030019,
+    "weeklyBoss": 4150010003,
+    "bonus_stats": []
+  },
+  "mornye": {
+    "game_id": 4250200044,
+    "display_name": "Mornye",
+    "element": "fusion",
+    "weapon": "broadblade",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_61_UI.webp",
+    "rarity": 5,
+    "common": "mech",
+    "forgery": "crystal",
+    "ascension": 4130010023,
+    "boss": 4140030020,
+    "weeklyBoss": 4150020005,
+    "bonus_stats": []
+  },
+  "aemeath": {
+    "game_id": 4250200045,
+    "display_name": "Aemeath",
+    "element": "fusion",
+    "weapon": "sword",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_53_UI.webp",
+    "rarity": 5,
+    "common": "exoswarm",
+    "forgery": "polarizer",
+    "ascension": "",
+    "boss": "",
+    "weeklyBoss": "",
+    "bonus_stats": []
+  },
+  "luuk": {
+    "game_id": 4250600046,
+    "display_name": "Luuk",
+    "element": "spectro",
+    "weapon": "gauntlets",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_54_UI.webp",
+    "rarity": 5,
+    "common": "pendant",
+    "forgery": "shard",
+    "ascension": "",
+    "boss": "",
+    "weeklyBoss": "",
+    "bonus_stats": []
+  }
 }
