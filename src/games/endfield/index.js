@@ -19,7 +19,7 @@ const endfieldPlugin = {
   version: '1.0.0',
 
   // Game configuration
-  ...config,
+  config,
 
   // Game data
   materials: {

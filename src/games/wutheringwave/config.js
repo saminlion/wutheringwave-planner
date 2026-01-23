@@ -16,6 +16,24 @@ export const wutheringWaveConfig = {
   name: 'Wuthering Waves',
   shortName: 'WW',
   version: '1.0.0',
+
+  // Stamina system configuration
+  stamina: {
+    name: 'Waveplates',
+    dailyLimit: 240,
+    // Farming rates per category: drops per run, stamina cost per run
+    farmingRates: {
+      credit: { drops: 84000, stamina: 40 },
+      player_exp: { drops: 76000, stamina: 40 },
+      weapon_exp: { drops: 76000, stamina: 40 },
+      common: { drops: 0, stamina: 0, unobtainable: true },
+      ascension: { drops: 0, stamina: 0, unobtainable: true },
+      forgery: { drops: 51, stamina: 40 },
+      boss: { drops: 4.3, stamina: 60 },
+      weeklyBoss: { drops: 3, stamina: 60 },
+    },
+  },
+
   materials: {
     database: materials,
     tiers: tieredMaterials,

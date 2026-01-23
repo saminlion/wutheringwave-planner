@@ -27,6 +27,7 @@ import { usePlannerStore } from './store/planner.js';
 import { useInventoryStore } from './store/inventory.js';
 import { useGameRegistryStore } from './store/gameRegistry.js';
 import GameSelector from './components/common/GameSelector.vue';
+import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
@@ -37,7 +38,7 @@ onMounted(() => {
   const gameId = gameRegistry.currentGameId || 'wutheringwave';
   plannerStore.hydrate();
   inventoryStore.hydrate(gameId);
-  console.log(`[App] Data loaded for game: ${gameId}`);
+  logger.debug(`[App] Data loaded for game: ${gameId}`);
 });
 </script>
 

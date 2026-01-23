@@ -11,7 +11,24 @@ export default {
     MAX_LEVEL: 90,
     MAX_SKILL_LEVEL: 10,
     SYNTHESIS_RATIO: null, // Endfield uses recipe-based synthesis (not simple 3:1)
-    DAILY_STAMINA: 240,
+  },
+
+  // Stamina system configuration
+  stamina: {
+    name: 'Sanity',
+    dailyLimit: 240,
+    // Farming rates per category: drops per run, stamina cost per run
+    // TODO: Update with actual Endfield values when available
+    farmingRates: {
+      credit: { drops: 80000, stamina: 40 },
+      player_exp: { drops: 70000, stamina: 40 },
+      weapon_exp: { drops: 70000, stamina: 40 },
+      common: { drops: 0, stamina: 0, unobtainable: true },
+      ascension: { drops: 0, stamina: 0, unobtainable: true },
+      forgery: { drops: 50, stamina: 40 },
+      boss: { drops: 4, stamina: 60 },
+      weeklyBoss: { drops: 3, stamina: 60 },
+    },
   },
 
   // Material categories specific to Endfield

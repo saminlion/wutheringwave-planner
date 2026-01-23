@@ -134,10 +134,21 @@ import {
     getMaterialFieldById
 } from "@/services/materialHelper/index";
 import { useInventoryStore } from "@/store/inventory";
+import { useGameRegistryStore } from "@/store/gameRegistry";
 import { playerExpMaterial as player_exp_material } from "@/games/wutheringwave";
 import logger from '@/utils/logger';
 
 const inventoryStore = useInventoryStore();
+const gameRegistry = useGameRegistryStore();
+
+// Get stamina config from current game
+const getStaminaConfig = () => {
+    const currentGame = gameRegistry.currentGame;
+    return currentGame?.config?.stamina || {
+        dailyLimit: 240,
+        farmingRates: {}
+    };
+};
 
 const runCache = ref({}); // Cache for runs
 const dateCache = ref({}); // Cache for dates
@@ -333,48 +344,26 @@ const updateTotalValues = () => {
     totalValues.totalDays = totalDays;
 };
 
-// Calculate drops and resin values per category
+// Calculate drops and stamina values per category (game-agnostic)
 const GetRateValueForCategory = (data) => {
     let drops = 0, resin = 0, unobtainable = false, categoryName = "";
+    const staminaConfig = getStaminaConfig();
+    const farmingRates = staminaConfig.farmingRates || {};
 
-    // `categorizedMaterials`??諛곗뿴 ?뺥깭濡???λ맖
     categorizedMaterials.value.forEach((material) => {
-        // subCategory 留ㅼ묶 ?뺤씤
-        //console.log(`[Debug] Material Value: ${JSON.stringify(material)} / Data Value: ${JSON.stringify(data)}`);
         if (material.name === data.name) {
-            switch (material.name) {
-                case "player_exp":
-                    drops = 76000; resin = 40;
-                    break;
-                case "weapon_exp":
-                    drops = 76000; resin = 40;
-                    break;
-                case "common":
-                    unobtainable = true;
-                    break;
-                case "ascension":
-                    unobtainable = true;
-                    break;
-                case "credit":
-                    drops = 84000; resin = 40;
-                    break;
-                case "forgery":
-                    drops = 51; resin = 40;
-                    break;
-                case "boss":
-                    drops = 4.3; resin = 60;
-                    break;
-                case "weeklyBoss":
-                    drops = 3; resin = 60;
-                    break;
-                default:
-                    unobtainable = true;
+            const rate = farmingRates[material.name];
+            if (rate) {
+                drops = rate.drops || 0;
+                resin = rate.stamina || 0;
+                unobtainable = rate.unobtainable || false;
+            } else {
+                unobtainable = true;
             }
             categoryName = material.name;
         }
     });
 
-    //console.log(`[Debug] Drops: ${drops} / Resin: ${resin} / CategoryName: ${categoryName}`);
 
     return { drops, resin, unobtainable, categoryName };
 };
@@ -391,13 +380,11 @@ const CalculateEstimatedRun = (data) => {
 
     let runs = 0;
 
-    //console.log(`[Debug] Data: ${JSON.stringify(data)}`);
 
         // Iterate subCategories
     Object.entries(data.subCategories).forEach(([subcategoryName, subcategoryData]) => {
         if (!unobtainable) {
 
-          //  console.log('category Name: ', categoryName);
             if (categoryName === "forgery" || categoryName === "common") {
                 const missing = [0, 0, 0, 0]; // rarity蹂??꾩쟻 ?꾩슂?됱쓣 ??ν븯??諛곗뿴
 
@@ -423,14 +410,11 @@ const CalculateEstimatedRun = (data) => {
 
 
                 subcategoryData.task.forEach((task) => {
-                 //   console.log(`[Debug] Data Check Task: ${task.need}`);
 
                     missingCalExp = task.need;
 
 
                     Object.entries(player_exp_material).forEach(([id, exp]) => {
-                    //    console.log(`[Debug] Data Check id: ${id}`);
-                   //     console.log(`[Debug] Data Check qty: ${inventoryStore.getMaterialQuantity(id)}`);
 
                         const exp_value = inventoryStore.getMaterialQuantity(id) * exp;
 
@@ -441,11 +425,10 @@ const CalculateEstimatedRun = (data) => {
 
                 const missingTotalExp = Math.max(0, (missingCalExp - currentTotalExp)); // 遺議깊븳 珥?寃쏀뿕移?怨꾩궛
 
-              //  console.log(`[Debug] Missing Total Exp: ${missingTotalExp} / Missing Cal Exp: ${missingCalExp} / Current Total Exp: ${currentTotalExp}`);
 
                 // Step 3: ?꾩슂??????怨꾩궛
                 if (drops <= 0) {
-                    console.error("Invalid drops value:", drops);
+                    logger.error("Invalid drops value:", drops);
                     runs = 0;
                 } else {
                     runs = Math.ceil(missingTotalExp / drops);
@@ -467,7 +450,6 @@ const CalculateEstimatedRun = (data) => {
 
                 runs = Math.ceil(currentNeed / drops);
 
-            //    console.log(`[Debug] Runs: ${runs}, Current Need: ${currentNeed}, Drops: ${drops}`);
             }
         }
 
@@ -477,7 +459,6 @@ const CalculateEstimatedRun = (data) => {
 
     runCache[data.subcategory] = calculatedRuns;
 
-   // console.log(`[Debug] calculatedRuns: ${calculatedRuns}`);
 
     return calculatedRuns;
 };
@@ -521,7 +502,8 @@ const CalculateEstimatedDate = (data) => {
 
 // Calculate total
 const CalculateTotalResinAndDate = () => {
-    const DAILY_RESIN_LIMIT = 240; // ?섎（??理쒕? ?ъ슜?????덈뒗 ?덉쭊
+    const staminaConfig = getStaminaConfig();
+    const dailyLimit = staminaConfig.dailyLimit || 240;
     let totalResin = 0;
 
         // Iterate categorizedMaterials
@@ -540,7 +522,7 @@ const CalculateTotalResinAndDate = () => {
     });
 
         // Calculate days from total resin
-    const totalDays = Math.ceil(totalResin / DAILY_RESIN_LIMIT);
+    const totalDays = Math.ceil(totalResin / dailyLimit);
 
     return { totalResin, totalDays };
 };
@@ -548,11 +530,10 @@ const CalculateTotalResinAndDate = () => {
 
 onMounted(() => {
     if (!props.materials || !Object.keys(props.materials).length) {
-        console.error("[Error] Materials data is not ready:", props.materials);
+        logger.error("[Error] Materials data is not ready:", props.materials);
         return;
     }
 
-  //  console.log(`[Debug] Get materials: ${JSON.stringify(props.materials)}`);
 
         // Group by category
     //groupMaterialsByCategoryAndSubCategory(Object.values(props.materials));

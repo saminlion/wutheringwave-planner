@@ -53,9 +53,9 @@ Last Updated: 2026-01-23
 **Reference:** `LocalOnly/PHASE1_IMPLEMENTATION_GUIDE.md`
 
 **Tasks (Lower Priority):**
-- [ ] Replace all `console.log` with `logger.debug` throughout codebase
-- [ ] Replace all `console.warn` with `logger.warn`
-- [ ] Replace all `console.error` with `logger.error`
+- [x] Replace all `console.log` with `logger.debug` throughout codebase
+- [x] Replace all `console.warn` with `logger.warn`
+- [x] Replace all `console.error` with `logger.error`
 - [ ] Add `LoadingSpinner` to views with async operations (if needed)
 - [ ] Wrap async operations with `useLoading` composable (if needed)
 - [ ] Replace direct localStorage calls with storage utilities
@@ -113,7 +113,7 @@ Last Updated: 2026-01-23
 - [ ] Implement recipe-based synthesis calculator
 - [ ] Create WW data documentation in `LocalOnly/WutheringWaves/`
 - [ ] Test with actual Endfield data
-- [ ] **Refactor stamina/resin calculation to be game-agnostic**
+- [x] **Refactor stamina/resin calculation to be game-agnostic** (COMPLETED 2026-01-23)
   - **File:** `src/components/planner/FinalMaterialNeeds.vue`
   - **Hardcoded WW values in `GetRateValueForCategory()` (lines 347-377):**
     - Credit: drops=76000, resin=40
