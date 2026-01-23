@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <header>
-      <h1>Wuthering Waves Planner</h1>
+      <div class="header-content">
+        <h1>Multi-Game Planner</h1>
+        <GameSelector />
+      </div>
       <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/planner">Planner</router-link>
-        <router-link to="/inventory">Inventory</router-link>
-        <router-link to="/character">Character</router-link>
-        <router-link to="/weapon">Weapon</router-link>
+        <router-link to="/">{{ tUI('nav.home') }}</router-link>
+        <router-link to="/planner">{{ tUI('nav.planner') }}</router-link>
+        <router-link to="/inventory">{{ tUI('nav.inventory') }}</router-link>
+        <router-link to="/character">{{ tUI('nav.character') }}</router-link>
+        <router-link to="/weapon">{{ tUI('nav.weapon') }}</router-link>
+        <router-link to="/endfield-data">Endfield Data</router-link>
+        <router-link to="/settings">{{ tUI('nav.settings') }}</router-link>
       </nav>
     </header>
     <main>
@@ -16,10 +21,30 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App',
-};
+<script setup>
+import { onMounted } from 'vue';
+import { usePlannerStore } from './store/planner.js';
+import { useInventoryStore } from './store/inventory.js';
+import { useGameRegistryStore } from './store/gameRegistry.js';
+import { useLocale } from '@/composables/useLocale';
+import GameSelector from './components/common/GameSelector.vue';
+import logger from '@/utils/logger';
+
+const plannerStore = usePlannerStore();
+const inventoryStore = useInventoryStore();
+const gameRegistry = useGameRegistryStore();
+const { initLocale, tUI } = useLocale();
+
+// Load data from localStorage on app start
+onMounted(async () => {
+  // Initialize locale first
+  await initLocale();
+
+  const gameId = gameRegistry.currentGameId || 'wutheringwave';
+  plannerStore.hydrate();
+  inventoryStore.hydrate(gameId);
+  logger.debug(`[App] Data loaded for game: ${gameId}`);
+});
 </script>
 
 <style>
@@ -34,6 +59,15 @@ header {
   background-color: #f8f9fa;
   padding: 10px;
   border-bottom: 1px solid #ddd;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
 header h1 {

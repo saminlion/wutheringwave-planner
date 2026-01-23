@@ -1,0 +1,186 @@
+{
+  "credit": {
+    "credit": {
+      "game_id": 51001001,
+      "icon": "",
+      "label": "Credit",
+      "Category": "credit",
+      "SubCategory": "credit",
+      "rarity": 2
+    }
+  },
+  "common": {
+    "lf_example_common": {
+      "game_id": 51101001,
+      "icon": "",
+      "label": "LF Example Common",
+      "Category": "common",
+      "SubCategory": "example_common",
+      "rarity": 2
+    },
+    "mf_example_common": {
+      "game_id": 51101002,
+      "icon": "",
+      "label": "MF Example Common",
+      "Category": "common",
+      "SubCategory": "example_common",
+      "rarity": 3
+    },
+    "hf_example_common": {
+      "game_id": 51101003,
+      "icon": "",
+      "label": "HF Example Common",
+      "Category": "common",
+      "SubCategory": "example_common",
+      "rarity": 4
+    },
+    "ff_example_common": {
+      "game_id": 51101004,
+      "icon": "",
+      "label": "FF Example Common",
+      "Category": "common",
+      "SubCategory": "example_common",
+      "rarity": 5
+    }
+  },
+  "forgery": {
+    "lf_example_forgery": {
+      "game_id": 51201001,
+      "icon": "",
+      "label": "LF Example Forgery",
+      "Category": "forgery",
+      "SubCategory": "example_forgery",
+      "rarity": 2
+    },
+    "mf_example_forgery": {
+      "game_id": 51201002,
+      "icon": "",
+      "label": "MF Example Forgery",
+      "Category": "forgery",
+      "SubCategory": "example_forgery",
+      "rarity": 3
+    },
+    "hf_example_forgery": {
+      "game_id": 51201003,
+      "icon": "",
+      "label": "HF Example Forgery",
+      "Category": "forgery",
+      "SubCategory": "example_forgery",
+      "rarity": 4
+    },
+    "ff_example_forgery": {
+      "game_id": 51201004,
+      "icon": "",
+      "label": "FF Example Forgery",
+      "Category": "forgery",
+      "SubCategory": "example_forgery",
+      "rarity": 5
+    }
+  },
+  "ascension": {
+    "example_ascension": {
+      "game_id": 51301001,
+      "icon": "",
+      "label": "Example Ascension Material",
+      "Category": "ascension",
+      "SubCategory": "example_ascension",
+      "rarity": 4
+    }
+  },
+  "boss": {
+    "example_boss": {
+      "game_id": 51401001,
+      "icon": "",
+      "label": "Example Boss Material",
+      "Category": "boss",
+      "SubCategory": "example_boss",
+      "rarity": 4
+    }
+  },
+  "weeklyBoss": {
+    "example_weekly_boss": {
+      "game_id": 51501001,
+      "icon": "",
+      "label": "Example Weekly Boss Material",
+      "Category": "weeklyBoss",
+      "SubCategory": "example_weekly_boss",
+      "rarity": 4
+    }
+  },
+  "player_exp": {
+    "player_exp_small": {
+      "game_id": 51601001,
+      "icon": "",
+      "label": "Player EXP (Small)",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "rarity": 2,
+      "value": 1000
+    },
+    "player_exp_medium": {
+      "game_id": 51601002,
+      "icon": "",
+      "label": "Player EXP (Medium)",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "rarity": 3,
+      "value": 3000
+    },
+    "player_exp_large": {
+      "game_id": 51601003,
+      "icon": "",
+      "label": "Player EXP (Large)",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "rarity": 4,
+      "value": 8000
+    },
+    "player_exp_extra_large": {
+      "game_id": 51601004,
+      "icon": "",
+      "label": "Player EXP (Extra Large)",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "rarity": 5,
+      "value": 20000
+    }
+  },
+  "weapon_exp": {
+    "weapon_exp_small": {
+      "game_id": 51701001,
+      "icon": "",
+      "label": "Weapon EXP (Small)",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "rarity": 2,
+      "value": 1000
+    },
+    "weapon_exp_medium": {
+      "game_id": 51701002,
+      "icon": "",
+      "label": "Weapon EXP (Medium)",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "rarity": 3,
+      "value": 3000
+    },
+    "weapon_exp_large": {
+      "game_id": 51701003,
+      "icon": "",
+      "label": "Weapon EXP (Large)",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "rarity": 4,
+      "value": 8000
+    },
+    "weapon_exp_extra_large": {
+      "game_id": 51701004,
+      "icon": "",
+      "label": "Weapon EXP (Extra Large)",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "rarity": 5,
+      "value": 20000
+    }
+  }
+}

@@ -56,10 +56,11 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { usePlannerStore } from '../store/planner';
-import { characterLevelItems, characterActiveSkills, characterPassiveSkills } from '../data/formCharacters';
+import { characterLevelItems, characterActiveSkills, characterPassiveSkills } from '../data/characterFormFields';
 import { setGradientStyle } from '../services/utils';
-import CharacterDialog from '../components/character/ChracterDialog.vue';
-import charactersData from '../data/character.json'; // 캐릭터 데이터 로드
+import CharacterDialog from '../components/character/CharacterDialog.vue';
+import { characterData as charactersData } from '@/games/wutheringwave';
+import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();
 
@@ -83,7 +84,7 @@ const filteredCharacters = computed(() => {
 });
 
 const applyFilters = () => {
-  console.log('Filters applied:', filters.value);
+  logger.debug('Filters applied:', filters.value);
 };
 
 const getGradientStyle = (character) => {
@@ -102,7 +103,7 @@ const openDialog = (character) => {
 
   selectedCharacter.value = character;
 
-  console.log('sele char:', selectedCharacter.value);
+  logger.debug('sele char:', selectedCharacter.value);
 
   if (!plannerStore.characterSettings[character.game_id]) {
     plannerStore.updateCharacterSettings(character.game_id, {
@@ -122,7 +123,7 @@ const openDialog = (character) => {
 };
 
 const logCharacter = (character) => {
-  console.log("Selected character:", character);
+  logger.debug("Selected character:", character);
 };
 
 // 캐릭터 업데이트
@@ -134,7 +135,7 @@ const updateCharacter = () => {
   // 설정값 업데이트
   plannerStore.updateCharacterSettings(characterId, currentSettings.value);
 
-  console.log('Updated Settings:', currentSettings.value);
+  logger.debug('Updated Settings:', currentSettings.value);
 
   // 재료 계산 및 목표 업데이트
   const calculatedMaterials = plannerStore.calculateAllMaterials(characterId, "character");
@@ -145,7 +146,7 @@ const updateCharacter = () => {
     materials: calculatedMaterials,
   });
 
-  console.log('Updated Goals:', plannerStore.goals);
+  logger.debug('Updated Goals:', plannerStore.goals);
 
 };
 </script>

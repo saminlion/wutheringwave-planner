@@ -49,8 +49,9 @@
   import { weaponLevelItems } from '../data/formweapons';
   import { setGradientStyle } from '../services/utils';
   import WeaponDialog from '../components/weapon/WeaponDialog.vue';
-  import weaponsData from '../data/weapon.json'; // 캐릭터 데이터 로드
-  
+  import { weaponData as weaponsData } from '@/games/wutheringwave';
+  import logger from '@/utils/logger';
+
   const plannerStore = usePlannerStore();
   
   const weapons = ref(Object.values(weaponsData).filter(entry => !entry._comment));
@@ -71,7 +72,7 @@
   });
   
   const applyFilters = () => {
-    console.log('Filters applied:', filters.value);
+    logger.debug('Filters applied:', filters.value);
   };
   
   const getGradientStyle = (weapon) => {
@@ -87,10 +88,10 @@
   
   const openDialog = (weapon) => {
     dialogVisible.value = true;
-  
+
     selectedweapon.value = weapon;
-  
-    console.log('sele weapon:', selectedweapon.value);
+
+    logger.debug('sele weapon:', selectedweapon.value);
   
     if (!plannerStore.weaponSettings[weapon.game_id]) {
       plannerStore.updateWeaponSettings(weapon.game_id, {
@@ -101,30 +102,30 @@
   };
   
   const logweapon = (weapon) => {
-    console.log("Selected weapon:", weapon);
+    logger.debug("Selected weapon:", weapon);
   };
-  
-  // 무기 업데이트
+
+  // 臾닿린 ?낅뜲?댄듃
   const updateweapon = () => {
     if (!selectedweapon.value) return;
-  
+
     const weaponId = selectedweapon.value.game_id;
-  
-    // 설정값 업데이트
+
+    // ?ㅼ젙媛??낅뜲?댄듃
     plannerStore.updateWeaponSettings(weaponId, currentSettings.value);
-  
-    console.log('Updated Settings:', currentSettings.value);
-  
-    // 재료 계산 및 목표 업데이트
+
+    logger.debug('Updated Settings:', currentSettings.value);
+
+    // ?щ즺 怨꾩궛 諛?紐⑺몴 ?낅뜲?댄듃
     const calculatedMaterials = plannerStore.calculateAllMaterials(weaponId, "weapon");
-  
+
     plannerStore.addGoal({
       id: selectedweapon.value.game_id,
       type: 'weapon',
       materials: calculatedMaterials,
     });
-  
-    console.log('Updated Goals:', plannerStore.goals);
+
+    logger.debug('Updated Goals:', plannerStore.goals);
   
   };
   </script>
@@ -150,9 +151,9 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     width: 150px;
-    /* 너비 설정 */
+    /* ?덈퉬 ?ㅼ젙 */
     aspect-ratio: 1 / 1;
-    /* 정사각형 비율 유지 */
+    /* ?뺤궗媛곹삎 鍮꾩쑉 ?좎? */
   }
   
   .weapon-card:hover {

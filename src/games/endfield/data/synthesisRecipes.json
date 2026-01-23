@@ -1,0 +1,22 @@
+{
+  "example_recipe_1": {
+    "result": {
+      "game_id": 51301001,
+      "quantity": 1
+    },
+    "ingredients": [
+      {
+        "game_id": 51101001,
+        "quantity": 1
+      },
+      {
+        "game_id": 51201001,
+        "quantity": 3
+      },
+      {
+        "game_id": 51101002,
+        "quantity": 1
+      }
+    ]
+  }
+}

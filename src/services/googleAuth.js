@@ -1,4 +1,6 @@
-const SCOPES = ['https://www.googleapis.com/auth/drive.file']; // Drive 파일 접근 권한
+import logger from '@/utils/logger';
+
+const SCOPES = ['https://www.googleapis.com/auth/drive.file'];
 
 // Initialize GAPI
 export function loadGapiScript() {
@@ -43,10 +45,10 @@ export async function handleLogin() {
     const GoogleAuth = gapi.auth2.getAuthInstance();
     try {
         const user = await GoogleAuth.signIn();
-        console.log('User signed in:', user.getBasicProfile().getEmail());
-        return GoogleAuth.currentUser.get().getAuthResponse(); // Access token 반환
+        logger.info('User signed in:', user.getBasicProfile().getEmail());
+        return GoogleAuth.currentUser.get().getAuthResponse();
     } catch (error) {
-        console.error('Login failed:', error);
+        logger.error('Login failed:', error);
         throw error;
     }
 }
@@ -69,10 +71,10 @@ export async function saveGoalsToDrive(goals) {
             media: media,
             fields: 'id',
         });
-        console.log('File created with ID:', response.result.id);
+        logger.info('File created with ID:', response.result.id);
         return response.result.id;
     } catch (error) {
-        console.error('Error creating file:', error);
+        logger.error('Error creating file:', error);
         throw error;
     }
 }
@@ -84,10 +86,10 @@ export async function loadGoalsFromDrive(fileId) {
             fileId: fileId,
             alt: 'media',
         });
-        console.log('File content:', response);
-        return response.result; // JSON 데이터 반환
+        logger.debug('File content:', response);
+        return response.result;
     } catch (error) {
-        console.error('Error loading file:', error);
+        logger.error('Error loading file:', error);
         throw error;
     }
 }

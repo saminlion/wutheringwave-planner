@@ -20,20 +20,17 @@ import { useInventoryStore } from '../store/inventory';
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 
+const selectedGame = ref('wutheringwave'); // 기본 게임 ID
+
 // 게임 변경 함수
 const changeGame = () => {
-  // plannerStore.hydrate(selectedGame.value);
-  // inventoryStore.hydrate(selectedGame.value);
+  plannerStore.hydrate();
+  inventoryStore.hydrate(selectedGame.value);
 };
 
 // 초기 로드
 onMounted(() => {
-  // plannerStore.hydrate(selectedGame.value);
-
-  // inventoryStore.hydrate(selectedGame.value);
-
-  // plannerStore.loadGoals(selectedGame.value);
-
-  // inventoryStore.loadInventory(selectedGame.value);
+  plannerStore.hydrate();
+  inventoryStore.hydrate(selectedGame.value);
 });
 </script>

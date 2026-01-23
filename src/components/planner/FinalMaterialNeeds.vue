@@ -2,15 +2,15 @@
     <div class="final-material-needs">
         <h2>Final Material Needs</h2>
 
-        <!--총 필요 계산 부분-->
+        <!-- Total Material Calculation Section -->
         <div class="summary-container">
             <div class="summary-card">
-                <h3><i class="fas fa-fire"></i> 총 필요 레진</h3>
+                <h3><i class="fas fa-fire"></i> Total Required Materials</h3>
                 <p>{{ totalValues.totalResin }}</p>
             </div>
             <div class="summary-card">
-                <h3><i class="fas fa-clock"></i> 예상 완료 시간</h3>
-                <p>{{ totalValues.totalDays }} 일</p>
+                <h3><i class="fas fa-clock"></i> Estimated Days Required</h3>
+                <p>{{ totalValues.totalDays }} </p>
             </div>
         </div>
 
@@ -25,35 +25,37 @@
 
                         <h3 v-if="category.name !== subCategory.name">{{ subCategory.name }}</h3>
 
-                        <div class="estimate-container" v-if="(estimate = getEstimates(category, subCategory))">
-                            <p>예상 런 횟수: {{ estimate.run }}</p>
-                            <p>예상 레진 소모: {{ estimate.resin }}</p>
-                            <p v-if="subCategory.name !== 'weeklyboss'">예상 완료 시간: <span class="font-semibold">{{estimate.date}}일</span></p>
-                            <p v-else>예상 완료 시간: <span class="font-semibold">{{ estimate.date  }}주</span></p>
+                                                <div class="estimate-container" v-if="(estimate = getEstimates(category, subCategory))">
+                            <p>Estimated Runs: {{ estimate.run }}</p>
+                            <p>Estimated Resin: {{ estimate.resin }}</p>
+                            <p v-if="subCategory.name !== 'weeklyboss'">
+                                Estimated Time:
+                                <span class="font-semibold">{{ estimate.date }}</span>
+                            </p>
+                            <p v-else>
+                                Estimated Date:
+                                <span class="font-semibold">{{ estimate.date }}</span>
+                            </p>
                         </div>
 
                         <ul class="materials-grid">
-                            <!-- player_exp 또는 weapon_exp 처리 -->
-                            <template v-if="category.name === 'player_exp' || category.name === 'weapon_exp'">
-                                <!-- 필요 정보 표시 -->
-                                <span class="material-set" v-if="totalExpNeed(category) > 0">
-                                    필요: {{ totalExpNeed(category) }}</span>
+                            <!-- player_exp ?먮뒗 weapon_exp 泥섎━ -->
+                                                        <template v-if="category.name === 'player_exp' || category.name === 'weapon_exp'">
+                                <li class="material-set" v-if="totalExpNeed(category) > 0">
+                                    Need: {{ totalExpNeed(category) }}
+                                </li>
                                 <li class="material-card" v-for="(expDetails, id) in player_exp_material" :key="id">
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(id)" :src="getMaterialIcon(id)" alt="material icon"
                                             class="material-icon" />
 
                                         <div class="material-quantity-container">
-                                            <!-- 필요 뱃지 -->
-
-                                            <!-- 합성 뱃지 -->
                                             <span class="badge badge-synthesize" v-if="expDetails.synthesize > 0">
-                                                합성: {{ expDetails.synthesize }}
+                                                Synthesize: {{ expDetails.synthesize }}
                                             </span>
                                             <span class="badge badge-owned">
-                                                보유: {{ getMaterialQuantity(id) }}
+                                                Owned: {{ getMaterialQuantity(id) }}
                                             </span>
-                                            <!-- 추가 입력 -->
                                             <input class="material-quantity-input" type="number"
                                                 @blur="setMaterialQuantity(id, $event.target.value)" />
                                         </div>
@@ -61,24 +63,24 @@
                                 </li>
                             </template>
 
-                            <!-- common이나 forgery 카테고리가 아닌 경우 -->
+                            <!-- common?대굹 forgery 移댄뀒怨좊━媛 ?꾨땶 寃쎌슦 -->
                             <template v-else-if="category.name !== 'common' && category.name !== 'forgery'">
                                 <li class="material-card" v-for="task in subCategory.task" :key="task.id">
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- 필요 뱃지 -->
+                                            <!-- Need & Owned badges -->
                                             <span class="badge badge-need" v-if="task.need > 0">
-                                                필요: {{ task.need }}
+                                                Need: {{ task.need }}
                                             </span>
                                             <span class="badge" :class="{
                                                 'badge-owned-green': getMaterialQuantity(task.id) >= task.need,
                                                 'badge-owned-red': getMaterialQuantity(task.id) < task.need,
                                             }">
-                                                보유: {{ getMaterialQuantity(task.id) }}
+                                                Owned: {{ getMaterialQuantity(task.id) }}
                                             </span>
-                                            <!-- 추가 입력 -->
+                                            <!-- Additional input -->
                                             <input class="material-quantity-input" type="number"
                                                 @blur="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
@@ -86,28 +88,28 @@
                                 </li>
                             </template>
 
-                            <!-- common이나 forgery 카테고리인 경우 -->
+                            <!-- For common or forgery categories -->
                             <template v-else>
                                 <li class="material-card" v-for="task in subCategory.task" :key="task.id">
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- 필요 뱃지 -->
+                                            <!-- Need badge -->
                                             <span class="badge badge-need" v-if="task.need > 0">
-                                                필요: {{ task.need }}
+                                                Need: {{ task.need }}
                                             </span>
-                                            <!-- 합성 뱃지 -->
+                                            <!-- Synthesize badge -->
                                             <span class="badge badge-synthesize" v-if="task.synthesize > 0">
-                                                합성: {{ task.synthesize }}
+                                                Synthesize: {{ task.synthesize }}
                                             </span>
                                             <span class="badge" :class="{
                                                 'badge-owned-green': (getMaterialQuantity(task.id) + task.synthesize) >= task.need,
                                                 'badge-owned-red': (getMaterialQuantity(task.id) + task.synthesize) < task.need,
                                             }">
-                                                보유: {{ getMaterialQuantity(task.id) }}
+                                                Owned: {{ getMaterialQuantity(task.id) }}
                                             </span>
-                                            <!-- 추가 입력 -->
+                                            <!-- Additional input -->
                                             <input class="material-quantity-input" type="number"
                                                 @blur="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
@@ -130,20 +132,32 @@ import {
     calculatePlayerExp,
     getMaterialField,
     getMaterialFieldById
-} from "@/services/materialHelper";
+} from "@/services/materialHelper/index";
 import { useInventoryStore } from "@/store/inventory";
-import { player_exp_material } from "@/data/tieredMaterials"
+import { useGameRegistryStore } from "@/store/gameRegistry";
+import { playerExpMaterial as player_exp_material } from "@/games/wutheringwave";
+import logger from '@/utils/logger';
 
 const inventoryStore = useInventoryStore();
+const gameRegistry = useGameRegistryStore();
 
-const runCache = ref({}); // 캐싱을 위한 객체
-const dateCache = ref({}); // 캐싱을 위한 객체
-const resinCache = ref({}); // 캐싱을 위한 객체
+// Get stamina config from current game
+const getStaminaConfig = () => {
+    const currentGame = gameRegistry.currentGame;
+    return currentGame?.config?.stamina || {
+        dailyLimit: 240,
+        farmingRates: {}
+    };
+};
+
+const runCache = ref({}); // Cache for runs
+const dateCache = ref({}); // Cache for dates
+const resinCache = ref({}); // Cache for resin
 
 const categorizedMaterials = ref({});
 
 const resetCaches = () => {
-    runCache.value = {};  // 캐시 초기화
+    runCache.value = {};  // Clear cache
     resinCache.value = {};
     dateCache.value = {};
 };
@@ -168,17 +182,16 @@ const totalValues = reactive({
 });
 
 const props = defineProps({
-    materials: Object // 전달받은 재료 목록
+    materials: Object // ?꾨떖諛쏆? ?щ즺 紐⑸줉
 });
 
 const emit = defineEmits(["updateInventory"]);
 
 watch(
-    () => props.materials, // 상위 컴포넌트의 materials 변경 감시
+    () => props.materials,
     (newMaterials) => {
-        console.log("[Debug] Props materials updated:", newMaterials);
-        groupMaterialsByCategoryAndSubCategory(newMaterials); // 데이터 재구성
-        updateTotalValues(); // 총합 업데이트
+        groupMaterialsByCategoryAndSubCategory(newMaterials);
+        updateTotalValues();
     },
     { deep: true }
 );
@@ -188,13 +201,11 @@ const getMaterialQuantity = (id) => {
 };
 
 const setMaterialQuantity = (id, value) => {
-    const newQuantity = Math.max(0, parseInt(value, 10) || 0); // 음수를 방지하고 숫자로 변환
+    const newQuantity = Math.max(0, parseInt(value, 10) || 0); // Ensure positive integer
     emit("updateInventory", { id, quantity: newQuantity });
 };
 
 const totalExpNeed = (category) => {
-    console.log(`[Debug] category: ${JSON.stringify(category)}`);
-
     if (!category.subCategories) return 0;
 
     let missingTotalExp = 0;
@@ -203,11 +214,9 @@ const totalExpNeed = (category) => {
         let missingCalExp = 0, currentTotalExp = 0;
 
         subcategoryData.task.forEach((task) => {
-            console.log(`[Debug] Task Need: ${task.need}`);
             missingCalExp = task.need;
 
             Object.entries(player_exp_material).forEach(([id, exp]) => {
-                console.log(`[Debug] ID: ${id}, QTY: ${inventoryStore.getMaterialQuantity(id)}`);
                 currentTotalExp += inventoryStore.getMaterialQuantity(id) * exp;
             });
         });
@@ -215,14 +224,10 @@ const totalExpNeed = (category) => {
         missingTotalExp += Math.max(0, missingCalExp - currentTotalExp);
     }
 
-    console.log(`[Debug] Final Missing Total Exp: ${missingTotalExp}`);
     return missingTotalExp;
 };
 
 const getMaterialIcon = (materialId) => {
-
-    console.log(`[Debug] Material ID: ${materialId}`);
-
     const types = [
         "common",
         "ascension",
@@ -249,57 +254,52 @@ const getMaterialIcon = (materialId) => {
     for (const type of types) {
         const material = findMaterial(type, materialId, null, true);
         if (material) {
-
-            console.log(`[Debug] Material: ${material}`);
-
             return getMaterialField(material, 'icon');
         }
     }
     return null;
 };
 
-// 재료 데이터를 카테고리별 + 서브카테고리별로 그룹화하는 함수
+// Group material data by category and subcategory
 const groupMaterialsByCategoryAndSubCategory = (data) => {
 
-    // 최종 JSON 데이터를 저장할 객체
+    // 理쒖쥌 JSON ?곗씠?곕? ??ν븷 媛앹껜
     const groupedMaterialsMap = {};
 
-    // materials 객체 추출
-    const materials = data.materials; // 최상위 materials 내의 materials 키 사용
-    console.log("[Debug] Extracted Materials:", JSON.stringify(materials));
+        // Extract materials object
+    const materials = data?.materials || data || {};
 
     for (const [materialId, details] of Object.entries(materials)) {
         if (materialId === 'processed') {
             continue;
         }
-        console.log(`[Debug] Processing materialId: ${materialId}`);
-        console.log(`[Debug] Details: ${JSON.stringify(details)}`);
+        logger.debug('Details:', details);
 
-        // 데이터 추출 변수 선언
+        // Data extraction protection
         let subCategory, category, name, owned, synthesize, need;
 
-        // player_exp 또는 weapon_exp의 특별 처리
+        // player_exp ?먮뒗 weapon_exp???밸퀎 泥섎━
         if (materialId === 'player_exp' || materialId === 'weapon_exp') {
             subCategory = materialId;
             category = materialId;
-            name = materialId; // 이름 추가
+                        name = materialId; // Name additional
             owned = details.owned || 0;
             synthesize = details.synthesize || 0;
             need = details.need || 0;
         }
 
-        // 일반 재료 처리
+        // ?쇰컲 ?щ즺 泥섎━
         else {
-            // 필요한 데이터 추출
+                        // Extract required data
             subCategory = getMaterialFieldById(materialId, 'SubCategory');
             category = getMaterialFieldById(materialId, 'Category');
-            name = getMaterialFieldById(materialId, 'label'); // 이름 추가
+                        name = getMaterialFieldById(materialId, "label"); // Name additional
             owned = details.owned || 0;
             synthesize = details.synthesize || 0;
             need = details.need || 0;
         }
 
-        // category 초기화
+                // Initialize category
         if (!groupedMaterialsMap[category]) {
             groupedMaterialsMap[category] = {
                 id: category,
@@ -308,7 +308,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             };
         }
 
-        // subcategory 초기화
+                // Initialize subcategory
         if (!groupedMaterialsMap[category].subCategories[subCategory]) {
             groupedMaterialsMap[category].subCategories[subCategory] = {
                 id: subCategory,
@@ -317,7 +317,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             };
         }
 
-        // task 데이터 추가
+                // Add task data
         groupedMaterialsMap[category].subCategories[subCategory].task.push({
             id: materialId,
             name: name,
@@ -327,67 +327,43 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
         });
     }
 
-    // 객체를 배열로 변환
+    // 媛앹껜瑜?諛곗뿴濡?蹂??
     const groupedMaterials = Object.values(groupedMaterialsMap).map((category) => ({
         id: category.id,
         name: category.name,
         subCategories: Object.values(category.subCategories),
     }));
 
-    console.log(`[Debug] Get CategorizedMaterials: ${JSON.stringify(groupedMaterials)}`);
-
-    categorizedMaterials.value = groupedMaterials; // 그룹화된 데이터 저장
+    categorizedMaterials.value = groupedMaterials;
 };
 
-// 계산 함수 호출 및 값 업데이트
+// Execute calculation function and update values
 const updateTotalValues = () => {
     const { totalResin, totalDays } = CalculateTotalResinAndDate();
     totalValues.totalResin = totalResin;
     totalValues.totalDays = totalDays;
 };
 
-// 카테고리별 드랍률 및 레진 값 계산
+// Calculate drops and stamina values per category (game-agnostic)
 const GetRateValueForCategory = (data) => {
     let drops = 0, resin = 0, unobtainable = false, categoryName = "";
+    const staminaConfig = getStaminaConfig();
+    const farmingRates = staminaConfig.farmingRates || {};
 
-    // `categorizedMaterials`는 배열 형태로 저장됨
     categorizedMaterials.value.forEach((material) => {
-        // subCategory 매칭 확인
-        //console.log(`[Debug] Material Value: ${JSON.stringify(material)} / Data Value: ${JSON.stringify(data)}`);
         if (material.name === data.name) {
-            switch (material.name) {
-                case "player_exp":
-                    drops = 76000; resin = 40;
-                    break;
-                case "weapon_exp":
-                    drops = 76000; resin = 40;
-                    break;
-                case "common":
-                    unobtainable = true;
-                    break;
-                case "ascension":
-                    unobtainable = true;
-                    break;
-                case "credit":
-                    drops = 84000; resin = 40;
-                    break;
-                case "forgery":
-                    drops = 51; resin = 40;
-                    break;
-                case "boss":
-                    drops = 4.3; resin = 60;
-                    break;
-                case "weeklyBoss":
-                    drops = 3; resin = 60;
-                    break;
-                default:
-                    unobtainable = true;
+            const rate = farmingRates[material.name];
+            if (rate) {
+                drops = rate.drops || 0;
+                resin = rate.stamina || 0;
+                unobtainable = rate.unobtainable || false;
+            } else {
+                unobtainable = true;
             }
             categoryName = material.name;
         }
     });
 
-    //console.log(`[Debug] Drops: ${drops} / Resin: ${resin} / CategoryName: ${categoryName}`);
 
     return { drops, resin, unobtainable, categoryName };
 };
@@ -396,7 +372,7 @@ const esimatedRun = computed(() => (data) => {
     return CalculateEstimatedRun(data);
 });
 
-// 예상 런 계산
+// Calculate runs
 const CalculateEstimatedRun = (data) => {
     if (runCache.value[data.subcategory]) return runCache.value[data.subcategory];
 
@@ -404,22 +380,20 @@ const CalculateEstimatedRun = (data) => {
 
     let runs = 0;
 
-    //console.log(`[Debug] Data: ${JSON.stringify(data)}`);
 
-    // `subCategories`를 순회
+        // Iterate subCategories
     Object.entries(data.subCategories).forEach(([subcategoryName, subcategoryData]) => {
         if (!unobtainable) {
 
-            console.log('category Name: ', categoryName);
             if (categoryName === "forgery" || categoryName === "common") {
-                const missing = [0, 0, 0, 0]; // rarity별 누적 필요량을 저장하는 배열
+                const missing = [0, 0, 0, 0]; // rarity蹂??꾩쟻 ?꾩슂?됱쓣 ??ν븯??諛곗뿴
 
-                // 각 task를 순회하면서 레어도별 필요량을 누적
+                // 媛?task瑜??쒗쉶?섎㈃???덉뼱?꾨퀎 ?꾩슂?됱쓣 ?꾩쟻
                 subcategoryData.task.forEach((task) => {
                     const actualNeed = Math.max(0, task.need - (task.owned + task.synthesize));
 
                     if (actualNeed > 0 && task.rarity >= 2 && task.rarity <= 5) {
-                        missing[task.rarity - 2] += actualNeed; // 레어도 인덱스에 누적
+                        missing[task.rarity - 2] += actualNeed; // ?덉뼱???몃뜳?ㅼ뿉 ?꾩쟻
                     }
                 });
 
@@ -436,14 +410,11 @@ const CalculateEstimatedRun = (data) => {
 
 
                 subcategoryData.task.forEach((task) => {
-                    console.log(`[Debug] Data Check Task: ${task.need}`);
 
                     missingCalExp = task.need;
 
 
                     Object.entries(player_exp_material).forEach(([id, exp]) => {
-                        console.log(`[Debug] Data Check id: ${id}`);
-                        console.log(`[Debug] Data Check qty: ${inventoryStore.getMaterialQuantity(id)}`);
 
                         const exp_value = inventoryStore.getMaterialQuantity(id) * exp;
 
@@ -452,13 +423,12 @@ const CalculateEstimatedRun = (data) => {
 
                 });
 
-                const missingTotalExp = Math.max(0, (missingCalExp - currentTotalExp)); // 부족한 총 경험치 계산
+                const missingTotalExp = Math.max(0, (missingCalExp - currentTotalExp)); // 遺議깊븳 珥?寃쏀뿕移?怨꾩궛
 
-                console.log(`[Debug] Missing Total Exp: ${missingTotalExp} / Missing Cal Exp: ${missingCalExp} / Current Total Exp: ${currentTotalExp}`);
 
-                // Step 3: 필요한 런 수 계산
+                // Step 3: ?꾩슂??????怨꾩궛
                 if (drops <= 0) {
-                    console.error("Invalid drops value:", drops);
+                    logger.error("Invalid drops value:", drops);
                     runs = 0;
                 } else {
                     runs = Math.ceil(missingTotalExp / drops);
@@ -480,7 +450,6 @@ const CalculateEstimatedRun = (data) => {
 
                 runs = Math.ceil(currentNeed / drops);
 
-                console.log(`[Debug] Runs: ${runs}, Current Need: ${currentNeed}, Drops: ${drops}`);
             }
         }
 
@@ -490,7 +459,6 @@ const CalculateEstimatedRun = (data) => {
 
     runCache[data.subcategory] = calculatedRuns;
 
-    console.log(`[Debug] calculatedRuns: ${calculatedRuns}`);
 
     return calculatedRuns;
 };
@@ -499,7 +467,7 @@ const esimatedResin = computed(() => (subCategory) => {
     return CalculateEstimatedResin(subCategory);
 });
 
-// 예상 레진 계산
+// Calculate resin
 const CalculateEstimatedResin = (data) => {
     if (resinCache.value[data.subcategory]) return resinCache.value[data.subcategory];
 
@@ -516,7 +484,7 @@ const esimatedDate = computed(() => (subCategory) => {
     return CalculateEstimatedDate(subCategory);
 });
 
-// 예상 완료 시간 계산
+// Estimated Days Required 怨꾩궛
 const CalculateEstimatedDate = (data) => {
     if (dateCache.value[data.subcategory]) return dateCache.value[data.subcategory];
 
@@ -532,28 +500,29 @@ const CalculateEstimatedDate = (data) => {
     return date;
 };
 
-// 전체 레진과 날짜를 계산하는 함수
+// Calculate total
 const CalculateTotalResinAndDate = () => {
-    const DAILY_RESIN_LIMIT = 240; // 하루에 최대 사용할 수 있는 레진
+    const staminaConfig = getStaminaConfig();
+    const dailyLimit = staminaConfig.dailyLimit || 240;
     let totalResin = 0;
 
-    // `categorizedMaterials` 배열 순회
+        // Iterate categorizedMaterials
     categorizedMaterials.value.forEach((category) => {
         category.subCategories.forEach((subCategory) => {
 
-            // 예상 레진 계산
+            // Calculate resin
             const resin = parseInt(CalculateEstimatedResin({
                 name: category.name,
                 subCategory: subCategory.id,
                 subCategories: { [subCategory.id]: subCategory }
             }), 10);
 
-            if (!isNaN(resin)) totalResin += resin; // NaN 방지
+                        if (!isNaN(resin)) totalResin += resin; // Prevent NaN
         });
     });
 
-    // 총 레진을 하루 레진 사용량으로 나누어 완료 일수 계산
-    const totalDays = Math.ceil(totalResin / DAILY_RESIN_LIMIT);
+        // Calculate days from total resin
+    const totalDays = Math.ceil(totalResin / dailyLimit);
 
     return { totalResin, totalDays };
 };
@@ -561,17 +530,16 @@ const CalculateTotalResinAndDate = () => {
 
 onMounted(() => {
     if (!props.materials || !Object.keys(props.materials).length) {
-        console.error("[Error] Materials data is not ready:", props.materials);
+        logger.error("[Error] Materials data is not ready:", props.materials);
         return;
     }
 
-    console.log(`[Debug] Get materials: ${JSON.stringify(props.materials)}`);
 
-    // 카테고리별로 재료 그룹화
+        // Group by category
     //groupMaterialsByCategoryAndSubCategory(Object.values(props.materials));
     groupMaterialsByCategoryAndSubCategory(props.materials);
 
-    // 총합 계산 실행
+        // Execute totals
     updateTotalValues(props.materials);
 });
 
@@ -606,15 +574,15 @@ onMounted(() => {
 
 .category-card {
     margin-bottom: 24px;
-    /* 카테고리 간격 */
+    /* 移댄뀒怨좊━ 媛꾧꺽 */
     padding: 16px;
-    /* 내부 여백 */
+    /* ?대? ?щ갚 */
     background-color: #f7f9fc;
-    /* 배경색 */
+    /* 諛곌꼍??*/
     border-radius: 8px;
-    /* 둥근 모서리 */
+    /* ?κ렐 紐⑥꽌由?*/
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    /* 그림자 */
+    /* 洹몃┝??*/
 }
 
 .category-title {
@@ -622,20 +590,20 @@ onMounted(() => {
     font-weight: bold;
     color: #2c3e50;
     margin-bottom: 12px;
-    /* 카테고리 타이틀 아래 간격 */
+    /* 移댄뀒怨좊━ ??댄? ?꾨옒 媛꾧꺽 */
 }
 
 .subcategory-list {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    /* 카드 간 간격 */
+    /* 移대뱶 媛?媛꾧꺽 */
     margin-top: 12px;
 }
 
 .subcategory-card {
     flex: 1 1 calc(33.33% - 16px);
-    /* 3개의 카드가 한 행에 나열 */
+    /* 3媛쒖쓽 移대뱶媛 ???됱뿉 ?섏뿴 */
     background-color: #ffffff;
     border-radius: 8px;
     padding: 12px;
@@ -646,43 +614,43 @@ onMounted(() => {
 .materials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    /* 카드 크기 및 균등한 열 배치 */
+    /* 移대뱶 ?ш린 諛?洹좊벑????諛곗튂 */
     gap: 16px;
-    /* 카드 간 간격 */
+    /* 移대뱶 媛?媛꾧꺽 */
     margin-top: 12px;
     list-style: none;
     padding: 0;
     justify-content: center;
     align-items: start;
-    /* 카드의 상단 정렬 */
+    /* 移대뱶???곷떒 ?뺣젹 */
 }
 
 .material-card {
     display: flex;
     flex-shrink: 0;
-    /* 카드 크기가 줄어들지 않도록 설정 */
+    /* 移대뱶 ?ш린媛 以꾩뼱?ㅼ? ?딅룄濡??ㅼ젙 */
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     background-color: #ffffff;
     border-radius: 12px;
-    /* 둥근 모서리 */
+    /* ?κ렐 紐⑥꽌由?*/
     padding: 12px;
-    /* 카드 내부 여백 */
+    /* 移대뱶 ?대? ?щ갚 */
     width: auto;
-    /* 카드 너비 */
+    /* 移대뱶 ?덈퉬 */
     height: auto;
-    /* 카드 높이 자동 조정 */
+    /* 移대뱶 ?믪씠 ?먮룞 議곗젙 */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    /* 그림자 추가 */
+    /* 洹몃┝??Additional */
 }
 
 .material-icon {
     width: 60px;
-    /* 아이콘 크기 */
+    /* ?꾩씠肄??ш린 */
     height: 60px;
     margin-bottom: 8px;
-    /* 아이콘과 텍스트 간격 */
+    /* ?꾩씠肄섍낵 ?띿뒪??媛꾧꺽 */
 }
 
 .material-info {
@@ -691,17 +659,17 @@ onMounted(() => {
     color: #333;
     font-weight: bold;
     line-height: 1.5;
-    /* 텍스트 간격 */
+    /* ?띿뒪??媛꾧꺽 */
 }
 
 .material-quantity {
     color: #27ae60;
-    /* 텍스트 강조 색상 */
+    /* ?띿뒪??媛뺤“ ?됱긽 */
     font-size: 16px;
-    /* 텍스트 크기 */
+    /* ?띿뒪???ш린 */
     font-weight: bold;
     margin-top: 4px;
-    /* 텍스트 간격 */
+    /* ?띿뒪??媛꾧꺽 */
 }
 
 .badge {
@@ -716,13 +684,13 @@ onMounted(() => {
 
 .badge-need {
     background-color: #e74c3c;
-    /* 빨간색 */
+    /* 鍮④컙??*/
     color: white;
 }
 
 .badge-synthesize {
     background-color: #f1c40f;
-    /* 노란색 */
+    /* ?몃???*/
     color: white;
 }
 
@@ -733,13 +701,13 @@ onMounted(() => {
 
 .badge-owned-green {
     background-color: #27ae60;
-    /* 초록색 */
+    /* 珥덈줉??*/
     color: white;
 }
 
 .badge-owned-red {
     background-color: #e74c3c;
-    /* 빨간색 */
+    /* 鍮④컙??*/
     color: white;
 }
 
@@ -762,30 +730,36 @@ onMounted(() => {
 .material-set {
     font-size: 14px;
     color: #e74c3c;
-    /* 강조 색상 */
+    /* 媛뺤“ ?됱긽 */
     font-weight: bold;
     text-align: center;
     margin-bottom: 8px;
-    /* 텍스트 간격 */
+    /* ?띿뒪??媛꾧꺽 */
     display: block;
-    /* 줄바꿈 강제 */
+    /* 以꾨컮轅?媛뺤젣 */
 }
 
 .final-container {
     background-color: #ecf0f1;
-    /* 배경색 */
+    /* 諛곌꼍??*/
     padding: 20px;
-    /* 여백 */
+    /* ?щ갚 */
     border-radius: 8px;
-    /* 둥근 모서리 */
+    /* ?κ렐 紐⑥꽌由?*/
 }
 
 .estimate-container p {
     font-size: 14px;
-    /* 폰트 크기 */
+    /* ?고듃 ?ш린 */
     color: #7f8c8d;
-    /* 텍스트 색상 */
+    /* ?띿뒪???됱긽 */
     margin: 4px 0;
-    /* 텍스트 간격 */
+    /* ?띿뒪??媛꾧꺽 */
 }
 </style>
+
+
+
+
+
+
