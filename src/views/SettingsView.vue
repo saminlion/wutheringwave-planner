@@ -2,8 +2,13 @@
   <div class="settings-view">
     <h1>Settings</h1>
     <p class="settings-description">
-      Manage local planner data backups and restores from this page.
+      Manage your planner data - sync to cloud or backup locally.
     </p>
+
+    <section class="settings-section">
+      <CloudSync />
+    </section>
+
     <section class="settings-section">
       <DataBackup />
     </section>
@@ -12,6 +17,7 @@
 
 <script setup>
 import DataBackup from '@/components/common/DataBackup.vue';
+import CloudSync from '@/components/settings/CloudSync.vue';
 </script>
 
 <style scoped>
