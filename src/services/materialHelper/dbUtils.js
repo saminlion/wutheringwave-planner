@@ -6,11 +6,11 @@ import logger from '@/utils/logger';
  *
  * @param {string} type - The type of material (e.g., "common", "ascension", "boss").
  * @param {string|number} identifier - The game_id (id) or SubCategory of the material.
- * @param {number|null} rarity - The rarity of the material (optional).
+ * @param {number|null} tier - The tier of the material (optional, used for tiered materials like common/forgery).
  * @param {boolean} useId - Whether to use game_id for matching.
  * @returns {Object|null} - The matched material data or null if not found.
  */
-export const findMaterial = (type, identifier, rarity = null, useId = false) => {
+export const findMaterial = (type, identifier, tier = null, useId = false) => {
     if (!inventoryItem[type]) {
         logger.warn(`Material type "${type}" not found in inventory.`);
         return null;
@@ -27,10 +27,10 @@ export const findMaterial = (type, identifier, rarity = null, useId = false) => 
         return materialData;
     } else {
         const matchedItem = Object.values(inventoryItem[type]).find(
-            (item) => item.SubCategory === identifier && (!rarity || item.rarity === rarity)
+            (item) => item.SubCategory === identifier && (!tier || item.tier === tier)
         );
         if (!matchedItem) {
-            logger.warn(`Material with SubCategory "${identifier}" not found in type "${type}".`);
+            logger.warn(`Material with SubCategory "${identifier}" and tier "${tier}" not found in type "${type}".`);
             return null;
         }
         return matchedItem;
