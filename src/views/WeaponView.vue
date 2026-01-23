@@ -29,9 +29,9 @@
         class="weapon-card" :style="getGradientStyle(weapon)">
         <!-- <div v-for="weapon in filteredweapons" :key="weapon.game_id" @click="logweapon(weapon)"
         class="weapon-card" :style="getGradientStyle(weapon)"> -->
-          <img :src="weapon.icon" :alt="weapon.display_name" />
+          <img :src="weapon.icon" :alt="tWeapon(weapon.game_id, weapon.display_name)" />
           <div class="weapon-info">
-            <span>{{ weapon.display_name }}</span>
+            <span>{{ tWeapon(weapon.game_id, weapon.display_name) }}</span>
           </div>
         </div>
       </div>
@@ -50,7 +50,11 @@
   import { setGradientStyle } from '../services/utils';
   import WeaponDialog from '../components/weapon/WeaponDialog.vue';
   import { weaponData as weaponsData } from '@/games/wutheringwave';
+  import { useLocale } from '@/composables/useLocale';
   import logger from '@/utils/logger';
+
+  // i18n翻訳関数を取得
+  const { tWeapon } = useLocale();
 
   const plannerStore = usePlannerStore();
   

@@ -209,6 +209,14 @@
     "inventory.quantity": "Quantity",
     "settings.cloud_sync": "Cloud Sync",
     "settings.backup": "Backup",
-    "settings.language": "Language"
+    "settings.language": "Language",
+    "category.credit": "Shell Credit",
+    "category.common": "Common Materials",
+    "category.forgery": "Forgery Materials",
+    "category.ascension": "Ascension Materials",
+    "category.boss": "Boss Materials",
+    "category.weeklyBoss": "Weekly Boss Materials",
+    "category.player_exp": "Resonance Potions",
+    "category.weapon_exp": "Weapon EXP"
   }
 }

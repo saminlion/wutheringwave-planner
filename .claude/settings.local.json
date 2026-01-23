@@ -17,7 +17,12 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Add Endfield game plugin and multi-game infrastructure\n\nImplemented multi-game support system with Endfield as the second game.\n\nCore Features:\n- Game registry system for managing multiple games\n- Game selector UI component in header\n- Endfield game plugin with complete data structure\n- Recipe-based synthesis system \\(different from WW''s 3:1 tier system\\)\n\nEndfield Implementation:\n- Game configuration \\(level progression: 1-20, 20-40, 40-60, 60-80, 80-90\\)\n- Data templates: character.json, weapon.json, materials.json, costs.json\n- Recipe-based synthesis: synthesisRecipes.json\n- Tiered materials system\n- Raw data input view at /endfield-data route\n\nInfrastructure:\n- GameRegistry store for game selection and persistence\n- GameSelector component for switching between WW and Endfield\n- Auto-reload on game switch\n- localStorage persistence for game selection\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git push)",
       "Bash(npm run build:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" --version)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" --version)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" install)",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

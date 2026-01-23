@@ -39,9 +39,9 @@
       class="character-card" :style="getGradientStyle(character)">
       <!-- <div v-for="character in filteredCharacters" :key="character.game_id" @click="logCharacter(character)"
       class="character-card" :style="getGradientStyle(character)"> -->
-        <img :src="character.icon" :alt="character.display_name" />
+        <img :src="character.icon" :alt="tCharacter(character.game_id, character.display_name)" />
         <div class="character-info">
-          <span>{{ character.display_name }}</span>
+          <span>{{ tCharacter(character.game_id, character.display_name) }}</span>
         </div>
       </div>
     </div>
@@ -60,7 +60,11 @@ import { characterLevelItems, characterActiveSkills, characterPassiveSkills } fr
 import { setGradientStyle } from '../services/utils';
 import CharacterDialog from '../components/character/CharacterDialog.vue';
 import { characterData as charactersData } from '@/games/wutheringwave';
+import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
+
+// i18n翻訳関数を取得
+const { tCharacter } = useLocale();
 
 const plannerStore = usePlannerStore();
 

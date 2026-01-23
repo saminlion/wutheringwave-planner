@@ -4,9 +4,9 @@
             <div class="dialog-content">
                 <div class="header-section">
                     <div class="weapon-info">
-                        <h2>{{ weapon?.display_name || 'Unknown' }}</h2> <!-- 무기기 이름 -->
-                        <img :src="weapon?.icon || ''" :alt="weapon?.display_name || 'Unknown'" width="50" />
-                        <!-- 무기기 아이콘 -->
+                        <h2>{{ tWeapon(weapon?.game_id, weapon?.display_name) || 'Unknown' }}</h2> <!-- 武器名 -->
+                        <img :src="weapon?.icon || ''" :alt="tWeapon(weapon?.game_id, weapon?.display_name) || 'Unknown'" width="50" />
+                        <!-- 武器アイコン -->
                     </div>
 
                     <button class="close-dialog" @click="closeDialog">{{ tUI('common.close') }}</button> <!-- Close 버튼 -->
@@ -42,7 +42,8 @@ import { ref, watch, onMounted } from 'vue';
 import { setGradientStyle } from '../../services/utils';
 import { useLocale } from '@/composables/useLocale';
 
-const { tUI } = useLocale();
+// i18n翻訳関数を取得
+const { tUI, tWeapon } = useLocale();
 
 const props = defineProps({
     visible: Boolean,

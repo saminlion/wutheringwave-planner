@@ -209,6 +209,14 @@
     "inventory.quantity": "수량",
     "settings.cloud_sync": "클라우드 동기화",
     "settings.backup": "백업",
-    "settings.language": "언어"
+    "settings.language": "언어",
+    "category.credit": "클램 코인",
+    "category.common": "공용 재료",
+    "category.forgery": "단조 재료",
+    "category.ascension": "돌파 재료",
+    "category.boss": "보스 재료",
+    "category.weeklyBoss": "주간 보스 재료",
+    "category.player_exp": "공명 촉진제",
+    "category.weapon_exp": "무기 에너지 코어"
   }
 }

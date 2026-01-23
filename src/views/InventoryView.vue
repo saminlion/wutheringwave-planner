@@ -5,15 +5,15 @@
     <!-- Inventory Cards -->
      <div class="inventory-container">
       <div v-for="(subCategories, category) in groupedMaterials" :key="category" class="category-section">
-        <h2 class="category-title">{{ category }}</h2>
+        <h2 class="category-title">{{ translateCategoryName(category) }}</h2>
       <div v-for="(materials, subcategory) in subCategories" :key="subcategory" class="subcategory-section">
-        <h3 class="subcategory-title">{{ subcategory }}</h3>
+        <h3 class="subcategory-title">{{ translateCategoryName(subcategory) }}</h3>
 
     <div class="inventory-grid">
       <div class="inventory-card" v-for="material in materials" :key="material.game_id">
-        <img :src="material.icon" :alt="material.label" class="material-icon" />
+        <img :src="material.icon" :alt="tMaterial(material.game_id, material.label)" class="material-icon" />
         <div class="material-info">
-          <h3>{{ material.label }}</h3>
+          <h3>{{ tMaterial(material.game_id, material.label) }}</h3>
           <h3>{{ logMessage(material) }}</h3>
           <p>
             Quantity:
@@ -39,7 +39,17 @@ import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import { useInventoryStore } from '../store/inventory.js';
 import { inventoryMaterials as inventoryItem } from '@/games/wutheringwave';
+import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
+
+// i18n翻訳関数を取得
+const { tMaterial, tUI } = useLocale();
+
+// カテゴリ名の翻訳ヘルパー関数
+const translateCategoryName = (categoryName) => {
+    const translated = tUI(`category.${categoryName}`);
+    return translated !== `category.${categoryName}` ? translated : categoryName;
+};
 
 const inventoryStore = useInventoryStore();
 

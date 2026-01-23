@@ -2,7 +2,7 @@
 
 Endfield 게임 데이터를 구글 시트에서 관리하고 JSON으로 자동 변환하는 가이드입니다.
 
-**최종 업데이트:** 2026-01-22
+**최종 업데이트:** 2026-01-24
 
 ---
 
@@ -47,30 +47,31 @@ Endfield 게임 데이터를 구글 시트에서 관리하고 JSON으로 자동 
 |--------|------|------|---------|-------------|
 | A | Seq | Number | - | 순번 (1, 2, 3...) |
 | B | Rarity | Number | - | 성급 (4, 5, 6) |
-| C | game_id | Number | `=IF(A2="","",5200000000+(B2*10000000)+A2)` | 자동 생성 ID |
-| D | key | Text | - | 내부 키 (예: clemence) |
-| E | display_name | Text | - | 표시 이름 (예: Clemence) |
-| F | element | Text | - | 속성 (예: glacio, fusion) |
-| G | weapon | Text | - | 무기 타입 (예: gun, sword) |
-| H | common | Text | - | Common 재료 SubCategory |
-| I | forgery | Text | - | Forgery 재료 SubCategory |
-| J | ascension | Number | - | Ascension 재료 game_id |
-| K | boss | Number | - | Boss 재료 game_id |
-| L | weeklyBoss | Number | - | Weekly Boss 재료 game_id |
-| M | icon | Text | - | 아이콘 URL |
+| C | Element | Text | - | 속성 (physical, heat, nature, cryo, electric) |
+| D | ElementCode | Number | `=IF(C2="physical",1,IF(C2="heat",2,IF(C2="nature",3,IF(C2="cryo",4,IF(C2="electric",5,0)))))` | 속성 코드 자동 변환 |
+| E | game_id | Number | `=IF(A2="","",5200000000+(B2*10000000)+(D2*100000)+A2)` | 자동 생성 ID |
+| F | key | Text | - | 내부 키 (예: clemence) |
+| G | display_name | Text | - | 표시 이름 (예: Clemence) |
+| H | weapon | Text | - | 무기 타입 (예: pistol, sword) |
+| I | common | Text | - | Common 재료 SubCategory |
+| J | forgery | Text | - | Forgery 재료 SubCategory |
+| K | ascension | Number | - | Ascension 재료 game_id |
+| L | boss | Number | - | Boss 재료 game_id |
+| M | weeklyBoss | Number | - | Weekly Boss 재료 game_id |
+| N | icon | Text | - | 아이콘 URL |
 
 **game_id 수식 설명:**
-- `5200000000 + (Rarity × 10000000) + Seq`
-- Rarity 6, Seq 1 → 5206000001
-- Rarity 5, Seq 1 → 5205000001
-- Rarity 4, Seq 1 → 5204000001
+- `5200000000 + (Rarity × 10000000) + (ElementCode × 100000) + Seq`
+- Rarity 6, Physical (01), Seq 1 → 5206010001
+- Rarity 6, Heat (02), Seq 1 → 5206020001
+- Rarity 5, Cryo (04), Seq 1 → 5205040001
 
 **예시 데이터:**
 
-| Seq | Rarity | game_id | key | display_name | element | weapon | common | forgery | ascension | boss | weeklyBoss | icon |
-|-----|--------|---------|-----|--------------|---------|--------|---------|---------|-----------|------|------------|------|
-| 1 | 6 | 5206000001 | clemence | Clemence | glacio | gun | circuit_core | combat_data | 5130010001 | 5140010001 | 5150010001 | https://... |
-| 2 | 6 | 5206000002 | alice | Alice | fusion | sword | crystal_shard | tactical_manual | 5130010002 | 5140010002 | 5150010002 | https://... |
+| Seq | Rarity | Element | ElementCode | game_id | key | display_name | weapon | common | forgery | ascension | boss | weeklyBoss | icon |
+|-----|--------|---------|-------------|---------|-----|--------------|--------|---------|---------|-----------|------|------------|------|
+| 1 | 6 | cryo | 4 | 5206040001 | clemence | Clemence | pistol | circuit_core | combat_data | 5130010001 | 5140010001 | 5150010001 | https://... |
+| 2 | 6 | heat | 2 | 5206020001 | alice | Alice | sword | crystal_shard | tactical_manual | 5130010002 | 5140010002 | 5150010002 | https://... |
 
 ---
 
@@ -82,8 +83,8 @@ Endfield 게임 데이터를 구글 시트에서 관리하고 JSON으로 자동 
 |--------|------|------|---------|-------------|
 | A | Seq | Number | - | 순번 (1, 2, 3...) |
 | B | Rarity | Number | - | 성급 (3, 4, 5, 6) |
-| C | Type | Text | - | 무기 타입 (sword, gun, bow, staff, hammer, dual_blade) |
-| D | TypeCode | Number | `=IF(C2="sword",1,IF(C2="gun",2,IF(C2="bow",3,IF(C2="staff",4,IF(C2="hammer",5,IF(C2="dual_blade",6,0))))))` | 타입 코드 자동 변환 |
+| C | Type | Text | - | 무기 타입 (sword, greatsword, polearm, arts, pistol) |
+| D | TypeCode | Number | `=IF(C2="sword",1,IF(C2="greatsword",2,IF(C2="polearm",3,IF(C2="arts",4,IF(C2="pistol",5,0)))))` | 타입 코드 자동 변환 |
 | E | game_id | Number | `=IF(A2="","",5300000000+(B2*10000000)+(D2*100000)+A2)` | 자동 생성 ID |
 | F | key | Text | - | 내부 키 |
 | G | display_name | Text | - | 표시 이름 |
@@ -93,17 +94,17 @@ Endfield 게임 데이터를 구글 시트에서 관리하고 JSON으로 자동 
 
 **game_id 수식 설명:**
 - `5300000000 + (Rarity × 10000000) + (TypeCode × 100000) + Seq`
-- Rarity 6, Sword (01), Seq 1 → 5306010001
-- Rarity 5, Gun (02), Seq 1 → 5305020001
-- Rarity 3, Bow (03), Seq 1 → 5303030001
+- Rarity 6, 한손검 (01), Seq 1 → 5306010001
+- Rarity 5, 양손검 (02), Seq 1 → 5305020001
+- Rarity 3, 장병기 (03), Seq 1 → 5303030001
 
 **예시 데이터:**
 
 | Seq | Rarity | Type | TypeCode | game_id | key | display_name | common | forgery | icon |
 |-----|--------|------|----------|---------|-----|--------------|---------|---------|------|
 | 1 | 6 | sword | 1 | 5306010001 | blade_of_dawn | Blade of Dawn | metal_plate | weapon_blueprint | https://... |
-| 2 | 6 | gun | 2 | 5306020001 | thunder_rifle | Thunder Rifle | alloy_plate | tech_schematic | https://... |
-| 3 | 5 | bow | 3 | 5305030001 | hunters_bow | Hunter's Bow | metal_plate | weapon_blueprint | https://... |
+| 2 | 6 | greatsword | 2 | 5306020001 | great_blade | Great Blade | alloy_plate | tech_schematic | https://... |
+| 3 | 5 | polearm | 3 | 5305030001 | hunters_lance | Hunter's Lance | metal_plate | weapon_blueprint | https://... |
 
 ---
 
@@ -247,20 +248,20 @@ function generateCharacterJSON() {
     // Skip empty rows
     if (!row[0]) continue;
 
-    const key = row[3]; // Column D: key
+    const key = row[5]; // Column F: key
 
     json[key] = {
-      game_id: row[2], // Column C: game_id
-      display_name: row[4], // Column E: display_name
-      element: row[5], // Column F: element
-      weapon: row[6], // Column G: weapon
-      icon: row[12] || '', // Column M: icon
+      game_id: row[4], // Column E: game_id
+      display_name: row[6], // Column G: display_name
+      element: row[2], // Column C: element
+      weapon: row[7], // Column H: weapon
+      icon: row[13] || '', // Column N: icon
       rarity: row[1], // Column B: rarity
-      common: row[7], // Column H: common
-      forgery: row[8], // Column I: forgery
-      ascension: row[9], // Column J: ascension
-      boss: row[10], // Column K: boss
-      weeklyBoss: row[11], // Column L: weeklyBoss
+      common: row[8], // Column I: common
+      forgery: row[9], // Column J: forgery
+      ascension: row[10], // Column K: ascension
+      boss: row[11], // Column L: boss
+      weeklyBoss: row[12], // Column M: weeklyBoss
       bonus_stats: []
     };
   }

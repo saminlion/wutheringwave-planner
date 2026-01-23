@@ -13,7 +13,7 @@
               <div class="character-container"
                 v-if="String(goal.id).startsWith('42')">
                 <img :src="getCharacterField(goal.id, 'icon')" alt="Character Icon" class="character-icon" />
-                <h3>{{ getCharacterField(goal.id, 'display_name') }}</h3>
+                <h3>{{ tCharacter(goal.id, getCharacterField(goal.id, 'display_name')) }}</h3>
                 <div class="icon-container">
                   <!-- Delete Button -->
                   <button class="delete-button" @click="removeGoal(goal.id, 'character')">
@@ -56,7 +56,7 @@
               </div>
               <div class="weapon-container" v-else>
                 <img :src="getWeaponField(goal.id, 'icon')" alt="Weapon Icon" class="character-icon" />
-                <h3>{{ getWeaponField(goal.id, 'display_name') }}</h3>
+                <h3>{{ tWeapon(goal.id, getWeaponField(goal.id, 'display_name')) }}</h3>
                 <div class="icon-container">
                   <!-- Delete Button -->
                   <button class="delete-button" @click="removeGoal(goal.id, 'weapon')">
@@ -132,6 +132,10 @@
 import { watch, computed, toRaw, onMounted, ref } from "vue";
 import { usePlannerStore } from "@/store/planner";
 import { useInventoryStore } from "@/store/inventory";
+import { useLocale } from '@/composables/useLocale';
+
+// i18n翻訳関数を取得
+const { tCharacter, tWeapon, tMaterial } = useLocale();
 import {
   findMaterial,
   getMaterialField,

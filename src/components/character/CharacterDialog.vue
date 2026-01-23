@@ -4,8 +4,8 @@
             <div class="dialog-content">
                 <div class="header-section">
                     <div class="character-info">
-                        <h2>{{ character?.display_name || 'Unknown' }}</h2> <!-- 캐릭터 이름 -->
-                        <img :src="character?.icon || ''" :alt="character?.display_name || 'Unknown'" width="50" />
+                        <h2>{{ tCharacter(character?.game_id, character?.display_name) || 'Unknown' }}</h2> <!-- キャラクター名 -->
+                        <img :src="character?.icon || ''" :alt="tCharacter(character?.game_id, character?.display_name) || 'Unknown'" width="50" />
                         <!-- 캐릭터 아이콘 -->
                     </div>
 
@@ -106,7 +106,8 @@ import { ref, watch, onMounted } from 'vue';
 import { setGradientStyle } from '../../services/utils';
 import { useLocale } from '@/composables/useLocale';
 
-const { tUI } = useLocale();
+// i18n翻訳関数を取得
+const { tUI, tCharacter } = useLocale();
 
 const props = defineProps({
     visible: Boolean,
