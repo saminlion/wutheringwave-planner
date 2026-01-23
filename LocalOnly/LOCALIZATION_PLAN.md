@@ -178,100 +178,206 @@ const { t } = useLocale();
 
 ---
 
-## 기존 Google Sheets 연동
+## 기존 Google Sheets 연동 (수식 기반)
 
 **참고 문서:** [LocalOnly/WutheringWaves/GOOGLE_SHEETS_GUIDE.md](./WutheringWaves/GOOGLE_SHEETS_GUIDE.md)
 
-현재 WW 데이터 관리용 Google Sheets가 이미 존재함. 이 시트에 번역 컬럼을 추가하는 방식으로 구현.
+기존 데이터 시트(Characters, Weapons, Materials)는 수정하지 않고, **별도 번역 시트**를 만들어 수식으로 key/영문명을 참조하는 방식.
 
-### 기존 시트에 번역 컬럼 추가
+**장점:**
+- 기존 시트 구조 유지
+- 아이템 추가 시 번역 시트에 자동 반영 (수식)
+- 번역만 수동 입력하면 됨
 
-#### Characters 시트 수정
+---
 
-기존 열 구조 (A~Q)에 번역 열 추가:
+### 번역 시트 구조
 
-| Column | Name | 변경사항 |
-|--------|------|---------|
-| G | display_name | → `name_en` (영문 이름, 기존) |
-| **R** | **name_ko** | **신규 추가** - 한글 이름 |
-| **S** | **name_ja** | **향후 추가** - 일본어 이름 (선택) |
+#### Characters_i18n 시트 (신규)
 
-**예시:**
-| ... | name_en | ... | name_ko |
-|-----|---------|-----|---------|
-| ... | Jiyan | ... | 지얀 |
-| ... | Sanhua | ... | 산화 |
-| ... | Rover (Havoc) | ... | 방랑자 (파멸) |
+| Column | Name | 수식/값 | 설명 |
+|--------|------|--------|------|
+| A | game_id | `=Characters!E2` | 자동: Characters 시트의 game_id (고유 식별자) |
+| B | en | `=Characters!G2` | 자동: Characters 시트의 display_name |
+| C | ko | (직접 입력) | 수동: 한글 번역 |
 
-#### Weapons 시트 수정
+**game_id를 key로 사용하는 이유:**
+- `key` (문자열): 신규 캐릭터의 경우 나중에 변경될 수 있음
+- `display_name` (영문): 공식 번역 변경 가능
+- **`game_id` (숫자)**: 한번 할당되면 절대 변경되지 않음 → **가장 안정적**
 
-| Column | Name | 변경사항 |
-|--------|------|---------|
-| G | display_name | → `name_en` (영문 이름, 기존) |
-| **K** | **name_ko** | **신규 추가** - 한글 이름 |
+**헤더 행 (Row 1):**
+| game_id | en | ko |
+|---------|----|----|
 
-#### Materials 시트 수정
+**데이터 행 예시 (Row 2~):**
+| =Characters!E2 | =Characters!G2 | 지얀 |
+| =Characters!E3 | =Characters!G3 | 산화 |
+| =Characters!E4 | =Characters!G4 | 방랑자 (파멸) |
 
-| Column | Name | 변경사항 |
-|--------|------|---------|
-| H | label | → `label_en` (영문 라벨, 기존) |
-| **L** | **label_ko** | **신규 추가** - 한글 라벨 |
+**결과:**
+| game_id | en | ko |
+|---------|----|----|
+| 4205010001 | Jiyan | 지얀 |
+| 4204000001 | Sanhua | 산화 |
+| 4205050001 | Rover (Havoc) | 방랑자 (파멸) |
 
-**예시:**
-| ... | label_en | ... | label_ko |
-|-----|----------|-----|----------|
-| ... | LF Whisperin Core | ... | LF 위스퍼링 코어 |
-| ... | Shell Credit | ... | 쉘 크레딧 |
+---
 
-### Apps Script 수정
+#### Weapons_i18n 시트 (신규)
 
-기존 `GOOGLE_SHEETS_GUIDE.md`의 Apps Script에 번역 필드 추가:
+| Column | Name | 수식/값 |
+|--------|------|--------|
+| A | game_id | `=Weapons!E2` |
+| B | en | `=Weapons!G2` |
+| C | ko | (직접 입력) |
 
-```javascript
-// Characters JSON 생성 (수정)
-function generateCharacterJSON() {
-  // ...
-  json[key] = {
-    game_id: row[4],
-    name: {                    // 기존 display_name → name 객체로 변경
-      en: row[6],              // Column G: name_en
-      ko: row[17] || row[6],   // Column R: name_ko (없으면 영문)
-    },
-    // ... 나머지 필드
-  };
-}
+---
 
-// Materials JSON 생성 (수정)
-function generateMaterialsJSON() {
-  // ...
-  const material = {
-    game_id: row[5],
-    label: {                   // 기존 label → label 객체로 변경
-      en: row[7],              // Column H: label_en
-      ko: row[11] || row[7],   // Column L: label_ko (없으면 영문)
-    },
-    // ... 나머지 필드
-  };
-}
-```
+#### Materials_i18n 시트 (신규)
 
-### UI Strings 시트 (신규)
+| Column | Name | 수식/값 |
+|--------|------|--------|
+| A | game_id | `=Materials!F2` |
+| B | en | `=Materials!H2` |
+| C | ko | (직접 입력) |
 
-게임 데이터 외 UI 문자열용 시트 신규 생성:
+---
+
+#### UI_Strings 시트 (신규, 수동 입력)
+
+UI 문자열은 데이터 시트가 없으므로 전부 수동 입력:
 
 | key | en | ko | context |
 |-----|----|----|---------|
 | nav.planner | Planner | 플래너 | 네비게이션 |
 | nav.inventory | Inventory | 인벤토리 | 네비게이션 |
 | nav.settings | Settings | 설정 | 네비게이션 |
-| planner.add_goal | Add Goal | 목표 추가 | 플래너 페이지 |
-| planner.final_materials | Final Materials | 최종 재료 | 플래너 페이지 |
-| inventory.quantity | Quantity | 수량 | 인벤토리 페이지 |
-| settings.cloud_sync | Cloud Sync | 클라우드 동기화 | 설정 페이지 |
-| settings.backup | Backup | 백업 | 설정 페이지 |
-| common.save | Save | 저장 | 공통 |
-| common.cancel | Cancel | 취소 | 공통 |
-| common.confirm | Confirm | 확인 | 공통 |
+| planner.add_goal | Add Goal | 목표 추가 | |
+| common.save | Save | 저장 | |
+| common.cancel | Cancel | 취소 | |
+
+---
+
+### 새 아이템 추가 시 워크플로우
+
+1. **기존 시트에 아이템 추가** (Characters, Weapons, Materials)
+2. **번역 시트에 행 추가:**
+   - A열, B열: 수식 복사 (자동으로 key, en 채워짐)
+   - C열: 한글 번역 입력
+3. **JSON 생성** (Apps Script)
+
+---
+
+### Apps Script - 번역 JSON 생성
+
+```javascript
+// 번역 JSON 생성 (별도 함수)
+function generateTranslationsJSON() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+
+  const translations = {
+    en: { characters: {}, weapons: {}, materials: {}, ui: {} },
+    ko: { characters: {}, weapons: {}, materials: {}, ui: {} }
+  };
+
+  // Characters_i18n (game_id 기반)
+  const charSheet = ss.getSheetByName('Characters_i18n');
+  if (charSheet) {
+    const charData = charSheet.getDataRange().getValues();
+    for (let i = 1; i < charData.length; i++) {
+      const [gameId, en, ko] = charData[i];
+      if (gameId) {
+        translations.en.characters[gameId] = en || '';
+        translations.ko.characters[gameId] = ko || en || '';
+      }
+    }
+  }
+
+  // Weapons_i18n (game_id 기반)
+  const weaponSheet = ss.getSheetByName('Weapons_i18n');
+  if (weaponSheet) {
+    const weaponData = weaponSheet.getDataRange().getValues();
+    for (let i = 1; i < weaponData.length; i++) {
+      const [gameId, en, ko] = weaponData[i];
+      if (gameId) {
+        translations.en.weapons[gameId] = en || '';
+        translations.ko.weapons[gameId] = ko || en || '';
+      }
+    }
+  }
+
+  // Materials_i18n (game_id 기반)
+  const matSheet = ss.getSheetByName('Materials_i18n');
+  if (matSheet) {
+    const matData = matSheet.getDataRange().getValues();
+    for (let i = 1; i < matData.length; i++) {
+      const [gameId, en, ko] = matData[i];
+      if (gameId) {
+        translations.en.materials[gameId] = en || '';
+        translations.ko.materials[gameId] = ko || en || '';
+      }
+    }
+  }
+
+  // UI_Strings (문자열 key 유지 - UI는 game_id 없음)
+  const uiSheet = ss.getSheetByName('UI_Strings');
+  if (uiSheet) {
+    const uiData = uiSheet.getDataRange().getValues();
+    for (let i = 1; i < uiData.length; i++) {
+      const [key, en, ko] = uiData[i];
+      if (key) {
+        translations.en.ui[key] = en || key;
+        translations.ko.ui[key] = ko || en || key;
+      }
+    }
+  }
+
+  // 언어별 JSON 출력
+  outputJSON('translations_en.json', translations.en);
+  outputJSON('translations_ko.json', translations.ko);
+}
+```
+
+---
+
+### JSON Output 예시
+
+**translations_ko.json:**
+```json
+{
+  "characters": {
+    "4205010001": "지얀",
+    "4204000001": "산화",
+    "4205050001": "방랑자 (파멸)"
+  },
+  "weapons": {
+    "4305010001": "푸른 정상"
+  },
+  "materials": {
+    "4110010001": "LF 위스퍼링 코어",
+    "4100000001": "쉘 크레딧"
+  },
+  "ui": {
+    "nav.planner": "플래너",
+    "common.save": "저장"
+  }
+}
+```
+
+### Vue에서 사용 예시
+
+```javascript
+// composables/useLocale.js
+const t = (gameId, category = 'characters') => {
+  return translations[locale.value][category][gameId] || gameId;
+};
+
+// 컴포넌트에서
+<span>{{ t(character.game_id, 'characters') }}</span>
+<span>{{ t(material.game_id, 'materials') }}</span>
+<span>{{ t('nav.planner', 'ui') }}</span>  // UI는 문자열 key
+```
 
 ---
 

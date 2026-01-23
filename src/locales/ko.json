@@ -1,0 +1,31 @@
+{
+  "characters": {
+  },
+  "weapons": {
+  },
+  "materials": {
+  },
+  "ui": {
+    "nav.home": "홈",
+    "nav.planner": "플래너",
+    "nav.character": "캐릭터",
+    "nav.weapon": "무기",
+    "nav.inventory": "인벤토리",
+    "nav.settings": "설정",
+    "common.save": "저장",
+    "common.cancel": "취소",
+    "common.confirm": "확인",
+    "common.delete": "삭제",
+    "common.edit": "수정",
+    "common.add": "추가",
+    "common.close": "닫기",
+    "common.loading": "로딩 중...",
+    "planner.add_goal": "목표 추가",
+    "planner.final_materials": "최종 재료",
+    "planner.no_goals": "추가된 목표 없음",
+    "inventory.quantity": "수량",
+    "settings.cloud_sync": "클라우드 동기화",
+    "settings.backup": "백업",
+    "settings.language": "언어"
+  }
+}

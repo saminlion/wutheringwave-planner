@@ -1,0 +1,31 @@
+{
+  "characters": {
+  },
+  "weapons": {
+  },
+  "materials": {
+  },
+  "ui": {
+    "nav.home": "Home",
+    "nav.planner": "Planner",
+    "nav.character": "Character",
+    "nav.weapon": "Weapon",
+    "nav.inventory": "Inventory",
+    "nav.settings": "Settings",
+    "common.save": "Save",
+    "common.cancel": "Cancel",
+    "common.confirm": "Confirm",
+    "common.delete": "Delete",
+    "common.edit": "Edit",
+    "common.add": "Add",
+    "common.close": "Close",
+    "common.loading": "Loading...",
+    "planner.add_goal": "Add Goal",
+    "planner.final_materials": "Final Materials",
+    "planner.no_goals": "No goals added",
+    "inventory.quantity": "Quantity",
+    "settings.cloud_sync": "Cloud Sync",
+    "settings.backup": "Backup",
+    "settings.language": "Language"
+  }
+}
