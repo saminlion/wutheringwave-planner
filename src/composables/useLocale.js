@@ -1,8 +1,8 @@
-import { ref, computed } from 'vue';
-import { storage } from '@/utils/storage';
+import { ref, computed, triggerRef } from 'vue';
+import { loadFromStorage, saveToStorage } from '@/utils/storage';
 
 // 현재 로케일 상태 (전역)
-const currentLocale = ref(storage.get('locale') || 'en');
+const currentLocale = ref(loadFromStorage('locale', 'en'));
 
 // 번역 데이터 캐시
 const translationsCache = ref({});
@@ -12,6 +12,9 @@ const supportedLocales = [
   { code: 'en', name: 'English' },
   { code: 'ko', name: '한국어' },
 ];
+
+// Vite의 import.meta.glob으로 로케일 파일 미리 로드
+const localeModules = import.meta.glob('../locales/*.json');
 
 /**
  * 번역 파일 로드
@@ -23,10 +26,15 @@ async function loadTranslations(locale) {
   }
 
   try {
-    // Dynamic import로 번역 파일 로드
-    const translations = await import(`@/locales/${locale}.json`);
-    translationsCache.value[locale] = translations.default;
-    return translations.default;
+    const modulePath = `../locales/${locale}.json`;
+    if (localeModules[modulePath]) {
+      const module = await localeModules[modulePath]();
+      translationsCache.value[locale] = module.default;
+      triggerRef(translationsCache);
+      return module.default;
+    }
+    console.warn(`Locale file not found: ${locale}`);
+    return null;
   } catch (error) {
     console.warn(`Failed to load translations for locale: ${locale}`, error);
     return null;
@@ -41,8 +49,13 @@ export function useLocale() {
     get: () => currentLocale.value,
     set: (value) => {
       currentLocale.value = value;
-      storage.set('locale', value);
+      saveToStorage('locale', value);
     }
+  });
+
+  // 현재 번역 데이터 (computed로 반응성 보장)
+  const currentTranslations = computed(() => {
+    return translationsCache.value[currentLocale.value] || {};
   });
 
   /**
@@ -53,11 +66,7 @@ export function useLocale() {
    * @returns {string} 번역된 문자열
    */
   const t = (key, category = 'ui', fallback = null) => {
-    const translations = translationsCache.value[currentLocale.value];
-
-    if (!translations) {
-      return fallback || String(key);
-    }
+    const translations = currentTranslations.value;
 
     const categoryData = translations[category];
     if (!categoryData) {

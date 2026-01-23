@@ -6,13 +6,13 @@
         <GameSelector />
       </div>
       <nav>
-        <router-link to="/">Home</router-link>
-        <router-link to="/planner">Planner</router-link>
-        <router-link to="/inventory">Inventory</router-link>
-        <router-link to="/character">Character</router-link>
-        <router-link to="/weapon">Weapon</router-link>
+        <router-link to="/">{{ tUI('nav.home') }}</router-link>
+        <router-link to="/planner">{{ tUI('nav.planner') }}</router-link>
+        <router-link to="/inventory">{{ tUI('nav.inventory') }}</router-link>
+        <router-link to="/character">{{ tUI('nav.character') }}</router-link>
+        <router-link to="/weapon">{{ tUI('nav.weapon') }}</router-link>
         <router-link to="/endfield-data">Endfield Data</router-link>
-        <router-link to="/settings">Settings</router-link>
+        <router-link to="/settings">{{ tUI('nav.settings') }}</router-link>
       </nav>
     </header>
     <main>
@@ -26,15 +26,20 @@ import { onMounted } from 'vue';
 import { usePlannerStore } from './store/planner.js';
 import { useInventoryStore } from './store/inventory.js';
 import { useGameRegistryStore } from './store/gameRegistry.js';
+import { useLocale } from '@/composables/useLocale';
 import GameSelector from './components/common/GameSelector.vue';
 import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 const gameRegistry = useGameRegistryStore();
+const { initLocale, tUI } = useLocale();
 
 // Load data from localStorage on app start
-onMounted(() => {
+onMounted(async () => {
+  // Initialize locale first
+  await initLocale();
+
   const gameId = gameRegistry.currentGameId || 'wutheringwave';
   plannerStore.hydrate();
   inventoryStore.hydrate(gameId);

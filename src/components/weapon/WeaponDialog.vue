@@ -9,7 +9,7 @@
                         <!-- 무기기 아이콘 -->
                     </div>
 
-                    <button class="close-dialog" @click="closeDialog">Close</button> <!-- Close 버튼 -->
+                    <button class="close-dialog" @click="closeDialog">{{ tUI('common.close') }}</button> <!-- Close 버튼 -->
                 </div>
                 <div class="setting-section scrollable">
                         <h3>Level</h3>
@@ -40,6 +40,9 @@
 <script setup>
 import { ref, watch, onMounted } from 'vue';
 import { setGradientStyle } from '../../services/utils';
+import { useLocale } from '@/composables/useLocale';
+
+const { tUI } = useLocale();
 
 const props = defineProps({
     visible: Boolean,

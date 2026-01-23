@@ -1,9 +1,13 @@
 <template>
   <div class="settings-view">
-    <h1>Settings</h1>
+    <h1>{{ tUI('nav.settings') }}</h1>
     <p class="settings-description">
       Manage your planner data - sync to cloud or backup locally.
     </p>
+
+    <section class="settings-section">
+      <LanguageSelector />
+    </section>
 
     <section class="settings-section">
       <CloudSync />
@@ -18,6 +22,10 @@
 <script setup>
 import DataBackup from '@/components/common/DataBackup.vue';
 import CloudSync from '@/components/settings/CloudSync.vue';
+import LanguageSelector from '@/components/settings/LanguageSelector.vue';
+import { useLocale } from '@/composables/useLocale';
+
+const { tUI } = useLocale();
 </script>
 
 <style scoped>
