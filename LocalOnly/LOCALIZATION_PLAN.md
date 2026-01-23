@@ -178,20 +178,100 @@ const { t } = useLocale();
 
 ---
 
-## Google Sheets Setup Notes
+## 기존 Google Sheets 연동
 
-### 공개 CSV 방식 (간단)
-1. Google Sheets 생성
-2. File > Share > Publish to web > CSV
-3. 각 시트별 CSV URL 획득
-4. 스크립트에서 fetch로 가져오기
+**참고 문서:** [LocalOnly/WutheringWaves/GOOGLE_SHEETS_GUIDE.md](./WutheringWaves/GOOGLE_SHEETS_GUIDE.md)
 
-### API 방식 (권장, 비공개 가능)
-1. Google Cloud Console에서 프로젝트 생성
-2. Google Sheets API 활성화
-3. Service Account 생성 및 JSON key 다운로드
-4. 시트에 Service Account 이메일 공유
-5. 스크립트에서 googleapis 패키지 사용
+현재 WW 데이터 관리용 Google Sheets가 이미 존재함. 이 시트에 번역 컬럼을 추가하는 방식으로 구현.
+
+### 기존 시트에 번역 컬럼 추가
+
+#### Characters 시트 수정
+
+기존 열 구조 (A~Q)에 번역 열 추가:
+
+| Column | Name | 변경사항 |
+|--------|------|---------|
+| G | display_name | → `name_en` (영문 이름, 기존) |
+| **R** | **name_ko** | **신규 추가** - 한글 이름 |
+| **S** | **name_ja** | **향후 추가** - 일본어 이름 (선택) |
+
+**예시:**
+| ... | name_en | ... | name_ko |
+|-----|---------|-----|---------|
+| ... | Jiyan | ... | 지얀 |
+| ... | Sanhua | ... | 산화 |
+| ... | Rover (Havoc) | ... | 방랑자 (파멸) |
+
+#### Weapons 시트 수정
+
+| Column | Name | 변경사항 |
+|--------|------|---------|
+| G | display_name | → `name_en` (영문 이름, 기존) |
+| **K** | **name_ko** | **신규 추가** - 한글 이름 |
+
+#### Materials 시트 수정
+
+| Column | Name | 변경사항 |
+|--------|------|---------|
+| H | label | → `label_en` (영문 라벨, 기존) |
+| **L** | **label_ko** | **신규 추가** - 한글 라벨 |
+
+**예시:**
+| ... | label_en | ... | label_ko |
+|-----|----------|-----|----------|
+| ... | LF Whisperin Core | ... | LF 위스퍼링 코어 |
+| ... | Shell Credit | ... | 쉘 크레딧 |
+
+### Apps Script 수정
+
+기존 `GOOGLE_SHEETS_GUIDE.md`의 Apps Script에 번역 필드 추가:
+
+```javascript
+// Characters JSON 생성 (수정)
+function generateCharacterJSON() {
+  // ...
+  json[key] = {
+    game_id: row[4],
+    name: {                    // 기존 display_name → name 객체로 변경
+      en: row[6],              // Column G: name_en
+      ko: row[17] || row[6],   // Column R: name_ko (없으면 영문)
+    },
+    // ... 나머지 필드
+  };
+}
+
+// Materials JSON 생성 (수정)
+function generateMaterialsJSON() {
+  // ...
+  const material = {
+    game_id: row[5],
+    label: {                   // 기존 label → label 객체로 변경
+      en: row[7],              // Column H: label_en
+      ko: row[11] || row[7],   // Column L: label_ko (없으면 영문)
+    },
+    // ... 나머지 필드
+  };
+}
+```
+
+### UI Strings 시트 (신규)
+
+게임 데이터 외 UI 문자열용 시트 신규 생성:
+
+| key | en | ko | context |
+|-----|----|----|---------|
+| nav.planner | Planner | 플래너 | 네비게이션 |
+| nav.inventory | Inventory | 인벤토리 | 네비게이션 |
+| nav.settings | Settings | 설정 | 네비게이션 |
+| planner.add_goal | Add Goal | 목표 추가 | 플래너 페이지 |
+| planner.final_materials | Final Materials | 최종 재료 | 플래너 페이지 |
+| inventory.quantity | Quantity | 수량 | 인벤토리 페이지 |
+| settings.cloud_sync | Cloud Sync | 클라우드 동기화 | 설정 페이지 |
+| settings.backup | Backup | 백업 | 설정 페이지 |
+| common.save | Save | 저장 | 공통 |
+| common.cancel | Cancel | 취소 | 공통 |
+| common.confirm | Confirm | 확인 | 공통 |
 
 ---
 
