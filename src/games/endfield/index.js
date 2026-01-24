@@ -12,6 +12,9 @@ import {
   tieredMaterialsByGameId,
 } from './data/index.js';
 
+// Game-specific components
+import CharacterDialog from './components/CharacterDialog.vue';
+
 const endfieldPlugin = {
   id: 'endfield',
   name: 'Endfield',
@@ -20,6 +23,11 @@ const endfieldPlugin = {
 
   // Game configuration
   config,
+
+  // ゲーム専用コンポーネント
+  components: {
+    CharacterDialog,
+  },
 
   // Game data
   materials: {

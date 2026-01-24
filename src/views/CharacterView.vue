@@ -39,9 +39,18 @@
     </div>
 
 
-    <CharacterDialog v-if="dialogVisible && selectedCharacter" :visible="dialogVisible" :character="selectedCharacter"
-      :settings="currentSettings" :levelItems="characterLevelItems" :activeSkills="characterActiveSkills" :passiveSkills="characterPassiveSkills"
-      @close="dialogVisible = false" @updateCharacter="updateCharacter" />
+    <component
+      :is="CharacterDialogComponent"
+      v-if="dialogVisible && selectedCharacter && CharacterDialogComponent"
+      :visible="dialogVisible"
+      :character="selectedCharacter"
+      :settings="currentSettings"
+      :levelItems="characterLevelItems"
+      :activeSkills="characterActiveSkills"
+      :passiveSkills="characterPassiveSkills"
+      @close="dialogVisible = false"
+      @updateCharacter="updateCharacter"
+    />
   </div>
 </template>
 
@@ -50,7 +59,6 @@ import { ref, computed, watch } from 'vue';
 import { usePlannerStore } from '../store/planner';
 import { useGameStore } from '@/store/game';
 import { setGradientStyle } from '../services/utils';
-import CharacterDialog from '../components/character/CharacterDialog.vue';
 import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
@@ -59,6 +67,9 @@ const { tCharacter } = useLocale();
 
 const plannerStore = usePlannerStore();
 const gameStore = useGameStore();
+
+// ゲーム専用ダイアログコンポーネント (動的ロード)
+const CharacterDialogComponent = computed(() => gameStore.getComponent('CharacterDialog'));
 
 // 현재 게임의 캐릭터 데이터 (반응형)
 const characters = computed(() => {
@@ -114,33 +125,16 @@ const currentSettings = computed(() =>
   selectedCharacter.value ? plannerStore.characterSettings[selectedCharacter.value.game_id] : null
 );
 
-// 게임별 초기 설정 생성
+// ゲーム別初期設定生成（configから取得）
 const createInitialSettings = () => {
-  const activeSkills = characterActiveSkills.value;
-  const passiveSkills = characterPassiveSkills.value;
-
-  // Active skills 초기화
-  const activeSkillsSettings = activeSkills.reduce((acc, skill) => {
-    acc[`${skill.model_value}_current_level`] = 1;
-    acc[`${skill.model_value}_target_level`] = 1;
-    return acc;
-  }, {});
-
-  // Passive skills 초기화 (게임별 구조가 다름)
-  const passiveSkillsSettings = {};
-  Object.values(passiveSkills).forEach(tier => {
-    if (tier.data) {
-      tier.data.forEach(skill => {
-        passiveSkillsSettings[skill.model_value] = false;
-      });
-    }
-  });
-
+  const config = gameStore.currentGameConfig;
+  if (config && typeof config.createCharacterInitialSettings === 'function') {
+    return config.createCharacterInitialSettings();
+  }
+  // フォールバック: 基本構造
   return {
     currentLevel: '1',
     targetLevel: '1',
-    activeSkills: activeSkillsSettings,
-    passiveSkills: passiveSkillsSettings,
   };
 };
 

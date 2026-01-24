@@ -90,28 +90,13 @@ export const wutheringWaveConfig = {
       { label: 'Support Skill', model_value: 'support_skill' },
       { label: 'Enhanced Mode', model_value: 'enhanced_mode' },
     ],
-    characterPassiveSkills: {
-      tier_1: {
-        label: 'Tier 1 Skills',
-        data: [
-          { label: 'Passive Ability 1', model_value: 'passive_ability_1' },
-          { label: 'Bonus Stat 1', model_value: 'bonus_stats_1_1' },
-          { label: 'Bonus Stat 2', model_value: 'bonus_stats_1_2' },
-          { label: 'Bonus Stat 3', model_value: 'bonus_stats_1_3' },
-          { label: 'Bonus Stat 4', model_value: 'bonus_stats_1_4' },
-        ],
-      },
-      tier_2: {
-        label: 'Tier 2 Skills',
-        data: [
-          { label: 'Passive Ability 2', model_value: 'passive_ability_2' },
-          { label: 'Bonus Stat 1', model_value: 'bonus_stats_2_1' },
-          { label: 'Bonus Stat 2', model_value: 'bonus_stats_2_2' },
-          { label: 'Bonus Stat 3', model_value: 'bonus_stats_2_3' },
-          { label: 'Bonus Stat 4', model_value: 'bonus_stats_2_4' },
-        ],
-      },
-    },
+    characterPassiveSkills: [
+      { label: 'Passive Ability', model_value: 'passive_ability', min: 0, max: 2 },
+      { label: 'Bonus Stat 1', model_value: 'bonus_stat_1', min: 0, max: 2 },
+      { label: 'Bonus Stat 2', model_value: 'bonus_stat_2', min: 0, max: 2 },
+      { label: 'Bonus Stat 3', model_value: 'bonus_stat_3', min: 0, max: 2 },
+      { label: 'Bonus Stat 4', model_value: 'bonus_stat_4', min: 0, max: 2 },
+    ],
   },
 
   // Stamina system configuration
@@ -144,6 +129,36 @@ export const wutheringWaveConfig = {
   data: {
     characters,
     weapons,
+  },
+
+  /**
+   * キャラクター設定の初期値を生成
+   * @returns {object} 初期設定オブジェクト
+   */
+  createCharacterInitialSettings() {
+    const activeSkills = this.formFields.characterActiveSkills;
+    const passiveSkills = this.formFields.characterPassiveSkills;
+
+    // Active skills 초기화
+    const activeSkillsSettings = activeSkills.reduce((acc, skill) => {
+      acc[`${skill.model_value}_current_level`] = 1;
+      acc[`${skill.model_value}_target_level`] = 1;
+      return acc;
+    }, {});
+
+    // Passive skills 초기화 (레벨 기반: current/target)
+    const passiveSkillsSettings = passiveSkills.reduce((acc, skill) => {
+      acc[`${skill.model_value}_current_level`] = skill.min || 0;
+      acc[`${skill.model_value}_target_level`] = skill.min || 0;
+      return acc;
+    }, {});
+
+    return {
+      currentLevel: '1',
+      targetLevel: '1',
+      activeSkills: activeSkillsSettings,
+      passiveSkills: passiveSkillsSettings,
+    };
   },
 };
 

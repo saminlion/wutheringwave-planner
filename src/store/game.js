@@ -83,6 +83,17 @@ export const useGameStore = defineStore('game', () => {
     return null;
   }
 
+  /**
+   * ゲーム専用コンポーネント取得ヘルパー
+   * @param {string} name - コンポーネント名
+   * @returns {Component|null}
+   */
+  function getComponent(name) {
+    const game = currentGame.value;
+    if (!game) return null;
+    return game.components?.[name] ?? null;
+  }
+
   return {
     // State
     currentGameId,
@@ -99,6 +110,7 @@ export const useGameStore = defineStore('game', () => {
     switchGame,
     hydrate,
     getData,
+    getComponent,
   };
 });
 

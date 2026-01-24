@@ -117,10 +117,18 @@
 
     <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :key="refreshKey" @updateInventory="handleInventoryUpdate" />
 
-    <ChracterDialog v-if="dialogVisible && dialogType === 'character' && selectedCharacter" :visible="dialogVisible"
-      :character="selectedCharacter" :settings="currentSettings" :levelItems="characterLevelItems"
-      :activeSkills="characterActiveSkills" :passiveSkills="characterPassiveSkills" @close="dialogVisible = false"
-      @updateCharacter="updateCharacter" />
+    <component
+      :is="CharacterDialogComponent"
+      v-if="dialogVisible && dialogType === 'character' && selectedCharacter && CharacterDialogComponent"
+      :visible="dialogVisible"
+      :character="selectedCharacter"
+      :settings="currentSettings"
+      :levelItems="characterLevelItems"
+      :activeSkills="characterActiveSkills"
+      :passiveSkills="characterPassiveSkills"
+      @close="dialogVisible = false"
+      @updateCharacter="updateCharacter"
+    />
 
     <WeaponDialog v-if="dialogVisible && dialogType === 'weapon' && selectedWeapon" :visible="dialogVisible"
       :weapon="selectedWeapon" :settings="currentSettings" :levelItems="weaponLevelItems" @close="dialogVisible = false"
@@ -150,7 +158,6 @@ import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import FinalMaterialNeeds from "../components/planner/FinalMaterialNeeds.vue";
 import { getWeaponField } from "../services/weaponHelper";
-import ChracterDialog from "../components/character/CharacterDialog.vue";
 import WeaponDialog from "../components/weapon/WeaponDialog.vue";
 import logger from '@/utils/logger';
 
@@ -158,10 +165,13 @@ const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 const gameStore = useGameStore();
 
+// ゲーム専用ダイアログコンポーネント (動的ロード)
+const CharacterDialogComponent = computed(() => gameStore.getComponent('CharacterDialog'));
+
 // 현재 게임의 폼 필드 (반응형)
 const characterLevelItems = computed(() => gameStore.formFields?.characterLevelItems || []);
 const characterActiveSkills = computed(() => gameStore.formFields?.characterActiveSkills || []);
-const characterPassiveSkills = computed(() => gameStore.formFields?.characterPassiveSkills || {});
+const characterPassiveSkills = computed(() => gameStore.formFields?.characterPassiveSkills || []);
 const weaponLevelItems = computed(() => gameStore.formFields?.weaponLevelItems || []);
 
 // 현재 게임의 티어 재료 데이터
@@ -747,8 +757,16 @@ const completeGoal = (id, type) => {
         }
       });
 
-      // Keep passive skills as-is (they're already activated if checked)
-      updatedSettings.passiveSkills = { ...settings.passiveSkills };
+      // Update passive skills current to target (新構造: レベルベース 0→2)
+      updatedSettings.passiveSkills = {};
+      Object.keys(settings.passiveSkills || {}).forEach(key => {
+        if (key.endsWith('_current_level')) {
+          const targetKey = key.replace('_current_level', '_target_level');
+          updatedSettings.passiveSkills[key] = settings.passiveSkills[targetKey];
+        } else {
+          updatedSettings.passiveSkills[key] = settings.passiveSkills[key];
+        }
+      });
 
       plannerStore.updateCharacterSettings(id, updatedSettings);
       logger.info(`Updated character ${id} settings to target levels`);

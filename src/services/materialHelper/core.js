@@ -35,7 +35,9 @@ export const processMaterials = (materials, key, value, characterInfo) => {
             gameId = 4100000001;
         }
 
-        const material = findMaterial(key, gameId, null, true);
+        // materials.jsonのカテゴリキーに合わせてマッピング
+        const categoryKey = key === 'weeklyBoss' ? 'weekly' : key;
+        const material = findMaterial(categoryKey, gameId, null, true);
         if (material) {
             const materialKey = getMaterialField(material, 'game_id');
             if (materialKey) {

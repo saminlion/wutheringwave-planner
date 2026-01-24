@@ -148,4 +148,59 @@ export default {
     passiveSkills: true,
     weaponProgression: true,
   },
+
+  /**
+   * キャラクター設定の初期値を生成
+   * @returns {object} 初期設定オブジェクト
+   */
+  createCharacterInitialSettings() {
+    const skills = this.formFields.characterSkills;
+    const special = this.formFields.characterSpecial;
+    const baseSkill = this.formFields.characterBaseSkill;
+    const attributes = this.formFields.characterAttributes;
+
+    // Combat Skills 초기화 (level + mastery)
+    const skillsSettings = skills.reduce((acc, skill) => {
+      acc[skill.model_value] = {
+        current_level: 1,
+        target_level: 1,
+        current_mastery: 0,
+        target_mastery: 0,
+      };
+      return acc;
+    }, {});
+
+    // Talent (Special) 초기화
+    const specialSettings = special.reduce((acc, skill) => {
+      acc[skill.model_value] = {
+        current_level: 0,
+        target_level: 0,
+      };
+      return acc;
+    }, {});
+
+    // Base Skill 초기화
+    const baseSkillSettings = baseSkill.reduce((acc, skill) => {
+      acc[skill.model_value] = {
+        current_level: 0,
+        target_level: 0,
+      };
+      return acc;
+    }, {});
+
+    // Attributes 초기화 (boolean)
+    const attributesSettings = attributes.reduce((acc, attr) => {
+      acc[attr.model_value] = false;
+      return acc;
+    }, {});
+
+    return {
+      currentLevel: '1',
+      targetLevel: '1',
+      skills: skillsSettings,
+      special: specialSettings,
+      baseSkill: baseSkillSettings,
+      attributes: attributesSettings,
+    };
+  },
 };
