@@ -112,7 +112,7 @@ export const wutheringWaveConfig = {
       ascension: { drops: 0, stamina: 0, unobtainable: true },
       forgery: { drops: 51, stamina: 40 },
       boss: { drops: 4.3, stamina: 60 },
-      weeklyBoss: { drops: 3, stamina: 60 },
+      weekly: { drops: 3, stamina: 60 },  // materials.jsonのCategory名に合わせる
     },
   },
 
