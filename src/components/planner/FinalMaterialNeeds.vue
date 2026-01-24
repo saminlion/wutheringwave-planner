@@ -16,14 +16,14 @@
 
         <div class="final-container">
             <div class="category-card" v-for="(category, categoryName) in categorizedMaterials" :key="categoryName">
-                <h2 class="category-title">{{ category.name }}</h2>
+                <h2 class="category-title">{{ translateCategoryName(category.name) }}</h2>
 
                 <div class="subcategory-list">
 
                     <div class="subcategory-card" v-for="(subCategory, subCategoryName) in category.subCategories"
                         :key="subCategoryName">
 
-                        <h3 v-if="category.name !== subCategory.name">{{ subCategory.name }}</h3>
+                        <h3 v-if="category.name !== subCategory.name">{{ translateCategoryName(subCategory.name) }}</h3>
 
                                                 <div class="estimate-container" v-if="(estimate = getEstimates(category, subCategory))">
                             <p>Estimated Runs: {{ estimate.run }}</p>
@@ -136,7 +136,18 @@ import {
 import { useInventoryStore } from "@/store/inventory";
 import { useGameRegistryStore } from "@/store/gameRegistry";
 import { playerExpMaterial as player_exp_material } from "@/games/wutheringwave";
+import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
+
+// i18n翻訳関数を取得
+const { tUI, tMaterial } = useLocale();
+
+// カテゴリ名の翻訳ヘルパー関数
+const translateCategoryName = (categoryName) => {
+    const translated = tUI(`category.${categoryName}`);
+    // 翻訳キーが見つからない場合は元の名前を返す
+    return translated !== `category.${categoryName}` ? translated : categoryName;
+};
 
 const inventoryStore = useInventoryStore();
 const gameRegistry = useGameRegistryStore();

@@ -11,9 +11,9 @@
             <!-- 罹먮┃???대쫫怨??꾩씠肄?-->
             <div class="goal-header">
               <div class="character-container"
-                v-if="String(goal.id).startsWith('42')">
+                v-if="isCharacterGoal(goal.id)">
                 <img :src="getCharacterField(goal.id, 'icon')" alt="Character Icon" class="character-icon" />
-                <h3>{{ getCharacterField(goal.id, 'display_name') }}</h3>
+                <h3>{{ tCharacter(goal.id, getCharacterField(goal.id, 'display_name')) }}</h3>
                 <div class="icon-container">
                   <!-- Delete Button -->
                   <button class="delete-button" @click="removeGoal(goal.id, 'character')">
@@ -45,7 +45,7 @@
                   </button>
 
                   <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, String(goal.id).startsWith('42') ? 'character' : 'weapon')" title="Mark as Complete">
+                  <button class="complete-button" @click="completeGoal(goal.id, isCharacterGoal(goal.id) ? 'character' : 'weapon')" title="Mark as Complete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="icon-6">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -56,7 +56,7 @@
               </div>
               <div class="weapon-container" v-else>
                 <img :src="getWeaponField(goal.id, 'icon')" alt="Weapon Icon" class="character-icon" />
-                <h3>{{ getWeaponField(goal.id, 'display_name') }}</h3>
+                <h3>{{ tWeapon(goal.id, getWeaponField(goal.id, 'display_name')) }}</h3>
                 <div class="icon-container">
                   <!-- Delete Button -->
                   <button class="delete-button" @click="removeGoal(goal.id, 'weapon')">
@@ -87,7 +87,7 @@
                   </button>
 
                   <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, String(goal.id).startsWith('42') ? 'character' : 'weapon')" title="Mark as Complete">
+                  <button class="complete-button" @click="completeGoal(goal.id, isCharacterGoal(goal.id) ? 'character' : 'weapon')" title="Mark as Complete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="icon-6">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -117,10 +117,18 @@
 
     <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :key="refreshKey" @updateInventory="handleInventoryUpdate" />
 
-    <ChracterDialog v-if="dialogVisible && dialogType === 'character' && selectedCharacter" :visible="dialogVisible"
-      :character="selectedCharacter" :settings="currentSettings" :levelItems="characterLevelItems"
-      :activeSkills="characterActiveSkills" :passiveSkills="characterPassiveSkills" @close="dialogVisible = false"
-      @updateCharacter="updateCharacter" />
+    <component
+      :is="CharacterDialogComponent"
+      v-if="dialogVisible && dialogType === 'character' && selectedCharacter && CharacterDialogComponent"
+      :visible="dialogVisible"
+      :character="selectedCharacter"
+      :settings="currentSettings"
+      :levelItems="characterLevelItems"
+      :activeSkills="characterActiveSkills"
+      :passiveSkills="characterPassiveSkills"
+      @close="dialogVisible = false"
+      @updateCharacter="updateCharacter"
+    />
 
     <WeaponDialog v-if="dialogVisible && dialogType === 'weapon' && selectedWeapon" :visible="dialogVisible"
       :weapon="selectedWeapon" :settings="currentSettings" :levelItems="weaponLevelItems" @close="dialogVisible = false"
@@ -132,6 +140,11 @@
 import { watch, computed, toRaw, onMounted, ref } from "vue";
 import { usePlannerStore } from "@/store/planner";
 import { useInventoryStore } from "@/store/inventory";
+import { useGameStore } from "@/store/game";
+import { useLocale } from '@/composables/useLocale';
+
+// i18n翻訳関数を取得
+const { tCharacter, tWeapon, tMaterial } = useLocale();
 import {
   findMaterial,
   getMaterialField,
@@ -139,21 +152,42 @@ import {
   calculatePlayerExp,
   calculateMaterials,
 } from "@/services/materialHelper/index";
-import { tieredMaterials } from "@/games/wutheringwave";
 import { getCharacterField } from "@/services/characterHelper";
 import { setGradientStyle } from '@//services/utils';
 import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import FinalMaterialNeeds from "../components/planner/FinalMaterialNeeds.vue";
 import { getWeaponField } from "../services/weaponHelper";
-import ChracterDialog from "../components/character/CharacterDialog.vue";
 import WeaponDialog from "../components/weapon/WeaponDialog.vue";
-import { characterLevelItems, characterActiveSkills, characterPassiveSkills } from '../data/characterFormFields';
-import { weaponLevelItems } from '../data/formweapons';
 import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
+const gameStore = useGameStore();
+
+// ゲーム専用ダイアログコンポーネント (動的ロード)
+const CharacterDialogComponent = computed(() => gameStore.getComponent('CharacterDialog'));
+
+// 현재 게임의 폼 필드 (반응형)
+const characterLevelItems = computed(() => gameStore.formFields?.characterLevelItems || []);
+const characterActiveSkills = computed(() => gameStore.formFields?.characterActiveSkills || []);
+const characterPassiveSkills = computed(() => gameStore.formFields?.characterPassiveSkills || []);
+const weaponLevelItems = computed(() => gameStore.formFields?.weaponLevelItems || []);
+
+// 현재 게임의 티어 재료 데이터
+const tieredMaterials = computed(() => gameStore.getData('tiers') || {});
+
+// goal이 캐릭터인지 확인 (WW: 42, EF: 52)
+const isCharacterGoal = (goalId) => {
+  const prefix = String(goalId).substring(0, 2);
+  return prefix === '42' || prefix === '52'; // WW character or EF character
+};
+
+// goal이 무기인지 확인 (WW: 43, EF: 53)
+const isWeaponGoal = (goalId) => {
+  const prefix = String(goalId).substring(0, 2);
+  return prefix === '43' || prefix === '53'; // WW weapon or EF weapon
+};
 
 const inventory = computed(() => inventoryStore.inventory);
 const goals = computed(() => plannerStore.goals);
@@ -258,7 +292,7 @@ const updateFinalMaterialNeeds = () => {
 
   const { final_needs, synthesis_results, synthesized_per_game_id,raw_needs } = calculateMaterials(
     ownedMaterials,
-    tieredMaterials,
+    tieredMaterials.value,
     totalNeeds
   );
 
@@ -330,7 +364,7 @@ const finalMaterialNeeds = computed(() => {
 
   const { final_needs, synthesis_results, synthesized_per_game_id, raw_needs } = calculateMaterials(
     ownedMaterials,
-    tieredMaterials,
+    tieredMaterials.value,
     totalNeeds
   );
 
@@ -661,7 +695,7 @@ const completeGoal = (id, type) => {
     const validation = validateMaterialsWithSynthesis(
       goal.materials || {},
       inventory.value,
-      tieredMaterials
+      tieredMaterials.value
     );
 
     if (!validation.canComplete) {
@@ -723,8 +757,16 @@ const completeGoal = (id, type) => {
         }
       });
 
-      // Keep passive skills as-is (they're already activated if checked)
-      updatedSettings.passiveSkills = { ...settings.passiveSkills };
+      // Update passive skills current to target (新構造: レベルベース 0→2)
+      updatedSettings.passiveSkills = {};
+      Object.keys(settings.passiveSkills || {}).forEach(key => {
+        if (key.endsWith('_current_level')) {
+          const targetKey = key.replace('_current_level', '_target_level');
+          updatedSettings.passiveSkills[key] = settings.passiveSkills[targetKey];
+        } else {
+          updatedSettings.passiveSkills[key] = settings.passiveSkills[key];
+        }
+      });
 
       plannerStore.updateCharacterSettings(id, updatedSettings);
       logger.info(`Updated character ${id} settings to target levels`);

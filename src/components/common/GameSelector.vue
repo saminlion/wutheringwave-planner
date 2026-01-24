@@ -1,79 +1,124 @@
 <template>
   <div class="game-selector">
-    <label for="game-select">Game:</label>
-    <select id="game-select" v-model="selectedGame" @change="switchGame" class="game-select">
-      <option v-for="game in availableGames" :key="game.id" :value="game.id">
-        {{ game.displayName || game.name }}
-      </option>
-    </select>
+    <h2 class="selector-title">{{ tUI('home.selectGame') }}</h2>
+    <div class="game-cards">
+      <button
+        v-for="game in enabledGames"
+        :key="game.id"
+        :class="['game-card', { active: currentGameId === game.id }]"
+        @click="selectGame(game.id)"
+      >
+        <span class="game-icon">{{ game.icon }}</span>
+        <span class="game-name">{{ game.name }}</span>
+        <span v-if="currentGameId === game.id" class="selected-badge">
+          {{ tUI('common.selected') }}
+        </span>
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
-import { useGameRegistryStore } from '@/store/gameRegistry';
-import { toast } from 'vue3-toastify';
+import { computed } from 'vue';
+import { useGameStore } from '@/store/game';
+import { usePlannerStore } from '@/store/planner';
+import { useInventoryStore } from '@/store/inventory';
+import { useUserProfileStore } from '@/store/userProfile';
+import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
-const gameRegistry = useGameRegistryStore();
+const emit = defineEmits(['gameChanged']);
 
-const selectedGame = ref(gameRegistry.currentGameId);
-const availableGames = computed(() => gameRegistry.allGames);
+const gameStore = useGameStore();
+const plannerStore = usePlannerStore();
+const inventoryStore = useInventoryStore();
+const userProfileStore = useUserProfileStore();
+const { tUI } = useLocale();
 
-const switchGame = () => {
-  const success = gameRegistry.setCurrentGame(selectedGame.value);
+const currentGameId = computed(() => gameStore.currentGameId);
+const enabledGames = computed(() => gameStore.enabledGames);
+
+const selectGame = async (gameId) => {
+  if (gameId === currentGameId.value) return;
+
+  const success = gameStore.switchGame(gameId);
   if (success) {
-    const gameName = gameRegistry.currentGame?.displayName || selectedGame.value;
-    toast.success(`Switched to ${gameName}`);
-    logger.info(`Game switched to: ${selectedGame.value}`);
+    // 다른 스토어들도 새 게임으로 hydrate
+    plannerStore.hydrate(gameId);
+    inventoryStore.hydrate(gameId);
+    userProfileStore.hydrate(gameId);
 
-    // Reload page to reinitialize with new game data
-    setTimeout(() => {
-      window.location.reload();
-    }, 500);
-  } else {
-    toast.error('Failed to switch game');
-    selectedGame.value = gameRegistry.currentGameId; // Revert
+    logger.info(`Game switched to: ${gameId}`);
+    emit('gameChanged', gameId);
   }
 };
-
-onMounted(() => {
-  selectedGame.value = gameRegistry.currentGameId;
-});
 </script>
 
 <style scoped>
 .game-selector {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background: #f5f5f5;
-  border-radius: 6px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-label {
-  font-weight: 500;
+.selector-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.game-cards {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 150px;
+  position: relative;
+}
+
+.game-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.game-card.active {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+}
+
+.game-icon {
+  font-size: 2.5rem;
+}
+
+.game-name {
+  font-size: 1rem;
+  font-weight: 600;
   color: #333;
 }
 
-.game-select {
-  padding: 6px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: white;
-  font-size: 14px;
-  cursor: pointer;
-  transition: border-color 0.2s;
-}
-
-.game-select:hover {
-  border-color: #2196f3;
-}
-
-.game-select:focus {
-  outline: none;
-  border-color: #2196f3;
-  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+.selected-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
 }
 </style>

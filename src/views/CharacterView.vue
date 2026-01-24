@@ -2,34 +2,28 @@
   <div>
     <h1>Character Selection</h1>
     <div class="filters">
-      <label>
+      <label v-if="filterOptions.elements?.length > 1">
         Element:
         <select v-model="filters.element" @change="applyFilters">
-          <option value="all">All</option>
-          <option value="glacio">Glacio</option>
-          <option value="fusion">Fusion</option>
-          <option value="aero">Aero</option>
-          <option value="electro">Electro</option>
-          <option value="havoc">Havoc</option>
+          <option v-for="opt in filterOptions.elements" :key="opt.value" :value="opt.value">
+            {{ opt.label }}
+          </option>
         </select>
       </label>
       <label>
         Weapon:
         <select v-model="filters.weapon" @change="applyFilters">
-          <option value="all">All</option>
-          <option value="sword">Sword</option>
-          <option value="pistols">Pistols</option>
-          <option value="rectifier">Rectifier</option>
-          <option value="gauntlets">Gauntlets</option>
-          <option value="broadblade">Broadblade</option>
+          <option v-for="opt in filterOptions.weaponTypes" :key="opt.value" :value="opt.value">
+            {{ opt.label }}
+          </option>
         </select>
       </label>
       <label>
         Rarity:
         <select v-model="filters.rarity" @change="applyFilters">
-          <option value="all">All</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
+          <option v-for="opt in filterOptions.characterRarities" :key="opt.value" :value="opt.value">
+            {{ opt.label }}
+          </option>
         </select>
       </label>
     </div>
@@ -37,34 +31,64 @@
     <div class="character-grid">
       <div v-for="character in filteredCharacters" :key="character.game_id" @click="openDialog(character)"
       class="character-card" :style="getGradientStyle(character)">
-      <!-- <div v-for="character in filteredCharacters" :key="character.game_id" @click="logCharacter(character)"
-      class="character-card" :style="getGradientStyle(character)"> -->
-        <img :src="character.icon" :alt="character.display_name" />
+        <img :src="character.icon" :alt="tCharacter(character.game_id, character.display_name)" />
         <div class="character-info">
-          <span>{{ character.display_name }}</span>
+          <span>{{ tCharacter(character.game_id, character.display_name) }}</span>
         </div>
       </div>
     </div>
 
 
-    <CharacterDialog v-if="dialogVisible && selectedCharacter" :visible="dialogVisible" :character="selectedCharacter"
-      :settings="currentSettings" :levelItems="characterLevelItems" :activeSkills="characterActiveSkills" :passiveSkills="characterPassiveSkills"
-      @close="dialogVisible = false" @updateCharacter="updateCharacter" />
+    <component
+      :is="CharacterDialogComponent"
+      v-if="dialogVisible && selectedCharacter && CharacterDialogComponent"
+      :visible="dialogVisible"
+      :character="selectedCharacter"
+      :settings="currentSettings"
+      :levelItems="characterLevelItems"
+      :activeSkills="characterActiveSkills"
+      :passiveSkills="characterPassiveSkills"
+      @close="dialogVisible = false"
+      @updateCharacter="updateCharacter"
+    />
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { usePlannerStore } from '../store/planner';
-import { characterLevelItems, characterActiveSkills, characterPassiveSkills } from '../data/characterFormFields';
+import { useGameStore } from '@/store/game';
 import { setGradientStyle } from '../services/utils';
-import CharacterDialog from '../components/character/CharacterDialog.vue';
-import { characterData as charactersData } from '@/games/wutheringwave';
+import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
-const plannerStore = usePlannerStore();
+// i18n翻訳関数を取得
+const { tCharacter } = useLocale();
 
-const characters = ref(Object.values(charactersData).filter(entry => !entry._comment));
+const plannerStore = usePlannerStore();
+const gameStore = useGameStore();
+
+// ゲーム専用ダイアログコンポーネント (動的ロード)
+const CharacterDialogComponent = computed(() => gameStore.getComponent('CharacterDialog'));
+
+// 현재 게임의 캐릭터 데이터 (반응형)
+const characters = computed(() => {
+  const data = gameStore.getData('characters');
+  if (!data) return [];
+  return Object.values(data).filter(entry => !entry._comment);
+});
+
+// 현재 게임의 필터 옵션 (반응형)
+const filterOptions = computed(() => gameStore.filters || {
+  elements: [{ value: 'all', label: 'All' }],
+  weaponTypes: [{ value: 'all', label: 'All' }],
+  characterRarities: [{ value: 'all', label: 'All' }],
+});
+
+// 현재 게임의 폼 필드 (반응형)
+const characterLevelItems = computed(() => gameStore.formFields?.characterLevelItems || []);
+const characterActiveSkills = computed(() => gameStore.formFields?.characterActiveSkills || []);
+const characterPassiveSkills = computed(() => gameStore.formFields?.characterPassiveSkills || {});
 
 const filters = ref({
   element: 'all',
@@ -72,14 +96,17 @@ const filters = ref({
   rarity: 'all',
 });
 
+// 게임 전환 시 필터 리셋
+watch(() => gameStore.currentGameId, () => {
+  filters.value = { element: 'all', weapon: 'all', rarity: 'all' };
+});
+
 const filteredCharacters = computed(() => {
   return characters.value.filter(character => {
-    return (
-      (filters.value.element === 'all' || character.element === filters.value.element) &&
-      (filters.value.weapon === 'all' || character.weapon === filters.value.weapon) &&
-      (filters.value.rarity === 'all' || character.rarity === parseInt(filters.value.rarity))
-    );
-
+    const elementMatch = filters.value.element === 'all' || character.element === filters.value.element;
+    const weaponMatch = filters.value.weapon === 'all' || character.weapon === filters.value.weapon;
+    const rarityMatch = filters.value.rarity === 'all' || character.rarity === parseInt(filters.value.rarity);
+    return elementMatch && weaponMatch && rarityMatch;
   });
 });
 
@@ -98,6 +125,19 @@ const currentSettings = computed(() =>
   selectedCharacter.value ? plannerStore.characterSettings[selectedCharacter.value.game_id] : null
 );
 
+// ゲーム別初期設定生成（configから取得）
+const createInitialSettings = () => {
+  const config = gameStore.currentGameConfig;
+  if (config && typeof config.createCharacterInitialSettings === 'function') {
+    return config.createCharacterInitialSettings();
+  }
+  // フォールバック: 基本構造
+  return {
+    currentLevel: '1',
+    targetLevel: '1',
+  };
+};
+
 const openDialog = (character) => {
   dialogVisible.value = true;
 
@@ -106,19 +146,7 @@ const openDialog = (character) => {
   logger.debug('sele char:', selectedCharacter.value);
 
   if (!plannerStore.characterSettings[character.game_id]) {
-    plannerStore.updateCharacterSettings(character.game_id, {
-      currentLevel: '1',
-      targetLevel: '1',
-      activeSkills: characterActiveSkills.reduce((acc, skill) => {
-        acc[`${skill.model_value}_current_level`] = 1;
-        acc[`${skill.model_value}_target_level`] = 1;
-        return acc;
-      }, {}),
-      passiveSkills: characterPassiveSkills.tier_1.data.concat(characterPassiveSkills.tier_2.data).reduce((acc, skill) => {
-        acc[skill.model_value] = false;
-        return acc;
-      }, {}),
-    });
+    plannerStore.updateCharacterSettings(character.game_id, createInitialSettings());
   }
 };
 

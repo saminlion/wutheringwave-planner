@@ -143,9 +143,13 @@ export const usePlannerStore = defineStore('planner', {
       this.weaponSettings = storedWeaponSettings ? JSON.parse(storedWeaponSettings) : {};
     },
 
-    hydrate() {
-      this.loadGoals(this.currentGameId);
-      this.loadSettings(this.currentGameId);
+    hydrate(gameId = null) {
+      const targetGameId = gameId ?? this.currentGameId;
+      if (gameId) {
+        this.currentGameId = gameId;
+      }
+      this.loadGoals(targetGameId);
+      this.loadSettings(targetGameId);
     },
 
     calculateCharacterMaterials(characterId) {

@@ -5,15 +5,15 @@
     <!-- Inventory Cards -->
      <div class="inventory-container">
       <div v-for="(subCategories, category) in groupedMaterials" :key="category" class="category-section">
-        <h2 class="category-title">{{ category }}</h2>
+        <h2 class="category-title">{{ translateCategoryName(category) }}</h2>
       <div v-for="(materials, subcategory) in subCategories" :key="subcategory" class="subcategory-section">
-        <h3 class="subcategory-title">{{ subcategory }}</h3>
+        <h3 class="subcategory-title">{{ translateCategoryName(subcategory) }}</h3>
 
     <div class="inventory-grid">
       <div class="inventory-card" v-for="material in materials" :key="material.game_id">
-        <img :src="material.icon" :alt="material.label" class="material-icon" />
+        <img :src="material.icon" :alt="tMaterial(material.game_id, material.label)" class="material-icon" />
         <div class="material-info">
-          <h3>{{ material.label }}</h3>
+          <h3>{{ tMaterial(material.game_id, material.label) }}</h3>
           <h3>{{ logMessage(material) }}</h3>
           <p>
             Quantity:
@@ -38,27 +38,52 @@ import { ref, computed, onMounted, watch } from 'vue';
 import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import { useInventoryStore } from '../store/inventory.js';
-import { inventoryMaterials as inventoryItem } from '@/games/wutheringwave';
+import { useGameStore } from '@/store/game';
+import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
+// i18n翻訳関数を取得
+const { tMaterial, tUI } = useLocale();
+
+// カテゴリ名の翻訳ヘルパー関数
+const translateCategoryName = (categoryName) => {
+    const translated = tUI(`category.${categoryName}`);
+    return translated !== `category.${categoryName}` ? translated : categoryName;
+};
+
 const inventoryStore = useInventoryStore();
+const gameStore = useGameStore();
 
 const inventory = computed(() => inventoryStore.inventory);
-const materials = Object.values(inventoryItem).flatMap((category) => Object.values(category));
+
+// 현재 게임의 재료 데이터 (반응형)
+const materials = computed(() => {
+  const data = gameStore.getData('materials');
+  if (!data) return [];
+  return Object.values(data).flatMap((category) => Object.values(category));
+});
 
 // Local state to manage input values
-const quantities = ref(
-  materials.reduce((acc, material) => {
-    acc[material.game_id] = inventory.value[material.game_id] || 0;
-    return acc;
-  }, {})
+const quantities = ref({});
+
+// Watch materials changes and sync quantities
+watch(
+  materials,
+  (newMaterials) => {
+    newMaterials.forEach((material) => {
+      if (quantities.value[material.game_id] === undefined) {
+        quantities.value[material.game_id] = inventory.value[material.game_id] || 0;
+      }
+    });
+  },
+  { immediate: true }
 );
 
 // Watch inventory changes and sync to quantities
 watch(
   inventory,
   (newInventory) => {
-    materials.forEach((material) => {
+    materials.value.forEach((material) => {
       quantities.value[material.game_id] = newInventory[material.game_id] || 0;
     });
   },
@@ -68,10 +93,11 @@ watch(
 // Initialize quantities on mount
 onMounted(() => {
   // Ensure inventory is loaded from localStorage first
-  inventoryStore.hydrate('wutheringwave');
+  const gameId = gameStore.currentGameId;
+  inventoryStore.hydrate(gameId);
 
   // Then sync quantities with loaded inventory
-  materials.forEach((material) => {
+  materials.value.forEach((material) => {
     quantities.value[material.game_id] = inventory.value[material.game_id] || 0;
   });
 
@@ -107,7 +133,7 @@ const debouncedRemoveMaterial = useDebounceFn((id, quantity) => {
 }, 1000);
 
 const groupedMaterials = computed(()=>{
-  return materials.reduce((acc, material)=>{
+  return materials.value.reduce((acc, material)=>{
     if (!acc[material.Category]){
       acc[material.Category] = {};
     }
@@ -119,7 +145,7 @@ const groupedMaterials = computed(()=>{
 
     acc[material.Category][material.SubCategory].push(material);
 
-    return acc;    
+    return acc;
   }, {});
 });
 

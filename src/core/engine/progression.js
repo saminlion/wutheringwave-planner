@@ -129,25 +129,43 @@ export class ProgressionEngine {
     const characterCosts = this.costs.character ?? {};
     const passiveCostsTable = characterCosts.passive ?? {};
     const result = {};
+    const passiveSkills = settings.passiveSkills || {};
 
-    Object.entries(settings.passiveSkills || {}).forEach(([key, isEnabled]) => {
-      if (!isEnabled) {
+    // 新構造: current_level/target_level ベースのレベル計算
+    Object.keys(passiveSkills).forEach((key) => {
+      if (!key.endsWith('_current_level')) {
         return;
       }
 
-      let passiveCosts;
-      if (key.startsWith('passive_ability')) {
-        const idx = key.split('_').pop();
-        passiveCosts = passiveCostsTable.skill?.[idx];
-      } else if (key.startsWith('bonus_stats_')) {
-        const tier = key.split('_')[2];
-        passiveCosts = passiveCostsTable.stat?.[tier];
+      const base = key.replace('_current_level', '');
+      const current = Number.parseInt(passiveSkills[key], 10) || 0;
+      const target = Number.parseInt(passiveSkills[`${base}_target_level`], 10) || 0;
+
+      if (current >= target) {
+        return;
       }
 
-      if (passiveCosts) {
-        Object.entries(passiveCosts).forEach(([materialKey, amount]) => {
-          this._process(result, materialKey, amount, characterInfo);
-        });
+      // passive_ability または bonus_stat_N の判定
+      let costType = null;
+      if (base === 'passive_ability') {
+        costType = 'skill';
+      } else if (base.startsWith('bonus_stat_')) {
+        costType = 'stat';
+      }
+
+      if (!costType) {
+        return;
+      }
+
+      // current+1 から target までの各レベルのコストを加算
+      for (let level = current + 1; level <= target; level += 1) {
+        // costs.jsonのキーは文字列なので変換
+        const passiveCosts = passiveCostsTable[costType]?.[String(level)];
+        if (passiveCosts) {
+          Object.entries(passiveCosts).forEach(([materialKey, amount]) => {
+            this._process(result, materialKey, amount, characterInfo);
+          });
+        }
       }
     });
 

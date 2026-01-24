@@ -17,6 +17,88 @@ export const wutheringWaveConfig = {
   shortName: 'WW',
   version: '1.0.0',
 
+  // Filter options for UI
+  filters: {
+    elements: [
+      { value: 'all', label: 'All' },
+      { value: 'glacio', label: 'Glacio' },
+      { value: 'fusion', label: 'Fusion' },
+      { value: 'aero', label: 'Aero' },
+      { value: 'electro', label: 'Electro' },
+      { value: 'havoc', label: 'Havoc' },
+      { value: 'spectro', label: 'Spectro' },
+    ],
+    weaponTypes: [
+      { value: 'all', label: 'All' },
+      { value: 'sword', label: 'Sword' },
+      { value: 'pistols', label: 'Pistols' },
+      { value: 'rectifier', label: 'Rectifier' },
+      { value: 'gauntlets', label: 'Gauntlets' },
+      { value: 'broadblade', label: 'Broadblade' },
+    ],
+    characterRarities: [
+      { value: 'all', label: 'All' },
+      { value: '4', label: '4' },
+      { value: '5', label: '5' },
+    ],
+    weaponRarities: [
+      { value: 'all', label: 'All' },
+      { value: '3', label: '3' },
+      { value: '4', label: '4' },
+      { value: '5', label: '5' },
+    ],
+  },
+
+  // Form fields for dialogs
+  formFields: {
+    characterLevelItems: [
+      { value: '1', label: 'Level 1' },
+      { value: '20', label: 'Level 20' },
+      { value: '20A', label: 'Level 20 Ascended' },
+      { value: '40', label: 'Level 40' },
+      { value: '40A', label: 'Level 40 Ascended' },
+      { value: '50', label: 'Level 50' },
+      { value: '50A', label: 'Level 50 Ascended' },
+      { value: '60', label: 'Level 60' },
+      { value: '60A', label: 'Level 60 Ascended' },
+      { value: '70', label: 'Level 70' },
+      { value: '70A', label: 'Level 70 Ascended' },
+      { value: '80', label: 'Level 80' },
+      { value: '80A', label: 'Level 80 Ascended' },
+      { value: '90', label: 'Level 90' },
+    ],
+    weaponLevelItems: [
+      { value: '1', label: 'Level 1' },
+      { value: '20', label: 'Level 20' },
+      { value: '20A', label: 'Level 20 Ascended' },
+      { value: '40', label: 'Level 40' },
+      { value: '40A', label: 'Level 40 Ascended' },
+      { value: '50', label: 'Level 50' },
+      { value: '50A', label: 'Level 50 Ascended' },
+      { value: '60', label: 'Level 60' },
+      { value: '60A', label: 'Level 60 Ascended' },
+      { value: '70', label: 'Level 70' },
+      { value: '70A', label: 'Level 70 Ascended' },
+      { value: '80', label: 'Level 80' },
+      { value: '80A', label: 'Level 80 Ascended' },
+      { value: '90', label: 'Level 90' },
+    ],
+    characterActiveSkills: [
+      { label: 'Primary Attack', model_value: 'primary_attack' },
+      { label: 'Special Ability', model_value: 'special_ability' },
+      { label: 'Ultimate Move', model_value: 'ultimate_move' },
+      { label: 'Support Skill', model_value: 'support_skill' },
+      { label: 'Enhanced Mode', model_value: 'enhanced_mode' },
+    ],
+    characterPassiveSkills: [
+      { label: 'Passive Ability', model_value: 'passive_ability', min: 0, max: 2 },
+      { label: 'Bonus Stat 1', model_value: 'bonus_stat_1', min: 0, max: 2 },
+      { label: 'Bonus Stat 2', model_value: 'bonus_stat_2', min: 0, max: 2 },
+      { label: 'Bonus Stat 3', model_value: 'bonus_stat_3', min: 0, max: 2 },
+      { label: 'Bonus Stat 4', model_value: 'bonus_stat_4', min: 0, max: 2 },
+    ],
+  },
+
   // Stamina system configuration
   stamina: {
     name: 'Waveplates',
@@ -47,6 +129,36 @@ export const wutheringWaveConfig = {
   data: {
     characters,
     weapons,
+  },
+
+  /**
+   * キャラクター設定の初期値を生成
+   * @returns {object} 初期設定オブジェクト
+   */
+  createCharacterInitialSettings() {
+    const activeSkills = this.formFields.characterActiveSkills;
+    const passiveSkills = this.formFields.characterPassiveSkills;
+
+    // Active skills 초기화
+    const activeSkillsSettings = activeSkills.reduce((acc, skill) => {
+      acc[`${skill.model_value}_current_level`] = 1;
+      acc[`${skill.model_value}_target_level`] = 1;
+      return acc;
+    }, {});
+
+    // Passive skills 초기화 (레벨 기반: current/target)
+    const passiveSkillsSettings = passiveSkills.reduce((acc, skill) => {
+      acc[`${skill.model_value}_current_level`] = skill.min || 0;
+      acc[`${skill.model_value}_target_level`] = skill.min || 0;
+      return acc;
+    }, {});
+
+    return {
+      currentLevel: '1',
+      targetLevel: '1',
+      activeSkills: activeSkillsSettings,
+      passiveSkills: passiveSkillsSettings,
+    };
   },
 };
 
