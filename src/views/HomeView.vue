@@ -1,36 +1,120 @@
 <template>
-  <div>
-    <h1>Welcome to the Planner</h1>
-    <!-- 게임 선택 드롭다운 -->
-    <div>
-      <p>Selected Game: {{ selectedGame }}</p>
-      <router-link to="/planner">Go to Planner</router-link>
-      <router-link to="/character">Character Selection</router-link>
-      <router-link to="/weapon">Weapon Selection</router-link>
+  <div class="home-view">
+    <h1 class="home-title">{{ tUI('home.welcome') }}</h1>
+
+    <!-- 게임 선택 -->
+    <GameSelector @gameChanged="onGameChanged" />
+
+    <!-- 현재 게임 정보 -->
+    <div class="current-game-info">
+      <p>{{ tUI('home.currentGame') }}: <strong>{{ currentGameName }}</strong></p>
+    </div>
+
+    <!-- 네비게이션 -->
+    <div class="nav-cards">
+      <router-link to="/planner" class="nav-card">
+        <span class="nav-icon">📋</span>
+        <span class="nav-label">{{ tUI('nav.planner') }}</span>
+      </router-link>
+      <router-link to="/character" class="nav-card">
+        <span class="nav-icon">👤</span>
+        <span class="nav-label">{{ tUI('nav.character') }}</span>
+      </router-link>
+      <router-link to="/weapon" class="nav-card">
+        <span class="nav-icon">⚔️</span>
+        <span class="nav-label">{{ tUI('nav.weapon') }}</span>
+      </router-link>
+      <router-link to="/inventory" class="nav-card">
+        <span class="nav-icon">🎒</span>
+        <span class="nav-label">{{ tUI('nav.inventory') }}</span>
+      </router-link>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { usePlannerStore } from '../store/planner';
-import { useInventoryStore } from '../store/inventory';
+import { computed, onMounted } from 'vue';
+import { usePlannerStore } from '@/store/planner';
+import { useInventoryStore } from '@/store/inventory';
+import { useGameStore } from '@/store/game';
+import { useUserProfileStore } from '@/store/userProfile';
+import { useLocale } from '@/composables/useLocale';
+import GameSelector from '@/components/common/GameSelector.vue';
 
-// Pinia Store
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
+const gameStore = useGameStore();
+const userProfileStore = useUserProfileStore();
+const { tUI } = useLocale();
 
-const selectedGame = ref('wutheringwave'); // 기본 게임 ID
+const currentGameName = computed(() => gameStore.currentGameName);
 
-// 게임 변경 함수
-const changeGame = () => {
-  plannerStore.hydrate();
-  inventoryStore.hydrate(selectedGame.value);
+const onGameChanged = (gameId) => {
+  // GameSelector에서 이미 hydrate 처리됨
 };
 
-// 초기 로드
 onMounted(() => {
-  plannerStore.hydrate();
-  inventoryStore.hydrate(selectedGame.value);
+  // 초기 로드
+  gameStore.hydrate();
+  const gameId = gameStore.currentGameId;
+  plannerStore.hydrate(gameId);
+  inventoryStore.hydrate(gameId);
+  userProfileStore.hydrate(gameId);
 });
 </script>
+
+<style scoped>
+.home-view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.current-game-info {
+  text-align: center;
+  margin: 1.5rem 0;
+  color: #666;
+}
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.nav-card:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.nav-icon {
+  font-size: 2rem;
+}
+
+.nav-label {
+  font-weight: 600;
+}
+</style>

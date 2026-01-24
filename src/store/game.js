@@ -22,6 +22,12 @@ export const useGameStore = defineStore('game', () => {
   });
   const enabledGames = computed(() => getEnabledGames());
 
+  // Filter options for UI (from game config)
+  const filters = computed(() => currentGameConfig.value?.filters ?? null);
+
+  // Form fields for dialogs (from game config)
+  const formFields = computed(() => currentGameConfig.value?.formFields ?? null);
+
   // Actions
   /**
    * 게임 전환
@@ -86,6 +92,8 @@ export const useGameStore = defineStore('game', () => {
     currentGameConfig,
     currentGameName,
     enabledGames,
+    filters,
+    formFields,
 
     // Actions
     switchGame,

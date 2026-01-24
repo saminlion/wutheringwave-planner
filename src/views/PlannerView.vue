@@ -11,7 +11,7 @@
             <!-- 罹먮┃???대쫫怨??꾩씠肄?-->
             <div class="goal-header">
               <div class="character-container"
-                v-if="String(goal.id).startsWith('42')">
+                v-if="isCharacterGoal(goal.id)">
                 <img :src="getCharacterField(goal.id, 'icon')" alt="Character Icon" class="character-icon" />
                 <h3>{{ tCharacter(goal.id, getCharacterField(goal.id, 'display_name')) }}</h3>
                 <div class="icon-container">
@@ -45,7 +45,7 @@
                   </button>
 
                   <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, String(goal.id).startsWith('42') ? 'character' : 'weapon')" title="Mark as Complete">
+                  <button class="complete-button" @click="completeGoal(goal.id, isCharacterGoal(goal.id) ? 'character' : 'weapon')" title="Mark as Complete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="icon-6">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -87,7 +87,7 @@
                   </button>
 
                   <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, String(goal.id).startsWith('42') ? 'character' : 'weapon')" title="Mark as Complete">
+                  <button class="complete-button" @click="completeGoal(goal.id, isCharacterGoal(goal.id) ? 'character' : 'weapon')" title="Mark as Complete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="icon-6">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -132,6 +132,7 @@
 import { watch, computed, toRaw, onMounted, ref } from "vue";
 import { usePlannerStore } from "@/store/planner";
 import { useInventoryStore } from "@/store/inventory";
+import { useGameStore } from "@/store/game";
 import { useLocale } from '@/composables/useLocale';
 
 // i18n翻訳関数を取得
@@ -143,7 +144,6 @@ import {
   calculatePlayerExp,
   calculateMaterials,
 } from "@/services/materialHelper/index";
-import { tieredMaterials } from "@/games/wutheringwave";
 import { getCharacterField } from "@/services/characterHelper";
 import { setGradientStyle } from '@//services/utils';
 import { useDebounceFn } from '@vueuse/core'
@@ -152,12 +152,32 @@ import FinalMaterialNeeds from "../components/planner/FinalMaterialNeeds.vue";
 import { getWeaponField } from "../services/weaponHelper";
 import ChracterDialog from "../components/character/CharacterDialog.vue";
 import WeaponDialog from "../components/weapon/WeaponDialog.vue";
-import { characterLevelItems, characterActiveSkills, characterPassiveSkills } from '../data/characterFormFields';
-import { weaponLevelItems } from '../data/formweapons';
 import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
+const gameStore = useGameStore();
+
+// 현재 게임의 폼 필드 (반응형)
+const characterLevelItems = computed(() => gameStore.formFields?.characterLevelItems || []);
+const characterActiveSkills = computed(() => gameStore.formFields?.characterActiveSkills || []);
+const characterPassiveSkills = computed(() => gameStore.formFields?.characterPassiveSkills || {});
+const weaponLevelItems = computed(() => gameStore.formFields?.weaponLevelItems || []);
+
+// 현재 게임의 티어 재료 데이터
+const tieredMaterials = computed(() => gameStore.getData('tiers') || {});
+
+// goal이 캐릭터인지 확인 (WW: 42, EF: 52)
+const isCharacterGoal = (goalId) => {
+  const prefix = String(goalId).substring(0, 2);
+  return prefix === '42' || prefix === '52'; // WW character or EF character
+};
+
+// goal이 무기인지 확인 (WW: 43, EF: 53)
+const isWeaponGoal = (goalId) => {
+  const prefix = String(goalId).substring(0, 2);
+  return prefix === '43' || prefix === '53'; // WW weapon or EF weapon
+};
 
 const inventory = computed(() => inventoryStore.inventory);
 const goals = computed(() => plannerStore.goals);
@@ -262,7 +282,7 @@ const updateFinalMaterialNeeds = () => {
 
   const { final_needs, synthesis_results, synthesized_per_game_id,raw_needs } = calculateMaterials(
     ownedMaterials,
-    tieredMaterials,
+    tieredMaterials.value,
     totalNeeds
   );
 
@@ -334,7 +354,7 @@ const finalMaterialNeeds = computed(() => {
 
   const { final_needs, synthesis_results, synthesized_per_game_id, raw_needs } = calculateMaterials(
     ownedMaterials,
-    tieredMaterials,
+    tieredMaterials.value,
     totalNeeds
   );
 
@@ -665,7 +685,7 @@ const completeGoal = (id, type) => {
     const validation = validateMaterialsWithSynthesis(
       goal.materials || {},
       inventory.value,
-      tieredMaterials
+      tieredMaterials.value
     );
 
     if (!validation.canComplete) {

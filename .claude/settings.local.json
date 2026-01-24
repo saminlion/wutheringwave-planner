@@ -22,7 +22,8 @@
       "Bash(\"/c/Program Files/nodejs/npm.cmd\" --version)",
       "Bash(\"/c/Program Files/nodejs/npm.cmd\" install)",
       "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npx vite build:*)"
     ],
     "deny": [],
     "ask": []

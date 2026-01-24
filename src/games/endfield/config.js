@@ -9,8 +9,99 @@ export default {
   // Game-specific constants
   constants: {
     MAX_LEVEL: 90,
-    MAX_SKILL_LEVEL: 10,
+    MAX_SKILL_LEVEL: 9,
+    MAX_MASTERY_LEVEL: 3,
+    MAX_SPECIAL_LEVEL: 2,
+    MAX_INFRA_LEVEL: 2,
     SYNTHESIS_RATIO: null, // Endfield uses recipe-based synthesis (not simple 3:1)
+  },
+
+  // Filter options for UI
+  filters: {
+    // Elements TBD - placeholder for now
+    elements: [
+      { value: 'all', label: 'All' },
+      // TODO: Add Endfield elements when confirmed
+    ],
+    weaponTypes: [
+      { value: 'all', label: 'All' },
+      { value: 'one_handed_sword', label: 'One-Handed Sword' },
+      { value: 'two_handed_sword', label: 'Two-Handed Sword' },
+      { value: 'polearm', label: 'Polearm' },
+      { value: 'arts', label: 'Arts' },
+      { value: 'pistol', label: 'Pistol' },
+    ],
+    characterRarities: [
+      { value: 'all', label: 'All' },
+      { value: '4', label: '4' },
+      { value: '5', label: '5' },
+      { value: '6', label: '6' },
+    ],
+    weaponRarities: [
+      { value: 'all', label: 'All' },
+      { value: '3', label: '3' },
+      { value: '4', label: '4' },
+      { value: '5', label: '5' },
+      { value: '6', label: '6' },
+    ],
+  },
+
+  // Form fields for dialogs
+  formFields: {
+    // Endfield uses 7-stage ascension system
+    // 40A1 (material), 40A2 (credit only), 60A3 (material), 60A4 (credit only), etc.
+    characterLevelItems: [
+      { value: '1', label: 'Level 1' },
+      { value: '40', label: 'Level 40' },
+      { value: '40A1', label: 'Level 40 Ascended 1' },
+      { value: '40A2', label: 'Level 40 Ascended 2' },
+      { value: '60', label: 'Level 60' },
+      { value: '60A3', label: 'Level 60 Ascended 3' },
+      { value: '60A4', label: 'Level 60 Ascended 4' },
+      { value: '80', label: 'Level 80' },
+      { value: '80A5', label: 'Level 80 Ascended 5' },
+      { value: '80A6', label: 'Level 80 Ascended 6' },
+      { value: '90', label: 'Level 90' },
+      { value: '90A7', label: 'Level 90 Ascended 7' },
+    ],
+    weaponLevelItems: [
+      { value: '1', label: 'Level 1' },
+      { value: '40', label: 'Level 40' },
+      { value: '40A', label: 'Level 40 Ascended' },
+      { value: '60', label: 'Level 60' },
+      { value: '60A', label: 'Level 60 Ascended' },
+      { value: '80', label: 'Level 80' },
+      { value: '80A', label: 'Level 80 Ascended' },
+      { value: '90', label: 'Level 90' },
+    ],
+    // Endfield 스킬 시스템 (WW와 다름)
+    // Combat Skills 4개: 레벨 1~9 + 마스터리 1~3
+    characterSkills: [
+      { label: 'Basic Attack', model_value: 'basic_attack', maxLevel: 9, hasMastery: true, maxMasteryLevel: 3 },
+      { label: 'Battle Skill', model_value: 'battle_skill', maxLevel: 9, hasMastery: true, maxMasteryLevel: 3 },
+      { label: 'Combo Skill', model_value: 'combo_skill', maxLevel: 9, hasMastery: true, maxMasteryLevel: 3 },
+      { label: 'Ultimate', model_value: 'ultimate', maxLevel: 9, hasMastery: true, maxMasteryLevel: 3 },
+    ],
+    // Talent (스페셜) 2개: 레벨 1~2
+    characterSpecial: [
+      { label: 'Talent 1', model_value: 'talent_1', maxLevel: 2 },
+      { label: 'Talent 2', model_value: 'talent_2', maxLevel: 2 },
+    ],
+    // Base Skill 2개: 레벨 1~2
+    characterBaseSkill: [
+      { label: 'Base Skill 1', model_value: 'base_skill_1', maxLevel: 2 },
+      { label: 'Base Skill 2', model_value: 'base_skill_2', maxLevel: 2 },
+    ],
+    // Attribute Increase (텔런트) 4개: 단계 없음 (언락만)
+    characterAttributes: [
+      { label: 'Attribute 1', model_value: 'attribute_1' },
+      { label: 'Attribute 2', model_value: 'attribute_2' },
+      { label: 'Attribute 3', model_value: 'attribute_3' },
+      { label: 'Attribute 4', model_value: 'attribute_4' },
+    ],
+    // WW 호환용 (빈 배열) - CharacterView가 참조할 수 있음
+    characterActiveSkills: [],
+    characterPassiveSkills: {},
   },
 
   // Stamina system configuration
@@ -43,20 +134,18 @@ export default {
     weapon_exp: 'Weapon EXP',
   },
 
-  // Level progression format (same as Wuthering Waves)
-  // 1~20: base, 20~40: 1st ascension, 40~60: 2nd ascension, 60~80: 3rd ascension, 80~90: 4th ascension
+  // Level progression format
   levelFormat: {
     ascension: true,
     maxLevel: 90,
-    ascensionLevels: [20, 40, 60, 80], // Ascension at 20, 40, 60, 80
-    // Available levels: 1, 20, 20A, 40, 40A, 60, 60A, 80, 80A, 90
+    ascensionLevels: [40, 60, 80, 90], // 7-stage ascension at these levels
   },
 
   // Feature flags
   features: {
     synthesis: true,
-    synthesisType: 'recipe', // 'recipe' (1:3:1 mixing) vs 'tier' (3:1 upgrade)
-    passiveSkills: false, // TBD - not yet confirmed if passive skills exist
+    synthesisType: 'recipe', // 'recipe' (mixing) vs 'tier' (3:1 upgrade)
+    passiveSkills: true,
     weaponProgression: true,
   },
 };
