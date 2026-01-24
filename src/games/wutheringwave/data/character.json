@@ -588,7 +588,7 @@
     "bonus_stats": []
   },
   "buling": {
-    "game_id": 4240400042,
+    "game_id": 4240400043,
     "display_name": "Buling",
     "element": "electro",
     "weapon": "rectifier",
@@ -602,7 +602,7 @@
     "bonus_stats": []
   },
   "lynae": {
-    "game_id": 4250600043,
+    "game_id": 4250600044,
     "display_name": "Lynae",
     "element": "spectro",
     "weapon": "pistol",
@@ -616,7 +616,7 @@
     "bonus_stats": []
   },
   "mornye": {
-    "game_id": 4250200044,
+    "game_id": 4250200045,
     "display_name": "Mornye",
     "element": "fusion",
     "weapon": "broadblade",
@@ -630,7 +630,7 @@
     "bonus_stats": []
   },
   "aemeath": {
-    "game_id": 4250200045,
+    "game_id": 4250200046,
     "display_name": "Aemeath",
     "element": "fusion",
     "weapon": "sword",
@@ -644,7 +644,7 @@
     "bonus_stats": []
   },
   "luuk": {
-    "game_id": 4250600046,
+    "game_id": 4250600047,
     "display_name": "Luuk",
     "element": "spectro",
     "weapon": "gauntlets",
