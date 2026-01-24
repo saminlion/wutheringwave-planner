@@ -23,7 +23,11 @@
       "Bash(\"/c/Program Files/nodejs/npm.cmd\" install)",
       "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
       "Bash(curl:*)",
-      "Bash(npx vite build:*)"
+      "Bash(npx vite build:*)",
+      "Bash(npx vite)",
+      "Bash(timeout /t 5 /nobreak)",
+      "Bash(ping:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Game-specific CharacterDialog with dropdown UI and level-based passive skills\n\n- Add game-specific CharacterDialog components \\(WW/Endfield\\) with dropdown selects\n- Refactor WW passive skills from boolean to level-based system \\(0→2\\)\n- Update ProgressionEngine._calculateCharacterPassiveMaterials for new structure\n- Fix material calculation: weeklyBoss category mapping, credit handling\n- Fix completeGoal to update passive skills current_level to target_level\n- Add dynamic component loading via gameStore.getComponent\\(\\)\n- Remove deprecated shared CharacterDialog component\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ],
     "deny": [],
     "ask": []

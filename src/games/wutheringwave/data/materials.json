@@ -2,7 +2,7 @@
   "credit": {
     "credit": {
       "game_id": 4100000001,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/shell-credit-2.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconA/T_IconA_hsb_UI.webp",
       "label": "Shell Credit",
       "Category": "credit",
       "SubCategory": "credit",
@@ -13,7 +13,7 @@
   "common": {
     "lf_whisperin_core": {
       "game_id": 4110010001,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/lf-whisperin-core-41100011.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.webp",
       "label": "Low Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
@@ -22,7 +22,7 @@
     },
     "mf_whisperin_core": {
       "game_id": 4110010002,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/mf-whisperin-core-41100012.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_2_UI.webp",
       "label": "Mid Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
@@ -31,7 +31,7 @@
     },
     "hf_whisperin_core": {
       "game_id": 4110010003,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/hf-whisperin-core-41100013.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_3_UI.webp",
       "label": "High Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
@@ -40,7 +40,7 @@
     },
     "ff_whisperin_core": {
       "game_id": 4110010004,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/ff-whisperin-core-41100014.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_4_UI.webp",
       "label": "Full Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
@@ -49,7 +49,7 @@
     },
     "lf_howler_core": {
       "game_id": 4110020001,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/lf-howler-core-41100021.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_1_UI.webp",
       "label": "Low Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
@@ -58,7 +58,7 @@
     },
     "mf_howler_core": {
       "game_id": 4110020002,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/mf-howler-core-41100022.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_2_UI.webp",
       "label": "Mid Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
@@ -67,7 +67,7 @@
     },
     "hf_howler_core": {
       "game_id": 4110020003,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/hf-howler-core-41100023.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_3_UI.webp",
       "label": "High Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
@@ -76,7 +76,7 @@
     },
     "ff_howler_core": {
       "game_id": 4110020004,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/ff-howler-core-41100024.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_4_UI.webp",
       "label": "Full Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
@@ -85,7 +85,7 @@
     },
     "curde_ring": {
       "game_id": 4110030001,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/crude-ring-41100031.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_1_UI.webp",
       "label": "Crude Ring",
       "Category": "common",
       "SubCategory": "ring",
@@ -94,7 +94,7 @@
     },
     "basic_ring": {
       "game_id": 4110030002,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/basic-ring-41100032.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_2_UI.webp",
       "label": "Basic Ring",
       "Category": "common",
       "SubCategory": "ring",
@@ -103,7 +103,7 @@
     },
     "improved_ring": {
       "game_id": 4110030003,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/improved-ring-41100033.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_3_UI.webp",
       "label": "Improved Ring",
       "Category": "common",
       "SubCategory": "ring",
@@ -112,7 +112,7 @@
     },
     "tailored_ring": {
       "game_id": 4110030004,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/tailored-ring-41100034.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_4_UI.webp",
       "label": "Tailored Ring",
       "Category": "common",
       "SubCategory": "ring",
@@ -121,7 +121,7 @@
     },
     "mask_of_constraint": {
       "game_id": 4110040001,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/mask-of-constraint-41200031.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_001_UI.webp",
       "label": "Mask of Constraint",
       "Category": "common",
       "SubCategory": "mask",
@@ -130,7 +130,7 @@
     },
     "mask_of_erosion": {
       "game_id": 4110040002,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/mask-of-erosion-41200032.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_002_UI.webp",
       "label": "Mask of Erosion",
       "Category": "common",
       "SubCategory": "mask",
@@ -139,7 +139,7 @@
     },
     "mask_of_distortion": {
       "game_id": 4110040003,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/mask-of-distortion-41200033.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_003_UI.webp",
       "label": "Mask of Distortion",
       "Category": "common",
       "SubCategory": "mask",
@@ -148,7 +148,7 @@
     },
     "mask_of_insanity": {
       "game_id": 4110040004,
-      "icon": "https:\\/\\/static.dotgg.gg\\/wuthering-waves\\/items\\/mask-of-insanity-41200034.webp",
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_004_UI.webp",
       "label": "Mask of Insanity",
       "Category": "common",
       "SubCategory": "mask",
