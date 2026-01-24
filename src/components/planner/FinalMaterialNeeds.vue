@@ -70,9 +70,13 @@
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- Need & Owned badges -->
-                                            <span class="badge badge-need" v-if="task.need > 0">
-                                                Need: {{ task.need }}
+                                            <!-- Need badge: owned < needの場合のみ表示 -->
+                                            <span class="badge badge-need" v-if="getMaterialQuantity(task.id) < task.need">
+                                                Need: {{ task.need - getMaterialQuantity(task.id) }}
+                                            </span>
+                                            <!-- Complete badge: owned >= needの場合 -->
+                                            <span class="badge badge-complete" v-else-if="task.need > 0">
+                                                ✓ Complete
                                             </span>
                                             <span class="badge" :class="{
                                                 'badge-owned-green': getMaterialQuantity(task.id) >= task.need,
@@ -95,9 +99,13 @@
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- Need badge -->
-                                            <span class="badge badge-need" v-if="task.need > 0">
-                                                Need: {{ task.need }}
+                                            <!-- Need badge: 合成後もowned < needの場合のみ表示 -->
+                                            <span class="badge badge-need" v-if="(getMaterialQuantity(task.id) + task.synthesize) < task.need">
+                                                Need: {{ task.need - getMaterialQuantity(task.id) - task.synthesize }}
+                                            </span>
+                                            <!-- Complete badge: 合成後owned >= needの場合 -->
+                                            <span class="badge badge-complete" v-else-if="task.need > 0">
+                                                ✓ Complete
                                             </span>
                                             <!-- Synthesize badge -->
                                             <span class="badge badge-synthesize" v-if="task.synthesize > 0">
@@ -181,7 +189,7 @@ const getEstimates = (category, subCategory) => {
     };
 
     return {
-        run: esimatedDate.value(data),
+        run: esimatedRun.value(data),
         resin: esimatedResin.value(data),
         date: esimatedDate.value(data),
     };
@@ -329,12 +337,16 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
         }
 
                 // Add task data
+        // tierフィールド取得 (common/forgeryのEstimated計算用)
+        const tier = getMaterialFieldById(materialId, 'tier');
+
         groupedMaterialsMap[category].subCategories[subCategory].task.push({
             id: materialId,
             name: name,
             need: need,
             owned: owned,
             synthesize: synthesize,
+            tier: tier,  // common/forgery用のtier情報
         });
     }
 
@@ -403,8 +415,8 @@ const CalculateEstimatedRun = (data) => {
                 subcategoryData.task.forEach((task) => {
                     const actualNeed = Math.max(0, task.need - (task.owned + task.synthesize));
 
-                    if (actualNeed > 0 && task.rarity >= 2 && task.rarity <= 5) {
-                        missing[task.rarity - 2] += actualNeed; // ?덉뼱???몃뜳?ㅼ뿉 ?꾩쟻
+                    if (actualNeed > 0 && task.tier >= 2 && task.tier <= 5) {
+                        missing[task.tier - 2] += actualNeed; // ?덉뼱???몃뜳?ㅼ뿉 ?꾩쟻
                     }
                 });
 
@@ -706,6 +718,11 @@ onMounted(() => {
 }
 
 .badge-owned {
+    background-color: #27ae60;
+    color: white;
+}
+
+.badge-complete {
     background-color: #27ae60;
     color: white;
 }
