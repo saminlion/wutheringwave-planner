@@ -2,7 +2,7 @@
 
 This document tracks planned features and improvements for the Wuthering Waves Planner, organized by priority.
 
-Last Updated: 2026-01-23
+Last Updated: 2026-01-26
 
 ---
 
@@ -178,7 +178,39 @@ Last Updated: 2026-01-23
 
 ## 🔮 Future Features
 
-### 4. Stamina Tracker
+### 4. Endfield 던전 스태미나 계산 기능
+**Status:** TODO (내일 할 일)
+**Priority:** Medium
+**Reference:** `LocalOnly/Endfield/README.md` - 던전 스태미나 및 보상 섹션
+
+**Description:**
+필요 재료량을 기반으로 던전 런 횟수 및 스태미나 소모량 계산
+
+**Features:**
+- [ ] 필요 재료 → 던전 런 횟수 변환
+- [ ] 티어2 vs 티어3 효율 비교 및 추천
+- [ ] 총 스태미나 소모량 계산
+- [ ] 일일 스태미나(240) 기준 예상 일수 표시
+
+**던전 데이터 (README에서 확정):**
+| 던전 | 스태미나 범위 | 비고 |
+|------|--------------|------|
+| Proto (돌파) | 40-80 | Lv.3+ 티어 선택 |
+| Proto (스킬) | 40-80 | Lv.3+ 티어 선택 |
+| Cast Die (무기) | 40-80 | Lv.3+ 티어 선택 |
+| 캐릭터 EXP | 40-80 | Combat Record / Cognitive Carrier 선택 |
+| 무기 EXP | 40-80 | |
+| Credit | 40-80 | |
+
+**구현 위치:**
+- `src/games/endfield/data/dungeons.json` (신규)
+- `src/components/planner/FinalMaterialNeeds.vue` (수정)
+
+**Estimated Effort:** 1-2 days
+
+---
+
+### 5. General Stamina Tracker
 **Status:** Planned
 **Priority:** Low
 
@@ -197,7 +229,7 @@ Track resin/stamina usage and recovery for farming materials.
 
 ---
 
-### 5. Notes Module
+### 6. Notes Module
 **Status:** Planned
 **Priority:** Low
 
@@ -216,7 +248,7 @@ Allow users to add personal notes to characters, weapons, and goals.
 
 ---
 
-### 6. Material Farming Routes
+### 7. Material Farming Routes
 **Status:** Idea Phase
 **Priority:** Very Low
 
@@ -233,7 +265,7 @@ Suggest optimal farming routes for materials based on goals.
 
 ---
 
-### 7. Team Planner
+### 8. Team Planner
 **Status:** Idea Phase
 **Priority:** Very Low
 

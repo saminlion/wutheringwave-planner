@@ -2,8 +2,7 @@
 
 Endfield 게임의 캐릭터, 무기, 재료 ID 할당 규칙을 정의합니다.
 
-**최종 업데이트:** 2026-01-24
-**상태:** 확정 (게임 출시됨)
+**최종 업데이트:** 2026-01-25
 
 ---
 
@@ -18,7 +17,7 @@ Endfield 게임의 캐릭터, 무기, 재료 ID 할당 규칙을 정의합니다
   - `53`: 무기
   - `51`: 재료
 - **YY** (2자리): 서브 카테고리 (등급, 재료 종류 등)
-- **ZZ** (2자리): 추가 분류 (무기 타입, 재료 그룹 등)
+- **ZZ** (2자리): 추가 분류 (속성, 무기 타입, 재료 그룹 등)
 - **NNNN** (4자리): 순번 (0001~9999)
 
 ---
@@ -28,34 +27,33 @@ Endfield 게임의 캐릭터, 무기, 재료 ID 할당 규칙을 정의합니다
 ### 구조 설명:
 - **52**: 캐릭터 카테고리 (고정)
 - **RR**: 등급 (Rarity)
-  - `06`: 6성 ⭐⭐⭐⭐⭐⭐
-  - `05`: 5성 ⭐⭐⭐⭐⭐
-  - `04`: 4성 ⭐⭐⭐⭐
+  - `06`: 6성
+  - `05`: 5성
+  - `04`: 4성
 - **EE**: 속성 (Element)
   - `01`: Physical (물리)
   - `02`: Heat (열기)
   - `03`: Nature (자연)
   - `04`: Cryo (냉기)
   - `05`: Electric (전기)
-  - `06`~`99`: 추가 속성 (필요시 확장)
 - **NNNN**: 캐릭터 순번 (0001~9999)
-
-### ID 범위 (예시):
-
-| 등급 + 속성 | 시작 ID | 종료 ID | 최대 개수 |
-|-------------|---------|---------|-----------|
-| 6성 물리 | 5206010001 | 5206019999 | 9,999개 |
-| 6성 열기 | 5206020001 | 5206029999 | 9,999개 |
-| 5성 냉기 | 5205040001 | 5205049999 | 9,999개 |
-| 4성 전기 | 5204050001 | 5204059999 | 9,999개 |
 
 ### 예시:
 ```
-5206010001 - 첫 번째 6성 물리 캐릭터
+5206040001 - 첫 번째 6성 냉기 캐릭터
 5206020001 - 첫 번째 6성 열기 캐릭터
 5205040001 - 첫 번째 5성 냉기 캐릭터
 5204050001 - 첫 번째 4성 전기 캐릭터
 ```
+
+### ID 범위:
+
+| 등급 + 속성 | 시작 ID | 종료 ID |
+|-------------|---------|---------|
+| 6성 물리 | 5206010001 | 5206019999 |
+| 6성 열기 | 5206020001 | 5206029999 |
+| 6성 냉기 | 5206040001 | 5206049999 |
+| 5성 냉기 | 5205040001 | 5205049999 |
 
 ---
 
@@ -64,36 +62,34 @@ Endfield 게임의 캐릭터, 무기, 재료 ID 할당 규칙을 정의합니다
 ### 구조 설명:
 - **53**: 무기 카테고리 (고정)
 - **RR**: 등급 (Rarity)
-  - `06`: 6성 ⭐⭐⭐⭐⭐⭐
-  - `05`: 5성 ⭐⭐⭐⭐⭐
-  - `04`: 4성 ⭐⭐⭐⭐
-  - `03`: 3성 ⭐⭐⭐
+  - `06`: 6성
+  - `05`: 5성
+  - `04`: 4성
+  - `03`: 3성
 - **TT**: 무기 타입
   - `01`: Sword (한손검)
   - `02`: Greatsword (양손검)
   - `03`: Polearm (장병기)
   - `04`: Arts (아츠)
   - `05`: Pistol (권총)
-  - `06`~`99`: 추가 무기 타입 (필요시 확장)
 - **NNNN**: 무기 순번 (0001~9999)
-
-### ID 범위 (예시):
-
-| 등급 + 타입 | 시작 ID | 종료 ID | 최대 개수 |
-|-------------|---------|---------|-----------|
-| 6성 한손검 | 5306010001 | 5306019999 | 9,999개 |
-| 6성 양손검 | 5306020001 | 5306029999 | 9,999개 |
-| 5성 한손검 | 5305010001 | 5305019999 | 9,999개 |
-| 3성 장병기 | 5303030001 | 5303039999 | 9,999개 |
 
 ### 예시:
 ```
 5306010001 - 첫 번째 6성 한손검
 5306020001 - 첫 번째 6성 양손검
-5305010001 - 첫 번째 5성 한손검
-5304030001 - 첫 번째 4성 장병기
+5305030001 - 첫 번째 5성 장병기
 5303050001 - 첫 번째 3성 권총
 ```
+
+### ID 범위:
+
+| 등급 + 타입 | 시작 ID | 종료 ID |
+|-------------|---------|---------|
+| 6성 한손검 | 5306010001 | 5306019999 |
+| 6성 양손검 | 5306020001 | 5306029999 |
+| 5성 한손검 | 5305010001 | 5305019999 |
+| 3성 장병기 | 5303030001 | 5303039999 |
 
 ---
 
@@ -102,108 +98,86 @@ Endfield 게임의 캐릭터, 무기, 재료 ID 할당 규칙을 정의합니다
 ### 구조 설명:
 - **51**: 재료 카테고리 (고정)
 - **CC**: 재료 종류 (Category)
-- **SS**: 하위 분류 (SubCategory) - 같은 카테고리 내 재료 그룹
+- **SS**: 하위 분류 (SubCategory)
 - **NNNN**: 재료 순번 (0001~9999)
 
 ### CC - 재료 종류 (Category):
 
-| 코드 | 카테고리 | 설명 | 상태 |
-|------|----------|------|------|
-| `00` | Credit | 게임 화폐 | 확정 |
-| `10` | Common (Character) | 필드 재료 - 캐릭터 레벨업용 | 임시 |
-| `11` | Common (Weapon) | 필드 재료 - 무기 레벨업용 | 임시 |
-| `20` | Forgery (Character) | 던전 재료 - 캐릭터 스킬용 | 임시 |
-| `21` | Forgery (Weapon) | 던전 재료 - 무기 강화용 | 임시 |
-| `30` | Ascension (Character) | 캐릭터 돌파 전용 재료 | 임시 |
-| `31` | Ascension (Weapon) | 무기 돌파 전용 재료 | 임시 |
-| `40` | Boss | 보스 재료 | 임시 |
-| `50` | Weekly Boss | 주간 보스 재료 | 임시 (존재 여부 미확인) |
-| `60` | Player EXP | 캐릭터 경험치 아이템 | 확정 |
-| `70` | Weapon EXP | 무기 경험치 아이템 | 확정 |
-
-**참고:**
-- `10`~`50` 범위는 게임 출시 후 실제 시스템에 따라 변경될 수 있습니다.
-- 주간 보스가 없을 경우 `50` 카테고리는 삭제될 수 있습니다.
-- 새로운 재료 카테고리가 추가될 수 있습니다.
+| 코드 | 카테고리 | 설명 |
+|------|----------|------|
+| `00` | credit | T-Creds (화폐) |
+| `10` | ascension | 채집 재료 (bolete, odendra) |
+| `20` | forgery | 던전 재료 (proto_asc, proto_skill) |
+| `30` | special | 캐릭터 고유 재료 (7단계 돌파, 마스터리) |
+| `40` | mastery | 마스터리 재료 (Mark of Perverance) |
+| `60` | player_exp | 캐릭터 경험치 아이템 |
+| `70` | weapon_exp | 무기 경험치 아이템 |
 
 ### SS - 하위 분류 (SubCategory):
 
-- `01`~`99`: 같은 CC 내에서 재료 그룹 구분
-- 예: Circuit Core 그룹 (`01`), Crystal Shard 그룹 (`02`)
-
-### ID 범위 (예시):
-
-| 카테고리 | 서브 | 시작 ID | 종료 ID | 최대 개수 |
-|----------|------|---------|---------|-----------|
-| Credit | - | 5100000001 | 5100009999 | 9,999개 |
-| Common-Character | 그룹01 | 5110010001 | 5110019999 | 9,999개 |
-| Common-Character | 그룹02 | 5110020001 | 5110029999 | 9,999개 |
-| Forgery-Character | 그룹01 | 5120010001 | 5120019999 | 9,999개 |
-| Player EXP | - | 5160000001 | 5160009999 | 9,999개 |
+| Category | SubCat | 코드 | 설명 |
+|----------|--------|------|------|
+| credit | credit | 00 | T-Creds |
+| ascension | bolete | 01 | Ascension용 채집 (Pink/Red/Ruby/Cosmagaric) |
+| ascension | odendra | 02 | Skill용 채집 (Kalkodenra/Chryodendra/...) |
+| forgery | proto_asc | 01 | Ascension용 던전 (Protodisk/Prototest) |
+| forgery | proto_skill | 02 | Skill용 던전 (Protprism/Protohedron) |
+| special | 캐릭터별 | 01~ | 캐릭터 고유 재료 |
+| mastery | mastery | 01 | Mark of Perverance |
+| player_exp | player_exp | 00 | 캐릭터 경험치 |
+| weapon_exp | weapon_exp | 00 | 무기 경험치 |
 
 ### 예시:
-
-```json
-// Credit
-5100000001 - Credit (게임 화폐)
-
-// Common (캐릭터용 필드 재료)
-5110010001 - Circuit Core Type A
-5110010002 - Circuit Core Type B
-5110010003 - Advanced Circuit Core
-5110020001 - Crystal Shard
-5110020002 - Pure Crystal Shard
-5110020003 - Perfect Crystal Shard
-
-// Common (무기용 필드 재료)
-5111010001 - Metal Plate
-5111010002 - Alloy Plate
-5111010003 - Reinforced Plate
-
-// Forgery (캐릭터 스킬용 던전 재료)
-5120010001 - Combat Data Fragment
-5120010002 - Combat Data Module
-5120010003 - Advanced Combat Data
-5120020001 - Tactical Manual
-5120020002 - Strategic Guide
-
-// Forgery (무기용 던전 재료)
-5121010001 - Weapon Blueprint Basic
-5121010002 - Weapon Blueprint Advanced
-5121020001 - Tech Schematic Type A
-
-// Ascension (캐릭터 돌파 전용)
-5130010001 - Ascension Crystal Alpha
-5130010002 - Ascension Crystal Beta
-5130010003 - Ascension Crystal Gamma
-
-// Ascension (무기 돌파 전용)
-5131010001 - Weapon Ascension Stone I
-5131010002 - Weapon Ascension Stone II
-5131010003 - Weapon Ascension Stone III
-
-// Boss Materials
-5140010001 - Boss Core Type A
-5140010002 - Boss Core Type B
-5140020001 - Elite Material
-
-// Weekly Boss Materials (존재 여부 미확인)
-5150010001 - Ancient Relic Fragment
-5150010002 - Ancient Relic Core
-5150020001 - Legendary Essence
-
-// Player EXP (확정)
-5160000001 - Player EXP (Small) - 1000 EXP
-5160000002 - Player EXP (Medium) - 3000 EXP
-5160000003 - Player EXP (Large) - 8000 EXP
-5160000004 - Player EXP (Extra Large) - 20000 EXP
-
-// Weapon EXP (확정)
-5170000001 - Weapon EXP (Small) - 1000 EXP
-5170000002 - Weapon EXP (Medium) - 3000 EXP
-5170000003 - Weapon EXP (Large) - 8000 EXP
-5170000004 - Weapon EXP (Extra Large) - 20000 EXP
 ```
+5100000001 - T-Creds (화폐)
+
+// Ascension - 채집 재료
+5110010001 - Pink Bolete (tier 2)
+5110010002 - Red Bolete (tier 3)
+5110010003 - Ruby Bolete (tier 4)
+5110010004 - Cosmagaric (tier 5)
+5110020001 - Kalkodenra (tier 2)
+5110020002 - Chryodendra (tier 3)
+
+// Forgery - 던전 재료
+5120010001 - Protodisk (tier 2)
+5120010002 - Prototest (tier 3)
+5120020001 - Protprism (tier 2)
+5120020002 - Protohedron (tier 3)
+
+// Special - 캐릭터 고유 재료
+5130010001 - Triphasic Nanoflake (캐릭터 A)
+5130010002 - 캐릭터 B 고유 재료
+
+// Mastery
+5140010001 - Mark of Perverance
+
+// Player EXP
+5160000001 - Player EXP (Small)
+5160000002 - Player EXP (Medium)
+5160000003 - Player EXP (Large)
+5160000004 - Player EXP (Extra Large)
+
+// Weapon EXP
+5170000001 - Weapon EXP (Small)
+5170000002 - Weapon EXP (Medium)
+5170000003 - Weapon EXP (Large)
+5170000004 - Weapon EXP (Extra Large)
+```
+
+### ID 범위:
+
+| 카테고리 | 서브 | 시작 ID | 종료 ID |
+|----------|------|---------|---------|
+| Credit | - | 5100000001 | 5100009999 |
+| Ascension | bolete | 5110010001 | 5110019999 |
+| Ascension | odendra | 5110020001 | 5110029999 |
+| Forgery | proto_asc | 5120010001 | 5120019999 |
+| Forgery | proto_skill | 5120020001 | 5120029999 |
+| Special | - | 5130010001 | 5130999999 |
+| Mastery | - | 5140010001 | 5140019999 |
+| Player EXP | - | 5160000001 | 5160009999 |
+| Weapon EXP | - | 5170000001 | 5170009999 |
 
 ---
 
@@ -222,25 +196,21 @@ Endfield 게임의 캐릭터, 무기, 재료 ID 할당 규칙을 정의합니다
 - 한번 할당된 ID는 변경 불가
 - 삭제된 아이템도 ID 재사용 금지
 
-## 참고: Wuthering Waves와의 차이점
+---
 
-### WW ID 체계:
-- 캐릭터: 10자리 (예: 4210101021)
-- 무기: 8자리 (예: 43203001)
-- 재료: 8자리 (예: 41101001)
+## WW와의 차이점
 
-### Endfield ID 체계:
-- 캐릭터: 10자리 (예: 5206010001 - 6성 물리 첫번째)
-- 무기: 10자리 (예: 5306010001 - 6성 한손검 첫번째)
-- 재료: 10자리 (예: 5110010001)
-
-### 주요 차이점:
-1. **통일성**: Endfield는 모든 카테고리가 10자리로 통일
-2. **확장성**: 순번이 4자리(9999개)로 WW보다 많음
-3. **구조 명확성**: `XX-YY-ZZ-NNNN` 형식으로 각 부분의 역할이 명확
+| 항목 | WW | Endfield |
+|------|-----|----------|
+| 캐릭터 ID | 42XXXXXXXXXX (10자리) | 52RREENNNN (10자리) |
+| 무기 ID | 43XXXXXX (8자리) | 53RRTTNNNN (10자리) |
+| 재료 ID | 41XXXXXX (8자리) | 51CCSSNNNN (10자리) |
+| 캐릭터별 재료 | 각각 다른 SubCategory | **모든 캐릭터 동일** (special만 다름) |
+| 합성 | 3:1 티어 업그레이드 | **합성 없음** |
 
 ---
 
-## 문의사항
+## 참고 문서
 
-ID 체계 관련 문의는 이 문서를 업데이트하여 기록합니다.
+- [DATA_STRUCTURE.md](./DATA_STRUCTURE.md) - 데이터 파일 구조
+- [GOOGLE_SHEETS_GUIDE.md](./GOOGLE_SHEETS_GUIDE.md) - 구글 시트 관리 가이드

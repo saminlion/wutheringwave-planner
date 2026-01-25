@@ -1,0 +1,126 @@
+{
+  "_comment": "Endfield 재료 설정 파일 - 재료 추가/수정 시 이 파일 편집",
+  "_format": "game_id는 ID_SYSTEM.md 규칙에 따라 자동 생성됨",
+  "_lastUpdated": "2026-01-25",
+
+  "credit": {
+    "_categoryCode": "00",
+    "_subCategoryCode": "00",
+    "items": [
+      {
+        "id": 1,
+        "name": "T-Creds",
+        "name_ko": "T-크레딧",
+        "game_id": "5100000001"
+      }
+    ]
+  },
+
+  "ascension": {
+    "_categoryCode": "10",
+    "bolete": {
+      "_subCategoryCode": "01",
+      "_description": "캐릭터 돌파용 채집 재료 (티어2~4 공통, 티어5는 캐릭터별)",
+      "items": [
+        { "id": 1, "tier": 2, "name": "Pink Bolete", "name_ko": "핑크 버섯", "game_id": "5110010001" },
+        { "id": 2, "tier": 3, "name": "Red Bolete", "name_ko": "레드 버섯", "game_id": "5110010002" },
+        { "id": 3, "tier": 4, "name": "Ruby Bolete", "name_ko": "루비 버섯", "game_id": "5110010003" },
+        { "id": 4, "tier": 5, "name": "Cosmagaric", "name_ko": "코스마가릭", "game_id": "5110010004", "_variant": "A" },
+        { "id": 5, "tier": 5, "name": "Bloodcap", "name_ko": "블러드캡", "game_id": "5110010005", "_variant": "B" }
+      ]
+    },
+    "odendra": {
+      "_subCategoryCode": "02",
+      "_description": "스킬용 채집 재료",
+      "items": [
+        { "id": 1, "tier": 2, "name": "Kalkodenra", "name_ko": "칼코덴라", "game_id": "5110020001" },
+        { "id": 2, "tier": 3, "name": "Chryodendra", "name_ko": "크리오덴라", "game_id": "5110020002" },
+        { "id": 3, "tier": 4, "name": "Odendra Tier 4", "name_ko": "오덴라 4티어", "game_id": "5110020003", "_status": "이름 미확인" },
+        { "id": 4, "tier": 5, "name": "Odendra Tier 5", "name_ko": "오덴라 5티어", "game_id": "5110020004", "_status": "이름 미확인" }
+      ]
+    },
+    "onyx": {
+      "_subCategoryCode": "03",
+      "_description": "무기 돌파용 채집 재료 (티어2~4 공통, 티어5는 무기별)",
+      "items": [
+        { "id": 1, "tier": 2, "name": "Kalkonyx", "name_ko": "칼코닉스", "game_id": "5110030001" },
+        { "id": 2, "tier": 3, "name": "Auronyx", "name_ko": "아우로닉스", "game_id": "5110030002" },
+        { "id": 3, "tier": 4, "name": "Umbronyx", "name_ko": "움브로닉스", "game_id": "5110030003" },
+        { "id": 4, "tier": 5, "name": "Wulingstone", "name_ko": "우링스톤", "game_id": "5110030004", "_variant": "A" },
+        { "id": 5, "tier": 5, "name": "Onyx T5 B", "name_ko": "오닉스 T5 B", "game_id": "5110030005", "_variant": "B", "_status": "이름 미확인" }
+      ]
+    }
+  },
+
+  "forgery": {
+    "_categoryCode": "20",
+    "proto_asc": {
+      "_subCategoryCode": "01",
+      "_description": "캐릭터 돌파용 던전 재료",
+      "items": [
+        { "id": 1, "tier": 2, "name": "Protodisk", "name_ko": "프로토디스크", "game_id": "5120010001" },
+        { "id": 2, "tier": 3, "name": "Prototest", "name_ko": "프로토테스트", "game_id": "5120010002" }
+      ]
+    },
+    "proto_skill": {
+      "_subCategoryCode": "02",
+      "_description": "스킬/탤런트/베이스스킬/어트리뷰트용 던전 재료",
+      "items": [
+        { "id": 1, "tier": 2, "name": "Protprism", "name_ko": "프로트프리즘", "game_id": "5120020001" },
+        { "id": 2, "tier": 3, "name": "Protohedron", "name_ko": "프로토헤드론", "game_id": "5120020002" }
+      ]
+    },
+    "cast_die": {
+      "_subCategoryCode": "03",
+      "_description": "무기 돌파용 던전 재료",
+      "items": [
+        { "id": 1, "tier": 2, "name": "Cast Die", "name_ko": "캐스트 다이", "game_id": "5120030001" },
+        { "id": 2, "tier": 3, "name": "Heavy Cast Die", "name_ko": "헤비 캐스트 다이", "game_id": "5120030002" }
+      ]
+    }
+  },
+
+  "special": {
+    "_categoryCode": "30",
+    "_subCategoryCode": "01",
+    "_description": "캐릭터 고유 재료 (7단계 돌파, 마스터리, 무기 4단계)",
+    "items": [
+      { "id": 1, "tier": 0, "name": "Triphasic Nanoflake", "name_ko": "트라이페이직 나노플레이크", "game_id": "5130010001", "character": "example" }
+    ]
+  },
+
+  "mastery": {
+    "_categoryCode": "40",
+    "_subCategoryCode": "01",
+    "_description": "마스터리 공통 재료",
+    "items": [
+      { "id": 1, "tier": 0, "name": "Mark of Perverance", "name_ko": "인내의 각인", "game_id": "5140010001" }
+    ]
+  },
+
+  "player_exp": {
+    "_categoryCode": "60",
+    "_subCategoryCode": "00",
+    "_description": "캐릭터 경험치 아이템",
+    "_status": "이름/수량 미확인",
+    "items": [
+      { "id": 1, "tier": 1, "name": "Player EXP (S)", "name_ko": "캐릭터 경험치 (소)", "game_id": "5160000001", "exp_value": 0 },
+      { "id": 2, "tier": 2, "name": "Player EXP (M)", "name_ko": "캐릭터 경험치 (중)", "game_id": "5160000002", "exp_value": 0 },
+      { "id": 3, "tier": 3, "name": "Player EXP (L)", "name_ko": "캐릭터 경험치 (대)", "game_id": "5160000003", "exp_value": 0 },
+      { "id": 4, "tier": 4, "name": "Player EXP (XL)", "name_ko": "캐릭터 경험치 (특대)", "game_id": "5160000004", "exp_value": 0 }
+    ]
+  },
+
+  "weapon_exp": {
+    "_categoryCode": "70",
+    "_subCategoryCode": "00",
+    "_description": "무기 경험치 아이템",
+    "_status": "이름/수량 미확인",
+    "items": [
+      { "id": 1, "tier": 1, "name": "Weapon EXP (S)", "name_ko": "무기 경험치 (소)", "game_id": "5170000001", "exp_value": 0 },
+      { "id": 2, "tier": 2, "name": "Weapon EXP (M)", "name_ko": "무기 경험치 (중)", "game_id": "5170000002", "exp_value": 0 },
+      { "id": 3, "tier": 3, "name": "Weapon EXP (L)", "name_ko": "무기 경험치 (대)", "game_id": "5170000003", "exp_value": 0 },
+      { "id": 4, "tier": 4, "name": "Weapon EXP (XL)", "name_ko": "무기 경험치 (특대)", "game_id": "5170000004", "exp_value": 0 }
+    ]
+  }
+}

@@ -1,170 +1,76 @@
 {
   "character": {
-    "level": {
-      "20": {
-        "credit": 5000,
-        "common": [4, 1],
-        "player_exp": 12500
-      },
-      "20A": {
-        "credit": 10000,
-        "common": [4, 2],
-        "ascension": 3
-      },
-      "40": {
-        "credit": 15000,
-        "common": [4, 2],
-        "player_exp": 52500
-      },
-      "40A": {
-        "credit": 20000,
-        "common": [4, 3],
-        "ascension": 6,
-        "boss": 4
-      },
-      "60": {
-        "credit": 40000,
-        "common": [4, 3],
-        "player_exp": 172500
-      },
-      "60A": {
-        "credit": 60000,
-        "common": [4, 4],
-        "ascension": 9,
-        "boss": 8
-      },
-      "80": {
-        "credit": 80000,
-        "common": [4, 4],
-        "player_exp": 420000
-      },
-      "80A": {
-        "credit": 100000,
-        "common": [8, 4],
-        "ascension": 12,
-        "boss": 12
-      },
-      "90": {
-        "credit": 120000,
-        "common": [8, 4],
-        "player_exp": 690000
-      }
+    "levelup": {
+      "20": { "player_exp": 22860, "credit": 820 },
+      "40": { "player_exp": 271400, "credit": 13360 },
+      "60": { "player_exp": 747110, "credit": 37260 },
+      "80": { "player_exp": 1212340, "credit": 146440 },
+      "90": { "player_exp": 1792290, "credit": 385420 }
+    },
+    "ascension": {
+      "20A": { "credit": 1600, "proto_asc": [8, 2], "bolete": [3, 2] },
+      "40": { "credit": 1600 },
+      "40A": { "credit": 6500, "proto_asc": [25, 2], "bolete": [5, 3] },
+      "60": { "credit": 6500 },
+      "60A": { "credit": 18000, "proto_asc": [24, 3], "bolete": [5, 4] },
+      "70": { "credit": 18000 },
+      "90": { "credit": 100000, "proto_asc": [36, 3], "bolete": [8, 5], "special": 20 }
     },
     "skill": {
-      "2": {
-        "credit": 10000,
-        "forgery": [3, 1]
+      "2": { "credit": 1000, "proto_skill": [6, 2], "odendra": [1, 2] },
+      "3": { "credit": 2700, "proto_skill": [12, 2], "odendra": [2, 2] },
+      "4": { "credit": 3200, "proto_skill": [16, 2], "odendra": [1, 3] },
+      "5": { "credit": 4200, "proto_skill": [21, 2], "odendra": [1, 3] },
+      "6": { "credit": 5400, "proto_skill": [27, 2], "odendra": [2, 3] },
+      "7": { "credit": 8200, "proto_skill": [6, 3], "odendra": [1, 4] },
+      "8": { "credit": 10500, "proto_skill": [8, 3], "odendra": [1, 4] },
+      "9": { "credit": 18000, "proto_skill": [15, 3], "odendra": [2, 4] }
+    },
+    "mastery": {
+      "1": { "credit": 24000, "proto_skill": [15, 3], "odendra": [1, 5], "special": 1, "perseverance": 1 },
+      "2": { "credit": 30000, "proto_skill": [24, 3], "odendra": [1, 5], "special": 1, "perseverance": 2 },
+      "3": { "credit": 65000, "proto_skill": [50, 3], "odendra": [2, 5], "special": 2, "perseverance": 3 }
+    },
+    "talent": {
+      "talent1": {
+        "1": { "credit": 2400, "proto_skill": [12, 2] },
+        "2": { "credit": 16000, "proto_skill": [18, 3] }
       },
-      "3": {
-        "credit": 15000,
-        "forgery": [3, 2]
-      },
-      "4": {
-        "credit": 20000,
-        "forgery": [3, 2],
-        "weeklyBoss": 1
-      },
-      "5": {
-        "credit": 40000,
-        "forgery": [3, 3]
-      },
-      "6": {
-        "credit": 80000,
-        "forgery": [3, 3],
-        "weeklyBoss": 1
-      },
-      "7": {
-        "credit": 120000,
-        "forgery": [3, 4]
-      },
-      "8": {
-        "credit": 160000,
-        "forgery": [3, 4],
-        "weeklyBoss": 2
-      },
-      "9": {
-        "credit": 200000,
-        "forgery": [5, 4],
-        "weeklyBoss": 2
-      },
-      "10": {
-        "credit": 240000,
-        "forgery": [5, 4],
-        "weeklyBoss": 2
+      "talent2": {
+        "1": { "credit": 10800, "proto_skill": [48, 2] },
+        "2": { "credit": 16000, "proto_skill": [18, 3] }
       }
     },
-    "passive": {
-      "skill": {
-        "1": {
-          "credit": 10000,
-          "forgery": [3, 1],
-          "weeklyBoss": 1
-        },
-        "2": {
-          "credit": 20000,
-          "forgery": [3, 2],
-          "weeklyBoss": 1
-        }
+    "baseskill": {
+      "base1": {
+        "1": { "credit": 1600, "proto_skill": [6, 2] },
+        "2": { "credit": 8000, "proto_skill": [12, 3] }
       },
-      "bonusStat": {
-        "1": {
-          "credit": 20000,
-          "forgery": [3, 2]
-        },
-        "2": {
-          "credit": 40000,
-          "forgery": [3, 3]
-        }
+      "base2": {
+        "1": { "credit": 3000, "proto_skill": [12, 2] },
+        "2": { "credit": 20000, "proto_skill": [20, 3] }
       }
+    },
+    "attribute": {
+      "1": { "credit": 1000, "proto_skill": [5, 2] },
+      "2": { "credit": 1800, "proto_skill": [8, 2] },
+      "3": { "credit": 6000, "proto_skill": [10, 3] },
+      "4": { "credit": 12000, "proto_skill": [20, 3] }
     }
   },
   "weapon": {
-    "level": {
-      "20": {
-        "credit": 2000,
-        "common": [2, 1],
-        "weapon_exp": 6250
-      },
-      "20A": {
-        "credit": 4000,
-        "common": [3, 2],
-        "forgery": [2, 1]
-      },
-      "40": {
-        "credit": 8000,
-        "common": [2, 2],
-        "weapon_exp": 26250
-      },
-      "40A": {
-        "credit": 10000,
-        "common": [3, 3],
-        "forgery": [2, 2]
-      },
-      "60": {
-        "credit": 20000,
-        "common": [2, 3],
-        "weapon_exp": 86250
-      },
-      "60A": {
-        "credit": 30000,
-        "common": [3, 4],
-        "forgery": [2, 3]
-      },
-      "80": {
-        "credit": 40000,
-        "common": [2, 4],
-        "weapon_exp": 210000
-      },
-      "80A": {
-        "credit": 50000,
-        "common": [5, 4],
-        "forgery": [2, 4]
-      },
-      "90": {
-        "credit": 60000,
-        "common": [4, 4],
-        "weapon_exp": 345000
-      }
+    "levelup": {
+      "20": { "weapon_exp": 8890, "credit": 640 },
+      "40": { "weapon_exp": 105540, "credit": 10400 },
+      "60": { "weapon_exp": 290540, "credit": 29010 },
+      "80": { "weapon_exp": 1203710, "credit": 123850 },
+      "90": { "weapon_exp": 2524080, "credit": 341390 }
+    },
+    "ascension": {
+      "20A": { "credit": 2200, "cast_die": [5, 2], "onyx": [3, 2] },
+      "40A": { "credit": 8500, "cast_die": [18, 2], "onyx": [5, 3] },
+      "60A": { "credit": 25000, "cast_die": [20, 3], "onyx": [5, 4] },
+      "80A": { "credit": 90000, "cast_die": [30, 3], "onyx": [8, 5], "special": 16 }
     }
   }
 }
