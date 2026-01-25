@@ -248,14 +248,208 @@ const { t } = useLocale();
 
 UI 문자열은 데이터 시트가 없으므로 전부 수동 입력:
 
-| key | en | ko | context |
-|-----|----|----|---------|
-| nav.planner | Planner | 플래너 | 네비게이션 |
-| nav.inventory | Inventory | 인벤토리 | 네비게이션 |
-| nav.settings | Settings | 설정 | 네비게이션 |
-| planner.add_goal | Add Goal | 목표 추가 | |
-| common.save | Save | 저장 | |
-| common.cancel | Cancel | 취소 | |
+##### Navigation (nav.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| nav.planner | Planner | 플래너 | HomeView, GameSelector |
+| nav.character | Character | 캐릭터 | HomeView, GameSelector |
+| nav.weapon | Weapon | 무기 | HomeView, GameSelector |
+| nav.inventory | Inventory | 인벤토리 | HomeView, GameSelector |
+| nav.settings | Settings | 설정 | HomeView, GameSelector |
+
+##### Common (common.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| common.close | Close | 닫기 | CharacterDialog, ErrorBoundary |
+| common.save | Save | 저장 | 여러 곳 |
+| common.cancel | Cancel | 취소 | 여러 곳 |
+| common.all | All | 전체 | CharacterView, WeaponView 필터 |
+| common.level | Level | 레벨 | CharacterDialog, WeaponDialog |
+| common.currentLevel | Current Level: | 현재 레벨: | CharacterDialog, WeaponDialog |
+| common.targetLevel | Target Level: | 목표 레벨: | CharacterDialog, WeaponDialog |
+| common.skills | Skills | 스킬 | CharacterDialog |
+| common.activate | Activate | 활성화 | CharacterDialog |
+| common.processing | Processing... | 처리 중... | DataBackup |
+| common.selected | Selected | 선택됨 | GameSelector |
+
+##### Character (character.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| character.selection | Character Selection | 캐릭터 선택 | CharacterView |
+| character.filterElement | Element: | 속성: | CharacterView |
+| character.filterWeapon | Weapon: | 무기: | CharacterView |
+| character.filterRarity | Rarity: | 등급: | CharacterView |
+
+##### Weapon (weapon.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| weapon.selection | Weapon Selection | 무기 선택 | WeaponView |
+| weapon.filterType | Type: | 종류: | WeaponView |
+| weapon.filterRarity | Rarity: | 등급: | WeaponView |
+
+##### Inventory (inventory.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| inventory.quantity | Quantity: | 수량: | InventoryView |
+| inventory.updateSuccess | Item updated successfully | 아이템 업데이트 완료 | InventoryView |
+| inventory.invalidInput | Invalid input | 잘못된 입력 | InventoryView |
+
+##### Planner (planner.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| planner.goals | Goals | 목표 | PlannerView |
+| planner.finalMaterialNeeds | Final Material Needs | 최종 필요 재료 | FinalMaterialNeeds |
+| planner.totalRequired | Total Required Materials | 총 필요 재료 | FinalMaterialNeeds |
+| planner.estimatedDays | Estimated Days Required | 예상 소요 일수 | FinalMaterialNeeds |
+| planner.estimatedRuns | Estimated Runs: | 예상 런 횟수: | FinalMaterialNeeds |
+| planner.estimatedResin | Estimated Resin: | 예상 레진: | FinalMaterialNeeds |
+| planner.estimatedTime | Estimated Time: | 예상 시간: | FinalMaterialNeeds |
+| planner.estimatedDate | Estimated Date: | 예상 날짜: | FinalMaterialNeeds |
+| planner.need | Need: | 필요: | FinalMaterialNeeds |
+| planner.owned | Owned: | 보유: | FinalMaterialNeeds |
+| planner.synthesize | Synthesize: | 합성: | FinalMaterialNeeds |
+| planner.complete | ✓ Complete | ✓ 완료 | FinalMaterialNeeds |
+
+##### Settings (settings.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| settings.description | Manage your planner data - sync to cloud or backup locally. | 플래너 데이터 관리 - 클라우드 동기화 또는 로컬 백업 | SettingsView |
+| settings.cloudSync | Cloud Sync | 클라우드 동기화 | CloudSync |
+
+##### Backup (backup.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| backup.storageUsed | Storage Used: | 저장 공간 사용: | DataBackup |
+| backup.downloadBackup | 📥 Download Backup | 📥 백업 다운로드 | DataBackup |
+| backup.downloadDesc | Save current data as a JSON file | 현재 데이터를 JSON 파일로 저장 | DataBackup |
+| backup.restoreBackup | 📤 Restore Backup | 📤 백업 복원 | DataBackup |
+| backup.restoreDesc | Restore data from a backup file | 백업 파일에서 데이터 복원 | DataBackup |
+| backup.clearAll | 🗑️ Clear All | 🗑️ 전체 삭제 | DataBackup |
+| backup.clearDesc | Delete all stored data (cannot be undone) | 저장된 모든 데이터 삭제 (복구 불가) | DataBackup |
+| backup.successDownload | Backup file downloaded successfully | 백업 파일 다운로드 완료 | DataBackup |
+| backup.failedDownload | Failed to create backup | 백업 생성 실패 | DataBackup |
+| backup.confirmRestore | ⚠️ This will overwrite current data with the backup file. Continue? | ⚠️ 현재 데이터가 백업 파일로 덮어씌워집니다. 계속할까요? | DataBackup |
+| backup.successRestore | Data restored successfully. Refreshing page... | 데이터 복원 완료. 페이지 새로고침 중... | DataBackup |
+| backup.failedRestore | Failed to restore data | 데이터 복원 실패 | DataBackup |
+| backup.confirmDelete1 | ⚠️ Delete all data? This action cannot be undone. | ⚠️ 모든 데이터를 삭제할까요? 이 작업은 복구할 수 없습니다. | DataBackup |
+| backup.confirmDelete2 | ⚠️⚠️ Are you sure? Have you backed up your data first? | ⚠️⚠️ 정말 삭제할까요? 먼저 백업하셨나요? | DataBackup |
+| backup.successDelete | All data deleted. Refreshing page... | 모든 데이터 삭제 완료. 페이지 새로고침 중... | DataBackup |
+| backup.failedDelete | Failed to delete data | 데이터 삭제 실패 | DataBackup |
+
+##### Cloud Sync (cloudSync.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| cloudSync.notConfigured | Cloud sync is not configured. | 클라우드 동기화가 설정되지 않았습니다. | CloudSync |
+| cloudSync.setupHint | Set Firebase environment variables to enable. | Firebase 환경 변수를 설정하세요. | CloudSync |
+| cloudSync.signInPrompt | Sign in to sync your data across devices. | 기기 간 데이터 동기화를 위해 로그인하세요. | CloudSync |
+| cloudSync.signInGoogle | Sign in with Google | Google로 로그인 | CloudSync |
+| cloudSync.signOut | Sign Out | 로그아웃 | CloudSync |
+| cloudSync.lastSynced | Last synced: | 마지막 동기화: | CloudSync |
+| cloudSync.itemCount | Items in cloud: | 클라우드 아이템 수: | CloudSync |
+| cloudSync.saving | Saving... | 저장 중... | CloudSync |
+| cloudSync.saveButton | Save to Cloud | 클라우드에 저장 | CloudSync |
+| cloudSync.loading | Loading... | 로딩 중... | CloudSync |
+| cloudSync.loadButton | Load from Cloud | 클라우드에서 불러오기 | CloudSync |
+| cloudSync.signInFailed | Sign in failed | 로그인 실패 | CloudSync |
+| cloudSync.signOutFailed | Sign out failed | 로그아웃 실패 | CloudSync |
+| cloudSync.saveSucceeded | Data saved to cloud successfully! | 클라우드에 저장 완료! | CloudSync |
+| cloudSync.saveFailed | Save failed | 저장 실패 | CloudSync |
+| cloudSync.confirmLoad | This will overwrite your local data. Continue? | 로컬 데이터가 덮어씌워집니다. 계속할까요? | CloudSync |
+| cloudSync.loadSuccess | Loaded {count} items. Refresh to apply. | {count}개 아이템 로드 완료. 새로고침하세요. | CloudSync |
+| cloudSync.noData | No cloud data found. | 클라우드 데이터 없음 | CloudSync |
+| cloudSync.loadFailed | Load failed | 로드 실패 | CloudSync |
+| cloudSync.never | Never | 없음 | CloudSync |
+
+##### Error (error.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| error.title | 오류가 발생했습니다 | 오류가 발생했습니다 | ErrorBoundary |
+| error.defaultMessage | 일시적인 문제가 발생했습니다. 다시 시도해주세요. | 일시적인 문제가 발생했습니다. 다시 시도해주세요. | ErrorBoundary |
+| error.showDetails | 상세 정보 보기 | 상세 정보 보기 | ErrorBoundary |
+| error.hideDetails | 상세 정보 숨기기 | 상세 정보 숨기기 | ErrorBoundary |
+| error.retry | 다시 시도 | 다시 시도 | ErrorBoundary |
+| error.reset | 초기화 | 초기화 | ErrorBoundary |
+| error.goBack | 뒤로 가기 | 뒤로 가기 | ErrorBoundary |
+
+##### Home (home.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| home.selectGame | Select a game to start planning | 게임을 선택하여 플래너 시작 | HomeView |
+| home.welcome | Welcome to the Planner | 플래너에 오신 것을 환영합니다 | HomeView |
+| home.currentGame | Current Game | 현재 게임 | HomeView |
+
+##### Endfield (endfield.*) - 임시 데이터 입력용
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| endfield.title | Endfield Raw Data Input | Endfield 원본 데이터 입력 | EndfieldDataView |
+| endfield.description | Endfield's progression system is still unknown... | Endfield 진행 시스템은 아직 미확인... | EndfieldDataView |
+| endfield.characterData | Character Data | 캐릭터 데이터 | EndfieldDataView |
+| endfield.characterPlaceholder | Paste character JSON data here... | 캐릭터 JSON 데이터 붙여넣기... | EndfieldDataView |
+| endfield.saveCharacter | Save Character Data | 캐릭터 데이터 저장 | EndfieldDataView |
+| endfield.weaponData | Weapon Data | 무기 데이터 | EndfieldDataView |
+| endfield.weaponPlaceholder | Paste weapon JSON data here... | 무기 JSON 데이터 붙여넣기... | EndfieldDataView |
+| endfield.saveWeapon | Save Weapon Data | 무기 데이터 저장 | EndfieldDataView |
+| endfield.materialData | Material Data | 재료 데이터 | EndfieldDataView |
+| endfield.materialPlaceholder | Paste material JSON data here... | 재료 JSON 데이터 붙여넣기... | EndfieldDataView |
+| endfield.saveMaterial | Save Material Data | 재료 데이터 저장 | EndfieldDataView |
+| endfield.storedData | Current Stored Data | 현재 저장된 데이터 | EndfieldDataView |
+| endfield.characters | Characters: | 캐릭터: | EndfieldDataView |
+| endfield.weapons | Weapons: | 무기: | EndfieldDataView |
+| endfield.materials | Materials: | 재료: | EndfieldDataView |
+| endfield.savedCharacters | Saved {count} characters | {count}개 캐릭터 저장됨 | EndfieldDataView |
+| endfield.savedWeapons | Saved {count} weapons | {count}개 무기 저장됨 | EndfieldDataView |
+| endfield.savedMaterials | Saved {count} materials | {count}개 재료 저장됨 | EndfieldDataView |
+| endfield.invalidJSON | Invalid JSON format | 잘못된 JSON 형식 | EndfieldDataView |
+
+##### Category Names (category.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| category.credit | Credit | 크레딧 | FinalMaterialNeeds |
+| category.common | Common Materials | 일반 재료 | FinalMaterialNeeds |
+| category.forgery | Skill Materials | 스킬 재료 | FinalMaterialNeeds |
+| category.ascension | Ascension Materials | 돌파 재료 | FinalMaterialNeeds |
+| category.boss | Boss Materials | 보스 재료 | FinalMaterialNeeds |
+| category.weeklyBoss | Weekly Boss Materials | 주간 보스 재료 | FinalMaterialNeeds |
+| category.weeklyboss | Weekly Boss Materials | 주간 보스 재료 | FinalMaterialNeeds (소문자 버전) |
+| category.player_exp | Character EXP | 캐릭터 경험치 | FinalMaterialNeeds |
+| category.weapon_exp | Weapon EXP | 무기 경험치 | FinalMaterialNeeds |
+
+##### SubCategory Names - Common Materials (subcategory.common.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| subcategory.common.whisperin_core | Whisperin Core | 위스퍼링 코어 | FinalMaterialNeeds |
+| subcategory.common.howler_core | Howler Core | 하울러 코어 | FinalMaterialNeeds |
+| subcategory.common.ring | Ring | 링 | FinalMaterialNeeds |
+| subcategory.common.mask | Mask | 마스크 | FinalMaterialNeeds |
+| subcategory.common.polygon | Polygon | 폴리곤 | FinalMaterialNeeds |
+| subcategory.common.residuum | Residuum | 레지듐 | FinalMaterialNeeds |
+| subcategory.common.exoswarm | Exoswarm | 엑소스웜 | FinalMaterialNeeds |
+| subcategory.common.mech | Mech | 메크 | FinalMaterialNeeds |
+| subcategory.common.pendant | Pendant | 펜던트 | FinalMaterialNeeds |
+
+##### SubCategory Names - Forgery Materials (subcategory.forgery.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| subcategory.forgery.metallic_drip | Metallic Drip | 메탈릭 드립 | FinalMaterialNeeds |
+| subcategory.forgery.phlogiston | Phlogiston | 플로지스톤 | FinalMaterialNeeds |
+| subcategory.forgery.helix | Helix | 헬릭스 | FinalMaterialNeeds |
+| subcategory.forgery.residue | Waveworn Residue | 웨이브원 레지듀 | FinalMaterialNeeds |
+| subcategory.forgery.cadence | Cadence | 케이던스 | FinalMaterialNeeds |
+| subcategory.forgery.polarizer | Polarizer | 폴라라이저 | FinalMaterialNeeds |
+| subcategory.forgery.combustor | Combustor | 컴버스터 | FinalMaterialNeeds |
+| subcategory.forgery.string | String | 스트링 | FinalMaterialNeeds |
+| subcategory.forgery.crystal | Crystal | 크리스탈 | FinalMaterialNeeds |
+| subcategory.forgery.shard | Shard | 샤드 | FinalMaterialNeeds |
+
+##### SubCategory Names - Other (subcategory.*)
+| key | en | ko | 사용 위치 |
+|-----|----|----|----------|
+| subcategory.credit | Shell Credit | 쉘 크레딧 | FinalMaterialNeeds |
+| subcategory.boss | Boss Material | 보스 재료 | FinalMaterialNeeds |
+| subcategory.weeklyboss | Weekly Boss Material | 주간 보스 재료 | FinalMaterialNeeds |
+| subcategory.ascension | Ascension Material | 돌파 재료 | FinalMaterialNeeds |
+| subcategory.player_exp | Character EXP | 캐릭터 경험치 | FinalMaterialNeeds |
+| subcategory.weapon_exp | Weapon EXP | 무기 경험치 | FinalMaterialNeeds |
 
 ---
 

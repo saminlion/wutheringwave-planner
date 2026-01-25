@@ -536,7 +536,7 @@ const CalculateTotalResinAndDate = () => {
             // Calculate resin
             const resin = parseInt(CalculateEstimatedResin({
                 name: category.name,
-                subCategory: subCategory.id,
+                subcategory: subCategory.id,
                 subCategories: { [subCategory.id]: subCategory }
             }), 10);
 
