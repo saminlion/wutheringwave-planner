@@ -48,24 +48,23 @@ export default {
 
   // Form fields for dialogs
   formFields: {
-    // Endfield uses 7-stage ascension system
-    // 40A1 (material), 40A2 (credit only), 60A3 (material), 60A4 (credit only), etc.
+    // Endfield ascension system (costs.json 기준)
     characterLevelItems: [
       { value: '1', label: 'Level 1' },
+      { value: '20', label: 'Level 20' },
+      { value: '20A', label: 'Level 20 Ascended' },
       { value: '40', label: 'Level 40' },
-      { value: '40A1', label: 'Level 40 Ascended 1' },
-      { value: '40A2', label: 'Level 40 Ascended 2' },
+      { value: '40A', label: 'Level 40 Ascended' },
       { value: '60', label: 'Level 60' },
-      { value: '60A3', label: 'Level 60 Ascended 3' },
-      { value: '60A4', label: 'Level 60 Ascended 4' },
+      { value: '60A', label: 'Level 60 Ascended' },
+      { value: '70', label: 'Level 70' },
       { value: '80', label: 'Level 80' },
-      { value: '80A5', label: 'Level 80 Ascended 5' },
-      { value: '80A6', label: 'Level 80 Ascended 6' },
       { value: '90', label: 'Level 90' },
-      { value: '90A7', label: 'Level 90 Ascended 7' },
     ],
     weaponLevelItems: [
       { value: '1', label: 'Level 1' },
+      { value: '20', label: 'Level 20' },
+      { value: '20A', label: 'Level 20 Ascended' },
       { value: '40', label: 'Level 40' },
       { value: '40A', label: 'Level 40 Ascended' },
       { value: '60', label: 'Level 60' },

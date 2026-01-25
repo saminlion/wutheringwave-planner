@@ -40,17 +40,39 @@ export const mergeMaterials = (...materialSources) =>
 
 /**
  * Utility: extracts level difference range
+ * レベル範囲の差分データを抽出する
+ *
+ * @param {Array} arrayData - レベルデータ配列 [{level: '20', ...}, {level: '20A', ...}]
+ * @param {string} currentLevel - 現在のレベル ('1', '20', '20A' など)
+ * @param {string} targetLevel - 目標レベル
+ * @returns {Array} currentLevel+1からtargetLevelまでのコストデータ配列
  */
 export const getLevelRangeDiff = (arrayData, currentLevel, targetLevel) => {
   const sortedData = arrayData.sort((a, b) =>
     a.level.localeCompare(b.level, undefined, { numeric: true })
   );
 
-  const currentLevelIndex = sortedData.findIndex((arr) => arr.level === currentLevel);
+  let currentLevelIndex = sortedData.findIndex((arr) => arr.level === currentLevel);
   const targetLevelIndex = sortedData.findIndex((arr) => arr.level === targetLevel);
 
-  if (currentLevelIndex === -1 || targetLevelIndex === -1) {
-    logger.warn('Invalid level range provided.');
+  // currentLevelが配列に存在しない場合（例: '1'がcosts.jsonにない）
+  // → currentLevelより低いレベルから始まる場合、最初から計算を開始
+  if (currentLevelIndex === -1) {
+    // currentLevelの数値を抽出（'40A' → 40, '1' → 1）
+    const currentNum = parseInt(currentLevel.replace(/[A-Za-z]/g, ''), 10);
+    const firstEntryNum = parseInt(sortedData[0]?.level.replace(/[A-Za-z]/g, ''), 10);
+
+    if (!isNaN(currentNum) && !isNaN(firstEntryNum) && currentNum < firstEntryNum) {
+      // currentLevelが最初のエントリより低い → 最初から開始（index = -1として扱う）
+      currentLevelIndex = -1;
+    } else {
+      logger.warn(`Current level "${currentLevel}" not found in cost data.`);
+      return [];
+    }
+  }
+
+  if (targetLevelIndex === -1) {
+    logger.warn(`Target level "${targetLevel}" not found in cost data.`);
     return [];
   }
 

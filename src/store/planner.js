@@ -171,9 +171,18 @@ export const usePlannerStore = defineStore('planner', {
       const weaponData = getGameData('weapons');
       const weaponInfo = Object.values(weaponData).find((w) => w.game_id === weaponId);
       const rarity = getWeaponField(weaponId, 'rarity');
-      if (!settings || !weaponInfo || !rarity) return {};
+
+      logger.debug('calculateWeaponMaterials - settings:', settings);
+      logger.debug('calculateWeaponMaterials - weaponInfo:', weaponInfo);
+      logger.debug('calculateWeaponMaterials - rarity:', rarity);
+
+      if (!settings || !weaponInfo || !rarity) {
+        logger.warn('calculateWeaponMaterials - missing data:', { settings: !!settings, weaponInfo: !!weaponInfo, rarity });
+        return {};
+      }
 
       const result = calculateWeaponMaterials(settings, weaponInfo, rarity);
+      logger.debug('calculateWeaponMaterials - result:', result);
       this.materialsCache[weaponId] = result;
       return result;
     },
