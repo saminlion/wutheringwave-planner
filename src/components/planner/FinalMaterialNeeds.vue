@@ -2,6 +2,19 @@
     <div class="final-material-needs">
         <h2>Final Material Needs</h2>
 
+        <!-- Endfield専用: 던전 레벨 선택기 -->
+        <div v-if="isEndfield" class="dungeon-level-selector">
+            <label for="dungeon-level">Dungeon Level:</label>
+            <select id="dungeon-level" v-model="selectedDungeonLevel" @change="onDungeonLevelChange">
+                <option v-for="level in 5" :key="level" :value="level">
+                    Lv.{{ level }}
+                </option>
+            </select>
+            <span class="dungeon-info">
+                (Stamina: {{ currentDungeonStamina }})
+            </span>
+        </div>
+
         <!-- Total Material Calculation Section -->
         <div class="summary-container">
             <div class="summary-card">
@@ -26,16 +39,35 @@
                         <h3 v-if="category.name !== subCategory.name">{{ translateCategoryName(subCategory.name) }}</h3>
 
                                                 <div class="estimate-container" v-if="(estimate = getEstimates(category, subCategory))">
-                            <p>Estimated Runs: {{ estimate.run }}</p>
-                            <p>Estimated Resin: {{ estimate.resin }}</p>
-                            <p v-if="subCategory.name !== 'weeklyboss'">
-                                Estimated Time:
-                                <span class="font-semibold">{{ estimate.date }}</span>
-                            </p>
-                            <p v-else>
-                                Estimated Date:
-                                <span class="font-semibold">{{ estimate.date }}</span>
-                            </p>
+                            <!-- Endfield Forgery: ティア別表示 -->
+                            <template v-if="estimate.isTierSeparated">
+                                <div class="tier-estimate tier2-estimate" v-if="estimate.tier2.need > 0">
+                                    <p class="tier-label">Tier2 ({{ estimate.tier2.need }}개)</p>
+                                    <p>Runs: {{ estimate.tier2.runs }} ({{ estimate.tier2.resin }} stamina)</p>
+                                </div>
+                                <div class="tier-estimate tier3-estimate" v-if="estimate.tier3.need > 0">
+                                    <p class="tier-label">Tier3 ({{ estimate.tier3.need }}개)</p>
+                                    <p>Runs: {{ estimate.tier3.runs }} ({{ estimate.tier3.resin }} stamina)</p>
+                                </div>
+                                <div class="tier-total">
+                                    <p><strong>Total: {{ estimate.run }} runs, {{ estimate.resin }} stamina</strong></p>
+                                    <p>Estimated Days: <span class="font-semibold">{{ estimate.date }}</span></p>
+                                </div>
+                            </template>
+                            <!-- 通常表示 (WW / Endfield non-forgery) -->
+                            <template v-else>
+                                <p>Estimated Runs: {{ estimate.run }}</p>
+                                <p>Estimated Resin: {{ estimate.resin }}</p>
+                                <p v-if="subCategory.name !== 'weeklyboss'">
+                                    Estimated Time:
+                                    <span class="font-semibold">{{ estimate.date }}</span>
+                                </p>
+                                <p v-else>
+                                    Estimated Date:
+                                    <span class="font-semibold">{{ estimate.date }}</span>
+                                </p>
+                                <p v-if="estimate.note" class="estimate-note">{{ estimate.note }}</p>
+                            </template>
                         </div>
 
                         <ul class="materials-grid">
@@ -142,8 +174,7 @@ import {
     getMaterialFieldById
 } from "@/services/materialHelper/index";
 import { useInventoryStore } from "@/store/inventory";
-import { useGameRegistryStore } from "@/store/gameRegistry";
-import { playerExpMaterial as player_exp_material } from "@/games/wutheringwave";
+import { useGameStore } from "@/store/game";
 import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
@@ -158,11 +189,55 @@ const translateCategoryName = (categoryName) => {
 };
 
 const inventoryStore = useInventoryStore();
-const gameRegistry = useGameRegistryStore();
+const gameStore = useGameStore();
+
+// Endfield判定
+const isEndfield = computed(() => {
+    return gameStore.currentGameId === 'endfield';
+});
+
+// 선택된 던전 레벨 (기본값: 5)
+const selectedDungeonLevel = ref(5);
+
+// 현재 던전 스태미나 표시용
+const currentDungeonStamina = computed(() => {
+    if (!isEndfield.value) return 0;
+    const config = gameStore.currentGame?.config;
+    if (!config?.dungeonData?.proto_skill) return 80;
+    return config.dungeonData.proto_skill[selectedDungeonLevel.value]?.stamina || 80;
+});
+
+// 던전 레벨 변경 시 캐시 리셋
+const onDungeonLevelChange = () => {
+    resetCaches();
+    updateTotalValues();
+};
+
+// Endfield용: 티어별 던전 데이터 취득
+const getEndfieldDungeonData = (subCategory, level = selectedDungeonLevel.value) => {
+    const config = gameStore.currentGame?.config;
+    if (!config?.getDungeonDataBySubCategory) return null;
+    return config.getDungeonDataBySubCategory(subCategory, level);
+};
+
+// player_exp材料のマッピング（game_id → exp値）を動的に取得
+const player_exp_material = computed(() => {
+    const materials = gameStore.getData('materials') || {};
+    const playerExpCategory = materials.player_exp || {};
+
+    const mapping = {};
+    Object.values(playerExpCategory).forEach(material => {
+        if (material.game_id && material.value) {
+            mapping[material.game_id] = material.value;
+        }
+    });
+
+    return mapping;
+});
 
 // Get stamina config from current game
 const getStaminaConfig = () => {
-    const currentGame = gameRegistry.currentGame;
+    const currentGame = gameStore.currentGame;
     return currentGame?.config?.stamina || {
         dailyLimit: 240,
         farmingRates: {}
@@ -188,10 +263,90 @@ const getEstimates = (category, subCategory) => {
         subCategories: {[subCategory.id]: subCategory}
     };
 
+    // Endfield forgery カテゴリの場合、ティア別に分離して計算
+    if (isEndfield.value && category.name === 'forgery') {
+        return getEndfieldForgeryEstimates(subCategory);
+    }
+
     return {
         run: esimatedRun.value(data),
         resin: esimatedResin.value(data),
         date: esimatedDate.value(data),
+        isTierSeparated: false,
+    };
+};
+
+// Endfield forgery専用: ティア別Estimated計算
+const getEndfieldForgeryEstimates = (subCategory) => {
+    const dungeonData = getEndfieldDungeonData(subCategory.id);
+    if (!dungeonData) {
+        // SubCategory가 없으면 proto_skill 기본값 사용
+        const fallbackData = getEndfieldDungeonData('proto_skill');
+        if (!fallbackData) {
+            return { run: 0, resin: 0, date: 0, isTierSeparated: false };
+        }
+    }
+
+    const data = dungeonData || getEndfieldDungeonData('proto_skill');
+    const { stamina, tier2: tier2Drops, tier3: tier3Drops, hasTierChoice } = data;
+
+    // task에서 tier별 필요량 추출
+    let tier2Need = 0;
+    let tier3Need = 0;
+
+    subCategory.task.forEach((task) => {
+        const actualNeed = Math.max(0, task.need - (task.owned || 0) - (task.synthesize || 0));
+        if (actualNeed > 0) {
+            if (task.tier === 2) {
+                tier2Need += actualNeed;
+            } else if (task.tier === 3) {
+                tier3Need += actualNeed;
+            }
+        }
+    });
+
+    // Lv.3 미만: tier3 선택 불가, tier2만 파밍
+    if (!hasTierChoice) {
+        const totalRuns = tier2Drops > 0 ? Math.ceil((tier2Need + tier3Need * 3) / tier2Drops) : 0;
+        const totalResin = totalRuns * stamina;
+        const totalDays = Math.ceil(totalResin / 240);
+
+        return {
+            run: totalRuns,
+            resin: totalResin,
+            date: totalDays,
+            isTierSeparated: false,
+            note: 'Lv.3+ required for tier selection',
+        };
+    }
+
+    // Lv.3 이상: tier2와 tier3 분리 계산
+    const tier2Runs = tier2Drops > 0 ? Math.ceil(tier2Need / tier2Drops) : 0;
+    const tier3Runs = tier3Drops > 0 ? Math.ceil(tier3Need / tier3Drops) : 0;
+    const totalRuns = tier2Runs + tier3Runs;
+    const tier2Resin = tier2Runs * stamina;
+    const tier3Resin = tier3Runs * stamina;
+    const totalResin = tier2Resin + tier3Resin;
+    const totalDays = Math.ceil(totalResin / 240);
+
+    return {
+        run: totalRuns,
+        resin: totalResin,
+        date: totalDays,
+        isTierSeparated: true,
+        tier2: {
+            need: tier2Need,
+            runs: tier2Runs,
+            resin: tier2Resin,
+            drops: tier2Drops,
+        },
+        tier3: {
+            need: tier3Need,
+            runs: tier3Runs,
+            resin: tier3Resin,
+            drops: tier3Drops,
+        },
+        stamina: stamina,
     };
 };
 
@@ -235,7 +390,7 @@ const totalExpNeed = (category) => {
         subcategoryData.task.forEach((task) => {
             missingCalExp = task.need;
 
-            Object.entries(player_exp_material).forEach(([id, exp]) => {
+            Object.entries(player_exp_material.value).forEach(([id, exp]) => {
                 currentTotalExp += inventoryStore.getMaterialQuantity(id) * exp;
             });
         });
@@ -258,17 +413,21 @@ const getMaterialIcon = (materialId) => {
         "credit",
     ];
 
-    if (materialId === 'player_exp') {
-        return getMaterialFieldById(41601004, 'icon')
+    // player_exp/weapon_expの場合、材料データベースから最高ティアを探す
+    if (materialId === 'player_exp' || materialId === 'weapon_exp') {
+        const materials = gameStore.getData('materials') || {};
+        const expCategory = materials[materialId];
+        if (expCategory) {
+            // 最高ティア（ティア4）のアイコンを取得
+            const highestTierItem = Object.values(expCategory).find(item => item.tier === 4);
+            if (highestTierItem) {
+                return highestTierItem.icon;
+            }
+        }
+        return null;
     }
 
-    else if (materialId === 'weapon_exp') {
-        return getMaterialFieldById(41701004, 'icon')
-    }
-
-    else {
-        return getMaterialFieldById(materialId, 'icon')
-    }
+    return getMaterialFieldById(materialId, 'icon');
 
     for (const type of types) {
         const material = findMaterial(type, materialId, null, true);
@@ -371,13 +530,22 @@ const updateTotalValues = () => {
 const GetRateValueForCategory = (data) => {
     let drops = 0, resin = 0, unobtainable = false, categoryName = "";
     const staminaConfig = getStaminaConfig();
-    const farmingRates = staminaConfig.farmingRates || {};
+    let farmingRates = staminaConfig.farmingRates || {};
+
+    // Endfield: 던전 레벨에 따른 동적 farmingRates 적용
+    if (isEndfield.value) {
+        const config = gameStore.currentGame?.config;
+        if (config?.getDungeonRates) {
+            farmingRates = config.getDungeonRates(selectedDungeonLevel.value);
+        }
+    }
 
     categorizedMaterials.value.forEach((material) => {
         if (material.name === data.name) {
             const rate = farmingRates[material.name];
             if (rate) {
-                drops = rate.drops || 0;
+                // Endfield forgery는 tier2 기준으로 drops 설정 (tier별 분리는 getEndfieldForgeryEstimates에서 처리)
+                drops = rate.drops || rate.tier2 || 0;
                 resin = rate.stamina || 0;
                 unobtainable = rate.unobtainable || false;
             } else {
@@ -437,7 +605,7 @@ const CalculateEstimatedRun = (data) => {
                     missingCalExp = task.need;
 
 
-                    Object.entries(player_exp_material).forEach(([id, exp]) => {
+                    Object.entries(player_exp_material.value).forEach(([id, exp]) => {
 
                         const exp_value = inventoryStore.getMaterialQuantity(id) * exp;
 
@@ -783,6 +951,80 @@ onMounted(() => {
     /* ?띿뒪???됱긽 */
     margin: 4px 0;
     /* ?띿뒪??媛꾧꺽 */
+}
+
+/* 던전 레벨 선택기 스타일 */
+.dungeon-level-selector {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background-color: #e8f4f8;
+    border-radius: 8px;
+    border: 1px solid #b8d4e3;
+}
+
+.dungeon-level-selector label {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.dungeon-level-selector select {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #3498db;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dungeon-level-selector select:hover {
+    border-color: #2980b9;
+}
+
+.dungeon-level-selector .dungeon-info {
+    color: #7f8c8d;
+    font-size: 13px;
+}
+
+/* 티어별 Estimate 스타일 */
+.tier-estimate {
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+}
+
+.tier2-estimate {
+    border-left: 3px solid #3498db;
+}
+
+.tier3-estimate {
+    border-left: 3px solid #9b59b6;
+}
+
+.tier-label {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 2px;
+}
+
+.tier-total {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed #bdc3c7;
+}
+
+.tier-total p {
+    color: #2c3e50;
+}
+
+.estimate-note {
+    font-size: 12px;
+    color: #e67e22;
+    font-style: italic;
+    margin-top: 4px;
 }
 </style>
 

@@ -7,7 +7,7 @@ import { ref, computed } from 'vue';
 import { loadFromStorage, saveToStorage } from '@/utils/storage';
 import { getGame, getEnabledGames, DEFAULT_GAME_ID, supportedGames } from '@/games';
 
-const STORAGE_KEY = 'wwplanner_current_game';
+const STORAGE_KEY = 'current_game'; // storage.jsが自動でwwplanner_プレフィックスを追加
 
 export const useGameStore = defineStore('game', () => {
   // State

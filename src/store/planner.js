@@ -1,11 +1,15 @@
 import { defineStore } from 'pinia';
 import { useInventoryStore } from './inventory.js'; // Inventory Store 가져오기
-import {
-  characterData,
-  weaponData,
-  costData as costs,
-} from '@/games/wutheringwave';
+import { useGameStore } from './game.js';
 import { getWeaponField } from '../services/weaponHelper.js';
+
+/**
+ * 現在のゲームのデータを取得するヘルパー
+ */
+const getGameData = (type) => {
+  const gameStore = useGameStore();
+  return gameStore.getData(type) || {};
+};
 import {
   calculateCharacterMaterials,
   calculateLevelMaterials,
@@ -144,16 +148,17 @@ export const usePlannerStore = defineStore('planner', {
     },
 
     hydrate(gameId = null) {
-      const targetGameId = gameId ?? this.currentGameId;
-      if (gameId) {
-        this.currentGameId = gameId;
-      }
+      // gameStoreのcurrentGameIdを優先的に使用
+      const gameStore = useGameStore();
+      const targetGameId = gameId ?? gameStore.currentGameId ?? this.currentGameId;
+      this.currentGameId = targetGameId;
       this.loadGoals(targetGameId);
       this.loadSettings(targetGameId);
     },
 
     calculateCharacterMaterials(characterId) {
       const settings = this.characterSettings[characterId];
+      const characterData = getGameData('characters');
       const characterInfo = Object.values(characterData).find((char) => char.game_id === characterId);
       if (!settings || !characterInfo) return {};
 
@@ -163,6 +168,7 @@ export const usePlannerStore = defineStore('planner', {
     },
     calculateWeaponMaterials(weaponId) {
       const settings = this.weaponSettings[weaponId];
+      const weaponData = getGameData('weapons');
       const weaponInfo = Object.values(weaponData).find((w) => w.game_id === weaponId);
       const rarity = getWeaponField(weaponId, 'rarity');
       if (!settings || !weaponInfo || !rarity) return {};

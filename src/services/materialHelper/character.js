@@ -1,26 +1,35 @@
-import { costData as costs } from '@/games/wutheringwave';
+import { useGameStore } from '@/store/game';
 import { processMaterials } from './core';
 import { getLevelRangeDiff } from './plannerCalc';
 import { ProgressionEngine } from '@/core/engine/progression';
 
-const progressionEngine = new ProgressionEngine({
-  costs: costs[0],
-  processMaterials,
-  getLevelRangeDiff,
-});
+/**
+ * 現在のゲームのコストデータでProgressionEngineを作成
+ */
+const getProgressionEngine = () => {
+  const gameStore = useGameStore();
+  const costs = gameStore.getData('costs');
+  // WW: costs is array [{ character, weapon }], Endfield: costs is { character, weapon }
+  const normalizedCosts = Array.isArray(costs) ? costs[0] : costs;
+  return new ProgressionEngine({
+    costs: normalizedCosts || {},
+    processMaterials,
+    getLevelRangeDiff,
+  });
+};
 
 export function calculateCharacterMaterials(settings, characterInfo) {
-  return progressionEngine.calculateCharacterMaterials(settings, characterInfo);
+  return getProgressionEngine().calculateCharacterMaterials(settings, characterInfo);
 }
 
 export function calculateLevelMaterials(settings, characterInfo) {
-  return progressionEngine.getCharacterLevelMaterials(settings, characterInfo);
+  return getProgressionEngine().getCharacterLevelMaterials(settings, characterInfo);
 }
 
 export function calculateSkillMaterials(settings, characterInfo) {
-  return progressionEngine.getCharacterSkillMaterials(settings, characterInfo);
+  return getProgressionEngine().getCharacterSkillMaterials(settings, characterInfo);
 }
 
 export function calculatePassiveMaterials(settings, characterInfo) {
-  return progressionEngine.getCharacterPassiveMaterials(settings, characterInfo);
+  return getProgressionEngine().getCharacterPassiveMaterials(settings, characterInfo);
 }

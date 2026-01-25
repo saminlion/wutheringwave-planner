@@ -15,6 +15,15 @@ import {
 // Game-specific components
 import CharacterDialog from './components/CharacterDialog.vue';
 
+// データキャッシュ（WWプラグインと同じインターフェース）
+const dataCache = {
+  characters,
+  weapons,
+  materials,
+  costs,
+  tiers: tieredMaterials,
+};
+
 const endfieldPlugin = {
   id: 'endfield',
   name: 'Endfield',
@@ -45,6 +54,17 @@ const endfieldPlugin = {
   data: {
     characters,
     weapons,
+  },
+
+  // WWプラグインと同じインターフェース
+  async install() {
+    return Promise.resolve();
+  },
+  async uninstall() {
+    return Promise.resolve();
+  },
+  getData(type) {
+    return dataCache[type] ?? null;
   },
 };
 

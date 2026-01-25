@@ -1,5 +1,17 @@
-import { weaponData as weaponRaw } from '@/games/wutheringwave';
+import { useGameStore } from '@/store/game';
 import logger from '@/utils/logger';
+
+/**
+ * 現在のゲームの武器データを取得
+ * @returns {Object} 武器データ
+ */
+const getWeaponRaw = () => {
+  const gameStore = useGameStore();
+  const weapons = gameStore.getData('weapons');
+  logger.debug('getWeaponRaw - currentGameId:', gameStore.currentGameId);
+  logger.debug('getWeaponRaw - weapons count:', Object.keys(weapons || {}).length);
+  return weapons || {};
+};
 
 /**
  * Retrieves a field value from the weapon data based on the weapon ID.
@@ -9,6 +21,7 @@ import logger from '@/utils/logger';
  * @returns {string|Object|null} The field value, full weapon data, or null if not found.
  */
 export const getWeaponField = (id, field = null) => {
+  const weaponRaw = getWeaponRaw();
   const weaponData = Object.values(weaponRaw).find(
     (item) => String(item.game_id) === String(id)
   );

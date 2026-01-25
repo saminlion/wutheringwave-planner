@@ -1,6 +1,11 @@
 import logger from '@/utils/logger';
 
 export const setGradientStyle = (rawData, isBorder = false) => {
+  // nullチェック
+  if (!rawData) {
+    logger.warn('setGradientStyle: rawData is null');
+    return { backgroundColor: '#808080' }; // デフォルトのグレー
+  }
 
   const rarityColors = {
     3: "#3b82f680",

@@ -47,6 +47,58 @@ Last Updated: 2026-01-26
 
 ## 📋 High Priority
 
+### Localization: 캐릭터/재료명 다국어 지원
+**Status:** TODO
+**Priority:** HIGH
+**Last Updated:** 2026-01-26
+
+**현재 문제:**
+- 한글 설정 시 UI 텍스트는 번역되지만, 캐릭터 이름/재료 이름은 영어로 표시됨
+- `display_name`, `label` 등 데이터 필드가 영어 고정
+
+**영향 범위:**
+- 캐릭터 목록 (`CharacterView.vue`)
+- 무기 목록 (`WeaponView.vue`)
+- 재료 표시 (`FinalMaterialNeeds.vue`, `InventoryView.vue`)
+- 목표 카드 (`PlannerView.vue`)
+
+**해결 방안:**
+
+**Option 1: 데이터 파일 내 다국어 필드**
+```json
+{
+  "game_id": 1234,
+  "display_name": "Rover",
+  "display_name_ko": "로버",
+  "display_name_ja": "ローバー"
+}
+```
+- 장점: 단순한 구조
+- 단점: 데이터 파일 크기 증가
+
+**Option 2: 별도 번역 파일 (권장)**
+```
+src/locales/
+  ko/
+    characters.json  ← { "1234": "로버" }
+    materials.json   ← { "41101001": "LF 위스퍼링 코어" }
+  en/
+    characters.json
+    materials.json
+```
+- 장점: 데이터/번역 분리, 언어 추가 용이
+- 단점: 매핑 관리 필요
+
+**작업 체크리스트:**
+- [ ] 번역 파일 구조 결정 (Option 1 vs 2)
+- [ ] 캐릭터명 번역 파일 생성 (WW, Endfield)
+- [ ] 재료명 번역 파일 생성 (WW, Endfield)
+- [ ] `useLocale` composable에 `tCharacter(id)`, `tMaterial(id)` 추가
+- [ ] 각 View에서 번역 함수 적용
+- [ ] 게임별 번역 파일 로딩 처리
+
+---
+
 ### 2. Apply Phase 1 Improvements to Existing Code
 **Status:** Lower Priority (User Requested)
 **Priority:** Moved to Low Priority
@@ -305,6 +357,221 @@ Based on current priorities:
 ---
 
 ## 🔧 Technical Debt
+
+### Material Processing Refactoring (HIGH PRIORITY)
+**Status:** TODO
+**Priority:** HIGH - 새 게임 추가 시 필수
+**Last Updated:** 2026-01-26
+
+---
+
+#### 🚨 현재 문제점
+
+**1. `src/services/materialHelper/core.js` - processMaterials 함수**
+
+현재 WW와 Endfield 키가 모두 하드코딩되어 있음:
+```javascript
+// WW 전용 키
+if (['common', 'forgery'].includes(key)) { ... }
+else if (['ascension', 'boss', 'weeklyBoss'].includes(key)) { ... }
+
+// Endfield 전용 키 (임시로 추가됨)
+else if (['proto_asc', 'proto_skill', 'cast_die'].includes(key)) { ... }
+else if (['bolete', 'odendra', 'onyx'].includes(key)) { ... }
+else if (key === 'special') { ... }
+```
+
+**문제:** 새 게임 추가할 때마다 이 파일을 수정해야 함. 게임별 로직이 섞여있어 유지보수 어려움.
+
+---
+
+**2. `src/services/materialHelper/character.js` - costs 구조 정규화**
+
+```javascript
+const normalizedCosts = Array.isArray(costs) ? costs[0] : costs;
+```
+
+**문제:** WW는 배열 `[{...}]`, Endfield는 객체 `{...}` 형태. 임시 처리로 해결했지만 각 게임 플러그인에서 일관된 형태로 제공해야 함.
+
+---
+
+**3. `src/components/planner/FinalMaterialNeeds.vue` - player_exp_material**
+
+```javascript
+const player_exp_material = computed(() => {
+    const materials = gameStore.getData('materials') || {};
+    const playerExpCategory = materials.player_exp || {};
+    // ...
+});
+```
+
+**문제:**
+- WW player_exp IDs: `41601001~41601004`
+- Endfield player_exp IDs: `5160010023~5160010027`
+- 로그에서 `Player EXP Results: {41601004: {...}}` 출력 → WW ID가 하드코딩된 곳 있음
+
+**하드코딩 위치 (확인 필요):**
+- `src/views/PlannerView.vue` - completeGoal 함수 내 player_exp 처리
+- `src/core/engine/calculator.js` - calculatePlayerExp 관련
+
+---
+
+**4. `src/services/materialHelper/dbUtils.js` - findMaterial 함수**
+
+현재 `gameStore.getData('materials')`를 사용하여 동적으로 검색하지만, 카테고리 구조가 게임마다 다름:
+
+| 카테고리 | WW | Endfield |
+|---------|-----|----------|
+| 캐릭터 돌파 | `common` (SubCategory로 구분) | `ascension` (bolete, odendra 등) |
+| 스킬 재료 | `forgery` (SubCategory로 구분) | `forgery` (proto_asc, proto_skill 등) |
+| 보스 재료 | `boss`, `weeklyBoss` | 없음 (현재) |
+| 특수 재료 | 없음 | `special` |
+
+---
+
+**5. costs.json 키 매핑 차이**
+
+**WW costs.json 키:**
+```
+common: [qty, tier]      → character.common SubCategory에서 tier 검색
+forgery: [qty, tier]     → character.forgery SubCategory에서 tier 검색
+ascension: qty           → character.ascension game_id 직접 참조
+boss: qty                → character.boss game_id 직접 참조
+weeklyBoss: qty          → character.weeklyBoss game_id 직접 참조
+credit: qty              → credit 카테고리에서 검색
+```
+
+**Endfield costs.json 키:**
+```
+proto_asc: [qty, tier]   → forgery 카테고리에서 SubCategory="proto_asc" & tier 검색
+proto_skill: [qty, tier] → forgery 카테고리에서 SubCategory="proto_skill" & tier 검색
+cast_die: [qty, tier]    → forgery 카테고리에서 SubCategory="cast_die" & tier 검색
+bolete: [qty, tier]      → character.bolete game_id → SubCategory 찾기 → ascension에서 tier 검색
+odendra: [qty, tier]     → character.odendra game_id → SubCategory 찾기 → ascension에서 tier 검색
+onyx: [qty, tier]        → character.onyx game_id → SubCategory 찾기 → ascension에서 tier 검색
+special: qty             → character.special game_id 직접 참조
+credit: qty              → credit 카테고리에서 검색
+perseverance: qty        → 직접 추가 (처리 로직 필요)
+```
+
+---
+
+#### ✅ 해결책: 게임별 materialProcessor 분리
+
+**목표 구조:**
+```
+src/games/
+  wutheringwave/
+    index.js              ← processMaterials 함수 export
+    materialProcessor.js  ← WW 전용 키 처리 로직
+    data/
+      costs.json
+      materials.json
+      ...
+  endfield/
+    index.js              ← processMaterials 함수 export
+    materialProcessor.js  ← Endfield 전용 키 처리 로직
+    data/
+      costs.json
+      materials.json
+      ...
+```
+
+**게임 플러그인 인터페이스:**
+```javascript
+// src/games/[game]/index.js
+export default {
+  id: 'game_id',
+  name: 'Game Name',
+  data: { ... },
+  config: { ... },
+
+  // 새로 추가할 메서드
+  processMaterials: (materials, key, value, entityInfo) => { ... },
+  getExpMaterialMapping: () => { ... },  // player_exp/weapon_exp ID → value 매핑
+  getCreditId: () => { ... },            // credit game_id 반환
+};
+```
+
+**core.js 수정:**
+```javascript
+export const processMaterials = (materials, key, value, characterInfo) => {
+    const gameStore = useGameStore();
+    const currentGame = gameStore.currentGame;
+
+    // 게임 플러그인의 processMaterials 호출
+    if (currentGame?.processMaterials) {
+        return currentGame.processMaterials(materials, key, value, characterInfo);
+    }
+
+    // fallback (legacy)
+    logger.warn('No game-specific processMaterials found');
+};
+```
+
+---
+
+#### 📋 작업 체크리스트
+
+**Phase 1: 인터페이스 정의**
+- [ ] 게임 플러그인 인터페이스에 `processMaterials` 메서드 스펙 정의
+- [ ] 게임 플러그인 인터페이스에 `getExpMaterialMapping` 메서드 추가
+- [ ] 게임 플러그인 인터페이스에 `getCreditId` 메서드 추가
+
+**Phase 2: WW 분리**
+- [ ] `src/games/wutheringwave/materialProcessor.js` 생성
+- [ ] core.js에서 WW 전용 로직 이동:
+  - `common`, `forgery` 처리
+  - `ascension`, `boss`, `weeklyBoss` 처리
+- [ ] `src/games/wutheringwave/index.js`에서 export
+
+**Phase 3: Endfield 분리**
+- [ ] `src/games/endfield/materialProcessor.js` 생성
+- [ ] core.js에서 Endfield 전용 로직 이동:
+  - `proto_asc`, `proto_skill`, `cast_die` 처리
+  - `bolete`, `odendra`, `onyx` 처리
+  - `special`, `perseverance` 처리
+- [ ] `src/games/endfield/index.js`에서 export
+
+**Phase 4: core.js 리팩토링**
+- [ ] `processMaterials`를 동적 디스패처로 변경
+- [ ] 공통 로직만 유지: `credit`, `player_exp`, `weapon_exp`
+- [ ] 게임별 getCreditId() 호출로 변경
+
+**Phase 5: FinalMaterialNeeds.vue 수정**
+- [ ] `player_exp_material` computed를 게임 플러그인 메서드 호출로 변경
+- [ ] 하드코딩된 WW player_exp ID (41601004 등) 제거
+- [ ] `getExpMaterialMapping()` 사용
+
+**Phase 6: PlannerView.vue 수정**
+- [ ] completeGoal 함수 내 player_exp 처리 로직 확인
+- [ ] 하드코딩된 ID 제거
+
+**Phase 7: 테스트**
+- [ ] WW에서 캐릭터 목표 설정 → 재료 계산 확인
+- [ ] Endfield에서 캐릭터 목표 설정 → 재료 계산 확인
+- [ ] 게임 전환 후 재계산 확인
+- [ ] 목표 완료 시 인벤토리 차감 확인
+
+---
+
+#### 📁 영향받는 파일 목록
+
+| 파일 | 현재 상태 | 필요 작업 |
+|------|----------|----------|
+| `src/services/materialHelper/core.js` | WW+Endfield 혼합 | 동적 디스패처로 변경 |
+| `src/services/materialHelper/character.js` | costs 정규화 로직 | 게임 플러그인으로 이동 |
+| `src/services/materialHelper/weapon.js` | costs 정규화 로직 | 게임 플러그인으로 이동 |
+| `src/components/planner/FinalMaterialNeeds.vue` | player_exp_material 하드코딩 | 게임 플러그인 메서드 사용 |
+| `src/views/PlannerView.vue` | completeGoal 내 EXP 처리 | 확인 필요 |
+| `src/games/wutheringwave/index.js` | 데이터만 export | processMaterials 추가 |
+| `src/games/endfield/index.js` | 데이터만 export | processMaterials 추가 |
+
+---
+
+**Estimated Effort:** 2-3 days (테스트 포함)
+
+---
 
 ### Code Quality
 - [ ] Add TypeScript type definitions

@@ -229,17 +229,16 @@ const getRawData = (id) => {
   const prefix = idStr.substring(0, 2);
   logger.debug('Prefix:', prefix);
 
-  if (prefix === "42") {
-    const character = getCharacterField(id); // Retrieve character object
+  // WW: 42=character, Endfield: 52=character
+  const isCharacter = prefix === "42" || prefix === "52";
+
+  if (isCharacter) {
+    const character = getCharacterField(id);
     if (!character) return null;
-
-    return toRaw(character); // Remove Vue's reactive proxy
-  }
-
-  else {
+    return toRaw(character);
+  } else {
     const weapon = getWeaponField(id);
     if (!weapon) return null;
-
     return toRaw(weapon);
   }
 };

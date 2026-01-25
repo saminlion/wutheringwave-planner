@@ -1,5 +1,14 @@
-import { characterData as characterRaw } from '@/games/wutheringwave';
+import { useGameStore } from '@/store/game';
 import logger from '@/utils/logger';
+
+/**
+ * 現在のゲームのキャラクターデータを取得
+ * @returns {Object} キャラクターデータ
+ */
+const getCharacterRaw = () => {
+  const gameStore = useGameStore();
+  return gameStore.getData('characters') || {};
+};
 
 /**
  * Extracts specific data (e.g., icon, label, id) from character.
@@ -9,6 +18,7 @@ import logger from '@/utils/logger';
  * @returns {string|Object|null} - The value of the specified field, the entire character object if no field is provided, or null if not found.
  */
 export const getCharacterField = (id, field = null) => {
+    const characterRaw = getCharacterRaw();
     const characterData = Object.values(characterRaw).find(
       (item) => String(item.game_id) === String(id)
     );

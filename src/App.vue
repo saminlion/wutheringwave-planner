@@ -25,14 +25,14 @@
 import { onMounted } from 'vue';
 import { usePlannerStore } from './store/planner.js';
 import { useInventoryStore } from './store/inventory.js';
-import { useGameRegistryStore } from './store/gameRegistry.js';
+import { useGameStore } from './store/game.js';
 import { useLocale } from '@/composables/useLocale';
 import GameSelector from './components/common/GameSelector.vue';
 import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
-const gameRegistry = useGameRegistryStore();
+const gameStore = useGameStore();
 const { initLocale, tUI } = useLocale();
 
 // Load data from localStorage on app start
@@ -40,7 +40,7 @@ onMounted(async () => {
   // Initialize locale first
   await initLocale();
 
-  const gameId = gameRegistry.currentGameId || 'wutheringwave';
+  const gameId = gameStore.currentGameId || 'wutheringwave';
   plannerStore.hydrate();
   inventoryStore.hydrate(gameId);
   logger.debug(`[App] Data loaded for game: ${gameId}`);

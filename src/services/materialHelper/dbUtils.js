@@ -1,5 +1,13 @@
-import { inventoryMaterials as inventoryItem } from '@/games/wutheringwave';
+import { useGameStore } from '@/store/game';
 import logger from '@/utils/logger';
+
+/**
+ * 現在のゲームのマテリアルデータを取得
+ */
+const getInventoryItem = () => {
+  const gameStore = useGameStore();
+  return gameStore.getData('materials') || {};
+};
 
 /**
  * Finds material by type and identifier (game_id or SubCategory).
@@ -11,6 +19,7 @@ import logger from '@/utils/logger';
  * @returns {Object|null} - The matched material data or null if not found.
  */
 export const findMaterial = (type, identifier, tier = null, useId = false) => {
+    const inventoryItem = getInventoryItem();
     if (!inventoryItem[type]) {
         logger.warn(`Material type "${type}" not found in inventory.`);
         return null;
@@ -60,12 +69,12 @@ export const getMaterialField = (material, field) => {
  * @returns {string|null} - The value of the specified field or null if not found.
  */
 export const getMaterialFieldById = (id, field) => {
+    const inventoryItem = getInventoryItem();
     const materialData = Object.values(inventoryItem).flatMap((category) => Object.values(category)).find(
         (item) => String(item.game_id) === String(id)
     );
 
     if (!materialData) {
-        // Use debug instead of warn - some IDs like "player_exp" are field names, not actual game_ids
         logger.debug(`Material with ID "${id}" not found in inventoryItem.`);
         return null;
     }
@@ -78,11 +87,11 @@ export const getMaterialFieldById = (id, field) => {
         return materialData[field];
     }
 
-    logger.debug('Retrieved entire character data for ID:', id, materialData);
+    logger.debug('Retrieved entire material data for ID:', id, materialData);
     return materialData;
 };
 
-export const findAllUniqueSubCategories = (inventoryItem, shortages) => {
+export const findAllUniqueSubCategories = (inventoryItemParam, shortages) => {
     // Flatten inventoryItem to a single array of all items
     const allItems = Object.values(inventoryItem).flatMap((category) => Object.values(category));
 

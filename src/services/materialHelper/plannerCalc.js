@@ -1,29 +1,42 @@
-import { inventoryMaterials as inventoryItem } from '@/games/wutheringwave';
+import { useGameStore } from '@/store/game';
 import { MaterialCalculator } from '@/core/engine/calculator';
 import logger from '@/utils/logger';
+
+/**
+ * 現在のゲームのマテリアルデータを取得
+ */
+const getInventoryItem = () => {
+  const gameStore = useGameStore();
+  return gameStore.getData('materials') || {};
+};
 
 /**
  * ?쒓뎅??二쇱꽍: 湲곕낯 寃뚯엫(Wuthering Waves)???щ즺 DB瑜?二쇱엯??怨꾩궛湲??몄뒪?댁뒪.
  * ?ν썑 硫??寃뚯엫 吏????gameConfig留?援먯껜?섎㈃ ?쒕떎.
  */
-export const materialCalculator = new MaterialCalculator({
-  logger,
-  materials: {
-    database: inventoryItem,
-  },
-});
+/**
+ * 動的にMaterialCalculatorを取得
+ */
+const getMaterialCalculator = () => {
+  return new MaterialCalculator({
+    logger,
+    materials: {
+      database: getInventoryItem(),
+    },
+  });
+};
 
 /**
  * ?쒓뎅??二쇱꽍: 湲곗〈 ?⑥닔 ?쒓렇?덉쿂瑜??좎??섎㈃??肄붿뼱 怨꾩궛湲곕줈 ?꾩엫?쒕떎.
  */
 export const calculateMaterials = (inventory, tieredMaterials, shortages) =>
-  materialCalculator.calculate(inventory, tieredMaterials, shortages);
+  getMaterialCalculator().calculate(inventory, tieredMaterials, shortages);
 
 /**
  * Utility: merges multiple material maps.
  */
 export const mergeMaterials = (...materialSources) =>
-  materialCalculator.merge(...materialSources);
+  getMaterialCalculator().merge(...materialSources);
 
 /**
  * Utility: extracts level difference range
