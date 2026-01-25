@@ -1,0 +1,325 @@
+{
+  "credit": {
+    "credit": {
+      "5100000001": {
+        "game_id": "5100000001",
+        "icon": "",
+        "label": "T-Creds",
+        "Category": "credit",
+        "SubCategory": "credit",
+        "rarity": 1,
+        "tier": 0
+      }
+    }
+  },
+  "ascension": {
+    "bolete": {
+      "5110010001": {
+        "game_id": "5110010001",
+        "icon": "",
+        "label": "Pink Bolete",
+        "Category": "ascension",
+        "SubCategory": "bolete",
+        "rarity": 2,
+        "tier": 2
+      },
+      "5110010002": {
+        "game_id": "5110010002",
+        "icon": "",
+        "label": "Red Bolete",
+        "Category": "ascension",
+        "SubCategory": "bolete",
+        "rarity": 3,
+        "tier": 3
+      },
+      "5110010003": {
+        "game_id": "5110010003",
+        "icon": "",
+        "label": "Ruby Bolete",
+        "Category": "ascension",
+        "SubCategory": "bolete",
+        "rarity": 4,
+        "tier": 4
+      },
+      "5110010004": {
+        "game_id": "5110010004",
+        "icon": "",
+        "label": "Cosmagaric",
+        "Category": "ascension",
+        "SubCategory": "bolete",
+        "rarity": 5,
+        "tier": 5
+      },
+      "5110010005": {
+        "game_id": "5110010005",
+        "icon": "",
+        "label": "Bloodcap",
+        "Category": "ascension",
+        "SubCategory": "bolete",
+        "rarity": 5,
+        "tier": 5
+      }
+    },
+    "odendra": {
+      "5110020001": {
+        "game_id": "5110020001",
+        "icon": "",
+        "label": "Kalkodenra",
+        "Category": "ascension",
+        "SubCategory": "odendra",
+        "rarity": 2,
+        "tier": 2
+      },
+      "5110020002": {
+        "game_id": "5110020002",
+        "icon": "",
+        "label": "Chryodendra",
+        "Category": "ascension",
+        "SubCategory": "odendra",
+        "rarity": 3,
+        "tier": 3
+      },
+      "5110020003": {
+        "game_id": "5110020003",
+        "icon": "",
+        "label": "Odendra Tier 4",
+        "Category": "ascension",
+        "SubCategory": "odendra",
+        "rarity": 4,
+        "tier": 4
+      },
+      "5110020004": {
+        "game_id": "5110020004",
+        "icon": "",
+        "label": "Odendra Tier 5",
+        "Category": "ascension",
+        "SubCategory": "odendra",
+        "rarity": 5,
+        "tier": 5
+      }
+    },
+    "onyx": {
+      "5110030001": {
+        "game_id": "5110030001",
+        "icon": "",
+        "label": "Kalkonyx",
+        "Category": "ascension",
+        "SubCategory": "onyx",
+        "rarity": 2,
+        "tier": 2
+      },
+      "5110030002": {
+        "game_id": "5110030002",
+        "icon": "",
+        "label": "Auronyx",
+        "Category": "ascension",
+        "SubCategory": "onyx",
+        "rarity": 3,
+        "tier": 3
+      },
+      "5110030003": {
+        "game_id": "5110030003",
+        "icon": "",
+        "label": "Umbronyx",
+        "Category": "ascension",
+        "SubCategory": "onyx",
+        "rarity": 4,
+        "tier": 4
+      },
+      "5110030004": {
+        "game_id": "5110030004",
+        "icon": "",
+        "label": "Wulingstone",
+        "Category": "ascension",
+        "SubCategory": "onyx",
+        "rarity": 5,
+        "tier": 5
+      },
+      "5110030005": {
+        "game_id": "5110030005",
+        "icon": "",
+        "label": "Onyx T5 B",
+        "Category": "ascension",
+        "SubCategory": "onyx",
+        "rarity": 5,
+        "tier": 5
+      }
+    }
+  },
+  "forgery": {
+    "proto_asc": {
+      "5120010001": {
+        "game_id": "5120010001",
+        "icon": "",
+        "label": "Protodisk",
+        "Category": "forgery",
+        "SubCategory": "proto_asc",
+        "rarity": 2,
+        "tier": 2
+      },
+      "5120010002": {
+        "game_id": "5120010002",
+        "icon": "",
+        "label": "Prototest",
+        "Category": "forgery",
+        "SubCategory": "proto_asc",
+        "rarity": 3,
+        "tier": 3
+      }
+    },
+    "proto_skill": {
+      "5120020001": {
+        "game_id": "5120020001",
+        "icon": "",
+        "label": "Protprism",
+        "Category": "forgery",
+        "SubCategory": "proto_skill",
+        "rarity": 2,
+        "tier": 2
+      },
+      "5120020002": {
+        "game_id": "5120020002",
+        "icon": "",
+        "label": "Protohedron",
+        "Category": "forgery",
+        "SubCategory": "proto_skill",
+        "rarity": 3,
+        "tier": 3
+      }
+    },
+    "cast_die": {
+      "5120030001": {
+        "game_id": "5120030001",
+        "icon": "",
+        "label": "Cast Die",
+        "Category": "forgery",
+        "SubCategory": "cast_die",
+        "rarity": 2,
+        "tier": 2
+      },
+      "5120030002": {
+        "game_id": "5120030002",
+        "icon": "",
+        "label": "Heavy Cast Die",
+        "Category": "forgery",
+        "SubCategory": "cast_die",
+        "rarity": 3,
+        "tier": 3
+      }
+    }
+  },
+  "special": {
+    "special": {
+      "5130010001": {
+        "game_id": "5130010001",
+        "icon": "",
+        "label": "Triphasic Nanoflake",
+        "Category": "special",
+        "SubCategory": "special",
+        "rarity": 5,
+        "tier": 0
+      }
+    }
+  },
+  "mastery": {
+    "mastery": {
+      "5140010001": {
+        "game_id": "5140010001",
+        "icon": "",
+        "label": "Mark of Perverance",
+        "Category": "mastery",
+        "SubCategory": "mastery",
+        "rarity": 4,
+        "tier": 0
+      }
+    }
+  },
+  "player_exp": {
+    "player_exp": {
+      "5160000001": {
+        "game_id": "5160000001",
+        "icon": "",
+        "label": "Player EXP (S)",
+        "Category": "player_exp",
+        "SubCategory": "player_exp",
+        "rarity": 2,
+        "tier": 1,
+        "exp_value": 0
+      },
+      "5160000002": {
+        "game_id": "5160000002",
+        "icon": "",
+        "label": "Player EXP (M)",
+        "Category": "player_exp",
+        "SubCategory": "player_exp",
+        "rarity": 3,
+        "tier": 2,
+        "exp_value": 0
+      },
+      "5160000003": {
+        "game_id": "5160000003",
+        "icon": "",
+        "label": "Player EXP (L)",
+        "Category": "player_exp",
+        "SubCategory": "player_exp",
+        "rarity": 4,
+        "tier": 3,
+        "exp_value": 0
+      },
+      "5160000004": {
+        "game_id": "5160000004",
+        "icon": "",
+        "label": "Player EXP (XL)",
+        "Category": "player_exp",
+        "SubCategory": "player_exp",
+        "rarity": 5,
+        "tier": 4,
+        "exp_value": 0
+      }
+    }
+  },
+  "weapon_exp": {
+    "weapon_exp": {
+      "5170000001": {
+        "game_id": "5170000001",
+        "icon": "",
+        "label": "Weapon EXP (S)",
+        "Category": "weapon_exp",
+        "SubCategory": "weapon_exp",
+        "rarity": 2,
+        "tier": 1,
+        "exp_value": 0
+      },
+      "5170000002": {
+        "game_id": "5170000002",
+        "icon": "",
+        "label": "Weapon EXP (M)",
+        "Category": "weapon_exp",
+        "SubCategory": "weapon_exp",
+        "rarity": 3,
+        "tier": 2,
+        "exp_value": 0
+      },
+      "5170000003": {
+        "game_id": "5170000003",
+        "icon": "",
+        "label": "Weapon EXP (L)",
+        "Category": "weapon_exp",
+        "SubCategory": "weapon_exp",
+        "rarity": 4,
+        "tier": 3,
+        "exp_value": 0
+      },
+      "5170000004": {
+        "game_id": "5170000004",
+        "icon": "",
+        "label": "Weapon EXP (XL)",
+        "Category": "weapon_exp",
+        "SubCategory": "weapon_exp",
+        "rarity": 5,
+        "tier": 4,
+        "exp_value": 0
+      }
+    }
+  }
+}
