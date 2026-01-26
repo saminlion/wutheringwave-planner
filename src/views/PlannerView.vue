@@ -6,12 +6,12 @@
       <div class="goals-container">
         <div class="goal-border" v-for="goal in goals" :key="goal.name"
           :class="{ hidden: hiddenGoals[goal.id] }"
-          :style="setGradientStyle(getRawData(goal.id), true)">
+          :style="setGradientStyle(getRawData(goal), true)">
           <div class="goal-card">
             <!-- 罹먮┃???대쫫怨??꾩씠肄?-->
             <div class="goal-header">
               <div class="character-container"
-                v-if="isCharacterGoal(goal.id)">
+                v-if="goal.type === 'character'">
                 <img :src="getCharacterField(goal.id, 'icon')" alt="Character Icon" class="character-icon" />
                 <h3>{{ tCharacter(goal.id, getCharacterField(goal.id, 'display_name')) }}</h3>
                 <div class="icon-container">
@@ -45,7 +45,7 @@
                   </button>
 
                   <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, isCharacterGoal(goal.id) ? 'character' : 'weapon')" title="Mark as Complete">
+                  <button class="complete-button" @click="completeGoal(goal.id, goal.type)" title="Mark as Complete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="icon-6">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -87,7 +87,7 @@
                   </button>
 
                   <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, isCharacterGoal(goal.id) ? 'character' : 'weapon')" title="Mark as Complete">
+                  <button class="complete-button" @click="completeGoal(goal.id, goal.type)" title="Mark as Complete">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                       stroke="currentColor" class="icon-6">
                       <path stroke-linecap="round" stroke-linejoin="round"
@@ -177,17 +177,34 @@ const weaponLevelItems = computed(() => gameStore.formFields?.weaponLevelItems |
 // 현재 게임의 티어 재료 데이터
 const tieredMaterials = computed(() => gameStore.getData('tiers') || {});
 
-// goal이 캐릭터인지 확인 (WW: 42, EF: 52)
-const isCharacterGoal = (goalId) => {
-  const prefix = String(goalId).substring(0, 2);
-  return prefix === '42' || prefix === '52'; // WW character or EF character
-};
+// 現在ゲームのplayer_exp材料 (動的取得、value降順ソート) - 配列形式
+const playerExpMaterials = computed(() => {
+  const materials = gameStore.getData('materials') || {};
+  const playerExpCategory = materials.player_exp || {};
+  return Object.values(playerExpCategory)
+    .filter(m => m.game_id && m.value)
+    .map(m => ({ id: m.game_id, value: m.value }))
+    .sort((a, b) => b.value - a.value); // 大きい順
+});
 
-// goal이 무기인지 확인 (WW: 43, EF: 53)
-const isWeaponGoal = (goalId) => {
-  const prefix = String(goalId).substring(0, 2);
-  return prefix === '43' || prefix === '53'; // WW weapon or EF weapon
-};
+// calculatePlayerExp用のオブジェクト形式 { game_id: { exp_value } }
+const expMaterialTypeStructure = computed(() => {
+  const result = {};
+  playerExpMaterials.value.forEach(m => {
+    result[m.id] = { exp_value: m.value };
+  });
+  return result;
+});
+
+// 現在ゲームのweapon_exp材料 (動的取得、value降順ソート) - 配列形式
+const weaponExpMaterials = computed(() => {
+  const materials = gameStore.getData('materials') || {};
+  const weaponExpCategory = materials.weapon_exp || {};
+  return Object.values(weaponExpCategory)
+    .filter(m => m.game_id && m.value)
+    .map(m => ({ id: m.game_id, value: m.value }))
+    .sort((a, b) => b.value - a.value); // 大きい順
+});
 
 const inventory = computed(() => inventoryStore.inventory);
 const goals = computed(() => plannerStore.goals);
@@ -205,12 +222,6 @@ const hiddenGoals = ref({});
 
 const refreshKey = ref(0);
 
-const expMaterialTypeStructure = {
-  41601001: { exp_value: 100 },
-  41601002: { exp_value: 200 },
-  41601003: { exp_value: 500 },
-  41601004: { exp_value: 1000 },
-};
 
 const filterProcessed = (materials) => {
   const { processed, ...filteredMaterials } = materials;
@@ -222,22 +233,15 @@ const getMaterialIcon = (materialId) => {
   return getMaterialFieldById(materialId, "icon");
 };
 
-const getRawData = (id) => {
+const getRawData = (goal) => {
   // id??泥????먮━ 異붿텧
-  const idStr = String(id);
-
-  const prefix = idStr.substring(0, 2);
-  logger.debug('Prefix:', prefix);
-
-  // WW: 42=character, Endfield: 52=character
-  const isCharacter = prefix === "42" || prefix === "52";
-
-  if (isCharacter) {
-    const character = getCharacterField(id);
+  // goal.typeを使用してキャラクター/武器を判別 (ゲーム共通)
+  if (goal.type === 'character') {
+    const character = getCharacterField(goal.id);
     if (!character) return null;
     return toRaw(character);
   } else {
-    const weapon = getWeaponField(id);
+    const weapon = getWeaponField(goal.id);
     if (!weapon) return null;
     return toRaw(weapon);
   }
@@ -300,7 +304,7 @@ const updateFinalMaterialNeeds = () => {
 
   const playerExpResults = calculatePlayerExp(
     totalNeeds.player_exp || 0,
-    expMaterialTypeStructure,
+    expMaterialTypeStructure.value,
     ownedMaterials
   );
   logger.debug("Player EXP Results:", playerExpResults);
@@ -372,7 +376,7 @@ const finalMaterialNeeds = computed(() => {
 
   const playerExpResults = calculatePlayerExp(
     totalNeeds.player_exp || 0,
-    expMaterialTypeStructure,
+    expMaterialTypeStructure.value,
     ownedMaterials
   );
   logger.debug("Player EXP Results:", playerExpResults);
@@ -524,13 +528,11 @@ const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tie
 
     // Skip player_exp and weapon_exp - they use special calculation logic
     if (materialId === 'player_exp' || materialId === 'weapon_exp') {
-      // Calculate if player exp is sufficient using the same logic as calculatePlayerExp
+      // ゲーム共通: exp材料の合計を動的に計算
       if (materialId === 'player_exp') {
-        const totalExpAvailable =
-          (currentInventory[41601001] || 0) * 1000 +
-          (currentInventory[41601002] || 0) * 3000 +
-          (currentInventory[41601003] || 0) * 8000 +
-          (currentInventory[41601004] || 0) * 20000;
+        const totalExpAvailable = playerExpMaterials.value.reduce((sum, m) => {
+          return sum + (currentInventory[m.id] || 0) * m.value;
+        }, 0);
 
         if (totalExpAvailable < requiredQty) {
           shortages.push({
@@ -785,17 +787,11 @@ const completeGoal = (id, type) => {
     Object.entries(goal.materials || {}).forEach(([materialId, quantity]) => {
       if (materialId === 'processed') return; // Skip processed marker
 
-      // Special handling for player_exp - deduct from individual potions
+      // ゲーム共通: player_expを個別のポーションから差し引く
       if (materialId === 'player_exp') {
         let remainingExp = quantity;
-        const potions = [
-          { id: 41601004, value: 20000 }, // Largest first
-          { id: 41601003, value: 8000 },
-          { id: 41601002, value: 3000 },
-          { id: 41601001, value: 1000 },
-        ];
-
-        for (const potion of potions) {
+        // playerExpMaterialsは既にvalue降順でソート済み
+        for (const potion of playerExpMaterials.value) {
           const available = inventory.value[potion.id] || 0;
           const needed = Math.ceil(remainingExp / potion.value);
           const toUse = Math.min(available, needed);
@@ -815,17 +811,11 @@ const completeGoal = (id, type) => {
         return;
       }
 
-      // Special handling for weapon_exp - deduct from individual cores
+      // ゲーム共通: weapon_expを個別のコアから差し引く
       if (materialId === 'weapon_exp') {
         let remainingExp = quantity;
-        const cores = [
-          { id: 41701004, value: 20000 },
-          { id: 41701003, value: 8000 },
-          { id: 41701002, value: 3000 },
-          { id: 41701001, value: 1000 },
-        ];
-
-        for (const core of cores) {
+        // weaponExpMaterialsは既にvalue降順でソート済み
+        for (const core of weaponExpMaterials.value) {
           const available = inventory.value[core.id] || 0;
           const needed = Math.ceil(remainingExp / core.value);
           const toUse = Math.min(available, needed);
