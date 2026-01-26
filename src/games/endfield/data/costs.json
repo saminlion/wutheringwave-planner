@@ -87,6 +87,17 @@
       "80": { "weapon_exp": 1203710, "credit": 123850 },
       "80A": { "credit": 90000, "cast_die": [30, 3], "onyx": [8, 5], "special": 16 },
       "90": { "weapon_exp": 2524080, "credit": 341390 }
+    },
+    "level_6": {
+      "20": { "weapon_exp": 8890, "credit": 640 },
+      "20A": { "credit": 2200, "cast_die": [5, 2], "onyx": [3, 2] },
+      "40": { "weapon_exp": 105540, "credit": 10400 },
+      "40A": { "credit": 8500, "cast_die": [18, 2], "onyx": [5, 3] },
+      "60": { "weapon_exp": 290540, "credit": 29010 },
+      "60A": { "credit": 25000, "cast_die": [20, 3], "onyx": [5, 4] },
+      "80": { "weapon_exp": 1203710, "credit": 123850 },
+      "80A": { "credit": 90000, "cast_die": [30, 3], "onyx": [8, 5], "special": 16 },
+      "90": { "weapon_exp": 2524080, "credit": 341390 }
     }
   }
 }

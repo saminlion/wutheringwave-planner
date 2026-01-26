@@ -2,8 +2,8 @@
     <div class="final-material-needs">
         <h2>Final Material Needs</h2>
 
-        <!-- Endfield専用: 던전 레벨 선택기 -->
-        <div v-if="isEndfield" class="dungeon-level-selector">
+        <!-- ダンジョンレベル選択器 (ゲームConfigで制御) -->
+        <div v-if="showDungeonLevelSelector" class="dungeon-level-selector">
             <label for="dungeon-level">Dungeon Level:</label>
             <select id="dungeon-level" v-model="selectedDungeonLevel" @change="onDungeonLevelChange">
                 <option v-for="level in 5" :key="level" :value="level">
@@ -197,9 +197,18 @@ const inventoryStore = useInventoryStore();
 const gameStore = useGameStore();
 const userProfileStore = useUserProfileStore();
 
-// Endfield判定
-const isEndfield = computed(() => {
-    return gameStore.currentGameId === 'endfield';
+// ゲームConfig取得
+const gameConfig = computed(() => {
+    return gameStore.currentGame?.config || {};
+});
+
+// UI handler computed properties
+const showDungeonLevelSelector = computed(() => {
+    return gameConfig.value.uiHandlers?.showDungeonLevelSelector || false;
+});
+
+const useDynamicFarmingRates = computed(() => {
+    return gameConfig.value.uiHandlers?.useDynamicFarmingRates || false;
 });
 
 // 선택된 던전 레벨 (userProfileストアから取得、デフォルト: 5)
@@ -210,8 +219,8 @@ const selectedDungeonLevel = computed({
 
 // 현재 던전 스태미나 표시용
 const currentDungeonStamina = computed(() => {
-    if (!isEndfield.value) return 0;
-    const config = gameStore.currentGame?.config;
+    if (!showDungeonLevelSelector.value) return 0;
+    const config = gameConfig.value;
     if (!config?.dungeonData?.proto_skill) return 80;
     return config.dungeonData.proto_skill[selectedDungeonLevel.value]?.stamina || 80;
 });
@@ -222,9 +231,9 @@ const onDungeonLevelChange = () => {
     updateTotalValues();
 };
 
-// Endfield용: 티어별 던전 데이터 취득
-const getEndfieldDungeonData = (subCategory, level = selectedDungeonLevel.value) => {
-    const config = gameStore.currentGame?.config;
+// カテゴリ別ダンジョンデータ取得 (configにgetDungeonDataBySubCategoryがある場合)
+const getDungeonDataForCategory = (subCategory, level = selectedDungeonLevel.value) => {
+    const config = gameConfig.value;
     if (!config?.getDungeonDataBySubCategory) return null;
     return config.getDungeonDataBySubCategory(subCategory, level);
 };
@@ -272,9 +281,10 @@ const getEstimates = (category, subCategory) => {
         subCategories: {[subCategory.id]: subCategory}
     };
 
-    // Endfield forgery カテゴリの場合、ティア別に分離して計算
-    if (isEndfield.value && category.name === 'forgery') {
-        return getEndfieldForgeryEstimates(subCategory);
+    // config.uiHandlers.useTierSeparatedEstimatesでティア分離表示判定
+    const useTierSeparated = gameConfig.value.uiHandlers?.useTierSeparatedEstimates?.(category) || false;
+    if (useTierSeparated) {
+        return getTierSeparatedForgeryEstimates(subCategory);
     }
 
     return {
@@ -285,18 +295,18 @@ const getEstimates = (category, subCategory) => {
     };
 };
 
-// Endfield forgery専用: ティア別Estimated計算
-const getEndfieldForgeryEstimates = (subCategory) => {
-    const dungeonData = getEndfieldDungeonData(subCategory.id);
+// ティア分離Estimated計算 (configでhasTierChoiceをサポートするゲーム用)
+const getTierSeparatedForgeryEstimates = (subCategory) => {
+    const dungeonData = getDungeonDataForCategory(subCategory.id);
     if (!dungeonData) {
-        // SubCategory가 없으면 proto_skill 기본값 사용
-        const fallbackData = getEndfieldDungeonData('proto_skill');
+        // SubCategoryがない場合、proto_skillをフォールバックとして使用
+        const fallbackData = getDungeonDataForCategory('proto_skill');
         if (!fallbackData) {
             return { run: 0, resin: 0, date: 0, isTierSeparated: false };
         }
     }
 
-    const data = dungeonData || getEndfieldDungeonData('proto_skill');
+    const data = dungeonData || getDungeonDataForCategory('proto_skill');
     const { stamina, tier2: tier2Drops, tier3: tier3Drops, hasTierChoice } = data;
 
     // task에서 tier별 필요량 추출
@@ -541,9 +551,9 @@ const GetRateValueForCategory = (data) => {
     const staminaConfig = getStaminaConfig();
     let farmingRates = staminaConfig.farmingRates || {};
 
-    // Endfield: 던전 레벨에 따른 동적 farmingRates 적용
-    if (isEndfield.value) {
-        const config = gameStore.currentGame?.config;
+    // 動的farmingRates対応ゲームの場合、ダンジョンレベルに応じたレートを取得
+    if (useDynamicFarmingRates.value) {
+        const config = gameConfig.value;
         if (config?.getDungeonRates) {
             farmingRates = config.getDungeonRates(selectedDungeonLevel.value);
         }
@@ -553,7 +563,7 @@ const GetRateValueForCategory = (data) => {
         if (material.name === data.name) {
             const rate = farmingRates[material.name];
             if (rate) {
-                // Endfield forgery는 tier2 기준으로 drops 설정 (tier별 분리는 getEndfieldForgeryEstimates에서 처리)
+                // tier2ベースでdrops設定 (tier分離はgetTierSeparatedForgeryEstimatesで処理)
                 drops = rate.drops || rate.tier2 || 0;
                 resin = rate.stamina || 0;
                 unobtainable = rate.unobtainable || false;
@@ -733,7 +743,8 @@ onMounted(() => {
     userProfileStore.hydrate();
 
     if (!props.materials || !Object.keys(props.materials).length) {
-        logger.error("[Error] Materials data is not ready:", props.materials);
+        // 初期ロード時はmaterialsが空の場合がある（watchで後から処理される）
+        logger.debug("Materials data not ready yet, waiting for watch to update");
         return;
     }
 

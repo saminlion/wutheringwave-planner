@@ -257,6 +257,36 @@ export default {
     weaponProgression: true,
   },
 
+  // UI handlers - ゲーム固有のUI表示条件を定義
+  uiHandlers: {
+    /**
+     * ダンジョンレベル選択UIを表示するか
+     */
+    showDungeonLevelSelector: true,
+
+    /**
+     * ダンジョンレベルの選択肢を返す
+     * @returns {number[]} レベル配列
+     */
+    getDungeonLevelOptions() {
+      return [1, 2, 3, 4, 5];
+    },
+
+    /**
+     * カテゴリ別にティア分離Estimated表示を使うか
+     * @param {object} category - カテゴリオブジェクト
+     * @returns {boolean}
+     */
+    useTierSeparatedEstimates(category) {
+      return category.name === 'forgery';
+    },
+
+    /**
+     * 動的farmingRatesを使用するか
+     */
+    useDynamicFarmingRates: true,
+  },
+
   /**
    * キャラクター設定の初期値を生成
    * @returns {object} 初期設定オブジェクト

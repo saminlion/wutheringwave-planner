@@ -131,6 +131,36 @@ export const wutheringWaveConfig = {
     weapons,
   },
 
+  // UI handlers - ゲーム固有のUI表示条件を定義
+  uiHandlers: {
+    /**
+     * ダンジョンレベル選択UIを表示するか
+     */
+    showDungeonLevelSelector: false,
+
+    /**
+     * ダンジョンレベルの選択肢を返す
+     * @returns {number[]} レベル配列
+     */
+    getDungeonLevelOptions() {
+      return [];
+    },
+
+    /**
+     * カテゴリ別にティア分離Estimated表示を使うか
+     * @param {object} category - カテゴリオブジェクト
+     * @returns {boolean}
+     */
+    useTierSeparatedEstimates(category) {
+      return false;
+    },
+
+    /**
+     * 動的farmingRatesを使用するか
+     */
+    useDynamicFarmingRates: false,
+  },
+
   /**
    * キャラクター設定の初期値を生成
    * @returns {object} 初期設定オブジェクト
