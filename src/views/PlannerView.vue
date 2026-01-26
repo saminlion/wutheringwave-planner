@@ -423,7 +423,8 @@ const finalMaterialNeeds = computed(() => {
 const openDialog = (goal) => {
   logger.debug("Open dialog for goal:", goal);
 
-  if (String(goal.id).startsWith("42")) {
+  // goal.typeを使用してキャラクター/武器を判別 (ゲーム共通)
+  if (goal.type === "character") {
     dialogType.value = "character";
     selectedWeapon.value = null;
     selectedCharacter.value = getCharacterField(goal.id);
