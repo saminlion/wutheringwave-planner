@@ -89,7 +89,7 @@
                                                 Owned: {{ getMaterialQuantity(id) }}
                                             </span>
                                             <input class="material-quantity-input" type="number"
-                                                @blur="setMaterialQuantity(id, $event.target.value)" />
+                                                @input="setMaterialQuantity(id, $event.target.value)" />
                                         </div>
                                     </div>
                                 </li>
@@ -102,23 +102,27 @@
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- Need badge: owned < needの場合のみ表示 -->
-                                            <span class="badge badge-need" v-if="getMaterialQuantity(task.id) < task.need">
-                                                Need: {{ task.need - getMaterialQuantity(task.id) }}
+                                            <!-- Need badge: 合成含めてowned < needの場合のみ表示 -->
+                                            <span class="badge badge-need" v-if="(getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need">
+                                                Need: {{ task.need - getMaterialQuantity(task.id) - (task.synthesize || 0) }}
                                             </span>
-                                            <!-- Complete badge: owned >= needの場合 -->
+                                            <!-- Complete badge: 合成含めてowned >= needの場合 -->
                                             <span class="badge badge-complete" v-else-if="task.need > 0">
                                                 ✓ Complete
                                             </span>
+                                            <!-- Synthesize badge (if applicable) -->
+                                            <span class="badge badge-synthesize" v-if="task.synthesize > 0">
+                                                Synthesize: {{ task.synthesize }}
+                                            </span>
                                             <span class="badge" :class="{
-                                                'badge-owned-green': getMaterialQuantity(task.id) >= task.need,
-                                                'badge-owned-red': getMaterialQuantity(task.id) < task.need,
+                                                'badge-owned-green': (getMaterialQuantity(task.id) + (task.synthesize || 0)) >= task.need,
+                                                'badge-owned-red': (getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need,
                                             }">
                                                 Owned: {{ getMaterialQuantity(task.id) }}
                                             </span>
                                             <!-- Additional input -->
                                             <input class="material-quantity-input" type="number"
-                                                @blur="setMaterialQuantity(task.id, $event.target.value)" />
+                                                @input="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
                                     </div>
                                 </li>
@@ -151,7 +155,7 @@
                                             </span>
                                             <!-- Additional input -->
                                             <input class="material-quantity-input" type="number"
-                                                @blur="setMaterialQuantity(task.id, $event.target.value)" />
+                                                @input="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
                                     </div>
                                 </li>
@@ -175,6 +179,7 @@ import {
 } from "@/services/materialHelper/index";
 import { useInventoryStore } from "@/store/inventory";
 import { useGameStore } from "@/store/game";
+import { useUserProfileStore } from "@/store/userProfile";
 import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
@@ -190,14 +195,18 @@ const translateCategoryName = (categoryName) => {
 
 const inventoryStore = useInventoryStore();
 const gameStore = useGameStore();
+const userProfileStore = useUserProfileStore();
 
 // Endfield判定
 const isEndfield = computed(() => {
     return gameStore.currentGameId === 'endfield';
 });
 
-// 선택된 던전 레벨 (기본값: 5)
-const selectedDungeonLevel = ref(5);
+// 선택된 던전 레벨 (userProfileストアから取得、デフォルト: 5)
+const selectedDungeonLevel = computed({
+    get: () => userProfileStore.dungeonLevels?.forgery_skill ?? 5,
+    set: (value) => userProfileStore.setDungeonLevel('forgery_skill', value)
+});
 
 // 현재 던전 스태미나 표시용
 const currentDungeonStamina = computed(() => {
@@ -720,13 +729,15 @@ const CalculateTotalResinAndDate = () => {
 
 
 onMounted(() => {
+    // ユーザープロファイル (던전 레벨設定) をロード
+    userProfileStore.hydrate();
+
     if (!props.materials || !Object.keys(props.materials).length) {
         logger.error("[Error] Materials data is not ready:", props.materials);
         return;
     }
 
-
-        // Group by category
+    // Group by category
     //groupMaterialsByCategoryAndSubCategory(Object.values(props.materials));
     groupMaterialsByCategoryAndSubCategory(props.materials);
 
