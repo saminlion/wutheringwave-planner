@@ -42,7 +42,7 @@ export const useGameRegistryStore = defineStore('gameRegistry', () => {
     logger.info(`Switched to game: ${gameId}`);
 
     // Save to localStorage
-    localStorage.setItem('wwplanner_current_game', gameId);
+    localStorage.setItem('gameplanner_current_game', gameId);
     return true;
   };
 
@@ -72,7 +72,7 @@ export const useGameRegistryStore = defineStore('gameRegistry', () => {
    * Initialize registry from localStorage
    */
   const hydrate = () => {
-    const savedGameId = localStorage.getItem('wwplanner_current_game');
+    const savedGameId = localStorage.getItem('gameplanner_current_game');
     if (savedGameId && games.value[savedGameId]) {
       currentGameId.value = savedGameId;
       logger.info(`Restored game: ${savedGameId}`);

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 import logger from '@/utils/logger';
 import errorHandler from '@/utils/errorHandler';
 
-const GLOBAL_STORAGE_KEY = 'wwplanner_inventory';
+const GLOBAL_STORAGE_KEY = 'gameplanner_inventory';
 
 export const useInventoryStore = defineStore('inventory', {
   state: () => ({

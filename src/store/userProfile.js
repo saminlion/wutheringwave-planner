@@ -242,7 +242,7 @@ export const useUserProfileStore = defineStore('userProfile', () => {
    */
   function hydrate(gameId = null) {
     const targetGameId = gameId ?? gameStore.currentGameId;
-    const storageKey = `wwplanner_profile_${targetGameId}`;
+    const storageKey = `gameplanner_profile_${targetGameId}`;
     const saved = loadFromStorage(storageKey, null);
 
     if (saved) {
@@ -259,7 +259,7 @@ export const useUserProfileStore = defineStore('userProfile', () => {
    * @param {string} gameId
    */
   function _saveProfile(gameId) {
-    const storageKey = `wwplanner_profile_${gameId}`;
+    const storageKey = `gameplanner_profile_${gameId}`;
     saveToStorage(storageKey, profiles.value[gameId]);
   }
 

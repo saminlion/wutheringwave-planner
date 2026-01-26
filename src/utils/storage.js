@@ -6,7 +6,7 @@ import errorHandler, { AppError, ErrorTypes } from './errorHandler';
  * 자동 에러 처리 및 로깅 포함
  */
 
-const GLOBAL_PREFIX = 'wwplanner';
+const GLOBAL_PREFIX = 'gameplanner';
 
 /**
  * Storage 키 생성
@@ -113,7 +113,7 @@ export function clearStorage(gameId = null) {
       keysToRemove.forEach(key => localStorage.removeItem(key));
       logger.info(`Cleared storage for game: ${gameId}`);
     } else {
-      // 모든 wwplanner 관련 데이터 삭제
+      // 모든 gameplanner 관련 데이터 삭제
       const keysToRemove = [];
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
@@ -138,7 +138,7 @@ export function clearStorage(gameId = null) {
 export function getStorageInfo() {
   try {
     let totalSize = 0;
-    let wwplannerSize = 0;
+    let gameplannerSize = 0;
 
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -148,7 +148,7 @@ export function getStorageInfo() {
         totalSize += size;
 
         if (key.startsWith(GLOBAL_PREFIX)) {
-          wwplannerSize += size;
+          gameplannerSize += size;
         }
       }
     }
@@ -158,11 +158,11 @@ export function getStorageInfo() {
 
     return {
       used: totalSize,
-      wwplannerUsed: wwplannerSize,
+      gameplannerUsed: gameplannerSize,
       total: quota,
       percentage: (totalSize / quota) * 100,
       usedMB: (totalSize / (1024 * 1024)).toFixed(2),
-      wwplannerMB: (wwplannerSize / (1024 * 1024)).toFixed(2),
+      gameplannerMB: (gameplannerSize / (1024 * 1024)).toFixed(2),
       totalMB: (quota / (1024 * 1024)).toFixed(2)
     };
   } catch (error) {
@@ -172,7 +172,7 @@ export function getStorageInfo() {
 }
 
 /**
- * 모든 wwplanner 키 목록 조회
+ * 모든 gameplanner 키 목록 조회
  * @param {string} gameId - 특정 게임 ID만 조회 (선택사항)
  * @returns {Array<string>} 키 목록
  */
@@ -225,7 +225,7 @@ export function backupData(gameId = null) {
     const link = document.createElement('a');
     link.href = url;
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    link.download = `wwplanner_backup_${gameId || 'all'}_${timestamp}.json`;
+    link.download = `gameplanner_backup_${gameId || 'all'}_${timestamp}.json`;
     link.click();
 
     URL.revokeObjectURL(url);

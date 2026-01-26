@@ -23,7 +23,7 @@ import { calculateMaterials } from '@/services/materialHelper/plannerCalc';
 import logger from '@/utils/logger';
 import errorHandler from '@/utils/errorHandler';
 
-const GLOBAL_STORAGE_KEY = 'wwplanner';
+const GLOBAL_STORAGE_KEY = 'gameplanner';
 
 export const usePlannerStore = defineStore('planner', {
   state: () => ({

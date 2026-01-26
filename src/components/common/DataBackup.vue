@@ -5,7 +5,7 @@
 
       <div class="storage-info" v-if="storageInfo">
         <p class="info-text">
-          Storage Used: {{ storageInfo.wwplannerMB }}MB / {{ storageInfo.totalMB }}MB
+          Storage Used: {{ storageInfo.gameplannerMB }}MB / {{ storageInfo.totalMB }}MB
           ({{ storageInfo.percentage.toFixed(1) }}%)
         </p>
         <div class="progress-bar">
