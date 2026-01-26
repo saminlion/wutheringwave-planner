@@ -54,6 +54,20 @@
                             </select>
                         </div>
                     </div>
+
+                    <!-- Level Materials Display -->
+                    <div v-if="hasLevelMaterials" class="materials-section">
+                        <div class="materials-title">Required Materials</div>
+                        <div class="materials-grid">
+                            <div v-for="(qty, matId) in filterMaterials(levelMaterials)" :key="matId" class="material-item">
+                                <img v-if="getMaterialIcon(matId)" :src="getMaterialIcon(matId)" class="material-icon" />
+                                <span class="material-qty">{{ qty }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else class="no-materials">
+                        <span>No materials needed</span>
+                    </div>
                 </div>
 
                 <!-- Skills Tab -->
@@ -107,6 +121,20 @@
                             </select>
                         </div>
                     </div>
+
+                    <!-- Skill Materials Display -->
+                    <div v-if="hasSkillMaterials" class="materials-section">
+                        <div class="materials-title">Required Materials</div>
+                        <div class="materials-grid">
+                            <div v-for="(qty, matId) in filterMaterials(skillMaterials)" :key="matId" class="material-item">
+                                <img v-if="getMaterialIcon(matId)" :src="getMaterialIcon(matId)" class="material-icon" />
+                                <span class="material-qty">{{ qty }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else class="no-materials">
+                        <span>No materials needed</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -118,10 +146,12 @@
  * WutheringWaves専用キャラクターダイアログ
  * ドロップダウンで簡単に選択できるUI
  */
-import { ref } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useLocale } from '@/composables/useLocale';
+import { calculateLevelMaterials, calculateSkillMaterials, calculatePassiveMaterials } from '@/services/materialHelper/character';
+import { getMaterialFieldById } from '@/services/materialHelper/dbUtils';
 
-const { tUI, tCharacter } = useLocale();
+const { tUI, tCharacter, tMaterial } = useLocale();
 
 const props = defineProps({
     visible: Boolean,
@@ -139,6 +169,58 @@ const tabs = [
 const currentTab = ref('level');
 
 const emit = defineEmits(['close', 'updateCharacter']);
+
+// Material calculations
+const levelMaterials = computed(() => {
+    if (!props.character || !props.settings) return {};
+    try {
+        return calculateLevelMaterials(props.settings, props.character) || {};
+    } catch (e) {
+        return {};
+    }
+});
+
+const skillMaterials = computed(() => {
+    if (!props.character || !props.settings) return {};
+    try {
+        const active = calculateSkillMaterials(props.settings, props.character) || {};
+        const passive = calculatePassiveMaterials(props.settings, props.character) || {};
+        // Merge active and passive skill materials
+        const merged = { ...active };
+        Object.entries(passive).forEach(([id, qty]) => {
+            merged[id] = (merged[id] || 0) + qty;
+        });
+        return merged;
+    } catch (e) {
+        return {};
+    }
+});
+
+// Helper to get material icon
+const getMaterialIcon = (materialId) => {
+    return getMaterialFieldById(materialId, 'icon');
+};
+
+// Helper to get material name
+const getMaterialName = (materialId) => {
+    const name = getMaterialFieldById(materialId, 'label');
+    return tMaterial(materialId, name) || name || materialId;
+};
+
+// Filter out empty/zero quantities and processed marker
+const filterMaterials = (materials) => {
+    const filtered = {};
+    Object.entries(materials || {}).forEach(([id, qty]) => {
+        if (id !== 'processed' && qty > 0) {
+            filtered[id] = qty;
+        }
+    });
+    return filtered;
+};
+
+// Check if materials exist
+const hasLevelMaterials = computed(() => Object.keys(filterMaterials(levelMaterials.value)).length > 0);
+const hasSkillMaterials = computed(() => Object.keys(filterMaterials(skillMaterials.value)).length > 0);
 
 const closeDialog = () => {
     emit('close');
@@ -478,5 +560,59 @@ const onPassiveSkillChange = (skill, type, value) => {
     color: var(--accent-color, #4a90e2);
     font-size: 14px;
     font-weight: bold;
+}
+
+/* Materials Section */
+.materials-section {
+    margin-top: 20px;
+    padding: 12px;
+    background: var(--bg-secondary, #f5f5f5);
+    border-radius: 8px;
+}
+
+.materials-title {
+    font-size: 12px;
+    color: var(--text-secondary, #666);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.materials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.material-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    background: var(--bg-primary, #fff);
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #ddd);
+}
+
+.material-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.material-qty {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary, #333);
+}
+
+.no-materials {
+    margin-top: 20px;
+    padding: 16px;
+    text-align: center;
+    color: var(--text-secondary, #999);
+    font-size: 13px;
+    background: var(--bg-secondary, #f5f5f5);
+    border-radius: 8px;
 }
 </style>

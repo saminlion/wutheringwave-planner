@@ -11,7 +11,6 @@
         <router-link to="/inventory">{{ tUI('nav.inventory') }}</router-link>
         <router-link to="/character">{{ tUI('nav.character') }}</router-link>
         <router-link to="/weapon">{{ tUI('nav.weapon') }}</router-link>
-        <router-link to="/endfield-data">Endfield Data</router-link>
         <router-link to="/settings">{{ tUI('nav.settings') }}</router-link>
       </nav>
     </header>
@@ -33,7 +32,7 @@ import logger from '@/utils/logger';
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 const gameStore = useGameStore();
-const { initLocale, tUI } = useLocale();
+const { initLocale, loadGameLocales, tUI } = useLocale();
 
 // Load data from localStorage on app start
 onMounted(async () => {
@@ -43,6 +42,10 @@ onMounted(async () => {
   const gameId = gameStore.currentGameId || 'wutheringwave';
   plannerStore.hydrate();
   inventoryStore.hydrate(gameId);
+
+  // 게임별 번역 파일 로드
+  await loadGameLocales(gameId);
+
   logger.debug(`[App] Data loaded for game: ${gameId}`);
 });
 </script>

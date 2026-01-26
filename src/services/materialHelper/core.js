@@ -1,21 +1,30 @@
-import { findMaterial, getMaterialField, getMaterialFieldById } from "./dbUtils";
+import { findMaterial, getMaterialField } from "./dbUtils";
 import { useGameStore } from '@/store/game';
 import logger from '@/utils/logger';
 
 /**
- * 現在のゲームのcredit game_idを取得
+ * Get current game's credit game_id
  */
 const getCreditGameId = () => {
     const gameStore = useGameStore();
     const materials = gameStore.getData('materials') || {};
     const creditCategory = materials.credit || {};
-    // creditカテゴリの最初のアイテムのgame_idを取得
     const firstCredit = Object.values(creditCategory)[0];
     return firstCredit?.game_id || null;
 };
 
 /**
+ * Get current game's material processor
+ */
+const getGameMaterialProcessor = () => {
+    const gameStore = useGameStore();
+    const currentGame = gameStore.currentGame;
+    return currentGame?.materialProcessor || null;
+};
+
+/**
  * Processes a material based on its key and adds the required quantity to the materials object.
+ * Uses dynamic dispatch to game-specific processors for game-specific keys.
  *
  * @param {Object} materials - The object to store calculated materials.
  * @param {string} key - The type of material (e.g., "common", "ascension").
@@ -29,78 +38,19 @@ export const processMaterials = (materials, key, value, characterInfo) => {
 
     materials.processed.add(materialKey);
 
-    // === WW: common, forgery ===
-    // === Endfield generic tiered: proto_asc, proto_skill, cast_die ===
-    if (['common', 'forgery'].includes(key)) {
-        const [qty, tier] = value;
-        const materialSource = key === 'forgery' ? characterInfo.forgery : characterInfo.common;
+    // Try game-specific processor first
+    const gameProcessor = getGameMaterialProcessor();
+    if (gameProcessor?.processMaterial) {
+        const handled = gameProcessor.processMaterial(materials, key, value, characterInfo);
+        if (handled) {
+            return; // Game-specific processor handled this key
+        }
+    }
 
-        logger.debug('processMaterials Material Source:', materialSource, ', Tier:', tier);
-        const material = findMaterial(key, materialSource, tier);
-        if (material) {
-            const mKey = getMaterialField(material, 'game_id');
-            if (mKey) {
-                materials[mKey] = (materials[mKey] || 0) + qty;
-            }
-        }
-    }
-    // === Endfield generic tiered materials (SubCategory = key itself) ===
-    else if (['proto_asc', 'proto_skill', 'cast_die'].includes(key)) {
-        const [qty, tier] = value;
-        // forgeryカテゴリ内でSubCategory=keyで検索
-        const material = findMaterial('forgery', key, tier);
-        if (material) {
-            const mKey = getMaterialField(material, 'game_id');
-            if (mKey) {
-                materials[mKey] = (materials[mKey] || 0) + qty;
-            }
-        } else {
-            logger.warn(`Endfield material not found: ${key}, tier: ${tier}`);
-        }
-    }
-    // === Endfield character-specific tiered materials ===
-    else if (['bolete', 'odendra', 'onyx'].includes(key)) {
-        const [qty, tier] = value;
-        // characterInfoからgame_idを取得し、そのSubCategoryを見つける
-        const charMaterialId = characterInfo[key];
-        if (charMaterialId) {
-            // game_idからSubCategoryを取得
-            const subCategory = getMaterialFieldById(charMaterialId, 'SubCategory');
-            if (subCategory) {
-                // ascensionカテゴリ内で該当SubCategoryとtierで検索
-                const material = findMaterial('ascension', subCategory, tier);
-                if (material) {
-                    const mKey = getMaterialField(material, 'game_id');
-                    if (mKey) {
-                        materials[mKey] = (materials[mKey] || 0) + qty;
-                    }
-                } else {
-                    logger.warn(`Endfield ascension material not found: ${subCategory}, tier: ${tier}`);
-                }
-            }
-        }
-    }
-    // === Endfield special material (direct quantity, no tier) ===
-    else if (key === 'special') {
-        const charMaterialId = characterInfo[key];
-        if (charMaterialId && typeof value === 'number') {
-            materials[charMaterialId] = (materials[charMaterialId] || 0) + value;
-        }
-    }
-    // === WW: ascension, boss, weeklyBoss ===
-    else if (['ascension', 'boss', 'weeklyBoss'].includes(key)) {
-        let gameId = characterInfo[key];
-        const categoryKey = key === 'weeklyBoss' ? 'weekly' : key;
-        const material = findMaterial(categoryKey, gameId, null, true);
-        if (material) {
-            const mKey = getMaterialField(material, 'game_id');
-            if (mKey) {
-                materials[mKey] = (materials[mKey] || 0) + value;
-            }
-        }
-    }
-    // === credit (both games) ===
-    else if (key === 'credit') {
+    // Common logic for all games below
+
+    // === credit (all games) ===
+    if (key === 'credit') {
         const gameId = getCreditGameId();
         if (!gameId) {
             logger.warn('Credit game_id not found for current game');
@@ -113,16 +63,23 @@ export const processMaterials = (materials, key, value, characterInfo) => {
                 materials[mKey] = (materials[mKey] || 0) + value;
             }
         }
+        return;
     }
-    // === player_exp, weapon_exp (numeric total) ===
-    else if (['player_exp', 'weapon_exp'].includes(key)) {
+
+    // === player_exp, weapon_exp (numeric total, all games) ===
+    if (['player_exp', 'weapon_exp'].includes(key)) {
         materials[key] = (materials[key] || 0) + value;
+        return;
     }
-    // === その他 (perseverance等) - 無視せず直接追加 ===
-    else if (key !== 'level') {
-        logger.debug(`processMaterials: Unknown key "${key}", adding directly`);
-        materials[key] = (materials[key] || 0) + value;
+
+    // === Skip level key ===
+    if (key === 'level') {
+        return;
     }
+
+    // === Fallback: add directly (perseverance, etc.) ===
+    logger.debug(`processMaterials: Unknown key "${key}", adding directly`);
+    materials[key] = (materials[key] || 0) + value;
 };
 
 /**

@@ -15,7 +15,10 @@ import {
 // Game-specific components
 import CharacterDialog from './components/CharacterDialog.vue';
 
-// データキャッシュ（WWプラグインと同じインターフェース）
+// Game-specific material processor
+import * as materialProcessor from './materialProcessor.js';
+
+// Data cache (same interface as WW plugin)
 const dataCache = {
   characters,
   weapons,
@@ -33,10 +36,13 @@ const endfieldPlugin = {
   // Game configuration
   config,
 
-  // ゲーム専用コンポーネント
+  // Game-specific components
   components: {
     CharacterDialog,
   },
+
+  // Game-specific material processor
+  materialProcessor,
 
   // Game data
   materials: {

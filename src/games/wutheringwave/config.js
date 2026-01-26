@@ -17,6 +17,23 @@ export const wutheringWaveConfig = {
   shortName: 'WW',
   version: '1.0.0',
 
+  // Theme colors for gradient styling
+  themeColors: {
+    rarity: {
+      3: '#3b82f680',
+      4: '#6B60B5',
+      5: '#C88844',
+    },
+    element: {
+      glacio: '#74D4FF',
+      fusion: '#FF5E5E',
+      electro: '#C082FF',
+      aero: '#53FFC8',
+      spectro: '#FFD700',
+      havoc: '#FF6AC1',
+    },
+  },
+
   // Filter options for UI
   filters: {
     elements: [

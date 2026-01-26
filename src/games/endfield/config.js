@@ -6,6 +6,23 @@ export default {
   name: 'Endfield',
   displayName: 'Endfield',
 
+  // Theme colors for gradient styling
+  themeColors: {
+    rarity: {
+      3: '#3b82f680',  // Blue
+      4: '#6B60B5',    // Purple
+      5: '#DAA520',    // Gold
+      6: '#FF8C00',    // Orange
+    },
+    element: {
+      physical: '#808080',
+      heat: '#FF5E5E',
+      cryo: '#74D4FF',
+      electric: '#C082FF',
+      nature: '#53FFC8',
+    },
+  },
+
   // Game-specific constants
   constants: {
     MAX_LEVEL: 90,

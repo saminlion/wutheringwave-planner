@@ -4,8 +4,14 @@ import { loadFromStorage, saveToStorage } from '@/utils/storage';
 // 현재 로케일 상태 (전역)
 const currentLocale = ref(loadFromStorage('locale', 'en'));
 
-// 번역 데이터 캐시
-const translationsCache = ref({});
+// 현재 게임 ID (전역) - loadGameLocales 호출 시 업데이트
+const currentGameId = ref(null);
+
+// 번역 데이터 캐시 (UI 번역)
+const baseTranslationsCache = ref({});
+
+// 게임별 번역 데이터 캐시
+const gameTranslationsCache = ref({});
 
 // 지원 언어 목록
 const supportedLocales = [
@@ -16,27 +22,57 @@ const supportedLocales = [
 // Vite의 import.meta.glob으로 로케일 파일 미리 로드
 const localeModules = import.meta.glob('../locales/*.json');
 
+// 게임별 로케일 파일 미리 로드
+const gameLocaleModules = import.meta.glob('../games/*/locales/*.json');
+
 /**
- * 번역 파일 로드
+ * 기본 UI 번역 파일 로드
  * @param {string} locale - 언어 코드 (en, ko)
  */
-async function loadTranslations(locale) {
-  if (translationsCache.value[locale]) {
-    return translationsCache.value[locale];
+async function loadBaseTranslations(locale) {
+  if (baseTranslationsCache.value[locale]) {
+    return baseTranslationsCache.value[locale];
   }
 
   try {
     const modulePath = `../locales/${locale}.json`;
     if (localeModules[modulePath]) {
       const module = await localeModules[modulePath]();
-      translationsCache.value[locale] = module.default;
-      triggerRef(translationsCache);
+      baseTranslationsCache.value[locale] = module.default;
+      triggerRef(baseTranslationsCache);
       return module.default;
     }
     console.warn(`Locale file not found: ${locale}`);
     return null;
   } catch (error) {
     console.warn(`Failed to load translations for locale: ${locale}`, error);
+    return null;
+  }
+}
+
+/**
+ * 게임별 번역 파일 로드
+ * @param {string} gameId - 게임 ID (wutheringwave, endfield)
+ * @param {string} locale - 언어 코드 (en, ko)
+ */
+async function loadGameTranslationsFile(gameId, locale) {
+  const cacheKey = `${gameId}_${locale}`;
+  if (gameTranslationsCache.value[cacheKey]) {
+    return gameTranslationsCache.value[cacheKey];
+  }
+
+  try {
+    const modulePath = `../games/${gameId}/locales/${locale}.json`;
+    if (gameLocaleModules[modulePath]) {
+      const module = await gameLocaleModules[modulePath]();
+      gameTranslationsCache.value[cacheKey] = module.default;
+      triggerRef(gameTranslationsCache);
+      return module.default;
+    }
+    // 게임별 locale 파일이 없을 수 있음 (정상)
+    return null;
+  } catch (error) {
+    console.warn(`Failed to load game translations for ${gameId}/${locale}`, error);
     return null;
   }
 }
@@ -53,9 +89,22 @@ export function useLocale() {
     }
   });
 
-  // 현재 번역 데이터 (computed로 반응성 보장)
+  // 현재 번역 데이터 (base + game 머지)
   const currentTranslations = computed(() => {
-    return translationsCache.value[currentLocale.value] || {};
+    const base = baseTranslationsCache.value[currentLocale.value] || {};
+    const gameId = currentGameId.value;
+    if (!gameId) return base;
+
+    const gameCacheKey = `${gameId}_${currentLocale.value}`;
+    const game = gameTranslationsCache.value[gameCacheKey] || {};
+
+    // 게임별 번역을 base에 머지 (characters, weapons, materials)
+    return {
+      ...base,
+      characters: { ...(base.characters || {}), ...(game.characters || {}) },
+      weapons: { ...(base.weapons || {}), ...(game.weapons || {}) },
+      materials: { ...(base.materials || {}), ...(game.materials || {}) },
+    };
   });
 
   /**
@@ -123,19 +172,44 @@ export function useLocale() {
       return false;
     }
 
-    await loadTranslations(newLocale);
+    // 기본 UI 번역 로드
+    await loadBaseTranslations(newLocale);
+
+    // 현재 게임의 번역도 로드
+    if (currentGameId.value) {
+      await loadGameTranslationsFile(currentGameId.value, newLocale);
+    }
+
     locale.value = newLocale;
     return true;
+  };
+
+  /**
+   * 게임별 로케일 로드 (게임 변경 시 호출)
+   * @param {string} gameId - 게임 ID
+   */
+  const loadGameLocales = async (gameId) => {
+    currentGameId.value = gameId;
+
+    // 현재 언어의 게임별 번역 로드
+    await loadGameTranslationsFile(gameId, currentLocale.value);
+
+    // fallback용 영어도 로드
+    if (currentLocale.value !== 'en') {
+      await loadGameTranslationsFile(gameId, 'en');
+    }
+
+    triggerRef(gameTranslationsCache);
   };
 
   /**
    * 초기화 - 번역 파일 로드
    */
   const initLocale = async () => {
-    await loadTranslations(currentLocale.value);
+    await loadBaseTranslations(currentLocale.value);
     // 영어도 fallback용으로 미리 로드
     if (currentLocale.value !== 'en') {
-      await loadTranslations('en');
+      await loadBaseTranslations('en');
     }
   };
 
@@ -149,6 +223,7 @@ export function useLocale() {
     tUI,
     setLocale,
     initLocale,
+    loadGameLocales,
   };
 }
 

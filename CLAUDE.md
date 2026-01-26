@@ -4,15 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Wuthering Waves Game Planner** - A Vue 3 application that helps players plan character/weapon progression by calculating required materials, tracking inventory, and optimizing material synthesis.
+**Multi-Game Planner** - A Vue 3 application supporting multiple games (WutheringWaves, Endfield) for planning character/weapon progression, calculating required materials, tracking inventory, and optimizing material synthesis.
 
 ## Development Commands
 
 ```bash
-npm run dev      # Start dev server on http://localhost:3000 (auto-opens browser)
-npm run build    # Build for production to dist/
-npm run preview  # Preview production build locally
+npm run dev       # Start dev server on http://localhost:3000 (auto-opens browser)
+npm run build     # Build for production to dist/
+npm run preview   # Preview production build locally
+npm run test      # Run tests in watch mode
+npm run test:run  # Run tests once
 ```
+
+---
 
 ## Architecture
 
@@ -21,7 +25,35 @@ npm run preview  # Preview production build locally
 - **Pinia** for state management
 - **Vue Router 4** for routing
 - **Vite 6** for build tooling
+- **Vitest** for testing
 - **localStorage** for data persistence
+
+### Project Structure
+```
+src/
+├── games/                    # Game plugins
+│   ├── wutheringwave/        # WutheringWaves plugin
+│   │   ├── index.js          # Plugin entry
+│   │   ├── config.js         # Game config
+│   │   ├── materialProcessor.js  # Material processing
+│   │   ├── components/       # Game-specific components
+│   │   └── data/             # Game data files
+│   └── endfield/             # Endfield plugin (same structure)
+├── services/
+│   └── materialHelper/       # Core material calculation
+│       ├── core.js           # Dynamic dispatch to game processors
+│       ├── character.js      # Character material calc
+│       ├── weapon.js         # Weapon material calc
+│       ├── synthesis.js      # Synthesis logic
+│       └── dbUtils.js        # Database utilities
+├── store/
+│   ├── game.js               # Game selection & plugin management
+│   ├── planner.js            # Planning state (goals, settings)
+│   └── inventory.js          # Inventory state
+├── views/                    # Route views
+├── components/               # Shared components
+└── utils/                    # Utilities (logger, storage, errorHandler)
+```
 
 ### Core Routes
 - `/` - HomeView (game selection, initialization)
@@ -30,37 +62,315 @@ npm run preview  # Preview production build locally
 - `/weapon` - WeaponView (weapon selection/configuration)
 - `/inventory` - InventoryView (material inventory management)
 
-### State Management (Pinia Stores)
+---
 
-**`src/store/planner.js`** - Main planning state
+## Multi-Game Plugin System
+
+### Plugin Interface
+
+Each game plugin must export:
+
+```javascript
+const gamePlugin = {
+  // Required
+  id: 'gameid',                    // Unique identifier
+  name: 'Game Name',               // Display name
+  displayName: 'Game Name',
+  config: { ... },                 // Game configuration
+  materialProcessor: {             // Material processing
+    SUPPORTED_KEYS: [...],
+    processMaterial: (materials, key, value, characterInfo) => boolean
+  },
+  getData(type) { ... },           // Returns cached data by type
+
+  // Optional
+  components: { CharacterDialog }, // Game-specific Vue components
+  install() { ... },               // Called when game selected
+  uninstall() { ... },             // Called when switching away
+};
+```
+
+### Game Store (`src/store/game.js`)
+
+```javascript
+const gameStore = useGameStore();
+gameStore.registerGame(plugin);    // Register plugin
+gameStore.setCurrentGame('gameid'); // Switch game
+gameStore.currentGame;             // Current plugin
+gameStore.currentGameId;           // Current game ID
+```
+
+### Material Processing Flow
+
+```
+costs.json: { "common": [5, 2] }
+       ↓
+core.js: processMaterials()
+       ↓
+gameStore.currentGame.materialProcessor.processMaterial()
+       ↓
+Game-specific resolution (WW: SubCategory lookup, Endfield: different keys)
+       ↓
+{ game_id: quantity }
+```
+
+---
+
+## Adding a New Game (Plugin Development)
+
+### Step 1: Create Folder Structure
+
+```
+src/games/newgame/
+├── index.js              # Plugin entry point
+├── config.js             # Game configuration
+├── materialProcessor.js  # Material processing logic
+├── components/
+│   └── CharacterDialog.vue
+└── data/
+    ├── index.js          # Data exports
+    ├── character.json
+    ├── weapon.json
+    ├── materials.json
+    ├── costs.json
+    └── tiers.js
+```
+
+### Step 2: Create Data Files
+
+**character.json:**
+```json
+{
+  "char_001": {
+    "game_id": "char_001",
+    "display_name": "Character Name",
+    "rarity": 5,
+    "element": "fire",
+    "weapon_type": "sword",
+    "icon": "/path/to/icon.png",
+    "common": "material_subcategory",
+    "forgery": "skill_subcategory",
+    "ascension": "game_id_of_ascension_material",
+    "boss": "game_id_of_boss_material"
+  }
+}
+```
+
+**materials.json:**
+```json
+{
+  "credit": { ... },
+  "common": {
+    "mat_001": {
+      "game_id": "mat_001",
+      "label": "Material Name",
+      "icon": "/path/to/icon.png",
+      "Category": "common",
+      "SubCategory": "material_type",
+      "tier": 1
+    }
+  },
+  "forgery": { ... },
+  "ascension": { ... },
+  "boss": { ... }
+}
+```
+
+**costs.json:**
+```json
+{
+  "character": {
+    "level": {
+      "20": { "common": [5, 1], "credit": 5000 },
+      "20A": { "common": [10, 2], "ascension": 1, "credit": 10000 }
+    },
+    "skill": {
+      "2": { "forgery": [3, 1], "credit": 2000 }
+    }
+  },
+  "weapon": { "level": { ... } }
+}
+```
+
+**Format:** Tiered materials use `[quantity, tier]`, direct materials use `quantity`
+
+### Step 3: Create materialProcessor.js
+
+```javascript
+import { findMaterial, getMaterialField } from '@/services/materialHelper/dbUtils';
+
+export const SUPPORTED_KEYS = [
+  'common', 'forgery',     // Tiered by SubCategory
+  'ascension', 'boss',     // Direct game_id
+];
+
+export const processMaterial = (materials, key, value, characterInfo) => {
+  // Tiered materials
+  if (['common', 'forgery'].includes(key)) {
+    const [qty, tier] = value;
+    const subCategory = characterInfo[key];
+    const material = findMaterial(key, subCategory, tier);
+    if (material) {
+      const gameId = getMaterialField(material, 'game_id');
+      if (gameId) materials[gameId] = (materials[gameId] || 0) + qty;
+    }
+    return true;
+  }
+
+  // Direct game_id materials
+  if (['ascension', 'boss'].includes(key)) {
+    const gameId = characterInfo[key];
+    if (gameId) materials[gameId] = (materials[gameId] || 0) + value;
+    return true;
+  }
+
+  return false; // Not handled
+};
+
+export default { SUPPORTED_KEYS, processMaterial };
+```
+
+### Step 4: Create config.js
+
+```javascript
+export default {
+  id: 'newgame',
+  name: 'New Game',
+  displayName: 'New Game',
+
+  themeColors: {
+    rarity: { 3: '#3b82f680', 4: '#6B60B5', 5: '#C88844' },
+    element: { fire: '#FF6347', water: '#00BFFF' },
+  },
+
+  constants: {
+    MAX_LEVEL: 90,
+    MAX_SKILL_LEVEL: 10,
+    SYNTHESIS_RATIO: 3,
+  },
+
+  filters: {
+    elements: [{ value: 'all', label: 'All' }, ...],
+    weaponTypes: [...],
+  },
+
+  formFields: {
+    characterLevelItems: [
+      { value: '1', label: 'Level 1' },
+      { value: '20', label: 'Level 20' },
+      { value: '20A', label: 'Level 20 Ascended' },
+    ],
+  },
+
+  stamina: {
+    name: 'Stamina',
+    dailyLimit: 240,
+    farmingRates: { credit: { drops: 30000, stamina: 40 } },
+  },
+
+  createCharacterInitialSettings() {
+    return { currentLevel: '1', targetLevel: '1', activeSkills: {}, passiveSkills: {} };
+  },
+};
+```
+
+### Step 5: Create index.js (Plugin Entry)
+
+```javascript
+import config from './config.js';
+import * as materialProcessor from './materialProcessor.js';
+import CharacterDialog from './components/CharacterDialog.vue';
+import characters from './data/character.json';
+import weapons from './data/weapon.json';
+import materials from './data/materials.json';
+import costs from './data/costs.json';
+import { tieredMaterials } from './data/tiers.js';
+
+const dataCache = { characters, weapons, materials, costs, tiers: tieredMaterials };
+
+const newgamePlugin = {
+  id: config.id,
+  name: config.name,
+  displayName: config.displayName,
+  version: '1.0.0',
+  config,
+  materialProcessor,
+  components: { CharacterDialog },
+  async install() { return Promise.resolve(); },
+  async uninstall() { return Promise.resolve(); },
+  getData(type) { return dataCache[type] ?? null; },
+};
+
+export default newgamePlugin;
+```
+
+### Step 6: Register Plugin
+
+In `src/main.js`:
+```javascript
+import newgamePlugin from './games/newgame';
+import { useGameStore } from './store/game';
+
+const gameStore = useGameStore();
+gameStore.registerGame(newgamePlugin);
+```
+
+### Step 7: Create CharacterDialog Component
+
+Copy from existing game and modify:
+- `src/games/wutheringwave/components/CharacterDialog.vue` (simpler)
+- `src/games/endfield/components/CharacterDialog.vue` (complex skills)
+
+Required props: `visible`, `character`, `settings`, `levelItems`
+Required emits: `close`, `updateCharacter`
+
+### Step 8: Add Tests
+
+Create `tests/games/newgame-materialProcessor.test.js`:
+```javascript
+import { describe, it, expect, vi } from 'vitest';
+import { processMaterial, SUPPORTED_KEYS } from '@/games/newgame/materialProcessor';
+
+vi.mock('@/services/materialHelper/dbUtils', () => ({
+  findMaterial: vi.fn(() => ({ game_id: 'mock_id' })),
+  getMaterialField: vi.fn((m, f) => m?.[f] || null),
+}));
+
+describe('NewGame MaterialProcessor', () => {
+  it('should support expected keys', () => {
+    expect(SUPPORTED_KEYS).toContain('common');
+  });
+});
+```
+
+### Reference Implementations
+- **WutheringWaves**: `src/games/wutheringwave/` - Simpler skill system
+- **Endfield**: `src/games/endfield/` - Complex skill + dungeon system
+
+---
+
+## State Management (Pinia Stores)
+
+### planner.js
 - `goals[]` - Array of character/weapon goals with calculated materials
 - `characterSettings{}` - Per-character level/skill configurations
 - `weaponSettings{}` - Per-weapon level configurations
-- `currentGameId` - Currently 'wutheringwave' (hardcoded)
 - Storage keys: `wwplanner_goals_${gameId}`, `wwplanner_character_${gameId}`, `wwplanner_weapon_${gameId}`
 
-**`src/store/inventory.js`** - Player inventory state
+### inventory.js
 - `inventory{}` - Material quantities indexed by game_id
 - `currentGameId` - Set via `hydrate(gameId)`
 - Storage key: `wwplanner_inventory_${gameId}`
 - Actions: `addMaterial()`, `removeMaterial()`, `saveInventory()`, `loadInventory()`, `hydrate()`
 
-### Data Persistence Pattern
+### game.js
+- `registeredGames{}` - All registered game plugins
+- `currentGameId` - Currently selected game
+- `currentGame` - Current game plugin (computed)
 
-All stores use localStorage with per-game keys:
-```javascript
-// Initialization in HomeView.vue
-onMounted(() => {
-  plannerStore.hydrate();                           // Uses planner.currentGameId
-  inventoryStore.hydrate('wutheringwave');         // Requires explicit gameId
-});
-```
-
-**Important:** When adding new views that use inventory/planner data, ensure stores are hydrated before component mount.
+---
 
 ## Material Calculation System
-
-The heart of this application. Multi-stage process:
 
 ### Data Flow
 ```
@@ -70,162 +380,47 @@ plannerStore.updateCharacterSettings()
   ↓
 calculateCharacterMaterials() / calculateWeaponMaterials()
   ↓
-processMaterials() [resolves tier lookups via character metadata]
+processMaterials() [delegates to game-specific processor]
   ↓
 mergeMaterials() [combines level + skill + passive materials]
   ↓
-performItemSynthesisWithNeeds() [forward synthesis 3:1]
+performItemSynthesisWithNeeds() [forward synthesis]
   ↓
 backwardConversion() [surplus high-tier → low-tier]
   ↓
 FinalMaterialNeeds.vue displays results
 ```
 
-### Key Files
+### Material Resolution Patterns
 
-**`src/services/materialHelper/`** - Material calculation engine
-- `character.js` - Character material calculations (level, skills, passives)
-- `weapon.js` - Weapon material calculations (level only)
-- `core.js` - Material processing and tier lookup resolution
-- `synthesis.js` - Forward/backward synthesis logic
-- `plannerCalc.js` - Material merging and level range extraction
-- `dbUtils.js` - Database lookup utilities
+**Tiered Materials** (common, forgery):
+- Store with `tier` field in materials.json
+- Use `[quantity, tier]` format in costs.json
+- Use `findMaterial(category, subCategory, tier)` to look up
 
-**`src/data/costs.json`** - Critical file (~200KB)
-- Contains ALL leveling costs for characters/weapons
-- Structure: `character.level["20A"]`, `character.skill["5"]`, `character.passive.skill["2"]`
-- Format: `{ common: [quantity, tier], credit: amount, ... }`
-- Material fields: `common`, `forgery`, `ascension`, `boss`, `weeklyBoss`, `credit`
+**Direct Game ID Materials** (ascension, boss):
+- Store game_id in character data
+- Use `quantity` format in costs.json
+- Use `findMaterial(category, gameId, null, true)` to look up
 
-**`src/data/tieredMaterials.js`** - Synthesis definitions
-- Defines 4-tier progression for craftable materials
-- Ratio: 3 of tier N → 1 of tier N+1
-- Categories: common materials, forgery materials
-
-### Material Resolution Pattern
-
-Materials use indirect references that must be resolved:
-```javascript
-// Example from costs.json
-{ common: [4, 2] }  // Need 4 items of tier 2
-
-// Resolution in processMaterials()
-1. Look up character.common field → e.g., "whisperin_core"
-2. Find material in inventoryItem.json where SubCategory === "whisperin_core" AND tier === 2
-3. Extract game_id → e.g., 41101002
-4. Store quantity: { 41101002: 4 }
-```
-
-### Character Settings Structure
-
-```javascript
-{
-  characterId: {
-    currentLevel: "1",           // "1", "20", "20A", "40", "40A", ..., "90"
-    targetLevel: "90",
-    activeSkills: {
-      primary_attack: { current: 1, target: 10 },
-      special_ability: { current: 1, target: 10 },
-      ultimate_move: { current: 1, target: 10 },
-      support_skill: { current: 1, target: 10 },
-      enhanced_mode: { current: 1, target: 10 }
-    },
-    passiveSkills: {
-      passive_ability_1: false,       // Tier 1
-      bonus_stats_1_1: false,
-      bonus_stats_1_2: false,
-      bonus_stats_1_3: false,
-      bonus_stats_1_4: false,
-      passive_ability_2: false,       // Tier 2
-      bonus_stats_2_1: false,
-      bonus_stats_2_2: false,
-      bonus_stats_2_3: false,
-      bonus_stats_2_4: false
-    }
-  }
-}
-```
-
-## Important Data Files
-
-**`src/data/character.json`** - Character metadata (~50KB)
-- 15+ characters with full progression data
-- Each entry includes: `game_id`, `name`, `element`, `weapon`, `rarity`
-- Material references: `common`, `ascension`, `boss`, `weeklyBoss` (SubCategory names)
-- Icon URLs for character portraits
-
-**`src/data/weapon.json`** - Weapon metadata (~30KB)
-- 50+ weapons grouped by rarity (3★, 4★, 5★)
-- Each entry includes: `game_id`, `name`, `type`, `rarity`
-- Material references: `common`, `ascension` (SubCategory names)
-
-**`src/data/inventoryItem.json`** - Material catalog (~150KB)
-- 250+ materials with icons, labels, categories
-- Structure: `{ category: { subcategory: { game_id, icon, label, Category, SubCategory, rarity } } }`
-- Categories: credit, common, forgery, ascension, boss, weeklyBoss, player_exp, weapon_exp
-
-## Component Patterns
-
-### Dialog Components
-Both `CharacterDialog.vue` and `WeaponDialog.vue` follow this pattern:
-```vue
-<script setup>
-const props = defineProps(['modelValue', 'character/weapon']);
-const emit = defineEmits(['update:modelValue', 'save']);
-
-// Load settings from plannerStore
-const settings = ref({ ...defaultSettings, ...storedSettings });
-
-const saveSettings = () => {
-  plannerStore.updateCharacterSettings(id, settings.value);
-  emit('save');
-  close();
-};
-</script>
-```
-
-### Inventory Sync Pattern
-`InventoryView.vue` uses local `quantities` ref synced with store:
-```vue
-const quantities = ref(materials.reduce(...));
-
-// Watch for store changes
-watch(inventory, (newInventory) => {
-  materials.forEach(material => {
-    quantities.value[material.game_id] = newInventory[material.game_id] || 0;
-  });
-}, { deep: true });
-
-// Sync on mount
-onMounted(() => {
-  materials.forEach(material => {
-    quantities.value[material.game_id] = inventory.value[material.game_id] || 0;
-  });
-});
-```
-
-**Critical:** When updating quantities, use separate functions for add/remove:
-- `debouncedAddMaterial()` → `inventoryStore.addMaterial()`
-- `debouncedRemoveMaterial()` → `inventoryStore.removeMaterial()`
-
-Do NOT use `addMaterial()` for both operations (this was a previous bug).
+---
 
 ## Utilities
 
-**`src/utils/logger.js`** - Environment-aware logging
+**logger.js** - Environment-aware logging
 ```javascript
 import logger from '@/utils/logger';
 logger.debug('Message');  // Only in development
 logger.error('Message');  // Always logged
 ```
 
-**`src/utils/errorHandler.js`** - Global error handling
+**errorHandler.js** - Global error handling
 ```javascript
 import errorHandler from '@/utils/errorHandler';
 errorHandler.handle(error, 'contextName');
 ```
 
-**`src/utils/storage.js`** - localStorage wrapper
+**storage.js** - localStorage wrapper
 ```javascript
 import { storage } from '@/utils/storage';
 storage.get(key);
@@ -234,73 +429,20 @@ storage.backup();
 storage.restore(backupData);
 ```
 
-## Path Alias
-
-Vite configured with `@` alias pointing to `src/`:
-```javascript
-import logger from '@/utils/logger';              // ✓
-import { usePlannerStore } from '@/store/planner'; // ✓
-import costs from '@/data/costs.json';             // ✓
-```
+---
 
 ## Styling Conventions
 
 ### Gradient System
-Characters/weapons use rarity + element gradients:
+Characters/weapons use rarity + element gradients from game config:
 ```javascript
 const gradient = computed(() => {
-  const rarityColors = {
-    3: '#3b82f680',
-    4: '#6B60B5',
-    5: '#C88844'
-  };
-  const elementColors = {
-    glacio: '#00BFFF',
-    fusion: '#FF6347',
-    electro: '#9370DB',
-    // ... etc
-  };
-  return `linear-gradient(180deg, ${rarityColors[rarity]} 40%, ${elementColors[element]} 59%)`;
+  const colors = currentGame.config.themeColors;
+  return `linear-gradient(180deg, ${colors.rarity[rarity]} 40%, ${colors.element[element]} 59%)`;
 });
 ```
 
-### Category Display Order
-Materials displayed in this order:
-1. credit (Shell Credits)
-2. common (Ascension materials - tiered)
-3. forgery (Skill materials - tiered)
-4. ascension (Character-specific)
-5. boss (World boss drops)
-6. weeklyBoss (Weekly boss drops)
-7. player_exp (Player experience)
-8. weapon_exp (Weapon experience)
-
-## Common Tasks
-
-### Adding a New Character
-1. Add entry to `src/data/character.json`
-2. Ensure material references match `inventoryItem.json` SubCategory names
-3. Add leveling costs to `costs.json` if unique progression exists
-4. Icon URL should point to CDN/assets
-
-### Adding a New Material
-1. Add to `src/data/inventoryItem.json` under appropriate category
-2. If tiered (common/forgery), add to `src/data/tieredMaterials.js`
-3. Ensure `game_id` is unique
-4. Add costs to `costs.json` where material is consumed
-
-### Debugging Material Calculations
-1. Check browser console for logger.debug() output (dev mode only)
-2. Use Vue DevTools to inspect `plannerStore.goals[].materials`
-3. Verify character metadata has correct material SubCategory references
-4. Check `costs.json` has entries for the level/skill range
-5. Test synthesis logic with different inventory quantities
-
-### Fixing Inventory Sync Issues
-Common issue: `quantities` ref not syncing with store
-- Ensure `watch(inventory, ...)` is set up with `{ deep: true }`
-- Call sync in `onMounted()`
-- Verify `inventoryStore.hydrate(gameId)` called before component mounts
+---
 
 ## Known Patterns
 
@@ -309,13 +451,11 @@ Character/weapon levels use string format with "A" suffix for ascension:
 - Pre-ascension: `"1"`, `"20"`, `"40"`, `"60"`, `"70"`, `"80"`
 - Post-ascension: `"20A"`, `"40A"`, `"60A"`, `"70A"`, `"80A"`, `"90"`
 
-### Skill Levels
-Active skills: 1-10 (integers)
-Passive skills: boolean (unlocked or not)
-
-### Material Tiers
+### Material Tiers (WutheringWaves)
 Tier 1 (LF) → Tier 2 (MF) → Tier 3 (HF) → Tier 4 (FF)
-Prefix indicates rarity: Low Frequency, Medium Frequency, High Frequency, Full Frequency
+Synthesis ratio: 3:1
+
+---
 
 ## File Naming Conventions
 
@@ -324,24 +464,36 @@ Prefix indicates rarity: Low Frequency, Medium Frequency, High Frequency, Full F
 - Stores: `camelCase.js` (e.g., `planner.js`)
 - Services: `camelCase.js` (e.g., `characterHelper.js`)
 - Utils: `camelCase.js` (e.g., `logger.js`)
-- Data: `camelCase.json` or `camelCase.js` (e.g., `costs.json`, `tieredMaterials.js`)
+- Data: `camelCase.json` or `camelCase.js`
+- Game plugins: `src/games/{gameid}/`
 
-## Testing in Browser
+---
 
-After changes:
-1. Check browser console for errors (no suppressions)
-2. Verify localStorage updates in DevTools > Application > Local Storage
-3. Test new character → edit → save → refresh → verify settings persist
-4. Test inventory change → refresh → verify quantity persists
-5. Verify material calculations in PlannerView match expected costs
+## Troubleshooting
 
-## Recent Changes (Phase 1)
+### Materials not calculating
+1. Check SUPPORTED_KEYS includes your material key
+2. Check processMaterial returns true for handled keys
+3. Check materials.json has correct Category/SubCategory
+4. Check costs.json format matches expected ([qty, tier] vs qty)
 
-The codebase recently underwent Phase 1 improvements:
-- Centralized logging system (`src/utils/logger.js`)
-- Global error handling (`src/utils/errorHandler.js`)
-- Loading states (`src/composables/useLoading.js`, `LoadingSpinner.vue`)
-- Data backup/restore UI (`DataBackup.vue`)
-- LocalStorage utilities (`src/utils/storage.js`)
+### Plugin not loading
+1. Check plugin is registered in main.js
+2. Check getData returns correct data types
+3. Check console for import errors
 
-See `PHASE1_COMPLETE.md` for details.
+### UI not rendering
+1. Check config.formFields has required items
+2. Check CharacterDialog emits correct events
+3. Check translations exist in locales
+
+---
+
+## Path Alias
+
+Vite configured with `@` alias pointing to `src/`:
+```javascript
+import logger from '@/utils/logger';
+import { usePlannerStore } from '@/store/planner';
+import costs from '@/data/costs.json';
+```

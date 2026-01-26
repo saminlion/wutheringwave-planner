@@ -5,113 +5,60 @@
       <h2>Goals</h2>
       <div class="goals-container">
         <div class="goal-border" v-for="goal in goals" :key="goal.name"
-          :class="{ hidden: hiddenGoals[goal.id] }"
+          :class="{ hidden: goal.isHidden }"
           :style="setGradientStyle(getRawData(goal), true)">
           <div class="goal-card">
-            <!-- 罹먮┃???대쫫怨??꾩씠肄?-->
-            <div class="goal-header">
-              <div class="character-container"
-                v-if="goal.type === 'character'">
-                <img :src="getCharacterField(goal.id, 'icon')" alt="Character Icon" class="character-icon" />
-                <h3>{{ tCharacter(goal.id, getCharacterField(goal.id, 'display_name')) }}</h3>
-                <div class="icon-container">
-                  <!-- Delete Button -->
-                  <button class="delete-button" @click="removeGoal(goal.id, 'character')">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                    </svg>
-                  </button>
-
-                  <!-- Hide Button -->
-                  <button class="hide-button" @click="hideGoal(goal.id, 'character')">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
-                    </svg>
-
-                  </button>
-
-                  <!-- Edit Button -->
-                  <button class="edit-button" @click="openDialog(goal)">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                    </svg>
-
-                  </button>
-
-                  <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, goal.type)" title="Mark as Complete">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="weapon-container" v-else>
-                <img :src="getWeaponField(goal.id, 'icon')" alt="Weapon Icon" class="character-icon" />
-                <h3>{{ tWeapon(goal.id, getWeaponField(goal.id, 'display_name')) }}</h3>
-                <div class="icon-container">
-                  <!-- Delete Button -->
-                  <button class="delete-button" @click="removeGoal(goal.id, 'weapon')">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
-                    </svg>
-                  </button>
-
-                  <!-- Hide Button -->
-                  <button class="hide-button" @click="hideGoal(goal.id, 'weapon')">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
-                    </svg>
-                  </button>
-
-                  <!-- Edit Button -->
-                  <button class="edit-button" @click="openDialog(goal)">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                    </svg>
-
-                  </button>
-
-                  <!-- Complete Button -->
-                  <button class="complete-button" @click="completeGoal(goal.id, goal.type)" title="Mark as Complete">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="icon-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+            <!-- Icon -->
+            <div class="card-icon-wrapper">
+              <img
+                v-if="goal.type === 'character'"
+                :src="getCharacterField(goal.id, 'icon')"
+                alt="Character Icon"
+                class="card-icon"
+              />
+              <img
+                v-else
+                :src="getWeaponField(goal.id, 'icon')"
+                alt="Weapon Icon"
+                class="card-icon"
+              />
             </div>
 
-            <!-- Materials List -->
-            <div class="goal-materials">
-              <div class="materials-grid">
-                <div class="material-card" v-for="(qty, mat) in filterProcessed(goal.materials)" :key="mat">
-                  <img v-if="getMaterialIcon(mat)" :src="getMaterialIcon(mat)" alt="material icon"
-                    class="material-icon" />
-                  <div class="material-info">
-                    <span class="material-quantity">{{ qty }}</span>
-                  </div>
-                </div>
-              </div>
+            <!-- Name -->
+            <h3 class="card-name">
+              <template v-if="goal.type === 'character'">
+                {{ tCharacter(goal.id, getCharacterField(goal.id, 'display_name')) }}
+              </template>
+              <template v-else>
+                {{ tWeapon(goal.id, getWeaponField(goal.id, 'display_name')) }}
+              </template>
+            </h3>
+
+            <!-- Action buttons -->
+            <div class="card-actions">
+              <button class="action-btn edit-btn" @click="openDialog(goal)" title="Edit">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                </svg>
+              </button>
+              <button class="action-btn hide-btn" @click="hideGoal(goal.id, goal.type)" title="Hide">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" />
+                </svg>
+              </button>
+              <button class="action-btn complete-btn" @click="completeGoal(goal.id, goal.type)" title="Complete">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+              </button>
+              <button class="action-btn delete-btn" @click="removeGoal(goal.id, goal.type)" title="Delete">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
+                </svg>
+              </button>
             </div>
-          </div><!--goal-card end-->
-        </div> <!--goal-border end-->
+          </div>
+        </div>
       </div>
     </div>
 
@@ -223,16 +170,6 @@ const hiddenGoals = ref({});
 const refreshKey = ref(0);
 
 
-const filterProcessed = (materials) => {
-  const { processed, ...filteredMaterials } = materials;
-  return filteredMaterials;
-};
-
-const getMaterialIcon = (materialId) => {
-  // Use getMaterialFieldById to search all categories at once without unnecessary warnings
-  return getMaterialFieldById(materialId, "icon");
-};
-
 const getRawData = (goal) => {
   // id??泥????먮━ 異붿텧
   // goal.typeを使用してキャラクター/武器を判別 (ゲーム共通)
@@ -247,23 +184,40 @@ const getRawData = (goal) => {
   }
 };
 
-// Debounced function to update materials
-const debouncedUpdateMaterial = useDebounceFn((id, quantity) => {
+// Queue for pending material updates (handles multiple rapid inputs)
+const pendingUpdates = ref(new Map());
 
-  inventoryStore.addMaterial(id, quantity); // ?낅뜲?댄듃 硫붿꽌???몄텧
-    updateFinalMaterialNeeds(); // Recalculate Material Needs
-    refreshFinalMaterialNeeds(); // Force refresh
+// Flush all pending updates after debounce
+const flushPendingUpdates = useDebounceFn(() => {
+  const updates = pendingUpdates.value;
+  if (updates.size === 0) return;
 
-  toast.success(`Item updated successfully: ${id}, Quantitiy: ${quantity}`, {
+  // Apply all pending updates
+  updates.forEach((quantity, id) => {
+    inventoryStore.addMaterial(id, quantity);
+  });
+
+  // Show single toast for batch update
+  const count = updates.size;
+  toast.success(`${count} item${count > 1 ? 's' : ''} updated successfully`, {
     position: 'bottom-center',
     autoClose: 2000,
     theme: 'dark',
   });
 
+  // Clear pending updates
+  pendingUpdates.value = new Map();
+
+  // Recalculate after all updates applied
+  updateFinalMaterialNeeds();
+  refreshFinalMaterialNeeds();
 }, 1000);
 
 const handleInventoryUpdate = ({ id, quantity }) => {
-  debouncedUpdateMaterial(id, quantity);
+  // Queue the update (overwrites previous value for same id)
+  pendingUpdates.value.set(id, quantity);
+  // Trigger debounced flush
+  flushPendingUpdates();
 };
 
 watch(
@@ -456,16 +410,19 @@ const removeGoal = (id, type) => {
   plannerStore.removeGoal(id, type);
 };
 
-// Hide goal
+// Hide goal (toggle)
 const hideGoal = (id, type) => {
-  if (!hiddenGoals.value[id]) {
+  const goal = goals.value.find(g => g.id === id && g.type === type);
+  if (!goal) return;
+
+  if (!goal.isHidden) {
     plannerStore.hideGoal(id, type);
-    hiddenGoals.value[id] = true;
-  }
-  else {
+  } else {
     plannerStore.revealGoal(id, type);
-    hiddenGoals.value[id] = false;
   }
+
+  // Estimated Planner部分を即座に更新
+  refreshFinalMaterialNeeds();
 };
 
 const updateCharacter = () => {
@@ -842,7 +799,6 @@ const completeGoal = (id, type) => {
 
     // Hide the goal
     plannerStore.hideGoal(id, type);
-    hiddenGoals.value[id] = true;
 
     // Recalculate materials (goal should now show 0 materials needed)
     const calculatedMaterials = plannerStore.calculateAllMaterials(id, type);
@@ -874,141 +830,107 @@ onMounted(() => {
 <style>
 .goals-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
 }
 
 .goal-border {
   border-radius: 12px;
-  padding: 13px;
+  padding: 4px;
   background-clip: border-box;
   position: relative;
+  aspect-ratio: 1 / 1;
 }
 
 .goal-border.hidden {
-  filter: grayscale(100%) !important; /* ?묐갚 泥섎━ */
-  opacity: 0.6 !important; /* Reduced opacity */
+  filter: grayscale(100%) !important;
+  opacity: 0.6 !important;
 }
+
 .goal-card {
   background-color: #f4f4f4;
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.goal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  /* Additional spacing between icons */
-}
-
-.character-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-
-.icon-container {
-  display: flex;
-  /* Flexbox for icon alignment */
-  align-items: center;
-  /* Vertical center alignment */
-  justify-content: flex-start;
-  /* ?쇱そ ?뺣젹 (?먰븯??寃쎌슦 center濡?蹂寃?媛?? */
-  flex-wrap: nowrap;
-  /* Force single line alignment */
-  gap: 8px;
-  /* Icon spacing */
-}
-
-.icon-6 {
-  width: 24px;
-  height: 24px;
-  color: #333;
-  cursor: pointer;
-  transition: transform 0.2s, opacity 0.2s;
-}
-
-.icon-6:hover {
-  transform: scale(1.1);
-  /* 留덉슦???ㅻ쾭 ???뺣? */
-  opacity: 0.8;
-  /* 留덉슦???ㅻ쾭 ??諛섑닾紐?*/
-}
-
-.delete-button,
-.hide-button,
-.edit-button,
-.complete-button {
-  background: none;
-  border: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* Center icon alignment */
-  cursor: pointer;
-  /* ?대┃ 媛?ν븳 紐⑥뼇 */
-}
-
-.delete-button:hover,
-.hide-button:hover,
-.edit-button:hover,
-.complete-button:hover {
-  opacity: 0.8;
-  /* 留덉슦???ㅻ쾭 ??諛섑닾紐?*/
-}
-
-.goal-materials {
-  margin-top: 12px;
-}
-
-.materials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.material-card {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.card-icon-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-.material-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+.card-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-.material-info {
+.card-name {
+  font-size: 12px;
+  font-weight: 600;
   text-align: center;
-  font-size: 12px;
+  margin: 8px 0;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  flex: 0 0 auto;
+  max-height: 30px;
+}
+
+.card-actions {
+  display: flex;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.action-btn {
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn svg {
+  width: 16px;
+  height: 16px;
   color: #333;
-  font-weight: bold;
 }
 
-.material-quantity {
-  color: black;
-  padding: 2px 6px;
-  font-size: 12px;
+.action-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
 }
 
-.complete-button .icon-6 {
+.action-btn.edit-btn:hover svg {
+  color: #4a90e2;
+}
+
+.action-btn.hide-btn:hover svg {
+  color: #666;
+}
+
+.action-btn.complete-btn:hover svg {
   color: #4caf50;
 }
 
-.complete-button:hover .icon-6 {
-  color: #45a049;
+.action-btn.delete-btn:hover svg {
+  color: #e53935;
 }
 </style>
-

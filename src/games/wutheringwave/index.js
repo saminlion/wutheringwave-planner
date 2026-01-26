@@ -12,6 +12,9 @@ import {
 // Game-specific components
 import CharacterDialog from './components/CharacterDialog.vue';
 
+// Game-specific material processor
+import * as materialProcessor from './materialProcessor';
+
 const dataCache = {
   characters: characterData,
   weapons: weaponData,
@@ -26,10 +29,13 @@ export const wutheringWavePlugin = {
   version: wutheringWaveConfig.version,
   config: wutheringWaveConfig,
 
-  // ゲーム専用コンポーネント
+  // Game-specific components
   components: {
     CharacterDialog,
   },
+
+  // Game-specific material processor
+  materialProcessor,
 
   async install() {
     return Promise.resolve();

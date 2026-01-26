@@ -13,23 +13,44 @@
                 </div>
                 <div class="setting-section scrollable">
                         <h3>Level</h3>
-                        <div>
+                        <div class="level-row">
                             <label>
                                 Current Level:
-                                <select v-model="settings.currentLevel" @change="updateweapon">
+                                <select
+                                    :value="settings?.currentLevel || '1'"
+                                    @change="onLevelChange('current', $event.target.value)"
+                                >
                                     <option v-for="item in levelItems" :key="item.value" :value="item.value">
                                         {{ item.label }}
                                     </option>
                                 </select>
                             </label>
+                            <span class="level-arrow">→</span>
                             <label>
                                 Target Level:
-                                <select v-model="settings.targetLevel" @change="updateweapon">
+                                <select
+                                    :value="settings?.targetLevel || '1'"
+                                    @change="onLevelChange('target', $event.target.value)"
+                                >
                                     <option v-for="item in levelItems" :key="item.value" :value="item.value">
                                         {{ item.label }}
                                     </option>
                                 </select>
                             </label>
+                        </div>
+
+                        <!-- Weapon Materials Display -->
+                        <div v-if="hasMaterials" class="materials-section">
+                            <div class="materials-title">Required Materials</div>
+                            <div class="materials-grid">
+                                <div v-for="(qty, matId) in filterMaterials(weaponMaterials)" :key="matId" class="material-item">
+                                    <img v-if="getMaterialIcon(matId)" :src="getMaterialIcon(matId)" class="material-icon" />
+                                    <span class="material-qty">{{ qty }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-else class="no-materials">
+                            <span>No materials needed</span>
                         </div>
                 </div>
             </div>
@@ -38,12 +59,14 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
 import { setGradientStyle } from '../../services/utils';
 import { useLocale } from '@/composables/useLocale';
+import { calculateWeaponMaterials } from '@/services/materialHelper/weapon';
+import { getMaterialFieldById } from '@/services/materialHelper/dbUtils';
 
 // i18n翻訳関数を取得
-const { tUI, tWeapon } = useLocale();
+const { tUI, tWeapon, tMaterial } = useLocale();
 
 const props = defineProps({
     visible: Boolean,
@@ -64,6 +87,61 @@ const closeDialog = () => {
 
 const updateweapon = () => {
     emit('updateweapon');
+};
+
+// Material calculations
+const weaponMaterials = computed(() => {
+    if (!props.weapon || !props.settings) return {};
+    try {
+        return calculateWeaponMaterials(props.settings, props.weapon, props.weapon?.rarity) || {};
+    } catch (e) {
+        return {};
+    }
+});
+
+// Helper to get material icon
+const getMaterialIcon = (materialId) => {
+    return getMaterialFieldById(materialId, 'icon');
+};
+
+// Filter out empty/zero quantities and processed marker
+const filterMaterials = (materials) => {
+    const filtered = {};
+    Object.entries(materials || {}).forEach(([id, qty]) => {
+        if (id !== 'processed' && qty > 0) {
+            filtered[id] = qty;
+        }
+    });
+    return filtered;
+};
+
+// Check if materials exist
+const hasMaterials = computed(() => Object.keys(filterMaterials(weaponMaterials.value)).length > 0);
+
+/**
+ * レベル変更ハンドラ
+ * current > target の場合は自動調整
+ */
+const onLevelChange = (type, value) => {
+    if (!props.settings) return;
+
+    const currentKey = type === 'current' ? 'currentLevel' : 'targetLevel';
+    props.settings[currentKey] = value;
+
+    // current > target の場合は調整
+    const items = props.levelItems || [];
+    const currentIdx = items.findIndex(item => item.value === props.settings.currentLevel);
+    const targetIdx = items.findIndex(item => item.value === props.settings.targetLevel);
+
+    if (currentIdx > targetIdx) {
+        if (type === 'current') {
+            props.settings.targetLevel = props.settings.currentLevel;
+        } else {
+            props.settings.currentLevel = props.settings.targetLevel;
+        }
+    }
+
+    updateweapon();
 };
 
 const toggleTier = (tierIndex) => {
@@ -128,6 +206,17 @@ onMounted(() => {
     flex: 1;
     overflow-y: auto;
     max-height: calc(100% - 50px);
+}
+
+.level-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.level-arrow {
+    font-size: 1.2rem;
+    color: #666;
 }
 
 .tabs {
@@ -247,5 +336,59 @@ button.close-dialog {
     border-radius: 8px;
     cursor: pointer;
     font-size: 14px;
+}
+
+/* Materials Section */
+.materials-section {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.materials-title {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.materials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.material-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.material-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.material-qty {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.no-materials {
+    margin-top: 20px;
+    padding: 16px;
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    background: #f5f5f5;
+    border-radius: 8px;
 }
 </style>

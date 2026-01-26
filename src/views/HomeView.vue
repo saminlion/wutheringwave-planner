@@ -45,7 +45,7 @@ const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 const gameStore = useGameStore();
 const userProfileStore = useUserProfileStore();
-const { tUI } = useLocale();
+const { tUI, loadGameLocales } = useLocale();
 
 const currentGameName = computed(() => gameStore.currentGameName);
 
@@ -53,13 +53,16 @@ const onGameChanged = (gameId) => {
   // GameSelector에서 이미 hydrate 처리됨
 };
 
-onMounted(() => {
+onMounted(async () => {
   // 초기 로드
   gameStore.hydrate();
   const gameId = gameStore.currentGameId;
   plannerStore.hydrate(gameId);
   inventoryStore.hydrate(gameId);
   userProfileStore.hydrate(gameId);
+
+  // 게임별 번역 파일 로드
+  await loadGameLocales(gameId);
 });
 </script>
 

@@ -33,7 +33,7 @@ const gameStore = useGameStore();
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 const userProfileStore = useUserProfileStore();
-const { tUI } = useLocale();
+const { tUI, loadGameLocales } = useLocale();
 
 const currentGameId = computed(() => gameStore.currentGameId);
 const enabledGames = computed(() => gameStore.enabledGames);
@@ -47,6 +47,9 @@ const selectGame = async (gameId) => {
     plannerStore.hydrate(gameId);
     inventoryStore.hydrate(gameId);
     userProfileStore.hydrate(gameId);
+
+    // 게임별 번역 파일 로드
+    await loadGameLocales(gameId);
 
     logger.info(`Game switched to: ${gameId}`);
     emit('gameChanged', gameId);
