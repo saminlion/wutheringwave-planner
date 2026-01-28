@@ -124,33 +124,45 @@ const weaponLevelItems = computed(() => gameStore.formFields?.weaponLevelItems |
 // 현재 게임의 티어 재료 데이터
 const tieredMaterials = computed(() => gameStore.getData('tiers') || {});
 
-// 現在ゲームのplayer_exp材料 (動的取得、value降順ソート) - 配列形式
-const playerExpMaterials = computed(() => {
+// 動的expカテゴリ検出: materials.jsonでvalueフィールドを持つカテゴリを自動検出
+const expCategories = computed(() => {
   const materials = gameStore.getData('materials') || {};
-  const playerExpCategory = materials.player_exp || {};
-  return Object.values(playerExpCategory)
-    .filter(m => m.game_id && m.value)
-    .map(m => ({ id: m.game_id, value: m.value }))
-    .sort((a, b) => b.value - a.value); // 大きい順
-});
-
-// calculatePlayerExp用のオブジェクト形式 { game_id: { exp_value } }
-const expMaterialTypeStructure = computed(() => {
   const result = {};
-  playerExpMaterials.value.forEach(m => {
-    result[m.id] = { exp_value: m.value };
+
+  // 全カテゴリをスキャンしてvalueフィールドを持つものをexp扱い
+  Object.entries(materials).forEach(([categoryName, categoryData]) => {
+    // カテゴリ内の最初のアイテムをチェック
+    const firstItem = Object.values(categoryData || {})[0];
+    if (firstItem && typeof firstItem.value === 'number') {
+      // このカテゴリはexpカテゴリ
+      result[categoryName] = Object.values(categoryData)
+        .filter(m => m.game_id && m.value)
+        .map(m => ({ id: m.game_id, value: m.value }))
+        .sort((a, b) => b.value - a.value); // 大きい順
+    }
   });
+
   return result;
 });
 
-// 現在ゲームのweapon_exp材料 (動的取得、value降順ソート) - 配列形式
-const weaponExpMaterials = computed(() => {
-  const materials = gameStore.getData('materials') || {};
-  const weaponExpCategory = materials.weapon_exp || {};
-  return Object.values(weaponExpCategory)
-    .filter(m => m.game_id && m.value)
-    .map(m => ({ id: m.game_id, value: m.value }))
-    .sort((a, b) => b.value - a.value); // 大きい順
+// expカテゴリかどうかを判定
+const isExpCategory = (categoryName) => {
+  return categoryName in expCategories.value;
+};
+
+// 特定expカテゴリの材料リスト取得
+const getExpMaterials = (categoryName) => {
+  return expCategories.value[categoryName] || [];
+};
+
+// calculatePlayerExp用のオブジェクト形式 { game_id: { exp_value } } (player_exp用、互換性維持)
+const expMaterialTypeStructure = computed(() => {
+  const result = {};
+  const playerExpMats = expCategories.value['player_exp'] || [];
+  playerExpMats.forEach(m => {
+    result[m.id] = { exp_value: m.value };
+  });
+  return result;
 });
 
 const inventory = computed(() => inventoryStore.inventory);
@@ -268,7 +280,8 @@ const updateFinalMaterialNeeds = () => {
 
   // Process all materials from totalNeeds (original needs from goals)
   Object.entries(totalNeeds).forEach(([materialId, needQty]) => {
-    if (materialId === 'player_exp' || materialId === 'weapon_exp' || materialId === 'processed') {
+    // expカテゴリとprocessedはスキップ (動的判定)
+    if (isExpCategory(materialId) || materialId === 'processed') {
       return; // Skip, handled separately
     }
 
@@ -287,18 +300,20 @@ const updateFinalMaterialNeeds = () => {
     };
   });
 
-  // Add player_exp as a single category (FinalMaterialNeeds will handle individual potions)
-  if (totalNeeds.player_exp && totalNeeds.player_exp > 0) {
-    formattedResults['player_exp'] = {
-      need: totalNeeds.player_exp,
-      shortage: 0,
-      synthesize: 0,
-      owned: 0,
-      label: 'Player EXP',
-      category: 'player_exp',
-      subcategory: 'player_exp',
-    };
-  }
+  // 動的expカテゴリ追加 (FinalMaterialNeedsが個別アイテムを処理)
+  Object.keys(expCategories.value).forEach((expCategoryName) => {
+    if (totalNeeds[expCategoryName] && totalNeeds[expCategoryName] > 0) {
+      formattedResults[expCategoryName] = {
+        need: totalNeeds[expCategoryName],
+        shortage: 0,
+        synthesize: 0,
+        owned: 0,
+        label: expCategoryName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()), // snake_case → Title Case
+        category: expCategoryName,
+        subcategory: expCategoryName,
+      };
+    }
+  });
 
   logger.debug("Final Material Needs:", formattedResults);
 
@@ -340,7 +355,8 @@ const finalMaterialNeeds = computed(() => {
 
   // Process all materials from totalNeeds (original needs from goals)
   Object.entries(totalNeeds).forEach(([materialId, needQty]) => {
-    if (materialId === 'player_exp' || materialId === 'weapon_exp' || materialId === 'processed') {
+    // expカテゴリとprocessedはスキップ (動的判定)
+    if (isExpCategory(materialId) || materialId === 'processed') {
       return; // Skip, handled separately
     }
 
@@ -359,18 +375,20 @@ const finalMaterialNeeds = computed(() => {
     };
   });
 
-  // Add player_exp as a single category (FinalMaterialNeeds will handle individual potions)
-  if (totalNeeds.player_exp && totalNeeds.player_exp > 0) {
-    formattedResults['player_exp'] = {
-      need: totalNeeds.player_exp,
-      shortage: 0,
-      synthesize: 0,
-      owned: 0,
-      label: 'Player EXP',
-      category: 'player_exp',
-      subcategory: 'player_exp',
-    };
-  }
+  // 動的expカテゴリ追加 (FinalMaterialNeedsが個別アイテムを処理)
+  Object.keys(expCategories.value).forEach((expCategoryName) => {
+    if (totalNeeds[expCategoryName] && totalNeeds[expCategoryName] > 0) {
+      formattedResults[expCategoryName] = {
+        need: totalNeeds[expCategoryName],
+        shortage: 0,
+        synthesize: 0,
+        owned: 0,
+        label: expCategoryName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+        category: expCategoryName,
+        subcategory: expCategoryName,
+      };
+    }
+  });
 
   logger.debug("Final Material Needs:", formattedResults);
 
@@ -483,21 +501,19 @@ const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tie
   for (const [materialId, requiredQty] of Object.entries(requiredMaterials)) {
     if (materialId === 'processed') continue;
 
-    // Skip player_exp and weapon_exp - they use special calculation logic
-    if (materialId === 'player_exp' || materialId === 'weapon_exp') {
-      // ゲーム共通: exp材料の合計を動的に計算
-      if (materialId === 'player_exp') {
-        const totalExpAvailable = playerExpMaterials.value.reduce((sum, m) => {
-          return sum + (currentInventory[m.id] || 0) * m.value;
-        }, 0);
+    // 動的expカテゴリ判定 - 特別な計算ロジック使用
+    if (isExpCategory(materialId)) {
+      const expMats = getExpMaterials(materialId);
+      const totalExpAvailable = expMats.reduce((sum, m) => {
+        return sum + (currentInventory[m.id] || 0) * m.value;
+      }, 0);
 
-        if (totalExpAvailable < requiredQty) {
-          shortages.push({
-            materialId,
-            materialName: 'Player EXP',
-            needed: requiredQty - totalExpAvailable,
-          });
-        }
+      if (totalExpAvailable < requiredQty) {
+        shortages.push({
+          materialId,
+          materialName: materialId.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+          needed: requiredQty - totalExpAvailable,
+        });
       }
       continue;
     }
@@ -744,50 +760,27 @@ const completeGoal = (id, type) => {
     Object.entries(goal.materials || {}).forEach(([materialId, quantity]) => {
       if (materialId === 'processed') return; // Skip processed marker
 
-      // ゲーム共通: player_expを個別のポーションから差し引く
-      if (materialId === 'player_exp') {
+      // 動的expカテゴリ処理: 個別のアイテムから差し引く
+      if (isExpCategory(materialId)) {
         let remainingExp = quantity;
-        // playerExpMaterialsは既にvalue降順でソート済み
-        for (const potion of playerExpMaterials.value) {
-          const available = inventory.value[potion.id] || 0;
-          const needed = Math.ceil(remainingExp / potion.value);
+        const expMats = getExpMaterials(materialId); // 既にvalue降順でソート済み
+
+        for (const item of expMats) {
+          const available = inventory.value[item.id] || 0;
+          const needed = Math.ceil(remainingExp / item.value);
           const toUse = Math.min(available, needed);
 
           if (toUse > 0) {
-            inventoryStore.removeMaterial(potion.id, toUse);
-            remainingExp -= toUse * potion.value;
-            logger.debug(`Deducted ${toUse}x ${getMaterialFieldById(potion.id, 'label')} (${toUse * potion.value} exp)`);
+            inventoryStore.removeMaterial(item.id, toUse);
+            remainingExp -= toUse * item.value;
+            logger.debug(`Deducted ${toUse}x ${getMaterialFieldById(item.id, 'label')} (${toUse * item.value} exp)`);
           }
 
           if (remainingExp <= 0) break;
         }
 
         if (remainingExp > 0) {
-          logger.warn(`Could not deduct all player_exp: ${remainingExp} exp remaining`);
-        }
-        return;
-      }
-
-      // ゲーム共通: weapon_expを個別のコアから差し引く
-      if (materialId === 'weapon_exp') {
-        let remainingExp = quantity;
-        // weaponExpMaterialsは既にvalue降順でソート済み
-        for (const core of weaponExpMaterials.value) {
-          const available = inventory.value[core.id] || 0;
-          const needed = Math.ceil(remainingExp / core.value);
-          const toUse = Math.min(available, needed);
-
-          if (toUse > 0) {
-            inventoryStore.removeMaterial(core.id, toUse);
-            remainingExp -= toUse * core.value;
-            logger.debug(`Deducted ${toUse}x ${getMaterialFieldById(core.id, 'label')} (${toUse * core.value} exp)`);
-          }
-
-          if (remainingExp <= 0) break;
-        }
-
-        if (remainingExp > 0) {
-          logger.warn(`Could not deduct all weapon_exp: ${remainingExp} exp remaining`);
+          logger.warn(`Could not deduct all ${materialId}: ${remainingExp} exp remaining`);
         }
         return;
       }

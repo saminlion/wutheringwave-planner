@@ -119,9 +119,12 @@ This command helps set up a new game plugin for the Multi-Game Planner.
 - [ ] ascension - 캐릭터별 승급 재료
 - [ ] boss - 보스 드랍 재료
 - [ ] weeklyBoss - 주간 보스 재료
-- [ ] player_exp - 캐릭터 경험치
-- [ ] weapon_exp - 무기 경험치
+- [ ] player_exp - 캐릭터 경험치 ⭐
+- [ ] weapon_exp - 무기 경험치 ⭐
+- [ ] skill_exp - 스킬 경험치 ⭐
 - [ ] 기타: ________________
+
+⭐ **EXP 카테고리**: `value` 필드가 있으면 자동으로 EXP 타입으로 인식됨 (코드 수정 불필요)
 
 **티어가 있는 재료는?** (예: common T1→T2→T3→T4)
 ```
@@ -249,8 +252,11 @@ This command helps set up a new game plugin for the Multi-Game Planner.
 | 30   | ascension | 캐릭터별 승급 재료 |
 | 40   | boss | 보스 재료 |
 | 50   | weeklyBoss | 주간 보스 재료 |
-| 60   | player_exp | 캐릭터 경험치 |
-| 70   | weapon_exp | 무기 경험치 |
+| 60   | player_exp | 캐릭터 경험치 ⭐ |
+| 70   | weapon_exp | 무기 경험치 ⭐ |
+| 80   | skill_exp | 스킬 경험치 ⭐ |
+
+⭐ = EXP 카테고리 (value 필드 필수, 자동 인식)
 
 ### 티어 규칙 (NNNN)
 
@@ -351,9 +357,34 @@ This command helps set up a new game plugin for the Multi-Game Planner.
       "SubCategory": "group_name",
       "tier": 1
     }
+  },
+  "player_exp": {
+    "{game_code}160010001": {
+      "game_id": "{game_code}160010001",
+      "label": "경험치 포션 S",
+      "icon": "https://...",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "tier": 2,
+      "value": 200
+    },
+    "{game_code}160010002": {
+      "game_id": "{game_code}160010002",
+      "label": "경험치 포션 M",
+      "icon": "https://...",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "tier": 3,
+      "value": 1000
+    }
   }
 }
 ```
+
+### EXP 카테고리 규칙
+- `value` 필드가 있는 카테고리는 자동으로 EXP 타입으로 인식
+- 새로운 EXP 카테고리 추가 시 코드 수정 불필요
+- 예: `player_exp`, `weapon_exp`, `skill_exp` 등
 
 ## 4. costs.json
 

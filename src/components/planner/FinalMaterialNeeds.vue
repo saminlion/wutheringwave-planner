@@ -72,11 +72,16 @@
 
                         <ul class="materials-grid">
                             <!-- player_exp ?먮뒗 weapon_exp 泥섎━ -->
-                                                        <template v-if="category.name === 'player_exp' || category.name === 'weapon_exp'">
+                                                        <template v-if="isExpCategory(category.name)">
+                                <!-- Need badge: 不足している場合 -->
                                 <li class="material-set" v-if="totalExpNeed(category) > 0">
-                                    Need: {{ totalExpNeed(category) }}
+                                    <span class="badge badge-need">Need: {{ totalExpNeed(category) }}</span>
                                 </li>
-                                <li class="material-card" v-for="(expDetails, id) in player_exp_material" :key="id">
+                                <!-- Complete badge: 必要量があり、全て揃った場合 -->
+                                <li class="material-set" v-else-if="getTotalExpRequired(category) > 0">
+                                    <span class="badge badge-complete">✓ Complete</span>
+                                </li>
+                                <li class="material-card" v-for="(expDetails, id) in getExpMaterialForCategory(category.name)" :key="id">
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(id)" :src="getMaterialIcon(id)" alt="material icon"
                                             class="material-icon" />
@@ -136,20 +141,20 @@
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
                                             <!-- Need badge: 合成後もowned < needの場合のみ表示 -->
-                                            <span class="badge badge-need" v-if="(getMaterialQuantity(task.id) + task.synthesize) < task.need">
-                                                Need: {{ task.need - getMaterialQuantity(task.id) - task.synthesize }}
+                                            <span class="badge badge-need" v-if="(getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need">
+                                                Need: {{ task.need - getMaterialQuantity(task.id) - (task.synthesize || 0) }}
                                             </span>
                                             <!-- Complete badge: 合成後owned >= needの場合 -->
                                             <span class="badge badge-complete" v-else-if="task.need > 0">
                                                 ✓ Complete
                                             </span>
                                             <!-- Synthesize badge -->
-                                            <span class="badge badge-synthesize" v-if="task.synthesize > 0">
+                                            <span class="badge badge-synthesize" v-if="(task.synthesize || 0) > 0">
                                                 Synthesize: {{ task.synthesize }}
                                             </span>
                                             <span class="badge" :class="{
-                                                'badge-owned-green': (getMaterialQuantity(task.id) + task.synthesize) >= task.need,
-                                                'badge-owned-red': (getMaterialQuantity(task.id) + task.synthesize) < task.need,
+                                                'badge-owned-green': (getMaterialQuantity(task.id) + (task.synthesize || 0)) >= task.need,
+                                                'badge-owned-red': (getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need,
                                             }">
                                                 Owned: {{ getMaterialQuantity(task.id) }}
                                             </span>
@@ -171,6 +176,7 @@
 
 <script setup>
 import { ref, reactive, computed, onMounted, watch } from "vue";
+import { storeToRefs } from 'pinia';
 import {
     findMaterial,
     calculatePlayerExp,
@@ -194,6 +200,7 @@ const translateCategoryName = (categoryName) => {
 };
 
 const inventoryStore = useInventoryStore();
+const { inventory } = storeToRefs(inventoryStore);  // Reactive inventory reference
 const gameStore = useGameStore();
 const userProfileStore = useUserProfileStore();
 
@@ -238,20 +245,38 @@ const getDungeonDataForCategory = (subCategory, level = selectedDungeonLevel.val
     return config.getDungeonDataBySubCategory(subCategory, level);
 };
 
-// player_exp材料のマッピング（game_id → exp値）を動的に取得
-const player_exp_material = computed(() => {
+// 動的expカテゴリマッピング: materials.jsonでvalueフィールドを持つカテゴリを自動検出
+const expCategoryMaterials = computed(() => {
     const materials = gameStore.getData('materials') || {};
-    const playerExpCategory = materials.player_exp || {};
+    const result = {};
 
-    const mapping = {};
-    Object.values(playerExpCategory).forEach(material => {
-        if (material.game_id && material.value) {
-            mapping[material.game_id] = material.value;
+    // 全カテゴリをスキャンしてvalueフィールドを持つものをexp扱い
+    Object.entries(materials).forEach(([categoryName, categoryData]) => {
+        const firstItem = Object.values(categoryData || {})[0];
+        if (firstItem && typeof firstItem.value === 'number') {
+            // このカテゴリはexpカテゴリ
+            const mapping = {};
+            Object.values(categoryData).forEach(material => {
+                if (material.game_id && material.value) {
+                    mapping[material.game_id] = material.value;
+                }
+            });
+            result[categoryName] = mapping;
         }
     });
 
-    return mapping;
+    return result;
 });
+
+// カテゴリがexpカテゴリかどうかを判定
+const isExpCategory = (categoryName) => {
+    return categoryName in expCategoryMaterials.value;
+};
+
+// カテゴリに応じたexp材料を取得 (動的)
+const getExpMaterialForCategory = (categoryName) => {
+    return expCategoryMaterials.value[categoryName] || {};
+};
 
 // Get stamina config from current game
 const getStaminaConfig = () => {
@@ -390,7 +415,7 @@ watch(
 );
 
 const getMaterialQuantity = (id) => {
-    return inventoryStore.getMaterialQuantity(id) || 0;
+    return inventory.value[id] || 0;  // Reactive: storeToRefsでinventoryを参照
 };
 
 const setMaterialQuantity = (id, value) => {
@@ -401,6 +426,8 @@ const setMaterialQuantity = (id, value) => {
 const totalExpNeed = (category) => {
     if (!category.subCategories) return 0;
 
+    // カテゴリに応じたexp材料を取得
+    const expMaterial = getExpMaterialForCategory(category.name);
     let missingTotalExp = 0;
 
     for (const [subcategoryName, subcategoryData] of Object.entries(category.subCategories)) {
@@ -409,8 +436,8 @@ const totalExpNeed = (category) => {
         subcategoryData.task.forEach((task) => {
             missingCalExp = task.need;
 
-            Object.entries(player_exp_material.value).forEach(([id, exp]) => {
-                currentTotalExp += inventoryStore.getMaterialQuantity(id) * exp;
+            Object.entries(expMaterial).forEach(([id, exp]) => {
+                currentTotalExp += (inventory.value[id] || 0) * exp;
             });
         });
 
@@ -420,41 +447,37 @@ const totalExpNeed = (category) => {
     return missingTotalExp;
 };
 
-const getMaterialIcon = (materialId) => {
-    const types = [
-        "common",
-        "ascension",
-        "boss",
-        "weeklyBoss",
-        "player_exp",
-        "weapon_exp",
-        "forgery",
-        "credit",
-    ];
+// カテゴリの全体必要EXP量を取得 (インベントリに関係なく)
+const getTotalExpRequired = (category) => {
+    if (!category.subCategories) return 0;
 
-    // player_exp/weapon_expの場合、材料データベースから最高ティアを探す
-    if (materialId === 'player_exp' || materialId === 'weapon_exp') {
+    let totalRequired = 0;
+    for (const [subcategoryName, subcategoryData] of Object.entries(category.subCategories)) {
+        subcategoryData.task.forEach((task) => {
+            totalRequired += task.need || 0;
+        });
+    }
+    return totalRequired;
+};
+
+const getMaterialIcon = (materialId) => {
+    // 動的expカテゴリの場合、材料データベースから最高ティアを探す
+    if (isExpCategory(materialId)) {
         const materials = gameStore.getData('materials') || {};
         const expCategory = materials[materialId];
         if (expCategory) {
-            // 最高ティア（ティア4）のアイコンを取得
-            const highestTierItem = Object.values(expCategory).find(item => item.tier === 4);
-            if (highestTierItem) {
-                return highestTierItem.icon;
+            // 最高ティアのアイコンを取得 (value降順で最初のもの)
+            const items = Object.values(expCategory).filter(item => item.icon);
+            const highestItem = items.reduce((max, item) =>
+                (item.value || 0) > (max?.value || 0) ? item : max, null);
+            if (highestItem) {
+                return highestItem.icon;
             }
         }
         return null;
     }
 
     return getMaterialFieldById(materialId, 'icon');
-
-    for (const type of types) {
-        const material = findMaterial(type, materialId, null, true);
-        if (material) {
-            return getMaterialField(material, 'icon');
-        }
-    }
-    return null;
 };
 
 // Group material data by category and subcategory
@@ -476,7 +499,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
         let subCategory, category, name, owned, synthesize, need;
 
         // player_exp ?먮뒗 weapon_exp???밸퀎 泥섎━
-        if (materialId === 'player_exp' || materialId === 'weapon_exp') {
+        if (isExpCategory(materialId)) {
             subCategory = materialId;
             category = materialId;
                         name = materialId; // Name additional
@@ -600,7 +623,7 @@ const CalculateEstimatedRun = (data) => {
 
                 // 媛?task瑜??쒗쉶?섎㈃???덉뼱?꾨퀎 ?꾩슂?됱쓣 ?꾩쟻
                 subcategoryData.task.forEach((task) => {
-                    const actualNeed = Math.max(0, task.need - (task.owned + task.synthesize));
+                    const actualNeed = Math.max(0, task.need - (task.owned + (task.synthesize || 0)));
 
                     if (actualNeed > 0 && task.tier >= 2 && task.tier <= 5) {
                         missing[task.tier - 2] += actualNeed; // ?덉뼱???몃뜳?ㅼ뿉 ?꾩쟻
@@ -614,19 +637,19 @@ const CalculateEstimatedRun = (data) => {
 
                 runs = missingTotal / drops;
             }
-            else if (categoryName === "player_exp" || categoryName === "weapon_exp") {
-
+            else if (isExpCategory(categoryName)) {
+                // 動的expカテゴリ処理
                 let missingCalExp, currentTotalExp = 0;
-
+                // カテゴリに応じたexp材料を取得
+                const expMaterial = getExpMaterialForCategory(categoryName);
 
                 subcategoryData.task.forEach((task) => {
 
                     missingCalExp = task.need;
 
+                    Object.entries(expMaterial).forEach(([id, exp]) => {
 
-                    Object.entries(player_exp_material.value).forEach(([id, exp]) => {
-
-                        const exp_value = inventoryStore.getMaterialQuantity(id) * exp;
+                        const exp_value = (inventory.value[id] || 0) * exp;
 
                         currentTotalExp += exp_value;
                     });

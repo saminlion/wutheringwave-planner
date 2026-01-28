@@ -61,6 +61,24 @@ export const useInventoryStore = defineStore('inventory', {
       logger.debug('Set new inventory:', this.inventory);
     },
 
+    // Set a specific material's quantity (for input fields)
+    setMaterialQuantity(materialId, quantity) {
+      if (!materialId) {
+        logger.warn(`Invalid materialId: ${materialId}`);
+        return;
+      }
+
+      const newQuantity = Math.max(0, quantity);
+      if (newQuantity === 0) {
+        delete this.inventory[materialId];
+      } else {
+        this.inventory[materialId] = newQuantity;
+      }
+      logger.debug(`Set material ${materialId} to ${newQuantity}`);
+
+      this.saveInventory(this.currentGameId);
+    },
+
     saveInventory(gameId)
     {
       if (!gameId) return;

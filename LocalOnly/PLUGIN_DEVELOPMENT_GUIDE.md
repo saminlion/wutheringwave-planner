@@ -41,6 +41,31 @@ tests/games/{gameid}-materialProcessor.test.js
 
 ---
 
+## EXP Category (Dynamic Detection)
+
+**Important:** Categories with `value` field are automatically detected as EXP types.
+
+```json
+// materials.json
+{
+  "player_exp": {
+    "potion_s": { "game_id": "123", "value": 200, ... }
+  },
+  "weapon_exp": {
+    "core_s": { "game_id": "456", "value": 200, ... }
+  },
+  "skill_exp": {
+    "book_s": { "game_id": "789", "value": 500, ... }
+  }
+}
+```
+
+- **No code changes required** when adding new EXP categories
+- Just add `value` field to materials → automatically handled
+- See `CLAUDE.md` → "Dynamic EXP Category System" for details
+
+---
+
 ## Reference Implementations
 - **WutheringWaves**: `src/games/wutheringwave/` (simple)
 - **Endfield**: `src/games/endfield/` (complex)

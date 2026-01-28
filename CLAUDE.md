@@ -172,9 +172,23 @@ src/games/newgame/
   },
   "forgery": { ... },
   "ascension": { ... },
-  "boss": { ... }
+  "boss": { ... },
+  "player_exp": {
+    "exp_001": {
+      "game_id": "exp_001",
+      "label": "EXP Potion S",
+      "icon": "/path/to/icon.png",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "tier": 2,
+      "value": 200
+    }
+  },
+  "weapon_exp": { ... }
 }
 ```
+
+**Note:** Categories with `value` field are automatically detected as EXP categories. See [Dynamic EXP Category System](#dynamic-exp-category-system).
 
 **costs.json:**
 ```json
@@ -402,6 +416,76 @@ FinalMaterialNeeds.vue displays results
 - Store game_id in character data
 - Use `quantity` format in costs.json
 - Use `findMaterial(category, gameId, null, true)` to look up
+
+---
+
+## Dynamic EXP Category System
+
+The planner automatically detects EXP-type categories from `materials.json`. **No code changes required** when adding new EXP categories.
+
+### Detection Rule
+Any category where items have a `value` field (number) is treated as an EXP category:
+```json
+{
+  "player_exp": {
+    "potion_s": { "game_id": "123", "value": 200, ... },
+    "potion_m": { "game_id": "124", "value": 1000, ... }
+  },
+  "weapon_exp": {
+    "core_s": { "game_id": "456", "value": 200, ... }
+  },
+  "skill_exp": {
+    "book_s": { "game_id": "789", "value": 500, ... }
+  }
+}
+```
+
+### Supported Features (Automatic)
+- **Planner display**: Shows as single category with total EXP needed
+- **Inventory tracking**: Individual item quantities tracked
+- **Complete badge**: Shows when total owned EXP >= required EXP
+- **Goal completion**: Deducts from highest-value items first
+- **Estimated runs**: Calculates farming runs based on stamina config
+
+### Adding New EXP Category
+1. Add category to `materials.json` with `value` field on each item:
+```json
+{
+  "skill_exp": {
+    "book_001": {
+      "game_id": "skill_book_001",
+      "label": "Skill Book S",
+      "icon": "...",
+      "Category": "skill_exp",
+      "SubCategory": "skill_exp",
+      "tier": 2,
+      "value": 500
+    }
+  }
+}
+```
+
+2. Add to `config.js` stamina farmingRates (for Estimated calculations):
+```javascript
+stamina: {
+  farmingRates: {
+    skill_exp: { drops: 5000, stamina: 40 }
+  }
+}
+```
+
+3. Use in `costs.json`:
+```json
+{
+  "character": {
+    "skill": {
+      "2": { "skill_exp": 1000 }
+    }
+  }
+}
+```
+
+**That's it!** The planner will automatically handle the new EXP category.
 
 ---
 
