@@ -5,11 +5,6 @@
     <!-- 게임 선택 -->
     <GameSelector @gameChanged="onGameChanged" />
 
-    <!-- 현재 게임 정보 -->
-    <div class="current-game-info">
-      <p>{{ tUI('home.currentGame') }}: <strong>{{ currentGameName }}</strong></p>
-    </div>
-
     <!-- 네비게이션 -->
     <div class="nav-cards">
       <router-link to="/planner" class="nav-card">
@@ -47,8 +42,6 @@ const gameStore = useGameStore();
 const userProfileStore = useUserProfileStore();
 const { tUI, loadGameLocales } = useLocale();
 
-const currentGameName = computed(() => gameStore.currentGameName);
-
 const onGameChanged = (gameId) => {
   // GameSelector에서 이미 hydrate 처리됨
 };
@@ -78,12 +71,6 @@ onMounted(async () => {
   font-size: 2rem;
   margin-bottom: 2rem;
   color: #333;
-}
-
-.current-game-info {
-  text-align: center;
-  margin: 1.5rem 0;
-  color: #666;
 }
 
 .nav-cards {
