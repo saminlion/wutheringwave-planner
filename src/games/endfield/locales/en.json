@@ -125,5 +125,8 @@
     "5130010034": "Quadrant Fitting Fluid",
     "5130010035": "Triphasic Nanoflake",
     "5130010036": "Mark of Perseverance"
+  },
+  "ui": {
+    "stamina.name": "Sanity"
   }
 }

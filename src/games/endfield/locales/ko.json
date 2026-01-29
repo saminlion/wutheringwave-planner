@@ -127,15 +127,16 @@
     "5130010036": "존속의 흔적"
   },
 "ui": {
-  "category.bolete": "버섯",
-  "category.onyx": "흑암석",
-  "category.odendra": "덴드라",
-  "category.credit": "화폐",
-  "category.player_exp": "작전 기록",
-  "category.weapon_exp": "무기 점검",
-  "category.proto_asc": "디스크",
-  "category.proto_skill": "프리즘",
-  "category.cast_die": "모형 틀",
-  "category.special": "특수 재료"
-}
+    "category.bolete": "버섯",
+    "category.onyx": "흑암석",
+    "category.odendra": "덴드라",
+    "category.credit": "화폐",
+    "category.player_exp": "작전 기록",
+    "category.weapon_exp": "무기 점검",
+    "category.proto_asc": "디스크",
+    "category.proto_skill": "프리즘",
+    "category.cast_die": "모형 틀",
+    "category.special": "특수 재료",
+    "stamina.name": "이성"
+  }
 }

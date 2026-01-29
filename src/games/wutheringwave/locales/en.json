@@ -287,5 +287,8 @@
     "4170010002": "Medium Energy Core",
     "4170010003": "Advanced Energy Core",
     "4170010004": "Preminum Energy Core"
+  },
+  "ui": {
+    "stamina.name": "Waveplates"
   }
 }

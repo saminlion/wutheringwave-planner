@@ -1,28 +1,28 @@
 <template>
     <div class="final-material-needs">
-        <h2>Final Material Needs</h2>
+        <h2>{{ tUI('final.title') }}</h2>
 
         <!-- ダンジョンレベル選択器 (ゲームConfigで制御) -->
         <div v-if="showDungeonLevelSelector" class="dungeon-level-selector">
-            <label for="dungeon-level">Dungeon Level:</label>
+            <label for="dungeon-level">{{ tUI('final.dungeon_level') }}:</label>
             <select id="dungeon-level" v-model="selectedDungeonLevel" @change="onDungeonLevelChange">
                 <option v-for="level in 5" :key="level" :value="level">
                     Lv.{{ level }}
                 </option>
             </select>
             <span class="dungeon-info">
-                (Stamina: {{ currentDungeonStamina }})
+                ({{ staminaName }}: {{ currentDungeonStamina }})
             </span>
         </div>
 
         <!-- Total Material Calculation Section -->
         <div class="summary-container">
             <div class="summary-card">
-                <h3><i class="fas fa-fire"></i> Total Required Materials</h3>
+                <h3><i class="fas fa-fire"></i> {{ tUI('final.total_required') }} {{ staminaName }}</h3>
                 <p>{{ totalValues.totalResin }}</p>
             </div>
             <div class="summary-card">
-                <h3><i class="fas fa-clock"></i> Estimated Days Required</h3>
+                <h3><i class="fas fa-clock"></i> {{ tUI('final.estimated_days') }}</h3>
                 <p>{{ totalValues.totalDays }} </p>
             </div>
         </div>
@@ -42,28 +42,28 @@
                             <!-- Endfield Forgery: ティア別表示 -->
                             <template v-if="estimate.isTierSeparated">
                                 <div class="tier-estimate tier2-estimate" v-if="estimate.tier2.need > 0">
-                                    <p class="tier-label">Tier2 ({{ estimate.tier2.need }}개)</p>
-                                    <p>Runs: {{ estimate.tier2.runs }} ({{ estimate.tier2.resin }} stamina)</p>
+                                    <p class="tier-label">{{ tUI('final.tier') }}2 ({{ estimate.tier2.need }})</p>
+                                    <p>{{ tUI('final.runs') }}: {{ estimate.tier2.runs }} ({{ estimate.tier2.resin }} {{ staminaName }})</p>
                                 </div>
                                 <div class="tier-estimate tier3-estimate" v-if="estimate.tier3.need > 0">
-                                    <p class="tier-label">Tier3 ({{ estimate.tier3.need }}개)</p>
-                                    <p>Runs: {{ estimate.tier3.runs }} ({{ estimate.tier3.resin }} stamina)</p>
+                                    <p class="tier-label">{{ tUI('final.tier') }}3 ({{ estimate.tier3.need }})</p>
+                                    <p>{{ tUI('final.runs') }}: {{ estimate.tier3.runs }} ({{ estimate.tier3.resin }} {{ staminaName }})</p>
                                 </div>
                                 <div class="tier-total">
-                                    <p><strong>Total: {{ estimate.run }} runs, {{ estimate.resin }} stamina</strong></p>
-                                    <p>Estimated Days: <span class="font-semibold">{{ estimate.date }}</span></p>
+                                    <p><strong>{{ tUI('final.total') }}: {{ estimate.run }} {{ tUI('final.runs') }}, {{ estimate.resin }} {{ staminaName }}</strong></p>
+                                    <p>{{ tUI('final.estimated_days') }}: <span class="font-semibold">{{ estimate.date }}</span></p>
                                 </div>
                             </template>
                             <!-- 通常表示 (WW / Endfield non-forgery) -->
                             <template v-else>
-                                <p>Estimated Runs: {{ estimate.run }}</p>
-                                <p>Estimated Resin: {{ estimate.resin }}</p>
+                                <p>{{ tUI('final.estimated_runs') }}: {{ estimate.run }}</p>
+                                <p>{{ tUI('final.estimated_stamina') }} {{ staminaName }}: {{ estimate.resin }}</p>
                                 <p v-if="subCategory.name !== 'weeklyboss'">
-                                    Estimated Time:
+                                    {{ tUI('final.estimated_time') }}:
                                     <span class="font-semibold">{{ estimate.date }}</span>
                                 </p>
                                 <p v-else>
-                                    Estimated Date:
+                                    {{ tUI('final.estimated_date') }}:
                                     <span class="font-semibold">{{ estimate.date }}</span>
                                 </p>
                                 <p v-if="estimate.note" class="estimate-note">{{ estimate.note }}</p>
@@ -212,6 +212,16 @@ const currentDungeonStamina = computed(() => {
     const config = gameConfig.value;
     if (!config?.dungeonData?.proto_skill) return 80;
     return config.dungeonData.proto_skill[selectedDungeonLevel.value]?.stamina || 80;
+});
+
+// スタミナ名（ゲーム固有翻訳）
+const staminaName = computed(() => {
+    const translated = tUI('stamina.name');
+    // 翻訳が見つからない場合はconfig.stamina.nameを使用
+    if (translated === 'stamina.name') {
+        return gameConfig.value?.stamina?.name || 'Stamina';
+    }
+    return translated;
 });
 
 // 던전 레벨 변경 시 캐시 리셋

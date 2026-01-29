@@ -13,19 +13,19 @@
                         <img v-if="item.icon" :src="item.icon" class="item-icon" />
                         <div class="item-details">
                             <div class="detail-row">
-                                <span class="label">Required:</span>
+                                <span class="label">{{ tUI('dialog.required') }}:</span>
                                 <span class="value">{{ formatNumber(item.need) }}</span>
                             </div>
                             <div class="detail-row">
-                                <span class="label">Owned:</span>
+                                <span class="label">{{ tUI('dialog.owned') }}:</span>
                                 <span class="value">{{ formatNumber(item.owned) }}</span>
                             </div>
                             <div class="detail-row" v-if="item.synthesize > 0">
-                                <span class="label">Synthesis:</span>
+                                <span class="label">{{ tUI('dialog.synthesis') }}:</span>
                                 <span class="value synthesis">+{{ formatNumber(item.synthesize) }}</span>
                             </div>
                             <div class="detail-row need-row">
-                                <span class="label">Need:</span>
+                                <span class="label">{{ tUI('dialog.need') }}:</span>
                                 <span class="value" :class="needClass(item)">
                                     {{ formatNumber(calculateNeed(item)) }}
                                 </span>
@@ -58,15 +58,15 @@
                             <!-- 通常Tieredのみ: Required/Need表示 -->
                             <template v-if="!tierItem.expValue">
                                 <div class="tier-stat">
-                                    <span class="stat-label">Req</span>
+                                    <span class="stat-label">{{ tUI('dialog.req') }}</span>
                                     <span class="stat-value">{{ formatNumber(tierItem.need) }}</span>
                                 </div>
                                 <div class="tier-stat" v-if="tierItem.synthesize > 0">
-                                    <span class="stat-label">Syn</span>
+                                    <span class="stat-label">{{ tUI('dialog.syn') }}</span>
                                     <span class="stat-value synthesis">+{{ formatNumber(tierItem.synthesize) }}</span>
                                 </div>
                                 <div class="tier-stat need-stat">
-                                    <span class="stat-label">Need</span>
+                                    <span class="stat-label">{{ tUI('dialog.need') }}</span>
                                     <span class="stat-value" :class="needClass(tierItem)">
                                         {{ formatNumber(calculateNeed(tierItem)) }}
                                     </span>
@@ -75,7 +75,7 @@
 
                             <!-- 共通: Owned表示 -->
                             <div class="tier-stat">
-                                <span class="stat-label">Own</span>
+                                <span class="stat-label">{{ tUI('dialog.own') }}</span>
                                 <span class="stat-value">{{ formatNumber(tierItem.owned) }}</span>
                             </div>
 
@@ -95,14 +95,14 @@
             <!-- インベントリ入力 (単一アイテムの場合のみ) -->
             <div class="dialog-footer" v-if="!isTiered">
                 <div class="inventory-input">
-                    <label>Update Inventory:</label>
+                    <label>{{ tUI('dialog.update_inventory') }}:</label>
                     <input
                         type="number"
                         v-model.number="inputQuantity"
                         @keyup.enter="updateInventory"
-                        placeholder="Enter quantity"
+                        :placeholder="tUI('dialog.enter_quantity')"
                     />
-                    <button @click="updateInventory">Save</button>
+                    <button @click="updateInventory">{{ tUI('common.save') }}</button>
                 </div>
             </div>
         </div>
