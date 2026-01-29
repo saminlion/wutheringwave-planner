@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Planner</h1>
+    <h1>{{ tUI('planner.title') }}</h1>
     <div>
-      <h2>Goals</h2>
+      <h2>{{ tUI('planner.goals') }}</h2>
       <div class="goals-container">
         <div class="goal-border" v-for="goal in goals" :key="goal.name"
           :class="{ hidden: goal.isHidden }"
@@ -91,7 +91,7 @@ import { useGameStore } from "@/store/game";
 import { useLocale } from '@/composables/useLocale';
 
 // i18n翻訳関数を取得
-const { tCharacter, tWeapon, tMaterial } = useLocale();
+const { tCharacter, tWeapon, tMaterial, tUI } = useLocale();
 import {
   findMaterial,
   getMaterialField,

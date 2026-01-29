@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Inventory</h1>
+    <h1>{{ tUI('inventory.title') }}</h1>
 
     <!-- Inventory Cards -->
      <div class="inventory-container">
@@ -16,7 +16,7 @@
           <h3>{{ tMaterial(material.game_id, material.label) }}</h3>
           <h3>{{ logMessage(material) }}</h3>
           <p>
-            Quantity:
+            {{ tUI('inventory.quantity') }}:
             <input type="number" v-model.number="quantities[material.game_id]" @change="update(material.game_id)"
               class="quantity-input" />
           </p>

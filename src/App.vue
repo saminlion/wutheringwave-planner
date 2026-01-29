@@ -2,7 +2,7 @@
   <div id="app">
     <header>
       <div class="header-content">
-        <h1>Multi-Game Planner</h1>
+        <h1>{{ tUI('app.title') }}</h1>
         <GameSelector />
       </div>
       <nav>

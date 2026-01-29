@@ -1,28 +1,28 @@
 <template>
   <div>
-    <h1>Character Selection</h1>
+    <h1>{{ tUI('character.title') }}</h1>
     <div class="filters">
       <label v-if="filterOptions.elements?.length > 1">
-        Element:
+        {{ tUI('character.element') }}:
         <select v-model="filters.element" @change="applyFilters">
           <option v-for="opt in filterOptions.elements" :key="opt.value" :value="opt.value">
-            {{ opt.label }}
+            {{ opt.value === 'all' ? tUI('common.all') : opt.label }}
           </option>
         </select>
       </label>
       <label>
-        Weapon:
+        {{ tUI('character.weapon') }}:
         <select v-model="filters.weapon" @change="applyFilters">
           <option v-for="opt in filterOptions.weaponTypes" :key="opt.value" :value="opt.value">
-            {{ opt.label }}
+            {{ opt.value === 'all' ? tUI('common.all') : opt.label }}
           </option>
         </select>
       </label>
       <label>
-        Rarity:
+        {{ tUI('character.rarity') }}:
         <select v-model="filters.rarity" @change="applyFilters">
           <option v-for="opt in filterOptions.characterRarities" :key="opt.value" :value="opt.value">
-            {{ opt.label }}
+            {{ opt.value === 'all' ? tUI('common.all') : opt.label }}
           </option>
         </select>
       </label>
@@ -63,7 +63,7 @@ import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
 // i18n翻訳関数を取得
-const { tCharacter } = useLocale();
+const { tCharacter, tUI } = useLocale();
 
 const plannerStore = usePlannerStore();
 const gameStore = useGameStore();
