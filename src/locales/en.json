@@ -67,6 +67,8 @@
     "dialog.syn": "Syn",
     "dialog.update_inventory": "Update Inventory",
     "dialog.enter_quantity": "Enter quantity",
-    "stamina.name": "Stamina"
+    "stamina.name": "Stamina",
+    "game.name.wutheringwave": "Wuthering Waves",
+    "game.name.endfield": "Arknights: Endfield"
   }
 }

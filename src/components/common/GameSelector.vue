@@ -9,7 +9,7 @@
         @click="selectGame(game.id)"
       >
         <span class="game-icon">{{ game.icon }}</span>
-        <span class="game-name">{{ game.name }}</span>
+        <span class="game-name">{{ getGameName(game) }}</span>
         <span v-if="currentGameId === game.id" class="selected-badge">
           {{ tUI('common.selected') }}
         </span>
@@ -37,6 +37,16 @@ const { tUI, loadGameLocales } = useLocale();
 
 const currentGameId = computed(() => gameStore.currentGameId);
 const enabledGames = computed(() => gameStore.enabledGames);
+
+// 게임 이름을 번역된 값으로 반환 (번역이 없으면 config의 name 사용)
+const getGameName = (game) => {
+  const translatedName = tUI(`game.name.${game.id}`);
+  // tUI는 키를 찾지 못하면 키 자체를 반환
+  if (translatedName === `game.name.${game.id}`) {
+    return game.name;
+  }
+  return translatedName;
+};
 
 const selectGame = async (gameId) => {
   if (gameId === currentGameId.value) return;

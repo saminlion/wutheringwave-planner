@@ -67,6 +67,8 @@
     "dialog.syn": "합성",
     "dialog.update_inventory": "인벤토리 수정",
     "dialog.enter_quantity": "수량 입력",
-    "stamina.name": "스태미나"
+    "stamina.name": "스태미나",
+    "game.name.wutheringwave": "명조",
+    "game.name.endfield": "명일방주: 엔드필드"
   }
 }
