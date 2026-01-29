@@ -287,5 +287,32 @@
     "4170010002": "중급 에너지 코어",
     "4170010003": "고급 에너지 코어",
     "4170010004": "특급 에너지 코어"
+  },
+  "ui": {
+    "category.whisperin_core": "의음 성핵",
+    "category.howler_core": "포효 성핵",
+    "category.ring": "구속팔찌",
+    "category.mask": "마스크",
+    "category.mech": "취합 성핵",
+    "category.string": "선형 구조물",
+    "category.exoswarm": "엑소스웜 성핵",
+    "category.metallic_drip": "금속 액적",
+    "category.combustor": "결정화 연소",
+    "category.cadence": "와전류",
+    "category.helix": "나선 카메라",
+    "category.residuum": "배주",
+    "category.polarizer": "편광체",
+    "category.phlogiston": "응집 연소체",
+    "category.residue": "현",
+    "category.crystal": "절단된 결정",
+    "category.shard": "비명 이상 결정",
+    "category.pendant": "펜던트",
+    "category.polygon": "기계 성핵",
+    "category.ascension": "돌파 재료",
+    "category.boss": "보스 재료",
+    "category.weeklyboss": "주간 보스",
+    "category.credit": "클램 코인",
+    "category.player_exp": "공명 촉진제",
+    "category.weapon_exp": "에너지 코어"
   }
 }

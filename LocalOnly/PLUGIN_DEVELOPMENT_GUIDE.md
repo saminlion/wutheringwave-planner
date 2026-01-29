@@ -66,6 +66,43 @@ tests/games/{gameid}-materialProcessor.test.js
 
 ---
 
+## Material Card UI (Automatic)
+
+FinalMaterialNeeds displays materials with a simplified card UI. **No code changes required** for new games.
+
+### Display Rules (Automatic)
+| Feature | Behavior | Data Requirement |
+|---------|----------|------------------|
+| Card display | Shows need number only (Required - Owned - Synthesis) | Standard fields |
+| Complete hiding | Hides cards when need ≤ 0 | `need`, `owned`, `synthesize` |
+| Tiered dialog | Groups items with multiple unique tiers | `tier` field |
+| EXP dialog | Shows all EXP items in category | `value` field |
+| Sort order | Ascending by tier or value | `tier` or `value` |
+
+### Tiered Lineup Detection
+Items are grouped in dialog only when:
+1. Multiple items in subcategory
+2. Multiple unique tier values exist
+
+```
+✅ bolete (T1, T2, T3, T4) → Grouped dialog
+❌ special (all T4) → Individual dialogs
+```
+
+### Required Fields for UI
+
+```json
+// Tiered material (for grouped dialog)
+{ "tier": 1 }, { "tier": 2 }, { "tier": 3 }
+
+// EXP material (for EXP dialog)
+{ "value": 200 }, { "value": 1000 }
+```
+
+See `CLAUDE.md` → "FinalMaterialNeeds UI System" for details.
+
+---
+
 ## Reference Implementations
 - **WutheringWaves**: `src/games/wutheringwave/` (simple)
 - **Endfield**: `src/games/endfield/` (complex)

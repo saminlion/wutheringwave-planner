@@ -98,12 +98,13 @@ export function useLocale() {
     const gameCacheKey = `${gameId}_${currentLocale.value}`;
     const game = gameTranslationsCache.value[gameCacheKey] || {};
 
-    // 게임별 번역을 base에 머지 (characters, weapons, materials)
+    // 게임별 번역을 base에 머지 (characters, weapons, materials, ui)
     return {
       ...base,
       characters: { ...(base.characters || {}), ...(game.characters || {}) },
       weapons: { ...(base.weapons || {}), ...(game.weapons || {}) },
       materials: { ...(base.materials || {}), ...(game.materials || {}) },
+      ui: { ...(base.ui || {}), ...(game.ui || {}) },
     };
   });
 

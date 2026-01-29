@@ -72,29 +72,21 @@
 
                         <ul class="materials-grid">
                             <!-- player_exp ?먮뒗 weapon_exp 泥섎━ -->
-                                                        <template v-if="isExpCategory(category.name)">
-                                <!-- Need badge: 不足している場合 -->
-                                <li class="material-set" v-if="totalExpNeed(category) > 0">
-                                    <span class="badge badge-need">Need: {{ totalExpNeed(category) }}</span>
-                                </li>
-                                <!-- Complete badge: 必要量があり、全て揃った場合 -->
-                                <li class="material-set" v-else-if="getTotalExpRequired(category) > 0">
-                                    <span class="badge badge-complete">✓ Complete</span>
-                                </li>
-                                <li class="material-card" v-for="(expDetails, id) in getExpMaterialForCategory(category.name)" :key="id">
+                                                        <!-- EXPカテゴリ: クリックでダイアログ表示 -->
+                            <template v-if="isExpCategory(category.name)">
+                                <li
+                                    class="material-card clickable"
+                                    v-show="totalExpNeed(category) > 0"
+                                    @click="openExpDialog(category, subCategory)"
+                                >
                                     <div class="material-info">
-                                        <img v-if="getMaterialIcon(id)" :src="getMaterialIcon(id)" alt="material icon"
-                                            class="material-icon" />
-
+                                        <img v-if="getMaterialIcon(category.name)" :src="getMaterialIcon(category.name)"
+                                            alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <span class="badge badge-synthesize" v-if="expDetails.synthesize > 0">
-                                                Synthesize: {{ expDetails.synthesize }}
+                                            <!-- 不足EXP量のみ表示 -->
+                                            <span class="need-number">
+                                                {{ totalExpNeed(category).toLocaleString() }}
                                             </span>
-                                            <span class="badge badge-owned">
-                                                Owned: {{ getMaterialQuantity(id) }}
-                                            </span>
-                                            <input class="material-quantity-input" type="number"
-                                                @input="setMaterialQuantity(id, $event.target.value)" />
                                         </div>
                                     </div>
                                 </li>
@@ -102,65 +94,44 @@
 
                             <!-- common?대굹 forgery 移댄뀒怨좊━媛 ?꾨땶 寃쎌슦 -->
                             <template v-else-if="category.name !== 'common' && category.name !== 'forgery'">
-                                <li class="material-card" v-for="task in subCategory.task" :key="task.id">
+                                <!-- common/forgery以外: クリックでダイアログ表示、Complete非表示 -->
+                                <li
+                                    class="material-card clickable"
+                                    v-for="task in sortedTasks(subCategory.task)"
+                                    :key="task.id"
+                                    v-show="!isTaskComplete(task)"
+                                    @click="openItemDialog(task, category, subCategory)"
+                                >
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- Need badge: 合成含めてowned < needの場合のみ表示 -->
-                                            <span class="badge badge-need" v-if="(getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need">
-                                                Need: {{ task.need - getMaterialQuantity(task.id) - (task.synthesize || 0) }}
+                                            <!-- 不足量のみ表示 -->
+                                            <span class="need-number">
+                                                {{ calculateActualNeed(task).toLocaleString() }}
                                             </span>
-                                            <!-- Complete badge: 合成含めてowned >= needの場合 -->
-                                            <span class="badge badge-complete" v-else-if="task.need > 0">
-                                                ✓ Complete
-                                            </span>
-                                            <!-- Synthesize badge (if applicable) -->
-                                            <span class="badge badge-synthesize" v-if="task.synthesize > 0">
-                                                Synthesize: {{ task.synthesize }}
-                                            </span>
-                                            <span class="badge" :class="{
-                                                'badge-owned-green': (getMaterialQuantity(task.id) + (task.synthesize || 0)) >= task.need,
-                                                'badge-owned-red': (getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need,
-                                            }">
-                                                Owned: {{ getMaterialQuantity(task.id) }}
-                                            </span>
-                                            <!-- Additional input -->
-                                            <input class="material-quantity-input" type="number"
-                                                @input="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
                                     </div>
                                 </li>
                             </template>
 
-                            <!-- For common or forgery categories -->
+                            <!-- common/forgeryカテゴリ: Tiered表示対応 -->
                             <template v-else>
-                                <li class="material-card" v-for="task in subCategory.task" :key="task.id">
+                                <li
+                                    class="material-card clickable"
+                                    v-for="task in sortedTasks(subCategory.task)"
+                                    :key="task.id"
+                                    v-show="!isTaskComplete(task)"
+                                    @click="openItemDialog(task, category, subCategory)"
+                                >
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
                                             alt="material icon" class="material-icon" />
                                         <div class="material-quantity-container">
-                                            <!-- Need badge: 合成後もowned < needの場合のみ表示 -->
-                                            <span class="badge badge-need" v-if="(getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need">
-                                                Need: {{ task.need - getMaterialQuantity(task.id) - (task.synthesize || 0) }}
+                                            <!-- 不足量のみ表示 -->
+                                            <span class="need-number">
+                                                {{ calculateActualNeed(task).toLocaleString() }}
                                             </span>
-                                            <!-- Complete badge: 合成後owned >= needの場合 -->
-                                            <span class="badge badge-complete" v-else-if="task.need > 0">
-                                                ✓ Complete
-                                            </span>
-                                            <!-- Synthesize badge -->
-                                            <span class="badge badge-synthesize" v-if="(task.synthesize || 0) > 0">
-                                                Synthesize: {{ task.synthesize }}
-                                            </span>
-                                            <span class="badge" :class="{
-                                                'badge-owned-green': (getMaterialQuantity(task.id) + (task.synthesize || 0)) >= task.need,
-                                                'badge-owned-red': (getMaterialQuantity(task.id) + (task.synthesize || 0)) < task.need,
-                                            }">
-                                                Owned: {{ getMaterialQuantity(task.id) }}
-                                            </span>
-                                            <!-- Additional input -->
-                                            <input class="material-quantity-input" type="number"
-                                                @input="setMaterialQuantity(task.id, $event.target.value)" />
                                         </div>
                                     </div>
                                 </li>
@@ -171,6 +142,16 @@
                 </div><!--subcategory-list End-->
             </div><!--category-card End-->
         </div><!--final-container End-->
+
+        <!-- ItemDialog: 詳細表示用ダイアログ -->
+        <ItemDialog
+            :visible="dialogVisible"
+            :item="selectedItem"
+            :relatedItems="selectedRelatedItems"
+            :getMaterialQuantity="getMaterialQuantity"
+            @close="closeDialog"
+            @updateInventory="handleDialogUpdateInventory"
+        />
     </div> <!--final-material-needs End-->
 </template>
 
@@ -188,6 +169,7 @@ import { useGameStore } from "@/store/game";
 import { useUserProfileStore } from "@/store/userProfile";
 import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
+import ItemDialog from './ItemDialog.vue';
 
 // i18n翻訳関数を取得
 const { tUI, tMaterial } = useLocale();
@@ -292,6 +274,119 @@ const dateCache = ref({}); // Cache for dates
 const resinCache = ref({}); // Cache for resin
 
 const categorizedMaterials = ref({});
+
+// ItemDialog用の状態
+const dialogVisible = ref(false);
+const selectedItem = ref({});
+const selectedRelatedItems = ref([]);
+
+// アイテムが完了状態かどうか判定
+const isTaskComplete = (task) => {
+    const owned = getMaterialQuantity(task.id);
+    const synthesize = task.synthesize || 0;
+    return (owned + synthesize) >= task.need && task.need > 0;
+};
+
+// 実際の不足量を計算
+const calculateActualNeed = (task) => {
+    const owned = getMaterialQuantity(task.id);
+    const synthesize = task.synthesize || 0;
+    return Math.max(0, task.need - owned - synthesize);
+};
+
+// タスクをtier順にソート
+const sortedTasks = (tasks) => {
+    return [...tasks].sort((a, b) => (a.tier || 0) - (b.tier || 0));
+};
+
+// ItemDialogを開く
+const openItemDialog = (task, category, subCategory) => {
+    // ティアがあるラインナップかどうか判定
+    // 複数の異なるティアがある場合のみ、同じsubcategoryのアイテムを全て表示
+    const tiers = subCategory.task.map(t => t.tier).filter(t => t !== undefined && t !== null);
+    const uniqueTiers = new Set(tiers);
+    const isTieredLineup = tiers.length > 1 && uniqueTiers.size > 1;
+
+    if (isTieredLineup) {
+        // ティア付きラインナップ: SubCategory名をタイトルに
+        selectedItem.value = {
+            ...task,
+            name: subCategory.name, // SubCategory名をタイトルに使用
+            owned: getMaterialQuantity(task.id),
+            icon: getMaterialIcon(task.id),
+        };
+        // 全ティアを表示
+        selectedRelatedItems.value = subCategory.task.map(t => ({
+            ...t,
+            owned: getMaterialQuantity(t.id),
+            icon: getMaterialIcon(t.id),
+        }));
+    } else {
+        // 独立アイテム: 単体で表示
+        selectedItem.value = {
+            ...task,
+            owned: getMaterialQuantity(task.id),
+            icon: getMaterialIcon(task.id),
+        };
+        selectedRelatedItems.value = [];
+    }
+
+    dialogVisible.value = true;
+};
+
+// EXPカテゴリ用ダイアログを開く
+const openExpDialog = (category, subCategory) => {
+    const materials = gameStore.getData('materials') || {};
+    const expCategory = materials[category.name] || {};
+
+    // EXP材料をリスト化（value昇順でソート: 低い方が上）
+    const expItems = Object.values(expCategory)
+        .filter(item => item.game_id)
+        .sort((a, b) => (a.value || 0) - (b.value || 0))
+        .map(item => ({
+            id: item.game_id,
+            name: item.label || item.game_id,
+            need: subCategory.task[0]?.need || 0, // EXPは総量で管理
+            owned: getMaterialQuantity(item.game_id),
+            icon: item.icon,
+            tier: item.tier || 1,
+            expValue: item.value || 0,
+        }));
+
+    // 最初のアイテムをselectedItemに
+    if (expItems.length > 0) {
+        selectedItem.value = {
+            ...expItems[0],
+            name: category.name, // カテゴリ名をタイトルに
+        };
+        selectedRelatedItems.value = expItems;
+    }
+
+    dialogVisible.value = true;
+};
+
+// ダイアログを閉じる
+const closeDialog = () => {
+    dialogVisible.value = false;
+    selectedItem.value = {};
+    selectedRelatedItems.value = [];
+};
+
+// ダイアログからのインベントリ更新
+const handleDialogUpdateInventory = (data) => {
+    emit("updateInventory", data);
+    // 更新後、selectedItemのowned値も更新
+    if (selectedItem.value.id === data.id) {
+        selectedItem.value.owned = data.quantity;
+    }
+    // relatedItemsも更新
+    selectedRelatedItems.value = selectedRelatedItems.value.map(item => {
+        if (item.id === data.id) {
+            return { ...item, owned: data.quantity };
+        }
+        return item;
+    });
+};
 
 const resetCaches = () => {
     runCache.value = {};  // Clear cache
@@ -415,7 +510,10 @@ watch(
 );
 
 const getMaterialQuantity = (id) => {
-    return inventory.value[id] || 0;  // Reactive: storeToRefsでinventoryを参照
+    // 숫자/문자열 키 불일치 문제 해결: 둘 다 시도
+    const stringKey = String(id);
+    const qty = inventory.value[id] ?? inventory.value[stringKey] ?? 0;
+    return qty;
 };
 
 const setMaterialQuantity = (id, value) => {
@@ -1070,6 +1168,28 @@ onMounted(() => {
     color: #e67e22;
     font-style: italic;
     margin-top: 4px;
+}
+
+/* クリック可能なカードスタイル */
+.material-card.clickable {
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.material-card.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.material-card.clickable:active {
+    transform: translateY(0);
+}
+
+/* 不足量表示用スタイル */
+.need-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e74c3c;
 }
 </style>
 

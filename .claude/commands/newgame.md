@@ -133,6 +133,23 @@ This command helps set up a new game plugin for the Multi-Game Planner.
 
 작성:
 
+---
+
+## 7-1. 재료 UI 표시 (자동)
+
+아래 기능들은 데이터 필드만 있으면 **자동으로 동작**합니다:
+
+| 기능 | 필요 필드 | 동작 |
+|------|----------|------|
+| 티어별 그룹 다이얼로그 | `tier` | 같은 SubCategory의 여러 티어를 하나의 다이얼로그에 표시 |
+| EXP 다이얼로그 | `value` | 모든 EXP 아이템을 하나의 다이얼로그에 표시 |
+| 완료 아이템 숨김 | `need`, `owned` | need ≤ 0 이면 카드에서 숨김 |
+| 정렬 | `tier` 또는 `value` | 오름차순 정렬 (낮은 값이 위로) |
+
+**예시:**
+- `bolete` (T1, T2, T3, T4) → 티어별 그룹으로 다이얼로그 표시
+- `special` (모두 T4) → 개별 다이얼로그로 표시
+
 
 ---
 
@@ -385,6 +402,14 @@ This command helps set up a new game plugin for the Multi-Game Planner.
 - `value` 필드가 있는 카테고리는 자동으로 EXP 타입으로 인식
 - 새로운 EXP 카테고리 추가 시 코드 수정 불필요
 - 예: `player_exp`, `weapon_exp`, `skill_exp` 등
+
+### UI 자동 기능 필드
+| 필드 | 타입 | 설명 | UI 동작 |
+|------|------|------|---------|
+| `tier` | number | 재료 티어 (1-4) | 티어별 그룹 다이얼로그, 오름차순 정렬 |
+| `value` | number | EXP 값 | EXP 다이얼로그 표시, 오름차순 정렬 |
+
+**티어 그룹 조건**: 같은 SubCategory에 여러 고유 tier 값이 있어야 그룹화됨
 
 ## 4. costs.json
 

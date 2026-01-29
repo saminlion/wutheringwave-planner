@@ -489,6 +489,88 @@ stamina: {
 
 ---
 
+## FinalMaterialNeeds UI System
+
+The planner displays required materials with a simplified card UI and detailed dialog. **No code changes required** for new games - all features work automatically based on data structure.
+
+### Material Card Display
+
+Cards show only the **need number** (required - owned - synthesis). Clicking opens ItemDialog.
+
+```
+┌─────────────┐
+│   [icon]    │
+│     123     │  ← Need number only (red color)
+└─────────────┘
+```
+
+**Features (Automatic):**
+- Cards are clickable → opens ItemDialog
+- Complete items are hidden (`v-show="!isTaskComplete(task)"`)
+- Items sorted by tier ascending (T1, T2, T3, T4)
+
+### ItemDialog Component
+
+`src/components/planner/ItemDialog.vue` - Shared component for all games.
+
+**Single Item Display:**
+- Required, Owned, Synthesis, Need values
+- Inventory input at bottom
+
+**Tiered Lineup Display:**
+- All tiers shown in one dialog (T1, T2, T3, T4)
+- Each tier has individual inventory input
+- Complete tiers shown with reduced opacity
+
+**EXP Category Display:**
+- All EXP items shown (sorted by value ascending)
+- Each item shows EXP value
+- Individual inventory input per item
+
+### Tiered Lineup Detection (Game-Agnostic)
+
+Tiered lineups are detected automatically based on data:
+
+```javascript
+// Detection logic in openItemDialog()
+const tiers = subCategory.task.map(t => t.tier).filter(t => t !== undefined && t !== null);
+const uniqueTiers = new Set(tiers);
+const isTieredLineup = tiers.length > 1 && uniqueTiers.size > 1;
+```
+
+**Conditions for tiered lineup:**
+1. Multiple items in subcategory (`tiers.length > 1`)
+2. Multiple unique tier values (`uniqueTiers.size > 1`)
+
+**Examples:**
+- `bolete` (T1, T2, T3, T4) → Tiered lineup → Show all in one dialog
+- `special` (all T4) → NOT tiered → Show each individually
+
+### Data Requirements for UI Features
+
+| Feature | Required Field | Example |
+|---------|---------------|---------|
+| Tiered display | `tier` | `"tier": 2` |
+| EXP display | `value` | `"value": 1000` |
+| Complete detection | `need`, `owned`, `synthesize` | Calculated at runtime |
+| Sort order | `tier` or `value` | Ascending (low to high) |
+
+### Adding Materials (No Code Changes Needed)
+
+1. **Tiered materials**: Add `tier` field to materials.json
+   ```json
+   { "tier": 1 }, { "tier": 2 }, { "tier": 3 }, { "tier": 4 }
+   ```
+
+2. **EXP materials**: Add `value` field to materials.json
+   ```json
+   { "value": 200 }, { "value": 1000 }, { "value": 5000 }
+   ```
+
+3. **Single items**: No special fields needed
+
+---
+
 ## Utilities
 
 **logger.js** - Environment-aware logging
