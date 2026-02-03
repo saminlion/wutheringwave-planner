@@ -638,9 +638,9 @@
     "rarity": 5,
     "common": "exoswarm",
     "forgery": "polarizer",
-    "ascension": "",
-    "boss": "",
-    "weeklyBoss": "",
+    "ascension": 4130010026,
+    "boss": 4140030021,
+    "weeklyBoss": 4150030008,
     "bonus_stats": []
   },
   "luuk": {
@@ -652,9 +652,9 @@
     "rarity": 5,
     "common": "pendant",
     "forgery": "shard",
-    "ascension": "",
-    "boss": "",
-    "weeklyBoss": "",
+    "ascension": 4130010026,
+    "boss": 4140030019,
+    "weeklyBoss": 4150030008,
     "bonus_stats": []
   }
 }

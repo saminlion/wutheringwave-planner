@@ -805,7 +805,7 @@
     "display_name": "Everbright Polestar",
     "rarity": 5,
     "type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020066_UI.webp",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020076_UI.webp",
     "common": "mech",
     "forgery": "polarizer"
   },
@@ -877,7 +877,7 @@
     "display_name": "Daybreaker's Spine",
     "rarity": 5,
     "type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040046_UI.webp",
+    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040056_UI.webp",
     "common": "mech",
     "forgery": "shard"
   },

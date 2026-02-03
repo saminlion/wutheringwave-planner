@@ -878,6 +878,15 @@
       "SubCategory": "boss",
       "rarity": 2,
       "tier": 4
+    },
+    "our_choice": {
+      "game_id": 4140030021,
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_024_UI.webp",
+      "label": "Our Choice",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "rarity": 2,
+      "tier": 4
     }
   },
   "weekly": {
@@ -939,6 +948,15 @@
       "game_id": 4150020007,
       "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_021_UI.webp",
       "label": "Curse of The Abyss",
+      "Category": "weekly",
+      "SubCategory": "weeklyboss",
+      "rarity": 2,
+      "tier": 4
+    },
+    "gold_in_memory": {
+      "game_id": 4150030008,
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_025_UI.webp",
+      "label": "Gold in Memory",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
       "rarity": 2,
@@ -1166,6 +1184,24 @@
       "game_id": 4130010025,
       "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_063_UI.webp",
       "label": "Arithmetic Shell",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "rarity": 2,
+      "tier": 3
+    },
+    "moss_amber": {
+      "game_id": 4130010026,
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_072_UI.webp",
+      "label": "Moss Amber",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "rarity": 2,
+      "tier": 3
+    },
+    "edelschnee": {
+      "game_id": 4130010026,
+      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_074_UI.webp",
+      "label": "Edelschnee",
       "Category": "ascension",
       "SubCategory": "ascension",
       "rarity": 2,

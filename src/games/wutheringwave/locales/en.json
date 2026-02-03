@@ -252,6 +252,7 @@
     "4130010023": "Gemini Spore",
     "4130010024": "Rimewisp",
     "4130010025": "Arithmetic Shell",
+    "4130010026": "Edelschnee",
     "4140010001": "Mysterious Code",
     "4140010002": "Strife Tace Core",
     "4140010003": "Thundering Tacet Core",
@@ -272,6 +273,7 @@
     "4140020018": "Abyssal Husk",
     "4140030019": "Suncoveter's Reach",
     "4140030020": "Burning Judgment",
+    "4140030021": "Our Choice",
     "4150010001": "Monument Bell",
     "4150010002": "Unending Destruction",
     "4150010003": "Dreamless Feather",
@@ -279,6 +281,7 @@
     "4150020005": "The Netherworld's Stare",
     "4150020006": "When Irises Bloom",
     "4150020007": "Curse of The Abyss",
+    "4150030008": "Gold in Memory",
     "4160010001": "Basic Resonance Potion",
     "4160010002": "Medium Resonance Potion",
     "4160010003": "Advanced Resonance Potion",
@@ -286,7 +289,7 @@
     "4170010001": "Basic Energy Core",
     "4170010002": "Medium Energy Core",
     "4170010003": "Advanced Energy Core",
-    "4170010004": "Preminum Energy Core"
+    "4170010004": "Premium Energy Core"
   },
   "ui": {
     "game.name": "Wuthering Waves",
