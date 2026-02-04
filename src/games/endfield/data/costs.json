@@ -1,16 +1,16 @@
 {
   "character": {
     "level": {
-      "1": { "player_exp": 0, "credit": 0 },
-      "20": { "player_exp": 22860, "credit": 820 },
+      "1": { "player_exp_early": 0, "credit": 0 },
+      "20": { "player_exp_early": 22860, "credit": 820 },
       "20A": { "credit": 1600, "proto_asc": [8, 2], "bolete": [3, 2] },
-      "40": { "player_exp": 271400, "credit": 13360 },
+      "40": { "player_exp_early": 271400, "credit": 13360 },
       "40A": { "credit": 6500, "proto_asc": [25, 2], "bolete": [5, 3] },
-      "60": { "player_exp": 747110, "credit": 37260 },
+      "60": { "player_exp_early": 747110, "credit": 37260 },
       "60A": { "credit": 18000, "proto_asc": [24, 3], "bolete": [5, 4] },
       "70": { "credit": 18000 },
-      "80": { "player_exp": 1212340, "credit": 146440 },
-      "90": { "player_exp": 1792290, "credit": 385420, "proto_asc": [36, 3], "bolete": [8, 5], "special": 20 }
+      "80": { "player_exp_late": 1212340, "credit": 146440 },
+      "90": { "player_exp_late": 1792290, "credit": 385420, "proto_asc": [36, 3], "bolete": [8, 5], "special": 20 }
     },
     "skill": {
       "2": { "credit": 1000, "proto_skill": [6, 2], "odendra": [1, 2] },

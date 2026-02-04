@@ -85,11 +85,14 @@ Once data is available, test with a single character to validate:
 - Refresh items:
 
 ### Character Leveling Costs
-- Level 1→20 materials:
-- Level 20→40 materials:
-- Level 40→60 materials:
-- Level 60→80 materials:
-- Level 80→90 materials:
+**IMPORTANT: Character EXP uses different items for different level ranges**
+- **Level 1→60**: Uses Combat Record series (player_exp_early)
+  - Elementary Combat Record (200 EXP)
+  - Intermediate Combat Record (1000 EXP)
+  - Advanced Combat Record (10000 EXP)
+- **Level 61→90**: Uses Cognitive Carrier series (player_exp_late)
+  - Elementary Cognitive Carrier (1000 EXP)
+  - Advanced Cognitive Carrier (10000 EXP)
 
 ### Skill System
 - Number of active skills per character:
@@ -121,6 +124,14 @@ Once data is available, test with a single character to validate:
 
 ### Other Observations
 <!-- 기타 발견한 내용 -->
+**Player EXP System (IMPLEMENTED):**
+- The game uses two different EXP item series based on character level
+- This has been implemented by splitting `player_exp` into:
+  - `player_exp_early` (Lv.1-60): Combat Record series
+  - `player_exp_late` (Lv.61-90): Cognitive Carrier series
+- Both categories are automatically detected as EXP categories (thanks to `value` field)
+- Each category displays separately in the planner UI
+- Inventory tracks each item individually
 
 
 ---

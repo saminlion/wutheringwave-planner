@@ -128,7 +128,8 @@ export default {
     // farmingRates는 동적으로 계산됨 (getDungeonRates 메서드 사용)
     farmingRates: {
       credit: { drops: 34000, stamina: 80 },       // Lv.5 기본값
-      player_exp: { drops: 170000, stamina: 80 },  // Lv.5 기본값
+      player_exp_early: { drops: 170000, stamina: 80 },  // Lv.5 기본값 (Combat Record - Lv.1-60)
+      player_exp_late: { drops: 170000, stamina: 80 },   // Lv.5 기본값 (Cognitive Carrier - Lv.61-90)
       weapon_exp: { drops: 170000, stamina: 80 },  // Lv.5 기본값
       common: { drops: 0, stamina: 0, unobtainable: true },  // Endfield에서 사용 안 함
       ascension: { drops: 0, stamina: 0, unobtainable: true },  // bolete/odendra/onyx - 필드 파밍
@@ -205,7 +206,11 @@ export default {
         drops: dungeonData.credit[lv].drops,
         stamina: dungeonData.credit[lv].stamina,
       },
-      player_exp: {
+      player_exp_early: {
+        drops: dungeonData.player_exp[lv].totalExp,
+        stamina: dungeonData.player_exp[lv].stamina,
+      },
+      player_exp_late: {
         drops: dungeonData.player_exp[lv].totalExp,
         stamina: dungeonData.player_exp[lv].stamina,
       },
@@ -255,7 +260,8 @@ export default {
     ascension: 'Ascension Materials',
     boss: 'Boss Materials',
     weeklyBoss: 'Weekly Boss Materials',
-    player_exp: 'Player EXP',
+    player_exp_early: 'Player EXP (Lv.1-60)',
+    player_exp_late: 'Player EXP (Lv.61-90)',
     weapon_exp: 'Weapon EXP',
   },
 

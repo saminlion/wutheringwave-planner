@@ -180,13 +180,13 @@
       "tier": 3
     }
   },
-  "player_exp": {
+  "player_exp_early": {
     "elementary_combat_record": {
       "game_id": 5160010023,
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_2_1.webp",
       "label": "Elementary Combat Record",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
+      "Category": "player_exp_early",
+      "SubCategory": "player_exp_early",
       "tier": 2,
       "value": 200
     },
@@ -194,8 +194,8 @@
       "game_id": 5160010024,
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_2_2.webp",
       "label": "Intermediate Combat Record",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
+      "Category": "player_exp_early",
+      "SubCategory": "player_exp_early",
       "tier": 3,
       "value": 1000
     },
@@ -203,17 +203,19 @@
       "game_id": 5160010025,
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_2_3.webp",
       "label": "Advanced Combat Record",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
+      "Category": "player_exp_early",
+      "SubCategory": "player_exp_early",
       "tier": 4,
       "value": 10000
-    },
+    }
+  },
+  "player_exp_late": {
     "elementary_cognitive_carrier": {
       "game_id": 5160010026,
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_stage2_low.webp",
       "label": "Elementary Cognitive Carrier",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
+      "Category": "player_exp_late",
+      "SubCategory": "player_exp_late",
       "tier": 5,
       "value": 1000
     },
@@ -221,8 +223,8 @@
       "game_id": 5160010027,
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_stage2_high.webp",
       "label": "Advanced Cognitive Carrier",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
+      "Category": "player_exp_late",
+      "SubCategory": "player_exp_late",
       "tier": 6,
       "value": 10000
     }
