@@ -18,6 +18,9 @@ on:
           - wutheringwave
           - endfield
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
