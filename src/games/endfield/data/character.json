@@ -2,10 +2,10 @@
   "akekuri": {
     "game_id": 5240200001,
     "display_name": "Akekuri",
+    "rarity": 4,
     "element": "heat",
     "weapon": "sword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0019_karin.webp",
-    "rarity": 4,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010032
@@ -13,10 +13,10 @@
   "fluorite": {
     "game_id": 5240300002,
     "display_name": "Fluorite",
+    "rarity": 4,
     "element": "nature",
     "weapon": "pistol",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0022_bounda.webp",
-    "rarity": 4,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010035
@@ -24,10 +24,10 @@
   "antal": {
     "game_id": 5240500003,
     "display_name": "Antal",
+    "rarity": 4,
     "element": "electric",
     "weapon": "arts",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0023_antal.webp",
-    "rarity": 4,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010031
@@ -35,10 +35,10 @@
   "catcher": {
     "game_id": 5240100004,
     "display_name": "Catcher",
+    "rarity": 4,
     "element": "physical",
     "weapon": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0020_meurs.webp",
-    "rarity": 4,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033
@@ -46,10 +46,10 @@
   "estella": {
     "game_id": 5240400005,
     "display_name": "Estella",
+    "rarity": 4,
     "element": "cryo",
     "weapon": "polearm",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0021_whiten.webp",
-    "rarity": 4,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010034
@@ -57,10 +57,10 @@
   "da_pan": {
     "game_id": 5250100006,
     "display_name": "Da Pan",
+    "rarity": 5,
     "element": "physical",
     "weapon": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0018_dapan.webp",
-    "rarity": 5,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010035
@@ -68,10 +68,10 @@
   "avywenna": {
     "game_id": 5250500007,
     "display_name": "Avywenna",
+    "rarity": 5,
     "element": "electric",
     "weapon": "polearm",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0012_avywen.webp",
-    "rarity": 5,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033
@@ -79,10 +79,10 @@
   "alesh": {
     "game_id": 5250400008,
     "display_name": "Alesh",
+    "rarity": 5,
     "element": "cryo",
     "weapon": "sword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0024_deepfin.webp",
-    "rarity": 5,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010031
@@ -90,10 +90,10 @@
   "arclight": {
     "game_id": 5250500009,
     "display_name": "Arclight",
+    "rarity": 5,
     "element": "electric",
     "weapon": "sword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0007_ikut.webp",
-    "rarity": 5,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010031
@@ -101,10 +101,10 @@
   "perlica": {
     "game_id": 5250500010,
     "display_name": "Perlica",
+    "rarity": 5,
     "element": "electric",
     "weapon": "arts",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0004_pelica.webp",
-    "rarity": 5,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033
@@ -112,10 +112,10 @@
   "wulfgard": {
     "game_id": 5250200011,
     "display_name": "Wulfgard",
+    "rarity": 5,
     "element": "heat",
     "weapon": "pistol",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0006_wolfgd.webp",
-    "rarity": 5,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010035
@@ -123,10 +123,10 @@
   "xaihi": {
     "game_id": 5250400012,
     "display_name": "Xaihi",
+    "rarity": 5,
     "element": "cryo",
     "weapon": "arts",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0011_seraph.webp",
-    "rarity": 5,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033
@@ -134,10 +134,10 @@
   "snowshine": {
     "game_id": 5250400013,
     "display_name": "Snowshine",
+    "rarity": 5,
     "element": "cryo",
     "weapon": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0014_aurora.webp",
-    "rarity": 5,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010034
@@ -145,10 +145,10 @@
   "chen_qianyu": {
     "game_id": 5250100014,
     "display_name": "Chen Qianyu",
+    "rarity": 5,
     "element": "physical",
     "weapon": "sword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0005_chen.webp",
-    "rarity": 5,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010034
@@ -156,10 +156,10 @@
   "last_rite": {
     "game_id": 5260400015,
     "display_name": "Last Rite",
+    "rarity": 6,
     "element": "cryo",
     "weapon": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0026_lastrite.webp",
-    "rarity": 6,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010035
@@ -167,10 +167,10 @@
   "yvonne": {
     "game_id": 5260400016,
     "display_name": "Yvonne",
+    "rarity": 6,
     "element": "cryo",
     "weapon": "pistol",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0017_yvonne.webp",
-    "rarity": 6,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033
@@ -178,10 +178,10 @@
   "laevatain": {
     "game_id": 5260200017,
     "display_name": "Laevatain",
+    "rarity": 6,
     "element": "heat",
     "weapon": "sword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0016_laevat.webp",
-    "rarity": 6,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010033
@@ -189,10 +189,10 @@
   "pogranichnik": {
     "game_id": 5260100018,
     "display_name": "Pogranichnik",
+    "rarity": 6,
     "element": "physical",
     "weapon": "sword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0029_pograni.webp",
-    "rarity": 6,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010031
@@ -200,10 +200,10 @@
   "ardelia": {
     "game_id": 5260300019,
     "display_name": "Ardelia",
+    "rarity": 6,
     "element": "nature",
     "weapon": "arts",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0025_ardelia.webp",
-    "rarity": 6,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010034
@@ -211,10 +211,10 @@
   "gilberta": {
     "game_id": 5260300020,
     "display_name": "Gilberta",
+    "rarity": 6,
     "element": "nature",
     "weapon": "arts",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0013_aglina.webp",
-    "rarity": 6,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033
@@ -222,10 +222,10 @@
   "ember": {
     "game_id": 5260200021,
     "display_name": "Ember",
+    "rarity": 6,
     "element": "heat",
     "weapon": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0009_azrila.webp",
-    "rarity": 6,
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010033
@@ -233,10 +233,10 @@
   "lifeng": {
     "game_id": 5260100022,
     "display_name": "Lifeng",
+    "rarity": 6,
     "element": "physical",
     "weapon": "polearm",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0015_lifeng.webp",
-    "rarity": 6,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010031
@@ -244,10 +244,10 @@
   "endministrator": {
     "game_id": 5260100023,
     "display_name": "Endministrator",
+    "rarity": 6,
     "element": "physical",
     "weapon": "sword",
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0003_endminf.webp",
-    "rarity": 6,
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010031
