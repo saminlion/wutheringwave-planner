@@ -174,13 +174,14 @@ export default {
       5: { stamina: 80, drops: 34000 },
     },
     // 캐릭터 EXP 던전 (Combat Record / Cognitive Carrier)
-    // Lv.3부터 61-90용 Cognitive Carrier 선택 가능
+    // Lv.1-2: Combat Record only (early)
+    // Lv.3-5: Combat Record (early) or Cognitive Carrier (late) - player choice
     player_exp: {
-      1: { stamina: 40, totalExp: 44200 },   // 4×10000 + 2×1000 + 3×200
-      2: { stamina: 50, totalExp: 70400 },   // 6×10000 + 9×1000 + 4×200
-      3: { stamina: 60, totalExp: 99800 },   // 9×10000 + 9×1000 + 4×200
-      4: { stamina: 70, totalExp: 137600 },  // 13×10000 + 7×1000 + 2×200
-      5: { stamina: 80, totalExp: 170000 },  // 17×10000
+      1: { stamina: 40, early: 44200 },   // Combat Record only: 4×10000 + 2×1000 + 3×200
+      2: { stamina: 50, early: 70400 },   // Combat Record only: 6×10000 + 9×1000 + 4×200
+      3: { stamina: 60, early: 99800, late: 99800, hasChoice: true },   // Choice available
+      4: { stamina: 70, early: 137600, late: 137600, hasChoice: true }, // Choice available
+      5: { stamina: 80, early: 170000, late: 170000, hasChoice: true }, // Choice available
     },
     // 무기 EXP 던전
     weapon_exp: {
@@ -207,11 +208,11 @@ export default {
         stamina: dungeonData.credit[lv].stamina,
       },
       player_exp_early: {
-        drops: dungeonData.player_exp[lv].totalExp,
+        drops: dungeonData.player_exp[lv].early || 0,
         stamina: dungeonData.player_exp[lv].stamina,
       },
       player_exp_late: {
-        drops: dungeonData.player_exp[lv].totalExp,
+        drops: dungeonData.player_exp[lv].late || 0,
         stamina: dungeonData.player_exp[lv].stamina,
       },
       weapon_exp: {
@@ -234,7 +235,7 @@ export default {
 
   /**
    * SubCategory별 던전 데이터 반환
-   * @param {string} subCategory - proto_asc, proto_skill, cast_die
+   * @param {string} subCategory - proto_asc, proto_skill, cast_die, player_exp_early, player_exp_late
    * @param {number} level - 던전 레벨 (1~5)
    * @returns {object} 해당 던전의 stamina/drops 데이터
    */
@@ -242,10 +243,18 @@ export default {
     const dungeonData = this.dungeonData;
     const lv = Math.max(1, Math.min(5, level));
 
-    if (dungeonData[subCategory] && dungeonData[subCategory][lv]) {
+    // Handle player_exp_early/late → player_exp mapping
+    let dungeonKey = subCategory;
+    if (subCategory === 'player_exp_early' || subCategory === 'player_exp_late') {
+      dungeonKey = 'player_exp';
+    }
+
+    if (dungeonData[dungeonKey] && dungeonData[dungeonKey][lv]) {
+      const data = dungeonData[dungeonKey][lv];
       return {
-        ...dungeonData[subCategory][lv],
-        hasTierChoice: lv >= 3 && dungeonData[subCategory][lv].tier3 !== undefined,
+        ...data,
+        hasTierChoice: lv >= 3 && data.tier3 !== undefined,
+        hasExpChoice: lv >= 3 && data.hasChoice === true,
       };
     }
 
@@ -280,6 +289,19 @@ export default {
     weaponProgression: true,
   },
 
+  // Shared dungeons - categories that share the same dungeon with choice
+  sharedDungeonCategories: {
+    player_exp: {
+      categories: ['player_exp_early', 'player_exp_late'],
+      dungeonKey: 'player_exp',
+      choiceAvailableFrom: 3, // Lv.3부터 선택 가능
+      choices: {
+        early: 'player_exp_early',
+        late: 'player_exp_late',
+      },
+    },
+  },
+
   // UI handlers - ゲーム固有のUI表示条件を定義
   uiHandlers: {
     /**
@@ -302,6 +324,18 @@ export default {
      */
     useTierSeparatedEstimates(category) {
       return category.name === 'forgery';
+    },
+
+    /**
+     * カテゴリがチョイス分離Estimated表示を使うか (player_exp_early/late)
+     * @param {object} category - カテゴリオブジェクト
+     * @returns {boolean}
+     */
+    useChoiceSeparatedEstimates(category) {
+      const sharedDungeons = this.sharedDungeonCategories || {};
+      return Object.values(sharedDungeons).some(
+        (dungeon) => dungeon.categories.includes(category.name)
+      );
     },
 
     /**

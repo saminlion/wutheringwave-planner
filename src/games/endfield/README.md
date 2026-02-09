@@ -129,6 +129,12 @@ Once data is available, test with a single character to validate:
 - This has been implemented by splitting `player_exp` into:
   - `player_exp_early` (Lv.1-60): Combat Record series
   - `player_exp_late` (Lv.61-90): Cognitive Carrier series
+- **Dungeon Choice System (Lv.3+):**
+  - Lv.1-2 dungeons: Combat Record only (fixed)
+  - Lv.3-5 dungeons: Player can choose between Combat Record or Cognitive Carrier
+  - The planner calculates and displays the optimal choice distribution
+  - Shows separate estimated runs for each type (similar to forgery tier display)
+  - Total stamina is calculated without duplication (since it's the same dungeon)
 - Both categories are automatically detected as EXP categories (thanks to `value` field)
 - Each category displays separately in the planner UI
 - Inventory tracks each item individually

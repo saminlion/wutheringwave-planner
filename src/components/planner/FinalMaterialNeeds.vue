@@ -54,6 +54,21 @@
                                     <p>{{ tUI('final.estimated_days') }}: <span class="font-semibold">{{ estimate.date }}</span></p>
                                 </div>
                             </template>
+                            <!-- Endfield Player EXP: Choice別表示 -->
+                            <template v-else-if="estimate.isChoiceSeparated">
+                                <div class="tier-estimate early-estimate" v-if="estimate.early.need > 0">
+                                    <p class="tier-label">Combat Record (Lv.1-60) - {{ estimate.early.need.toLocaleString() }} EXP</p>
+                                    <p>{{ tUI('final.runs') }}: {{ estimate.early.runs }} ({{ estimate.early.resin }} {{ staminaName }})</p>
+                                </div>
+                                <div class="tier-estimate late-estimate" v-if="estimate.late.need > 0">
+                                    <p class="tier-label">Cognitive Carrier (Lv.61-90) - {{ estimate.late.need.toLocaleString() }} EXP</p>
+                                    <p>{{ tUI('final.runs') }}: {{ estimate.late.runs }} ({{ estimate.late.resin }} {{ staminaName }})</p>
+                                </div>
+                                <div class="tier-total">
+                                    <p><strong>{{ tUI('final.total') }}: {{ estimate.run }} {{ tUI('final.runs') }}, {{ estimate.resin }} {{ staminaName }}</strong></p>
+                                    <p>{{ tUI('final.estimated_days') }}: <span class="font-semibold">{{ estimate.date }}</span></p>
+                                </div>
+                            </template>
                             <!-- 通常表示 (WW / Endfield non-forgery) -->
                             <template v-else>
                                 <p>{{ tUI('final.estimated_runs') }}: {{ estimate.run }}</p>
@@ -417,6 +432,17 @@ const getEstimates = (category, subCategory) => {
         return getTierSeparatedForgeryEstimates(subCategory);
     }
 
+    // config.uiHandlers.useChoiceSeparatedEstimatesでChoice分離表示判定 (player_exp)
+    const useChoiceSeparated = gameConfig.value.uiHandlers?.useChoiceSeparatedEstimates?.(category) || false;
+    if (useChoiceSeparated) {
+        // player_exp_lateの場合、earlyで既に表示しているのでnullを返す
+        if (category.name === 'player_exp_late') {
+            return null;
+        }
+        // player_exp_earlyの場合、合算したestimateを返す
+        return getChoiceSeparatedExpEstimates(category, subCategory);
+    }
+
     return {
         run: esimatedRun.value(data),
         resin: esimatedResin.value(data),
@@ -494,6 +520,85 @@ const getTierSeparatedForgeryEstimates = (subCategory) => {
             runs: tier3Runs,
             resin: tier3Resin,
             drops: tier3Drops,
+        },
+        stamina: stamina,
+    };
+};
+
+// Choice分離Estimated計算 (player_exp_early/late用)
+const getChoiceSeparatedExpEstimates = (category, subCategory) => {
+    // Find both player_exp_early and player_exp_late categories
+    let earlyCategory = null;
+    let lateCategory = null;
+    let earlyNeed = 0;
+    let lateNeed = 0;
+
+    categorizedMaterials.value.forEach((cat) => {
+        if (cat.name === 'player_exp_early') {
+            earlyCategory = cat;
+            cat.subCategories.forEach((sub) => {
+                sub.task.forEach((task) => {
+                    earlyNeed += Math.max(0, task.need - (task.owned || 0) - (task.synthesize || 0));
+                });
+            });
+        } else if (cat.name === 'player_exp_late') {
+            lateCategory = cat;
+            cat.subCategories.forEach((sub) => {
+                sub.task.forEach((task) => {
+                    lateNeed += Math.max(0, task.need - (task.owned || 0) - (task.synthesize || 0));
+                });
+            });
+        }
+    });
+
+    // Get dungeon data
+    const dungeonData = getDungeonDataForCategory('player_exp');
+    if (!dungeonData) {
+        return { run: 0, resin: 0, date: 0, isChoiceSeparated: false };
+    }
+
+    const { stamina, early: earlyDrops, late: lateDrops, hasExpChoice } = dungeonData;
+
+    // Lv.3 미만: early만 선택 가능
+    if (!hasExpChoice) {
+        const totalRuns = earlyDrops > 0 ? Math.ceil((earlyNeed + lateNeed) / earlyDrops) : 0;
+        const totalResin = totalRuns * stamina;
+        const totalDays = Math.ceil(totalResin / 240);
+
+        return {
+            run: totalRuns,
+            resin: totalResin,
+            date: totalDays,
+            isChoiceSeparated: false,
+            note: 'Lv.3+ required for choice selection',
+        };
+    }
+
+    // Lv.3 이상: early와 late 분리 계산
+    const earlyRuns = earlyDrops > 0 ? Math.ceil(earlyNeed / earlyDrops) : 0;
+    const lateRuns = lateDrops > 0 ? Math.ceil(lateNeed / lateDrops) : 0;
+    const totalRuns = earlyRuns + lateRuns;
+    const earlyResin = earlyRuns * stamina;
+    const lateResin = lateRuns * stamina;
+    const totalResin = earlyResin + lateResin;
+    const totalDays = Math.ceil(totalResin / 240);
+
+    return {
+        run: totalRuns,
+        resin: totalResin,
+        date: totalDays,
+        isChoiceSeparated: true,
+        early: {
+            need: earlyNeed,
+            runs: earlyRuns,
+            resin: earlyResin,
+            drops: earlyDrops,
+        },
+        late: {
+            need: lateNeed,
+            runs: lateRuns,
+            resin: lateResin,
+            drops: lateDrops,
         },
         stamina: stamina,
     };
@@ -849,6 +954,11 @@ const CalculateTotalResinAndDate = () => {
 
         // Iterate categorizedMaterials
     categorizedMaterials.value.forEach((category) => {
+        // player_exp_lateはearlyに含まれているのでスキップ
+        if (category.name === 'player_exp_late') {
+            return;
+        }
+
         category.subCategories.forEach((subCategory) => {
 
             // Calculate resin
