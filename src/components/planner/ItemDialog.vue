@@ -84,18 +84,20 @@
                                 <input
                                     type="number"
                                     class="tier-input"
-                                    :id="`tier-input-${tierItem.id}`"
-                                    @keyup.enter="updateTierInventory(tierItem.id, $event.target.value)"
+                                    v-model.number="tierInputs[tierItem.id]"
                                     placeholder="0"
                                 />
-                                <button
-                                    class="tier-save-btn"
-                                    @click="saveTierInput(tierItem.id)"
-                                >{{ tUI('common.save') }}</button>
                             </div>
                         </div>
                     </div>
                 </template>
+            </div>
+
+            <!-- インベントリ入力 (Tieredアイテムの場合) -->
+            <div class="dialog-footer" v-if="isTiered">
+                <div class="tiered-footer">
+                    <button class="save-all-btn" @click="saveAllTierInputs">{{ tUI('common.save') }}</button>
+                </div>
             </div>
 
             <!-- インベントリ入力 (単一アイテムの場合のみ) -->
@@ -147,6 +149,7 @@ const props = defineProps({
 const emit = defineEmits(['close', 'updateInventory']);
 
 const inputQuantity = ref(null);
+const tierInputs = ref({});
 
 // アイテム名取得（翻訳対応）
 const itemName = computed(() => {
@@ -231,26 +234,32 @@ const updateInventory = () => {
     }
 };
 
-// ティア別インベントリ更新
-const updateTierInventory = (itemId, value) => {
-    const quantity = Math.max(0, parseInt(value, 10) || 0);
-    emit('updateInventory', {
-        id: itemId,
-        quantity: quantity
-    });
-};
+// 全ティアの入力を一括保存
+const saveAllTierInputs = () => {
+    const inputs = tierInputs.value;
+    let hasUpdates = false;
 
-// ティア別Saveボタンクリック処理
-const saveTierInput = (itemId) => {
-    const input = document.getElementById(`tier-input-${itemId}`);
-    if (input) {
-        updateTierInventory(itemId, input.value);
+    for (const [itemId, value] of Object.entries(inputs)) {
+        if (value !== null && value !== undefined && value !== '') {
+            const quantity = Math.max(0, parseInt(value, 10) || 0);
+            emit('updateInventory', {
+                id: itemId,
+                quantity: quantity
+            });
+            hasUpdates = true;
+        }
+    }
+
+    // 入力をクリア
+    if (hasUpdates) {
+        tierInputs.value = {};
     }
 };
 
-// propsのitemが変わったらinputQuantityをリセット (空に)
+// propsのitemが変わったらinputQuantityとtierInputsをリセット
 watch(() => props.item, () => {
     inputQuantity.value = null;
+    tierInputs.value = {};
 }, { immediate: true });
 </script>
 
@@ -461,10 +470,6 @@ watch(() => props.item, () => {
 }
 
 .tier-input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
     margin-top: 10px;
 }
 
@@ -482,17 +487,23 @@ watch(() => props.item, () => {
     outline: none;
 }
 
-.tier-save-btn {
-    padding: 4px 12px;
+.tiered-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.save-all-btn {
+    padding: 10px 24px;
     background: #3498db;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.tier-save-btn:hover {
+.save-all-btn:hover {
     background: #2980b9;
 }
 
