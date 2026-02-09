@@ -33,7 +33,9 @@
       "Bash(npm run test:run:*)",
       "Bash(npm run sync:*)",
       "Bash(/usr/local/bin/npm run sync)",
-      "Bash(/opt/homebrew/bin/npm run sync)"
+      "Bash(/opt/homebrew/bin/npm run sync)",
+      "Bash(git pull:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []

@@ -2,227 +2,229 @@
   "credit": {
     "tcreds": {
       "game_id": 5100010001,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_gold.webp",
       "label": "T-Creds",
       "Category": "credit",
-      "SubCategory": "credit",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_gold.webp"
+      "SubCategory": "credit"
     }
   },
   "ascension": {
     "pink_bolete": {
       "game_id": 5110010002,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_1_1.webp",
       "label": "Pink Bolete",
       "Category": "ascension",
       "SubCategory": "bolete",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_1_1.webp",
       "tier": 2
     },
     "red_bolete": {
       "game_id": 5110010003,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_1_2.webp",
       "label": "Red Bolete",
       "Category": "ascension",
       "SubCategory": "bolete",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_1_2.webp",
       "tier": 3
     },
     "ruby_bolete": {
       "game_id": 5110010004,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_1_3.webp",
       "label": "Ruby Bolete",
       "Category": "ascension",
       "SubCategory": "bolete",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_1_3.webp",
       "tier": 4
     },
     "cosmagaric": {
       "game_id": 5110010005,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_2_2.webp",
       "label": "Cosmagaric",
       "Category": "ascension",
       "SubCategory": "bolete",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_2_2.webp",
       "tier": 5
     },
     "bloodcap": {
       "game_id": 5110010006,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_2_1.webp",
       "label": "Bloodcap",
       "Category": "ascension",
       "SubCategory": "bolete",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_2_1.webp",
       "tier": 5
     },
     "kalkodendra": {
       "game_id": 5110020007,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_1_1.webp",
       "label": "Kalkodendra",
       "Category": "ascension",
       "SubCategory": "odendra",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_1_1.webp",
       "tier": 2
     },
     "chrysodendra": {
       "game_id": 5110020008,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_1_2.webp",
       "label": "Chrysodendra",
       "Category": "ascension",
       "SubCategory": "odendra",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_1_2.webp",
       "tier": 3
     },
     "vitrodendra": {
       "game_id": 5110020009,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_1_3.webp",
       "label": "Vitrodendra",
       "Category": "ascension",
       "SubCategory": "odendra",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_1_3.webp",
       "tier": 4
     },
     "false_aggela": {
       "game_id": 5110020010,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_2_2.webp",
       "label": "False Aggela",
       "Category": "ascension",
       "SubCategory": "odendra",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_2_2.webp",
       "tier": 5
     },
     "blighted_jadeleaf": {
       "game_id": 5110020011,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_2_1.webp",
       "label": "Blighted Jadeleaf",
       "Category": "ascension",
       "SubCategory": "odendra",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_2_1.webp",
       "tier": 5
     },
     "kalkonyx": {
       "game_id": 5110030012,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_1_1.webp",
       "label": "Kalkonyx",
       "Category": "ascension",
       "SubCategory": "onyx",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_1_1.webp",
       "tier": 2
     },
     "auronyx": {
       "game_id": 5110030013,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_1_2.webp",
       "label": "Auronyx",
       "Category": "ascension",
       "SubCategory": "onyx",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_1_2.webp",
       "tier": 3
     },
     "umbronyx": {
       "game_id": 5110030014,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_1_3.webp",
       "label": "Umbronyx",
       "Category": "ascension",
       "SubCategory": "onyx",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_1_3.webp",
       "tier": 4
     },
     "wulingstone": {
       "game_id": 5110030015,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_2_2.webp",
       "label": "Wulingstone",
       "Category": "ascension",
       "SubCategory": "onyx",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_2_2.webp",
       "tier": 5
     },
     "igneosite": {
       "game_id": 5110030016,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_2_1.webp",
       "label": "Igneosite",
       "Category": "ascension",
       "SubCategory": "onyx",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_2_1.webp",
       "tier": 5
     }
   },
   "forgery": {
     "protodisk": {
       "game_id": 5120010017,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_break_stage_1_2.webp",
       "label": "Protodisk",
       "Category": "forgery",
       "SubCategory": "proto_asc",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_break_stage_1_2.webp",
       "tier": 2
     },
     "protoset": {
       "game_id": 5120010018,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_break_stage_3_4.webp",
       "label": "Protoset",
       "Category": "forgery",
       "SubCategory": "proto_asc",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_break_stage_3_4.webp",
       "tier": 3
     },
     "protoprism": {
       "game_id": 5120020019,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_level_1_6.webp",
       "label": "Protoprism",
       "Category": "forgery",
       "SubCategory": "proto_skill",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_level_1_6.webp",
       "tier": 2
     },
     "protohedron": {
       "game_id": 5120020020,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_level_7_12.webp",
       "label": "Protohedron",
       "Category": "forgery",
       "SubCategory": "proto_skill",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_level_7_12.webp",
       "tier": 3
     },
     "cast_die": {
       "game_id": 5120030021,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_break_low.webp",
       "label": "Cast Die",
       "Category": "forgery",
       "SubCategory": "cast_die",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_break_low.webp",
       "tier": 2
     },
     "heavy_cast_die": {
       "game_id": 5120030022,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_break_high.webp",
       "label": "Heavy Cast Die",
       "Category": "forgery",
       "SubCategory": "cast_die",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_break_high.webp",
       "tier": 3
     }
   },
-  "player_exp": {
+  "player_exp_early": {
     "elementary_combat_record": {
       "game_id": 5160010023,
-      "label": "Elementary Combat Record",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_2_1.webp",
+      "label": "Elementary Combat Record",
+      "Category": "player_exp_early",
+      "SubCategory": "player_exp_early",
       "tier": 2,
       "value": 200
     },
     "intermediate_combat_record": {
       "game_id": 5160010024,
-      "label": "Intermediate Combat Record",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_2_2.webp",
+      "label": "Intermediate Combat Record",
+      "Category": "player_exp_early",
+      "SubCategory": "player_exp_early",
       "tier": 3,
       "value": 1000
     },
     "advanced_combat_record": {
       "game_id": 5160010025,
-      "label": "Advanced Combat Record",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_2_3.webp",
+      "label": "Advanced Combat Record",
+      "Category": "player_exp_early",
+      "SubCategory": "player_exp_early",
       "tier": 4,
       "value": 10000
-    },
+    }
+  },
+  "player_exp_late": {
     "elementary_cognitive_carrier": {
       "game_id": 5160010026,
-      "label": "Elementary Cognitive Carrier",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_stage2_low.webp",
+      "label": "Elementary Cognitive Carrier",
+      "Category": "player_exp_late",
+      "SubCategory": "player_exp_late",
       "tier": 5,
       "value": 1000
     },
     "advanced_cognitive_carrier": {
       "game_id": 5160010027,
-      "label": "Advanced Cognitive Carrier",
-      "Category": "player_exp",
-      "SubCategory": "player_exp",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_expcard_stage2_high.webp",
+      "label": "Advanced Cognitive Carrier",
+      "Category": "player_exp_late",
+      "SubCategory": "player_exp_late",
       "tier": 6,
       "value": 10000
     }
@@ -230,28 +232,28 @@
   "weapon_exp": {
     "arms_insp_kit": {
       "game_id": 5170020028,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_expcard_mid.webp",
       "label": "Arms INSP Kit",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_expcard_low.webp",
       "tier": 2,
       "value": 200
     },
     "arms_insp_set": {
       "game_id": 5170020029,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_expcard_high.webp",
       "label": "Arms INSP Set",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_expcard_mid.webp",
       "tier": 3,
       "value": 1000
     },
     "arms_inspector": {
       "game_id": 5170020030,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_expcard_low.webp",
       "label": "Arms Inspector",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_weapon_expcard_high.webp",
       "tier": 4,
       "value": 10000
     }
@@ -259,50 +261,50 @@
   "special": {
     "metadiastima_photoemission_tube": {
       "game_id": 5130010031,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_1.webp",
       "label": "Metadiastima Photoemission Tube",
       "Category": "special",
       "SubCategory": "special",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_1.webp",
       "tier": 5
     },
     "d96_steel_sample_4": {
       "game_id": 5130010032,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_2.webp",
       "label": "D96 Steel Sample 4",
       "Category": "special",
       "SubCategory": "special",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_2.webp",
       "tier": 5
     },
     "tachyon_screening_lattice": {
       "game_id": 5130010033,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_3.webp",
       "label": "Tachyon Screening Lattice",
       "Category": "special",
       "SubCategory": "special",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_3.webp",
       "tier": 5
     },
     "quadrant_fitting_fluid": {
       "game_id": 5130010034,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_4.webp",
       "label": "Quadrant Fitting Fluid",
       "Category": "special",
       "SubCategory": "special",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_4.webp",
       "tier": 5
     },
     "triphasic_nanoflake": {
       "game_id": 5130010035,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_5.webp",
       "label": "Triphasic Nanoflake",
       "Category": "special",
       "SubCategory": "special",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_5.webp",
       "tier": 5
     },
     "mark_of_perseverance": {
       "game_id": 5130010036,
+      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_crown.webp",
       "label": "Mark of Perseverance",
       "Category": "special",
       "SubCategory": "special",
-      "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_crown.webp",
       "tier": 5
     }
   }
