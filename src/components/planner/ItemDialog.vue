@@ -80,13 +80,19 @@
                             </div>
 
                             <!-- アイテム別インベントリ入力 -->
-                            <input
-                                type="number"
-                                class="tier-input"
-                                @keyup.enter="updateTierInventory(tierItem.id, $event.target.value)"
-                                @blur="updateTierInventory(tierItem.id, $event.target.value)"
-                                placeholder="0"
-                            />
+                            <div class="tier-input-container">
+                                <input
+                                    type="number"
+                                    class="tier-input"
+                                    :id="`tier-input-${tierItem.id}`"
+                                    @keyup.enter="updateTierInventory(tierItem.id, $event.target.value)"
+                                    placeholder="0"
+                                />
+                                <button
+                                    class="tier-save-btn"
+                                    @click="saveTierInput(tierItem.id)"
+                                >{{ tUI('common.save') }}</button>
+                            </div>
                         </div>
                     </div>
                 </template>
@@ -140,7 +146,7 @@ const props = defineProps({
 
 const emit = defineEmits(['close', 'updateInventory']);
 
-const inputQuantity = ref(0);
+const inputQuantity = ref(null);
 
 // アイテム名取得（翻訳対応）
 const itemName = computed(() => {
@@ -216,10 +222,11 @@ const close = () => {
 
 // インベントリ更新 (単一アイテム用)
 const updateInventory = () => {
-    if (props.item.id) {
+    if (props.item.id && inputQuantity.value !== null) {
+        const quantity = Math.max(0, parseInt(inputQuantity.value, 10) || 0);
         emit('updateInventory', {
             id: props.item.id,
-            quantity: inputQuantity.value
+            quantity: quantity
         });
     }
 };
@@ -233,9 +240,17 @@ const updateTierInventory = (itemId, value) => {
     });
 };
 
-// propsのitemが変わったらinputQuantityをリセット (常に0)
+// ティア別Saveボタンクリック処理
+const saveTierInput = (itemId) => {
+    const input = document.getElementById(`tier-input-${itemId}`);
+    if (input) {
+        updateTierInventory(itemId, input.value);
+    }
+};
+
+// propsのitemが変わったらinputQuantityをリセット (空に)
 watch(() => props.item, () => {
-    inputQuantity.value = 0;
+    inputQuantity.value = null;
 }, { immediate: true });
 </script>
 
@@ -445,6 +460,14 @@ watch(() => props.item, () => {
     padding-top: 5px;
 }
 
+.tier-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
 .tier-input {
     width: 78px;
     padding: 5px 8px;
@@ -452,12 +475,25 @@ watch(() => props.item, () => {
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
-    margin-top: 10px;
 }
 
 .tier-input:focus {
     border-color: #3498db;
     outline: none;
+}
+
+.tier-save-btn {
+    padding: 4px 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.tier-save-btn:hover {
+    background: #2980b9;
 }
 
 .dialog-footer {

@@ -136,6 +136,66 @@ export const useInventoryStore = defineStore('inventory', {
       logger.debug(`Inventory gameID ${gameId}:`, this.inventory);
       this.currentGameId = gameId;
       this.loadInventory(gameId);
+    },
+
+    // Batch remove materials (single save at the end for performance)
+    batchRemoveMaterials(materialsToRemove) {
+      if (!materialsToRemove || materialsToRemove.length === 0) return;
+
+      let newInventory = { ...this.inventory };
+
+      for (const { materialId, quantity } of materialsToRemove) {
+        if (!newInventory[materialId]) continue;
+
+        const newQuantity = newInventory[materialId] - quantity;
+
+        if (newQuantity <= 0) {
+          delete newInventory[materialId];
+        } else {
+          newInventory[materialId] = newQuantity;
+        }
+
+        logger.debug(`Batch removed: ${quantity} of ${materialId}. Remaining: ${newInventory[materialId] || 0}`);
+      }
+
+      // Update state once
+      this.inventory = newInventory;
+
+      // Save once at the end
+      this.saveInventory(this.currentGameId);
+    },
+
+    // Batch update materials (single save at the end for performance)
+    // operations: [{ materialId, quantity, operation: 'add' | 'remove' }]
+    batchUpdateMaterials(operations) {
+      if (!operations || operations.length === 0) return;
+
+      let newInventory = { ...this.inventory };
+
+      for (const { materialId, quantity, operation } of operations) {
+        if (operation === 'add') {
+          newInventory[materialId] = (newInventory[materialId] || 0) + quantity;
+          logger.debug(`Batch added: ${quantity} of ${materialId}. Total: ${newInventory[materialId]}`);
+        } else if (operation === 'remove') {
+          if (!newInventory[materialId]) continue;
+
+          const newQuantity = newInventory[materialId] - quantity;
+
+          if (newQuantity <= 0) {
+            delete newInventory[materialId];
+          } else {
+            newInventory[materialId] = newQuantity;
+          }
+
+          logger.debug(`Batch removed: ${quantity} of ${materialId}. Remaining: ${newInventory[materialId] || 0}`);
+        }
+      }
+
+      // Update state once
+      this.inventory = newInventory;
+
+      // Save once at the end
+      this.saveInventory(this.currentGameId);
     }
   },
 });

@@ -28,13 +28,15 @@
         </div>
 
         <div class="final-container">
-            <div class="category-card" v-for="(category, categoryName) in categorizedMaterials" :key="categoryName">
+            <div class="category-card" v-for="(category, categoryName) in categorizedMaterials" :key="categoryName"
+                v-show="categoryHasRequiredMaterials(category)">
                 <h2 class="category-title">{{ translateCategoryName(category.name) }}</h2>
 
                 <div class="subcategory-list">
 
                     <div class="subcategory-card" v-for="(subCategory, subCategoryName) in category.subCategories"
-                        :key="subCategoryName">
+                        :key="subCategoryName"
+                        v-show="hasRequiredMaterials(category, subCategory)">
 
                         <h3 v-if="category.name !== subCategory.name">{{ translateCategoryName(subCategory.name) }}</h3>
 
@@ -322,6 +324,21 @@ const calculateActualNeed = (task) => {
 // タスクをtier順にソート
 const sortedTasks = (tasks) => {
     return [...tasks].sort((a, b) => (a.tier || 0) - (b.tier || 0));
+};
+
+// サブカテゴリに必要な材料があるかどうか判定
+const hasRequiredMaterials = (category, subCategory) => {
+    // EXPカテゴリの場合
+    if (isExpCategory(category.name)) {
+        return totalExpNeed(category) > 0;
+    }
+    // 通常カテゴリの場合: 1つでも未完了のタスクがあればtrue
+    return subCategory.task.some(task => !isTaskComplete(task));
+};
+
+// カテゴリに必要な材料があるかどうか判定 (全サブカテゴリをチェック)
+const categoryHasRequiredMaterials = (category) => {
+    return category.subCategories.some(subCategory => hasRequiredMaterials(category, subCategory));
 };
 
 // ItemDialogを開く

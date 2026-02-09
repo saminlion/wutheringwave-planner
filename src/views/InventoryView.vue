@@ -20,10 +20,6 @@
             <input type="number" v-model.number="quantities[material.game_id]" @change="update(material.game_id)"
               class="quantity-input" />
           </p>
-          <div class="button-group">
-            <button @click="remove(material.game_id, 1)">-</button>
-            <button @click="add(material.game_id, 1)">+</button>
-          </div>
         </div>
       </div>
     </div>
@@ -35,7 +31,6 @@
 
 <script setup>
 import { ref, computed, onMounted, watch } from 'vue';
-import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import { useInventoryStore } from '../store/inventory.js';
 import { useGameStore } from '@/store/game';
@@ -108,30 +103,6 @@ const logMessage = (material) => {
   logger.debug('Check Material Set:', material);
 };
 
-// Debounced function for adding materials
-const debouncedAddMaterial = useDebounceFn((id, quantity) => {
-  inventoryStore.addMaterial(id, quantity);
-  quantities.value[id] = inventory.value[id]; // Sync local state
-
-  toast.success(`Item updated successfully: ${id}, Quantity: ${quantity}`, {
-    position: 'bottom-center',
-    autoClose: 2000,
-    theme: 'dark',
-  });
-}, 1000);
-
-// Debounced function for removing materials
-const debouncedRemoveMaterial = useDebounceFn((id, quantity) => {
-  inventoryStore.removeMaterial(id, quantity);
-  quantities.value[id] = inventory.value[id]; // Sync local state
-
-  toast.success(`Item updated successfully: ${id}, Quantity: ${quantity}`, {
-    position: 'bottom-center',
-    autoClose: 2000,
-    theme: 'dark',
-  });
-}, 1000);
-
 const groupedMaterials = computed(()=>{
   return materials.value.reduce((acc, material)=>{
     if (!acc[material.Category]){
@@ -148,27 +119,6 @@ const groupedMaterials = computed(()=>{
     return acc;
   }, {});
 });
-
-// Add material
-const add = (materialId, quantity) => {
-  if (!materialId || quantity <= 0) {
-    logger.warn(`Invalid input for adding material: ${materialId}, ${quantity}`);
-    return;
-  }
-
-  debouncedAddMaterial(materialId, quantity);
-};
-
-// Remove material
-const remove = (materialId, quantity) => {
-  if (!materialId || quantity <= 0) {
-    logger.warn(`Invalid input for removing material: ${materialId}, ${quantity}`);
-    return;
-  }
-
-  debouncedRemoveMaterial(materialId, quantity);
-};
-
 
 // Update material quantity directly (without debounce for immediate save)
 const update = (materialId) => {
@@ -246,26 +196,6 @@ const update = (materialId) => {
 /* Material info */
 .material-info {
   font-size: 14px;
-}
-
-/* Button group */
-.button-group {
-  margin-top: 8px;
-}
-
-.button-group button {
-  margin: 0 4px;
-  padding: 4px 8px;
-  font-size: 14px;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.button-group button:hover {
-  background-color: #eaeaea;
 }
 
 /* Quantity input */

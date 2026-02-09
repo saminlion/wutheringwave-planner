@@ -627,25 +627,30 @@ const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tie
  * Perform material synthesis based on synthesis plan.
  */
 const performSynthesis = (synthesisNeeded) => {
+  const operations = [];
+
   for (const { materialId, materialName, steps } of synthesisNeeded) {
     for (const step of steps) {
       const { fromMaterialId, toMaterialId, quantity, ratio } = step;
 
-      // Deduct lower tier materials
+      // Queue deduction of lower tier materials
       const usedQty = quantity * ratio;
-      inventoryStore.removeMaterial(fromMaterialId, usedQty);
+      operations.push({ materialId: fromMaterialId, quantity: usedQty, operation: 'remove' });
 
-      // Add higher tier materials
-      inventoryStore.addMaterial(toMaterialId, quantity);
+      // Queue addition of higher tier materials
+      operations.push({ materialId: toMaterialId, quantity, operation: 'add' });
 
       logger.info(`Synthesized ${quantity}x ${getMaterialFieldById(toMaterialId, 'label')} from ${usedQty}x ${getMaterialFieldById(fromMaterialId, 'label')}`);
     }
   }
+
+  // Apply all synthesis operations in one batch
+  inventoryStore.batchUpdateMaterials(operations);
 };
 
 // Complete goal: Update current levels to target and deduct materials from inventory
 const completeGoal = (id, type) => {
-  const goal = goals.value.find(g => g.id === id);
+  const goal = goals.value.find(g => g.id === id && g.type === type);
   if (!goal) {
     toast.error('Goal not found');
     return;
@@ -723,7 +728,7 @@ const completeGoal = (id, type) => {
       };
 
       // Update active skills current to target
-      Object.keys(settings.activeSkills).forEach(key => {
+      Object.keys(settings.activeSkills || {}).forEach(key => {
         if (key.endsWith('_current_level')) {
           const targetKey = key.replace('_current_level', '_target_level');
           updatedSettings.activeSkills[key] = settings.activeSkills[targetKey];
@@ -756,7 +761,9 @@ const completeGoal = (id, type) => {
       logger.info(`Updated weapon ${id} settings to target level`);
     }
 
-    // Deduct materials from inventory
+    // Deduct materials from inventory (batch for performance)
+    const materialsToRemove = [];
+
     Object.entries(goal.materials || {}).forEach(([materialId, quantity]) => {
       if (materialId === 'processed') return; // Skip processed marker
 
@@ -771,9 +778,9 @@ const completeGoal = (id, type) => {
           const toUse = Math.min(available, needed);
 
           if (toUse > 0) {
-            inventoryStore.removeMaterial(item.id, toUse);
+            materialsToRemove.push({ materialId: item.id, quantity: toUse });
             remainingExp -= toUse * item.value;
-            logger.debug(`Deducted ${toUse}x ${getMaterialFieldById(item.id, 'label')} (${toUse * item.value} exp)`);
+            logger.debug(`Queued deduction: ${toUse}x ${getMaterialFieldById(item.id, 'label')} (${toUse * item.value} exp)`);
           }
 
           if (remainingExp <= 0) break;
@@ -786,9 +793,12 @@ const completeGoal = (id, type) => {
       }
 
       // Normal materials
-      inventoryStore.removeMaterial(materialId, quantity);
-      logger.debug(`Deducted ${quantity} of ${materialId} from inventory`);
+      materialsToRemove.push({ materialId, quantity });
+      logger.debug(`Queued deduction: ${quantity} of ${materialId}`);
     });
+
+    // Apply all deductions in one batch (single localStorage save)
+    inventoryStore.batchRemoveMaterials(materialsToRemove);
 
     // Hide the goal
     plannerStore.hideGoal(id, type);
