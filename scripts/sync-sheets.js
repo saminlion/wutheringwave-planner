@@ -192,10 +192,8 @@ function transformCharacters(rows) {
       character.rarity = parseInt(row.Rarity, 10);
     }
 
-    // ElementCode -> element
-    if (row.ElementCode) {
-      character.element = row.ElementCode;
-    } else if (row.Element) {
+    // Element (text) -> element (prefer text over numeric code)
+    if (row.Element) {
       character.element = row.Element;
     }
 
@@ -251,8 +249,8 @@ function transformMaterials(rows) {
   for (const row of rows) {
     if (!row.game_id) continue;
 
-    // Use CategoryCode for internal category key, fallback to Category
-    const category = row.CategoryCode || row.Category;
+    // Use Category (text) for category key
+    const category = row.Category;
     if (!category) continue;
 
     const key = row.key || String(row.label || row.game_id).toLowerCase().replace(/\s+/g, '_');
@@ -267,10 +265,8 @@ function transformMaterials(rows) {
       Category: category,
     };
 
-    // SubCatCode -> SubCategory
-    if (row.SubCatCode) {
-      material.SubCategory = row.SubCatCode;
-    } else if (row.SubCategory) {
+    // SubCategory (text)
+    if (row.SubCategory) {
       material.SubCategory = row.SubCategory;
     }
 
@@ -324,10 +320,8 @@ function transformWeapons(rows) {
       weapon.rarity = parseInt(row.Rarity, 10);
     }
 
-    // TypeCode -> weapon_type
-    if (row.TypeCode) {
-      weapon.weapon_type = row.TypeCode;
-    } else if (row.Type) {
+    // Type (text) -> weapon_type (prefer text over numeric code)
+    if (row.Type) {
       weapon.weapon_type = row.Type;
     }
 
