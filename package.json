@@ -8,7 +8,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "sync": "node scripts/sync-sheets.js",
+    "sync:ww": "node scripts/sync-sheets.js --game=wutheringwave",
+    "sync:endfield": "node scripts/sync-sheets.js --game=endfield"
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
