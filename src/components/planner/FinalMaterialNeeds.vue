@@ -77,11 +77,11 @@
                                 <p>{{ tUI('final.estimated_stamina') }} {{ staminaName }}: {{ estimate.resin }}</p>
                                 <p v-if="subCategory.name !== 'weeklyboss'">
                                     {{ tUI('final.estimated_time') }}:
-                                    <span class="font-semibold">{{ estimate.date }}</span>
+                                    <span class="font-semibold">{{ estimate.date }} {{ tUI('final.days') }}</span>
                                 </p>
                                 <p v-else>
                                     {{ tUI('final.estimated_date') }}:
-                                    <span class="font-semibold">{{ estimate.date }}</span>
+                                    <span class="font-semibold">{{ estimate.date }} {{ estimate.date === 1 ? tUI('final.week') : tUI('final.weeks') }}</span>
                                 </p>
                                 <p v-if="estimate.note" class="estimate-note">{{ estimate.note }}</p>
                             </template>
