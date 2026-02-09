@@ -61,14 +61,18 @@ export const usePlannerStore = defineStore('planner', {
     },
 
     addGoal(goal) {
-      const existingGoal = this.goals.find((g) => g.id === goal.id && g.type === goal.type);
+      const existingGoalIndex = this.goals.findIndex((g) => g.id === goal.id && g.type === goal.type);
 
       logger.debug('Check Goal:', goal);
 
-      if (existingGoal) {
+      if (existingGoalIndex !== -1) {
         logger.debug(`Found existing goal with id: ${goal.id} and type: ${goal.type}`);
-        existingGoal.materials = goal.materials;
-        existingGoal.isHidden = false; // 숨겨져 있던 목표를 다시 활성화
+        // 기존 goal을 새로운 객체로 교체하여 반응성 트리거
+        this.goals[existingGoalIndex] = {
+          ...this.goals[existingGoalIndex],
+          materials: goal.materials,
+          isHidden: false, // 숨겨져 있던 목표를 다시 활성화
+        };
       } else {
         this.goals.push({ ...goal, isHidden: false });
       }
@@ -77,11 +81,12 @@ export const usePlannerStore = defineStore('planner', {
     },
 
     revealGoal(goalId, goalType) {
-      const goal = this.goals.find((g) => g.id === goalId && g.type === goalType);
-      if (goal) {
-        goal.isHidden = false;
-        this.saveGoals(this.currentGameId);
-      }
+      this.goals = this.goals.map((g) =>
+        g.id === goalId && g.type === goalType
+          ? { ...g, isHidden: false }
+          : g
+      );
+      this.saveGoals(this.currentGameId);
     },
 
     removeGoal(goalId, goalType) {
@@ -90,11 +95,12 @@ export const usePlannerStore = defineStore('planner', {
     },
 
     hideGoal(goalId, goalType) {
-      const goal = this.goals.find((g) => g.id === goalId && g.type === goalType);
-      if (goal) {
-        goal.isHidden = true;
-        this.saveGoals(this.currentGameId);
-      }
+      this.goals = this.goals.map((g) =>
+        g.id === goalId && g.type === goalType
+          ? { ...g, isHidden: true }
+          : g
+      );
+      this.saveGoals(this.currentGameId);
     },
 
     // 저장 부분
@@ -204,27 +210,27 @@ export const usePlannerStore = defineStore('planner', {
     },
 
     updateWeaponSettings(weaponId, updatedSettings) {
-      if (!this.weaponSettings[weaponId]) {
-        this.weaponSettings[weaponId] = { ...updatedSettings };
-      } else {
-        this.weaponSettings[weaponId] = {
-          ...this.weaponSettings[weaponId],
+      // 전체 settings 객체를 새로운 객체로 교체하여 반응성 트리거
+      this.weaponSettings = {
+        ...this.weaponSettings,
+        [weaponId]: {
+          ...(this.weaponSettings[weaponId] || {}),
           ...updatedSettings,
-        };
-      }
+        }
+      };
 
       this.saveSettings(this.currentGameId);
     },
 
     updateCharacterSettings(characterId, updatedSettings) {
-      if (!this.characterSettings[characterId]) {
-        this.characterSettings[characterId] = { ...updatedSettings };
-      } else {
-        this.characterSettings[characterId] = {
-          ...this.characterSettings[characterId],
+      // 전체 settings 객체를 새로운 객체로 교체하여 반응성 트리거
+      this.characterSettings = {
+        ...this.characterSettings,
+        [characterId]: {
+          ...(this.characterSettings[characterId] || {}),
           ...updatedSettings,
-        };
-      }
+        }
+      };
       this.saveSettings(this.currentGameId);
     },
   },

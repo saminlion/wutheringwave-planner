@@ -30,11 +30,11 @@ export const useInventoryStore = defineStore('inventory', {
         logger.warn(`Invalid material or quantity: ${materialId}, ${quantity}`);
         return;
       }
-      if (this.inventory[materialId]) {
-        this.inventory[materialId] += quantity;
-      } else {
-        this.inventory[materialId] = quantity;
-      }
+      // 새로운 객체로 교체하여 반응성 트리거
+      this.inventory = {
+        ...this.inventory,
+        [materialId]: (this.inventory[materialId] || 0) + quantity
+      };
       logger.debug(`Added: ${quantity} of ${materialId}. Total: ${this.inventory[materialId]}`);
 
       this.saveInventory(this.currentGameId);
@@ -46,9 +46,18 @@ export const useInventoryStore = defineStore('inventory', {
         logger.warn(`Material not found: ${materialId}`);
         return;
       }
-      this.inventory[materialId] -= quantity;
-      if (this.inventory[materialId] <= 0) {
-        delete this.inventory[materialId]; // Remove material if quantity is zero or less
+      const newQuantity = this.inventory[materialId] - quantity;
+
+      // 새로운 객체로 교체하여 반응성 트리거
+      if (newQuantity <= 0) {
+        // 속성 제거: delete 대신 destructuring 사용
+        const { [materialId]: _, ...rest } = this.inventory;
+        this.inventory = rest;
+      } else {
+        this.inventory = {
+          ...this.inventory,
+          [materialId]: newQuantity
+        };
       }
       logger.debug(`Removed: ${quantity} of ${materialId}. Remaining: ${this.inventory[materialId] || 0}`);
 
@@ -69,10 +78,17 @@ export const useInventoryStore = defineStore('inventory', {
       }
 
       const newQuantity = Math.max(0, quantity);
+
+      // 새로운 객체로 교체하여 반응성 트리거
       if (newQuantity === 0) {
-        delete this.inventory[materialId];
+        // 속성 제거: delete 대신 destructuring 사용
+        const { [materialId]: _, ...rest } = this.inventory;
+        this.inventory = rest;
       } else {
-        this.inventory[materialId] = newQuantity;
+        this.inventory = {
+          ...this.inventory,
+          [materialId]: newQuantity
+        };
       }
       logger.debug(`Set material ${materialId} to ${newQuantity}`);
 
