@@ -463,6 +463,9 @@ const updateCharacter = () => {
   });
 
   logger.debug('Updated Goals:', plannerStore.goals);
+
+  // Force refresh of FinalMaterialNeeds display
+  refreshFinalMaterialNeeds();
 };
 
 // Update weapon
@@ -486,6 +489,9 @@ const updateweapon = () => {
   });
 
   logger.debug('Updated Goals:', plannerStore.goals);
+
+  // Force refresh of FinalMaterialNeeds display
+  refreshFinalMaterialNeeds();
 };
 
 /**
