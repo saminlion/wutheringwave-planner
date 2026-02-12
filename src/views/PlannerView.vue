@@ -655,7 +655,7 @@ const performSynthesis = (synthesisNeeded) => {
 };
 
 // Complete goal: Update current levels to target and deduct materials from inventory
-const completeGoal = (id, type) => {
+const completeGoal = async (id, type) => {
   const goal = goals.value.find(g => g.id === id && g.type === type);
   if (!goal) {
     toast.error('Goal not found');
@@ -677,12 +677,25 @@ const completeGoal = (id, type) => {
       return;
     }
 
+    // Show processing toast immediately for UI feedback
+    const processingToast = toast.info('Processing...', {
+      position: 'bottom-center',
+      autoClose: false,
+      closeButton: false,
+    });
+
+    // Defer validation to next tick to allow UI to update
+    await new Promise(resolve => setTimeout(resolve, 0));
+
     // Validate materials with synthesis check
     const validation = validateMaterialsWithSynthesis(
       goal.materials || {},
       inventory.value,
       tieredMaterials.value
     );
+
+    // Dismiss processing toast
+    toast.dismiss(processingToast);
 
     if (!validation.canComplete) {
       // Show detailed shortage message
@@ -715,6 +728,16 @@ const completeGoal = (id, type) => {
       return;
     }
 
+    // Show completing toast
+    const completingToast = toast.info('Completing goal...', {
+      position: 'bottom-center',
+      autoClose: false,
+      closeButton: false,
+    });
+
+    // Defer heavy operations to next tick
+    await new Promise(resolve => setTimeout(resolve, 0));
+
     // Perform synthesis if needed
     if (validation.synthesisNeeded.length > 0) {
       logger.info('Performing auto-synthesis before goal completion');
@@ -729,30 +752,73 @@ const completeGoal = (id, type) => {
     if (type === 'character') {
       const updatedSettings = {
         ...settings,
-        currentLevel: settings.targetLevel,
-        activeSkills: {}
+        currentLevel: settings.targetLevel
       };
 
-      // Update active skills current to target
-      Object.keys(settings.activeSkills || {}).forEach(key => {
-        if (key.endsWith('_current_level')) {
-          const targetKey = key.replace('_current_level', '_target_level');
-          updatedSettings.activeSkills[key] = settings.activeSkills[targetKey];
-        } else {
-          updatedSettings.activeSkills[key] = settings.activeSkills[key];
-        }
-      });
+      // Handle WutheringWaves skill structure (activeSkills, passiveSkills)
+      if (settings.activeSkills) {
+        updatedSettings.activeSkills = {};
+        Object.keys(settings.activeSkills).forEach(key => {
+          if (key.endsWith('_current_level')) {
+            const targetKey = key.replace('_current_level', '_target_level');
+            updatedSettings.activeSkills[key] = settings.activeSkills[targetKey];
+          } else {
+            updatedSettings.activeSkills[key] = settings.activeSkills[key];
+          }
+        });
+      }
 
-      // Update passive skills current to target (新構造: レベルベース 0→2)
-      updatedSettings.passiveSkills = {};
-      Object.keys(settings.passiveSkills || {}).forEach(key => {
-        if (key.endsWith('_current_level')) {
-          const targetKey = key.replace('_current_level', '_target_level');
-          updatedSettings.passiveSkills[key] = settings.passiveSkills[targetKey];
-        } else {
-          updatedSettings.passiveSkills[key] = settings.passiveSkills[key];
-        }
-      });
+      if (settings.passiveSkills) {
+        updatedSettings.passiveSkills = {};
+        Object.keys(settings.passiveSkills).forEach(key => {
+          if (key.endsWith('_current_level')) {
+            const targetKey = key.replace('_current_level', '_target_level');
+            updatedSettings.passiveSkills[key] = settings.passiveSkills[targetKey];
+          } else {
+            updatedSettings.passiveSkills[key] = settings.passiveSkills[key];
+          }
+        });
+      }
+
+      // Handle Endfield skill structure (skills, special, baseSkill, attributes)
+      if (settings.skills) {
+        updatedSettings.skills = {};
+        Object.keys(settings.skills).forEach(skillKey => {
+          const skill = settings.skills[skillKey];
+          updatedSettings.skills[skillKey] = {
+            current_level: skill.target_level,
+            target_level: skill.target_level,
+            current_mastery: skill.target_mastery,
+            target_mastery: skill.target_mastery,
+          };
+        });
+      }
+
+      if (settings.special) {
+        updatedSettings.special = {};
+        Object.keys(settings.special).forEach(skillKey => {
+          const skill = settings.special[skillKey];
+          updatedSettings.special[skillKey] = {
+            current_level: skill.target_level,
+            target_level: skill.target_level,
+          };
+        });
+      }
+
+      if (settings.baseSkill) {
+        updatedSettings.baseSkill = {};
+        Object.keys(settings.baseSkill).forEach(skillKey => {
+          const skill = settings.baseSkill[skillKey];
+          updatedSettings.baseSkill[skillKey] = {
+            current_level: skill.target_level,
+            target_level: skill.target_level,
+          };
+        });
+      }
+
+      if (settings.attributes) {
+        updatedSettings.attributes = { ...settings.attributes };
+      }
 
       plannerStore.updateCharacterSettings(id, updatedSettings);
       logger.info(`Updated character ${id} settings to target levels`);
@@ -817,6 +883,10 @@ const completeGoal = (id, type) => {
       materials: calculatedMaterials,
     });
 
+    // Dismiss completing toast
+    toast.dismiss(completingToast);
+
+    // Show success message
     toast.success(`Goal completed for ${entityName}!`, {
       position: 'bottom-center',
       autoClose: 3000,
@@ -824,6 +894,10 @@ const completeGoal = (id, type) => {
     });
 
     logger.info(`Goal completed for ${type} ${id}`);
+
+    // Refresh final material needs after a short delay
+    await new Promise(resolve => setTimeout(resolve, 100));
+    refreshFinalMaterialNeeds();
   } catch (error) {
     logger.error('Error completing goal:', error);
     toast.error('Failed to complete goal. Check console for details.');

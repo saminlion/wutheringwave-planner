@@ -100,12 +100,66 @@ This command helps set up a new game plugin for the Multi-Game Planner.
 
 ## 6. 스킬 구조
 
+**⚠️ IMPORTANT: Choose skill structure pattern based on complexity**
+
+### Pattern 1: Simple (WutheringWaves Style)
+✅ Use if:
+- 5개 이하 스킬
+- 단순한 패시브 (0→1→2 레벨)
+- 속성/특성 시스템 없음
+
+**구조**:
+```javascript
+settings: {
+  activeSkills: {
+    "skill_basic_current_level": 1,
+    "skill_basic_target_level": 10,
+    ...
+  },
+  passiveSkills: {
+    "passive_1_current_level": 0,
+    "passive_1_target_level": 2,
+    ...
+  }
+}
+```
+
+### Pattern 2: Complex (Endfield Style)
+✅ Use if:
+- 5개 이상 스킬
+- 복잡한 스킬 시스템 (마스터리, 특성, 던전 등)
+- 속성/특성 체크박스 필요
+
+**구조**:
+```javascript
+settings: {
+  skills: {
+    skill_basic: {
+      current_level: 1,
+      target_level: 10,
+      current_mastery: 0,
+      target_mastery: 3
+    }
+  },
+  special: { ... },
+  baseSkill: { ... },
+  attributes: { attr1: true, attr2: false }
+}
+```
+
+---
+
+### 스킬 정보 (선택한 패턴에 맞게 작성)
+
 | 질문 | 답변 |
 |------|------|
+| **선택한 패턴** | Pattern 1 (Simple) / Pattern 2 (Complex) |
 | 액티브 스킬 개수 | (예: 5) |
 | 스킬 이름들 | (예: 기본공격, 스킬, 궁극기, ...) |
 | 패시브 스킬 존재 여부 | 있음 / 없음 |
 | 패시브 구조 | (예: 2단계, 각 5개 노드) |
+| 마스터리 시스템 | 있음 / 없음 (Complex only) |
+| 특성/속성 체크박스 | 있음 / 없음 (Complex only) |
 
 ---
 
@@ -515,7 +569,7 @@ This command helps set up a new game plugin for the Multi-Game Planner.
    ├── index.js
    ├── config.js
    ├── materialProcessor.js
-   ├── components/CharacterDialog.vue
+   ├── components/CharacterDialog.vue  (copy from template based on chosen pattern)
    └── data/
        ├── index.js
        ├── character.json
@@ -524,6 +578,14 @@ This command helps set up a new game plugin for the Multi-Game Planner.
        ├── costs.json
        └── tiers.js
    ```
+
+   **CharacterDialog.vue template selection**:
+   - Pattern 1 (Simple) → Copy from `src/games/wutheringwave/components/CharacterDialog.vue`
+   - Pattern 2 (Complex) → Copy from `src/games/endfield/components/CharacterDialog.vue`
+
+   **✅ Complete button compatibility**:
+   Both patterns are automatically supported by the `completeGoal` function in PlannerView.vue.
+   No additional code changes needed when using these patterns.
 
 7. **Register plugin** in `src/main.js`
 

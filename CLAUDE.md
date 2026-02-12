@@ -283,7 +283,11 @@ export default {
   },
 
   createCharacterInitialSettings() {
+    // Pattern 1 (Simple - WutheringWaves): Use for games with simple skill systems
     return { currentLevel: '1', targetLevel: '1', activeSkills: {}, passiveSkills: {} };
+
+    // Pattern 2 (Complex - Endfield): Use for games with complex skill systems (mastery, special, baseSkill, attributes)
+    // return { currentLevel: '1', targetLevel: '1', skills: {}, special: {}, baseSkill: {}, attributes: {} };
   },
 };
 ```
