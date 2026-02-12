@@ -864,18 +864,7 @@ const completeGoal = async (id, type) => {
     // Hide the goal
     plannerStore.hideGoal(id, type);
 
-    // Defer recalculation to allow UI to update
-    await new Promise(resolve => setTimeout(resolve, 0));
-
-    // Recalculate materials (goal should now show 0 materials needed)
-    const calculatedMaterials = plannerStore.calculateAllMaterials(id, type);
-    plannerStore.addGoal({
-      id: id,
-      type: type,
-      materials: calculatedMaterials,
-    });
-
-    // Show success message
+    // Show success message immediately (before expensive recalculation)
     toast.success(`Goal completed for ${entityName}!`, {
       position: 'bottom-center',
       autoClose: 3000,
@@ -884,11 +873,20 @@ const completeGoal = async (id, type) => {
 
     logger.info(`Goal completed for ${type} ${id}`);
 
-    // Defer final material refresh to prevent render blocking
-    // Use longer delay and requestIdleCallback for better performance
+    // Move expensive recalculation to background to prevent UI blocking
+    // This allows the success message to show immediately
     setTimeout(() => {
+      // Recalculate materials (goal should now show 0 materials needed)
+      const calculatedMaterials = plannerStore.calculateAllMaterials(id, type);
+      plannerStore.addGoal({
+        id: id,
+        type: type,
+        materials: calculatedMaterials,
+      });
+
+      // Refresh final material display after recalculation
       refreshFinalMaterialNeeds();
-    }, 500);
+    }, 0);
   } catch (error) {
     logger.error('Error completing goal:', error);
     toast.error('Failed to complete goal. Check console for details.');
