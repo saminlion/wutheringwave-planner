@@ -680,8 +680,7 @@ const completeGoal = async (id, type) => {
     // Show processing toast immediately for UI feedback
     const processingToast = toast.info('Processing...', {
       position: 'bottom-center',
-      autoClose: false,
-      closeButton: false,
+      autoClose: 1000,
     });
 
     // Defer validation to next tick to allow UI to update
@@ -693,9 +692,6 @@ const completeGoal = async (id, type) => {
       inventory.value,
       tieredMaterials.value
     );
-
-    // Dismiss processing toast
-    toast.dismiss(processingToast);
 
     if (!validation.canComplete) {
       // Show detailed shortage message
@@ -727,13 +723,6 @@ const completeGoal = async (id, type) => {
     if (!confirm(confirmMessage)) {
       return;
     }
-
-    // Show completing toast
-    const completingToast = toast.info('Completing goal...', {
-      position: 'bottom-center',
-      autoClose: false,
-      closeButton: false,
-    });
 
     // Defer heavy operations to next tick
     await new Promise(resolve => setTimeout(resolve, 0));
@@ -882,9 +871,6 @@ const completeGoal = async (id, type) => {
       type: type,
       materials: calculatedMaterials,
     });
-
-    // Dismiss completing toast
-    toast.dismiss(completingToast);
 
     // Show success message
     toast.success(`Goal completed for ${entityName}!`, {
