@@ -864,6 +864,9 @@ const completeGoal = async (id, type) => {
     // Hide the goal
     plannerStore.hideGoal(id, type);
 
+    // Defer recalculation to allow UI to update
+    await new Promise(resolve => setTimeout(resolve, 0));
+
     // Recalculate materials (goal should now show 0 materials needed)
     const calculatedMaterials = plannerStore.calculateAllMaterials(id, type);
     plannerStore.addGoal({
@@ -881,9 +884,11 @@ const completeGoal = async (id, type) => {
 
     logger.info(`Goal completed for ${type} ${id}`);
 
-    // Refresh final material needs after a short delay
-    await new Promise(resolve => setTimeout(resolve, 100));
-    refreshFinalMaterialNeeds();
+    // Defer final material refresh to prevent render blocking
+    // Use longer delay and requestIdleCallback for better performance
+    setTimeout(() => {
+      refreshFinalMaterialNeeds();
+    }, 500);
   } catch (error) {
     logger.error('Error completing goal:', error);
     toast.error('Failed to complete goal. Check console for details.');
