@@ -655,7 +655,7 @@ const performSynthesis = (synthesisNeeded) => {
 };
 
 // Complete goal: Update current levels to target and deduct materials from inventory
-const completeGoal = async (id, type) => {
+const completeGoal = (id, type) => {
   const goal = goals.value.find(g => g.id === id && g.type === type);
   if (!goal) {
     toast.error('Goal not found');
@@ -676,15 +676,6 @@ const completeGoal = async (id, type) => {
       toast.error('Settings not found for this goal');
       return;
     }
-
-    // Show processing toast immediately for UI feedback
-    const processingToast = toast.info('Processing...', {
-      position: 'bottom-center',
-      autoClose: 1000,
-    });
-
-    // Defer validation to next tick to allow UI to update
-    await new Promise(resolve => setTimeout(resolve, 0));
 
     // Validate materials with synthesis check
     const validation = validateMaterialsWithSynthesis(
@@ -724,9 +715,6 @@ const completeGoal = async (id, type) => {
       return;
     }
 
-    // Defer heavy operations to next tick
-    await new Promise(resolve => setTimeout(resolve, 0));
-
     // Perform synthesis if needed
     if (validation.synthesisNeeded.length > 0) {
       logger.info('Performing auto-synthesis before goal completion');
@@ -737,9 +725,11 @@ const completeGoal = async (id, type) => {
       });
     }
 
-    // Update current levels to match target
+    // Prepare updated settings (don't save yet - will be saved in background)
+    let updatedSettings;
+
     if (type === 'character') {
-      const updatedSettings = {
+      updatedSettings = {
         ...settings,
         currentLevel: settings.targetLevel
       };
@@ -808,18 +798,12 @@ const completeGoal = async (id, type) => {
       if (settings.attributes) {
         updatedSettings.attributes = { ...settings.attributes };
       }
-
-      plannerStore.updateCharacterSettings(id, updatedSettings);
-      logger.info(`Updated character ${id} settings to target levels`);
     } else {
       // Weapon only has levels
-      const updatedSettings = {
+      updatedSettings = {
         ...settings,
         currentLevel: settings.targetLevel
       };
-
-      plannerStore.updateWeaponSettings(id, updatedSettings);
-      logger.info(`Updated weapon ${id} settings to target level`);
     }
 
     // Deduct materials from inventory (batch for performance)
@@ -858,25 +842,33 @@ const completeGoal = async (id, type) => {
       logger.debug(`Queued deduction: ${quantity} of ${materialId}`);
     });
 
-    // Apply all deductions in one batch (single localStorage save)
-    inventoryStore.batchRemoveMaterials(materialsToRemove);
-
-    // Hide the goal
-    plannerStore.hideGoal(id, type);
-
-    // Show success message immediately (before expensive recalculation)
+    // Show success message immediately (before expensive I/O operations)
     toast.success(`Goal completed for ${entityName}!`, {
       position: 'bottom-center',
       autoClose: 3000,
       theme: 'dark',
     });
 
-    logger.info(`Goal completed for ${type} ${id}`);
-
-    // Move expensive recalculation to background to prevent UI blocking
-    // This allows the success message to show immediately
+    // Move all expensive operations (localStorage/Firebase writes, logging, recalculation) to background
+    // This prevents blocking the UI thread and allows immediate user feedback
     setTimeout(() => {
-      // Recalculate materials (goal should now show 0 materials needed)
+      // Save updated settings (localStorage/Firebase write - expensive!)
+      if (type === 'character') {
+        plannerStore.updateCharacterSettings(id, updatedSettings);
+      } else {
+        plannerStore.updateWeaponSettings(id, updatedSettings);
+      }
+
+      // Apply material deductions (localStorage/Firebase write - expensive!)
+      inventoryStore.batchRemoveMaterials(materialsToRemove);
+
+      // Hide the goal (localStorage/Firebase write - expensive!)
+      plannerStore.hideGoal(id, type);
+
+      // Log completion (console I/O - blocks rendering)
+      logger.info(`Goal completed for ${type} ${id}`);
+
+      // Recalculate materials (expensive computation)
       const calculatedMaterials = plannerStore.calculateAllMaterials(id, type);
       plannerStore.addGoal({
         id: id,
@@ -884,7 +876,7 @@ const completeGoal = async (id, type) => {
         materials: calculatedMaterials,
       });
 
-      // Refresh final material display after recalculation
+      // Refresh final material display (triggers re-render)
       refreshFinalMaterialNeeds();
     }, 0);
   } catch (error) {
