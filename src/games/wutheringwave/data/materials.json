@@ -5,7 +5,7 @@
       "label": "Shell Credit",
       "Category": "credit",
       "SubCategory": "credit",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconA/T_IconA_hsb_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconA/T_IconA_hsb_UI.png",
       "tier": 2
     }
   },
@@ -15,7 +15,7 @@
       "label": "Low Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.png",
       "tier": 2
     },
     "mf_whisperin_core": {
@@ -23,7 +23,7 @@
       "label": "Mid Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_2_UI.png",
       "tier": 3
     },
     "hf_whisperin_core": {
@@ -31,7 +31,7 @@
       "label": "High Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_3_UI.png",
       "tier": 4
     },
     "ff_whisperin_core": {
@@ -39,7 +39,7 @@
       "label": "Full Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_4_UI.png",
       "tier": 5
     },
     "lf_howler_core": {
@@ -47,7 +47,7 @@
       "label": "Low Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_1_UI.png",
       "tier": 2
     },
     "mf_howler_core": {
@@ -55,7 +55,7 @@
       "label": "Mid Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_2_UI.png",
       "tier": 3
     },
     "hf_howler_core": {
@@ -63,7 +63,7 @@
       "label": "High Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_3_UI.png",
       "tier": 4
     },
     "ff_howler_core": {
@@ -71,7 +71,7 @@
       "label": "Full Frequency Howler Core",
       "Category": "common",
       "SubCategory": "howler_core",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_4_UI.png",
       "tier": 5
     },
     "curde_ring": {
@@ -79,7 +79,7 @@
       "label": "Crude Ring",
       "Category": "common",
       "SubCategory": "ring",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_1_UI.png",
       "tier": 2
     },
     "basic_ring": {
@@ -87,7 +87,7 @@
       "label": "Basic Ring",
       "Category": "common",
       "SubCategory": "ring",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_2_UI.png",
       "tier": 3
     },
     "improved_ring": {
@@ -95,7 +95,7 @@
       "label": "Improved Ring",
       "Category": "common",
       "SubCategory": "ring",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_3_UI.png",
       "tier": 4
     },
     "tailored_ring": {
@@ -103,7 +103,7 @@
       "label": "Tailored Ring",
       "Category": "common",
       "SubCategory": "ring",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_4_UI.png",
       "tier": 5
     },
     "mask_of_constraint": {
@@ -111,7 +111,7 @@
       "label": "Mask of Constraint",
       "Category": "common",
       "SubCategory": "mask",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_001_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_001_UI.png",
       "tier": 2
     },
     "mask_of_erosion": {
@@ -119,7 +119,7 @@
       "label": "Mask of Erosion",
       "Category": "common",
       "SubCategory": "mask",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_002_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_002_UI.png",
       "tier": 3
     },
     "mask_of_distortion": {
@@ -127,7 +127,7 @@
       "label": "Mask of Distortion",
       "Category": "common",
       "SubCategory": "mask",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_003_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_003_UI.png",
       "tier": 4
     },
     "mask_of_insanity": {
@@ -135,7 +135,7 @@
       "label": "Mask of Insanity",
       "Category": "common",
       "SubCategory": "mask",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_004_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_004_UI.png",
       "tier": 5
     },
     "lf_polygon_core": {
@@ -143,7 +143,7 @@
       "label": "Low Frequency Polygon Core",
       "Category": "common",
       "SubCategory": "polygon",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_1_UI.png",
       "tier": 2
     },
     "mf_polygon_core": {
@@ -151,7 +151,7 @@
       "label": "Mid Frequency Polygon Core",
       "Category": "common",
       "SubCategory": "polygon",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_2_UI.png",
       "tier": 3
     },
     "hf_polygon_core": {
@@ -159,7 +159,7 @@
       "label": "High Frequency Polygon Core",
       "Category": "common",
       "SubCategory": "polygon",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_3_UI.png",
       "tier": 4
     },
     "ff_polygon_core": {
@@ -167,39 +167,39 @@
       "label": "Full Frequency Polygon Core",
       "Category": "common",
       "SubCategory": "polygon",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_4_UI.png",
       "tier": 5
     },
     "lf_tidal_residuum": {
       "game_id": 4110060001,
-      "label": "Low Frequency Residuum",
+      "label": "Low Frequency Tidal Residuum",
       "Category": "common",
       "SubCategory": "residuum",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_1_UI.png",
       "tier": 2
     },
     "mf_tidal_residuum": {
       "game_id": 4110060002,
-      "label": "Mid Frequency Residuum",
+      "label": "Mid Frequency Tidal Residuum",
       "Category": "common",
       "SubCategory": "residuum",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_2_UI.png",
       "tier": 3
     },
     "hf_tidal_residuum": {
       "game_id": 4110060003,
-      "label": "High Frequency Residuum",
+      "label": "High Frequency Tidal Residuum",
       "Category": "common",
       "SubCategory": "residuum",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_3_UI.png",
       "tier": 4
     },
     "ff_tidal_residuum": {
       "game_id": 4110060004,
-      "label": "Full Frequency Residuum",
+      "label": "Full Frequency Tidal Residuum",
       "Category": "common",
       "SubCategory": "residuum",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_4_UI.png",
       "tier": 5
     },
     "lf_exowarm_core": {
@@ -207,7 +207,7 @@
       "label": "Low Frequency Exowarm Core",
       "Category": "common",
       "SubCategory": "exoswarm",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_021_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_021_UI.png",
       "tier": 2
     },
     "mf_exowarm_core": {
@@ -215,7 +215,7 @@
       "label": "Mid Frequency Exowarm Core",
       "Category": "common",
       "SubCategory": "exoswarm",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_022_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_022_UI.png",
       "tier": 3
     },
     "hf_exowarm_core": {
@@ -223,7 +223,7 @@
       "label": "High Frequency Exowarm Core",
       "Category": "common",
       "SubCategory": "exoswarm",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_023_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_023_UI.png",
       "tier": 4
     },
     "ff_exowarm_core": {
@@ -231,7 +231,7 @@
       "label": "Full Frequency Exowarm Core",
       "Category": "common",
       "SubCategory": "exoswarm",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_024_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_024_UI.png",
       "tier": 5
     },
     "lf_mech_core": {
@@ -239,7 +239,7 @@
       "label": "Low Frequency Mech Core",
       "Category": "common",
       "SubCategory": "mech",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_025_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_025_UI.png",
       "tier": 2
     },
     "mf_mech_core": {
@@ -247,7 +247,7 @@
       "label": "Mid Frequency Mech Core",
       "Category": "common",
       "SubCategory": "mech",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_026_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_026_UI.png",
       "tier": 3
     },
     "hf_mech_core": {
@@ -255,7 +255,7 @@
       "label": "High Frequency Mech Core",
       "Category": "common",
       "SubCategory": "mech",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_027_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_027_UI.png",
       "tier": 4
     },
     "ff_mech_core": {
@@ -263,7 +263,7 @@
       "label": "Full Frequency Mech Core",
       "Category": "common",
       "SubCategory": "mech",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_028_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_028_UI.png",
       "tier": 5
     },
     "fractured_exoswarm_pendant": {
@@ -271,7 +271,7 @@
       "label": "Fractured Exoswarm Pendant",
       "Category": "common",
       "SubCategory": "pendant",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_1_UI.png",
       "tier": 2
     },
     "worn_exoswarm_pendant": {
@@ -279,7 +279,7 @@
       "label": "Worn Exoswarm Pendant",
       "Category": "common",
       "SubCategory": "pendant",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_2_UI.png",
       "tier": 3
     },
     "chipped_exoswarm_pendant": {
@@ -287,7 +287,7 @@
       "label": "Chipped Exoswarm Pendant",
       "Category": "common",
       "SubCategory": "pendant",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_3_UI.png",
       "tier": 4
     },
     "intact_exoswarm_pendant": {
@@ -295,7 +295,7 @@
       "label": "Intact Exoswarm Pendant",
       "Category": "common",
       "SubCategory": "pendant",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_4_UI.png",
       "tier": 5
     }
   },
@@ -305,7 +305,7 @@
       "label": "Inert Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_1_UI.png",
       "tier": 2
     },
     "reactive_metallic_drip": {
@@ -313,7 +313,7 @@
       "label": "Reactive Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_2_UI.png",
       "tier": 3
     },
     "polarized_metallic_drip": {
@@ -321,7 +321,7 @@
       "label": "Polarized Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_3_UI.png",
       "tier": 4
     },
     "heterized_metallic_drip": {
@@ -329,7 +329,7 @@
       "label": "Heterized Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_4_UI.png",
       "tier": 5
     },
     "impure_phlogiston": {
@@ -337,7 +337,7 @@
       "label": "Impure Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_01_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_01_UI.png",
       "tier": 2
     },
     "extracted_phlogiston": {
@@ -345,7 +345,7 @@
       "label": "Extracted Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_02_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_02_UI.png",
       "tier": 3
     },
     "refined_phlogiston": {
@@ -353,7 +353,7 @@
       "label": "Refined Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_03_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_03_UI.png",
       "tier": 4
     },
     "flawless_phlogiston": {
@@ -361,7 +361,7 @@
       "label": "Flawless Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_04_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_04_UI.png",
       "tier": 5
     },
     "lento_helix": {
@@ -369,7 +369,7 @@
       "label": "Lento Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_005_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_005_UI.png",
       "tier": 2
     },
     "adagio_helix": {
@@ -377,7 +377,7 @@
       "label": "Adagio Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_006_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_006_UI.png",
       "tier": 3
     },
     "andante_helix": {
@@ -385,7 +385,7 @@
       "label": "Andante Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_007_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_007_UI.png",
       "tier": 4
     },
     "presto_helix": {
@@ -393,7 +393,7 @@
       "label": "Presto Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_008_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_008_UI.png",
       "tier": 5
     },
     "waveworn_residue_210": {
@@ -401,7 +401,7 @@
       "label": "Waveworn Residue 210",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_009_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_009_UI.png",
       "tier": 2
     },
     "waveworn_residue_226": {
@@ -409,7 +409,7 @@
       "label": "Waveworn Residue 226",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_010_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_010_UI.png",
       "tier": 3
     },
     "waveworn_residue_235": {
@@ -417,7 +417,7 @@
       "label": "Waveworn Residue 235",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_011_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_011_UI.png",
       "tier": 4
     },
     "waveworn_residue_239": {
@@ -425,7 +425,7 @@
       "label": "Waveworn Residue 239",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_012_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_012_UI.png",
       "tier": 5
     },
     "cadence_seed": {
@@ -433,7 +433,7 @@
       "label": "Cadence Seed",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_013_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_013_UI.png",
       "tier": 2
     },
     "cadence_bud": {
@@ -441,7 +441,7 @@
       "label": "Cadence Bud",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_014_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_014_UI.png",
       "tier": 3
     },
     "cadence_leaf": {
@@ -449,7 +449,7 @@
       "label": "Cadence Leaf",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_015_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_015_UI.png",
       "tier": 4
     },
     "cadence_blossom": {
@@ -457,7 +457,7 @@
       "label": "Cadence Blossom",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_016_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_016_UI.png",
       "tier": 5
     },
     "broken_wing_polarizer": {
@@ -465,7 +465,7 @@
       "label": "Broken Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_1_UI.png",
       "tier": 2
     },
     "mono_wing_ploarizer": {
@@ -473,7 +473,7 @@
       "label": "Mono Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_2_UI.png",
       "tier": 3
     },
     "poly_wing_ploarizer": {
@@ -481,7 +481,7 @@
       "label": "Poly Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_3_UI.png",
       "tier": 4
     },
     "layered_wing_ploarizer": {
@@ -489,7 +489,7 @@
       "label": "Layered Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_4_UI.png",
       "tier": 5
     },
     "incomplete_combustor": {
@@ -497,7 +497,7 @@
       "label": "Incomplete Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_1_UI.png",
       "tier": 2
     },
     "aftertune_combustor": {
@@ -505,7 +505,7 @@
       "label": "Aftertune Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_2_UI.png",
       "tier": 3
     },
     "remnant_combustor": {
@@ -513,7 +513,7 @@
       "label": "Remnant Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_3_UI.png",
       "tier": 4
     },
     "reverb_combustor": {
@@ -521,7 +521,7 @@
       "label": "Reverb Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_4_UI.png",
       "tier": 5
     },
     "spliced_string": {
@@ -529,7 +529,7 @@
       "label": "Spliced String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_1_UI.png",
       "tier": 2
     },
     "broken_string": {
@@ -537,7 +537,7 @@
       "label": "Broken String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_2_UI.png",
       "tier": 3
     },
     "solidified_string": {
@@ -545,7 +545,7 @@
       "label": "Solidified String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_3_UI.png",
       "tier": 4
     },
     "melodic_string": {
@@ -553,7 +553,7 @@
       "label": "Melodic String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_4_UI.png",
       "tier": 5
     },
     "lf_carved_crystal": {
@@ -561,7 +561,7 @@
       "label": "Low Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_1_UI.png",
       "tier": 2
     },
     "mf_carved_crystal": {
@@ -569,7 +569,7 @@
       "label": "Mid Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_2_UI.png",
       "tier": 3
     },
     "hf_carved_crystal": {
@@ -577,7 +577,7 @@
       "label": "High Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_3_UI.png",
       "tier": 4
     },
     "ff_carved_crystal": {
@@ -585,7 +585,7 @@
       "label": "Full Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_4_UI.png",
       "tier": 5
     },
     "lf_waveworn_shard": {
@@ -593,7 +593,7 @@
       "label": "Low Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_1_UI.png",
       "tier": 2
     },
     "mf_waveworn_shard": {
@@ -601,7 +601,7 @@
       "label": "Mid Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_2_UI.png",
       "tier": 3
     },
     "hf_waveworn_shard": {
@@ -609,7 +609,7 @@
       "label": "High Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_3_UI.png",
       "tier": 4
     },
     "ff_waveworn_shard": {
@@ -617,7 +617,7 @@
       "label": "Full Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_4_UI.png",
       "tier": 5
     }
   },
@@ -627,7 +627,7 @@
       "label": "Mysterious Code",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_002_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_002_1_UI.png",
       "tier": 4
     },
     "strife_tacet_core": {
@@ -635,7 +635,7 @@
       "label": "Strife Tace Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_004_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_004_1_UI.png",
       "tier": 4
     },
     "thundering_tacet_core": {
@@ -643,7 +643,7 @@
       "label": "Thundering Tacet Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_001_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_001_1_UI.png",
       "tier": 4
     },
     "elegy_tacet_core": {
@@ -651,7 +651,7 @@
       "label": "Elegy Tacet Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_006_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_006_UI.png",
       "tier": 4
     },
     "rage_tacet_core": {
@@ -659,7 +659,7 @@
       "label": "Rage Tacet Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_008_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_008_UI.png",
       "tier": 4
     },
     "roaring_rock_fist": {
@@ -667,7 +667,7 @@
       "label": "Roaring Rock Fist",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_011_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_011_UI.png",
       "tier": 4
     },
     "gold_dissolving_feather": {
@@ -675,7 +675,7 @@
       "label": "Gold Dissolving Feather",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_010_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_010_UI.png",
       "tier": 4
     },
     "sound_keeping_tacet_core": {
@@ -683,7 +683,7 @@
       "label": "Sound Keeping Tacet Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_007_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_007_UI.png",
       "tier": 4
     },
     "group_abomination_tacet_core": {
@@ -691,7 +691,7 @@
       "label": "Group Abomination Tacet Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_009_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_009_UI.png",
       "tier": 4
     },
     "hidden_thunder_tacet_core": {
@@ -699,7 +699,7 @@
       "label": "Hidden Thunder Tacet Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_012_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_012_UI.png",
       "tier": 4
     },
     "topological_confinement": {
@@ -707,7 +707,7 @@
       "label": "Topological Confinement",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_015_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_015_UI.png",
       "tier": 4
     },
     "cleansing_conch": {
@@ -715,7 +715,7 @@
       "label": "Cleansing Conch",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_009_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_009_UI.png",
       "tier": 4
     },
     "platinum_core": {
@@ -723,7 +723,7 @@
       "label": "Platinum Core",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_006_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_006_UI.png",
       "tier": 4
     },
     "blazing_bone": {
@@ -731,7 +731,7 @@
       "label": "Blazing Bone",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_008_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_008_UI.png",
       "tier": 4
     },
     "unfading_glory": {
@@ -739,7 +739,7 @@
       "label": "Unfading Glory",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_018_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_018_UI.png",
       "tier": 4
     },
     "truth_in_lies": {
@@ -747,7 +747,7 @@
       "label": "Truth in Lies",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_019_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_019_UI.png",
       "tier": 4
     },
     "blighted_crown_of_puppet_king": {
@@ -755,7 +755,7 @@
       "label": "Blighted Crown of Puppet King",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_020_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_020_UI.png",
       "tier": 4
     },
     "abyssal_husk": {
@@ -763,7 +763,7 @@
       "label": "Abyssal Husk",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_010_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_010_UI.png",
       "tier": 4
     },
     "suncoveters_reach": {
@@ -771,7 +771,7 @@
       "label": "Suncoveter's Reach",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_023_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_023_UI.png",
       "tier": 4
     },
     "burning_judgment": {
@@ -779,7 +779,7 @@
       "label": "Burning Judgment",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_022_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_022_UI.png",
       "tier": 4
     },
     "our_choice": {
@@ -787,7 +787,7 @@
       "label": "Our Choice",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_024_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_024_UI.png",
       "tier": 4
     }
   },
@@ -797,7 +797,7 @@
       "label": "Monument Bell",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_003_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_003_1_UI.png",
       "tier": 4
     },
     "unending_destruction": {
@@ -805,7 +805,7 @@
       "label": "Unending Destruction",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_014_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_014_UI.png",
       "tier": 4
     },
     "dreamless_feather": {
@@ -813,7 +813,7 @@
       "label": "Dreamless Feather",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_013_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_013_UI.png",
       "tier": 4
     },
     "sentinels_dagger": {
@@ -821,7 +821,7 @@
       "label": "Sentinel's Dagger",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_005_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_005_UI.png",
       "tier": 4
     },
     "the_netherworlds_stare": {
@@ -829,7 +829,7 @@
       "label": "The Netherworld's Stare",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_007_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_007_UI.png",
       "tier": 4
     },
     "when_irises_bloom": {
@@ -837,7 +837,7 @@
       "label": "When Irises Bloom",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_017_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_017_UI.png",
       "tier": 4
     },
     "curse_of_the_abyss": {
@@ -845,7 +845,7 @@
       "label": "Curse of The Abyss",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_021_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_021_UI.png",
       "tier": 4
     },
     "gold_in_memory": {
@@ -853,7 +853,7 @@
       "label": "Gold in Memory",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconMout/T_IconMout_L_025_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_025_UI.png",
       "tier": 4
     }
   },
@@ -863,7 +863,7 @@
       "label": "Iris",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_33A_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_33A_UI.png",
       "tier": 3
     },
     "terraspawn_fungus": {
@@ -871,7 +871,7 @@
       "label": "Terraspawn Fungus",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_HuiYanGu_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_HuiYanGu_UI.png",
       "tier": 3
     },
     "lanternberry": {
@@ -879,7 +879,7 @@
       "label": "Lanternberry",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_denglongguo_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_denglongguo_UI.png",
       "tier": 3
     },
     "pecok_flower": {
@@ -887,7 +887,7 @@
       "label": "Pecok Flower",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_18A_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_18A_UI.png",
       "tier": 3
     },
     "belle_poppy": {
@@ -895,7 +895,7 @@
       "label": "Belle Poppy",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_29A_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_29A_UI.png",
       "tier": 3
     },
     "coriolus": {
@@ -903,7 +903,7 @@
       "label": "Coriolus",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_30A_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_30A_UI.png",
       "tier": 3
     },
     "wintry_bell": {
@@ -911,7 +911,7 @@
       "label": "Wintry Bell",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_31A_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_31A_UI.png",
       "tier": 3
     },
     "violet_coral": {
@@ -919,7 +919,7 @@
       "label": "Violet Coral",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_Sep_061_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_Sep_061_UI.png",
       "tier": 3
     },
     "pavo_plum": {
@@ -927,7 +927,7 @@
       "label": "Pavo Plum",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_029_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_029_UI.png",
       "tier": 3
     },
     "loongs_pearl": {
@@ -935,7 +935,7 @@
       "label": "Loong's Pearl",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_030_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_030_UI.png",
       "tier": 3
     },
     "nova": {
@@ -943,7 +943,7 @@
       "label": "Nova",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconTask/T_IconTask_Task_084_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconTask/T_IconTask_Task_084_UI.png",
       "tier": 3
     },
     "golden_fleece": {
@@ -951,7 +951,7 @@
       "label": "Golden Fleece",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_045_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_045_UI.png",
       "tier": 3
     },
     "sword_acorus": {
@@ -959,7 +959,7 @@
       "label": "Sword Acorus",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_044_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_044_UI.png",
       "tier": 3
     },
     "firecracker_jewelweed": {
@@ -967,7 +967,7 @@
       "label": "Firecracker Jewelweed",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_043_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_043_UI.png",
       "tier": 3
     },
     "seaside_cendrelis": {
@@ -975,7 +975,7 @@
       "label": "Seaside Cendrelis",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconTask/T_IconTask_Task_144_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconTask/T_IconTask_Task_144_UI.png",
       "tier": 3
     },
     "bamboo_iris": {
@@ -983,7 +983,7 @@
       "label": "Bamboo Iris",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_bianzhuhua_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_bianzhuhua_UI.png",
       "tier": 3
     },
     "bloodleaf_viburnum": {
@@ -991,7 +991,7 @@
       "label": "Bloodleaf Viburnum",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_xueyejiami_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_xueyejiami_UI.png",
       "tier": 3
     },
     "afterlife": {
@@ -999,7 +999,7 @@
       "label": "Afterlife",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_054_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_054_UI.png",
       "tier": 3
     },
     "stone_rose": {
@@ -1007,7 +1007,7 @@
       "label": "Stone Rose",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_056_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_056_UI.png",
       "tier": 3
     },
     "sliverglow_bloom": {
@@ -1015,7 +1015,7 @@
       "label": "Sliverglow Bloom",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_057_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_057_UI.png",
       "tier": 3
     },
     "luminous_calendula": {
@@ -1023,7 +1023,7 @@
       "label": "Luminous Calendula",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_058_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_058_UI.png",
       "tier": 3
     },
     "summer_flower": {
@@ -1031,7 +1031,7 @@
       "label": "Summer Flower",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_060_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_060_UI.png",
       "tier": 3
     },
     "gemini_spore": {
@@ -1039,7 +1039,7 @@
       "label": "Gemini Spore",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_066_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_060_UI.png",
       "tier": 3
     },
     "rimewisp": {
@@ -1047,7 +1047,7 @@
       "label": "Rimewisp",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_067_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_067_UI.png",
       "tier": 3
     },
     "arithmetic_shell": {
@@ -1055,7 +1055,7 @@
       "label": "Arithmetic Shell",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_063_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_063_UI.png",
       "tier": 3
     },
     "moss_amber": {
@@ -1063,7 +1063,7 @@
       "label": "Moss Amber",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_072_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_072_UI.png",
       "tier": 3
     },
     "edelschnee": {
@@ -1071,7 +1071,7 @@
       "label": "Edelschnee",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconC/T_IconC_074_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_074_UI.png",
       "tier": 3
     }
   },
@@ -1081,7 +1081,7 @@
       "label": "Basic Resonance Potion",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_1_UI.png",
       "tier": 2,
       "value": 1000
     },
@@ -1090,7 +1090,7 @@
       "label": "Medium Resonance Potion",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_2_UI.png",
       "tier": 3,
       "value": 3000
     },
@@ -1099,7 +1099,7 @@
       "label": "Advanced Resonance Potion",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_3_UI.png",
       "tier": 4,
       "value": 8000
     },
@@ -1108,7 +1108,7 @@
       "label": "Preminum Resonance Potion",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_exp_4_UI.png",
       "tier": 5,
       "value": 20000
     }
@@ -1119,7 +1119,7 @@
       "label": "Basic Energy Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_1_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_1_UI.png",
       "tier": 2,
       "value": 1000
     },
@@ -1128,7 +1128,7 @@
       "label": "Medium Energy Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_2_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_2_UI.png",
       "tier": 3,
       "value": 3000
     },
@@ -1137,7 +1137,7 @@
       "label": "Advanced Energy Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_3_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_3_UI.png",
       "tier": 4,
       "value": 8000
     },
@@ -1146,7 +1146,7 @@
       "label": "Preminum Energy Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_4_UI.webp",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Exp_4_UI.png",
       "tier": 5,
       "value": 20000
     }

@@ -4,7 +4,7 @@
     "display_name": "Broadblade of Night",
     "rarity": 3,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010013_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010013_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -13,7 +13,7 @@
     "display_name": "Broadblade of Voyager",
     "rarity": 3,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010043_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010043_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -22,7 +22,7 @@
     "display_name": "Guardian Broadblad",
     "rarity": 3,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010053_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010053_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -31,7 +31,7 @@
     "display_name": "Beguiling Melody",
     "rarity": 3,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010063_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010063_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -40,7 +40,7 @@
     "display_name": "Originite: Type I",
     "rarity": 3,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010023_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010023_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -49,7 +49,7 @@
     "display_name": "Sword of Night",
     "rarity": 3,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020013_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020013_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -58,7 +58,7 @@
     "display_name": "Originite: Type II",
     "rarity": 3,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020023_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020023_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -67,7 +67,7 @@
     "display_name": "Sword of Voyager",
     "rarity": 3,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020043_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020043_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -76,7 +76,7 @@
     "display_name": "Guardian Sword",
     "rarity": 3,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020053_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020053_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -85,7 +85,7 @@
     "display_name": "Pistols of Night",
     "rarity": 3,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030013_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030013_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -94,7 +94,7 @@
     "display_name": "Originite: Type III",
     "rarity": 3,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030023_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030023_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -103,7 +103,7 @@
     "display_name": "Pistols of Voyager",
     "rarity": 3,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030043_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030043_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -112,7 +112,7 @@
     "display_name": "Guardian Pistols",
     "rarity": 3,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030053_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030053_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -121,7 +121,7 @@
     "display_name": "Gauntlets of Night",
     "rarity": 3,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040013_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040013_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -130,7 +130,7 @@
     "display_name": "Originite: Type IV",
     "rarity": 3,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040023_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040023_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -139,7 +139,7 @@
     "display_name": "Gauntlets of Voyager",
     "rarity": 3,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040043_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040043_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -148,7 +148,7 @@
     "display_name": "Guardian Gauntlets",
     "rarity": 3,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040053_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040053_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -157,7 +157,7 @@
     "display_name": "Rectifier of Night",
     "rarity": 3,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050013_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050013_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -166,7 +166,7 @@
     "display_name": "Originite: Type V",
     "rarity": 3,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050023_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050023_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -175,7 +175,7 @@
     "display_name": "Rectifier of Voyager",
     "rarity": 3,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050043_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050043_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -184,7 +184,7 @@
     "display_name": "Guardian Rectifier",
     "rarity": 3,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050053_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050053_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -193,7 +193,7 @@
     "display_name": "Discord",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010024_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010024_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -202,7 +202,7 @@
     "display_name": "Broadblade#41",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010034_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010034_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -211,7 +211,7 @@
     "display_name": "Dauntless Evernight",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010044_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010044_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -220,7 +220,7 @@
     "display_name": "Helios Cleaver",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010064_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010064_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -229,7 +229,7 @@
     "display_name": "Autumntrace",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010074_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010074_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -238,7 +238,7 @@
     "display_name": "Waning Redshift",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010084_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010084_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -247,7 +247,7 @@
     "display_name": "Meditations on Mercy",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010094_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010094_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -256,7 +256,7 @@
     "display_name": "Aureate Zenith",
     "rarity": 4,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010104_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010104_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -265,7 +265,7 @@
     "display_name": "Overture",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020024_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020024_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -274,7 +274,7 @@
     "display_name": "Sword#18",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020034_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020034_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -283,7 +283,7 @@
     "display_name": "Commando of Conviction",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020044_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020044_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -292,7 +292,7 @@
     "display_name": "Lunar Cutter",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020064_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020064_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -301,7 +301,7 @@
     "display_name": "Lumingloss",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020074_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020074_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -310,7 +310,7 @@
     "display_name": "Endless Collapse",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020084_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020084_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -319,7 +319,7 @@
     "display_name": "Fables of Wisdom",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020094_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020094_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -328,7 +328,7 @@
     "display_name": "Feather Edge",
     "rarity": 4,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020104_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020104_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -337,7 +337,7 @@
     "display_name": "Cadenza",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030024_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030024_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -346,7 +346,7 @@
     "display_name": "Pistols#26",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030034_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030034_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -355,7 +355,7 @@
     "display_name": "Undying Flame",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030044_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030044_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -364,7 +364,7 @@
     "display_name": "Novaburst",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030064_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030064_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -373,7 +373,7 @@
     "display_name": "Thunderbolt",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030074_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030074_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -382,7 +382,7 @@
     "display_name": "Relativistic Jet",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030084_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030084_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -391,7 +391,7 @@
     "display_name": "Romance in Farewell",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030094_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030094_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -400,7 +400,7 @@
     "display_name": "Solar Flame",
     "rarity": 4,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030104_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030104_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -409,7 +409,7 @@
     "display_name": "Marcato",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040024_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040024_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -418,7 +418,7 @@
     "display_name": "Gauntlets#21D",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040034_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040034_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -427,7 +427,7 @@
     "display_name": "Amity Accord",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040044_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040044_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -436,7 +436,7 @@
     "display_name": "Hollow Mirage",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040064_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040064_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -445,7 +445,7 @@
     "display_name": "Stonard",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040074_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040074_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -454,7 +454,7 @@
     "display_name": "Celestial Spiral",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040084_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040084_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -463,7 +463,7 @@
     "display_name": "Legend of Drunken Hero",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040094_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040094_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -472,7 +472,7 @@
     "display_name": "Aether Strike",
     "rarity": 4,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040104_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040104_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -481,7 +481,7 @@
     "display_name": "Variation",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050024_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050024_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -490,7 +490,7 @@
     "display_name": "Rectifier#25",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050034_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050034_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -499,7 +499,7 @@
     "display_name": "Jinzhou Keeper",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050044_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050044_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -508,7 +508,7 @@
     "display_name": "Comet Flare",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050064_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050064_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -517,7 +517,7 @@
     "display_name": "Augment",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050074_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050074_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -526,7 +526,7 @@
     "display_name": "Fusion Accretion",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050084_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050084_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -535,7 +535,7 @@
     "display_name": "Waltz in Masquerade",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050094_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050094_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -544,7 +544,7 @@
     "display_name": "Radiant Dawn",
     "rarity": 4,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050104_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050104_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -553,7 +553,7 @@
     "display_name": "Lustrous Razor",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010015_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010015_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -562,7 +562,7 @@
     "display_name": "Verdant Summit",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010016_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010016_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -571,7 +571,7 @@
     "display_name": "Ages of Harvest",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010026_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010026_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -580,7 +580,7 @@
     "display_name": "Emerald of Genesis",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020015_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020015_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -589,7 +589,7 @@
     "display_name": "Blazing Brilliance",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020016_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020016_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -598,7 +598,7 @@
     "display_name": "Red Spring",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020017_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020017_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -607,7 +607,7 @@
     "display_name": "Unflickering Valor",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020025_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -616,7 +616,7 @@
     "display_name": "Bloodpact's Pledge",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020026_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020026_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -625,7 +625,7 @@
     "display_name": "Static Mist",
     "rarity": 5,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -634,7 +634,7 @@
     "display_name": "The Last Dance",
     "rarity": 5,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -643,7 +643,7 @@
     "display_name": "Abyss Surges",
     "rarity": 5,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040015_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040015_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -652,7 +652,7 @@
     "display_name": "Verity's Handle",
     "rarity": 5,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040016_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040016_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -661,7 +661,7 @@
     "display_name": "Tragicomedy",
     "rarity": 5,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040018_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040018_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -670,7 +670,7 @@
     "display_name": "Cosmic Ripples",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050015_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050015_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -679,7 +679,7 @@
     "display_name": "Stringmaster",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050016_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050016_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -688,7 +688,7 @@
     "display_name": "Stellar Symphony",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050027_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050027_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -697,7 +697,7 @@
     "display_name": "Rime-Draped Sprouts",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050026_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050026_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -706,7 +706,7 @@
     "display_name": "Luminous Hymn",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050029_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -715,7 +715,7 @@
     "display_name": "Whispers of Sirens",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050030_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050030_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -724,7 +724,7 @@
     "display_name": "Lethean Elegy",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050066_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050066_UI.png",
     "common": "ring",
     "forgery": "helix"
   },
@@ -733,7 +733,7 @@
     "display_name": "Wildfire Mark",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010036_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010036_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -742,7 +742,7 @@
     "display_name": "Radiance Cleaver",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21010045_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21010045_UI.png",
     "common": "pendant",
     "forgery": "crystal"
   },
@@ -751,7 +751,7 @@
     "display_name": "Thunderflare Dominion",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010046_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010046_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -760,7 +760,7 @@
     "display_name": "Kumokiri",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010056_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010056_UI.png",
     "common": "whisperin_core",
     "forgery": "residue"
   },
@@ -769,7 +769,7 @@
     "display_name": "Starfield Calibrator",
     "rarity": 5,
     "weapon_type": "broadblade",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010066_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010066_UI.png",
     "common": "pendant",
     "forgery": "crystal"
   },
@@ -778,7 +778,7 @@
     "display_name": "Laser Shearer",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21020045_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21020045_UI.png",
     "common": "mech",
     "forgery": "polarizer"
   },
@@ -787,7 +787,7 @@
     "display_name": "Defier's Thorn",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020056_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020056_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -796,7 +796,7 @@
     "display_name": "Emerald Sentence",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020066_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020066_UI.png",
     "common": "howler_core",
     "forgery": "metallic_drip"
   },
@@ -805,7 +805,7 @@
     "display_name": "Everbright Polestar",
     "rarity": 5,
     "weapon_type": "sword",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020076_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020076_UI.png",
     "common": "mech",
     "forgery": "polarizer"
   },
@@ -814,7 +814,7 @@
     "display_name": "Woodland Aria",
     "rarity": 5,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -823,7 +823,7 @@
     "display_name": "Lux & Umbra",
     "rarity": 5,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030036_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030036_UI.png",
     "common": "ring",
     "forgery": "phlogiston"
   },
@@ -832,7 +832,7 @@
     "display_name": "Phasic Homogenizer",
     "rarity": 5,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21030045_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21030045_UI.png",
     "common": "pendant",
     "forgery": "combustor"
   },
@@ -841,7 +841,7 @@
     "display_name": "Spectrum Blaster",
     "rarity": 5,
     "weapon_type": "pistols",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030046_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030046_UI.png",
     "common": "pendant",
     "forgery": "combustor"
   },
@@ -850,7 +850,7 @@
     "display_name": "Blazing Justice",
     "rarity": 5,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040019_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040019_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -859,7 +859,7 @@
     "display_name": "Pulsation Bracer",
     "rarity": 5,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040045_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040045_UI.png",
     "common": "mech",
     "forgery": "shard"
   },
@@ -868,7 +868,7 @@
     "display_name": "Moongazer's Sigil",
     "rarity": 5,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040046_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040046_UI.png",
     "common": "howler_core",
     "forgery": "cadence"
   },
@@ -877,7 +877,7 @@
     "display_name": "Daybreaker's Spine",
     "rarity": 5,
     "weapon_type": "gauntlets",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040056_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21040056_UI.png",
     "common": "mech",
     "forgery": "shard"
   },
@@ -886,7 +886,7 @@
     "display_name": "Boson Astrolabe",
     "rarity": 5,
     "weapon_type": "rectifier",
-    "icon": "https://api.hakush.in/ww/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21050045_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21050045_UI.png",
     "common": "mech",
     "forgery": "string"
   }
