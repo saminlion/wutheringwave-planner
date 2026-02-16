@@ -976,6 +976,20 @@ const CalculateTotalResinAndDate = () => {
             return;
         }
 
+        // For choice-separated categories (e.g. player_exp_early), use getChoiceSeparatedExpEstimates
+        // which combines both early and late needs into a single resin total
+        const useChoiceSeparated = gameConfig.value.uiHandlers?.useChoiceSeparatedEstimates?.(category) || false;
+        if (useChoiceSeparated) {
+            const firstSubCategory = category.subCategories[0];
+            if (firstSubCategory) {
+                const estimates = getChoiceSeparatedExpEstimates(category, firstSubCategory);
+                if (estimates && !isNaN(estimates.resin)) {
+                    totalResin += estimates.resin;
+                }
+            }
+            return;
+        }
+
         category.subCategories.forEach((subCategory) => {
 
             // Calculate resin
