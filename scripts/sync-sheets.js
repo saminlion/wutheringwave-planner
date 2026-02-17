@@ -320,14 +320,15 @@ function transformWeapons(rows) {
       weapon.rarity = parseInt(row.Rarity, 10);
     }
 
-    // Type (text) -> weapon_type (prefer text over numeric code)
+    // Type (text) -> type field (lowercase to match existing data)
     if (row.Type) {
-      weapon.weapon_type = row.Type;
+      weapon.type = row.Type.toLowerCase();
     }
 
-    // icon
-    if (row.icon) {
-      weapon.icon = row.icon;
+    // icon (handle both cases)
+    const iconValue = row.icon || row.Icon;
+    if (iconValue) {
+      weapon.icon = iconValue;
     }
 
     // Material IDs
@@ -434,7 +435,7 @@ async function syncGame(gameId, config) {
             continue;
         }
 
-        const fileName = dataType === 'characters' ? 'character' : dataType;
+        const fileName = dataType === 'characters' || dataType === 'weapons' ? dataType.slice(0, -1) : dataType;
         writeJsonFile(`${config.dataPath}/${fileName}.json`, transformed);
       } catch (error) {
         console.error(`  Error syncing ${tabName}: ${error.message}`);
