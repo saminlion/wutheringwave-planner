@@ -428,8 +428,7 @@
     "rarity": 5,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0004.webp",
-    "onyx": 5110030016,
-    "special": null
+    "onyx": 5110030016
   },
   "cohesive_traction": {
     "game_id": 5350300049,
