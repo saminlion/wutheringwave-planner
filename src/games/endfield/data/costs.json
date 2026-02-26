@@ -4,13 +4,13 @@
       "1": { "player_exp_early": 0, "credit": 0 },
       "20": { "player_exp_early": 22860, "credit": 820 },
       "20A": { "credit": 1600, "proto_asc": [8, 2], "bolete": [3, 2] },
-      "40": { "player_exp_early": 271400, "credit": 13360 },
+      "40": { "player_exp_early": 248540, "credit": 12540 },
       "40A": { "credit": 6500, "proto_asc": [25, 2], "bolete": [5, 3] },
-      "60": { "player_exp_early": 747110, "credit": 37260 },
+      "60": { "player_exp_early": 475710, "credit": 23900 },
       "60A": { "credit": 18000, "proto_asc": [24, 3], "bolete": [5, 4] },
-      "70": { "credit": 18000 },
-      "80": { "player_exp_late": 1212340, "credit": 146440 },
-      "90": { "player_exp_late": 1792290, "credit": 385420, "proto_asc": [36, 3], "bolete": [8, 5], "special": 20 }
+      "80": { "player_exp_late": 566500, "credit": 132890 },
+      "80A": { "credit":100000,"proto_asc": [36, 3], "bolete": [8, 5], "special": 20 },
+      "90": { "player_exp_late": 616890, "credit": 252930 }
     },
     "skill": {
       "2": { "credit": 1000, "proto_skill": [6, 2], "odendra": [1, 2] },
@@ -23,9 +23,9 @@
       "9": { "credit": 18000, "proto_skill": [15, 3], "odendra": [2, 4] }
     },
     "mastery": {
-      "1": { "credit": 24000, "proto_skill": [15, 3], "odendra": [1, 5], "special": 1, "perseverance": 1 },
-      "2": { "credit": 30000, "proto_skill": [24, 3], "odendra": [1, 5], "special": 1, "perseverance": 2 },
-      "3": { "credit": 65000, "proto_skill": [50, 3], "odendra": [2, 5], "special": 2, "perseverance": 3 }
+      "1": { "credit": 24000, "proto_skill": [15, 3], "odendra": [3, 5], "special": 6, "perseverance": 1 },
+      "2": { "credit": 30000, "proto_skill": [24, 3], "odendra": [6, 5], "special": 16, "perseverance": 2 },
+      "3": { "credit": 65000, "proto_skill": [50, 3], "odendra": [12, 5], "special": 36, "perseverance": 3 }
     },
     "talent": {
       "talent1": {

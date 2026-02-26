@@ -231,6 +231,35 @@ function transformCharacters(rows) {
       character.weeklyBoss = parseNumberOrString(row.weeklyBoss);
     }
 
+    // Endfield talent costs (per-character)
+    // Columns: talent1_max, talent1_L1_credit, talent1_L1_proto_qty, talent1_L1_proto_tier, ...
+    const talentCosts = {};
+    for (const talentNum of [1, 2]) {
+      const maxKey = `talent${talentNum}_max`;
+      const maxLevel = row[maxKey] != null && row[maxKey] !== '' ? parseInt(row[maxKey], 10) : 0;
+      if (maxLevel > 0) {
+        const levels = {};
+        for (let level = 1; level <= maxLevel; level++) {
+          const credit = row[`talent${talentNum}_L${level}_credit`];
+          const protoQty = row[`talent${talentNum}_L${level}_proto_qty`];
+          const protoTier = row[`talent${talentNum}_L${level}_proto_tier`];
+          if (credit != null && credit !== '') {
+            const costEntry = { credit: parseInt(credit, 10) };
+            if (protoQty != null && protoQty !== '' && protoTier != null && protoTier !== '') {
+              costEntry.proto_skill = [parseInt(protoQty, 10), parseInt(protoTier, 10)];
+            }
+            levels[String(level)] = costEntry;
+          }
+        }
+        if (Object.keys(levels).length > 0) {
+          talentCosts[`talent${talentNum}`] = levels;
+        }
+      }
+    }
+    if (Object.keys(talentCosts).length > 0) {
+      character.talent_costs = talentCosts;
+    }
+
     result[key] = character;
   }
 

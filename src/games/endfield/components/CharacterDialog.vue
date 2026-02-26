@@ -239,7 +239,15 @@ const props = defineProps({
 
 // Form fields from config
 const characterSkills = computed(() => gameStore.formFields?.characterSkills || []);
-const characterSpecial = computed(() => gameStore.formFields?.characterSpecial || []);
+const characterSpecial = computed(() => {
+    const talentCosts = props.character?.talent_costs;
+    if (!talentCosts) return gameStore.formFields?.characterSpecial || [];
+    return Object.keys(talentCosts).map((key, index) => ({
+        label: `Talent ${index + 1}`,
+        model_value: key.replace('talent', 'talent_'),
+        maxLevel: Object.keys(talentCosts[key]).length,
+    }));
+});
 const characterBaseSkill = computed(() => gameStore.formFields?.characterBaseSkill || []);
 const characterAttributes = computed(() => gameStore.formFields?.characterAttributes || []);
 

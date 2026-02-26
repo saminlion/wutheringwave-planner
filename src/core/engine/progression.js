@@ -184,7 +184,7 @@ export class ProgressionEngine {
     // === Endfield structure ===
     // special (talent): settings.special = { talent_1: { current_level, target_level } }
     if (settings.special && typeof settings.special === 'object') {
-      const talentCosts = characterCosts.talent ?? {};
+      const talentCosts = characterInfo.talent_costs ?? characterCosts.talent ?? {};
       Object.entries(settings.special).forEach(([talentKey, talentData]) => {
         if (!talentData || typeof talentData !== 'object') return;
 
