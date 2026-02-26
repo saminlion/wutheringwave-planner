@@ -8,7 +8,34 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0019_karin.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010032
+    "special": 5130010032,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 10800,
+          "proto_skill": [
+            48,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 32000,
+          "proto_skill": [
+            36,
+            3
+          ]
+        }
+      }
+    }
   },
   "fluorite": {
     "game_id": 5240300002,
@@ -19,7 +46,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0022_bounda.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010035
+    "special": 5130010035,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "antal": {
     "game_id": 5240500003,
@@ -30,7 +91,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0023_antal.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010031
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "catcher": {
     "game_id": 5240100004,
@@ -41,7 +136,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0020_meurs.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "estella": {
     "game_id": 5240400005,
@@ -52,7 +181,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0021_whiten.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010034
+    "special": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "da_pan": {
     "game_id": 5250100006,
@@ -63,7 +226,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0018_dapan.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010035
+    "special": 5130010035,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "avywenna": {
     "game_id": 5250500007,
@@ -74,7 +271,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0012_avywen.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "alesh": {
     "game_id": 5250400008,
@@ -85,7 +316,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0024_deepfin.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010031
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "arclight": {
     "game_id": 5250500009,
@@ -96,7 +361,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0007_ikut.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010031
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "perlica": {
     "game_id": 5250500010,
@@ -107,7 +406,34 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0004_pelica.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 10800,
+          "proto_skill": [
+            48,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 32000,
+          "proto_skill": [
+            36,
+            3
+          ]
+        }
+      }
+    }
   },
   "wulfgard": {
     "game_id": 5250200011,
@@ -118,7 +444,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0006_wolfgd.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010035
+    "special": 5130010035,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 8600,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "xaihi": {
     "game_id": 5250400012,
@@ -129,7 +489,34 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0011_seraph.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 10800,
+          "proto_skill": [
+            48,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 32000,
+          "proto_skill": [
+            36,
+            3
+          ]
+        }
+      }
+    }
   },
   "snowshine": {
     "game_id": 5250400013,
@@ -140,7 +527,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0014_aurora.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010034
+    "special": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "chen_qianyu": {
     "game_id": 5250100014,
@@ -151,7 +572,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0005_chen.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010034
+    "special": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "last_rite": {
     "game_id": 5260400015,
@@ -162,7 +617,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0026_lastrite.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010035
+    "special": 5130010035,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "yvonne": {
     "game_id": 5260400016,
@@ -173,7 +662,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0017_yvonne.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "laevatain": {
     "game_id": 5260200017,
@@ -184,7 +707,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0016_laevat.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "3": {
+          "credit": 16000,
+          "proto_skill": [
+            18,
+            3
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10800,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 16000,
+          "proto_skill": [
+            18,
+            3
+          ]
+        }
+      }
+    }
   },
   "pogranichnik": {
     "game_id": 5260100018,
@@ -195,7 +752,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0029_pograni.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010031
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "ardelia": {
     "game_id": 5260300019,
@@ -206,7 +797,34 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0025_ardelia.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010034
+    "special": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "2": {
+          "credit": 7200,
+          "proto_skill": [
+            36,
+            2
+          ]
+        },
+        "3": {
+          "credit": 26000,
+          "proto_skill": [
+            85,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 26000,
+          "proto_skill": [
+            85,
+            2
+          ]
+        }
+      }
+    }
   },
   "gilberta": {
     "game_id": 5260300020,
@@ -217,7 +835,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0013_aglina.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "ember": {
     "game_id": 5260200021,
@@ -228,7 +880,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0009_azrila.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010033
+    "special": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "lifeng": {
     "game_id": 5260100022,
@@ -239,7 +925,41 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0015_lifeng.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010031
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   },
   "endministrator": {
     "game_id": 5260100023,
@@ -250,6 +970,40 @@
     "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0003_endminf.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
-    "special": 5130010031
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   }
 }
