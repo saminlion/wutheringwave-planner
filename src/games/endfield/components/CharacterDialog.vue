@@ -245,7 +245,7 @@ const characterSpecial = computed(() => {
     return Object.keys(talentCosts).map((key, index) => ({
         label: `Talent ${index + 1}`,
         model_value: key.replace('talent', 'talent_'),
-        maxLevel: Object.keys(talentCosts[key]).length,
+        maxLevel: Math.max(...Object.keys(talentCosts[key]).map(Number)),
     }));
 });
 const characterBaseSkill = computed(() => gameStore.formFields?.characterBaseSkill || []);
