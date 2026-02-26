@@ -74,8 +74,8 @@ export default {
       { value: '40A', label: 'Level 40 Ascended' },
       { value: '60', label: 'Level 60' },
       { value: '60A', label: 'Level 60 Ascended' },
-      { value: '70', label: 'Level 70' },
       { value: '80', label: 'Level 80' },
+      { value: '80A', label: 'Level 80 Ascended' },
       { value: '90', label: 'Level 90' },
     ],
     weaponLevelItems: [

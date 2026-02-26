@@ -452,9 +452,10 @@ const getEstimates = (category, subCategory) => {
     // config.uiHandlers.useChoiceSeparatedEstimatesでChoice分離表示判定 (player_exp)
     const useChoiceSeparated = gameConfig.value.uiHandlers?.useChoiceSeparatedEstimates?.(category) || false;
     if (useChoiceSeparated) {
-        // player_exp_lateの場合、earlyで既に表示しているのでnullを返す
+        // player_exp_lateの場合、earlyが存在すればearlyで表示するのでスキップ
         if (category.name === 'player_exp_late') {
-            return null;
+            const hasEarly = categorizedMaterials.value.some(c => c.name === 'player_exp_early');
+            if (hasEarly) return null;
         }
         // player_exp_earlyの場合、合算したestimateを返す
         return getChoiceSeparatedExpEstimates(category, subCategory);
@@ -971,9 +972,10 @@ const CalculateTotalResinAndDate = () => {
 
         // Iterate categorizedMaterials
     categorizedMaterials.value.forEach((category) => {
-        // player_exp_lateはearlyに含まれているのでスキップ
+        // player_exp_lateはearlyに含まれているのでスキップ (earlyが存在する場合のみ)
         if (category.name === 'player_exp_late') {
-            return;
+            const hasEarly = categorizedMaterials.value.some(c => c.name === 'player_exp_early');
+            if (hasEarly) return;
         }
 
         // For choice-separated categories (e.g. player_exp_early), use getChoiceSeparatedExpEstimates
