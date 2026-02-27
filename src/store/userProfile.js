@@ -155,6 +155,22 @@ export const useUserProfileStore = defineStore('userProfile', () => {
   });
 
   /**
+   * 현재 게임의 일일 스태미나 (사용자 커스텀 또는 기본값)
+   */
+  const dailyStamina = computed(() => {
+    const custom = currentProfile.value?.dailyStamina;
+    if (custom != null && custom > 0) return custom;
+    return gameStore.currentGameConfig?.stamina?.dailyLimit ?? 240;
+  });
+
+  /**
+   * 현재 게임의 스태미나 이름
+   */
+  const staminaName = computed(() => {
+    return gameStore.currentGameConfig?.stamina?.name ?? 'Stamina';
+  });
+
+  /**
    * 현재 게임의 던전 레벨 설정
    */
   const dungeonLevels = computed(() => currentProfile.value?.dungeonLevels ?? {});
@@ -195,6 +211,21 @@ export const useUserProfileStore = defineStore('userProfile', () => {
   }
 
   /**
+   * 일일 스태미나 설정
+   * @param {number|null} value - 커스텀 일일 스태미나 (null이면 기본값 사용)
+   */
+  function setDailyStamina(value) {
+    const gameId = gameStore.currentGameId;
+    if (!profiles.value[gameId]) {
+      profiles.value[gameId] = {
+        dungeonLevels: { ...DEFAULT_DUNGEON_LEVELS[gameId] },
+      };
+    }
+    profiles.value[gameId].dailyStamina = value;
+    _saveProfile(gameId);
+  }
+
+  /**
    * 던전 드랍 정보 조회
    * @param {string} dungeonKey - 던전 카테고리 키
    * @returns {object|null} 드랍 정보
@@ -215,8 +246,7 @@ export const useUserProfileStore = defineStore('userProfile', () => {
     const drops = getDungeonDrops(dungeonKey);
     if (!drops) return { runs: 0, stamina: 0, days: 0 };
 
-    const gameConfig = gameStore.currentGameConfig;
-    const dailyStamina = gameConfig?.stamina?.dailyLimit ?? 240;
+    const dailyStaminaLimit = dailyStamina.value;
 
     // 드랍량 계산 (total 또는 개별 합산)
     let dropsPerRun = 0;
@@ -231,7 +261,7 @@ export const useUserProfileStore = defineStore('userProfile', () => {
 
     const runs = dropsPerRun > 0 ? Math.ceil(targetAmount / dropsPerRun) : 0;
     const stamina = runs * drops.stamina;
-    const days = dailyStamina > 0 ? Math.ceil(stamina / dailyStamina) : 0;
+    const days = dailyStaminaLimit > 0 ? Math.ceil(stamina / dailyStaminaLimit) : 0;
 
     return { runs, stamina, days };
   }
@@ -269,11 +299,14 @@ export const useUserProfileStore = defineStore('userProfile', () => {
 
     // Getters
     currentProfile,
+    dailyStamina,
+    staminaName,
     dungeonLevels,
     dungeonData,
     dungeonCategories,
 
     // Actions
+    setDailyStamina,
     setDungeonLevel,
     getDungeonDrops,
     calculateStaminaCost,

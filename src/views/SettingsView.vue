@@ -10,6 +10,10 @@
     </section>
 
     <section class="settings-section">
+      <StaminaSetting />
+    </section>
+
+    <section class="settings-section">
       <CloudSync />
     </section>
 
@@ -23,6 +27,7 @@
 import DataBackup from '@/components/common/DataBackup.vue';
 import CloudSync from '@/components/settings/CloudSync.vue';
 import LanguageSelector from '@/components/settings/LanguageSelector.vue';
+import StaminaSetting from '@/components/settings/StaminaSetting.vue';
 import { useLocale } from '@/composables/useLocale';
 
 const { tUI } = useLocale();

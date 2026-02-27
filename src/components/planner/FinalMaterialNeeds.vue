@@ -287,12 +287,16 @@ const getExpMaterialForCategory = (categoryName) => {
     return expCategoryMaterials.value[categoryName] || {};
 };
 
-// Get stamina config from current game
+// Get stamina config from current game (uses custom dailyStamina from userProfile if set)
 const getStaminaConfig = () => {
     const currentGame = gameStore.currentGame;
-    return currentGame?.config?.stamina || {
+    const config = currentGame?.config?.stamina || {
         dailyLimit: 240,
         farmingRates: {}
+    };
+    return {
+        ...config,
+        dailyLimit: userProfileStore.dailyStamina,
     };
 };
 
@@ -502,7 +506,8 @@ const getTierSeparatedForgeryEstimates = (subCategory) => {
     if (!hasTierChoice) {
         const totalRuns = tier2Drops > 0 ? Math.ceil((tier2Need + tier3Need * 3) / tier2Drops) : 0;
         const totalResin = totalRuns * stamina;
-        const totalDays = Math.ceil(totalResin / 240);
+        const dailyLimit = getStaminaConfig().dailyLimit;
+        const totalDays = Math.ceil(totalResin / dailyLimit);
 
         return {
             run: totalRuns,
@@ -520,7 +525,7 @@ const getTierSeparatedForgeryEstimates = (subCategory) => {
     const tier2Resin = tier2Runs * stamina;
     const tier3Resin = tier3Runs * stamina;
     const totalResin = tier2Resin + tier3Resin;
-    const totalDays = Math.ceil(totalResin / 240);
+    const totalDays = Math.ceil(totalResin / getStaminaConfig().dailyLimit);
 
     return {
         run: totalRuns,
@@ -581,7 +586,7 @@ const getChoiceSeparatedExpEstimates = (category, subCategory) => {
     if (!hasExpChoice) {
         const totalRuns = earlyDrops > 0 ? Math.ceil((earlyNeed + lateNeed) / earlyDrops) : 0;
         const totalResin = totalRuns * stamina;
-        const totalDays = Math.ceil(totalResin / 240);
+        const totalDays = Math.ceil(totalResin / getStaminaConfig().dailyLimit);
 
         return {
             run: totalRuns,
@@ -599,7 +604,7 @@ const getChoiceSeparatedExpEstimates = (category, subCategory) => {
     const earlyResin = earlyRuns * stamina;
     const lateResin = lateRuns * stamina;
     const totalResin = earlyResin + lateResin;
-    const totalDays = Math.ceil(totalResin / 240);
+    const totalDays = Math.ceil(totalResin / getStaminaConfig().dailyLimit);
 
     return {
         run: totalRuns,
@@ -958,7 +963,7 @@ const CalculateEstimatedDate = (data) => {
     const runs = CalculateEstimatedRun(data);
     const date = data.subcategory === "weeklyboss"
         ? Math.ceil(runs / 3)
-        : Math.ceil((runs * resin) / 240);
+        : Math.ceil((runs * resin) / getStaminaConfig().dailyLimit);
 
     dateCache.value[data.subcategory] = date;
     return date;
