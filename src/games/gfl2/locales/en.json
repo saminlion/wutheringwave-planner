@@ -1,0 +1,29 @@
+{
+  "characters": {
+    "6205010001": "Suomi",
+    "6204030001": "Groza"
+  },
+  "weapons": {
+    "6305010001": "Hestia",
+    "6304020001": "Caseless Rifle 11"
+  },
+  "materials": {
+    "6100000001": "Sardis Gold",
+    "6120010001": "Stock Boost Bar T1",
+    "6120010002": "Stock Boost Bar T2",
+    "6120010003": "Stock Boost Bar T3",
+    "6120010004": "Stock Boost Bar T4",
+    "6120010005": "Stock Boost Bar T5",
+    "6120010006": "Stock Boost Bar T6",
+    "6120010007": "Stock Boost Bar T7",
+    "6120020001": "Inert Metallic Drip",
+    "6120020002": "Reactive Metallic Drip",
+    "6120020003": "Polarized Metallic Drip",
+    "6120020004": "Heterized Metallic Drip",
+    "6120020005": "Metallic Drip T5",
+    "6120020006": "Metallic Drip T6",
+    "6130010001": "Basic Info Core",
+    "6160000001": "Combat Report",
+    "6170000001": "Analysis Blueprint"
+  }
+}

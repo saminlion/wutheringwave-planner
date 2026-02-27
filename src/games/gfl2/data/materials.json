@@ -1,0 +1,146 @@
+{
+  "credit": {
+    "6100000001": {
+      "game_id": "6100000001",
+      "label": "Sardis Gold",
+      "icon": "",
+      "Category": "credit",
+      "SubCategory": "credit"
+    }
+  },
+  "forgery": {
+    "6120010001": {
+      "game_id": "6120010001",
+      "label": "Stock Boost Bar T1",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 1
+    },
+    "6120010002": {
+      "game_id": "6120010002",
+      "label": "Stock Boost Bar T2",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 2
+    },
+    "6120010003": {
+      "game_id": "6120010003",
+      "label": "Stock Boost Bar T3",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 3
+    },
+    "6120010004": {
+      "game_id": "6120010004",
+      "label": "Stock Boost Bar T4",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 4
+    },
+    "6120010005": {
+      "game_id": "6120010005",
+      "label": "Stock Boost Bar T5",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 5
+    },
+    "6120010006": {
+      "game_id": "6120010006",
+      "label": "Stock Boost Bar T6",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 6
+    },
+    "6120010007": {
+      "game_id": "6120010007",
+      "label": "Stock Boost Bar T7",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 7
+    },
+    "6120020001": {
+      "game_id": "6120020001",
+      "label": "Inert Metallic Drip",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "tier": 1
+    },
+    "6120020002": {
+      "game_id": "6120020002",
+      "label": "Reactive Metallic Drip",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "tier": 2
+    },
+    "6120020003": {
+      "game_id": "6120020003",
+      "label": "Polarized Metallic Drip",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "tier": 3
+    },
+    "6120020004": {
+      "game_id": "6120020004",
+      "label": "Heterized Metallic Drip",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "tier": 4
+    },
+    "6120020005": {
+      "game_id": "6120020005",
+      "label": "Metallic Drip T5",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "tier": 5
+    },
+    "6120020006": {
+      "game_id": "6120020006",
+      "label": "Metallic Drip T6",
+      "icon": "",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "tier": 6
+    }
+  },
+  "rare_material": {
+    "6130010001": {
+      "game_id": "6130010001",
+      "label": "Basic Info Core",
+      "icon": "",
+      "Category": "rare_material",
+      "SubCategory": "rare_material"
+    }
+  },
+  "doll_exp": {
+    "6160000001": {
+      "game_id": "6160000001",
+      "label": "Combat Report",
+      "icon": "",
+      "Category": "doll_exp",
+      "SubCategory": "doll_exp",
+      "value": 1
+    }
+  },
+  "weapon_exp": {
+    "6170000001": {
+      "game_id": "6170000001",
+      "label": "Analysis Blueprint",
+      "icon": "",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "value": 1
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "character": {
+    "level": {
+      "20": { "doll_exp": 5224 },
+      "20A": { "forgery_stock_boost_bar": [4, 1], "credit": 1000 },
+      "30": { "doll_exp": 21084 },
+      "30A": { "forgery_stock_boost_bar": [[6, 1], [8, 2]], "credit": 2000 },
+      "40": { "doll_exp": 82549 },
+      "40A": { "forgery_stock_boost_bar": [[16, 2], [8, 3]], "credit": 4000 },
+      "50": { "doll_exp": 285599 },
+      "50A": { "forgery_stock_boost_bar": [[12, 3], [5, 4]], "credit": 12000 },
+      "60": { "doll_exp": 575689 }
+    },
+    "talent": {
+      "5": {
+        "passive1": { "1": { "rare_material": 3, "credit": 3000 } },
+        "passive2": { "1": { "rare_material": 3, "credit": 3000 } },
+        "passive3": { "1": { "rare_material": 3, "credit": 8000 } },
+        "passive4": { "1": { "rare_material": 3, "credit": 8000 } },
+        "passive5": { "1": { "rare_material": 3, "credit": 12000 } },
+        "passive6": { "1": { "rare_material": 3, "credit": 12000 } }
+      },
+      "4": {
+        "passive1": { "1": { "rare_material": 1, "credit": 3000 } },
+        "passive2": { "1": { "rare_material": 1, "credit": 3000 } },
+        "passive3": { "1": { "rare_material": 1, "credit": 8000 } },
+        "passive4": { "1": { "rare_material": 1, "credit": 8000 } },
+        "passive5": { "1": { "rare_material": 2, "credit": 12000 } },
+        "passive6": { "1": { "rare_material": 2, "credit": 12000 } }
+      }
+    },
+    "attribute": {
+      "1": { "forgery_transcription_conductor": [20, 1], "credit": 1000 },
+      "2": { "forgery_transcription_conductor": [20, 2], "credit": 2000 },
+      "3": { "forgery_transcription_conductor": [40, 3], "credit": 4000 },
+      "4": { "forgery_transcription_conductor": [80, 4], "credit": 8000 },
+      "5": { "forgery_transcription_conductor": [120, 5], "credit": 10000 },
+      "6": { "forgery_transcription_conductor": [160, 6], "credit": 12000 }
+    }
+  },
+  "weapon": {
+    "level_3": {
+      "10": { "weapon_exp": 620 },
+      "20": { "weapon_exp": 4945 },
+      "30": { "weapon_exp": 22390 },
+      "40": { "weapon_exp": 91000 },
+      "50": { "weapon_exp": 323690 },
+      "60": { "weapon_exp": 667935 }
+    },
+    "level_4": {
+      "10": { "weapon_exp": 620 },
+      "20": { "weapon_exp": 4945 },
+      "30": { "weapon_exp": 22390 },
+      "40": { "weapon_exp": 91000 },
+      "50": { "weapon_exp": 323690 },
+      "60": { "weapon_exp": 667935 }
+    },
+    "level_5": {
+      "10": { "weapon_exp": 620 },
+      "20": { "weapon_exp": 4945 },
+      "30": { "weapon_exp": 22390 },
+      "40": { "weapon_exp": 91000 },
+      "50": { "weapon_exp": 323690 },
+      "60": { "weapon_exp": 667935 }
+    }
+  }
+}

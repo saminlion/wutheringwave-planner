@@ -1,0 +1,16 @@
+{
+  "6305010001": {
+    "game_id": "6305010001",
+    "display_name": "Hestia",
+    "type": "hg",
+    "rarity": 5,
+    "icon": ""
+  },
+  "6304020001": {
+    "game_id": "6304020001",
+    "display_name": "Caseless Rifle 11",
+    "type": "ar",
+    "rarity": 4,
+    "icon": ""
+  }
+}

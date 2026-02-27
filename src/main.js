@@ -10,6 +10,7 @@ import 'vue3-toastify/dist/index.css';
 // Game plugins
 import wutheringwavePlugin from './games/wutheringwave';
 import endfieldPlugin from './games/endfield';
+import gfl2Plugin from './games/gfl2';
 import { useGameRegistryStore } from './store/gameRegistry';
 
 const app = createApp(App);
@@ -28,6 +29,7 @@ app.use(pinia);
 const gameRegistry = useGameRegistryStore();
 gameRegistry.registerGame(wutheringwavePlugin);
 gameRegistry.registerGame(endfieldPlugin);
+gameRegistry.registerGame(gfl2Plugin);
 gameRegistry.hydrate(); // Restore last selected game
 
 // Router
