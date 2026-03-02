@@ -11,51 +11,35 @@
       "50A": { "forgery_stock_boost_bar": [[12, 3], [5, 4]], "credit": 12000 },
       "60": { "doll_exp": 575689 }
     },
-    "talent": {
+    "passive": {
       "5": {
-        "passive1": { "1": { "rare_material": 3, "credit": 3000 } },
-        "passive2": { "1": { "rare_material": 3, "credit": 3000 } },
-        "passive3": { "1": { "rare_material": 3, "credit": 8000 } },
-        "passive4": { "1": { "rare_material": 3, "credit": 8000 } },
-        "passive5": { "1": { "rare_material": 3, "credit": 12000 } },
-        "passive6": { "1": { "rare_material": 3, "credit": 12000 } }
+        "passive_skill_1": { "rare_material": 3, "credit": 3000 },
+        "passive_skill_2": { "rare_material": 3, "credit": 3000 },
+        "passive_skill_3": { "rare_material": 3, "credit": 8000 },
+        "passive_skill_4": { "rare_material": 3, "credit": 8000 },
+        "passive_skill_5": { "rare_material": 3, "credit": 12000 },
+        "passive_skill_6": { "rare_material": 3, "credit": 12000 }
       },
       "4": {
-        "passive1": { "1": { "rare_material": 1, "credit": 3000 } },
-        "passive2": { "1": { "rare_material": 1, "credit": 3000 } },
-        "passive3": { "1": { "rare_material": 1, "credit": 8000 } },
-        "passive4": { "1": { "rare_material": 1, "credit": 8000 } },
-        "passive5": { "1": { "rare_material": 2, "credit": 12000 } },
-        "passive6": { "1": { "rare_material": 2, "credit": 12000 } }
+        "passive_skill_1": { "rare_material": 1, "credit": 3000 },
+        "passive_skill_2": { "rare_material": 1, "credit": 3000 },
+        "passive_skill_3": { "rare_material": 1, "credit": 8000 },
+        "passive_skill_4": { "rare_material": 1, "credit": 8000 },
+        "passive_skill_5": { "rare_material": 2, "credit": 12000 },
+        "passive_skill_6": { "rare_material": 2, "credit": 12000 }
       }
     },
-    "attribute": {
-      "1": { "forgery_transcription_conductor": [20, 1], "credit": 1000 },
-      "2": { "forgery_transcription_conductor": [20, 2], "credit": 2000 },
-      "3": { "forgery_transcription_conductor": [40, 3], "credit": 4000 },
-      "4": { "forgery_transcription_conductor": [80, 4], "credit": 8000 },
-      "5": { "forgery_transcription_conductor": [120, 5], "credit": 10000 },
-      "6": { "forgery_transcription_conductor": [160, 6], "credit": 12000 }
+    "bonus_stat": {
+      "bonus_stat_1": { "forgery_transcription_conductor": [20, 1], "credit": 1000 },
+      "bonus_stat_2": { "forgery_transcription_conductor": [20, 2], "credit": 2000 },
+      "bonus_stat_3": { "forgery_transcription_conductor": [40, 3], "credit": 4000 },
+      "bonus_stat_4": { "forgery_transcription_conductor": [80, 4], "credit": 8000 },
+      "bonus_stat_5": { "forgery_transcription_conductor": [120, 5], "credit": 10000 },
+      "bonus_stat_6": { "forgery_transcription_conductor": [160, 6], "credit": 12000 }
     }
   },
   "weapon": {
-    "level_3": {
-      "10": { "weapon_exp": 620 },
-      "20": { "weapon_exp": 4945 },
-      "30": { "weapon_exp": 22390 },
-      "40": { "weapon_exp": 91000 },
-      "50": { "weapon_exp": 323690 },
-      "60": { "weapon_exp": 667935 }
-    },
-    "level_4": {
-      "10": { "weapon_exp": 620 },
-      "20": { "weapon_exp": 4945 },
-      "30": { "weapon_exp": 22390 },
-      "40": { "weapon_exp": 91000 },
-      "50": { "weapon_exp": 323690 },
-      "60": { "weapon_exp": 667935 }
-    },
-    "level_5": {
+    "level": {
       "10": { "weapon_exp": 620 },
       "20": { "weapon_exp": 4945 },
       "30": { "weapon_exp": 22390 },

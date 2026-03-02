@@ -105,6 +105,21 @@ const GAMES = {
       weapons: 'Weapons_i18n',
     },
   },
+  gfl2: {
+    sheetId: extractSheetId(process.env.SHEET_ID_GIRLSFRONTIER),
+    dataPath: 'src/games/gfl2/data',
+    localePath: 'src/games/gfl2/locales',
+    tabs: {
+      characters: 'Characters',
+      materials: 'Materials',
+      weapons: 'Weapons',
+    },
+    i18nTabs: {
+      characters: 'Characters_i18n',
+      materials: 'Materials_i18n',
+      weapons: 'Weapons_i18n',
+    },
+  },
 };
 
 /**
@@ -197,9 +212,12 @@ function transformCharacters(rows) {
       character.element = row.Element;
     }
 
-    // weapon
+    // weapon (WW/Endfield) or weapon_type (GFL2)
     if (row.weapon) {
       character.weapon = row.weapon;
+    }
+    if (row.weapon_type) {
+      character.weapon_type = row.weapon_type;
     }
 
     // icon
@@ -229,6 +247,31 @@ function transformCharacters(rows) {
     }
     if (row.weeklyBoss != null && row.weeklyBoss !== '') {
       character.weeklyBoss = parseNumberOrString(row.weeklyBoss);
+    }
+
+    // GFL2 specific fields
+    if (row.forgery_stock_boost_bar) {
+      character.forgery_stock_boost_bar = row.forgery_stock_boost_bar;
+    }
+    if (row.forgery_transcription_conductor) {
+      character.forgery_transcription_conductor = row.forgery_transcription_conductor;
+    }
+
+    // GFL2 bonus_stats (for 4-star characters)
+    // Columns: bonus_stat_1_stat, bonus_stat_1_value, bonus_stat_2_stat, bonus_stat_2_value, etc.
+    const bonusStats = [];
+    for (let i = 1; i <= 6; i++) {
+      const stat = row[`bonus_stat_${i}_stat`];
+      const value = row[`bonus_stat_${i}_value`];
+      if (stat && value != null && value !== '') {
+        bonusStats.push({
+          stat: stat,
+          value: parseFloat(value),
+        });
+      }
+    }
+    if (bonusStats.length > 0) {
+      character.bonus_stats = bonusStats;
     }
 
     // Endfield talent costs (per-character)

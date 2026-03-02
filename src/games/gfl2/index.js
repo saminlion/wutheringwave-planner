@@ -17,12 +17,12 @@ import CharacterDialog from './components/CharacterDialog.vue';
 // Game-specific material processor
 import * as materialProcessor from './materialProcessor.js';
 
-// Enrich characters with rarity-specific talent_costs for passive skill calculation
+// Enrich characters with rarity-specific passive_costs for passive skill calculation
 const enrichedCharacters = Object.fromEntries(
   Object.entries(characters).map(([id, char]) => {
-    const talentCosts = costs.character?.talent?.[String(char.rarity)];
-    if (talentCosts) {
-      return [id, { ...char, talent_costs: talentCosts }];
+    const passiveCosts = costs.character?.passive?.[String(char.rarity)];
+    if (passiveCosts) {
+      return [id, { ...char, passive_costs: passiveCosts }];
     }
     return [id, char];
   }),

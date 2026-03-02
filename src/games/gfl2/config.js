@@ -98,12 +98,12 @@ export const gfl2Config = {
     ],
     characterBaseSkill: [],
     characterAttributes: [
-      { label: 'Bonus Stat 1', model_value: 'attribute_1' },
-      { label: 'Bonus Stat 2', model_value: 'attribute_2' },
-      { label: 'Bonus Stat 3', model_value: 'attribute_3' },
-      { label: 'Bonus Stat 4', model_value: 'attribute_4' },
-      { label: 'Bonus Stat 5', model_value: 'attribute_5' },
-      { label: 'Bonus Stat 6', model_value: 'attribute_6' },
+      { label: 'Bonus Stat 1', model_value: 'bonus_stat_1' },
+      { label: 'Bonus Stat 2', model_value: 'bonus_stat_2' },
+      { label: 'Bonus Stat 3', model_value: 'bonus_stat_3' },
+      { label: 'Bonus Stat 4', model_value: 'bonus_stat_4' },
+      { label: 'Bonus Stat 5', model_value: 'bonus_stat_5' },
+      { label: 'Bonus Stat 6', model_value: 'bonus_stat_6' },
     ],
   },
 
