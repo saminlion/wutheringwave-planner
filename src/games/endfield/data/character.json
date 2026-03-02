@@ -5,7 +5,7 @@
     "rarity": 4,
     "element": "heat",
     "weapon": "sword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0019_karin.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/akekuri.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010032,
@@ -43,7 +43,7 @@
     "rarity": 4,
     "element": "nature",
     "weapon": "pistol",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0022_bounda.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/fluorite.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010035,
@@ -88,7 +88,7 @@
     "rarity": 4,
     "element": "electric",
     "weapon": "arts",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0023_antal.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/antal.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010031,
@@ -133,7 +133,7 @@
     "rarity": 4,
     "element": "physical",
     "weapon": "greatsword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0020_meurs.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/catcher.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -178,7 +178,7 @@
     "rarity": 4,
     "element": "cryo",
     "weapon": "polearm",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0021_whiten.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/estella.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010034,
@@ -223,7 +223,7 @@
     "rarity": 5,
     "element": "physical",
     "weapon": "greatsword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0018_dapan.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/da-pan.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010035,
@@ -268,7 +268,7 @@
     "rarity": 5,
     "element": "electric",
     "weapon": "polearm",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0012_avywen.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/avywenna.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -313,7 +313,7 @@
     "rarity": 5,
     "element": "cryo",
     "weapon": "sword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0024_deepfin.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/alesh.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010031,
@@ -358,7 +358,7 @@
     "rarity": 5,
     "element": "electric",
     "weapon": "sword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0007_ikut.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/arclight.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010031,
@@ -403,7 +403,7 @@
     "rarity": 5,
     "element": "electric",
     "weapon": "arts",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0004_pelica.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/perlica.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -441,7 +441,7 @@
     "rarity": 5,
     "element": "heat",
     "weapon": "pistol",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0006_wolfgd.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/wulfgard.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010035,
@@ -486,7 +486,7 @@
     "rarity": 5,
     "element": "cryo",
     "weapon": "arts",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0011_seraph.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/xaihi.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -524,7 +524,7 @@
     "rarity": 5,
     "element": "cryo",
     "weapon": "greatsword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0014_aurora.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/snowshine.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010034,
@@ -569,7 +569,7 @@
     "rarity": 5,
     "element": "physical",
     "weapon": "sword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0005_chen.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/chen-qianyu.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010034,
@@ -614,7 +614,7 @@
     "rarity": 6,
     "element": "cryo",
     "weapon": "greatsword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0026_lastrite.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/last-rite.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010035,
@@ -659,7 +659,7 @@
     "rarity": 6,
     "element": "cryo",
     "weapon": "pistol",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0017_yvonne.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/yvonne.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -704,7 +704,7 @@
     "rarity": 6,
     "element": "heat",
     "weapon": "sword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0016_laevat.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/laevatain.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -749,7 +749,7 @@
     "rarity": 6,
     "element": "physical",
     "weapon": "sword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0029_pograni.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/pogranichnik.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010031,
@@ -794,7 +794,7 @@
     "rarity": 6,
     "element": "nature",
     "weapon": "arts",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0025_ardelia.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/ardelia.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010034,
@@ -832,7 +832,7 @@
     "rarity": 6,
     "element": "nature",
     "weapon": "arts",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0013_aglina.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/gilberta.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -877,7 +877,7 @@
     "rarity": 6,
     "element": "heat",
     "weapon": "greatsword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0009_azrila.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/ember.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
     "special": 5130010033,
@@ -922,7 +922,7 @@
     "rarity": 6,
     "element": "physical",
     "weapon": "polearm",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0015_lifeng.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/lifeng.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010031,
@@ -967,7 +967,97 @@
     "rarity": 6,
     "element": "physical",
     "weapon": "sword",
-    "icon": "https://static.warfarin.wiki/v3/charicon/icon_chr_0003_endminf.webp",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/endministrator-a.webp",
+    "bolete": 5110010006,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "tangtang": {
+    "game_id": 5260400024,
+    "display_name": "Tangtang",
+    "rarity": 6,
+    "element": "cryo",
+    "weapon": "pistol",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/tangtang.webp",
+    "bolete": 5110010006,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "rossi": {
+    "game_id": 5260100025,
+    "display_name": "Rossi",
+    "rarity": 6,
+    "element": "physical",
+    "weapon": "sword",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/rossi.webp",
     "bolete": 5110010006,
     "odendra": 5110020010,
     "special": 5130010031,

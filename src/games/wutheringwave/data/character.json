@@ -609,5 +609,18 @@
     "ascension": 4130010026,
     "boss": 4140030019,
     "weeklyBoss": 4150030008
+  },
+  "sigrika": {
+    "game_id": 4250300048,
+    "display_name": "Sigrika",
+    "rarity": 5,
+    "element": "aero",
+    "weapon": "gauntlets",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
+    "common": "pendant",
+    "forgery": "shard",
+    "ascension": 4130010025,
+    "boss": 4140030021,
+    "weeklyBoss": 4150030008
   }
 }

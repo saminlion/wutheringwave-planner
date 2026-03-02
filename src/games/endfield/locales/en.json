@@ -22,7 +22,9 @@
     "5260300020": "Gilberta",
     "5260200021": "Ember",
     "5260100022": "Lifeng",
-    "5260100023": "Endministrator"
+    "5260100023": "Endministrator",
+    "5260400024": "Tangtang",
+    "5260100025": "Rossi"
   },
   "materials": {
     "5100010001": "T-Creds",
@@ -124,6 +126,8 @@
     "5360500059": "Clannibal",
     "5360500060": "Wedge",
     "5360500061": "Navigator",
-    "5360500062": "Artzy Tyrannical"
+    "5360500062": "Artzy Tyrannical",
+    "5360500063": "Brigand's Calling",
+    "5360100064": "Lupine Scarlet"
   }
 }

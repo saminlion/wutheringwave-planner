@@ -889,5 +889,14 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21050045_UI.png",
     "common": "mech",
     "forgery": "string"
+  },
+  "solsworn_ciphers": {
+    "game_id": 4350300100,
+    "display_name": "Solsworn Ciphers",
+    "rarity": 5,
+    "type": "gauntlets",
+    "icon": "https://lblog.fp.guinfra.com/file/69a5416563f7650ffc933fccOiTmiq6S03",
+    "common": "mech",
+    "forgery": "shard"
   }
 }

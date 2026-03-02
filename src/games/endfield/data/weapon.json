@@ -555,5 +555,23 @@
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0010.webp",
     "onyx": 5110030015,
     "special": 5130010033
+  },
+  "brigands_calling": {
+    "game_id": 5360500063,
+    "display_name": "Brigand's Calling",
+    "rarity": 6,
+    "type": "pistol",
+    "icon": "https://img.game8.co/4428605/52ade6cd92efca962ea57909a22eccb3.png/show",
+    "onyx": 5110030015,
+    "special": 5130010033
+  },
+  "lupine_scarlet": {
+    "game_id": 5360100064,
+    "display_name": "Lupine Scarlet",
+    "rarity": 6,
+    "type": "sword",
+    "icon": "https://img.game8.co/4428604/2f1a59eafec83b799549de90e86cc361.png/show",
+    "onyx": 5110030015,
+    "special": 5130010033
   }
 }
