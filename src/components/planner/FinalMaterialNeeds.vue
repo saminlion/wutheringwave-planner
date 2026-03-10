@@ -1000,6 +1000,8 @@ const CalculateTotalResinAndDate = () => {
         }
 
         category.subCategories.forEach((subCategory) => {
+            // 完了済みサブカテゴリはスキップ (表示と一致させる)
+            if (!hasRequiredMaterials(category, subCategory)) return;
 
             // Calculate resin
             const resin = parseInt(CalculateEstimatedResin({
