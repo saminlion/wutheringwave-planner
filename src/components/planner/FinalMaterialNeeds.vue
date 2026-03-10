@@ -638,21 +638,22 @@ const props = defineProps({
 
 const emit = defineEmits(["updateInventory"]);
 
+// ゲーム切り替え検出用
+let lastGameId = gameStore.currentGameId;
+
 watch(
     () => props.materials,
     (newMaterials) => {
+        // ゲーム切り替え時にキャッシュをリセット (materials再計算の前に実行)
+        const currentGameId = gameStore.currentGameId;
+        if (currentGameId !== lastGameId) {
+            resetCaches();
+            lastGameId = currentGameId;
+        }
         groupMaterialsByCategoryAndSubCategory(newMaterials);
         updateTotalValues();
     },
     { deep: true }
-);
-
-// ゲーム切り替え時にキャッシュをリセット
-watch(
-    () => gameStore.currentGameId,
-    () => {
-        resetCaches();
-    }
 );
 
 const getMaterialQuantity = (id) => {
