@@ -989,6 +989,8 @@ const CalculateTotalResinAndDate = () => {
         // which combines both early and late needs into a single resin total
         const useChoiceSeparated = gameConfig.value.uiHandlers?.useChoiceSeparatedEstimates?.(category) || false;
         if (useChoiceSeparated) {
+            // 完了済みカテゴリはスキップ
+            if (!categoryHasRequiredMaterials(category)) return;
             const firstSubCategory = category.subCategories[0];
             if (firstSubCategory) {
                 const estimates = getChoiceSeparatedExpEstimates(category, firstSubCategory);
