@@ -647,6 +647,14 @@ watch(
     { deep: true }
 );
 
+// ゲーム切り替え時にキャッシュをリセット
+watch(
+    () => gameStore.currentGameId,
+    () => {
+        resetCaches();
+    }
+);
+
 const getMaterialQuantity = (id) => {
     // 숫자/문자열 키 불일치 문제 해결: 둘 다 시도
     const stringKey = String(id);
@@ -926,7 +934,7 @@ const CalculateEstimatedRun = (data) => {
 
     const calculatedRuns = unobtainable ? "" : Math.ceil(runs);
 
-    runCache[data.subcategory] = calculatedRuns;
+    runCache.value[data.subcategory] = calculatedRuns;
 
 
     return calculatedRuns;

@@ -250,6 +250,8 @@ const updateFinalMaterialNeeds = () => {
   const ownedMaterials = { ...inventory.value };
 
   checkGoals.value.forEach((goal) => {
+    // Skip goals whose character/weapon no longer exists in game data
+    if (!getRawData(goal)) return;
     Object.entries(goal.materials || {}).forEach(([materialId, qty]) => {
       totalNeeds[materialId] = (totalNeeds[materialId] || 0) + qty;
     });
@@ -325,6 +327,8 @@ const finalMaterialNeeds = computed(() => {
   const ownedMaterials = { ...inventory.value };
 
   checkGoals.value.forEach((goal) => {
+    // Skip goals whose character/weapon no longer exists in game data
+    if (!getRawData(goal)) return;
     Object.entries(goal.materials || {}).forEach(([materialId, qty]) => {
       totalNeeds[materialId] = (totalNeeds[materialId] || 0) + qty;
     });
