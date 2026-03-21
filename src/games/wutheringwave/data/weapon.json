@@ -895,7 +895,7 @@
     "display_name": "Solsworn Ciphers",
     "rarity": 5,
     "type": "gauntlets",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040066_UI.png",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040066_UI.webp",
     "common": "mech",
     "forgery": "shard"
   }
