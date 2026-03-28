@@ -622,5 +622,25 @@
     "ascension": 4130010025,
     "boss": 4140030021,
     "weeklyBoss": 4150030008
+  },
+  "hiyuki": {
+    "game_id": 4250100049,
+    "display_name": "Hiyuki",
+    "rarity": 5,
+    "element": "glacio",
+    "weapon": "sword",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
+    "common": "exoswarm",
+    "forgery": "polarizer"
+  },
+  "dalia": {
+    "game_id": 4250200050,
+    "display_name": "Dalia",
+    "rarity": 5,
+    "element": "fusion",
+    "weapon": "rectifier",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
+    "common": "pendant",
+    "forgery": "string"
   }
 }
