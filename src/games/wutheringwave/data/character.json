@@ -629,18 +629,20 @@
     "rarity": 5,
     "element": "glacio",
     "weapon": "sword",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_FeiXue_UI.webp",
     "common": "exoswarm",
-    "forgery": "polarizer"
+    "forgery": "polarizer",
+    "boss": 4140030021
   },
-  "dalia": {
+  "denia": {
     "game_id": 4250200050,
-    "display_name": "Dalia",
+    "display_name": "Denia",
     "rarity": 5,
     "element": "fusion",
     "weapon": "rectifier",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
     "common": "pendant",
-    "forgery": "string"
+    "forgery": "string",
+    "boss": 4140030020
   }
 }

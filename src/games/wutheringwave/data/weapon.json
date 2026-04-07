@@ -898,5 +898,23 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21040066_UI.webp",
     "common": "mech",
     "forgery": "shard"
+  },
+  "forged_dwarf_star": {
+    "game_id": 4350500101,
+    "display_name": "Forged Dwarf Star",
+    "rarity": 5,
+    "type": "rectifier",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050076_UI.webp",
+    "common": "mech",
+    "forgery": "string"
+  },
+  "frostburn": {
+    "game_id": 4350100102,
+    "display_name": "Frostburn",
+    "rarity": 5,
+    "type": "sword",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050076_UI.webp",
+    "common": "mech",
+    "forgery": "polarizer"
   }
 }

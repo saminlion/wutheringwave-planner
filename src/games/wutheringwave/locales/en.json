@@ -23,7 +23,7 @@
     "4250200040": "Galbrena",
     "4250200045": "Mornye",
     "4250200046": "Aemeath",
-    "4250200050": "Dalia",
+    "4250200050": "Denia",
     "4250300018": "Jiyan",
     "4250300019": "Jianxin",
     "4250300022": "Rover (Aero)",
@@ -293,6 +293,8 @@
     "4350300097": "Moongazer's Sigil",
     "4350300098": "Daybreaker's Spine",
     "4350500099": "Boson Astrolabe",
-    "4350300100": "Solsworn Ciphers"
+    "4350300100": "Solsworn Ciphers",
+    "4350500101": "Forged Dwarf Star",
+    "4350100102": "Frostburn"
   }
 }

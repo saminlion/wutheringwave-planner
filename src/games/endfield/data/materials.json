@@ -298,12 +298,14 @@
       "SubCategory": "special",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_5.webp",
       "tier": 5
-    },
+    }
+  },
+  "mastery": {
     "mark_of_perseverance": {
-      "game_id": 5130010036,
+      "game_id": 5140010036,
       "label": "Mark of Perseverance",
-      "Category": "special",
-      "SubCategory": "special",
+      "Category": "mastery",
+      "SubCategory": "perseverance",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_crown.webp",
       "tier": 5
     }
