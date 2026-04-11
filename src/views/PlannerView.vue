@@ -891,19 +891,6 @@ const completeGoal = (id, type) => {
 
 onMounted(() => {
   logger.debug('goals', goals);
-
-  // Recalculate all goals to replace stale material keys (e.g. 'perseverance' resolved before fix)
-  goals.value.forEach((goal) => {
-    const calculatedMaterials = plannerStore.calculateAllMaterials(goal.id, goal.type);
-    if (calculatedMaterials && Object.keys(calculatedMaterials).length > 0) {
-      plannerStore.addGoal({
-        id: goal.id,
-        type: goal.type,
-        materials: calculatedMaterials,
-      });
-    }
-  });
-  refreshFinalMaterialNeeds();
 });
 </script>
 
