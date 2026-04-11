@@ -72,22 +72,22 @@ function extractSheetId(input) {
 }
 
 // Configuration for each game
+// Tabs can be specified as a string (tab name) or { name, gid } object.
+// Use gid when ?sheet=TabName doesn't work (sheet not published to web for that tab).
 const GAMES = {
   wutheringwave: {
     sheetId: extractSheetId(process.env.SHEET_ID_WUTHERINGWAVE),
     dataPath: 'src/games/wutheringwave/data',
     localePath: 'src/games/wutheringwave/locales',
-    // Tab names in your Google Sheet
     tabs: {
-      characters: 'Characters',
-      materials: 'Materials',
-      weapons: 'Weapons',
+      characters: { name: 'Characters', gid: 0 },
+      materials: { name: 'Materials', gid: 1302816520 },
+      weapons: { name: 'Weapons', gid: 929270047 },
     },
-    // i18n tabs - each data type has its own i18n tab
     i18nTabs: {
-      characters: 'Characters_i18n',
-      materials: 'Materials_i18n',
-      weapons: 'Weapons_i18n',
+      characters: { name: 'Characters_i18n', gid: 1141889124 },
+      materials: { name: 'Materials_i18n', gid: 767812157 },
+      weapons: { name: 'Weapons_i18n', gid: 1029728921 },
     },
   },
   endfield: {
@@ -127,19 +127,21 @@ const GAMES = {
  * Sheet must be published: File -> Share -> Publish to web
  *
  * @param {string} sheetId - The Google Sheet ID
- * @param {string} tabName - The tab/sheet name
+ * @param {string|{name:string,gid:number}} tab - Tab name string, or { name, gid } object
  * @returns {Promise<Array<Object>>} Array of row objects
  */
-async function fetchSheetData(sheetId, tabName) {
-  const encodedTab = encodeURIComponent(tabName);
-  // Use CSV export URL - always returns fresh data, no caching issues
-  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&sheet=${encodedTab}`;
+async function fetchSheetData(sheetId, tab) {
+  const tabLabel = typeof tab === 'object' ? tab.name : tab;
+  const tabParam = typeof tab === 'object'
+    ? `gid=${tab.gid}`
+    : `sheet=${encodeURIComponent(tab)}`;
+  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&${tabParam}`;
 
-  console.log(`  Fetching: ${tabName}...`);
+  console.log(`  Fetching: ${tabLabel}...`);
 
   const response = await fetch(url);
   if (!response.ok) {
-    throw new Error(`Failed to fetch ${tabName}: ${response.status} ${response.statusText}`);
+    throw new Error(`Failed to fetch ${tabLabel}: ${response.status} ${response.statusText}`);
   }
 
   const text = await response.text();
@@ -515,9 +517,10 @@ async function syncGame(gameId, config) {
 
   try {
     // Sync data files
-    for (const [dataType, tabName] of Object.entries(config.tabs)) {
+    for (const [dataType, tab] of Object.entries(config.tabs)) {
+      const tabLabel = typeof tab === 'object' ? tab.name : tab;
       try {
-        const rows = await fetchSheetData(config.sheetId, tabName);
+        const rows = await fetchSheetData(config.sheetId, tab);
 
         let transformed;
         switch (dataType) {
@@ -536,7 +539,7 @@ async function syncGame(gameId, config) {
         }
 
         if (Object.keys(transformed).length === 0) {
-          console.log(`    Skipped writing ${tabName}: no data returned (sheet empty or tab not found)`);
+          console.log(`    Skipped writing ${tabLabel}: no data returned (sheet empty or tab not found)`);
           continue;
         }
 
@@ -544,7 +547,7 @@ async function syncGame(gameId, config) {
         if (dataType === 'weapons') {
           const firstItem = Object.values(transformed)[0];
           if (firstItem && firstItem.type === undefined) {
-            console.log(`    Skipped writing ${tabName}: result missing 'type' field, looks like character data not weapon data`);
+            console.log(`    Skipped writing ${tabLabel}: result missing 'type' field, looks like character data not weapon data`);
             continue;
           }
         }
@@ -552,7 +555,7 @@ async function syncGame(gameId, config) {
         const fileName = dataType === 'characters' || dataType === 'weapons' ? dataType.slice(0, -1) : dataType;
         writeJsonFile(`${config.dataPath}/${fileName}.json`, transformed);
       } catch (error) {
-        console.error(`  Error syncing ${tabName}: ${error.message}`);
+        console.error(`  Error syncing ${tabLabel}: ${error.message}`);
       }
     }
 
@@ -560,9 +563,10 @@ async function syncGame(gameId, config) {
     // Collect i18n data from all tabs and merge into per-language files
     const locales = { en: {}, ko: {} };
 
-    for (const [dataType, tabName] of Object.entries(config.i18nTabs)) {
+    for (const [dataType, tab] of Object.entries(config.i18nTabs)) {
+      const tabLabel = typeof tab === 'object' ? tab.name : tab;
       try {
-        const rows = await fetchSheetData(config.sheetId, tabName);
+        const rows = await fetchSheetData(config.sheetId, tab);
 
         // Map data type to locale key
         const localeKey = dataType; // 'characters', 'materials', 'weapons'
@@ -572,7 +576,7 @@ async function syncGame(gameId, config) {
           locales[lang][localeKey] = translations;
         }
       } catch (error) {
-        console.error(`  Error syncing ${tabName}: ${error.message}`);
+        console.error(`  Error syncing ${tabLabel}: ${error.message}`);
       }
     }
 
