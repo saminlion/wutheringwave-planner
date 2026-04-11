@@ -149,6 +149,14 @@ async function fetchSheetData(sheetId, tabName) {
   if (lines.length < 2) return [];
 
   const headers = parseCSVLine(lines[0]);
+  console.log(`    Headers: [${headers.join(', ')}]`);
+  if (lines.length >= 2) {
+    const firstValues = parseCSVLine(lines[1]);
+    const preview = {};
+    headers.slice(0, 6).forEach((h, i) => { if (h) preview[h] = firstValues[i] ?? ''; });
+    console.log(`    First row sample: ${JSON.stringify(preview)}`);
+  }
+
   const rows = lines.slice(1).map(line => {
     const values = parseCSVLine(line);
     const obj = {};

@@ -287,8 +287,11 @@ const updateFinalMaterialNeeds = () => {
       return; // Skip, handled separately
     }
 
+    // Skip materials not found in current game data (e.g. stale localStorage keys like 'perseverance')
+    const category = getMaterialFieldById(materialId, 'Category');
+    if (!category) return;
+
     const label = getMaterialFieldById(materialId, 'label') || materialId;
-    const category = getMaterialFieldById(materialId, 'Category') || '기타';
     const subcategory = getMaterialFieldById(materialId, 'SubCategory') || category;
 
     formattedResults[materialId] = {
@@ -364,8 +367,11 @@ const finalMaterialNeeds = computed(() => {
       return; // Skip, handled separately
     }
 
+    // Skip materials not found in current game data (e.g. stale localStorage keys like 'perseverance')
+    const category = getMaterialFieldById(materialId, 'Category');
+    if (!category) return;
+
     const label = getMaterialFieldById(materialId, 'label') || materialId;
-    const category = getMaterialFieldById(materialId, 'Category') || '기타';
     const subcategory = getMaterialFieldById(materialId, 'SubCategory') || category;
 
     formattedResults[materialId] = {
