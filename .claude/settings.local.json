@@ -41,7 +41,9 @@
       "Bash(git push:*)",
       "Bash(git stash:*)",
       "Bash(python3 -c ':*)",
-      "Bash(git fetch:*)"
+      "Bash(git fetch:*)",
+      "WebFetch(domain:docs.google.com)",
+      "WebFetch(domain:doc-10-34-sheets.googleusercontent.com)"
     ],
     "deny": [],
     "ask": []
