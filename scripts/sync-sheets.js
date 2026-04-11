@@ -532,11 +532,11 @@ async function syncGame(gameId, config) {
           continue;
         }
 
-        // Sanity check: if syncing weapons but result looks like characters (has common/forgery/boss fields), skip
+        // Sanity check: if syncing weapons but result has no 'type' field, it's likely character data
         if (dataType === 'weapons') {
           const firstItem = Object.values(transformed)[0];
-          if (firstItem && (firstItem.boss !== undefined || firstItem.ascension !== undefined || firstItem.bolete !== undefined)) {
-            console.log(`    Skipped writing ${tabName}: result looks like character data, not weapon data`);
+          if (firstItem && firstItem.type === undefined) {
+            console.log(`    Skipped writing ${tabName}: result missing 'type' field, looks like character data not weapon data`);
             continue;
           }
         }
