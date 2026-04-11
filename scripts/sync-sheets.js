@@ -527,6 +527,11 @@ async function syncGame(gameId, config) {
             continue;
         }
 
+        if (Object.keys(transformed).length === 0) {
+          console.log(`    Skipped writing ${tabName}: no data returned (sheet empty or tab not found)`);
+          continue;
+        }
+
         const fileName = dataType === 'characters' || dataType === 'weapons' ? dataType.slice(0, -1) : dataType;
         writeJsonFile(`${config.dataPath}/${fileName}.json`, transformed);
       } catch (error) {
