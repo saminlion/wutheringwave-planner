@@ -2,126 +2,151 @@
   "akekuri": {
     "game_id": 5240200001,
     "display_name": "Akekuri",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/akekuri.webp",
     "special": 5130010032
   },
   "fluorite": {
     "game_id": 5240300002,
     "display_name": "Fluorite",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/fluorite.webp",
     "special": 5130010035
   },
   "antal": {
     "game_id": 5240500003,
     "display_name": "Antal",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/antal.webp",
     "special": 5130010031
   },
   "catcher": {
     "game_id": 5240100004,
     "display_name": "Catcher",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/catcher.webp",
     "special": 5130010033
   },
   "estella": {
     "game_id": 5240400005,
     "display_name": "Estella",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/estella.webp",
     "special": 5130010034
   },
   "da_pan": {
     "game_id": 5250100006,
     "display_name": "Da Pan",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/da-pan.webp",
     "special": 5130010035
   },
   "avywenna": {
     "game_id": 5250500007,
     "display_name": "Avywenna",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/avywenna.webp",
     "special": 5130010033
   },
   "alesh": {
     "game_id": 5250400008,
     "display_name": "Alesh",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/alesh.webp",
     "special": 5130010031
   },
   "arclight": {
     "game_id": 5250500009,
     "display_name": "Arclight",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/arclight.webp",
     "special": 5130010031
   },
   "perlica": {
     "game_id": 5250500010,
     "display_name": "Perlica",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/perlica.webp",
     "special": 5130010033
   },
   "wulfgard": {
     "game_id": 5250200011,
     "display_name": "Wulfgard",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/wulfgard.webp",
     "special": 5130010035
   },
   "xaihi": {
     "game_id": 5250400012,
     "display_name": "Xaihi",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/xaihi.webp",
     "special": 5130010033
   },
   "snowshine": {
     "game_id": 5250400013,
     "display_name": "Snowshine",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/snowshine.webp",
     "special": 5130010034
   },
   "chen_qianyu": {
     "game_id": 5250100014,
     "display_name": "Chen Qianyu",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/chen-qianyu.webp",
     "special": 5130010034
   },
   "last_rite": {
     "game_id": 5260400015,
     "display_name": "Last Rite",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/last-rite.webp",
     "special": 5130010035
   },
   "yvonne": {
     "game_id": 5260400016,
     "display_name": "Yvonne",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/yvonne.webp",
     "special": 5130010033
   },
   "laevatain": {
     "game_id": 5260200017,
     "display_name": "Laevatain",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/laevatain.webp",
     "special": 5130010033
   },
   "pogranichnik": {
     "game_id": 5260100018,
     "display_name": "Pogranichnik",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/pogranichnik.webp",
     "special": 5130010031
   },
   "ardelia": {
     "game_id": 5260300019,
     "display_name": "Ardelia",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/ardelia.webp",
     "special": 5130010034
   },
   "gilberta": {
     "game_id": 5260300020,
     "display_name": "Gilberta",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/gilberta.webp",
     "special": 5130010033
   },
   "ember": {
     "game_id": 5260200021,
     "display_name": "Ember",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/ember.webp",
     "special": 5130010033
   },
   "lifeng": {
     "game_id": 5260100022,
     "display_name": "Lifeng",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/lifeng.webp",
     "special": 5130010031
   },
   "endministrator": {
     "game_id": 5260100023,
     "display_name": "Endministrator",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/endministrator-a.webp",
     "special": 5130010031
   },
   "tangtang": {
     "game_id": 5260400024,
     "display_name": "Tangtang",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/tangtang.webp",
     "special": 5130010031
   },
   "rossi": {
     "game_id": 5260100025,
     "display_name": "Rossi",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/rossi.webp",
     "special": 5130010031
   }
 }

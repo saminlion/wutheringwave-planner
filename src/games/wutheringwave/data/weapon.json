@@ -3,6 +3,7 @@
     "game_id": 4240100001,
     "display_name": "Sanhua",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_shanhua_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip"
   },
@@ -10,6 +11,7 @@
     "game_id": 4240100002,
     "display_name": "Baizhi",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_bailian_UI.webp",
     "common": "howler_core",
     "forgery": "helix"
   },
@@ -17,6 +19,7 @@
     "game_id": 4250100003,
     "display_name": "Lingyang",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lingyang_UI.webp",
     "common": "whisperin_core",
     "forgery": "cadence"
   },
@@ -24,6 +27,7 @@
     "game_id": 4250100004,
     "display_name": "Zhezhi",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhezhi_UI.webp",
     "common": "howler_core",
     "forgery": "helix"
   },
@@ -31,6 +35,7 @@
     "game_id": 4240100005,
     "display_name": "Youhu",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Youhu_UI.webp",
     "common": "ring",
     "forgery": "cadence"
   },
@@ -38,6 +43,7 @@
     "game_id": 4250100006,
     "display_name": "Carlotta",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kelaita_UI.webp",
     "common": "polygon",
     "forgery": "phlogiston"
   },
@@ -45,6 +51,7 @@
     "game_id": 4240200007,
     "display_name": "Chixia",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_maxiaofang_UI.webp",
     "common": "whisperin_core",
     "forgery": "phlogiston"
   },
@@ -52,6 +59,7 @@
     "game_id": 4250200008,
     "display_name": "Encore",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix"
   },
@@ -59,6 +67,7 @@
     "game_id": 4240200009,
     "display_name": "Mortefi",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_baer_UI.webp",
     "common": "whisperin_core",
     "forgery": "phlogiston"
   },
@@ -66,6 +75,7 @@
     "game_id": 4250200010,
     "display_name": "Changli",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_changli_UI.webp",
     "common": "ring",
     "forgery": "metallic_drip"
   },
@@ -73,6 +83,7 @@
     "game_id": 4250400011,
     "display_name": "Calcharo",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.webp",
     "common": "ring",
     "forgery": "residue"
   },
@@ -80,6 +91,7 @@
     "game_id": 4250400012,
     "display_name": "Yinlin",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yinlin_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix"
   },
@@ -87,6 +99,7 @@
     "game_id": 4240400013,
     "display_name": "Yuanwu",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yuanwu_UI.webp",
     "common": "ring",
     "forgery": "cadence"
   },
@@ -94,6 +107,7 @@
     "game_id": 4250600014,
     "display_name": "Jinshi",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.webp",
     "common": "howler_core",
     "forgery": "residue"
   },
@@ -101,6 +115,7 @@
     "game_id": 4250400015,
     "display_name": "Xiangli Yao",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiangliyao_UI.webp",
     "common": "whisperin_core",
     "forgery": "cadence"
   },
@@ -108,6 +123,7 @@
     "game_id": 4240300016,
     "display_name": "Yangyang",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.webp",
     "common": "ring",
     "forgery": "metallic_drip"
   },
@@ -115,6 +131,7 @@
     "game_id": 4240300017,
     "display_name": "Aalto",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qiushui_UI.webp",
     "common": "howler_core",
     "forgery": "phlogiston"
   },
@@ -122,6 +139,7 @@
     "game_id": 4250300018,
     "display_name": "Jiyan",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiyan_UI.webp",
     "common": "howler_core",
     "forgery": "residue"
   },
@@ -129,6 +147,7 @@
     "game_id": 4250300019,
     "display_name": "Jianxin",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiexin_UI.webp",
     "common": "whisperin_core",
     "forgery": "cadence"
   },
@@ -136,6 +155,7 @@
     "game_id": 4250600020,
     "display_name": "Rover (Spectro)",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip"
   },
@@ -143,6 +163,7 @@
     "game_id": 4250500021,
     "display_name": "Rover (Havoc)",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip"
   },
@@ -150,6 +171,7 @@
     "game_id": 4250300022,
     "display_name": "Rover (Aero)",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip"
   },
@@ -157,6 +179,7 @@
     "game_id": 4250600023,
     "display_name": "Verina",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jueyuan_UI.webp",
     "common": "howler_core",
     "forgery": "helix"
   },
@@ -164,6 +187,7 @@
     "game_id": 4250600024,
     "display_name": "Shorekeeper",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Shouanren_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix"
   },
@@ -171,6 +195,7 @@
     "game_id": 4240500025,
     "display_name": "Taoqi",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_taohua_UI.webp",
     "common": "howler_core",
     "forgery": "residue"
   },
@@ -178,6 +203,7 @@
     "game_id": 4240500026,
     "display_name": "Danjin",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_micai_UI.webp",
     "common": "ring",
     "forgery": "metallic_drip"
   },
@@ -185,6 +211,7 @@
     "game_id": 4250500027,
     "display_name": "Camellya",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip"
   },
@@ -192,6 +219,7 @@
     "game_id": 4240500028,
     "display_name": "Lumi",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_dengdeng_UI.webp",
     "common": "howler_core",
     "forgery": "residue"
   },
@@ -199,6 +227,7 @@
     "game_id": 4250500029,
     "display_name": "Roccia",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.webp",
     "common": "residuum",
     "forgery": "cadence"
   },
@@ -206,6 +235,7 @@
     "game_id": 4250600030,
     "display_name": "Phoebe",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feibi_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix"
   },
@@ -213,6 +243,7 @@
     "game_id": 4250200031,
     "display_name": "Brant",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Bulante_UI.webp",
     "common": "residuum",
     "forgery": "metallic_drip"
   },
@@ -220,6 +251,7 @@
     "game_id": 4250500032,
     "display_name": "Cantarella",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kanteleila_UI.webp",
     "common": "polygon",
     "forgery": "helix"
   },
@@ -227,6 +259,7 @@
     "game_id": 4250600033,
     "display_name": "Zani",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.webp",
     "common": "polygon",
     "forgery": "cadence"
   },
@@ -234,6 +267,7 @@
     "game_id": 4250300034,
     "display_name": "Ciaccona",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xiakong_UI.webp",
     "common": "residuum",
     "forgery": "phlogiston"
   },
@@ -241,6 +275,7 @@
     "game_id": 4250200035,
     "display_name": "Lupa",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.webp",
     "common": "howler_core",
     "forgery": "residue"
   },
@@ -248,6 +283,7 @@
     "game_id": 4250300036,
     "display_name": "Cartethyia",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.webp",
     "common": "residuum",
     "forgery": "metallic_drip"
   },
@@ -255,6 +291,7 @@
     "game_id": 4250500037,
     "display_name": "Phrolova",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_fuluoluo_UI.webp",
     "common": "polygon",
     "forgery": "helix"
   },
@@ -262,6 +299,7 @@
     "game_id": 4250400038,
     "display_name": "Augusta",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_aogusita_UI.webp",
     "common": "residuum",
     "forgery": "residue"
   },
@@ -269,6 +307,7 @@
     "game_id": 4250300039,
     "display_name": "Iuno",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_younuo_UI.webp",
     "common": "polygon",
     "forgery": "cadence"
   },
@@ -276,6 +315,7 @@
     "game_id": 4250200040,
     "display_name": "Galbrena",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jiabeilina_UI.webp",
     "common": "residuum",
     "forgery": "phlogiston"
   },
@@ -283,6 +323,7 @@
     "game_id": 4250300041,
     "display_name": "Qiuyuan",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qiuyuan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip"
   },
@@ -290,6 +331,7 @@
     "game_id": 4250500042,
     "display_name": "Chisa",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qianxiao_UI.webp",
     "common": "polygon",
     "forgery": "residue"
   },
@@ -297,6 +339,7 @@
     "game_id": 4240400043,
     "display_name": "Buling",
     "rarity": 4,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Buling_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix"
   },
@@ -304,6 +347,7 @@
     "game_id": 4250600044,
     "display_name": "Lynae",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Linnai_UI.webp",
     "common": "exoswarm",
     "forgery": "combustor"
   },
@@ -311,6 +355,7 @@
     "game_id": 4250200045,
     "display_name": "Mornye",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Moning_UI.webp",
     "common": "mech",
     "forgery": "crystal"
   },
@@ -318,6 +363,7 @@
     "game_id": 4250200046,
     "display_name": "Aemeath",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Aimisi_UI.webp",
     "common": "exoswarm",
     "forgery": "polarizer"
   },
@@ -325,6 +371,7 @@
     "game_id": 4250600047,
     "display_name": "Luuk",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Luhesi_UI.webp",
     "common": "pendant",
     "forgery": "shard"
   },
@@ -332,6 +379,7 @@
     "game_id": 4250300048,
     "display_name": "Sigrika",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
     "common": "pendant",
     "forgery": "shard"
   },
@@ -339,6 +387,7 @@
     "game_id": 4250100049,
     "display_name": "Hiyuki",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_FeiXue_UI.webp",
     "common": "exoswarm",
     "forgery": "polarizer"
   },
@@ -346,6 +395,7 @@
     "game_id": 4250200050,
     "display_name": "Denia",
     "rarity": 5,
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
     "common": "pendant",
     "forgery": "string"
   }
