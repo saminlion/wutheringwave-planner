@@ -81,13 +81,11 @@ const GAMES = {
     tabs: {
       characters: 'Characters',
       materials: 'Materials',
-      weapons: 'Weapons',
     },
     // i18n tabs - each data type has its own i18n tab
     i18nTabs: {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
-      weapons: 'Weapons_i18n',
     },
   },
   endfield: {
