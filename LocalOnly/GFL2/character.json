@@ -1,0 +1,511 @@
+{    
+    "suomi": {
+        "game_id": 1000,
+        "display_name": "Suomi",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SuomiSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "vepley": {
+        "game_id": 1001,
+        "display_name": "Vepley",
+        "weapon": "sg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_VepleySSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "mosin_nagant": {
+        "game_id": 1002,
+        "display_name": "Mosin-Nagant",
+        "weapon": "rf",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_MosinnagantSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "sabrina": {
+        "game_id": 1003,
+        "display_name": "Sabrina",
+        "weapon": "sg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SabrinaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "klukay": {
+        "game_id": 1004,
+        "display_name": "Klukay",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_ClukaySSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "mechty": {
+        "game_id": 1005,
+        "display_name": "Mechty",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_MishtySSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "zhaohui": {
+        "game_id": 1006,
+        "display_name": "Zhaohui",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_ZhaohuiSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "springfield": {
+        "game_id": 1007,
+        "display_name": "Springfield",
+        "weapon": "rf",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SpringfieldSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "andoris": {
+        "game_id": 1008,
+        "display_name": "Andoris",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_AndorisSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "faye": {
+        "game_id": 1009,
+        "display_name": "Faye",
+        "weapon": "hg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_FayeSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "vector": {
+        "game_id": 1010,
+        "display_name": "Vector",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_VectorSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "belka": {
+        "game_id": 1011,
+        "display_name": "Belka",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_BiyocaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "papasha": {
+        "game_id": 1012,
+        "display_name": "Papasha",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_PapashaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "ullrid": {
+        "game_id": 1013,
+        "display_name": "Ullrid",
+        "weapon": "bld",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_UllridSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "jiangyu": {
+        "game_id": 1014,
+        "display_name": "Jiangyu",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_JiangyuSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "daiyan": {
+        "game_id": 1015,
+        "display_name": "Daiyan",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_DaiyanSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "makiatto": {
+        "game_id": 1016,
+        "display_name": "Makiatto",
+        "weapon": "rf",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_MacqiatoSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "centaureissi": {
+        "game_id": 1017,
+        "display_name": "Centaureissi",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_CentaureissiSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "dushevnaya": {
+        "game_id": 1018,
+        "display_name": "Dushevnaya",
+        "weapon": "sr",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_DusevnyjSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "tololo": {
+        "game_id": 1019,
+        "display_name": "Tololo",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_TololoSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "qiongjiu": {
+        "game_id": 1020,
+        "display_name": "Qiongjiu",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_QiongjiuSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "peritya": {
+        "game_id": 1021,
+        "display_name": "Peritya",
+        "weapon": "mg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_PerityaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "lenna": {
+        "game_id": 1022,
+        "display_name": "Lenna",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LennaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+    "lainie": {
+        "game_id": 1023,
+        "display_name": "Lainie",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LeneSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+    "leva": {
+        "game_id": 1024,
+        "display_name": "Leva",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LevaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+    "nikketa": {
+        "game_id": 1025,
+        "display_name": "Nikketa",
+        "weapon": "sr",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_NikketaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+    "robella": {
+        "game_id": 1026,
+        "display_name": "Robella",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_RobellaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+    "quinha": {
+        "game_id": 1027,
+        "display_name": "Quinha",
+        "weapon": "sg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_QiuhuaSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+    "peri": {
+        "game_id": 1028,
+        "display_name": "Peri",
+        "weapon": "sg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_PeriSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+    "yoohee": {
+        "game_id": 1029,
+        "display_name": "Yoohee",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_YooHeeSSR.png",
+        "rarity": 5,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+
+
+
+
+
+    "groza": {
+        "game_id": 2100,
+        "display_name": "Groza",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_GrozaSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": [
+            {
+                "stat": "glacio_dmg_bonus",
+                "value": 0.018
+            },
+            {
+                "stat": "atk",
+                "value": 0.018
+            },
+            {
+                "stat": "glacio_dmg_bonus",
+                "value": 0.042
+            },
+            {
+                "stat": "atk",
+                "value": 0.042
+            }
+        ]
+    },
+    "cheeta": {
+        "game_id": 2101,
+        "display_name": "Cheeta",
+        "weapon": "smg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_CheetaSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "krolik": {
+        "game_id": 2102,
+        "display_name": "Krolik",
+        "weapon": "bld",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_CharolicSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "nemesis": {
+        "game_id": 2103,
+        "display_name": "Nemesis",
+        "weapon": "rf",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_NemesisSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "lotta": {
+        "game_id": 2104,
+        "display_name": "Lotta",
+        "weapon": "sg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LottaSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "littara": {
+        "game_id": 2105,
+        "display_name": "Littara",
+        "weapon": "mg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LittaraSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "colphne": {
+        "game_id": 2106,
+        "display_name": "Colphne",
+        "weapon": "hg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_ColphneSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "sharkry": {
+        "game_id": 2107,
+        "display_name": "Sharkry",
+        "weapon": "ar",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SharkrySR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "nagant": {
+        "game_id": 2108,
+        "display_name": "Nagant",
+        "weapon": "hg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_NagantSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    },
+    "ksenia": {
+        "game_id": 2109,
+        "display_name": "Ksenia",
+        "weapon": "hg",
+        "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_KseniaSR.png",
+        "rarity": 4,
+        "tiered_enemy_drop_weapon_skill_material": "stock_boost_bar",
+        "overworld_resource_ascension_material": "wintry_bell",
+        "weekly_boss_skill_upgrade_material": "basic_info_core",
+        "tiered_forgery_weapon_skill_material": "transcription_conductor",
+        "bonus_stats": []
+    }
+}

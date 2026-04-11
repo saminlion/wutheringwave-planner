@@ -1,0 +1,151 @@
+{
+    "credit": {
+        "sardis_gold": {
+            "game_id": 2,
+            "icon": "https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/shardis_gold.png",
+            "label": "Sardis Gold",
+            "Category": "credit",
+            "SubCategory": "credit",
+            "rarity": 2
+        }
+    },
+    "enemy_drop_weapon_skill_material": {
+        "stock_boost_bar_t1": {
+            "game_id": 41100011,
+            "icon": "https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/t1.png",
+            "label": "Stock Boost Bar T1",
+            "Category": "enemy_drop_weapon_skill_material",
+            "SubCategory": "stock_boost_bar",
+            "rarity": 2
+        },
+        "stock_boost_bar_t2": {
+            "game_id": 41100012,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_3.png",
+            "label": "Stock Boost Bar T2",
+            "Category": "enemy_drop_weapon_skill_material",
+            "SubCategory": "stock_boost_bar",
+            "rarity": 3
+        },
+        "stock_boost_bar_t3": {
+            "game_id": 41100013,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_4.png",
+            "label": "Stock Boost Bar T3",
+            "Category": "enemy_drop_weapon_skill_material",
+            "SubCategory": "stock_boost_bar",
+            "rarity": 4
+        },
+        "stock_boost_bar_t4": {
+            "game_id": 41100014,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_5.png",
+            "label": "Stock Boost Bar T4",
+            "Category": "enemy_drop_weapon_skill_material",
+            "SubCategory": "stock_boost_bar",
+            "rarity": 5
+        },
+        "stock_boost_bar_t5": {
+            "game_id": 41100015,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_6.png",
+            "label": "Stock Boost Bar T5",
+            "Category": "enemy_drop_weapon_skill_material",
+            "SubCategory": "stock_boost_bar",
+            "rarity": 5
+        },
+        "stock_boost_bar_t6": {
+            "game_id": 41100016,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_7.png",
+            "label": "Stock Boost Bar T6",
+            "Category": "enemy_drop_weapon_skill_material",
+            "SubCategory": "stock_boost_bar",
+            "rarity": 5
+        },
+        "stock_boost_bar_t7": {
+            "game_id": 41100017,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_7.png",
+            "label": "Stock Boost Bar T7",
+            "Category": "enemy_drop_weapon_skill_material",
+            "SubCategory": "stock_boost_bar",
+            "rarity": 5
+        }
+        
+    },
+    "weekly_boss_skill_upgrade_material": {
+        "basic_info_core": {
+            "game_id": 41400094,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentNucleus_3.png",
+            "label": "Basic Info Core",
+            "Category": "weekly_boss_skill_upgrade_material",
+            "SubCategory": "weeklyboss",
+            "rarity": 4
+        }
+    },
+    "doll_exp_material": {
+        "combat_report": {
+            "game_id": 43010001,
+            "icon": "https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/doll_exp.png",
+            "label": "Combat Report",
+            "Category": "doll_exp_material",
+            "SubCategory": "playerexp",
+            "rarity": 2
+        }
+    },
+    "weapon_exp_material": {
+        "analysis_blueprint": {
+            "game_id": 43020001,
+            "icon": "https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/weapon1.png",
+            "label": "Analysis Blueprint",
+            "Category": "weapon_exp_material",
+            "SubCategory": "weaponexp",
+            "rarity": 2
+        }
+    },
+    "forgery_weapon_skill_material": {
+        "transcription_conductor_1": {
+            "game_id": 43020011,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_1.png",
+            "label": "Inert Metallic Drip",
+            "Category": "forgery_weapon_skill_material",
+            "SubCategory": "transcription_conductor_1",
+            "rarity": 2
+        },
+        "transcription_conductor_2": {
+            "game_id": 43020012,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_2.png",
+            "label": "Reactive Metallic Drip",
+            "Category": "forgery_weapon_skill_material",
+            "SubCategory": "transcription_conductor_2",
+            "rarity": 3
+        },
+        "transcription_conductor_3": {
+            "game_id": 43020013,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_3.png",
+            "label": "Polarized Metallic Drip",
+            "Category": "forgery_weapon_skill_material",
+            "SubCategory": "transcription_conductor_3",
+            "rarity": 4
+        },
+        "transcription_conductor_4": {
+            "game_id": 43020014,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_4.png",
+            "label": "Heterized Metallic Drip",
+            "Category": "forgery_weapon_skill_material",
+            "SubCategory": "transcription_conductor_4",
+            "rarity": 5
+        },
+        "transcription_conductor_5": {
+            "game_id": 43020014,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_5.png",
+            "label": "Heterized Metallic Drip",
+            "Category": "forgery_weapon_skill_material",
+            "SubCategory": "transcription_conductor_5",
+            "rarity": 5
+        },
+        "transcription_conductor_6": {
+            "game_id": 43020014,
+            "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_6.png",
+            "label": "Heterized Metallic Drip",
+            "Category": "forgery_weapon_skill_material",
+            "SubCategory": "transcription_conductor_6",
+            "rarity": 5
+        }
+    }
+}

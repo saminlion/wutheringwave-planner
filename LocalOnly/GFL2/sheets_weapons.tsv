@@ -1,0 +1,72 @@
+game_id	display_name	rarity	weapon_type	icon	tiered_enemy_drop_weapon_skill_material	tiered_forgery_weapon_skill_material
+21010010	.380 Curva	4	hg	https://www.prydwen.gg/static/8921910ea744c5e930d8a20e755f31fa/8df8e/Weapon_12.webp
+21010011	CZ75	4	hg	https://www.prydwen.gg/static/6bb0661f79d9895e9ce11f27f3601e96/8df8e/Weapon_55.webp
+21010012	Nagant M1895	4	hg	https://www.prydwen.gg/static/2e439b4b06ff258b5cefac3679312483/8df8e/Weapon_14.webp
+21010013	Stechkin	3	hg	https://static.dotgg.gg/wuthering-waves/weapons/originite-type-i-icon.webp
+21020010	Caseless Rifle 11	4	ar	https://www.prydwen.gg/static/85e69505c7097a295baa07cacf9d0822/8df8e/Weapon_44.webp
+21020011	G28	4	ar	https://www.prydwen.gg/static/ea7cd63701fec56c3858b893455f49e8/8df8e/Weapon_45.webp
+21020012	G36	4	ar	https://www.prydwen.gg/static/cb065c656300e02e4415c1c73dee0ecd/8df8e/Weapon_41.webp
+21020013	G36 Spectre	4	ar	https://www.prydwen.gg/static/853fd660705838831e9106424dd65a8f/8df8e/Weapon_46.webp
+21020014	Heckler & Koch 416	4	ar	https://www.prydwen.gg/static/91a2d7b25f88eb9a4b7d0619eb85d5d1/8df8e/Weapon_43.webp
+21020015	Model Alpha	4	ar	https://www.prydwen.gg/static/211a0eb62762a7916222c8c7a4d7e133/8df8e/weapon_1.webp
+21020016	OTs-14	4	ar	https://www.prydwen.gg/static/c749c976985a3f5a3e7fa1a60e37682f/8df8e/Weapon_02.webp
+21020017	QBZ-191	4	ar	https://www.prydwen.gg/static/d2339e0be3d9aba9bf3d65cadedaff74/8df8e/Weapon_03.webp
+21020018	Robinson Modular Rifle	4	ar	https://www.prydwen.gg/static/0edf276dc9344f1ab9842802b35c7551/8df8e/Weapon_04.webp
+21020019	Type 95	4	ar	https://www.prydwen.gg/static/c69bc6f02a8726409adf0ee08541095e/8df8e/Weapon_42.webp
+21020020	Type 97	4	ar	https://www.prydwen.gg/static/30e23cc4a55eed045576aba3ea45571a/8df8e/Weapon_47.webp
+21030010	Model ARM	4	mg	https://www.prydwen.gg/static/ddec8eb0c63c7e414d3f2fc703434940/8df8e/Weapon_22.webp
+21030011	Pecheneg-SP	4	mg	https://www.prydwen.gg/static/55d02ff030a18f3de38eb5a999c3122f/8df8e/Weapon_23.webp
+21040010	M1 Super 90	4	sg	https://www.prydwen.gg/static/8317025e45e8c5e7ffe36bdb36ab306c/8df8e/Weapon_33.webp
+21040011	Sportivo Calibro 12	4	sg	https://www.prydwen.gg/static/6c124c4a60ce7fe1dbf51f837e05c5f3/8df8e/Weapon_16.webp
+21040012	Vepr-12	4	sg	https://www.prydwen.gg/static/aeeaee6c8cfd001b358e4e631536732e/8df8e/Weapon_17.webp
+21050010	Changfeng Zero Six	4	smg	https://www.prydwen.gg/static/48aed2bbd75ec4f47d2b280c6eea4ce6/8df8e/Weapon_60.webp
+21050011	Dagger	4	smg	https://www.prydwen.gg/static/c393157a5069ea8d874c93cadf988742/8df8e/Weapon_61.webp
+21050012	MP7H1	4	smg	https://www.prydwen.gg/static/939dbcf106d848f111f71cb25cc34018/8df8e/Weapon_20.webp
+21050013	PPSh-41	4	smg	https://www.prydwen.gg/static/4169cb79b88664ea24196a24b15b3a9d/8df8e/Weapon_62.webp
+21050014	Suomi	4	smg	https://www.prydwen.gg/static/238cd602f831e4ee54622f7f51a368be/8df8e/Weapon_29.webp
+21050015	Type-5 9mm Submachine Gun	4	smg	https://www.prydwen.gg/static/b321f9814922de0bad399e1b0187579c/8df8e/Weapon_65.webp
+21050016	Universal Submachine Gun 9	4	smg	https://www.prydwen.gg/static/0ced6c565576848c18a600e09d2835eb/8df8e/Weapon_63.webp
+21060010	.50 Nemesis	4	rf	https://www.prydwen.gg/static/ff3d257f970585fa458c661da7de610e/8df8e/Weapon_08.webp
+21060011	Kovrov	4	rf	https://www.prydwen.gg/static/93aab19a30988a2d35ab4f20855e74d9/8df8e/Weapon_53.webp
+21060012	Springfield	4	rf	https://www.prydwen.gg/static/9e46ac7b067ec359d5c82899630e93ce/8df8e/Weapon_51.webp
+21060013	Three-Line Rifle M1891	4	rf	https://www.prydwen.gg/static/7ca805e715aad98664a062a662b25a70/8df8e/Weapon_09.webp
+21060014	W 2000	4	rf	https://www.prydwen.gg/static/f4886702d2f03185d3efcf210d98afca/8df8e/Weapon_52.webp
+21070010	Hare	4	bld	https://www.prydwen.gg/static/2f2ce8ac0a1c41a1d98f0462829f0cc3/8df8e/Weapon_26.webp
+21070011	Pluma Edge	4	bld	https://www.prydwen.gg/static/4018b3780d7c75d71e17954004b70c5c/8df8e/Weapon_32.webp
+21110010	Hestia	5	hg	https://gf2.mcc.wiki/image/weapon/Weapon_CZ75_5_1024.png
+21110011	Papa-Figo	5	hg	https://gf2.mcc.wiki/image/weapon/Weapon_BpHRssr001_5_1024.png
+21120010	Aglaea	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_G36KKSK_5_1024.png
+21120011	Daydream	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_G11_5_1024.png
+21120012	Forest Sprite	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_G28_5_1024.png
+21120013	Golden Melody	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_QBZ-191_5_1024.png
+21120014	Guerno	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_BpARssr001_5_1024.png
+21120015	Heavy Chord	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_QBZ-95_5_1024.png
+21120016	Leaping Tiger	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_QBZ97_5_1024.png
+21120017	Maid's Code	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_G36_5_1024.png
+21120018	Planeta	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_AK-Alfa_5_1024.png
+21120019	Scylla	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_HK416_5_1024.png
+21120020	Sparkling Centerstage	5	ar	https://gf2.mcc.wiki/image/weapon/Weapon_K2_5_1024.png
+21130010	Mjölnir	5	mg	https://gf2.mcc.wiki/image/weapon/Weapon_BpMGssr001_5_1024.png
+21130011	Optical Illusion	5	mg	https://gf2.mcc.wiki/image/weapon/Weapon_Pecheng_5_1024.png
+21140010	Expeditionary Pigeon	5	sg	https://gf2.mcc.wiki/image/weapon/Weapon_BpSGssr001_5_1024.png
+21140011	Heart Seeker	5	sg	https://gf2.mcc.wiki/image/weapon/Weapon_Vepr12_5_1024.png
+21140012	Mezzaluna	5	sg	https://gf2.mcc.wiki/image/weapon/Weapon_SPAS-12_5_1024.png
+21140013	Radiant Light	5	sg	https://gf2.mcc.wiki/image/weapon/Weapon_HAWK12_5_1024.png
+21150010	Bu Liu Xing	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_CSLS06_5_1024.png
+21150011	Classified Manuscript	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_BpSMGssr001_5_1024.png
+21150012	Ermenita	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_MP5_5_1024.png
+21150013	Mourning Whisper	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_Vector_5_1024.png
+21150014	Svarog	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_PPSh41_5_1024.png
+21150015	Unspoken Calling	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_M1931_5_1024.png
+21150016	Young Lion	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_UMP9_5_1024.png
+21150017	Project Helios	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_UMP40_5_1024.png
+21150018	Cunning Fox	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_UMP45_5_1024.png
+21150019	Wanderer's Hymn	5	smg	https://gf2.mcc.wiki/image/weapon/Weapon_RO635_5_1024.png
+21160010	Arcana	5	rf	https://gf2.mcc.wiki/image/weapon/Weapon_BpRFssr001_5_1024.png
+21160011	Ballad of Glory	5	rf	https://gf2.mcc.wiki/image/weapon/Weapon_KSVK_5_1024.png
+21160012	Bittersweet Caramel	5	rf	https://gf2.mcc.wiki/image/weapon/Weapon_WA2000_5_1024.png
+21160013	Faithful Thornlight	5	rf	https://gf2.mcc.wiki/image/weapon/Weapon_M1903_5_1024.png
+21160014	Samosek	5	rf	https://gf2.mcc.wiki/image/weapon/Weapon_M1891_5_1024.png
+21160015	Dreamguard Silverwing	5	rf	https://gf2.mcc.wiki/image/weapon/Weapon_VSK94_5_1024.png
+21170010	Crowned Jackelope	5	bld	https://gf2.mcc.wiki/image/weapon/Weapon_BpKnifessr001_5_1024.png
+21170011	Rectrix	5	bld	https://gf2.mcc.wiki/image/weapon/Weapon_Ullr_5_1024.png

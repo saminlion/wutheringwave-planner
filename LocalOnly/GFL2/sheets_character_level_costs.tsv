@@ -1,0 +1,3 @@
+level	enemy_drop_qty	enemy_drop_tier	overworld_resource_qty	weekly_boss_qty	credit	doll_exp
+(FILL: e.g. 20)	(qty)	(tier)	(qty)	(qty)	(amount)	(exp amount)
+(FILL: e.g. 20A)	(qty)	(tier)	(qty)	(qty)	(amount)	(exp amount)

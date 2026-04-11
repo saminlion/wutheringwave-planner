@@ -35,7 +35,13 @@
       "Bash(/usr/local/bin/npm run sync)",
       "Bash(/opt/homebrew/bin/npm run sync)",
       "Bash(git pull:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git stash pop:*)",
+      "Bash(git stash drop:*)",
+      "Bash(git push:*)",
+      "Bash(git stash:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(git fetch:*)"
     ],
     "deny": [],
     "ask": []

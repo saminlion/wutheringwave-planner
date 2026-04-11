@@ -1,0 +1,664 @@
+{
+                                                             
+                              
+    "curva": {
+        "game_id": 21010010,
+        "display_name": ".380 Curva",
+        "rarity": 4,
+        "weapon_type": "hg",
+        "icon": "https://www.prydwen.gg/static/8921910ea744c5e930d8a20e755f31fa/8df8e/Weapon_12.webp"
+    },
+    "cz75": {
+        "game_id": 21010011,
+        "display_name": "CZ75 ",
+        "rarity": 4,
+        "weapon_type": "hg",
+        "icon": "https://www.prydwen.gg/static/6bb0661f79d9895e9ce11f27f3601e96/8df8e/Weapon_55.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "nagant_m1895": {
+        "game_id": 21010012,
+        "display_name": "Nagant M1895",
+        "rarity": 4,
+        "weapon_type": "hg",
+        "icon": "https://www.prydwen.gg/static/2e439b4b06ff258b5cefac3679312483/8df8e/Weapon_14.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "stechkin": {
+        "game_id": 21010013,
+        "display_name": "Stechkin",
+        "rarity": 3,
+        "weapon_type": "hg",
+        "icon": "https://static.dotgg.gg/wuthering-waves/weapons/originite-type-i-icon.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "caseless_rifle_11": {
+        "game_id": 21020010,
+        "display_name": "Caseless Rifle 11",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/85e69505c7097a295baa07cacf9d0822/8df8e/Weapon_44.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "g28": {
+        "game_id": 21020011,
+        "display_name": "G28",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/ea7cd63701fec56c3858b893455f49e8/8df8e/Weapon_45.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "g36": {
+        "game_id": 21020012,
+        "display_name": "G36",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/cb065c656300e02e4415c1c73dee0ecd/8df8e/Weapon_41.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "g36_spectre": {
+        "game_id": 21020013,
+        "display_name": "G36 Spectre",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/853fd660705838831e9106424dd65a8f/8df8e/Weapon_46.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "hk_416": {
+        "game_id": 21020014,
+        "display_name": "Heckler & Koch 416",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/91a2d7b25f88eb9a4b7d0619eb85d5d1/8df8e/Weapon_43.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "model_alpha": {
+        "game_id": 21020015,
+        "display_name": "Model Alpha",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/211a0eb62762a7916222c8c7a4d7e133/8df8e/weapon_1.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "ots_14": {
+        "game_id": 21020016,
+        "display_name": "OTs-14",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/c749c976985a3f5a3e7fa1a60e37682f/8df8e/Weapon_02.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "qbz_191": {
+        "game_id": 21020017,
+        "display_name": "QBZ-191",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/d2339e0be3d9aba9bf3d65cadedaff74/8df8e/Weapon_03.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "robinson_modular_rifle": {
+        "game_id": 21020018,
+        "display_name": "Robinson Modular Rifle",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/0edf276dc9344f1ab9842802b35c7551/8df8e/Weapon_04.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "type_95": {
+        "game_id": 21020019,
+        "display_name": "Type 95",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/c69bc6f02a8726409adf0ee08541095e/8df8e/Weapon_42.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "type_97": {
+        "game_id": 21020020,
+        "display_name": "Type 97",
+        "rarity": 4,
+        "weapon_type": "ar",
+        "icon": "https://www.prydwen.gg/static/30e23cc4a55eed045576aba3ea45571a/8df8e/Weapon_47.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "model_arm": {
+        "game_id": 21030010,
+        "display_name": "Model ARM",
+        "rarity": 4,
+        "weapon_type": "mg",
+        "icon": "https://www.prydwen.gg/static/ddec8eb0c63c7e414d3f2fc703434940/8df8e/Weapon_22.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "pecheneg_sp": {
+        "game_id": 21030011,
+        "display_name": "Pecheneg-SP",
+        "rarity": 4,
+        "weapon_type": "mg",
+        "icon": "https://www.prydwen.gg/static/55d02ff030a18f3de38eb5a999c3122f/8df8e/Weapon_23.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "m1_super_90": {
+        "game_id": 21040010,
+        "display_name": "M1 Super 90",
+        "rarity": 4,
+        "weapon_type": "sg",
+        "icon": "https://www.prydwen.gg/static/8317025e45e8c5e7ffe36bdb36ab306c/8df8e/Weapon_33.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "portivo_calibro_12": {
+        "game_id": 21040011,
+        "display_name": "Sportivo Calibro 12",
+        "rarity": 4,
+        "weapon_type": "sg",
+        "icon": "https://www.prydwen.gg/static/6c124c4a60ce7fe1dbf51f837e05c5f3/8df8e/Weapon_16.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "vepr_12": {
+        "game_id": 21040012,
+        "display_name": "Vepr-12",
+        "rarity": 4,
+        "weapon_type": "sg",
+        "icon": "https://www.prydwen.gg/static/aeeaee6c8cfd001b358e4e631536732e/8df8e/Weapon_17.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                               
+    "changfeng_zero_six": {
+        "game_id": 21050010,
+        "display_name": "Changfeng Zero Six",
+        "rarity": 4,
+        "weapon_type": "smg",
+        "icon": "https://www.prydwen.gg/static/48aed2bbd75ec4f47d2b280c6eea4ce6/8df8e/Weapon_60.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "dagger": {
+        "game_id": 21050011,
+        "display_name": "Dagger",
+        "rarity": 4,
+        "weapon_type": "smg",
+        "icon": "https://www.prydwen.gg/static/c393157a5069ea8d874c93cadf988742/8df8e/Weapon_61.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "mp7h1": {
+        "game_id": 21050012,
+        "display_name": "MP7H1",
+        "rarity": 4,
+        "weapon_type": "smg",
+        "icon": "https://www.prydwen.gg/static/939dbcf106d848f111f71cb25cc34018/8df8e/Weapon_20.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "ppsh_41": {
+        "game_id": 21050013,
+        "display_name": "PPSh-41",
+        "rarity": 4,
+        "weapon_type": "smg",
+        "icon": "https://www.prydwen.gg/static/4169cb79b88664ea24196a24b15b3a9d/8df8e/Weapon_62.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "suomi": {
+        "game_id": 21050014,
+        "display_name": "Suomi",
+        "rarity": 4,
+        "weapon_type": "smg",
+        "icon": "https://www.prydwen.gg/static/238cd602f831e4ee54622f7f51a368be/8df8e/Weapon_29.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "type_5": {
+        "game_id": 21050015,
+        "display_name": "Type-5 9mm Submachine Gun",
+        "rarity": 4,
+        "weapon_type": "smg",
+        "icon": "https://www.prydwen.gg/static/b321f9814922de0bad399e1b0187579c/8df8e/Weapon_65.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "univa": {
+        "game_id": 21050016,
+        "display_name": "Universal Submachine Gun 9",
+        "rarity": 4,
+        "weapon_type": "smg",
+        "icon": "https://www.prydwen.gg/static/0ced6c565576848c18a600e09d2835eb/8df8e/Weapon_63.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "nemesis": {
+        "game_id": 21060010,
+        "display_name": ".50 Nemesis",
+        "rarity": 4,
+        "weapon_type": "rf",
+        "icon": "https://www.prydwen.gg/static/ff3d257f970585fa458c661da7de610e/8df8e/Weapon_08.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "kovrov": {
+        "game_id": 21060011,
+        "display_name": "Kovrov",
+        "rarity": 4,
+        "weapon_type": "rf",
+        "icon": "https://www.prydwen.gg/static/93aab19a30988a2d35ab4f20855e74d9/8df8e/Weapon_53.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "springfield": {
+        "game_id": 21060012,
+        "display_name": "Springfield ",
+        "rarity": 4,
+        "weapon_type": "rf",
+        "icon": "https://www.prydwen.gg/static/9e46ac7b067ec359d5c82899630e93ce/8df8e/Weapon_51.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "three_line_rifle_m1891": {
+        "game_id": 21060013,
+        "display_name": "Three-Line Rifle M1891",
+        "rarity": 4,
+        "weapon_type": "rf",
+        "icon": "https://www.prydwen.gg/static/7ca805e715aad98664a062a662b25a70/8df8e/Weapon_09.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "w2000": {
+        "game_id": 21060014,
+        "display_name": "W 2000",
+        "rarity": 4,
+        "weapon_type": "rf",
+        "icon": "https://www.prydwen.gg/static/f4886702d2f03185d3efcf210d98afca/8df8e/Weapon_52.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                               
+    "hare": {
+        "game_id": 21070010,
+        "display_name": "Hare",
+        "rarity": 4,
+        "weapon_type": "bld",
+        "icon": "https://www.prydwen.gg/static/2f2ce8ac0a1c41a1d98f0462829f0cc3/8df8e/Weapon_26.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "pluma_edge": {
+        "game_id": 21070011,
+        "display_name": "Pluma Edge",
+        "rarity": 4,
+        "weapon_type": "bld",
+        "icon": "https://www.prydwen.gg/static/4018b3780d7c75d71e17954004b70c5c/8df8e/Weapon_32.webp",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                                                             
+                              
+    "hestia": {
+        "game_id": 21110010,
+        "display_name": "Hestia",
+        "rarity": 5,
+        "weapon_type": "hg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_CZ75_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "papa_figo": {
+        "game_id": 21110011,
+        "display_name": "Papa-Figo",
+        "rarity": 5,
+        "weapon_type": "hg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_BpHRssr001_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "aglaea": {
+        "game_id": 21120010,
+        "display_name": "Aglaea",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_G36KKSK_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "daydream": {
+        "game_id": 21120011,
+        "display_name": "Daydream",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_G11_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "forest_sprite": {
+        "game_id": 21120012,
+        "display_name": "Forest Sprite",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_G28_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "golden_melody": {
+        "game_id": 21120013,
+        "display_name": "Golden Melody",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_QBZ-191_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "guerno": {
+        "game_id": 21120014,
+        "display_name": "Guerno",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_BpARssr001_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "heavy_chord": {
+        "game_id": 21120015,
+        "display_name": "Heavy Chord",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_QBZ-95_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "leaping_tiger": {
+        "game_id": 21120016,
+        "display_name": "Leaping Tiger",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_QBZ97_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "maids_code": {
+        "game_id": 21120017,
+        "display_name": "Maid's Code",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_G36_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "planeta": {
+        "game_id": 21120018,
+        "display_name": "Planeta",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_AK-Alfa_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+        "scylla": {
+        "game_id": 21120019,
+        "display_name": "Scylla",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_HK416_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+        "sparkling_centerstage": {
+        "game_id": 21120020,
+        "display_name": "Sparkling Centerstage",
+        "rarity": 5,
+        "weapon_type": "ar",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_K2_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "mjolnir": {
+        "game_id": 21130010,
+        "display_name": "Mjölnir",
+        "rarity": 5,
+        "weapon_type": "mg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_BpMGssr001_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "optical_illusion": {
+        "game_id": 21130011,
+        "display_name": "Optical Illusion",
+        "rarity": 5,
+        "weapon_type": "mg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_Pecheng_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "expeditionary_pigeon": {
+        "game_id": 21140010,
+        "display_name": "Expeditionary Pigeon",
+        "rarity": 5,
+        "weapon_type": "sg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_BpSGssr001_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "heart_seeker": {
+        "game_id": 21140011,
+        "display_name": "Heart Seeker",
+        "rarity": 5,
+        "weapon_type": "sg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_Vepr12_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "mezzaluna": {
+        "game_id": 21140012,
+        "display_name": "Mezzaluna",
+        "rarity": 5,
+        "weapon_type": "sg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_SPAS-12_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+        "radiant_light": {
+        "game_id": 21140013,
+        "display_name": "Radiant Light",
+        "rarity": 5,
+        "weapon_type": "sg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_HAWK12_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                               
+    "bu_liu_xing": {
+        "game_id": 21150010,
+        "display_name": "Bu Liu Xing",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_CSLS06_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "classified_manuscript": {
+        "game_id": 21150011,
+        "display_name": "Classified Manuscript",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_BpSMGssr001_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "ermenita": {
+        "game_id": 21150012,
+        "display_name": "Ermenita",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_MP5_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "mourning_whisper": {
+        "game_id": 21150013,
+        "display_name": "Mourning Whisper",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_Vector_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "svarog": {
+        "game_id": 21150014,
+        "display_name": "Svarog",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_PPSh41_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "unspoken_calling": {
+        "game_id": 21150015,
+        "display_name": "Unspoken Calling",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_M1931_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "young_lion": {
+        "game_id": 21150016,
+        "display_name": "Young Lion",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_UMP9_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "project_helios": {
+        "game_id": 21150017,
+        "display_name": "Project Helios",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_UMP40_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "cunning_fox": {
+        "game_id": 21150018,
+        "display_name": "Cunning Fox",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_UMP45_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "wanderers_hymn": {
+        "game_id": 21150019,
+        "display_name": "Wanderer's Hymn",
+        "rarity": 5,
+        "weapon_type": "smg",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_RO635_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                              
+    "arcana": {
+        "game_id": 21160010,
+        "display_name": "Arcana",
+        "rarity": 5,
+        "weapon_type": "rf",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_BpRFssr001_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "ballad_of_glory": {
+        "game_id": 21160011,
+        "display_name": "Ballad of Glory",
+        "rarity": 5,
+        "weapon_type": "rf",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_KSVK_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "bittersweet_caramel": {
+        "game_id": 21160012,
+        "display_name": "Bittersweet Caramel",
+        "rarity": 5,
+        "weapon_type": "rf",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_WA2000_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "faithful_thornlight": {
+        "game_id": 21160013,
+        "display_name": "Faithful Thornlight",
+        "rarity": 5,
+        "weapon_type": "rf",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_M1903_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "samosek": {
+        "game_id": 21160014,
+        "display_name": "Samosek",
+        "rarity": 5,
+        "weapon_type": "rf",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_M1891_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "dreamguard_silverwing": {
+        "game_id": 21160015,
+        "display_name": "Dreamguard Silverwing",
+        "rarity": 5,
+        "weapon_type": "rf",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_VSK94_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+                               
+    "crowned_jackelope": {
+        "game_id": 21170010,
+        "display_name": "Crowned Jackelope",
+        "rarity": 5,
+        "weapon_type": "bld",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_BpKnifessr001_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+    "rectrix": {
+        "game_id": 21170011,
+        "display_name": "Rectrix",
+        "rarity": 5,
+        "weapon_type": "bld",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_Ullr_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    },
+        "rectrixwww": {
+        "game_id": 21170012,
+        "display_name": "Rectrixss",
+        "rarity": 5,
+        "weapon_type": "bld",
+        "icon": "https://gf2.mcc.wiki/image/weapon/Weapon_Ullr_5_1024.png",
+        "tiered_enemy_drop_weapon_skill_material": "",
+        "tiered_forgery_weapon_skill_material": ""
+    }
+}

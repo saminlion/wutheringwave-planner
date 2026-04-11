@@ -1,0 +1,18 @@
+game_id	label	icon	Category	SubCategory	tier	value
+2	Sardis Gold	https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/shardis_gold.png	credit	credit
+41100011	Stock Boost Bar T1	https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/t1.png	forgery	stock_boost_bar	1
+41100012	Stock Boost Bar T2	https://gf2.mcc.wiki/image/item/Item_Icon_Ram_3.png	forgery	stock_boost_bar	2
+41100013	Stock Boost Bar T3	https://gf2.mcc.wiki/image/item/Item_Icon_Ram_4.png	forgery	stock_boost_bar	3
+41100014	Stock Boost Bar T4	https://gf2.mcc.wiki/image/item/Item_Icon_Ram_5.png	forgery	stock_boost_bar	4
+41100015	Stock Boost Bar T5	https://gf2.mcc.wiki/image/item/Item_Icon_Ram_6.png	forgery	stock_boost_bar	5
+41100016	Stock Boost Bar T6	https://gf2.mcc.wiki/image/item/Item_Icon_Ram_7.png	forgery	stock_boost_bar	6
+41100017	Stock Boost Bar T7	https://gf2.mcc.wiki/image/item/Item_Icon_Ram_7.png	forgery	stock_boost_bar	7
+43020011	Inert Metallic Drip	https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_1.png	forgery	transcription_conductor	1
+43020012	Reactive Metallic Drip	https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_2.png	forgery	transcription_conductor	2
+43020013	Polarized Metallic Drip	https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_3.png	forgery	transcription_conductor	3
+43020014	Heterized Metallic Drip	https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_4.png	forgery	transcription_conductor	4
+43020015	(Tier 5 name)	https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_5.png	forgery	transcription_conductor	5
+43020016	(Tier 6 name)	https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_6.png	forgery	transcription_conductor	6
+41400094	Basic Info Core	https://gf2.mcc.wiki/image/item/Item_Icon_TalentNucleus_3.png	rare_material	rare_material
+43010001	Combat Report	https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/doll_exp.png	doll_exp	doll_exp		1
+43020001	Analysis Blueprint	https://raw.githubusercontent.com/saminlion/GirlsFrontline2_res/main/weapon1.png	weapon_exp	weapon_exp		1

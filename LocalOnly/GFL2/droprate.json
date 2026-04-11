@@ -1,0 +1,72 @@
+{
+    "credit": {
+      "levels": {
+        "1": { "drops": 3120, "resin": 20 },
+        "2": { "drops": 3380, "resin": 20 },
+        "3": { "drops": 3900, "resin": 20 },
+        "4": { "drops": 4420, "resin": 20 },
+        "5": { "drops": 5200, "resin": 20 },
+        "6": { "drops": 5980, "resin": 20 },
+        "7": { "drops": 6760, "resin": 20 },
+        "8": { "drops": 7800, "resin": 20 }
+    }
+    },
+    "doll_exp_material": {
+      "levels": {
+        "1": { "drops": 1200, "resin": 10 },
+        "2": { "drops": 1600, "resin": 10 },
+        "3": { "drops": 2100, "resin": 10 },
+        "4": { "drops": 2500, "resin": 10 },
+        "5": { "drops": 2900, "resin": 10 },
+        "6": { "drops": 3500, "resin": 10 },
+        "7": { "drops": 4000, "resin": 10 },
+        "8": { "drops": 4500, "resin": 10 },
+        "9": { "drops": 5000, "resin": 10 },
+        "10": { "drops": 5500, "resin": 10 },
+        "11": { "drops": 6000, "resin": 10 }
+    }
+    },
+    "weapon_exp_material": {
+      "levels": {
+        "1": { "drops": 1200, "resin": 10 },
+        "2": { "drops": 1600, "resin": 10 },
+        "3": { "drops": 2100, "resin": 10 },
+        "4": { "drops": 2500, "resin": 10 },
+        "5": { "drops": 2900, "resin": 10 },
+        "6": { "drops": 3500, "resin": 10 },
+        "7": { "drops": 4000, "resin": 10 },
+        "8": { "drops": 4500, "resin": 10 },
+        "9": { "drops": 5000, "resin": 10 },
+        "10": { "drops": 5500, "resin": 10 },
+        "11": { "drops": 6000, "resin": 10 }
+      }
+    },
+    "weekly_boss_skill_upgrade_material": {
+      "levels": {
+        "1": { "drops": 0, "resin": 0 },
+        "2": { "drops": 0, "resin": 0 },
+        "3": { "drops": 0, "resin": 0 }
+      }
+    },
+    "forgery_weapon_skill_material": {
+      "levels": {
+        "1": { "drops": 3, "resin": 20 },
+        "2": { "drops": 3, "resin": 20 },
+        "3": { "drops": 4, "resin": 20 },
+        "4": { "drops": 4, "resin": 20 },
+        "5": { "drops": 5, "resin": 20 }   
+      }
+    },
+    "enemy_drop_weapon_skill_material": {
+        "levels": {  
+            "1": { "drops": 2, "resin": 20 },
+            "2": { "drops": 6.5, "resin": 20 },
+            "3": { "drops": 9.5, "resin": 20 },
+            "4": { "drops": 10.5, "resin": 20 },
+            "5": { "drops": 22.7, "resin": 20 },
+            "6": { "drops": 29, "resin": 20 },
+            "7": { "drops": 37.1, "resin": 20 },
+            "8": { "drops": 41.6, "resin": 20 } 
+          }
+    }
+  }
