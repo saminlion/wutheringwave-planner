@@ -132,7 +132,8 @@ const GAMES = {
  */
 async function fetchSheetData(sheetId, tabName) {
   const encodedTab = encodeURIComponent(tabName);
-  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodedTab}&t=${Date.now()}`;
+  // Use CSV export URL - always returns fresh data, no caching issues
+  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&sheet=${encodedTab}`;
 
   console.log(`  Fetching: ${tabName}...`);
 
@@ -143,33 +144,18 @@ async function fetchSheetData(sheetId, tabName) {
 
   const text = await response.text();
 
-  // Google returns JSONP-like response, extract the JSON
-  const jsonMatch = text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*)\);?$/);
-  if (!jsonMatch) {
-    throw new Error(`Invalid response format for ${tabName}`);
-  }
+  // Parse CSV
+  const lines = text.split('\n').filter(line => line.trim());
+  if (lines.length < 2) return [];
 
-  const data = JSON.parse(jsonMatch[1]);
-
-  if (data.status === 'error') {
-    throw new Error(`Sheet error: ${data.errors?.[0]?.message || 'Unknown error'}`);
-  }
-
-  const table = data.table;
-  if (!table || !table.rows) {
-    return [];
-  }
-
-  // Extract headers from first row
-  const headers = table.cols.map(col => col.label || col.id);
-
-  // Convert rows to objects
-  const rows = table.rows.map(row => {
+  const headers = parseCSVLine(lines[0]);
+  const rows = lines.slice(1).map(line => {
+    const values = parseCSVLine(line);
     const obj = {};
-    row.c.forEach((cell, index) => {
-      const header = headers[index];
+    headers.forEach((header, index) => {
       if (header) {
-        obj[header] = cell?.v ?? cell?.f ?? null;
+        const val = values[index] ?? null;
+        obj[header] = val === '' ? null : val;
       }
     });
     return obj;
@@ -177,6 +163,26 @@ async function fetchSheetData(sheetId, tabName) {
 
   console.log(`    Found ${rows.length} rows`);
   return rows;
+}
+
+function parseCSVLine(line) {
+  const result = [];
+  let current = '';
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') {
+      if (inQuotes && line[i + 1] === '"') { current += '"'; i++; }
+      else inQuotes = !inQuotes;
+    } else if (ch === ',' && !inQuotes) {
+      result.push(current);
+      current = '';
+    } else {
+      current += ch;
+    }
+  }
+  result.push(current);
+  return result;
 }
 
 /**
