@@ -4,431 +4,377 @@
     "display_name": "Groza",
     "rarity": 4,
     "element": "physical",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_GrozaSR.png"
+    "weapon_type": "ar"
   },
   "cheeta": {
     "game_id": 6204010002,
     "display_name": "Cheeta",
     "rarity": 4,
     "element": "burn",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_CheetaSR.png"
+    "weapon_type": "smg"
   },
   "krolik": {
     "game_id": 6204010003,
     "display_name": "Krolik",
     "rarity": 4,
     "element": "burn",
-    "weapon_type": "bld",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_CharolicSR.png"
+    "weapon_type": "bld"
   },
   "nemesis": {
     "game_id": 6204020004,
     "display_name": "Nemesis",
     "rarity": 4,
     "element": "corrosion",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_NemesisSR.png"
+    "weapon_type": "rf"
   },
   "lotta": {
     "game_id": 6204040005,
     "display_name": "Lotta",
     "rarity": 4,
     "element": "freeze",
-    "weapon_type": "sg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LottaSR.png"
+    "weapon_type": "sg"
   },
   "littara": {
     "game_id": 6204060006,
     "display_name": "Littara",
     "rarity": 4,
     "element": "physical",
-    "weapon_type": "mg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LittaraSR.png"
+    "weapon_type": "mg"
   },
   "colphne": {
     "game_id": 6204050007,
     "display_name": "Colphne",
     "rarity": 4,
     "element": "hydro",
-    "weapon_type": "hg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_ColphneSR.png"
+    "weapon_type": "hg"
   },
   "sharkry": {
     "game_id": 6204010008,
     "display_name": "Sharkry",
     "rarity": 4,
     "element": "burn",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SharkrySR.png"
+    "weapon_type": "ar"
   },
   "nagant": {
     "game_id": 6204020009,
     "display_name": "Nagant",
     "rarity": 4,
     "element": "corrosion",
-    "weapon_type": "hg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_NagantSR.png"
+    "weapon_type": "hg"
   },
   "ksenia": {
     "game_id": 6204010010,
     "display_name": "Ksenia",
     "rarity": 4,
     "element": "burn",
-    "weapon_type": "hg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_KseniaSR.png"
+    "weapon_type": "hg"
   },
   "suomi": {
     "game_id": 6205040011,
     "display_name": "Suomi",
     "rarity": 5,
     "element": "freeze",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SuomiSSR.png"
+    "weapon_type": "smg"
   },
   "vepley": {
     "game_id": 6205060012,
     "display_name": "Vepley",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "sg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_VepleySSR.png"
+    "weapon_type": "sg"
   },
   "mosin_nagant": {
     "game_id": 6205030013,
     "display_name": "Mosin Nagant",
     "rarity": 5,
     "element": "electric",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_MosinnagantSSR.png"
+    "weapon_type": "rf"
   },
   "sabrina": {
     "game_id": 6205050014,
     "display_name": "Sabrina",
     "rarity": 5,
     "element": "hydro",
-    "weapon_type": "sg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SabrinaSSR.png"
+    "weapon_type": "sg"
   },
   "klukay": {
     "game_id": 6205020015,
     "display_name": "Klukay",
     "rarity": 5,
     "element": "corrosion",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_ClukaySSR.png"
+    "weapon_type": "ar"
   },
   "mechty": {
     "game_id": 6205020016,
     "display_name": "Mechty",
     "rarity": 5,
     "element": "corrosion",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_MishtySSR.png"
+    "weapon_type": "ar"
   },
   "zhaohui": {
     "game_id": 6205050017,
     "display_name": "Zhaohui",
     "rarity": 5,
     "element": "hydro",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_ZhaohuiSSR.png"
+    "weapon_type": "ar"
   },
   "springfield": {
     "game_id": 6205050018,
     "display_name": "Springfield",
     "rarity": 5,
     "element": "hydro",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SpringfieldSSR.png"
+    "weapon_type": "rf"
   },
   "andoris": {
     "game_id": 6205030019,
     "display_name": "Andoris",
     "rarity": 5,
     "element": "electric",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_AndorisSSR.png"
+    "weapon_type": "ar"
   },
   "faye": {
     "game_id": 6205060020,
     "display_name": "Faye",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "hg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_FayeSSR.png"
+    "weapon_type": "hg"
   },
   "vector": {
     "game_id": 6205010021,
     "display_name": "Vector",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_VectorSSR.png"
+    "weapon_type": "smg"
   },
   "belka": {
     "game_id": 6205030022,
     "display_name": "Belka",
     "rarity": 5,
     "element": "electric",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_BiyocaSSR.png"
+    "weapon_type": "ar"
   },
   "papaha": {
     "game_id": 6205060023,
     "display_name": "Papaha",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_PapashaSSR.png"
+    "weapon_type": "smg"
   },
   "ullrid": {
     "game_id": 6205060024,
     "display_name": "Ullrid",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "bld",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_UllridSSR.png"
+    "weapon_type": "bld"
   },
   "jiangyu": {
     "game_id": 6205030025,
     "display_name": "Jiangyu",
     "rarity": 5,
     "element": "electric",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_JiangyuSSR.png"
+    "weapon_type": "ar"
   },
   "daiyan": {
     "game_id": 6205060026,
     "display_name": "Daiyan",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_DaiyanSSR.png"
+    "weapon_type": "ar"
   },
   "makiatto": {
     "game_id": 6205040027,
     "display_name": "Makiatto",
     "rarity": 5,
     "element": "freeze",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_MacqiatoSSR.png"
+    "weapon_type": "rf"
   },
   "centaureissi": {
     "game_id": 6205010028,
     "display_name": "Centaureissi",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_CentaureissiSSR.png"
+    "weapon_type": "ar"
   },
   "dushevnaya": {
     "game_id": 6205040029,
     "display_name": "Dushevnaya",
     "rarity": 5,
     "element": "freeze",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_DusevnyjSSR.png"
+    "weapon_type": "rf"
   },
   "tololo": {
     "game_id": 6205050030,
     "display_name": "Tololo",
     "rarity": 5,
     "element": "hydro",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_TololoSSR.png"
+    "weapon_type": "ar"
   },
   "qiongjiu": {
     "game_id": 6205010031,
     "display_name": "Qiongjiu",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_QiongjiuSSR.png"
+    "weapon_type": "ar"
   },
   "peritya": {
     "game_id": 6205020032,
     "display_name": "Peritya",
     "rarity": 5,
     "element": "corrosion",
-    "weapon_type": "mg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_PerityaSSR.png"
+    "weapon_type": "mg"
   },
   "lenna": {
     "game_id": 6205030033,
     "display_name": "Lenna",
     "rarity": 5,
     "element": "electric",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LennaSSR.png"
+    "weapon_type": "smg"
   },
   "lainie": {
     "game_id": 6205060034,
     "display_name": "Lainie",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LeneSSR.png"
+    "weapon_type": "smg"
   },
   "leva": {
     "game_id": 6205030035,
     "display_name": "Leva",
     "rarity": 5,
     "element": "electric",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LevaSSR.png"
+    "weapon_type": "smg"
   },
   "nikketa": {
     "game_id": 6205050036,
     "display_name": "Nikketa",
     "rarity": 5,
     "element": "hydro",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_NikketaSSR.png"
+    "weapon_type": "rf"
   },
   "robella": {
     "game_id": 6205040037,
     "display_name": "Robella",
     "rarity": 5,
     "element": "freeze",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_RobellaSSR.png"
+    "weapon_type": "smg"
   },
   "qiuhua": {
     "game_id": 6205010038,
     "display_name": "Qiuhua",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "sg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_QiuhuaSSR.png"
+    "weapon_type": "sg"
   },
   "peri": {
     "game_id": 6205010039,
     "display_name": "Peri",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_PeriSSR.png"
+    "weapon_type": "smg"
   },
   "yoohee": {
     "game_id": 6205060040,
     "display_name": "Yoohee",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_YooHeeSSR.png"
+    "weapon_type": "ar"
   },
   "alva": {
     "game_id": 6205040041,
     "display_name": "Alva",
     "rarity": 5,
     "element": "freeze",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_AlvaSSR.png"
+    "weapon_type": "ar"
   },
   "balthilde": {
     "game_id": 6205060042,
     "display_name": "Balthilde",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "mg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_BalthildeSSR.png"
+    "weapon_type": "mg"
   },
   "basti": {
     "game_id": 6205020043,
     "display_name": "Basti",
     "rarity": 5,
     "element": "corrosion",
-    "weapon_type": "hg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Whole_BastiSSR.png"
+    "weapon_type": "hg"
   },
   "cheyanne": {
     "game_id": 6205060044,
     "display_name": "Cheyanne",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_CheyanneSSR.png"
+    "weapon_type": "rf"
   },
   "harpsy": {
     "game_id": 6205020045,
     "display_name": "Harpsy",
     "rarity": 5,
     "element": "corrosion",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_HarpsySSR.png"
+    "weapon_type": "smg"
   },
   "helen": {
     "game_id": 6205040046,
     "display_name": "Helen",
     "rarity": 5,
     "element": "freeze",
-    "weapon_type": "sg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_HelenSSR.png"
+    "weapon_type": "sg"
   },
   "lewis": {
     "game_id": 6205010047,
     "display_name": "Lewis",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "mg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LewisSSR.png"
+    "weapon_type": "mg"
   },
   "lind": {
     "game_id": 6205020048,
     "display_name": "Lind",
     "rarity": 5,
     "element": "corrosion",
-    "weapon_type": "sg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LindSSR.png"
+    "weapon_type": "sg"
   },
   "liushih": {
     "game_id": 6205050049,
     "display_name": "Liushih",
     "rarity": 5,
     "element": "hydro",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LiushihSSR.png"
+    "weapon_type": "rf"
   },
   "loreley": {
     "game_id": 6205010050,
     "display_name": "Loreley",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "rf",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_LoreleySSR.png"
+    "weapon_type": "rf"
   },
   "phaetusa": {
     "game_id": 6205020051,
     "display_name": "Phaetusa",
     "rarity": 5,
     "element": "corrosion",
-    "weapon_type": "bld",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_PhaetusaSSR.png"
+    "weapon_type": "bld"
   },
   "sakura": {
     "game_id": 6205010052,
     "display_name": "Sakura",
     "rarity": 5,
     "element": "burn",
-    "weapon_type": "smg",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SakuraSSR.png"
+    "weapon_type": "smg"
   },
   "voymastina": {
     "game_id": 6205060053,
     "display_name": "Voymastina",
     "rarity": 5,
     "element": "physical",
-    "weapon_type": "ar",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_VoymastinaSSR.png"
+    "weapon_type": "ar"
   },
   "sextant": {
     "game_id": 6205030054,
     "display_name": "Sextant",
     "rarity": 5,
     "element": "electric",
-    "weapon_type": "bld",
-    "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SextansSSR.png"
+    "weapon_type": "bld"
   }
 }

@@ -1,1 +1,272 @@
-{}
+{
+  "groza": {
+    "game_id": 6204060001,
+    "display_name": "Groza",
+    "rarity": 4
+  },
+  "cheeta": {
+    "game_id": 6204010002,
+    "display_name": "Cheeta",
+    "rarity": 4
+  },
+  "krolik": {
+    "game_id": 6204010003,
+    "display_name": "Krolik",
+    "rarity": 4
+  },
+  "nemesis": {
+    "game_id": 6204020004,
+    "display_name": "Nemesis",
+    "rarity": 4
+  },
+  "lotta": {
+    "game_id": 6204040005,
+    "display_name": "Lotta",
+    "rarity": 4
+  },
+  "littara": {
+    "game_id": 6204060006,
+    "display_name": "Littara",
+    "rarity": 4
+  },
+  "colphne": {
+    "game_id": 6204050007,
+    "display_name": "Colphne",
+    "rarity": 4
+  },
+  "sharkry": {
+    "game_id": 6204010008,
+    "display_name": "Sharkry",
+    "rarity": 4
+  },
+  "nagant": {
+    "game_id": 6204020009,
+    "display_name": "Nagant",
+    "rarity": 4
+  },
+  "ksenia": {
+    "game_id": 6204010010,
+    "display_name": "Ksenia",
+    "rarity": 4
+  },
+  "suomi": {
+    "game_id": 6205040011,
+    "display_name": "Suomi",
+    "rarity": 5
+  },
+  "vepley": {
+    "game_id": 6205060012,
+    "display_name": "Vepley",
+    "rarity": 5
+  },
+  "mosin_nagant": {
+    "game_id": 6205030013,
+    "display_name": "Mosin Nagant",
+    "rarity": 5
+  },
+  "sabrina": {
+    "game_id": 6205050014,
+    "display_name": "Sabrina",
+    "rarity": 5
+  },
+  "klukay": {
+    "game_id": 6205020015,
+    "display_name": "Klukay",
+    "rarity": 5
+  },
+  "mechty": {
+    "game_id": 6205020016,
+    "display_name": "Mechty",
+    "rarity": 5
+  },
+  "zhaohui": {
+    "game_id": 6205050017,
+    "display_name": "Zhaohui",
+    "rarity": 5
+  },
+  "springfield": {
+    "game_id": 6205050018,
+    "display_name": "Springfield",
+    "rarity": 5
+  },
+  "andoris": {
+    "game_id": 6205030019,
+    "display_name": "Andoris",
+    "rarity": 5
+  },
+  "faye": {
+    "game_id": 6205060020,
+    "display_name": "Faye",
+    "rarity": 5
+  },
+  "vector": {
+    "game_id": 6205010021,
+    "display_name": "Vector",
+    "rarity": 5
+  },
+  "belka": {
+    "game_id": 6205030022,
+    "display_name": "Belka",
+    "rarity": 5
+  },
+  "papaha": {
+    "game_id": 6205060023,
+    "display_name": "Papaha",
+    "rarity": 5
+  },
+  "ullrid": {
+    "game_id": 6205060024,
+    "display_name": "Ullrid",
+    "rarity": 5
+  },
+  "jiangyu": {
+    "game_id": 6205030025,
+    "display_name": "Jiangyu",
+    "rarity": 5
+  },
+  "daiyan": {
+    "game_id": 6205060026,
+    "display_name": "Daiyan",
+    "rarity": 5
+  },
+  "makiatto": {
+    "game_id": 6205040027,
+    "display_name": "Makiatto",
+    "rarity": 5
+  },
+  "centaureissi": {
+    "game_id": 6205010028,
+    "display_name": "Centaureissi",
+    "rarity": 5
+  },
+  "dushevnaya": {
+    "game_id": 6205040029,
+    "display_name": "Dushevnaya",
+    "rarity": 5
+  },
+  "tololo": {
+    "game_id": 6205050030,
+    "display_name": "Tololo",
+    "rarity": 5
+  },
+  "qiongjiu": {
+    "game_id": 6205010031,
+    "display_name": "Qiongjiu",
+    "rarity": 5
+  },
+  "peritya": {
+    "game_id": 6205020032,
+    "display_name": "Peritya",
+    "rarity": 5
+  },
+  "lenna": {
+    "game_id": 6205030033,
+    "display_name": "Lenna",
+    "rarity": 5
+  },
+  "lainie": {
+    "game_id": 6205060034,
+    "display_name": "Lainie",
+    "rarity": 5
+  },
+  "leva": {
+    "game_id": 6205030035,
+    "display_name": "Leva",
+    "rarity": 5
+  },
+  "nikketa": {
+    "game_id": 6205050036,
+    "display_name": "Nikketa",
+    "rarity": 5
+  },
+  "robella": {
+    "game_id": 6205040037,
+    "display_name": "Robella",
+    "rarity": 5
+  },
+  "qiuhua": {
+    "game_id": 6205010038,
+    "display_name": "Qiuhua",
+    "rarity": 5
+  },
+  "peri": {
+    "game_id": 6205010039,
+    "display_name": "Peri",
+    "rarity": 5
+  },
+  "yoohee": {
+    "game_id": 6205060040,
+    "display_name": "Yoohee",
+    "rarity": 5
+  },
+  "alva": {
+    "game_id": 6205040041,
+    "display_name": "Alva",
+    "rarity": 5
+  },
+  "balthilde": {
+    "game_id": 6205060042,
+    "display_name": "Balthilde",
+    "rarity": 5
+  },
+  "basti": {
+    "game_id": 6205020043,
+    "display_name": "Basti",
+    "rarity": 5
+  },
+  "cheyanne": {
+    "game_id": 6205060044,
+    "display_name": "Cheyanne",
+    "rarity": 5
+  },
+  "harpsy": {
+    "game_id": 6205020045,
+    "display_name": "Harpsy",
+    "rarity": 5
+  },
+  "helen": {
+    "game_id": 6205040046,
+    "display_name": "Helen",
+    "rarity": 5
+  },
+  "lewis": {
+    "game_id": 6205010047,
+    "display_name": "Lewis",
+    "rarity": 5
+  },
+  "lind": {
+    "game_id": 6205020048,
+    "display_name": "Lind",
+    "rarity": 5
+  },
+  "liushih": {
+    "game_id": 6205050049,
+    "display_name": "Liushih",
+    "rarity": 5
+  },
+  "loreley": {
+    "game_id": 6205010050,
+    "display_name": "Loreley",
+    "rarity": 5
+  },
+  "phaetusa": {
+    "game_id": 6205020051,
+    "display_name": "Phaetusa",
+    "rarity": 5
+  },
+  "sakura": {
+    "game_id": 6205010052,
+    "display_name": "Sakura",
+    "rarity": 5
+  },
+  "voymastina": {
+    "game_id": 6205060053,
+    "display_name": "Voymastina",
+    "rarity": 5
+  },
+  "sextant": {
+    "game_id": 6205030054,
+    "display_name": "Sextant",
+    "rarity": 5
+  }
+}
