@@ -144,8 +144,8 @@ async function fetchSheetData(sheetId, tabName) {
 
   const text = await response.text();
 
-  // Parse CSV
-  const lines = text.split('\n').filter(line => line.trim());
+  // Parse CSV (strip \r to handle \r\n line endings)
+  const lines = text.split('\n').map(l => l.replace(/\r$/, '')).filter(line => line.trim());
   if (lines.length < 2) return [];
 
   const headers = parseCSVLine(lines[0]);
