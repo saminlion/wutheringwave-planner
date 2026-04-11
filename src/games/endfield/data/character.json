@@ -9,7 +9,6 @@
     "odendra": 5110020010,
     "special": 5130010032,
     "mastery_basic_attack": 5130010032,
-    "mastery_battle_skill": 5130010032,
     "mastery_combo_skill": 5130010032,
     "mastery_ultimate": 5130010032,
     "talent_costs": {
@@ -50,7 +49,6 @@
     "odendra": 5110020010,
     "special": 5130010035,
     "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
     "mastery_combo_skill": 5130010035,
     "mastery_ultimate": 5130010035,
     "talent_costs": {
@@ -98,7 +96,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
@@ -146,7 +143,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -194,7 +190,6 @@
     "odendra": 5110020010,
     "special": 5130010034,
     "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
     "mastery_combo_skill": 5130010034,
     "mastery_ultimate": 5130010034,
     "talent_costs": {
@@ -242,7 +237,6 @@
     "odendra": 5110020010,
     "special": 5130010035,
     "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
     "mastery_combo_skill": 5130010035,
     "mastery_ultimate": 5130010035,
     "talent_costs": {
@@ -290,7 +284,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -338,7 +331,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
@@ -386,7 +378,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
@@ -434,7 +425,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -475,7 +465,6 @@
     "odendra": 5110020010,
     "special": 5130010035,
     "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
     "mastery_combo_skill": 5130010035,
     "mastery_ultimate": 5130010035,
     "talent_costs": {
@@ -523,7 +512,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -564,7 +552,6 @@
     "odendra": 5110020010,
     "special": 5130010034,
     "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
     "mastery_combo_skill": 5130010034,
     "mastery_ultimate": 5130010034,
     "talent_costs": {
@@ -612,7 +599,6 @@
     "odendra": 5110020010,
     "special": 5130010034,
     "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
     "mastery_combo_skill": 5130010034,
     "mastery_ultimate": 5130010034,
     "talent_costs": {
@@ -660,7 +646,6 @@
     "odendra": 5110020010,
     "special": 5130010035,
     "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
     "mastery_combo_skill": 5130010035,
     "mastery_ultimate": 5130010035,
     "talent_costs": {
@@ -708,7 +693,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -756,7 +740,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -804,7 +787,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
@@ -852,7 +834,6 @@
     "odendra": 5110020010,
     "special": 5130010034,
     "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
     "mastery_combo_skill": 5130010034,
     "mastery_ultimate": 5130010034,
     "talent_costs": {
@@ -893,7 +874,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -941,7 +921,6 @@
     "odendra": 5110020010,
     "special": 5130010033,
     "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
     "mastery_combo_skill": 5130010033,
     "mastery_ultimate": 5130010033,
     "talent_costs": {
@@ -989,7 +968,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
@@ -1037,7 +1015,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
@@ -1085,7 +1062,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
@@ -1133,7 +1109,6 @@
     "odendra": 5110020010,
     "special": 5130010031,
     "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
     "mastery_combo_skill": 5130010031,
     "mastery_ultimate": 5130010031,
     "talent_costs": {
