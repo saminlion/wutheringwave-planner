@@ -72,22 +72,22 @@ function extractSheetId(input) {
 }
 
 // Configuration for each game
-// Tabs can be specified as a string (tab name) or { name, gid } object.
-// Use gid when ?sheet=TabName doesn't work (sheet not published to web for that tab).
+// Tabs are specified as strings (tab names). The sync auto-discovers gids from the sheet HTML.
+// No publish-to-web required — only "share with anyone (view)" is needed.
 const GAMES = {
   wutheringwave: {
     sheetId: extractSheetId(process.env.SHEET_ID_WUTHERINGWAVE),
     dataPath: 'src/games/wutheringwave/data',
     localePath: 'src/games/wutheringwave/locales',
     tabs: {
-      characters: { name: 'Characters', gid: 0 },
-      materials: { name: 'Materials', gid: 1302816520 },
-      weapons: { name: 'Weapons', gid: 929270047 },
+      characters: 'Characters',
+      materials: 'Materials',
+      weapons: 'Weapons',
     },
     i18nTabs: {
-      characters: { name: 'Characters_i18n', gid: 1141889124 },
-      materials: { name: 'Materials_i18n', gid: 767812157 },
-      weapons: { name: 'Weapons_i18n', gid: 1029728921 },
+      characters: 'Characters_i18n',
+      materials: 'Materials_i18n',
+      weapons: 'Weapons_i18n',
     },
   },
   endfield: {
@@ -123,8 +123,49 @@ const GAMES = {
 };
 
 /**
- * Fetch data from a published Google Sheet tab
- * Sheet must be published: File -> Share -> Publish to web
+ * Discover all tab names → gid mappings for a Google Sheet.
+ * Works for any publicly shared sheet (no publish-to-web required).
+ *
+ * @param {string} sheetId
+ * @returns {Promise<Map<string, number>>} Map of tabName → gid
+ */
+async function discoverSheetTabs(sheetId) {
+  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/edit`;
+  const response = await fetch(url);
+  if (!response.ok) return new Map();
+
+  const html = await response.text();
+  const tabMap = new Map();
+
+  // Parse minified JS: pattern [N,0,\"GID\",...[0,0,\"SheetName\"
+  // The HTML encodes quotes as \" so they appear as \\" in the raw string
+  const re = /\[\d+,0,\\"(\d+)\\".*?\[0,0,\\"([A-Za-z0-9_]+)\\"/sg;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    tabMap.set(m[2], parseInt(m[1], 10));
+  }
+
+  return tabMap;
+}
+
+// Cache of discovered gids per sheet to avoid repeated fetches
+const tabGidCache = new Map();
+
+async function getTabGid(sheetId, tabName) {
+  if (!tabGidCache.has(sheetId)) {
+    console.log(`  Discovering tab gids for sheet ${sheetId}...`);
+    const map = await discoverSheetTabs(sheetId);
+    tabGidCache.set(sheetId, map);
+    if (map.size > 0) {
+      console.log(`  Found tabs: ${[...map.entries()].map(([n, g]) => `${n}(${g})`).join(', ')}`);
+    }
+  }
+  return tabGidCache.get(sheetId).get(tabName);
+}
+
+/**
+ * Fetch data from a Google Sheet tab.
+ * Works with any publicly shared sheet — no publish-to-web required.
  *
  * @param {string} sheetId - The Google Sheet ID
  * @param {string|{name:string,gid:number}} tab - Tab name string, or { name, gid } object
@@ -132,9 +173,10 @@ const GAMES = {
  */
 async function fetchSheetData(sheetId, tab) {
   const tabLabel = typeof tab === 'object' ? tab.name : tab;
-  const tabParam = typeof tab === 'object'
-    ? `gid=${tab.gid}`
-    : `sheet=${encodeURIComponent(tab)}`;
+
+  // Resolve gid: use explicit gid if provided, otherwise auto-discover
+  let gid = typeof tab === 'object' ? tab.gid : await getTabGid(sheetId, tab);
+  const tabParam = gid !== undefined ? `gid=${gid}` : `sheet=${encodeURIComponent(tabLabel)}`;
   const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&${tabParam}`;
 
   console.log(`  Fetching: ${tabLabel}...`);
