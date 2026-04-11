@@ -52,6 +52,7 @@ describe('Endfield MaterialProcessor', () => {
       expect(SUPPORTED_KEYS).toContain('odendra');
       expect(SUPPORTED_KEYS).toContain('onyx');
       expect(SUPPORTED_KEYS).toContain('special');
+      expect(SUPPORTED_KEYS).toContain('perseverance');
     });
 
     it('should not include WW-specific keys', () => {
@@ -73,6 +74,10 @@ describe('Endfield MaterialProcessor', () => {
         odendra: '51301101',
         onyx: '51301201',
         special: '51400001',   // direct game_id
+        mastery_basic_attack: 51500001,   // flat per-skill mastery fields
+        mastery_battle_skill: 51500002,
+        mastery_combo_skill: 51500001,
+        mastery_ultimate: 51500002,
       };
     });
 
@@ -116,6 +121,28 @@ describe('Endfield MaterialProcessor', () => {
 
       expect(handled).toBe(true);
       expect(materials['51400001']).toBe(2);
+    });
+
+    it('should process perseverance using per-skill mastery material', () => {
+      const infoWithSkill = { ...characterInfo, _masterySkill: 'basic_attack' };
+      const handled = processMaterial(materials, 'perseverance', 2, infoWithSkill);
+
+      expect(handled).toBe(true);
+      expect(materials[51500001]).toBe(2);
+    });
+
+    it('should process perseverance with different material for different skill', () => {
+      const infoWithSkill = { ...characterInfo, _masterySkill: 'battle_skill' };
+      processMaterial(materials, 'perseverance', 1, infoWithSkill);
+
+      expect(materials[51500002]).toBe(1);
+    });
+
+    it('should silently skip perseverance when _masterySkill is missing', () => {
+      const handled = processMaterial(materials, 'perseverance', 1, characterInfo);
+
+      expect(handled).toBe(true);
+      expect(Object.keys(materials)).toHaveLength(0);
     });
 
     it('should return false for unsupported keys', () => {

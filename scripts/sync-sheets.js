@@ -236,6 +236,20 @@ function transformCharacters(rows) {
       character.special = parseNumberOrString(row.special_id);
     }
 
+    // Endfield per-skill mastery material IDs
+    if (row.mastery_basic_attack_id != null && row.mastery_basic_attack_id !== '') {
+      character.mastery_basic_attack = parseNumberOrString(row.mastery_basic_attack_id);
+    }
+    if (row.mastery_battle_skill_id != null && row.mastery_battle_skill_id !== '') {
+      character.mastery_battle_skill = parseNumberOrString(row.mastery_battle_skill_id);
+    }
+    if (row.mastery_combo_skill_id != null && row.mastery_combo_skill_id !== '') {
+      character.mastery_combo_skill = parseNumberOrString(row.mastery_combo_skill_id);
+    }
+    if (row.mastery_ultimate_id != null && row.mastery_ultimate_id !== '') {
+      character.mastery_ultimate = parseNumberOrString(row.mastery_ultimate_id);
+    }
+
     // WutheringWaves specific fields
     if (row.common) character.common = row.common;
     if (row.forgery) character.forgery = row.forgery;

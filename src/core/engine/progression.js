@@ -135,11 +135,13 @@ export class ProgressionEngine {
         const targetMastery = Number.parseInt(skillData.target_mastery, 10) || 0;
 
         if (currentMastery < targetMastery) {
+          // Pass _masterySkill so per-skill mastery materials (perseverance) can be resolved
+          const masteryCharInfo = { ...characterInfo, _masterySkill: skillName };
           for (let i = currentMastery + 1; i <= targetMastery; i += 1) {
             const masteryCosts = masteryCostsTable[i];
             if (masteryCosts) {
               Object.entries(masteryCosts).forEach(([materialKey, amount]) => {
-                this._process(result, materialKey, amount, characterInfo);
+                this._process(result, materialKey, amount, masteryCharInfo);
               });
             }
           }

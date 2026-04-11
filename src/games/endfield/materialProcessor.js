@@ -12,6 +12,7 @@ export const SUPPORTED_KEYS = [
     'proto_asc', 'proto_skill', 'cast_die',  // Forgery tiered materials
     'bolete', 'odendra', 'onyx',              // Character-specific ascension materials
     'special',                                 // Direct game_id material
+    'perseverance',                            // Per-skill mastery material
 ];
 
 /**
@@ -73,6 +74,18 @@ export const processMaterial = (materials, key, value, characterInfo) => {
             return true;
         }
         return true; // Handled
+    }
+
+    // Per-skill mastery material: perseverance
+    // character.json has flat fields: mastery_basic_attack, mastery_battle_skill, etc.
+    // characterInfo._masterySkill is set by the progression engine during mastery calculation
+    if (key === 'perseverance') {
+        const skillName = characterInfo._masterySkill;
+        const gameId = skillName ? characterInfo[`mastery_${skillName}`] : null;
+        if (gameId && typeof value === 'number') {
+            materials[gameId] = (materials[gameId] || 0) + value;
+        }
+        return true;
     }
 
     return false; // Not an Endfield-specific key
