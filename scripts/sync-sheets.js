@@ -81,11 +81,13 @@ const GAMES = {
     tabs: {
       characters: 'Characters',
       materials: 'Materials',
+      weapons: 'Weapons',
     },
     // i18n tabs - each data type has its own i18n tab
     i18nTabs: {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
+      weapons: 'Weapons_i18n',
     },
   },
   endfield: {
@@ -528,6 +530,15 @@ async function syncGame(gameId, config) {
         if (Object.keys(transformed).length === 0) {
           console.log(`    Skipped writing ${tabName}: no data returned (sheet empty or tab not found)`);
           continue;
+        }
+
+        // Sanity check: if syncing weapons but result looks like characters (has common/forgery/boss fields), skip
+        if (dataType === 'weapons') {
+          const firstItem = Object.values(transformed)[0];
+          if (firstItem && (firstItem.boss !== undefined || firstItem.ascension !== undefined || firstItem.bolete !== undefined)) {
+            console.log(`    Skipped writing ${tabName}: result looks like character data, not weapon data`);
+            continue;
+          }
         }
 
         const fileName = dataType === 'characters' || dataType === 'weapons' ? dataType.slice(0, -1) : dataType;
