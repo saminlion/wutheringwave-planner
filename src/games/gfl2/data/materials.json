@@ -1,1 +1,26 @@
-{}
+{
+  "credit": {
+    "sardis_gold": {
+      "game_id": 6100000001,
+      "label": "Sardis Gold",
+      "Category": "credit",
+      "SubCategory": "credit"
+    }
+  },
+  "forgery": {
+    "stock_boost_bar_t1": {
+      "game_id": 6120010002,
+      "label": "Stock Boost Bar T1",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 1
+    },
+    "stock_boost_bar_t2": {
+      "game_id": 6120010003,
+      "label": "Stock Boost Bar T2",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "tier": 2
+    }
+  }
+}
