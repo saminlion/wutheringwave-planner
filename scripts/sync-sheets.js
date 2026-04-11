@@ -132,7 +132,7 @@ const GAMES = {
  */
 async function fetchSheetData(sheetId, tabName) {
   const encodedTab = encodeURIComponent(tabName);
-  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodedTab}`;
+  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&sheet=${encodedTab}&t=${Date.now()}`;
 
   console.log(`  Fetching: ${tabName}...`);
 
