@@ -1195,5 +1195,54 @@
         }
       }
     }
+  },
+  "zhuang_fangyi": {
+    "game_id": 5260500026,
+    "display_name": "Zhuang Fangyi",
+    "rarity": 6,
+    "element": "electric",
+    "weapon": "arts",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/zhuang-fangyi.webp",
+    "bolete": 5110010006,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "mastery_basic_attack": 5130010031,
+    "mastery_battle_skill": 5130010031,
+    "mastery_combo_skill": 5130010031,
+    "mastery_ultimate": 5130010031,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   }
 }

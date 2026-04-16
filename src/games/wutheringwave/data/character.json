@@ -629,7 +629,7 @@
     "rarity": 5,
     "element": "glacio",
     "weapon": "sword",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_FeiXue_UI.webp",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feixue_UI.webp",
     "common": "exoswarm",
     "forgery": "polarizer",
     "boss": 4140030021
@@ -640,8 +640,8 @@
     "rarity": 5,
     "element": "fusion",
     "weapon": "rectifier",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
-    "common": "pendant",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_64_UI.webp",
+    "common": "mech",
     "forgery": "string",
     "boss": 4140030020
   }
