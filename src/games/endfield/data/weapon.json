@@ -573,5 +573,14 @@
     "icon": "https://img.game8.co/4428604/2f1a59eafec83b799549de90e86cc361.png/show",
     "onyx": 5110030015,
     "special": 5130010033
+  },
+  "lone_barge": {
+    "game_id": 5360400065,
+    "display_name": "Lone Barge",
+    "rarity": 6,
+    "type": "arts",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0015.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
   }
 }
