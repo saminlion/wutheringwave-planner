@@ -67,22 +67,22 @@ export const processMaterial = (materials, key, value, characterInfo) => {
     }
 
     // Direct game_id material: special
+    // In mastery context (_masterySkill set), use per-skill mastery material instead
     if (key === 'special') {
-        const charMaterialId = characterInfo[key];
+        const skillName = characterInfo._masterySkill;
+        const charMaterialId = skillName
+            ? characterInfo[`mastery_${skillName}`]
+            : characterInfo[key];
         if (charMaterialId && typeof value === 'number') {
             materials[charMaterialId] = (materials[charMaterialId] || 0) + value;
-            return true;
         }
-        return true; // Handled
+        return true;
     }
 
-    // Per-skill mastery material: perseverance
-    // character.json has flat fields: mastery_basic_attack, mastery_battle_skill, etc.
-    // characterInfo._masterySkill is set by the progression engine during mastery calculation
+    // Fixed perseverance material: Mark of Perseverance (5130010036)
     if (key === 'perseverance') {
-        const skillName = characterInfo._masterySkill;
-        const gameId = skillName ? characterInfo[`mastery_${skillName}`] : null;
-        if (gameId && typeof value === 'number') {
+        const gameId = 5130010036;
+        if (typeof value === 'number') {
             materials[gameId] = (materials[gameId] || 0) + value;
         }
         return true;
