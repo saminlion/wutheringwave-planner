@@ -904,7 +904,7 @@
     "display_name": "Forged Dwarf Star",
     "rarity": 5,
     "type": "rectifier",
-    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050076_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050076_UI.webp",
     "common": "mech",
     "forgery": "string"
   },
@@ -913,7 +913,7 @@
     "display_name": "Frostburn",
     "rarity": 5,
     "type": "sword",
-    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
     "common": "pendant",
     "forgery": "polarizer"
   }

@@ -1,6 +1,6 @@
 {
   "credit": {
-    "credit": {
+    "shell_credit": {
       "game_id": 4100000001,
       "label": "Shell Credit",
       "Category": "credit",
@@ -10,7 +10,7 @@
     }
   },
   "common": {
-    "lf_whisperin_core": {
+    "low_frequency_whisperin_core": {
       "game_id": 4110010001,
       "label": "Low Frequency Whisperin Core",
       "Category": "common",
@@ -18,7 +18,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.webp",
       "tier": 2
     },
-    "mf_whisperin_core": {
+    "mid_frequency_whisperin_core": {
       "game_id": 4110010002,
       "label": "Mid Frequency Whisperin Core",
       "Category": "common",
@@ -26,7 +26,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_2_UI.webp",
       "tier": 3
     },
-    "hf_whisperin_core": {
+    "high_frequency_whisperin_core": {
       "game_id": 4110010003,
       "label": "High Frequency Whisperin Core",
       "Category": "common",
@@ -34,7 +34,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_3_UI.webp",
       "tier": 4
     },
-    "ff_whisperin_core": {
+    "full_frequency_whisperin_core": {
       "game_id": 4110010004,
       "label": "Full Frequency Whisperin Core",
       "Category": "common",
@@ -42,7 +42,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_4_UI.webp",
       "tier": 5
     },
-    "lf_howler_core": {
+    "low_frequency_howler_core": {
       "game_id": 4110020001,
       "label": "Low Frequency Howler Core",
       "Category": "common",
@@ -50,7 +50,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_1_UI.webp",
       "tier": 2
     },
-    "mf_howler_core": {
+    "mid_frequency_howler_core": {
       "game_id": 4110020002,
       "label": "Mid Frequency Howler Core",
       "Category": "common",
@@ -58,7 +58,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_2_UI.webp",
       "tier": 3
     },
-    "hf_howler_core": {
+    "high_frequency_howler_core": {
       "game_id": 4110020003,
       "label": "High Frequency Howler Core",
       "Category": "common",
@@ -66,7 +66,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_3_UI.webp",
       "tier": 4
     },
-    "ff_howler_core": {
+    "full_frequency_howler_core": {
       "game_id": 4110020004,
       "label": "Full Frequency Howler Core",
       "Category": "common",
@@ -74,7 +74,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_4_UI.webp",
       "tier": 5
     },
-    "curde_ring": {
+    "crude_ring": {
       "game_id": 4110030001,
       "label": "Crude Ring",
       "Category": "common",
@@ -138,7 +138,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_004_UI.webp",
       "tier": 5
     },
-    "lf_polygon_core": {
+    "low_frequency_polygon_core": {
       "game_id": 4110050001,
       "label": "Low Frequency Polygon Core",
       "Category": "common",
@@ -146,7 +146,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_1_UI.webp",
       "tier": 2
     },
-    "mf_polygon_core": {
+    "mid_frequency_polygon_core": {
       "game_id": 4110050002,
       "label": "Mid Frequency Polygon Core",
       "Category": "common",
@@ -154,7 +154,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_2_UI.webp",
       "tier": 3
     },
-    "hf_polygon_core": {
+    "high_frequency_polygon_core": {
       "game_id": 4110050003,
       "label": "High Frequency Polygon Core",
       "Category": "common",
@@ -162,7 +162,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_3_UI.webp",
       "tier": 4
     },
-    "ff_polygon_core": {
+    "full_frequency_polygon_core": {
       "game_id": 4110050004,
       "label": "Full Frequency Polygon Core",
       "Category": "common",
@@ -170,7 +170,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_4_UI.webp",
       "tier": 5
     },
-    "lf_tidal_residuum": {
+    "low_frequency_tidal_residuum": {
       "game_id": 4110060001,
       "label": "Low Frequency Tidal Residuum",
       "Category": "common",
@@ -178,7 +178,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_1_UI.webp",
       "tier": 2
     },
-    "mf_tidal_residuum": {
+    "mid_frequency_tidal_residuum": {
       "game_id": 4110060002,
       "label": "Mid Frequency Tidal Residuum",
       "Category": "common",
@@ -186,7 +186,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_2_UI.webp",
       "tier": 3
     },
-    "hf_tidal_residuum": {
+    "high_frequency_tidal_residuum": {
       "game_id": 4110060003,
       "label": "High Frequency Tidal Residuum",
       "Category": "common",
@@ -194,7 +194,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_3_UI.webp",
       "tier": 4
     },
-    "ff_tidal_residuum": {
+    "full_frequency_tidal_residuum": {
       "game_id": 4110060004,
       "label": "Full Frequency Tidal Residuum",
       "Category": "common",
@@ -202,7 +202,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_4_UI.webp",
       "tier": 5
     },
-    "lf_exowarm_core": {
+    "low_frequency_exowarm_core": {
       "game_id": 4110070001,
       "label": "Low Frequency Exowarm Core",
       "Category": "common",
@@ -210,7 +210,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_021_UI.webp",
       "tier": 2
     },
-    "mf_exowarm_core": {
+    "mid_frequency_exowarm_core": {
       "game_id": 4110070002,
       "label": "Mid Frequency Exowarm Core",
       "Category": "common",
@@ -218,7 +218,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_022_UI.webp",
       "tier": 3
     },
-    "hf_exowarm_core": {
+    "high_frequency_exowarm_core": {
       "game_id": 4110070003,
       "label": "High Frequency Exowarm Core",
       "Category": "common",
@@ -226,7 +226,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_023_UI.webp",
       "tier": 4
     },
-    "ff_exowarm_core": {
+    "full_frequency_exowarm_core": {
       "game_id": 4110070004,
       "label": "Full Frequency Exowarm Core",
       "Category": "common",
@@ -234,7 +234,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_024_UI.webp",
       "tier": 5
     },
-    "lf_mech_core": {
+    "low_frequency_mech_core": {
       "game_id": 4110080001,
       "label": "Low Frequency Mech Core",
       "Category": "common",
@@ -242,7 +242,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_025_UI.webp",
       "tier": 2
     },
-    "mf_mech_core": {
+    "mid_frequency_mech_core": {
       "game_id": 4110080002,
       "label": "Mid Frequency Mech Core",
       "Category": "common",
@@ -250,7 +250,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_026_UI.webp",
       "tier": 3
     },
-    "hf_mech_core": {
+    "high_frequency_mech_core": {
       "game_id": 4110080003,
       "label": "High Frequency Mech Core",
       "Category": "common",
@@ -258,7 +258,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_027_UI.webp",
       "tier": 4
     },
-    "ff_mech_core": {
+    "full_frequency_mech_core": {
       "game_id": 4110080004,
       "label": "Full Frequency Mech Core",
       "Category": "common",
@@ -468,7 +468,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_1_UI.webp",
       "tier": 2
     },
-    "mono_wing_ploarizer": {
+    "mono_wing_polarizer": {
       "game_id": 4120060002,
       "label": "Mono Wing Polarizer",
       "Category": "forgery",
@@ -476,7 +476,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_2_UI.webp",
       "tier": 3
     },
-    "poly_wing_ploarizer": {
+    "poly_wing_polarizer": {
       "game_id": 4120060003,
       "label": "Poly Wing Polarizer",
       "Category": "forgery",
@@ -484,7 +484,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_3_UI.webp",
       "tier": 4
     },
-    "layered_wing_ploarizer": {
+    "layered_wing_polarizer": {
       "game_id": 4120060004,
       "label": "Layered Wing Polarizer",
       "Category": "forgery",
@@ -556,7 +556,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_4_UI.webp",
       "tier": 5
     },
-    "lf_carved_crystal": {
+    "low_frequency_carved_crystal": {
       "game_id": 4120090001,
       "label": "Low Frequency Carved Crystal",
       "Category": "forgery",
@@ -564,7 +564,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_1_UI.webp",
       "tier": 2
     },
-    "mf_carved_crystal": {
+    "mid_frequency_carved_crystal": {
       "game_id": 4120090002,
       "label": "Mid Frequency Carved Crystal",
       "Category": "forgery",
@@ -572,7 +572,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_2_UI.webp",
       "tier": 3
     },
-    "hf_carved_crystal": {
+    "high_frequency_carved_crystal": {
       "game_id": 4120090003,
       "label": "High Frequency Carved Crystal",
       "Category": "forgery",
@@ -580,7 +580,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_3_UI.webp",
       "tier": 4
     },
-    "ff_carved_crystal": {
+    "full_frequency_carved_crystal": {
       "game_id": 4120090004,
       "label": "Full Frequency Carved Crystal",
       "Category": "forgery",
@@ -588,7 +588,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_4_UI.webp",
       "tier": 5
     },
-    "lf_waveworn_shard": {
+    "low_frequency_waveworn_shard": {
       "game_id": 4120100001,
       "label": "Low Frequency Waveworn Shard",
       "Category": "forgery",
@@ -596,7 +596,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_1_UI.webp",
       "tier": 2
     },
-    "mf_waveworn_shard": {
+    "mid_frequency_waveworn_shard": {
       "game_id": 4120100002,
       "label": "Mid Frequency Waveworn Shard",
       "Category": "forgery",
@@ -604,7 +604,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_2_UI.webp",
       "tier": 3
     },
-    "hf_waveworn_shard": {
+    "high_frequency_waveworn_shard": {
       "game_id": 4120100003,
       "label": "High Frequency Waveworn Shard",
       "Category": "forgery",
@@ -612,7 +612,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_3_UI.webp",
       "tier": 4
     },
-    "ff_waveworn_shard": {
+    "full_frequency_waveworn_shard": {
       "game_id": 4120100004,
       "label": "Full Frequency Waveworn Shard",
       "Category": "forgery",
@@ -630,7 +630,7 @@
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_002_1_UI.webp",
       "tier": 4
     },
-    "strife_tacet_core": {
+    "strife_tace_core": {
       "game_id": 4140010002,
       "label": "Strife Tace Core",
       "Category": "boss",
@@ -855,6 +855,14 @@
       "SubCategory": "weeklyboss",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_025_UI.webp",
       "tier": 4
+    },
+    "we_who_question": {
+      "game_id": 4150030009,
+      "label": "We Who Question",
+      "Category": "weekly",
+      "SubCategory": "weeklyboss",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_026_UI.webp",
+      "tier": 4
     }
   },
   "ascension": {
@@ -1073,6 +1081,22 @@
       "SubCategory": "ascension",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_074_UI.webp",
       "tier": 3
+    },
+    "dream_of_stars": {
+      "game_id": 4130010027,
+      "label": "Dream of Stars",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_075_UI.webp",
+      "tier": 3
+    },
+    "redbell": {
+      "game_id": 4130010028,
+      "label": "Redbell",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_076_UI.webp",
+      "tier": 3
     }
   },
   "player_exp": {
@@ -1103,7 +1127,7 @@
       "tier": 4,
       "value": 8000
     },
-    "premium_resonance_potion": {
+    "preminum_resonance_potion": {
       "game_id": 4160010004,
       "label": "Preminum Resonance Potion",
       "Category": "player_exp",
@@ -1141,7 +1165,7 @@
       "tier": 4,
       "value": 8000
     },
-    "premium_energy_core": {
+    "preminum_energy_core": {
       "game_id": 4170010004,
       "label": "Preminum Energy Core",
       "Category": "weapon_exp",

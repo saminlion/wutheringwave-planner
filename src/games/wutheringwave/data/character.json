@@ -629,10 +629,12 @@
     "rarity": 5,
     "element": "glacio",
     "weapon": "sword",
-    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Feixue_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_FeiXue_UI.webp",
     "common": "exoswarm",
     "forgery": "polarizer",
-    "boss": 4140030021
+    "ascension": 4130010028,
+    "boss": 4140030021,
+    "weeklyBoss": 4150030009
   },
   "denia": {
     "game_id": 4250200050,
@@ -640,9 +642,11 @@
     "rarity": 5,
     "element": "fusion",
     "weapon": "rectifier",
-    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_64_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_daniya_UI.webp",
     "common": "mech",
     "forgery": "string",
-    "boss": 4140030020
+    "ascension": 4130010027,
+    "boss": 4140030020,
+    "weeklyBoss": 4150030009
   }
 }
