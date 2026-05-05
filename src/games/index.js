@@ -5,12 +5,14 @@
 import wutheringWavePlugin from './wutheringwave';
 import endfieldPlugin from './endfield';
 import gfl2Plugin from './gfl2';
+import ntePlugin from './nte';
 
 // 등록된 게임 플러그인
 const games = {
   wutheringwave: wutheringWavePlugin,
   endfield: endfieldPlugin,
   gfl2: gfl2Plugin,
+  nte: ntePlugin,
 };
 
 // 지원 게임 목록
@@ -34,6 +36,13 @@ export const supportedGames = [
     name: "Girls' Frontline 2: Exilium",
     shortName: 'GFL2',
     icon: '🔫',
+    enabled: true,
+  },
+  {
+    id: 'nte',
+    name: 'Neverness To Everness',
+    shortName: 'NTE',
+    icon: '🌙',
     enabled: true,
   },
 ];
