@@ -11,6 +11,7 @@ import 'vue3-toastify/dist/index.css';
 import wutheringwavePlugin from './games/wutheringwave';
 import endfieldPlugin from './games/endfield';
 import gfl2Plugin from './games/gfl2';
+import ntePlugin from './games/nte';
 import { useGameRegistryStore } from './store/gameRegistry';
 
 const app = createApp(App);
@@ -30,6 +31,7 @@ const gameRegistry = useGameRegistryStore();
 gameRegistry.registerGame(wutheringwavePlugin);
 gameRegistry.registerGame(endfieldPlugin);
 gameRegistry.registerGame(gfl2Plugin);
+gameRegistry.registerGame(ntePlugin);
 gameRegistry.hydrate(); // Restore last selected game
 
 // Router

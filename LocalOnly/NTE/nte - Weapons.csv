@@ -1,0 +1,45 @@
+Seq,Rarity,Type,TypeCode,game_id,display_name,common,forgery,icon
+1,4,synthesis,10,7341000001,Umbrella,numeral,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_yuren_256.webp
+2,4,gas,20,7342000002,"Cosmos Daze, Wild Reverie",whispers,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_bopu_256.webp
+3,6,gas,20,7362000003,Good Boy's Grand Adventure,numeral,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_mofeikesi_256.webp
+4,4,liquid,30,7343000004,Shiny Days,whispers,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_jiaojuan_256.webp
+5,4,solid,40,7344000005,The Forgotten,whispers,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_wuhuakuang_256.webp
+6,6,synthesis,10,7361000006,Camellia Society,numeral,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_jingmotingyuan_256.webp
+7,4,plasma,50,7345000007,Oraora!,silhouette,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_oulaquantao_256.webp
+8,4,liquid,30,7343000008,Mind Royale,silhouette,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_lingganzhongjiezhe_256.webp
+9,6,solid,40,7364000009,Day Off,whispers,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_rishi_256.webp
+10,3,synthesis,10,7331000010,Dangerous Game,whispers,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_dustbin_256.webp
+11,3,solid,40,7334000011,First Step to Success,silhouette,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_nonos_256.webp
+12,3,gas,20,7332000012,Be Happy,numeral,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_HugVine_256.webp
+13,3,plasma,50,7335000013,Us.,delusions,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_yuanheti_256.webp
+14,4,synthesis,10,7341000014,"The Good, The Bad, The Bitter",numeral,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_BitterCake_256.webp
+15,3,liquid,30,7333000015,Real Music,delusions,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_fudianling_256.webp
+16,6,plasma,50,7365000016,Ready-Ready,whispers,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_TigerTally_256.webp
+17,6,solid,40,7364000017,Blow up the Crowd,numeral,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_BitGame_256.webp
+18,6,liquid,30,7363000018,Youthful Fantasy,delusions,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_BlackBook_256.webp
+19,6,gas,20,7362000019,Contemplative Cat,whispers,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_mamen_256.webp
+20,6,solid,40,7364000020,Your Happiness is Priceless,whispers,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Nakupeda_256.webp
+21,6,plasma,50,7365000021,Raging Flames,delusions,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_wushoutieyu_256.webp
+22,6,synthesis,10,7361000022,Eternal Waltz,silhouette,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Arachne_256.webp
+23,6,solid,40,7364000023,Hethereau's Keeper,silhouette,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_PoliceRat_256.webp
+24,4,synthesis,10,7341000024,The Great Thief,numeral,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_tuansanlang_256.webp
+25,4,gas,20,7342000025,Watch Your Heads!,delusions,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Kite_256.webp
+26,4,liquid,30,7343000026,Clear Skies,silhouette,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_PaperPlane_256.webp
+27,4,gas,20,7342000027,"Failing You, Heavy in My Heart",delusions,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_spider_256.webp
+28,4,plasma,50,7345000028,Drawn Blade,delusions,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_yaodao_256.webp
+29,4,synthesis,10,7341000029,A Time Will Come,whispers,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_koinobori_256.webp
+30,4,synthesis,10,7341000030,The Fool's Spring,silhouette,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_snowman_256.webp
+31,6,plasma,50,7365000031,Fluff of Fortitude,numeral,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_BoxingCandy_256.webp
+32,6,synthesis,10,7361000032,Fluff of Ferocity,numeral,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_KnightCandy_256.webp
+33,6,gas,20,7362000033,Fluff of Finesse,delusions,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_ThiefCandy_256.webp
+34,6,liquid,30,7363000034,Fluff of Fleetness,delusions,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_MotorCandy_256.webp
+35,6,solid,40,7364000035,Fluff of Fearlessness,delusions,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_BlastCandy_256.webp
+36,4,solid,40,7344000036,Time Bandit,delusions,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Qiaoqiao_256.webp
+37,4,liquid,30,7343000037,Call of the Twisted City,numeral,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Castle_256.webp
+38,6,solid,40,7364000038,Reality Refuge,silhouette,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Butterfly_256.webp
+39,6,gas,20,7362000039,Tears Beneath the Mask,silhouette,dessert,https://api.everness.info/data/assets/UI_Icon/Fork/fork_NestBird_256.webp
+40,6,plasma,50,7365000040,Song of the Whale,silhouette,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Whale_256.webp
+41,6,solid,40,7364000041,Marching Beyond Time,whispers,core,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Time_256.webp
+42,6,liquid,30,7363000042,The Last Rose,whispers,appleseed,https://api.everness.info/data/assets/UI_Icon/Fork/fork_Rose_256.webp
+43,6,plasma,50,7365000043,Stellar Veil,delusions,dream,https://api.everness.info/data/assets/UI_Icon/Fork/fork_moon_256.webp
+44,6,solid,40,7364000044,The Rain That Shook the World,whispers,can,https://api.everness.info/data/assets/UI_Icon/Fork/fork_worldrain_256.webp

@@ -1,0 +1,518 @@
+{
+  "credit": {
+    "beetle_coin": {
+      "game_id": 7100010001,
+      "label": "Beetle Coin",
+      "Category": "credit",
+      "SubCategory": "credit",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/item_Coin_Beetle.webp"
+    }
+  },
+  "player_exp": {
+    "rising_hunter_guide": {
+      "game_id": 7160010001,
+      "label": "Rising Hunter Guide",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "tier": 1,
+      "value": 1000,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/CharacterUpMaterial_lv1.webp"
+    },
+    "senior_hunter_guide": {
+      "game_id": 7160010002,
+      "label": "Senior Hunter Guide",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "tier": 2,
+      "value": 5000,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/CharacterUpMaterial_lv2.webp"
+    },
+    "elite_hunter_guide": {
+      "game_id": 7160010003,
+      "label": "Elite Hunter Guide",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "tier": 3,
+      "value": 20000,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/CharacterUpMaterial_lv3.webp"
+    }
+  },
+  "weapon_exp": {
+    "light_dye": {
+      "game_id": 7170010001,
+      "label": "Light Dye",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "tier": 1,
+      "value": 500,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weaponexp_lv1_256x256.webp"
+    },
+    "colorless_dye": {
+      "game_id": 7170010002,
+      "label": "Colorless Dye",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "tier": 2,
+      "value": 2500,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weaponexp_lv2_256x256.webp"
+    },
+    "chaotic_dye": {
+      "game_id": 7170010003,
+      "label": "Chaotic Dye",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "tier": 3,
+      "value": 10000,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weaponexp_lv3_256x256.webp"
+    }
+  },
+  "common": {
+    "lost_whispers": {
+      "game_id": 7110010001,
+      "label": "Lost Whispers",
+      "Category": "common",
+      "SubCategory": "whispers",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/OrdinaryMonMaterial_01_lv1.webp"
+    },
+    "obscure_whispers": {
+      "game_id": 7110010002,
+      "label": "Obscure Whispers",
+      "Category": "common",
+      "SubCategory": "whispers",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/OrdinaryMonMaterial_01_lv2.webp"
+    },
+    "paradoxical_whispers": {
+      "game_id": 7110010003,
+      "label": "Paradoxical Whispers",
+      "Category": "common",
+      "SubCategory": "whispers",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/OrdinaryMonMaterial_01_lv3.webp"
+    },
+    "fading_silhouette": {
+      "game_id": 7110020001,
+      "label": "Fading Silhouette",
+      "Category": "common",
+      "SubCategory": "silhouette",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_tuiselveying.webp"
+    },
+    "blurred_silhouette": {
+      "game_id": 7110020002,
+      "label": "Blurred Silhouette",
+      "Category": "common",
+      "SubCategory": "silhouette",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_shijiaolveying.webp"
+    },
+    "chaos_silhouette": {
+      "game_id": 7110020003,
+      "label": "Chaos Silhouette",
+      "Category": "common",
+      "SubCategory": "silhouette",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_huianlveying.webp"
+    },
+    "blurred_numeral": {
+      "game_id": 7110030001,
+      "label": "Blurred Numeral",
+      "Category": "common",
+      "SubCategory": "numeral",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_mohushufu.webp"
+    },
+    "unsolved_numeral": {
+      "game_id": 7110030002,
+      "label": "Unsolved Numeral",
+      "Category": "common",
+      "SubCategory": "numeral",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_bianxingshufu.webp"
+    },
+    "distorted_numeral": {
+      "game_id": 7110030003,
+      "label": "Distorted Numeral",
+      "Category": "common",
+      "SubCategory": "numeral",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_niuqushufu.webp"
+    },
+    "suspended_delusions": {
+      "game_id": 7110040001,
+      "label": "Suspended Delusions",
+      "Category": "common",
+      "SubCategory": "delusions",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_xuannianwangning.webp"
+    },
+    "yearning_delusions": {
+      "game_id": 7110040002,
+      "label": "Yearning Delusions",
+      "Category": "common",
+      "SubCategory": "delusions",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_kewangwangning.webp"
+    },
+    "transcendent_delusion": {
+      "game_id": 7110040003,
+      "label": "Transcendent Delusion",
+      "Category": "common",
+      "SubCategory": "delusions",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_chaoyanwangning.webp"
+    }
+  },
+  "boss": {
+    "confessional_flower_seed": {
+      "game_id": 7140010001,
+      "label": "Confessional Flower Seed",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_huafang3.webp"
+    },
+    "charging_knight_spark_plug": {
+      "game_id": 7140010002,
+      "label": "Charging Knight Spark Plug",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_02.webp"
+    },
+    "a_page_from_delusion's_shore": {
+      "game_id": 7140010003,
+      "label": "A Page from Delusion's Shore",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_03.webp"
+    },
+    "water_moon_pick": {
+      "game_id": 7140010004,
+      "label": "Water Moon Pick",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_04.webp"
+    },
+    "nest_guard_fragment": {
+      "game_id": 7140010005,
+      "label": "Nest Guard Fragment",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_05.webp"
+    },
+    "colorful_ticket_stub": {
+      "game_id": 7140010006,
+      "label": "Colorful Ticket Stub",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_06.webp"
+    },
+    "tear_of_the_sea": {
+      "game_id": 7140010007,
+      "label": "Tear of the Sea",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_07.webp"
+    }
+  },
+  "weeklyBoss": {
+    "good_boy_stamp": {
+      "game_id": 7150010001,
+      "label": "Good Boy Stamp",
+      "Category": "weeklyBoss",
+      "SubCategory": "weeklyBoss",
+      "tier": 4,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/mofeikesi_yinzhang.webp"
+    },
+    "the_good_boy's_fluff": {
+      "game_id": 7150010002,
+      "label": "The Good Boy's Fluff",
+      "Category": "weeklyBoss",
+      "SubCategory": "weeklyBoss",
+      "tier": 4,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/mofeikesi_maoqiu.webp"
+    },
+    "dandelion's_pass": {
+      "game_id": 7150010003,
+      "label": "Dandelion's Pass",
+      "Category": "weeklyBoss",
+      "SubCategory": "weeklyBoss",
+      "tier": 4,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/mofeikesi_hunhuan.webp"
+    },
+    "dress_sleeves_of_vanity": {
+      "game_id": 7150010004,
+      "label": "Dress Sleeves of Vanity",
+      "Category": "weeklyBoss",
+      "SubCategory": "weeklyBoss",
+      "tier": 4,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a02_01.webp"
+    },
+    "crown_called_nobility": {
+      "game_id": 7150010005,
+      "label": "Crown Called Nobility",
+      "Category": "weeklyBoss",
+      "SubCategory": "weeklyBoss",
+      "tier": 4,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a02_02.webp"
+    },
+    "scepter_called_prestige": {
+      "game_id": 7150010006,
+      "label": "Scepter Called Prestige",
+      "Category": "weeklyBoss",
+      "SubCategory": "weeklyBoss",
+      "tier": 4,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a02_03.webp"
+    }
+  },
+  "forgery": {
+    "nestling's_longing": {
+      "game_id": 7120010001,
+      "label": "Nestling's Longing",
+      "Category": "forgery",
+      "SubCategory": "bird",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/characterskill_01_lv1_256x256_.webp"
+    },
+    "dove's_flutter": {
+      "game_id": 7120010002,
+      "label": "Dove's Flutter",
+      "Category": "forgery",
+      "SubCategory": "bird",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/characterskill_01_lv2_256x256_.webp"
+    },
+    "the_olive_branch": {
+      "game_id": 7120010003,
+      "label": "The Olive Branch",
+      "Category": "forgery",
+      "SubCategory": "bird",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/characterskill_01_lv3_256x256_.webp"
+    },
+    "fng": {
+      "game_id": 7120020001,
+      "label": "FNG",
+      "Category": "forgery",
+      "SubCategory": "flower",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_02_lv1.webp"
+    },
+    "co": {
+      "game_id": 7120020002,
+      "label": "CO",
+      "Category": "forgery",
+      "SubCategory": "flower",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_02_lv2.webp"
+    },
+    "white_rose": {
+      "game_id": 7120020003,
+      "label": "White Rose",
+      "Category": "forgery",
+      "SubCategory": "flower",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_02_lv3.webp"
+    },
+    "first_expectations": {
+      "game_id": 7120030001,
+      "label": "First Expectations",
+      "Category": "forgery",
+      "SubCategory": "magic",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_03_lv1.webp"
+    },
+    "known_weariness": {
+      "game_id": 7120030002,
+      "label": "Known Weariness",
+      "Category": "forgery",
+      "SubCategory": "magic",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_03_lv2.webp"
+    },
+    "black_hat": {
+      "game_id": 7120030003,
+      "label": "Black Hat",
+      "Category": "forgery",
+      "SubCategory": "magic",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_03_lv3.webp"
+    },
+    "synchronicity_of_thought": {
+      "game_id": 7120040001,
+      "label": "Synchronicity of Thought",
+      "Category": "forgery",
+      "SubCategory": "heart",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_04_lv1.webp"
+    },
+    "resonance_of_faith": {
+      "game_id": 7120040002,
+      "label": "Resonance of Faith",
+      "Category": "forgery",
+      "SubCategory": "heart",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_04_lv2.webp"
+    },
+    "heart-racing_night": {
+      "game_id": 7120040003,
+      "label": "Heart-Racing Night",
+      "Category": "forgery",
+      "SubCategory": "heart",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_04_lv3.webp"
+    },
+    "hesitation_of_the_waves": {
+      "game_id": 7120050001,
+      "label": "Hesitation of the Waves",
+      "Category": "forgery",
+      "SubCategory": "hang",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_05_lv1.webp"
+    },
+    "suspend_whispers": {
+      "game_id": 7120050002,
+      "label": "Suspend Whispers",
+      "Category": "forgery",
+      "SubCategory": "hang",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_05_lv2.webp"
+    },
+    "the_second_self": {
+      "game_id": 7120050003,
+      "label": "The Second Self",
+      "Category": "forgery",
+      "SubCategory": "hang",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_05_lv3.webp"
+    },
+    "iron_appleseed": {
+      "game_id": 7120060001,
+      "label": "Iron Appleseed",
+      "Category": "forgery",
+      "SubCategory": "appleseed",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_01_lv1.webp"
+    },
+    "silver_appleseed": {
+      "game_id": 7120060002,
+      "label": "Silver Appleseed",
+      "Category": "forgery",
+      "SubCategory": "appleseed",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_01_lv2.webp"
+    },
+    "golden_appleseed": {
+      "game_id": 7120060003,
+      "label": "Golden Appleseed",
+      "Category": "forgery",
+      "SubCategory": "appleseed",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_01_lv3.webp"
+    },
+    "beaty": {
+      "game_id": 7120070001,
+      "label": "Beaty",
+      "Category": "forgery",
+      "SubCategory": "can",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_02_lv1.webp"
+    },
+    "versey": {
+      "game_id": 7120070002,
+      "label": "Versey",
+      "Category": "forgery",
+      "SubCategory": "can",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_02_lv2.webp"
+    },
+    "harmony": {
+      "game_id": 7120070003,
+      "label": "Harmony",
+      "Category": "forgery",
+      "SubCategory": "can",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_02_lv3.webp"
+    },
+    "liquid_dream_trial_kit": {
+      "game_id": 7120080001,
+      "label": "Liquid Dream Trial Kit",
+      "Category": "forgery",
+      "SubCategory": "dream",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_03_lv1.webp"
+    },
+    "liquid_dream_travel_kit": {
+      "game_id": 7120080002,
+      "label": "Liquid Dream Travel Kit",
+      "Category": "forgery",
+      "SubCategory": "dream",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_03_lv2.webp"
+    },
+    "liquid_dream_can": {
+      "game_id": 7120080003,
+      "label": "Liquid Dream Can",
+      "Category": "forgery",
+      "SubCategory": "dream",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_03_lv3.webp"
+    },
+    "flavorless_cold_dessert": {
+      "game_id": 7120090001,
+      "label": "Flavorless Cold Dessert",
+      "Category": "forgery",
+      "SubCategory": "dessert",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_04_lv2.webp"
+    },
+    "plain_cold_dessert": {
+      "game_id": 7120090002,
+      "label": "Plain Cold Dessert",
+      "Category": "forgery",
+      "SubCategory": "dessert",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_04_lv1.webp"
+    },
+    "special_cold_dessert": {
+      "game_id": 7120090003,
+      "label": "Special Cold Dessert",
+      "Category": "forgery",
+      "SubCategory": "dessert",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_04_lv3.webp"
+    },
+    "beginner_drama_core": {
+      "game_id": 7120100001,
+      "label": "Beginner Drama Core",
+      "Category": "forgery",
+      "SubCategory": "core",
+      "tier": 1,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_05_lv1.webp"
+    },
+    "master_drama_core": {
+      "game_id": 7120100002,
+      "label": "Master Drama Core",
+      "Category": "forgery",
+      "SubCategory": "core",
+      "tier": 2,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_05_lv2.webp"
+    },
+    "collector's_drama_core": {
+      "game_id": 7120100003,
+      "label": "Collector's Drama Core",
+      "Category": "forgery",
+      "SubCategory": "core",
+      "tier": 3,
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_05_lv3.webp"
+    }
+  }
+}

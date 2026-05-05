@@ -1,0 +1,52 @@
+[
+  {
+    "character": {
+      "level": {
+        "1": {
+          "player_exp": 0,
+          "credit": 0
+        },
+        "20": {
+          "player_exp": 13650,
+          "credit": 30000
+        },
+        "20A": {
+          "common": [5, 1],
+          "credit": 25000
+        },
+        "30": {
+          "player_exp": 213000,
+          "credit": 53750
+        },
+        "30A": {
+          "common": [12, 1],
+          "boss": 2,
+          "credit": 50000
+        }
+      },
+      "skill": {
+        "2": {
+          "forgery": [2, 1],
+          "common": [2, 1],
+          "credit": 2000
+        }
+      }
+    },
+    "weapon": {
+      "level": {
+        "1": {
+          "weapon_exp": 0,
+          "credit": 0
+        },
+        "20": {
+          "weapon_exp": 39000,
+          "credit": 12000
+        },
+        "20A": {
+          "common": [4, 1],
+          "forgery": [4, 1]
+        }
+      }
+    }
+  }
+]

@@ -120,6 +120,21 @@ const GAMES = {
       weapons: 'Weapons_i18n',
     },
   },
+  nte: {
+    sheetId: extractSheetId(process.env.SHEET_ID_NTE),
+    dataPath: 'src/games/nte/data',
+    localePath: 'src/games/nte/locales',
+    tabs: {
+      characters: 'Characters',
+      materials: 'Materials',
+      weapons: 'Weapons',
+    },
+    i18nTabs: {
+      characters: 'Characters_i18n',
+      materials: 'Materials_i18n',
+      weapons: 'Weapons_i18n',
+    },
+  },
 };
 
 /**
@@ -317,8 +332,9 @@ function transformCharacters(rows) {
     if (row.boss != null && row.boss !== '') {
       character.boss = parseNumberOrString(row.boss);
     }
-    if (row.weeklyBoss != null && row.weeklyBoss !== '') {
-      character.weeklyBoss = parseNumberOrString(row.weeklyBoss);
+    const weeklyBossVal = row.weeklyBoss ?? row.weeklyboss;
+    if (weeklyBossVal != null && weeklyBossVal !== '') {
+      character.weeklyBoss = parseNumberOrString(weeklyBossVal);
     }
 
     // GFL2 specific fields

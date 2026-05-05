@@ -18,6 +18,7 @@ on:
           - wutheringwave
           - endfield
           - gfl2
+          - nte
 
 permissions:
   contents: write
@@ -47,6 +48,7 @@ jobs:
           SHEET_ID_WUTHERINGWAVE: ${{ secrets.SHEET_ID_WUTHERINGWAVE }}
           SHEET_ID_ENDFIELD: ${{ secrets.SHEET_ID_ENDFIELD }}
           SHEET_ID_GIRLSFRONTIER: ${{ secrets.SHEET_ID_GIRLSFRONTIER }}
+          SHEET_ID_NTE: ${{ secrets.SHEET_ID_NTE }}
         run: |
           if [ -n "${{ github.event.inputs.game }}" ]; then
             node scripts/sync-sheets.js --game=${{ github.event.inputs.game }}
