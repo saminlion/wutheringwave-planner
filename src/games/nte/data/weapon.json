@@ -1,1 +1,398 @@
-{}
+{
+  "umbrella": {
+    "game_id": 7341000001,
+    "display_name": "Umbrella",
+    "rarity": 4,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_yuren_256.webp",
+    "common": "numeral",
+    "forgery": "appleseed"
+  },
+  "cosmos_daze,_wild_reverie": {
+    "game_id": 7342000002,
+    "display_name": "Cosmos Daze, Wild Reverie",
+    "rarity": 4,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_bopu_256.webp",
+    "common": "whispers",
+    "forgery": "core"
+  },
+  "good_boy's_grand_adventure": {
+    "game_id": 7362000003,
+    "display_name": "Good Boy's Grand Adventure",
+    "rarity": 6,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_mofeikesi_256.webp",
+    "common": "numeral",
+    "forgery": "dessert"
+  },
+  "shiny_days": {
+    "game_id": 7343000004,
+    "display_name": "Shiny Days",
+    "rarity": 4,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_jiaojuan_256.webp",
+    "common": "whispers",
+    "forgery": "dream"
+  },
+  "the_forgotten": {
+    "game_id": 7344000005,
+    "display_name": "The Forgotten",
+    "rarity": 4,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_wuhuakuang_256.webp",
+    "common": "whispers",
+    "forgery": "appleseed"
+  },
+  "camellia_society": {
+    "game_id": 7361000006,
+    "display_name": "Camellia Society",
+    "rarity": 6,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_jingmotingyuan_256.webp",
+    "common": "numeral",
+    "forgery": "core"
+  },
+  "oraora!": {
+    "game_id": 7345000007,
+    "display_name": "Oraora!",
+    "rarity": 4,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_oulaquantao_256.webp",
+    "common": "silhouette",
+    "forgery": "can"
+  },
+  "mind_royale": {
+    "game_id": 7343000008,
+    "display_name": "Mind Royale",
+    "rarity": 4,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_lingganzhongjiezhe_256.webp",
+    "common": "silhouette",
+    "forgery": "can"
+  },
+  "day_off": {
+    "game_id": 7364000009,
+    "display_name": "Day Off",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_rishi_256.webp",
+    "common": "whispers",
+    "forgery": "can"
+  },
+  "dangerous_game": {
+    "game_id": 7331000010,
+    "display_name": "Dangerous Game",
+    "rarity": 3,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_dustbin_256.webp",
+    "common": "whispers",
+    "forgery": "appleseed"
+  },
+  "first_step_to_success": {
+    "game_id": 7334000011,
+    "display_name": "First Step to Success",
+    "rarity": 3,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_nonos_256.webp",
+    "common": "silhouette",
+    "forgery": "can"
+  },
+  "be_happy": {
+    "game_id": 7332000012,
+    "display_name": "Be Happy",
+    "rarity": 3,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_HugVine_256.webp",
+    "common": "numeral",
+    "forgery": "dream"
+  },
+  "us.": {
+    "game_id": 7335000013,
+    "display_name": "Us.",
+    "rarity": 3,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_yuanheti_256.webp",
+    "common": "delusions",
+    "forgery": "dessert"
+  },
+  "the_good,_the_bad,_the_bitter": {
+    "game_id": 7341000014,
+    "display_name": "The Good, The Bad, The Bitter",
+    "rarity": 4,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BitterCake_256.webp",
+    "common": "numeral",
+    "forgery": "can"
+  },
+  "real_music": {
+    "game_id": 7333000015,
+    "display_name": "Real Music",
+    "rarity": 3,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_fudianling_256.webp",
+    "common": "delusions",
+    "forgery": "core"
+  },
+  "ready-ready": {
+    "game_id": 7365000016,
+    "display_name": "Ready-Ready",
+    "rarity": 6,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_TigerTally_256.webp",
+    "common": "whispers",
+    "forgery": "can"
+  },
+  "blow_up_the_crowd": {
+    "game_id": 7364000017,
+    "display_name": "Blow up the Crowd",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BitGame_256.webp",
+    "common": "numeral",
+    "forgery": "can"
+  },
+  "youthful_fantasy": {
+    "game_id": 7363000018,
+    "display_name": "Youthful Fantasy",
+    "rarity": 6,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BlackBook_256.webp",
+    "common": "delusions",
+    "forgery": "dream"
+  },
+  "contemplative_cat": {
+    "game_id": 7362000019,
+    "display_name": "Contemplative Cat",
+    "rarity": 6,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_mamen_256.webp",
+    "common": "whispers",
+    "forgery": "dream"
+  },
+  "your_happiness_is_priceless": {
+    "game_id": 7364000020,
+    "display_name": "Your Happiness is Priceless",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Nakupeda_256.webp",
+    "common": "whispers",
+    "forgery": "appleseed"
+  },
+  "raging_flames": {
+    "game_id": 7365000021,
+    "display_name": "Raging Flames",
+    "rarity": 6,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_wushoutieyu_256.webp",
+    "common": "delusions",
+    "forgery": "dream"
+  },
+  "eternal_waltz": {
+    "game_id": 7361000022,
+    "display_name": "Eternal Waltz",
+    "rarity": 6,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Arachne_256.webp",
+    "common": "silhouette",
+    "forgery": "dessert"
+  },
+  "hethereau's_keeper": {
+    "game_id": 7364000023,
+    "display_name": "Hethereau's Keeper",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_PoliceRat_256.webp",
+    "common": "silhouette",
+    "forgery": "appleseed"
+  },
+  "the_great_thief": {
+    "game_id": 7341000024,
+    "display_name": "The Great Thief",
+    "rarity": 4,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_tuansanlang_256.webp",
+    "common": "numeral",
+    "forgery": "dessert"
+  },
+  "watch_your_heads!": {
+    "game_id": 7342000025,
+    "display_name": "Watch Your Heads!",
+    "rarity": 4,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Kite_256.webp",
+    "common": "delusions",
+    "forgery": "dessert"
+  },
+  "clear_skies": {
+    "game_id": 7343000026,
+    "display_name": "Clear Skies",
+    "rarity": 4,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_PaperPlane_256.webp",
+    "common": "silhouette",
+    "forgery": "dessert"
+  },
+  "failing_you,_heavy_in_my_heart": {
+    "game_id": 7342000027,
+    "display_name": "Failing You, Heavy in My Heart",
+    "rarity": 4,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_spider_256.webp",
+    "common": "delusions",
+    "forgery": "appleseed"
+  },
+  "drawn_blade": {
+    "game_id": 7345000028,
+    "display_name": "Drawn Blade",
+    "rarity": 4,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_yaodao_256.webp",
+    "common": "delusions",
+    "forgery": "dream"
+  },
+  "a_time_will_come": {
+    "game_id": 7341000029,
+    "display_name": "A Time Will Come",
+    "rarity": 4,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_koinobori_256.webp",
+    "common": "whispers",
+    "forgery": "dream"
+  },
+  "the_fool's_spring": {
+    "game_id": 7341000030,
+    "display_name": "The Fool's Spring",
+    "rarity": 4,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_snowman_256.webp",
+    "common": "silhouette",
+    "forgery": "core"
+  },
+  "fluff_of_fortitude": {
+    "game_id": 7365000031,
+    "display_name": "Fluff of Fortitude",
+    "rarity": 6,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BoxingCandy_256.webp",
+    "common": "numeral",
+    "forgery": "appleseed"
+  },
+  "fluff_of_ferocity": {
+    "game_id": 7361000032,
+    "display_name": "Fluff of Ferocity",
+    "rarity": 6,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_KnightCandy_256.webp",
+    "common": "numeral",
+    "forgery": "appleseed"
+  },
+  "fluff_of_finesse": {
+    "game_id": 7362000033,
+    "display_name": "Fluff of Finesse",
+    "rarity": 6,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_ThiefCandy_256.webp",
+    "common": "delusions",
+    "forgery": "can"
+  },
+  "fluff_of_fleetness": {
+    "game_id": 7363000034,
+    "display_name": "Fluff of Fleetness",
+    "rarity": 6,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_MotorCandy_256.webp",
+    "common": "delusions",
+    "forgery": "dream"
+  },
+  "fluff_of_fearlessness": {
+    "game_id": 7364000035,
+    "display_name": "Fluff of Fearlessness",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BlastCandy_256.webp",
+    "common": "delusions",
+    "forgery": "dessert"
+  },
+  "time_bandit": {
+    "game_id": 7344000036,
+    "display_name": "Time Bandit",
+    "rarity": 4,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Qiaoqiao_256.webp",
+    "common": "delusions",
+    "forgery": "appleseed"
+  },
+  "call_of_the_twisted_city": {
+    "game_id": 7343000037,
+    "display_name": "Call of the Twisted City",
+    "rarity": 4,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Castle_256.webp",
+    "common": "numeral",
+    "forgery": "core"
+  },
+  "reality_refuge": {
+    "game_id": 7364000038,
+    "display_name": "Reality Refuge",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Butterfly_256.webp",
+    "common": "silhouette",
+    "forgery": "core"
+  },
+  "tears_beneath_the_mask": {
+    "game_id": 7362000039,
+    "display_name": "Tears Beneath the Mask",
+    "rarity": 6,
+    "type": "gas",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_NestBird_256.webp",
+    "common": "silhouette",
+    "forgery": "dessert"
+  },
+  "song_of_the_whale": {
+    "game_id": 7365000040,
+    "display_name": "Song of the Whale",
+    "rarity": 6,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Whale_256.webp",
+    "common": "silhouette",
+    "forgery": "core"
+  },
+  "marching_beyond_time": {
+    "game_id": 7364000041,
+    "display_name": "Marching Beyond Time",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Time_256.webp",
+    "common": "whispers",
+    "forgery": "core"
+  },
+  "the_last_rose": {
+    "game_id": 7363000042,
+    "display_name": "The Last Rose",
+    "rarity": 6,
+    "type": "liquid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Rose_256.webp",
+    "common": "whispers",
+    "forgery": "appleseed"
+  },
+  "stellar_veil": {
+    "game_id": 7365000043,
+    "display_name": "Stellar Veil",
+    "rarity": 6,
+    "type": "plasma",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_moon_256.webp",
+    "common": "delusions",
+    "forgery": "dream"
+  },
+  "the_rain_that_shook_the_world": {
+    "game_id": 7364000044,
+    "display_name": "The Rain That Shook the World",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_worldrain_256.webp",
+    "common": "whispers",
+    "forgery": "can"
+  }
+}
