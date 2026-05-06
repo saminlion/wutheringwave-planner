@@ -3,6 +3,7 @@ import {
   weapons,
   materials,
   costs,
+  farmingRates,
   tieredMaterials,
   tieredMaterialsByGameId,
 } from './data';
@@ -91,15 +92,7 @@ export const nteConfig = {
   stamina: {
     name: 'Character Pixel',
     dailyLimit: 240,
-    farmingRates: {
-      credit: { drops: 0, stamina: 0, unobtainable: true },
-      player_exp: { drops: 0, stamina: 0, unobtainable: true },
-      weapon_exp: { drops: 0, stamina: 0, unobtainable: true },
-      common: { drops: 0, stamina: 0, unobtainable: true },
-      forgery: { drops: 0, stamina: 0, unobtainable: true },
-      boss: { drops: 0, stamina: 0, unobtainable: true },
-      weeklyBoss: { drops: 0, stamina: 0, unobtainable: true },
-    },
+    farmingRates,
   },
 
   materials: {

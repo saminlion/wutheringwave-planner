@@ -1,0 +1,9 @@
+{
+  "credit": { "unobtainable": true },
+  "common": { "unobtainable": true },
+  "forgery": { "unobtainable": true },
+  "boss": { "unobtainable": true },
+  "weeklyBoss": { "unobtainable": true },
+  "player_exp": { "unobtainable": true },
+  "weapon_exp": { "unobtainable": true }
+}

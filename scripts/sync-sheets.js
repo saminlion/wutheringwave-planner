@@ -128,6 +128,7 @@ const GAMES = {
       characters: 'Characters',
       materials: 'Materials',
       weapons: 'Weapons',
+      farmingRates: 'FarmingRates',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -510,6 +511,84 @@ function transformWeapons(rows) {
 }
 
 /**
+ * Transform farming rates rows to config format
+ *
+ * Sheet columns: category, stamina, unobtainable, value_per_item, sample_count, avg, run_1, run_2, ...
+ *
+ * Plain rows (credit, common, boss, weeklyBoss):
+ *   unobtainable=TRUE → { unobtainable: true }
+ *   otherwise → { drops: avg, stamina }
+ *
+ * Tier-suffixed rows (forgery_1/2/3, player_exp_1/2/3, weapon_exp_1/2/3):
+ *   forgery: combined to T2-equivalent drops = t1/3 + t2 + t3*3
+ *   player_exp/weapon_exp: total EXP per run = sum(avg * value_per_item)
+ */
+function transformFarmingRates(rows) {
+  const tierRows = {};
+  const plainRows = {};
+
+  for (const row of rows) {
+    if (!row.category) continue;
+    const match = row.category.match(/^(.+)_(\d+)$/);
+    if (match) {
+      const base = match[1];
+      const tier = match[2];
+      if (!tierRows[base]) tierRows[base] = {};
+      tierRows[base][tier] = row;
+    } else {
+      plainRows[row.category] = row;
+    }
+  }
+
+  const result = {};
+
+  for (const [category, row] of Object.entries(plainRows)) {
+    if (String(row.unobtainable).toUpperCase() === 'TRUE') {
+      result[category] = { unobtainable: true };
+    } else {
+      result[category] = {
+        drops: parseFloat(row.avg) || 0,
+        stamina: parseInt(row.stamina, 10) || 0,
+      };
+    }
+  }
+
+  for (const [base, tiers] of Object.entries(tierRows)) {
+    const allUnobtainable = Object.values(tiers).every(
+      row => String(row.unobtainable).toUpperCase() === 'TRUE'
+    );
+    if (allUnobtainable) {
+      result[base] = { unobtainable: true };
+      continue;
+    }
+
+    const stamina = parseInt(
+      Object.values(tiers).find(r => r.stamina)?.stamina ?? 0, 10
+    );
+
+    if (base === 'forgery') {
+      const t1 = parseFloat(tiers['1']?.avg) || 0;
+      const t2 = parseFloat(tiers['2']?.avg) || 0;
+      const t3 = parseFloat(tiers['3']?.avg) || 0;
+      // T2-equivalent: t1/3 + t2 + t3*3
+      result[base] = { drops: t1 / 3 + t2 + t3 * 3, stamina };
+    } else if (base === 'player_exp' || base === 'weapon_exp') {
+      // Total EXP per run = sum(avg * value_per_item)
+      let totalExp = 0;
+      for (const row of Object.values(tiers)) {
+        totalExp += (parseFloat(row.avg) || 0) * (parseFloat(row.value_per_item) || 0);
+      }
+      result[base] = { drops: Math.round(totalExp), stamina };
+    } else {
+      const totalDrops = Object.values(tiers).reduce((sum, row) => sum + (parseFloat(row.avg) || 0), 0);
+      result[base] = { drops: totalDrops, stamina };
+    }
+  }
+
+  return result;
+}
+
+/**
  * Transform i18n rows to locale object
  *
  * Sheet columns: game_id, en, ko
@@ -590,6 +669,9 @@ async function syncGame(gameId, config) {
             break;
           case 'weapons':
             transformed = transformWeapons(rows);
+            break;
+          case 'farmingRates':
+            transformed = transformFarmingRates(rows);
             break;
           default:
             console.log(`    Unknown data type: ${dataType}`);

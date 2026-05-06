@@ -215,12 +215,15 @@ Character Pixel
 **답변:**
 ```
 1→20:player_exp 13650, credit 30000
-  20→ 20A: ascension T1 x5, credit 25000
+  20→ 20A: common T1 x5, credit 25000
  20A→30: player_exp 213000         ,credit 53750
-  30→30A: ascenstion T1 x12 boss 2 credit 50000
- 30A→40:
-  40→40A:
+  30→30A: common T1 x12 boss x2 credit 50000
+ 30A→40: 
+  40→40A: common T2 x6 boss x8 credit 75000
  40A→50:
+ 50->50A: common T2 x12 boss x16 credit 100000
+ 60->60A: common T3 x6 boss x24 credit 125000
+ 70->70A: common T3 x9 boss x36 credit 150000
 ```
 
 ---
@@ -241,16 +244,20 @@ Lv5→6: forgery T3 x6,  boss x1,  credit 40,000
 
 **답변:**
 ```
-Lv1→2: forgery T1 x2 ascension T1 x2 credit 2000
-Lv2→3:
-Lv3→4:
-Lv4→5:
-Lv5→6:
-Lv6→7:
-Lv7→8:
-Lv8→9:
-Lv9→10:
+Lv1→2: forgery T1 x2 common T1 x2 credit 2000
+Lv2→3: forgery T1 x3 common T1 x3 credit 5000
+Lv3→4: forgery T1 x5 common T1 x5 credit 10000
+Lv4→5: forgery T2 x2 common T2 x2 credit 20000 
+Lv5→6: forgery T2 x3 common T2 x3 credit 40000
+Lv6→7: forgery T2 x5 common T2 x5 weekly x1 credit 60000
+Lv7→8: forgery T3 x3 common T3 x3 weekly x1 credit 80000
+Lv8→9: forgery T3 x5 common T3 x5 weekly x2 credit 100000
+Lv9→10: forgery T3 x8 common T3 x8 weekly x4 credit 120000
 ```
+
+## 패시브 언락
+Passive 1: forgery T2 x2 weekly x1 credit 30000
+Passive 2: forgery T3 x1 weekly x2 credit 40000
 
 ---
 
@@ -261,7 +268,7 @@ Lv9→10:
 **답변:**
 ```
 1→20: weapon_exp 39000 credit 12000
-  20→20  A: asencion T1 x 4 foregery T1 x4
+  20→20A: common T1 x 4 forgery T1 x4
  A→  :
 ```
 
