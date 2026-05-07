@@ -1,9 +1,29 @@
 {
-  "credit": { "unobtainable": true },
-  "common": { "unobtainable": true },
-  "forgery": { "unobtainable": true },
-  "boss": { "unobtainable": true },
-  "weeklyBoss": { "unobtainable": true },
-  "player_exp": { "unobtainable": true },
-  "weapon_exp": { "unobtainable": true }
+  "credit": {
+    "drops": 0,
+    "stamina": 40
+  },
+  "common": {
+    "unobtainable": true
+  },
+  "boss": {
+    "drops": 3.7,
+    "stamina": 60
+  },
+  "weeklyBoss": {
+    "drops": 0,
+    "stamina": 40
+  },
+  "forgery": {
+    "drops": 0,
+    "stamina": 40
+  },
+  "player_exp": {
+    "drops": 0,
+    "stamina": 40
+  },
+  "weapon_exp": {
+    "drops": 0,
+    "stamina": 40
+  }
 }
