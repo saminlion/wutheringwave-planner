@@ -7,7 +7,7 @@
     "unobtainable": true
   },
   "boss": {
-    "drops": 3.7,
+    "drops": 4.2,
     "stamina": 60
   },
   "weeklyBoss": {
@@ -15,7 +15,7 @@
     "stamina": 40
   },
   "forgery": {
-    "drops": 0,
+    "drops": 4,
     "stamina": 40
   },
   "player_exp": {
