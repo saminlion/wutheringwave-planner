@@ -11,8 +11,8 @@
     "stamina": 60
   },
   "weeklyBoss": {
-    "drops": 0,
-    "stamina": 40
+    "drops": 2,
+    "stamina": 60
   },
   "forgery": {
     "drops": 4,
@@ -23,7 +23,7 @@
     "stamina": 40
   },
   "weapon_exp": {
-    "drops": 0,
+    "drops": 84000,
     "stamina": 40
   }
 }
