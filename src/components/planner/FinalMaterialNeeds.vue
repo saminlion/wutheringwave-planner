@@ -863,8 +863,13 @@ const CalculateEstimatedRun = (data) => {
                 subcategoryData.task.forEach((task) => {
                     const actualNeed = Math.max(0, task.need - (task.owned + (task.synthesize || 0)));
 
-                    if (actualNeed > 0 && task.tier >= 2 && task.tier <= 5) {
-                        missing[task.tier - 2] += actualNeed; // ?덉뼱???몃뜳?ㅼ뿉 ?꾩쟻
+                    if (actualNeed > 0) {
+                        if (task.tier === 1) {
+                            // T1 = 1/3 T2-equivalent (for games where forgery starts at tier 1)
+                            missing[0] += actualNeed / 3;
+                        } else if (task.tier >= 2 && task.tier <= 5) {
+                            missing[task.tier - 2] += actualNeed;
+                        }
                     }
                 });
 

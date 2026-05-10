@@ -275,6 +275,17 @@ export class ProgressionEngine {
         return;
       }
 
+      // passive_N: direct unlock cost at passiveCostsTable[base] (e.g. passive_1, passive_2)
+      if (base.startsWith('passive_')) {
+        const passiveCosts = passiveCostsTable[base];
+        if (passiveCosts) {
+          Object.entries(passiveCosts).forEach(([materialKey, amount]) => {
+            this._process(result, materialKey, amount, characterInfo);
+          });
+        }
+        return;
+      }
+
       // passive_ability または bonus_stat_N の判定
       let costType = null;
       if (base === 'passive_ability') {

@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+> **⚠️ CRITICAL: Claude Code frequently ignores this file and the memory system.**
+> If you are Claude and reading this — you MUST follow these instructions. Do not proceed without reading the full file.
+> Specifically: **DO NOT attempt to run npm, node, or any JS/build commands on this machine. There is no Node.js installed.**
+> Check `/memory/MEMORY.md` at the start of every session. It contains project state, bug history, and user preferences that are mandatory context.
+> Not following CLAUDE.md and memory = wasted time and frustrated user.
+
 ## Project Overview
 
 **Multi-Game Planner** - A Vue 3 application supporting multiple games (WutheringWaves, Endfield) for planning character/weapon progression, calculating required materials, tracking inventory, and optimizing material synthesis.

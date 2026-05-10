@@ -2,50 +2,62 @@
   {
     "character": {
       "level": {
-        "1": {
-          "player_exp": 0,
-          "credit": 0
-        },
-        "20": {
-          "player_exp": 13650,
-          "credit": 30000
-        },
-        "20A": {
-          "common": [5, 1],
-          "credit": 25000
-        },
-        "30": {
-          "player_exp": 213000,
-          "credit": 53750
-        },
-        "30A": {
-          "common": [12, 1],
-          "boss": 2,
-          "credit": 50000
-        }
+        "1": { "player_exp": 0, "credit": 0 },
+        "20": { "player_exp": 13650, "credit": 30000 },
+        "20A": { "common": [5, 1], "credit": 25000 },
+        "30": { "player_exp": 213000, "credit": 53750 },
+        "30A": { "common": [12, 1], "boss": 2, "credit": 50000 },
+        "40": { "player_exp": 371000, "credit": 95200 },
+        "40A": { "common": [6, 2], "boss": 8, "credit": 75000 },
+        "50A": { "common": [12, 2], "boss": 16, "credit": 100000 },
+        "60A": { "common": [6, 3], "boss": 24, "credit": 125000 },
+        "70A": { "common": [9, 3], "boss": 36, "credit": 150000 }
       },
       "skill": {
-        "2": {
-          "forgery": [2, 1],
-          "common": [2, 1],
-          "credit": 2000
-        }
+        "2": { "forgery": [2, 1], "common": [2, 1], "credit": 2000 },
+        "3": { "forgery": [3, 1], "common": [3, 1], "credit": 5000 },
+        "4": { "forgery": [5, 1], "common": [5, 1], "credit": 10000 },
+        "5": { "forgery": [2, 2], "common": [2, 2], "credit": 20000 },
+        "6": { "forgery": [3, 2], "common": [3, 2], "credit": 40000 },
+        "7": { "forgery": [5, 2], "common": [5, 2], "weeklyBoss": 1, "credit": 60000 },
+        "8": { "forgery": [3, 3], "common": [3, 3], "weeklyBoss": 1, "credit": 80000 },
+        "9": { "forgery": [5, 3], "common": [5, 3], "weeklyBoss": 2, "credit": 100000 },
+        "10": { "forgery": [8, 3], "common": [8, 3], "weeklyBoss": 4, "credit": 120000 }
+      },
+      "passive": {
+        "passive_1": { "forgery": [2, 2], "weeklyBoss": 1, "credit": 30000 },
+        "passive_2": { "forgery": [1, 3], "weeklyBoss": 2, "credit": 40000 }
       }
     },
     "weapon": {
-      "level": {
-        "1": {
-          "weapon_exp": 0,
-          "credit": 0
-        },
-        "20": {
-          "weapon_exp": 39000,
-          "credit": 12000
-        },
-        "20A": {
-          "common": [4, 1],
-          "forgery": [4, 1]
-        }
+      "level_3": {
+        "1": { "weapon_exp": 0, "credit": 0 },
+        "20A": { "common": [2, 1], "forgery": [2, 1], "credit": 12000 },
+        "30A": { "common": [6, 1], "forgery": [6, 1], "credit": 24000 },
+        "40A": { "common": [4, 2], "forgery": [4, 2], "credit": 36000 },
+        "50A": { "common": [8, 2], "forgery": [8, 2], "credit": 48000 },
+        "60A": { "common": [4, 3], "forgery": [4, 3], "credit": 60000 },
+        "70A": { "common": [8, 3], "forgery": [8, 3], "credit": 72000 }
+      },
+      "level_4": {
+        "1": { "weapon_exp": 0, "credit": 0 },
+        "20A": { "common": [3, 1], "forgery": [3, 1], "credit": 16000 },
+        "30A": { "common": [8, 1], "forgery": [8, 1], "credit": 32000 },
+        "40A": { "common": [5, 2], "forgery": [5, 2], "credit": 48000 },
+        "50A": { "common": [10, 2], "forgery": [10, 2], "credit": 64000 },
+        "60A": { "common": [5, 3], "forgery": [5, 3], "credit": 80000 },
+        "70A": { "common": [10, 3], "forgery": [10, 3], "credit": 96000 }
+      },
+      "level_6": {
+        "1": { "weapon_exp": 0, "credit": 0 },
+        "20": { "weapon_exp": 39000, "credit": 12000 },
+        "20A": { "common": [4, 1], "forgery": [4, 1], "credit": 20000 },
+        "30": { "weapon_exp": 96000, "credit": 30000 },
+        "30A": { "common": [10, 1], "forgery": [10, 1], "credit": 40000 },
+        "40A": { "common": [6, 2], "forgery": [6, 2], "credit": 60000 },
+        "50A": { "common": [12, 2], "forgery": [12, 2], "credit": 80000 },
+        "60A": { "common": [6, 3], "forgery": [6, 3], "credit": 100000 },
+        "70A": { "common": [12, 3], "forgery": [12, 3], "credit": 120000 }
       }
     }
   }

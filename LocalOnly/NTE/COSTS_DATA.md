@@ -18,14 +18,14 @@
 | 20→20A | ascension T1 x5, credit 25000 | ✅ |
 | 20A→30 | player_exp 213000, credit 53750 | ✅ |
 | 30→30A | ascension T1 x12, boss x2, credit 50000 | ✅ |
-| 30A→40 | player_exp 371000, credit 95200 |⬜ |
-| 40→40A | common T2 x6 boss x8 credit 75000| ⬜ |
+| 30A→40 | player_exp 371000, credit 95200 | ✅ |
+| 40→40A | common T2 x6, boss x8, credit 75000 | ✅ |
 | 40A→50 | | ⬜ |
-| 50→50A | common T2 x12 boss x16 credit 100000| ⬜ |
+| 50→50A | common T2 x12, boss x16, credit 100000 | ✅ |
 | 50A→60 | | ⬜ |
-| 60→60A | common T3 x6 boss x24 credit 125000| ⬜ |
+| 60→60A | common T3 x6, boss x24, credit 125000 | ✅ |
 | 60A→70 | | ⬜ |
-| 70→70A | common T3 x9 boss x36 credit 150000| ⬜ |
+| 70→70A | common T3 x9, boss x36, credit 150000 | ✅ |
 | 70A→80 | | ⬜ |
 
 ---
@@ -37,14 +37,14 @@
 | 구간 | 재료 | 상태 |
 |------|------|------|
 | Lv1→2 | forgery T1 x2, ascension T1 x2, credit 2000 | ✅ |
-| Lv2→3 | forgery T1 x3 common T1 x3 credit 5000| ⬜ |
-| Lv3→4 | forgery T1 x5 common T1 x5 credit 10000| ⬜ |
-| Lv4→5 | forgery T2 x2 common T2 x2 credit 20000 | ⬜ |
-| Lv5→6 | forgery T2 x3 common T2 x3 credit 40000| ⬜ |
-| Lv6→7 | forgery T2 x5 common T2 x5 weekly x1 credit 60000| ⬜ |
-| Lv7→8 | forgery T3 x3 common T3 x3 weekly x1 credit 80000| ⬜ |
-| Lv8→9 | forgery T3 x5 common T3 x5 weekly x2 credit 100000| ⬜ |
-| Lv9→10 | forgery T3 x8 common T3 x8 weekly x4 credit 120000| ⬜ |
+| Lv2→3 | forgery T1 x3, common T1 x3, credit 5000 | ✅ |
+| Lv3→4 | forgery T1 x5, common T1 x5, credit 10000 | ✅ |
+| Lv4→5 | forgery T2 x2, common T2 x2, credit 20000 | ✅ |
+| Lv5→6 | forgery T2 x3, common T2 x3, credit 40000 | ✅ |
+| Lv6→7 | forgery T2 x5, common T2 x5, weekly x1, credit 60000 | ✅ |
+| Lv7→8 | forgery T3 x3, common T3 x3, weekly x1, credit 80000 | ✅ |
+| Lv8→9 | forgery T3 x5, common T3 x5, weekly x2, credit 100000 | ✅ |
+| Lv9→10 | forgery T3 x8, common T3 x8, weekly x4, credit 120000 | ✅ |
 
 ---
 
@@ -91,8 +91,8 @@
 
 | 항목 | 재료 | 상태 |
 |------|------|------|
-| passive_1 | forgery T2 x2 weekly x1 credit 30000| ⬜ |
-| passive_2 | forgery T3 x1 weekly x2 credit 40000| ⬜ |
+| passive_1 | forgery T2 x2, weekly x1, credit 30000 | ✅ |
+| passive_2 | forgery T3 x1, weekly x2, credit 40000 | ✅ |
 
 ---
 
@@ -105,51 +105,51 @@
 | 구간 | 재료 | 상태 |
 |------|------|------|
 | 1→20 | | ⬜ |
-| 20→20A |common T1 x2, forgery T1 x2 credit 12000 | ⬜ |
+| 20→20A | common T1 x2, forgery T1 x2, credit 12000 | ✅ |
 | 20A→30 | | ⬜ |
-| 30→30A | common T1 x6, forgery T1 x6 credit 24000| ⬜ |
+| 30→30A | common T1 x6, forgery T1 x6, credit 24000 | ✅ |
 | 30A→40 | | ⬜ |
-| 40→40A | common T2 x4, forgery T2 x4 credit 36000| ⬜ |
+| 40→40A | common T2 x4, forgery T2 x4, credit 36000 | ✅ |
 | 40A→50 | | ⬜ |
-| 50→50A | common T2 x8, forgery T2 x8 credit 48000| ⬜ |
+| 50→50A | common T2 x8, forgery T2 x8, credit 48000 | ✅ |
 | 50A→60 | | ⬜ |
-| 60→60A |common T3 x4, forgery T3 x4 credit 60000 | ⬜ |
+| 60→60A | common T3 x4, forgery T3 x4, credit 60000 | ✅ |
 | 60A→70 | | ⬜ |
-| 70→70A | common T3 x8, forgery T3 x8 credit 72000| ⬜ |
+| 70→70A | common T3 x8, forgery T3 x8, credit 72000 | ✅ |
 | 70A→80 | | ⬜ |
 
 ### A등급 (4성)
 
 | 구간 | 재료 | 상태 |
 |------|------|------|
-| 1→20 |  | ⬜ |
-| 20→20A | common T1 x3, forgery T1 x3 credit 16000 | ⬜  |
+| 1→20 | | ⬜ |
+| 20→20A | common T1 x3, forgery T1 x3, credit 16000 | ✅ |
 | 20A→30 | | ⬜ |
-| 30→30A |common T1 x8, forgery T1 x8 credit 32000 | ⬜ |
+| 30→30A | common T1 x8, forgery T1 x8, credit 32000 | ✅ |
 | 30A→40 | | ⬜ |
-| 40→40A | common T2 x5, forgery T2 x5 credit 48000| ⬜ |
+| 40→40A | common T2 x5, forgery T2 x5, credit 48000 | ✅ |
 | 40A→50 | | ⬜ |
-| 50→50A | common T2 x10, forgery T2 x10 credit 64000| ⬜ |
+| 50→50A | common T2 x10, forgery T2 x10, credit 64000 | ✅ |
 | 50A→60 | | ⬜ |
-| 60→60A |common T3 x5, forgery T3 x5 credit 80000 | ⬜ |
+| 60→60A | common T3 x5, forgery T3 x5, credit 80000 | ✅ |
 | 60A→70 | | ⬜ |
-| 70→70A | common T3 x10, forgery T3 x10 credit 96000| ⬜ |
+| 70→70A | common T3 x10, forgery T3 x10, credit 96000 | ✅ |
 | 70A→80 | | ⬜ |
 
 ### S등급 (6성)
 
 | 구간 | 재료 | 상태 |
 |------|------|------|
-| 1→20 | weapon_exp 39000, credit 12000| ⬜ |
-| 20→20A | common T1 x4, forgery T1 x4 credit 20000| ⬜ |
-| 20A→30 | | ⬜ |
-| 30→30A | common T1 x10, forgery T1 x10 credit 40000| ⬜ |
+| 1→20 | weapon_exp 39000, credit 12000 | ✅ |
+| 20→20A | common T1 x4, forgery T1 x4, credit 20000 | ✅ |
+| 20A→30 | weapon_exp 96000, credit 30000 | ✅ |
+| 30→30A | common T1 x10, forgery T1 x10, credit 40000 | ✅ |
 | 30A→40 | | ⬜ |
-| 40→40A | common T2 x6, forgery T2 x6 credit 60000| ⬜ |
+| 40→40A | common T2 x6, forgery T2 x6, credit 60000 | ✅ |
 | 40A→50 | | ⬜ |
-| 50→50A | common T2 x12, forgery T2 x12 credit 80000| ⬜ |
+| 50→50A | common T2 x12, forgery T2 x12, credit 80000 | ✅ |
 | 50A→60 | | ⬜ |
-| 60→60A | common T3 x6, forgery T3 x6 credit 100000| ⬜ |
+| 60→60A | common T3 x6, forgery T3 x6, credit 100000 | ✅ |
 | 60A→70 | | ⬜ |
-| 70→70A |common T3 x12, forgery T3 x12 credit 120000 | ⬜ |
+| 70→70A | common T3 x12, forgery T3 x12, credit 120000 | ✅ |
 | 70A→80 | | ⬜ |
