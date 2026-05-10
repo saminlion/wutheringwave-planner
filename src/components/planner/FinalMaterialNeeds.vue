@@ -861,7 +861,7 @@ const CalculateEstimatedRun = (data) => {
 
                 // 媛?task瑜??쒗쉶?섎㈃???덉뼱?꾨퀎 ?꾩슂?됱쓣 ?꾩쟻
                 subcategoryData.task.forEach((task) => {
-                    const actualNeed = Math.max(0, task.need - (task.owned + (task.synthesize || 0)));
+                    const actualNeed = Math.max(0, task.need - (getMaterialQuantity(task.id) + (task.synthesize || 0)));
 
                     if (actualNeed > 0) {
                         if (task.tier === 1) {
@@ -917,7 +917,7 @@ const CalculateEstimatedRun = (data) => {
                 for (let i = 0; i < subcategoryData.task.length; i++) {
                     const task = subcategoryData.task[i];
 
-                    const acutalNeed = task.need - task.owned;
+                    const acutalNeed = task.need - getMaterialQuantity(task.id);
 
                     if (acutalNeed > 0) {
                         currentNeed += acutalNeed;
