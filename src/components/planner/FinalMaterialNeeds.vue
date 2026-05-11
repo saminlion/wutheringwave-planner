@@ -890,7 +890,7 @@ const CalculateEstimatedRun = (data) => {
                     0
                 );
 
-                runs = missingTotal / drops;
+                runs = drops > 0 ? missingTotal / drops : 0;
             }
             else if (isExpCategory(categoryName)) {
                 // 動的expカテゴリ処理
