@@ -113,6 +113,7 @@ export const nteConfig = {
     synthesis: {
       ratio: 3,
       tierLevels: 3,
+      supportsDecomposition: true,
     },
   },
   costs,

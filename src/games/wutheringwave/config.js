@@ -140,6 +140,7 @@ export const wutheringWaveConfig = {
     synthesis: {
       ratio: 3,
       tierLevels: 4,
+      supportsDecomposition: false,
     },
   },
   costs,

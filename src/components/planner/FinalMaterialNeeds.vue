@@ -208,6 +208,8 @@ const gameConfig = computed(() => {
     return gameStore.currentGame?.config || {};
 });
 
+const supportsDecomposition = computed(() => gameConfig.value?.materials?.synthesis?.supportsDecomposition ?? false);
+
 // UI handler computed properties
 const showDungeonLevelSelector = computed(() => {
     return gameConfig.value.uiHandlers?.showDungeonLevelSelector || false;
@@ -313,16 +315,21 @@ const selectedRelatedItems = ref([]);
 
 // アイテムが完了状態かどうか判定
 const isTaskComplete = (task) => {
+    if (!task.need || task.need <= 0) return false;
+    if (supportsDecomposition.value && task.shortage !== undefined) {
+        return task.shortage <= 0;
+    }
     const owned = getMaterialQuantity(task.id);
     const synthesize = task.synthesize || 0;
-    return (owned + synthesize) >= task.need && task.need > 0;
+    return (owned + synthesize) >= task.need;
 };
 
 // 実際の不足量を計算
 const calculateActualNeed = (task) => {
-    const owned = getMaterialQuantity(task.id);
-    const synthesize = task.synthesize || 0;
-    return Math.max(0, task.need - owned - synthesize);
+    if (supportsDecomposition.value && task.shortage !== undefined) {
+        return Math.max(0, task.shortage);
+    }
+    return Math.max(0, task.need - getMaterialQuantity(task.id) - (task.synthesize || 0));
 };
 
 // タスクをtier順にソート
@@ -734,7 +741,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
         logger.debug('Details:', details);
 
         // Data extraction protection
-        let subCategory, category, name, owned, synthesize, need;
+        let subCategory, category, name, owned, synthesize, need, shortage;
 
         // player_exp ?먮뒗 weapon_exp???밸퀎 泥섎━
         if (isExpCategory(materialId)) {
@@ -744,6 +751,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             owned = details.owned || 0;
             synthesize = details.synthesize || 0;
             need = details.need || 0;
+            shortage = details.shortage ?? 0;
         }
 
         // ?쇰컲 ?щ즺 泥섎━
@@ -755,6 +763,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             owned = details.owned || 0;
             synthesize = details.synthesize || 0;
             need = details.need || 0;
+            shortage = details.shortage ?? 0;
         }
 
                 // Initialize category
@@ -786,6 +795,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             owned: owned,
             synthesize: synthesize,
             tier: tier,  // common/forgery用のtier情報
+            shortage: shortage,
         });
     }
 
@@ -861,7 +871,9 @@ const CalculateEstimatedRun = (data) => {
 
                 // 媛?task瑜??쒗쉶?섎㈃???덉뼱?꾨퀎 ?꾩슂?됱쓣 ?꾩쟻
                 subcategoryData.task.forEach((task) => {
-                    const actualNeed = Math.max(0, task.need - (getMaterialQuantity(task.id) + (task.synthesize || 0)));
+                    const actualNeed = (supportsDecomposition.value && task.shortage !== undefined)
+                        ? Math.max(0, task.shortage)
+                        : Math.max(0, task.need - getMaterialQuantity(task.id) - (task.synthesize || 0));
 
                     if (actualNeed > 0) {
                         if (task.tier === 1) {
