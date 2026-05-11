@@ -294,11 +294,20 @@ const updateFinalMaterialNeeds = () => {
     const label = getMaterialFieldById(materialId, 'label') || materialId;
     const subcategory = getMaterialFieldById(materialId, 'SubCategory') || category;
 
+    const owned = ownedMaterials[materialId] || 0;
+    const synthesize = synthesized_per_game_id[materialId] || 0;
+    // For non-tiered materials (e.g. credit), backward() never reduces final_needs,
+    // so compute shortage directly from inventory.
+    const isTiered = subcategory in tieredMaterials.value;
+    const shortage = isTiered
+      ? (final_needs[materialId] || 0)
+      : Math.max(0, needQty - owned - synthesize);
+
     formattedResults[materialId] = {
       need: needQty,
-      shortage: final_needs[materialId] || 0,
-      synthesize: synthesized_per_game_id[materialId] || 0,
-      owned: ownedMaterials[materialId] || 0,
+      shortage,
+      synthesize,
+      owned,
       label,
       category,
       subcategory,
@@ -374,11 +383,18 @@ const finalMaterialNeeds = computed(() => {
     const label = getMaterialFieldById(materialId, 'label') || materialId;
     const subcategory = getMaterialFieldById(materialId, 'SubCategory') || category;
 
+    const owned = ownedMaterials[materialId] || 0;
+    const synthesize = synthesized_per_game_id[materialId] || 0;
+    const isTiered = subcategory in tieredMaterials.value;
+    const shortage = isTiered
+      ? (final_needs[materialId] || 0)
+      : Math.max(0, needQty - owned - synthesize);
+
     formattedResults[materialId] = {
       need: needQty,
-      shortage: final_needs[materialId] || 0,
-      synthesize: synthesized_per_game_id[materialId] || 0,
-      owned: ownedMaterials[materialId] || 0,
+      shortage,
+      synthesize,
+      owned,
       label,
       category,
       subcategory,
