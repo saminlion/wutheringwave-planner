@@ -837,7 +837,7 @@ const GetRateValueForCategory = (data) => {
                 // tier2ベースでdrops設定 (tier分離はgetTierSeparatedForgeryEstimatesで処理)
                 drops = rate.drops || rate.tier2 || 0;
                 resin = rate.stamina || 0;
-                unobtainable = rate.unobtainable || false;
+                unobtainable = rate.unobtainable || drops <= 0;
             } else {
                 unobtainable = true;
             }
