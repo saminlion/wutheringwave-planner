@@ -9,9 +9,13 @@
         "30A": { "common": [12, 1], "boss": 2, "credit": 50000 },
         "40": { "player_exp": 371000, "credit": 95200 },
         "40A": { "common": [6, 2], "boss": 8, "credit": 75000 },
+        "50": { "player_exp": 576000, "credit": 144000 },
         "50A": { "common": [12, 2], "boss": 16, "credit": 100000 },
+        "60": { "player_exp": 939000, "credit": 234750 },
         "60A": { "common": [6, 3], "boss": 24, "credit": 125000 },
-        "70A": { "common": [9, 3], "boss": 36, "credit": 150000 }
+        "70": { "player_exp": 1529000, "credit": 382250 },
+        "70A": { "common": [9, 3], "boss": 36, "credit": 150000 },
+        "80": { "player_exp": 2490000, "credit": 622500 }
       },
       "skill": {
         "2": { "forgery": [2, 1], "common": [2, 1], "credit": 2000 },
@@ -54,10 +58,15 @@
         "20A": { "common": [4, 1], "forgery": [4, 1], "credit": 20000 },
         "30": { "weapon_exp": 96000, "credit": 30000 },
         "30A": { "common": [10, 1], "forgery": [10, 1], "credit": 40000 },
+        "40": { "weapon_exp": 199500, "credit": 50000 },
         "40A": { "common": [6, 2], "forgery": [6, 2], "credit": 60000 },
+        "50": { "weapon_exp": 349500, "credit": 70000 },
         "50A": { "common": [12, 2], "forgery": [12, 2], "credit": 80000 },
+        "60": { "weapon_exp": 546000, "credit": 90000 },
         "60A": { "common": [6, 3], "forgery": [6, 3], "credit": 100000 },
-        "70A": { "common": [12, 3], "forgery": [12, 3], "credit": 120000 }
+        "70": { "weapon_exp": 789000, "credit": 110000 },
+        "70A": { "common": [12, 3], "forgery": [12, 3], "credit": 120000 },
+        "80": { "weapon_exp": 1078500, "credit": 130000 }
       }
     }
   }

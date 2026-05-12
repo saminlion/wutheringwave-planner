@@ -20,13 +20,13 @@
 | 30→30A | ascension T1 x12, boss x2, credit 50000 | ✅ |
 | 30A→40 | player_exp 371000, credit 95200 | ✅ |
 | 40→40A | common T2 x6, boss x8, credit 75000 | ✅ |
-| 40A→50 | | ⬜ |
+| 40A→50 | player_exp 576000, credit 144000 | ✅ |
 | 50→50A | common T2 x12, boss x16, credit 100000 | ✅ |
-| 50A→60 | | ⬜ |
+| 50A→60 | player_exp 939000, credit 234750 | ✅ |
 | 60→60A | common T3 x6, boss x24, credit 125000 | ✅ |
-| 60A→70 | | ⬜ |
+| 60A→70 | player_exp 1529000, credit 382250 | ✅ |
 | 70→70A | common T3 x9, boss x36, credit 150000 | ✅ |
-| 70A→80 | | ⬜ |
+| 70A→80 | player_exp 2490000, credit 622500 | ✅ |
 
 ---
 
@@ -144,12 +144,12 @@
 | 20→20A | common T1 x4, forgery T1 x4, credit 20000 | ✅ |
 | 20A→30 | weapon_exp 96000, credit 30000 | ✅ |
 | 30→30A | common T1 x10, forgery T1 x10, credit 40000 | ✅ |
-| 30A→40 | | ⬜ |
+| 30A→40 | weapon_exp 199500, credit 50000 | ✅ |
 | 40→40A | common T2 x6, forgery T2 x6, credit 60000 | ✅ |
-| 40A→50 | | ⬜ |
+| 40A→50 | weapon_exp 349500, credit 70000 | 🟡추정 |
 | 50→50A | common T2 x12, forgery T2 x12, credit 80000 | ✅ |
-| 50A→60 | | ⬜ |
+| 50A→60 | weapon_exp 546000, credit 90000 | 🟡추정 |
 | 60→60A | common T3 x6, forgery T3 x6, credit 100000 | ✅ |
-| 60A→70 | | ⬜ |
+| 60A→70 | weapon_exp 789000, credit 110000 | 🟡추정 |
 | 70→70A | common T3 x12, forgery T3 x12, credit 120000 | ✅ |
-| 70A→80 | | ⬜ |
+| 70A→80 | weapon_exp 1078500, credit 130000 | 🟡추정 |
