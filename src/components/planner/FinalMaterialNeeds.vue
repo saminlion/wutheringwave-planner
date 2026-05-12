@@ -209,6 +209,8 @@ const gameConfig = computed(() => {
 });
 
 const supportsDecomposition = computed(() => gameConfig.value?.materials?.synthesis?.supportsDecomposition ?? false);
+const tieredSubCategories = computed(() => gameConfig.value?.materials?.tiers || gameStore.getData('tiers') || {});
+const isTieredTask = (task) => task && task.subCategory != null && (task.subCategory in tieredSubCategories.value);
 
 // UI handler computed properties
 const showDungeonLevelSelector = computed(() => {
@@ -316,7 +318,7 @@ const selectedRelatedItems = ref([]);
 // アイテムが完了状態かどうか判定
 const isTaskComplete = (task) => {
     if (!task.need || task.need <= 0) return false;
-    if (supportsDecomposition.value && task.shortage !== undefined) {
+    if (supportsDecomposition.value && isTieredTask(task) && task.shortage !== undefined) {
         return task.shortage <= 0;
     }
     const owned = getMaterialQuantity(task.id);
@@ -326,7 +328,7 @@ const isTaskComplete = (task) => {
 
 // 実際の不足量を計算
 const calculateActualNeed = (task) => {
-    if (supportsDecomposition.value && task.shortage !== undefined) {
+    if (supportsDecomposition.value && isTieredTask(task) && task.shortage !== undefined) {
         return Math.max(0, task.shortage);
     }
     return Math.max(0, task.need - getMaterialQuantity(task.id) - (task.synthesize || 0));
@@ -796,6 +798,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             synthesize: synthesize,
             tier: tier,  // common/forgery用のtier情報
             shortage: shortage,
+            subCategory: subCategory,
         });
     }
 
