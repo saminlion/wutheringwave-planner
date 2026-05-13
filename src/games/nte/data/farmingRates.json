@@ -1,13 +1,13 @@
 {
   "credit": {
-    "drops": 0,
+    "drops": 80000,
     "stamina": 40
   },
   "common": {
     "unobtainable": true
   },
   "boss": {
-    "drops": 4.4,
+    "drops": 4.5,
     "stamina": 60
   },
   "weeklyBoss": {
@@ -19,7 +19,7 @@
     "stamina": 40
   },
   "player_exp": {
-    "drops": 0,
+    "drops": 150000,
     "stamina": 40
   },
   "weapon_exp": {
