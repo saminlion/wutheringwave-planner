@@ -27,11 +27,12 @@ export class MaterialCalculator {
       this.materialDatabase,
     );
 
-    const finalNeeds = this.synthesis.backward(
+    const backwardResult = this.synthesis.backward(
       forwardResult.updatedInventory,
       tieredMaterials,
       shortages,
     );
+    const { finalNeeds, decomposedConsumed, decomposedGained } = backwardResult;
 
     const synthesizedPerGameId = this._extractSynthesized(forwardResult);
     const rawNeeds = this._extractRawNeeds(forwardResult);
@@ -44,6 +45,8 @@ export class MaterialCalculator {
       synthesis_results: forwardResult.synthesisResults,
       final_needs: finalNeeds,
       synthesized_per_game_id: synthesizedPerGameId,
+      decomposed_consumed_per_game_id: decomposedConsumed,
+      decomposed_gained_per_game_id: decomposedGained,
       raw_needs: rawNeeds,
     };
   }

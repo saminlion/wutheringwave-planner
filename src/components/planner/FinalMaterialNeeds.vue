@@ -127,6 +127,17 @@
                                             <span class="need-number">
                                                 {{ calculateActualNeed(task).toLocaleString() }}
                                             </span>
+                                            <div class="conversion-info" v-if="hasConversionInfo(task)">
+                                                <span class="conv-badge conv-synth" v-if="task.synthesize > 0" :title="'Synthesized from lower tier'">
+                                                    <i class="fas fa-cogs"></i> +{{ task.synthesize }}
+                                                </span>
+                                                <span class="conv-badge conv-decomp-out" v-if="supportsDecomposition && task.decomposedConsumed > 0" :title="'Decomposed into lower tier'">
+                                                    <i class="fas fa-arrow-down"></i> -{{ task.decomposedConsumed }}
+                                                </span>
+                                                <span class="conv-badge conv-decomp-in" v-if="supportsDecomposition && task.decomposedGained > 0" :title="'Received from higher tier decomposition'">
+                                                    <i class="fas fa-arrow-up"></i> +{{ task.decomposedGained }}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -149,6 +160,17 @@
                                             <span class="need-number">
                                                 {{ calculateActualNeed(task).toLocaleString() }}
                                             </span>
+                                            <div class="conversion-info" v-if="hasConversionInfo(task)">
+                                                <span class="conv-badge conv-synth" v-if="task.synthesize > 0" :title="'Synthesized from lower tier'">
+                                                    <i class="fas fa-cogs"></i> +{{ task.synthesize }}
+                                                </span>
+                                                <span class="conv-badge conv-decomp-out" v-if="supportsDecomposition && task.decomposedConsumed > 0" :title="'Decomposed into lower tier'">
+                                                    <i class="fas fa-arrow-down"></i> -{{ task.decomposedConsumed }}
+                                                </span>
+                                                <span class="conv-badge conv-decomp-in" v-if="supportsDecomposition && task.decomposedGained > 0" :title="'Received from higher tier decomposition'">
+                                                    <i class="fas fa-arrow-up"></i> +{{ task.decomposedGained }}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -166,6 +188,7 @@
             :item="selectedItem"
             :relatedItems="selectedRelatedItems"
             :getMaterialQuantity="getMaterialQuantity"
+            :supportsDecomposition="supportsDecomposition"
             @close="closeDialog"
             @updateInventory="handleDialogUpdateInventory"
         />
@@ -332,6 +355,14 @@ const calculateActualNeed = (task) => {
         return Math.max(0, task.shortage);
     }
     return Math.max(0, task.need - getMaterialQuantity(task.id) - (task.synthesize || 0));
+};
+
+// カードに合成・分解情報を表示するか判定
+const hasConversionInfo = (task) => {
+    if (!task) return false;
+    if (task.synthesize > 0) return true;
+    if (supportsDecomposition.value && (task.decomposedConsumed > 0 || task.decomposedGained > 0)) return true;
+    return false;
 };
 
 // タスクをtier順にソート
@@ -743,7 +774,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
         logger.debug('Details:', details);
 
         // Data extraction protection
-        let subCategory, category, name, owned, synthesize, need, shortage;
+        let subCategory, category, name, owned, synthesize, need, shortage, decomposedConsumed, decomposedGained;
 
         // player_exp ?먮뒗 weapon_exp???밸퀎 泥섎━
         if (isExpCategory(materialId)) {
@@ -754,6 +785,8 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             synthesize = details.synthesize || 0;
             need = details.need || 0;
             shortage = details.shortage ?? 0;
+            decomposedConsumed = details.decomposedConsumed || 0;
+            decomposedGained = details.decomposedGained || 0;
         }
 
         // ?쇰컲 ?щ즺 泥섎━
@@ -766,6 +799,8 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             synthesize = details.synthesize || 0;
             need = details.need || 0;
             shortage = details.shortage ?? 0;
+            decomposedConsumed = details.decomposedConsumed || 0;
+            decomposedGained = details.decomposedGained || 0;
         }
 
                 // Initialize category
@@ -796,6 +831,8 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             need: need,
             owned: owned,
             synthesize: synthesize,
+            decomposedConsumed: decomposedConsumed,
+            decomposedGained: decomposedGained,
             tier: tier,  // common/forgery用のtier情報
             shortage: shortage,
             subCategory: subCategory,
@@ -1374,6 +1411,45 @@ onMounted(() => {
     font-size: 18px;
     font-weight: bold;
     color: #e74c3c;
+}
+
+/* 合成・分解情報バッジ */
+.conversion-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 6px;
+}
+
+.conv-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    line-height: 1;
+}
+
+.conv-badge i {
+    font-size: 10px;
+}
+
+.conv-badge.conv-synth {
+    background-color: #fef3c7;
+    color: #b45309;
+}
+
+.conv-badge.conv-decomp-out {
+    background-color: #fed7aa;
+    color: #c2410c;
+}
+
+.conv-badge.conv-decomp-in {
+    background-color: #d1fae5;
+    color: #047857;
 }
 </style>
 

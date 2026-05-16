@@ -24,6 +24,14 @@
                                 <span class="label">{{ tUI('dialog.synthesis') }}:</span>
                                 <span class="value synthesis">+{{ formatNumber(item.synthesize) }}</span>
                             </div>
+                            <div class="detail-row" v-if="supportsDecomposition && item.decomposedConsumed > 0">
+                                <span class="label">Decompose ↓:</span>
+                                <span class="value decomp-out">-{{ formatNumber(item.decomposedConsumed) }}</span>
+                            </div>
+                            <div class="detail-row" v-if="supportsDecomposition && item.decomposedGained > 0">
+                                <span class="label">Decompose ↑:</span>
+                                <span class="value decomp-in">+{{ formatNumber(item.decomposedGained) }}</span>
+                            </div>
                             <div class="detail-row need-row">
                                 <span class="label">{{ tUI('dialog.need') }}:</span>
                                 <span class="value" :class="needClass(item)">
@@ -64,6 +72,14 @@
                                 <div class="tier-stat" v-if="tierItem.synthesize > 0">
                                     <span class="stat-label">{{ tUI('dialog.syn') }}</span>
                                     <span class="stat-value synthesis">+{{ formatNumber(tierItem.synthesize) }}</span>
+                                </div>
+                                <div class="tier-stat" v-if="supportsDecomposition && tierItem.decomposedConsumed > 0">
+                                    <span class="stat-label">Dec ↓</span>
+                                    <span class="stat-value decomp-out">-{{ formatNumber(tierItem.decomposedConsumed) }}</span>
+                                </div>
+                                <div class="tier-stat" v-if="supportsDecomposition && tierItem.decomposedGained > 0">
+                                    <span class="stat-label">Dec ↑</span>
+                                    <span class="stat-value decomp-in">+{{ formatNumber(tierItem.decomposedGained) }}</span>
                                 </div>
                                 <div class="tier-stat need-stat">
                                     <span class="stat-label">{{ tUI('dialog.need') }}</span>
@@ -143,6 +159,11 @@ const props = defineProps({
     getMaterialQuantity: {
         type: Function,
         default: () => 0
+    },
+    // 分解（backward conversion）対応ゲームか
+    supportsDecomposition: {
+        type: Boolean,
+        default: false
     }
 });
 
@@ -373,6 +394,14 @@ watch(() => props.item, () => {
     color: #f39c12;
 }
 
+.detail-row .value.decomp-out {
+    color: #c2410c;
+}
+
+.detail-row .value.decomp-in {
+    color: #047857;
+}
+
 .detail-row .value.complete {
     color: #27ae60;
 }
@@ -453,6 +482,14 @@ watch(() => props.item, () => {
 
 .tier-stat .stat-value.synthesis {
     color: #f39c12;
+}
+
+.tier-stat .stat-value.decomp-out {
+    color: #c2410c;
+}
+
+.tier-stat .stat-value.decomp-in {
+    color: #047857;
 }
 
 .tier-stat .stat-value.complete {

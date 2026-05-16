@@ -76,9 +76,12 @@ export class SynthesisEngine {
 
   /**
    * Backward conversion: decompose higher tier excess materials to lower tiers.
+   * Returns finalNeeds plus per-game_id decomposition tracking (consumed/gained).
    */
   backward(inventory, tieredMaterials, shortages) {
     const finalNeeds = { ...shortages };
+    const decomposedConsumed = {};
+    const decomposedGained = {};
 
     for (const category in tieredMaterials) {
       const materialData = tieredMaterials[category];
@@ -111,11 +114,16 @@ export class SynthesisEngine {
           const converted = surplus * conversionRate;
           inventory[materialGameId] = 0;
           inventory[nextMaterialGameId] = (inventory[nextMaterialGameId] ?? 0) + converted;
+
+          if (surplus > 0) {
+            decomposedConsumed[materialGameId] = (decomposedConsumed[materialGameId] ?? 0) + surplus;
+            decomposedGained[nextMaterialGameId] = (decomposedGained[nextMaterialGameId] ?? 0) + converted;
+          }
         }
       }
     }
 
-    return finalNeeds;
+    return { finalNeeds, decomposedConsumed, decomposedGained };
   }
 
   /**

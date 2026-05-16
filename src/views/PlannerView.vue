@@ -261,7 +261,14 @@ const updateFinalMaterialNeeds = () => {
 
   logger.debug("Owned Materials:", ownedMaterials);
 
-  const { final_needs, synthesis_results, synthesized_per_game_id,raw_needs } = calculateMaterials(
+  const {
+    final_needs,
+    synthesis_results,
+    synthesized_per_game_id,
+    decomposed_consumed_per_game_id = {},
+    decomposed_gained_per_game_id = {},
+    raw_needs
+  } = calculateMaterials(
     ownedMaterials,
     tieredMaterials.value,
     totalNeeds
@@ -296,6 +303,8 @@ const updateFinalMaterialNeeds = () => {
 
     const owned = ownedMaterials[materialId] || 0;
     const synthesize = synthesized_per_game_id[materialId] || 0;
+    const decomposedConsumed = decomposed_consumed_per_game_id[materialId] || 0;
+    const decomposedGained = decomposed_gained_per_game_id[materialId] || 0;
     // For non-tiered materials (e.g. credit), backward() never reduces final_needs,
     // so compute shortage directly from inventory.
     const isTiered = subcategory in tieredMaterials.value;
@@ -307,6 +316,8 @@ const updateFinalMaterialNeeds = () => {
       need: needQty,
       shortage,
       synthesize,
+      decomposedConsumed,
+      decomposedGained,
       owned,
       label,
       category,
@@ -321,6 +332,8 @@ const updateFinalMaterialNeeds = () => {
         need: totalNeeds[expCategoryName],
         shortage: 0,
         synthesize: 0,
+        decomposedConsumed: 0,
+        decomposedGained: 0,
         owned: 0,
         label: expCategoryName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()), // snake_case → Title Case
         category: expCategoryName,
@@ -350,7 +363,14 @@ const finalMaterialNeeds = computed(() => {
 
   logger.debug("Owned Materials:", ownedMaterials);
 
-  const { final_needs, synthesis_results, synthesized_per_game_id, raw_needs } = calculateMaterials(
+  const {
+    final_needs,
+    synthesis_results,
+    synthesized_per_game_id,
+    decomposed_consumed_per_game_id = {},
+    decomposed_gained_per_game_id = {},
+    raw_needs
+  } = calculateMaterials(
     ownedMaterials,
     tieredMaterials.value,
     totalNeeds
@@ -385,6 +405,8 @@ const finalMaterialNeeds = computed(() => {
 
     const owned = ownedMaterials[materialId] || 0;
     const synthesize = synthesized_per_game_id[materialId] || 0;
+    const decomposedConsumed = decomposed_consumed_per_game_id[materialId] || 0;
+    const decomposedGained = decomposed_gained_per_game_id[materialId] || 0;
     const isTiered = subcategory in tieredMaterials.value;
     const shortage = isTiered
       ? (final_needs[materialId] || 0)
@@ -394,6 +416,8 @@ const finalMaterialNeeds = computed(() => {
       need: needQty,
       shortage,
       synthesize,
+      decomposedConsumed,
+      decomposedGained,
       owned,
       label,
       category,
@@ -408,6 +432,8 @@ const finalMaterialNeeds = computed(() => {
         need: totalNeeds[expCategoryName],
         shortage: 0,
         synthesize: 0,
+        decomposedConsumed: 0,
+        decomposedGained: 0,
         owned: 0,
         label: expCategoryName.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
         category: expCategoryName,
