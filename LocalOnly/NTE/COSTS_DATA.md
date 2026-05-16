@@ -74,17 +74,6 @@
 
 ---
 
-## 주간 보스 재료 사용 비용
-
-> 스킬 레벨업 등에 weeklyBoss 재료가 사용되는 구간
-
-| 구간 | 재료 | 상태 |
-|------|------|------|
-| | weeklyBoss x1 | ⬜ |
-| | weeklyBoss x1 | ⬜ |
-
----
-
 ## 패시브 잠금해제 비용
 
 > 캐릭터당 패시브 2개, 각 1회 잠금해제
@@ -146,7 +135,7 @@
 | 30→30A | common T1 x10, forgery T1 x10, credit 40000 | ✅ |
 | 30A→40 | weapon_exp 199500, credit 50000 | ✅ |
 | 40→40A | common T2 x6, forgery T2 x6, credit 60000 | ✅ |
-| 40A→50 | weapon_exp 349500, credit 70000 | 🟡추정 |
+| 40A→50 | weapon_exp 344950, credit 70000 | ✅ |
 | 50→50A | common T2 x12, forgery T2 x12, credit 80000 | ✅ |
 | 50A→60 | weapon_exp 546000, credit 90000 | 🟡추정 |
 | 60→60A | common T3 x6, forgery T3 x6, credit 100000 | ✅ |

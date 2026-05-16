@@ -60,7 +60,7 @@
         "30A": { "common": [10, 1], "forgery": [10, 1], "credit": 40000 },
         "40": { "weapon_exp": 199500, "credit": 50000 },
         "40A": { "common": [6, 2], "forgery": [6, 2], "credit": 60000 },
-        "50": { "weapon_exp": 349500, "credit": 70000 },
+        "50": { "weapon_exp": 344950, "credit": 70000 },
         "50A": { "common": [12, 2], "forgery": [12, 2], "credit": 80000 },
         "60": { "weapon_exp": 546000, "credit": 90000 },
         "60A": { "common": [6, 3], "forgery": [6, 3], "credit": 100000 },

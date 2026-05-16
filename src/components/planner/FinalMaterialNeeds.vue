@@ -75,7 +75,7 @@
                             <template v-else>
                                 <p>{{ tUI('final.estimated_runs') }}: {{ estimate.run }}</p>
                                 <p>{{ tUI('final.estimated_stamina') }} {{ staminaName }}: {{ estimate.resin }}</p>
-                                <p v-if="subCategory.name !== 'weeklyboss'">
+                                <p v-if="subCategory.name?.toLowerCase() !== 'weeklyboss'">
                                     {{ tUI('final.estimated_time') }}:
                                     <span class="font-semibold">{{ estimate.date }} {{ tUI('final.days') }}</span>
                                 </p>
@@ -983,7 +983,7 @@ const CalculateEstimatedDate = (data) => {
     if (unobtainable) return "0";
 
     const runs = CalculateEstimatedRun(data);
-    const date = data.subcategory === "weeklyboss"
+    const date = data.subcategory?.toLowerCase() === "weeklyboss"
         ? Math.ceil(runs / 3)
         : Math.ceil((runs * resin) / getStaminaConfig().dailyLimit);
 
