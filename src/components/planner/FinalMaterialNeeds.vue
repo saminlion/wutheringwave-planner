@@ -1497,90 +1497,91 @@ onMounted(() => {
 
 /* Crafting Plan */
 .crafting-plan {
-    margin-bottom: 20px;
-    padding: 14px 16px;
-    background-color: #1e2535;
-    border-radius: 10px;
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    background-color: #1a2035;
+    border-radius: 12px;
     border: 1px solid #2e3a52;
 }
 
 .crafting-plan-title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0 0 12px 0;
+    color: #e2e8f0;
+    margin: 0 0 16px 0;
 }
 
 .crafting-plan-body {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
 }
 
 .crafting-group {
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 14px;
     flex-wrap: wrap;
 }
 
 .crafting-group-label {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 6px;
+    padding: 5px 12px;
+    border-radius: 8px;
     white-space: nowrap;
-    margin-top: 4px;
     flex-shrink: 0;
+    min-width: 56px;
+    text-align: center;
 }
 
 .crafting-synth-label {
-    background-color: #854d0e;
+    background-color: #92400e;
     color: #fef3c7;
 }
 
 .crafting-decomp-label {
-    background-color: #1e40af;
+    background-color: #1e3a8a;
     color: #dbeafe;
 }
 
 .crafting-actions-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
 }
 
 .crafting-action {
     display: flex;
     align-items: center;
-    gap: 4px;
-    background-color: #2d3748;
-    border-radius: 8px;
-    padding: 4px 8px;
+    gap: 6px;
+    background-color: #273044;
+    border-radius: 10px;
+    padding: 8px 12px;
+    border: 1px solid #374357;
 }
 
 .crafting-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 4px;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
     object-fit: cover;
 }
 
 .crafting-qty {
-    font-size: 13px;
-    font-weight: 600;
-    color: #cbd5e1;
+    font-size: 15px;
+    font-weight: 700;
+    color: #94a3b8;
 }
 
 .crafting-qty-result {
-    color: #86efac;
+    color: #6ee7b7;
+    font-size: 16px;
 }
 
 .crafting-arrow {
-    font-size: 14px;
-    color: #64748b;
+    font-size: 18px;
+    color: #475569;
     padding: 0 2px;
 }
 </style>

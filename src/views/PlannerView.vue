@@ -444,13 +444,14 @@ const finalMaterialNeeds = computed(() => {
 
   logger.debug("Final Material Needs:", formattedResults);
 
-  // Build crafting action list
-  const craftingActions = { synthesis: [], decomposition: [] };
+  // Build crafting action list — only net actions (no contradictions)
+  const rawSynthesis = [];
+  const rawDecomposition = [];
 
-  // Synthesis actions from synthesis_results
+  // Collect synthesis actions
   Object.entries(synthesis_results).forEach(([toId, data]) => {
     if (data.synthesized > 0) {
-      craftingActions.synthesis.push({
+      rawSynthesis.push({
         fromId: String(data.from),
         toId: String(toId),
         fromQty: data.used,
@@ -459,7 +460,7 @@ const finalMaterialNeeds = computed(() => {
     }
   });
 
-  // Decomposition actions: pair consumed/gained via tieredMaterials
+  // Collect decomposition actions
   const tieredMats = tieredMaterials.value;
   Object.entries(decomposed_consumed_per_game_id).forEach(([highTierId, consumedQty]) => {
     for (const tiers of Object.values(tieredMats)) {
@@ -467,7 +468,7 @@ const finalMaterialNeeds = computed(() => {
         if (String(data.game_id) === String(highTierId)) {
           const prevTier = tiers[Number(tier) - 1];
           if (prevTier) {
-            craftingActions.decomposition.push({
+            rawDecomposition.push({
               fromId: String(highTierId),
               toId: String(prevTier.game_id),
               fromQty: consumedQty,
@@ -479,6 +480,16 @@ const finalMaterialNeeds = computed(() => {
       }
     }
   });
+
+  // Remove contradictions: if same material appears as synthesis target AND decomposition source, drop both
+  const synthTargetIds = new Set(rawSynthesis.map(a => a.toId));
+  const decompSourceIds = new Set(rawDecomposition.map(a => a.fromId));
+  const conflictIds = new Set([...synthTargetIds].filter(id => decompSourceIds.has(id)));
+
+  const craftingActions = {
+    synthesis: rawSynthesis.filter(a => !conflictIds.has(a.toId)),
+    decomposition: rawDecomposition.filter(a => !conflictIds.has(a.fromId)),
+  };
 
   return { materials: formattedResults, craftingActions, player_exp: playerExpResults, totalResin: 0, totalDays: 0 };
 
