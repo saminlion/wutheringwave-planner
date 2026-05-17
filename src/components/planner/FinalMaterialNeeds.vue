@@ -2,6 +2,39 @@
     <div class="final-material-needs">
         <h2>{{ tUI('final.title') }}</h2>
 
+        <!-- Crafting Plan Section -->
+        <div class="crafting-plan" v-if="hasCraftingActions">
+            <h3 class="crafting-plan-title">{{ tUI('final.crafting_plan') }}</h3>
+            <div class="crafting-plan-body">
+                <!-- Synthesis actions -->
+                <div class="crafting-group" v-if="craftingActions.synthesis.length > 0">
+                    <span class="crafting-group-label crafting-synth-label">{{ tUI('final.crafting_synth') }}</span>
+                    <div class="crafting-actions-row">
+                        <div class="crafting-action" v-for="(action, i) in craftingActions.synthesis" :key="'s'+i">
+                            <img v-if="getMaterialIcon(action.fromId)" :src="getMaterialIcon(action.fromId)" class="crafting-icon" />
+                            <span class="crafting-qty">×{{ action.fromQty }}</span>
+                            <span class="crafting-arrow">→</span>
+                            <img v-if="getMaterialIcon(action.toId)" :src="getMaterialIcon(action.toId)" class="crafting-icon" />
+                            <span class="crafting-qty crafting-qty-result">×{{ action.toQty }}</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Decomposition actions (only for games that support it) -->
+                <div class="crafting-group" v-if="supportsDecomposition && craftingActions.decomposition.length > 0">
+                    <span class="crafting-group-label crafting-decomp-label">{{ tUI('final.crafting_decomp') }}</span>
+                    <div class="crafting-actions-row">
+                        <div class="crafting-action" v-for="(action, i) in craftingActions.decomposition" :key="'d'+i">
+                            <img v-if="getMaterialIcon(action.fromId)" :src="getMaterialIcon(action.fromId)" class="crafting-icon" />
+                            <span class="crafting-qty">×{{ action.fromQty }}</span>
+                            <span class="crafting-arrow">→</span>
+                            <img v-if="getMaterialIcon(action.toId)" :src="getMaterialIcon(action.toId)" class="crafting-icon" />
+                            <span class="crafting-qty crafting-qty-result">×{{ action.toQty }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ダンジョンレベル選択器 (ゲームConfigで制御) -->
         <div v-if="showDungeonLevelSelector" class="dungeon-level-selector">
             <label for="dungeon-level">{{ tUI('final.dungeon_level') }}:</label>
@@ -673,7 +706,17 @@ const totalValues = reactive({
 });
 
 const props = defineProps({
-    materials: Object // ?꾨떖諛쏆? ?щ즺 紐⑸줉
+    materials: Object,
+    craftingActions: {
+        type: Object,
+        default: () => ({ synthesis: [], decomposition: [] }),
+    },
+});
+
+const hasCraftingActions = computed(() => {
+    const s = props.craftingActions?.synthesis?.length > 0;
+    const d = supportsDecomposition.value && props.craftingActions?.decomposition?.length > 0;
+    return s || d;
 });
 
 const emit = defineEmits(["updateInventory"]);
@@ -1450,6 +1493,95 @@ onMounted(() => {
 .conv-badge.conv-decomp-in {
     background-color: #d1fae5;
     color: #047857;
+}
+
+/* Crafting Plan */
+.crafting-plan {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background-color: #1e2535;
+    border-radius: 10px;
+    border: 1px solid #2e3a52;
+}
+
+.crafting-plan-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px 0;
+}
+
+.crafting-plan-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.crafting-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.crafting-group-label {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.crafting-synth-label {
+    background-color: #854d0e;
+    color: #fef3c7;
+}
+
+.crafting-decomp-label {
+    background-color: #1e40af;
+    color: #dbeafe;
+}
+
+.crafting-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.crafting-action {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #2d3748;
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+.crafting-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.crafting-qty {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.crafting-qty-result {
+    color: #86efac;
+}
+
+.crafting-arrow {
+    font-size: 14px;
+    color: #64748b;
+    padding: 0 2px;
 }
 </style>
 

@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :key="refreshKey" @updateInventory="handleInventoryUpdate" />
+    <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :craftingActions="finalMaterialNeeds.craftingActions" :key="refreshKey" @updateInventory="handleInventoryUpdate" />
 
     <component
       :is="CharacterDialogComponent"
@@ -444,7 +444,43 @@ const finalMaterialNeeds = computed(() => {
 
   logger.debug("Final Material Needs:", formattedResults);
 
-  return { materials: formattedResults, player_exp: playerExpResults, totalResin: 0, totalDays: 0 };
+  // Build crafting action list
+  const craftingActions = { synthesis: [], decomposition: [] };
+
+  // Synthesis actions from synthesis_results
+  Object.entries(synthesis_results).forEach(([toId, data]) => {
+    if (data.synthesized > 0) {
+      craftingActions.synthesis.push({
+        fromId: String(data.from),
+        toId: String(toId),
+        fromQty: data.used,
+        toQty: data.synthesized,
+      });
+    }
+  });
+
+  // Decomposition actions: pair consumed/gained via tieredMaterials
+  const tieredMats = tieredMaterials.value;
+  Object.entries(decomposed_consumed_per_game_id).forEach(([highTierId, consumedQty]) => {
+    for (const tiers of Object.values(tieredMats)) {
+      for (const [tier, data] of Object.entries(tiers)) {
+        if (String(data.game_id) === String(highTierId)) {
+          const prevTier = tiers[Number(tier) - 1];
+          if (prevTier) {
+            craftingActions.decomposition.push({
+              fromId: String(highTierId),
+              toId: String(prevTier.game_id),
+              fromQty: consumedQty,
+              toQty: decomposed_gained_per_game_id[prevTier.game_id] || 0,
+            });
+          }
+          break;
+        }
+      }
+    }
+  });
+
+  return { materials: formattedResults, craftingActions, player_exp: playerExpResults, totalResin: 0, totalDays: 0 };
 
 });
 
