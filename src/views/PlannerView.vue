@@ -444,14 +444,15 @@ const finalMaterialNeeds = computed(() => {
 
   logger.debug("Final Material Needs:", formattedResults);
 
-  // Build crafting action list — only net actions (no contradictions)
-  const rawSynthesis = [];
-  const rawDecomposition = [];
+  // Build crafting action list from first principles (not raw engine output)
+  const tieredMats = tieredMaterials.value;
+  const ownedSnapshot = { ...inventory.value };
+  const craftingActions = { synthesis: [], decomposition: [] };
 
-  // Collect synthesis actions
+  // Synthesis: use synthesis_results directly (engine already limits to actual excess)
   Object.entries(synthesis_results).forEach(([toId, data]) => {
     if (data.synthesized > 0) {
-      rawSynthesis.push({
+      craftingActions.synthesis.push({
         fromId: String(data.from),
         toId: String(toId),
         fromQty: data.used,
@@ -460,36 +461,44 @@ const finalMaterialNeeds = computed(() => {
     }
   });
 
-  // Collect decomposition actions
-  const tieredMats = tieredMaterials.value;
-  Object.entries(decomposed_consumed_per_game_id).forEach(([highTierId, consumedQty]) => {
-    for (const tiers of Object.values(tieredMats)) {
-      for (const [tier, data] of Object.entries(tiers)) {
-        if (String(data.game_id) === String(highTierId)) {
-          const prevTier = tiers[Number(tier) - 1];
-          if (prevTier) {
-            rawDecomposition.push({
-              fromId: String(highTierId),
-              toId: String(prevTier.game_id),
-              fromQty: consumedQty,
-              toQty: decomposed_gained_per_game_id[prevTier.game_id] || 0,
-            });
-          }
-          break;
-        }
-      }
+  // Decomposition: compute minimum needed per subcategory, from highest tier down
+  for (const tiers of Object.values(tieredMats)) {
+    const sortedTierKeys = Object.keys(tiers).map(Number).sort((a, b) => b - a);
+
+    for (const tierKey of sortedTierKeys) {
+      const highMat = tiers[tierKey];
+      const lowMat = tiers[tierKey - 1];
+      if (!lowMat) continue;
+
+      const highId = String(highMat.game_id);
+      const lowId = String(lowMat.game_id);
+      const ratio = highMat.synthesizable?.count ?? 3;
+
+      // How many of highId do we own (above what's directly needed)?
+      const directNeed = totalNeeds[highId] || totalNeeds[Number(highId)] || 0;
+      const owned = ownedSnapshot[highId] || ownedSnapshot[Number(highId)] || 0;
+      const surplus = Math.max(0, owned - directNeed);
+      if (surplus === 0) continue;
+
+      // How much of lowId is still short (after owned + forward synthesis)?
+      const lowNeed = totalNeeds[lowId] || totalNeeds[Number(lowId)] || 0;
+      const lowOwned = ownedSnapshot[lowId] || ownedSnapshot[Number(lowId)] || 0;
+      const lowSynthesized = synthesized_per_game_id[lowId] || synthesized_per_game_id[Number(lowId)] || 0;
+      const lowShortage = Math.max(0, lowNeed - lowOwned - lowSynthesized);
+      if (lowShortage === 0) continue;
+
+      // Decompose only the minimum needed
+      const decomposeQty = Math.min(surplus, Math.ceil(lowShortage / ratio));
+      if (decomposeQty === 0) continue;
+
+      craftingActions.decomposition.push({
+        fromId: highId,
+        toId: lowId,
+        fromQty: decomposeQty,
+        toQty: decomposeQty * ratio,
+      });
     }
-  });
-
-  // Remove contradictions: if same material appears as synthesis target AND decomposition source, drop both
-  const synthTargetIds = new Set(rawSynthesis.map(a => a.toId));
-  const decompSourceIds = new Set(rawDecomposition.map(a => a.fromId));
-  const conflictIds = new Set([...synthTargetIds].filter(id => decompSourceIds.has(id)));
-
-  const craftingActions = {
-    synthesis: rawSynthesis.filter(a => !conflictIds.has(a.toId)),
-    decomposition: rawDecomposition.filter(a => !conflictIds.has(a.fromId)),
-  };
+  }
 
   return { materials: formattedResults, craftingActions, player_exp: playerExpResults, totalResin: 0, totalDays: 0 };
 
