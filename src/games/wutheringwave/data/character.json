@@ -648,5 +648,40 @@
     "ascension": 4130010027,
     "boss": 4140030020,
     "weeklyBoss": 4150030009
+  },
+  "lucy": {
+    "game_id": 4250600051,
+    "display_name": "Lucy",
+    "rarity": 5,
+    "element": "spectro",
+    "weapon": "pistol",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luxi_UI.webp",
+    "common": "exoswarm",
+    "forgery": "combustor",
+    "weeklyBoss": 4150030008
+  },
+  "rebecca": {
+    "game_id": 4250400052,
+    "display_name": "Rebecca",
+    "rarity": 5,
+    "element": "electro",
+    "weapon": "pistol",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_LiBeiKa_UI.webp",
+    "common": "mech",
+    "forgery": "combustor",
+    "weeklyBoss": 4150030009
+  },
+  "lucilla": {
+    "game_id": 4250100053,
+    "display_name": "Lucilla",
+    "rarity": 5,
+    "element": "glacio",
+    "weapon": "rectifier",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luosela_UI.webp",
+    "common": "mech",
+    "forgery": "string",
+    "ascension": 4130010029,
+    "boss": 4140030019,
+    "weeklyBoss": 4150030009
   }
 }

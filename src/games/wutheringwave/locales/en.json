@@ -16,6 +16,7 @@
     "4250100004": "Zhezhi",
     "4250100006": "Carlotta",
     "4250100049": "Hiyuki",
+    "4250100053": "Lucilla",
     "4250200008": "Encore",
     "4250200010": "Changli",
     "4250200031": "Brant",
@@ -36,6 +37,7 @@
     "4250400012": "Yinlin",
     "4250400015": "Xiangli Yao",
     "4250400038": "Augusta",
+    "4250400052": "Rebecca",
     "4250500021": "Rover (Havoc)",
     "4250500027": "Camellya",
     "4250500029": "Roccia",
@@ -49,7 +51,8 @@
     "4250600030": "Phoebe",
     "4250600033": "Zani",
     "4250600044": "Lynae",
-    "4250600047": "Luuk"
+    "4250600047": "Luuk",
+    "4250600051": "Lucy"
   },
   "materials": {
     "4100000001": "Shell Credit",
@@ -157,6 +160,7 @@
     "4130010026": "Edelschnee",
     "4130010027": "Dream of Stars",
     "4130010028": "Redbell",
+    "4130010029": "Forget Me Not",
     "4140010001": "Mysterious Code",
     "4140010002": "Strife Tace Core",
     "4140010003": "Thundering Tacet Core",

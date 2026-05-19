@@ -1097,6 +1097,14 @@
       "SubCategory": "ascension",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_076_UI.webp",
       "tier": 3
+    },
+    "forget_me_not": {
+      "game_id": 4130010029,
+      "label": "Forget Me Not",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_077_UI.webp",
+      "tier": 3
     }
   },
   "player_exp": {

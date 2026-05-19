@@ -1,6 +1,6 @@
 {
   "credit": {
-    "drops": 80000,
+    "drops": 96000,
     "stamina": 40
   },
   "common": {
@@ -15,7 +15,7 @@
     "stamina": 60
   },
   "forgery": {
-    "drops": 4.766666666666667,
+    "drops": 4.7,
     "stamina": 40
   },
   "player_exp": {
