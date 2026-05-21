@@ -15,11 +15,15 @@
         <div class="material-info">
           <h3>{{ tMaterial(material.game_id, material.label) }}</h3>
           <h3>{{ logMessage(material) }}</h3>
-          <p>
-            {{ tUI('inventory.quantity') }}:
-            <input type="number" v-model.number="quantities[material.game_id]" @change="update(material.game_id)"
-              class="quantity-input" />
-          </p>
+          <div class="current-quantity">{{ quantities[material.game_id] || 0 }}</div>
+          <input
+            type="number"
+            class="quantity-input"
+            v-model.number="newQuantities[material.game_id]"
+            placeholder="0"
+            @keyup.enter="setQuantity(material.game_id)"
+            @change="setQuantity(material.game_id)"
+          />
         </div>
       </div>
     </div>
@@ -60,6 +64,7 @@ const materials = computed(() => {
 
 // Local state to manage input values
 const quantities = ref({});
+const newQuantities = ref({});
 
 // Watch materials changes and sync quantities
 watch(
@@ -120,24 +125,24 @@ const groupedMaterials = computed(()=>{
   }, {});
 });
 
-// Update material quantity directly (without debounce for immediate save)
-const update = (materialId) => {
-  const newQuantity = quantities.value[materialId];
-  const currentQuantity = inventory.value[materialId] || 0;
-  const difference = newQuantity - currentQuantity;
+const setQuantity = (materialId) => {
+  const inputVal = newQuantities.value[materialId];
+  if (inputVal === null || inputVal === undefined || inputVal === '') return;
+
+  const newQty = Math.max(0, parseInt(inputVal, 10) || 0);
+  const currentQty = inventory.value[materialId] || 0;
+  const difference = newQty - currentQty;
 
   if (difference > 0) {
-    // Add directly without debounce
     inventoryStore.addMaterial(materialId, difference);
-    toast.success(`Item updated: ${materialId}, Quantity: ${newQuantity}`, {
-      position: 'bottom-center',
-      autoClose: 2000,
-      theme: 'dark',
-    });
   } else if (difference < 0) {
-    // Remove directly without debounce
     inventoryStore.removeMaterial(materialId, Math.abs(difference));
-    toast.success(`Item updated: ${materialId}, Quantity: ${newQuantity}`, {
+  }
+
+  newQuantities.value[materialId] = null;
+
+  if (difference !== 0) {
+    toast.success(`Item updated: ${materialId}, Quantity: ${newQty}`, {
       position: 'bottom-center',
       autoClose: 2000,
       theme: 'dark',
@@ -198,10 +203,16 @@ const update = (materialId) => {
   font-size: 14px;
 }
 
+/* Current quantity display */
+.current-quantity {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 6px 0 4px;
+}
+
 /* Quantity input */
 .quantity-input {
   width: 80px;
-  margin-left: 4px;
   text-align: center;
 }
 
