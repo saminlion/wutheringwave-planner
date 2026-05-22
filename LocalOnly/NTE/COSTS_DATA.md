@@ -5,7 +5,10 @@
 
 **작성 형식:**
 - 일반 재료: `common T1 x4` / `ascension x2` / `boss x1`
-- EXP 재료: `player_exp 13650` (총량)
+- EXP 재료 (총량): `player_exp 13650` / `weapon_exp 39000`
+- EXP 재료 (아이템 수): `weapon_exp w3 x2, w2 x3, w1 x5` → newgame-build 시 자동 총량 계산
+  - w1 = 500 EXP, w2 = 2,500 EXP, w3 = 10,000 EXP
+  - p1 = 1,000 EXP, p2 = 5,000 EXP, p3 = 20,000 EXP (player_exp용)
 - 재화: `credit 30000`
 
 ---
@@ -93,52 +96,52 @@
 
 | 구간 | 재료 | 상태 |
 |------|------|------|
-| 1→20 | | ⬜ |
+| 1→20 | weapon_exp 33500, credit 10050 | ✅ |
 | 20→20A | common T1 x2, forgery T1 x2, credit 12000 | ✅ |
-| 20A→30 | | ⬜ |
+| 20A→30 | weapon_exp 88000, credit 26400 | ✅ |
 | 30→30A | common T1 x6, forgery T1 x6, credit 24000 | ✅ |
-| 30A→40 | | ⬜ |
+| 30A→40 | weapon_exp 187000, credit 56100 | ✅ |
 | 40→40A | common T2 x4, forgery T2 x4, credit 36000 | ✅ |
-| 40A→50 | | ⬜ |
+| 40A→50 | weapon_exp 328000, credit 98400 | ✅ |
 | 50→50A | common T2 x8, forgery T2 x8, credit 48000 | ✅ |
-| 50A→60 | | ⬜ |
+| 50A→60 | weapon_exp 534500, credit 160350 | ✅ |
 | 60→60A | common T3 x4, forgery T3 x4, credit 60000 | ✅ |
-| 60A→70 | | ⬜ |
+| 60A→70 | weapon_exp 870000, credit 261000 | ✅ |
 | 70→70A | common T3 x8, forgery T3 x8, credit 72000 | ✅ |
-| 70A→80 | | ⬜ |
+| 70A→80 | weapon_exp 1417500, credit 425250 | ✅ |
 
 ### A등급 (4성)
 
 | 구간 | 재료 | 상태 |
 |------|------|------|
-| 1→20 | | ⬜ |
+| 1→20 | weapon_exp 33500, credit 10050 | ✅ |
 | 20→20A | common T1 x3, forgery T1 x3, credit 16000 | ✅ |
-| 20A→30 | | ⬜ |
+| 20A→30 | weapon_exp 88000, credit 26400 | ✅ |
 | 30→30A | common T1 x8, forgery T1 x8, credit 32000 | ✅ |
-| 30A→40 | | ⬜ |
+| 30A→40 | weapon_exp 187000, credit 56100 | ✅ |
 | 40→40A | common T2 x5, forgery T2 x5, credit 48000 | ✅ |
-| 40A→50 | | ⬜ |
+| 40A→50 | weapon_exp 328000, credit 98400 | ✅ |
 | 50→50A | common T2 x10, forgery T2 x10, credit 64000 | ✅ |
-| 50A→60 | | ⬜ |
+| 50A→60 | weapon_exp 534500, credit 160350 | ✅ |
 | 60→60A | common T3 x5, forgery T3 x5, credit 80000 | ✅ |
-| 60A→70 | | ⬜ |
+| 60A→70 | weapon_exp 870000, credit 261000 | ✅ |
 | 70→70A | common T3 x10, forgery T3 x10, credit 96000 | ✅ |
-| 70A→80 | | ⬜ |
+| 70A→80 | weapon_exp 1417500, credit 425250 | ✅ |
 
 ### S등급 (6성)
 
 | 구간 | 재료 | 상태 |
 |------|------|------|
-| 1→20 | weapon_exp 39000, credit 12000 | ✅ |
+| 1→20 | weapon_exp 33500, credit 10050 | ✅ |
 | 20→20A | common T1 x4, forgery T1 x4, credit 20000 | ✅ |
-| 20A→30 | weapon_exp 96000, credit 30000 | ✅ |
+| 20A→30 | weapon_exp 88000, credit 26400 | ✅ |
 | 30→30A | common T1 x10, forgery T1 x10, credit 40000 | ✅ |
-| 30A→40 | weapon_exp 199500, credit 50000 | ✅ |
+| 30A→40 | weapon_exp 187000, credit 56100 | ✅ |
 | 40→40A | common T2 x6, forgery T2 x6, credit 60000 | ✅ |
-| 40A→50 | weapon_exp 344950, credit 70000 | ✅ |
+| 40A→50 | weapon_exp 328000, credit 98400 | ✅ |
 | 50→50A | common T2 x12, forgery T2 x12, credit 80000 | ✅ |
-| 50A→60 | weapon_exp 546000, credit 90000 | 🟡추정 |
+| 50A→60 | weapon_exp 534500, credit 160350 | ✅ |
 | 60→60A | common T3 x6, forgery T3 x6, credit 100000 | ✅ |
-| 60A→70 | weapon_exp 789000, credit 110000 | 🟡추정 |
+| 60A→70 | weapon_exp 870000, credit 261000 | ✅ |
 | 70→70A | common T3 x12, forgery T3 x12, credit 120000 | ✅ |
-| 70A→80 | weapon_exp 1078500, credit 130000 | 🟡추정 |
+| 70A→80 | weapon_exp 1417500, credit 425250 | ✅ |

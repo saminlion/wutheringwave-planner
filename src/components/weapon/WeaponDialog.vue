@@ -52,6 +52,9 @@
                         <div v-else class="no-materials">
                             <span>No materials needed</span>
                         </div>
+                        <div class="tab-footer">
+                            <button class="complete-tab-btn" @click="completeLevel">✓ Complete Level</button>
+                        </div>
                 </div>
             </div>
         </div>
@@ -79,7 +82,7 @@ const props = defineProps({
 
 const expandedTiers = ref([]); // 열려있는 Tier의 인덱스를 저장
 
-const emit = defineEmits(['close', 'updateweapon']);
+const emit = defineEmits(['close', 'updateweapon', 'completeTab']);
 
 const closeDialog = () => {
     emit('close');
@@ -142,6 +145,14 @@ const onLevelChange = (type, value) => {
     }
 
     updateweapon();
+};
+
+const completeLevel = () => {
+    emit('completeTab', {
+        tabType: 'level',
+        materials: weaponMaterials.value,
+        settingsUpdate: { currentLevel: props.settings.targetLevel },
+    });
 };
 
 const toggleTier = (tierIndex) => {
@@ -390,5 +401,27 @@ button.close-dialog {
     font-size: 13px;
     background: #f5f5f5;
     border-radius: 8px;
+}
+
+.tab-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.complete-tab-btn {
+    padding: 8px 20px;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.complete-tab-btn:hover {
+    opacity: 0.85;
 }
 </style>

@@ -68,6 +68,9 @@
                     <div v-else class="no-materials">
                         <span>No materials needed</span>
                     </div>
+                    <div class="tab-footer">
+                        <button class="complete-tab-btn" @click="completeLevel">✓ Complete Level</button>
+                    </div>
                 </div>
 
                 <!-- Skills Tab -->
@@ -135,6 +138,9 @@
                     <div v-else class="no-materials">
                         <span>No materials needed</span>
                     </div>
+                    <div class="tab-footer">
+                        <button class="complete-tab-btn" @click="completeSkills">✓ Complete Skills</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +174,7 @@ const tabs = [
 ];
 const currentTab = ref('level');
 
-const emit = defineEmits(['close', 'updateCharacter']);
+const emit = defineEmits(['close', 'updateCharacter', 'completeTab']);
 
 // Material calculations
 const levelMaterials = computed(() => {
@@ -308,6 +314,48 @@ const onActiveSkillChange = (skill, type, value) => {
     }
 
     updateCharacter();
+};
+
+const completeLevel = () => {
+    emit('completeTab', {
+        tabType: 'level',
+        materials: levelMaterials.value,
+        settingsUpdate: { currentLevel: props.settings.targetLevel },
+    });
+};
+
+const completeSkills = () => {
+    const settingsUpdate = {};
+
+    if (props.settings.activeSkills) {
+        const newActive = {};
+        Object.keys(props.settings.activeSkills).forEach(key => {
+            if (key.endsWith('_current_level')) {
+                newActive[key] = props.settings.activeSkills[key.replace('_current_level', '_target_level')];
+            } else {
+                newActive[key] = props.settings.activeSkills[key];
+            }
+        });
+        settingsUpdate.activeSkills = newActive;
+    }
+
+    if (props.settings.passiveSkills) {
+        const newPassive = {};
+        Object.keys(props.settings.passiveSkills).forEach(key => {
+            if (key.endsWith('_current_level')) {
+                newPassive[key] = props.settings.passiveSkills[key.replace('_current_level', '_target_level')];
+            } else {
+                newPassive[key] = props.settings.passiveSkills[key];
+            }
+        });
+        settingsUpdate.passiveSkills = newPassive;
+    }
+
+    emit('completeTab', {
+        tabType: 'skills',
+        materials: skillMaterials.value,
+        settingsUpdate,
+    });
 };
 
 // パッシブスキル変更ハンドラ
@@ -614,5 +662,27 @@ const onPassiveSkillChange = (skill, type, value) => {
     font-size: 13px;
     background: var(--bg-secondary, #f5f5f5);
     border-radius: 8px;
+}
+
+.tab-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.complete-tab-btn {
+    padding: 8px 20px;
+    background: var(--accent-color, #4a90e2);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.complete-tab-btn:hover {
+    opacity: 0.85;
 }
 </style>

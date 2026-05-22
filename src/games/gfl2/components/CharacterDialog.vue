@@ -77,6 +77,9 @@
                     <div v-else class="no-materials">
                         <span>No materials needed</span>
                     </div>
+                    <div class="tab-footer">
+                        <button class="complete-tab-btn" @click="completeLevel">✓ Complete Level</button>
+                    </div>
                 </div>
 
                 <!-- Skills Tab -->
@@ -130,6 +133,9 @@
                     <div v-else class="no-materials">
                         <span>No materials needed</span>
                     </div>
+                    <div class="tab-footer">
+                        <button class="complete-tab-btn" @click="completeSkills">✓ Complete Skills</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,10 +178,41 @@ const tabs = [
 ];
 const currentTab = ref('level');
 
-const emit = defineEmits(['close', 'updateCharacter']);
+const emit = defineEmits(['close', 'updateCharacter', 'completeTab']);
 
 const closeDialog = () => emit('close');
 const updateCharacter = () => emit('updateCharacter');
+
+const completeLevel = () => {
+    emit('completeTab', {
+        tabType: 'level',
+        materials: levelMaterials.value,
+        settingsUpdate: { currentLevel: props.settings.targetLevel },
+    });
+};
+
+const completeSkills = () => {
+    const settingsUpdate = {};
+
+    if (props.settings.special) {
+        const newSpecial = {};
+        Object.keys(props.settings.special).forEach(key => {
+            const s = props.settings.special[key];
+            newSpecial[key] = { current_level: s.target_level, target_level: s.target_level };
+        });
+        settingsUpdate.special = newSpecial;
+    }
+
+    if (props.settings.attributes) {
+        settingsUpdate.attributes = { ...props.settings.attributes };
+    }
+
+    emit('completeTab', {
+        tabType: 'skills',
+        materials: skillMaterials.value,
+        settingsUpdate,
+    });
+};
 
 // Material calculations
 const levelMaterials = computed(() => {
@@ -517,5 +554,27 @@ const formatStatName = (stat) => {
     font-size: 13px;
     background: var(--bg-secondary, #f5f5f5);
     border-radius: 8px;
+}
+
+.tab-footer {
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.complete-tab-btn {
+    padding: 8px 20px;
+    background: var(--accent-color, #4a90e2);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.complete-tab-btn:hover {
+    opacity: 0.85;
 }
 </style>
