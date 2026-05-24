@@ -23,7 +23,18 @@ This command helps set up a new game plugin for the Multi-Game Planner.
 
 > **Game ID:** `{gameid}` | **Game Code:** `{game_code}` | **Display Name:** {GameName}
 
-완료 후 Claude에게 **"데이터 작성 완료"** 라고 말씀해주세요.
+---
+
+## 진행 상황
+
+- [x] `/newgame` — 폴더 및 문서 생성
+- [ ] **README.md 작성** ← 지금 여기
+  - [ ] Section 1~8 (기본 정보, 속성, 무기, 등급, 레벨, 스킬, 재료, 스태미나)
+  - [ ] Section 10 (비용표 — 게임 진행하면서 채우기)
+- [ ] `/newgame-review` — 검토 및 추가 질문
+- [ ] `/newgame-fix` — ID 확정 + Google Sheets 가이드 생성
+- [ ] 구글 시트 데이터 입력 (캐릭터 / 무기 / 재료)
+- [ ] `/newgame-build` — 플러그인 코드 생성
 
 ---
 

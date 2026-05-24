@@ -78,7 +78,13 @@ gameStore.registerGame({gameid}Plugin);
 
 `tests/games/{gameid}-materialProcessor.test.js` 생성
 
-### Step 6: Display summary
+### Step 6: Update README.md checklist
+
+`LocalOnly/{gameid}/README.md` 상단의 "진행 상황" 체크리스트를 업데이트:
+- `- [ ] 구글 시트 데이터 입력` → `- [x] 구글 시트 데이터 입력` (JSON 파일이 존재하므로 완료로 간주)
+- `- [ ] \`/newgame-build\`` → `- [x] \`/newgame-build\``
+
+### Step 7: Display summary
 
 ```
 ✅ /newgame-build 완료

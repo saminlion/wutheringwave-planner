@@ -38,7 +38,35 @@ Read `LocalOnly/{gameid}/README.md` (추가 질문 답변이 반영된 최신본
 - 실제 레벨 구간으로 비용 시트 예시 행 생성
 - 각 시트 상단에 한 줄 작성 요령 추가
 
-### Step 4: Display summary
+**⭐ 함수 최대 활용 원칙 (필수):**
+
+모든 자동 계산 열은 반드시 ARRAYFORMULA 수식으로 구현. 사용자가 직접 입력하는 열은 최소화.
+
+각 시트별 반드시 수식으로 처리해야 하는 열:
+
+| 시트 | 자동 수식 열 | 설명 |
+|------|-------------|------|
+| Characters | Seq, ElementCode, (TypeCode), game_id, ascension, boss, weeklyBoss 등 | ARRAYFORMULA + IF 중첩으로 속성/타입 → 코드 변환 |
+| Weapons | Seq, TypeCode, game_id, ascension | 동일 방식 |
+| Materials | CategoryCode, game_id | 카테고리명 → 코드 변환, ID 자동 생성 |
+| FarmingRates | sample_count, avg | COUNTA, AVERAGE로 run_n 열 집계 |
+| *_i18n | game_id(A열), en(B열) | 원본 탭 ARRAYFORMULA 참조, ko만 직접 입력 |
+
+수식 작성 기준:
+- `ARRAYFORMULA(IF(...))` 패턴: 헤더 행 아닌 2행에만 입력, 전체 열 자동 처리
+- game_id: `{game_code}×10^9 + (Rarity 또는 CategoryCode) × ... + Seq` 계산식을 ARRAYFORMULA로
+- 재료 lookup (ascension/boss): `IFERROR(INDEX(Materials!$F:$F, MATCH(name_col, Materials!$G:$G, 0)), "")` 패턴
+- FarmingRates: E열 `=COUNTA(G{row}:{row})`, F열 `=IFERROR(ROUND(AVERAGE(G{row}:{row}),2),0)`
+- i18n: 원본 탭 game_id/display_name을 ARRAYFORMULA로 참조, C열(ko)만 직접 입력
+
+실제 속성/타입 값으로 IF 분기를 구체적으로 작성 (예시 코드 아닌 실제 사용 가능한 수식 제공).
+
+### Step 4: Update README.md checklist
+
+`LocalOnly/{gameid}/README.md` 상단의 "진행 상황" 체크리스트를 업데이트:
+- `- [ ] \`/newgame-fix\`` → `- [x] \`/newgame-fix\``
+
+### Step 5: Display summary
 
 ```
 ✅ /newgame-fix 완료

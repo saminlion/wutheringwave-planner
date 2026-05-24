@@ -136,6 +136,22 @@ const GAMES = {
       weapons: 'Weapons_i18n',
     },
   },
+  mongilstardive: {
+    sheetId: extractSheetId(process.env.SHEET_ID_MONGILSTARDIVE),
+    dataPath: 'src/games/mongilstardive/data',
+    localePath: 'src/games/mongilstardive/locales',
+    tabs: {
+      characters: 'Characters',
+      materials: 'Materials',
+      weapons: 'Weapons',
+      farmingRates: 'FarmingRates',
+    },
+    i18nTabs: {
+      characters: 'Characters_i18n',
+      materials: 'Materials_i18n',
+      weapons: 'Weapons_i18n',
+    },
+  },
 };
 
 /**
@@ -327,6 +343,9 @@ function transformCharacters(rows) {
     // WutheringWaves specific fields
     if (row.common) character.common = row.common;
     if (row.forgery) character.forgery = row.forgery;
+    // Mongil StarDive: separate forgery columns for skill vs ascension
+    if (row.forgery_skill) character.forgery_skill = row.forgery_skill;
+    if (row.forgery_ascension) character.forgery_ascension = row.forgery_ascension;
     if (row.ascension != null && row.ascension !== '') {
       character.ascension = parseNumberOrString(row.ascension);
     }
@@ -482,8 +501,10 @@ function transformWeapons(rows) {
     }
 
     // Type (text) -> type field (lowercase to match existing data)
-    if (row.Type) {
-      weapon.type = row.Type.toLowerCase();
+    // Handles both 'Type' and 'weapon_type' column names across games
+    const weaponType = row.Type || row.weapon_type;
+    if (weaponType) {
+      weapon.type = weaponType.toLowerCase();
     }
 
     // icon (handle both cases)
@@ -566,12 +587,14 @@ function transformFarmingRates(rows) {
       Object.values(tiers).find(r => r.stamina)?.stamina ?? 0, 10
     );
 
-    if (base === 'forgery') {
+    if (base === 'forgery' || base === 'forgery_skill' || base === 'forgery_ascension' || base === 'forgery_weapon') {
       const t1 = parseFloat(tiers['1']?.avg) || 0;
       const t2 = parseFloat(tiers['2']?.avg) || 0;
       const t3 = parseFloat(tiers['3']?.avg) || 0;
-      // T2-equivalent: t1/3 + t2 + t3*3
-      result[base] = { drops: t1 / 3 + t2 + t3 * 3, stamina };
+      const t4 = parseFloat(tiers['4']?.avg) || 0;
+      const t5 = parseFloat(tiers['5']?.avg) || 0;
+      // T2-equivalent with 3:1 synthesis ratio (t4/t5 = 0 for games without them)
+      result[base] = { drops: t1 / 3 + t2 + t3 * 3 + t4 * 9 + t5 * 27, stamina };
     } else if (base === 'player_exp' || base === 'weapon_exp') {
       // Total EXP per run = sum(avg * value_per_item)
       let totalExp = 0;

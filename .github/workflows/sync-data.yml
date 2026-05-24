@@ -19,6 +19,7 @@ on:
           - endfield
           - gfl2
           - nte
+          - mongilstardive
 
 permissions:
   contents: write
@@ -49,6 +50,7 @@ jobs:
           SHEET_ID_ENDFIELD: ${{ secrets.SHEET_ID_ENDFIELD }}
           SHEET_ID_GIRLSFRONTIER: ${{ secrets.SHEET_ID_GIRLSFRONTIER }}
           SHEET_ID_NTE: ${{ secrets.SHEET_ID_NTE }}
+          SHEET_ID_MONGILSTARDIVE: ${{ secrets.SHEET_ID_MONGILSTARDIVE }}
         run: |
           if [ -n "${{ github.event.inputs.game }}" ]; then
             node scripts/sync-sheets.js --game=${{ github.event.inputs.game }}

@@ -32,9 +32,17 @@ Read `LocalOnly/{gameid}/README.md`.
 - **Section 8**: 스태미나 이름/일일 최대치 작성됨
 - **Section 10**: 캐릭터 레벨업 비용 작성됨, 스킬 레벨업 비용 작성됨
 
-### Step 3: Output result
+### Step 3: Update README.md checklist
 
-**문제가 있는 경우** — 항목별로 구체적으로 질문:
+모든 항목이 명확한 경우, `LocalOnly/{gameid}/README.md` 상단의 "진행 상황" 체크리스트를 업데이트:
+- `- [ ] **README.md 작성**` → `- [x] **README.md 작성**`
+- `  - [ ] Section 1~8` → `  - [x] Section 1~8`
+- `  - [ ] Section 10` → Section 10이 채워진 경우에만 `[x]`로 변경
+- `- [ ] \`/newgame-review\`` → `- [x] \`/newgame-review\``
+
+### Step 4: Output result
+
+**문제가 있는 경우** — 체크리스트 업데이트 없이 항목별로 질문:
 ```
 📋 /newgame-review 검토 완료 — 확인이 필요한 항목이 있습니다.
 
@@ -45,7 +53,7 @@ Read `LocalOnly/{gameid}/README.md`.
 답변 후 /newgame-fix 를 실행해주세요.
 ```
 
-**모든 항목이 명확한 경우** — 질문 없이:
+**모든 항목이 명확한 경우** — 체크리스트 업데이트 후:
 ```
 ✅ /newgame-review 완료 — 모든 항목이 명확합니다.
 
