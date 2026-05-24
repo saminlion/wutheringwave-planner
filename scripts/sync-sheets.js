@@ -549,7 +549,9 @@ function transformFarmingRates(rows) {
   const plainRows = {};
 
   for (const row of rows) {
-    if (!row.category) continue;
+    const category = row.category || row.Category;
+    if (!category) continue;
+    row.category = category;
     const match = row.category.match(/^(.+)_(\d+)$/);
     if (match) {
       const base = match[1];
@@ -564,7 +566,8 @@ function transformFarmingRates(rows) {
   const result = {};
 
   for (const [category, row] of Object.entries(plainRows)) {
-    if (String(row.unobtainable).toUpperCase() === 'TRUE') {
+    const unobtainable = row.unobtainable || row.unobtaniable;
+    if (String(unobtainable).toUpperCase() === 'TRUE') {
       result[category] = { unobtainable: true };
     } else {
       result[category] = {
@@ -576,7 +579,7 @@ function transformFarmingRates(rows) {
 
   for (const [base, tiers] of Object.entries(tierRows)) {
     const allUnobtainable = Object.values(tiers).every(
-      row => String(row.unobtainable).toUpperCase() === 'TRUE'
+      row => String(row.unobtainable || row.unobtaniable).toUpperCase() === 'TRUE'
     );
     if (allUnobtainable) {
       result[base] = { unobtainable: true };
