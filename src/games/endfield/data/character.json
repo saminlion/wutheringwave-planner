@@ -1244,5 +1244,103 @@
         }
       }
     }
+  },
+  "mi_fu": {
+    "game_id": 5260100027,
+    "display_name": "Mi Fu",
+    "rarity": 6,
+    "element": "physical",
+    "weapon": "greatsword",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/mi-fu.webp",
+    "bolete": 5110010005,
+    "odendra": 5110020010,
+    "special": 5130010035,
+    "mastery_basic_attack": 5130010035,
+    "mastery_battle_skill": 5130010032,
+    "mastery_combo_skill": 5130010032,
+    "mastery_ultimate": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "camille": {
+    "game_id": 5260200028,
+    "display_name": "Camille",
+    "rarity": 6,
+    "element": "heat",
+    "weapon": "polearm",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/camille.webp",
+    "bolete": 5110010005,
+    "odendra": 5110020010,
+    "special": 5130010035,
+    "mastery_basic_attack": 5130010035,
+    "mastery_battle_skill": 5130010032,
+    "mastery_combo_skill": 5130010032,
+    "mastery_ultimate": 5130010033,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   }
 }
