@@ -12,6 +12,7 @@ import wutheringwavePlugin from './games/wutheringwave';
 import endfieldPlugin from './games/endfield';
 import gfl2Plugin from './games/gfl2';
 import ntePlugin from './games/nte';
+import mongilstardivePlugin from './games/mongilstardive';
 import { useGameRegistryStore } from './store/gameRegistry';
 
 const app = createApp(App);
@@ -32,6 +33,7 @@ gameRegistry.registerGame(wutheringwavePlugin);
 gameRegistry.registerGame(endfieldPlugin);
 gameRegistry.registerGame(gfl2Plugin);
 gameRegistry.registerGame(ntePlugin);
+gameRegistry.registerGame(mongilstardivePlugin);
 gameRegistry.hydrate(); // Restore last selected game
 
 // Router

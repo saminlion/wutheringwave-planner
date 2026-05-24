@@ -1,0 +1,67 @@
+[
+  {
+    "character": {
+      "level": {
+        "1":   { "player_exp": 0, "credit": 0 },
+        "20":  { "player_exp": 26714, "credit": 0 },
+        "20A": { "forgery_ascension": [120, 2], "credit": 30000 },
+        "30":  { "player_exp": 97606, "credit": 0 },
+        "30A": { "forgery_ascension": [8, 3], "credit": 60000 },
+        "40":  { "player_exp": 484353, "credit": 0 },
+        "40A": { "forgery_ascension": [6, 4], "credit": 120000 },
+        "50":  { "player_exp": 2537759, "credit": 0 },
+        "50A": { "forgery_ascension": [4, 5], "credit": 250000 },
+        "60":  { "player_exp": 12992075, "credit": 0 }
+      },
+      "skill": {
+        "2":  { "forgery_skill": [10, 1], "credit": 2000 },
+        "3":  { "forgery_skill": [10, 2], "credit": 4000 },
+        "4":  { "forgery_skill": [15, 2], "credit": 5000 },
+        "5":  { "forgery_skill": [10, 3], "credit": 6000 },
+        "6":  { "forgery_skill": [10, 4], "credit": 8000 },
+        "7":  { "forgery_skill": [15, 4], "credit": 9000 },
+        "8":  { "forgery_skill": [10, 5], "mastery": 1, "credit": 10000 },
+        "9":  { "forgery_skill": [15, 5], "mastery": 1, "credit": 11500 },
+        "10": { "forgery_skill": [20, 5], "mastery": 1, "credit": 13000 }
+      }
+    },
+    "weapon": {
+      "level_3": {
+        "1":   { "weapon_exp": 0, "credit": 0 },
+        "20":  { "weapon_exp": 28416, "credit": 0 },
+        "20A": { "forgery_weapon": [120, 2], "credit": 2500 },
+        "30":  { "weapon_exp": 94965, "credit": 0 },
+        "30A": { "forgery_weapon": [4, 3], "credit": 7500 },
+        "40":  { "weapon_exp": 348651, "credit": 0 },
+        "40A": { "forgery_weapon": [3, 4], "credit": 12500 },
+        "50":  { "weapon_exp": 1246948, "credit": 0 },
+        "50A": { "forgery_weapon": [2, 5], "credit": 25000 },
+        "60":  { "weapon_exp": 4005542, "credit": 0 }
+      },
+      "level_4": {
+        "1":   { "weapon_exp": 0, "credit": 0 },
+        "20":  { "weapon_exp": 40547, "credit": 0 },
+        "20A": { "forgery_weapon": [160, 2], "credit": 5000 },
+        "30":  { "weapon_exp": 135599, "credit": 0 },
+        "30A": { "forgery_weapon": [5, 3], "credit": 15000 },
+        "40":  { "weapon_exp": 497987, "credit": 0 },
+        "40A": { "forgery_weapon": [4, 4], "credit": 25000 },
+        "50":  { "weapon_exp": 1781244, "credit": 0 },
+        "50A": { "forgery_weapon": [3, 5], "credit": 50000 },
+        "60":  { "weapon_exp": 5722065, "credit": 0 }
+      },
+      "level_5": {
+        "1":   { "weapon_exp": 0, "credit": 0 },
+        "20":  { "weapon_exp": 56745, "credit": 0 },
+        "20A": { "forgery_weapon": [240, 2], "credit": 10000 },
+        "30":  { "weapon_exp": 189920, "credit": 0 },
+        "30A": { "forgery_weapon": [6, 3], "credit": 30000 },
+        "40":  { "weapon_exp": 697154, "credit": 0 },
+        "40A": { "forgery_weapon": [5, 4], "credit": 50000 },
+        "50":  { "weapon_exp": 2493709, "credit": 0 },
+        "50A": { "forgery_weapon": [4, 5], "credit": 100000 },
+        "60":  { "weapon_exp": 8010850, "credit": 0 }
+      }
+    }
+  }
+]
