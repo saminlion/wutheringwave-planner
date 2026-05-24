@@ -1,0 +1,525 @@
+{
+  "credit": {
+    "gold": {
+      "game_id": 8100010001,
+      "label": "Gold",
+      "Category": "credit",
+      "SubCategory": "credit",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_3.png?class=hero",
+      "tier": 1,
+      "value": 0
+    }
+  },
+  "player_exp": {
+    "basic_experience_book": {
+      "game_id": 8160000001,
+      "label": "Basic Experience Book",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_01.png?class=hero",
+      "tier": 1,
+      "value": 500
+    },
+    "uncommon_experience_book": {
+      "game_id": 8160000002,
+      "label": "Uncommon Experience Book",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_02.png?class=hero",
+      "tier": 2,
+      "value": 2000
+    },
+    "rare_experience_book": {
+      "game_id": 8160000003,
+      "label": "Rare Experience Book",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_03.png?class=hero",
+      "tier": 3,
+      "value": 10000
+    },
+    "hero_experience_book": {
+      "game_id": 8160000004,
+      "label": "Hero Experience Book",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_04.png?class=hero",
+      "tier": 4,
+      "value": 50000
+    },
+    "legendary_experience_book": {
+      "game_id": 8160000005,
+      "label": "Legendary Experience Book",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_05.png?class=hero",
+      "tier": 5,
+      "value": 250000
+    }
+  },
+  "weapon_exp": {
+    "faint_mana_core": {
+      "game_id": 8170000001,
+      "label": "Faint Mana Core",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_01.png?class=hero",
+      "tier": 1,
+      "value": 325
+    },
+    "glimmering_mana_core": {
+      "game_id": 8170000002,
+      "label": "Glimmering Mana Core",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_02.png?class=hero",
+      "tier": 2,
+      "value": 1250
+    },
+    "condensed_mana_core": {
+      "game_id": 8170000003,
+      "label": "Condensed Mana Core",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_03.png?class=hero",
+      "tier": 3,
+      "value": 4500
+    },
+    "liberated_mana_core": {
+      "game_id": 8170000004,
+      "label": "Liberated Mana Core",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_04.png?class=hero",
+      "tier": 4,
+      "value": 15500
+    },
+    "impeccable_mana_core": {
+      "game_id": 8170000005,
+      "label": "Impeccable Mana Core",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_05.png?class=hero",
+      "tier": 5,
+      "value": 47500
+    }
+  },
+  "mastery": {
+    "advanced_combat_theory": {
+      "game_id": 8190010001,
+      "label": "Advanced Combat Theory",
+      "Category": "mastery",
+      "SubCategory": "mastery",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_ACTIVE_02.png?class=hero",
+      "tier": 3,
+      "value": 0
+    }
+  },
+  "forgery": {
+    "thin_sinew": {
+      "game_id": 8120010001,
+      "label": "Thin Sinew",
+      "Category": "forgery",
+      "SubCategory": "sinew",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_01.png?class=hero",
+      "tier": 1,
+      "value": 0
+    },
+    "chewy_sinew": {
+      "game_id": 8120010002,
+      "label": "Chewy Sinew",
+      "Category": "forgery",
+      "SubCategory": "sinew",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_02.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "tough_sinew": {
+      "game_id": 8120010003,
+      "label": "Tough Sinew",
+      "Category": "forgery",
+      "SubCategory": "sinew",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_03.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "heavy_sinew": {
+      "game_id": 8120010004,
+      "label": "Heavy Sinew",
+      "Category": "forgery",
+      "SubCategory": "sinew",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_04.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "indestructible_sinew": {
+      "game_id": 8120010005,
+      "label": "Indestructible Sinew",
+      "Category": "forgery",
+      "SubCategory": "sinew",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_05.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "torn_cartilage": {
+      "game_id": 8120020001,
+      "label": "Torn Cartilage",
+      "Category": "forgery",
+      "SubCategory": "cartilage",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_01.png?class=hero",
+      "tier": 1,
+      "value": 0
+    },
+    "hardened_cartilage": {
+      "game_id": 8120020002,
+      "label": "Hardened Cartilage",
+      "Category": "forgery",
+      "SubCategory": "cartilage",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_02.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "elastic_cartilage": {
+      "game_id": 8120020003,
+      "label": "Elastic Cartilage",
+      "Category": "forgery",
+      "SubCategory": "cartilage",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_03.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "resilient_cartilage": {
+      "game_id": 8120020004,
+      "label": "Resilient Cartilage",
+      "Category": "forgery",
+      "SubCategory": "cartilage",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_04.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "regenerative_cartilage": {
+      "game_id": 8120020005,
+      "label": "Regenerative Cartilage",
+      "Category": "forgery",
+      "SubCategory": "cartilage",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_05.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "tawny_fur": {
+      "game_id": 8120030001,
+      "label": "Tawny Fur",
+      "Category": "forgery",
+      "SubCategory": "fur",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_01.png?class=hero",
+      "tier": 1,
+      "value": 0
+    },
+    "matted_fur": {
+      "game_id": 8120030002,
+      "label": "Matted Fur",
+      "Category": "forgery",
+      "SubCategory": "fur",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_02.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "soft_fur": {
+      "game_id": 8120030003,
+      "label": "Soft Fur",
+      "Category": "forgery",
+      "SubCategory": "fur",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_03.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "sleek_fur": {
+      "game_id": 8120030004,
+      "label": "Sleek Fur",
+      "Category": "forgery",
+      "SubCategory": "fur",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_04.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "rippling_fur": {
+      "game_id": 8120030005,
+      "label": "Rippling Fur",
+      "Category": "forgery",
+      "SubCategory": "fur",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_05.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "nasty_powder": {
+      "game_id": 8120040001,
+      "label": "Nasty Powder",
+      "Category": "forgery",
+      "SubCategory": "powder",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_01.png?class=hero",
+      "tier": 1,
+      "value": 0
+    },
+    "dusty_powder": {
+      "game_id": 8120040002,
+      "label": "Dusty Powder",
+      "Category": "forgery",
+      "SubCategory": "powder",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_02.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "fragrant_powder": {
+      "game_id": 8120040003,
+      "label": "Fragrant Powder",
+      "Category": "forgery",
+      "SubCategory": "powder",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_03.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "invigorating_powder": {
+      "game_id": 8120040004,
+      "label": "Invigorating Powder",
+      "Category": "forgery",
+      "SubCategory": "powder",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_04.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "mystical_powder": {
+      "game_id": 8120040005,
+      "label": "Mystical Powder",
+      "Category": "forgery",
+      "SubCategory": "powder",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_05.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "brittle_carapace": {
+      "game_id": 8120050001,
+      "label": "Brittle Carapace",
+      "Category": "forgery",
+      "SubCategory": "carapace",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_01.png?class=hero",
+      "tier": 1,
+      "value": 0
+    },
+    "flexible_carapace": {
+      "game_id": 8120050002,
+      "label": "Flexible Carapace",
+      "Category": "forgery",
+      "SubCategory": "carapace",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_02.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "hardened_carapace": {
+      "game_id": 8120050003,
+      "label": "Hardened Carapace",
+      "Category": "forgery",
+      "SubCategory": "carapace",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_03.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "intricate_carapace": {
+      "game_id": 8120050004,
+      "label": "Intricate Carapace",
+      "Category": "forgery",
+      "SubCategory": "carapace",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_04.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "perfect_carapace": {
+      "game_id": 8120050005,
+      "label": "Perfect Carapace",
+      "Category": "forgery",
+      "SubCategory": "carapace",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_05.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "basic_fighter_medallion": {
+      "game_id": 8120060001,
+      "label": "Basic Fighter Medallion",
+      "Category": "forgery",
+      "SubCategory": "fighter",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_1.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "standard_fighter_medallion": {
+      "game_id": 8120060002,
+      "label": "Standard Fighter Medallion",
+      "Category": "forgery",
+      "SubCategory": "fighter",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_2.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "greater_fighter_medallion": {
+      "game_id": 8120060003,
+      "label": "Greater Fighter Medallion",
+      "Category": "forgery",
+      "SubCategory": "fighter",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_3.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "superior_fighter_medallion": {
+      "game_id": 8120060004,
+      "label": "Superior Fighter Medallion",
+      "Category": "forgery",
+      "SubCategory": "fighter",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_4.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "basic_destroyer_insignia": {
+      "game_id": 8120070001,
+      "label": "Basic Destroyer Insignia",
+      "Category": "forgery",
+      "SubCategory": "destroyer",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_1.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "standard_destroyer_insignia": {
+      "game_id": 8120070002,
+      "label": "Standard Destroyer Insignia",
+      "Category": "forgery",
+      "SubCategory": "destroyer",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_2.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "greater_destroyer_insignia": {
+      "game_id": 8120070003,
+      "label": "Greater Destroyer Insignia",
+      "Category": "forgery",
+      "SubCategory": "destroyer",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_3.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "superior_destroyer_insignia": {
+      "game_id": 8120070004,
+      "label": "Superior Destroyer Insignia",
+      "Category": "forgery",
+      "SubCategory": "destroyer",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_4.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "basic_support_bead": {
+      "game_id": 8120080001,
+      "label": "Basic Support Bead",
+      "Category": "forgery",
+      "SubCategory": "support",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_1.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "standard_support_bead": {
+      "game_id": 8120080002,
+      "label": "Standard Support Bead",
+      "Category": "forgery",
+      "SubCategory": "support",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_2.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "greater_support_bead": {
+      "game_id": 8120080003,
+      "label": "Greater Support Bead",
+      "Category": "forgery",
+      "SubCategory": "support",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_3.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "superior_support_bead": {
+      "game_id": 8120080004,
+      "label": "Superior Support Bead",
+      "Category": "forgery",
+      "SubCategory": "support",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_4.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "basic_assassin_coin": {
+      "game_id": 8120090001,
+      "label": "Basic Assassin Coin",
+      "Category": "forgery",
+      "SubCategory": "assassin",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_1.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "standard_assassin_coin": {
+      "game_id": 8120090002,
+      "label": "Standard Assassin Coin",
+      "Category": "forgery",
+      "SubCategory": "assassin",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_2.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "greater_assassin_coin": {
+      "game_id": 8120090003,
+      "label": "Greater Assassin Coin",
+      "Category": "forgery",
+      "SubCategory": "assassin",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_3.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "superior_assassin_coin": {
+      "game_id": 8120090004,
+      "label": "Superior Assassin Coin",
+      "Category": "forgery",
+      "SubCategory": "assassin",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_4.png?class=hero",
+      "tier": 5,
+      "value": 0
+    },
+    "rusty_chain": {
+      "game_id": 8120100001,
+      "label": "Rusty Chain",
+      "Category": "forgery",
+      "SubCategory": "chain",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_1.png?class=hero",
+      "tier": 2,
+      "value": 0
+    },
+    "split_chain": {
+      "game_id": 8120100002,
+      "label": "Split Chain",
+      "Category": "forgery",
+      "SubCategory": "chain",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_2.png?class=hero",
+      "tier": 3,
+      "value": 0
+    },
+    "red-hot_chain": {
+      "game_id": 8120100003,
+      "label": "Red-Hot Chain",
+      "Category": "forgery",
+      "SubCategory": "chain",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_3.png?class=hero",
+      "tier": 4,
+      "value": 0
+    },
+    "chain_of_divine_retribution": {
+      "game_id": 8120100004,
+      "label": "Chain of Divine Retribution",
+      "Category": "forgery",
+      "SubCategory": "chain",
+      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_4.png?class=hero",
+      "tier": 5,
+      "value": 0
+    }
+  }
+}

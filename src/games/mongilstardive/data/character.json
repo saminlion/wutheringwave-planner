@@ -1,0 +1,222 @@
+{
+  "mina": {
+    "game_id": 8205010001,
+    "display_name": "Mina",
+    "rarity": 5,
+    "element": "fire",
+    "weapon_type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Mina_00.png?class=thumb",
+    "forgery_skill": "sinew",
+    "forgery_ascension": "fighter"
+  },
+  "esther": {
+    "game_id": 8205030002,
+    "display_name": "Esther",
+    "rarity": 5,
+    "element": "wind",
+    "weapon_type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Esde_00.png?class=thumb",
+    "forgery_skill": "powder",
+    "forgery_ascension": "assassin"
+  },
+  "flare": {
+    "game_id": 8205010003,
+    "display_name": "Flare",
+    "rarity": 5,
+    "element": "fire",
+    "weapon_type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Flare_00.png?class=thumb",
+    "forgery_skill": "sinew",
+    "forgery_ascension": "destroyer"
+  },
+  "gabi": {
+    "game_id": 8205050004,
+    "display_name": "Gabi",
+    "rarity": 5,
+    "element": "earth",
+    "weapon_type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Gabi_00.png?class=thumb",
+    "forgery_skill": "carapace",
+    "forgery_ascension": "fighter"
+  },
+  "jiwon": {
+    "game_id": 8205030005,
+    "display_name": "Jiwon",
+    "rarity": 5,
+    "element": "wind",
+    "weapon_type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Jiwon_00.png?class=thumb",
+    "forgery_skill": "powder",
+    "forgery_ascension": "support"
+  },
+  "ophelia": {
+    "game_id": 8205020006,
+    "display_name": "Ophelia",
+    "rarity": 5,
+    "element": "ice",
+    "weapon_type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Ophelia_00.png?class=thumb",
+    "forgery_skill": "fur",
+    "forgery_ascension": "fighter"
+  },
+  "penny": {
+    "game_id": 8205040007,
+    "display_name": "Penny",
+    "rarity": 5,
+    "element": "lightning",
+    "weapon_type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Penny_00.png?class=thumb",
+    "forgery_skill": "cartilage",
+    "forgery_ascension": "fighter"
+  },
+  "sangun": {
+    "game_id": 8205030008,
+    "display_name": "Sangun",
+    "rarity": 5,
+    "element": "wind",
+    "weapon_type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Sangun_00.png?class=thumb",
+    "forgery_skill": "powder",
+    "forgery_ascension": "fighter"
+  },
+  "angel": {
+    "game_id": 8204010009,
+    "display_name": "Angel",
+    "rarity": 4,
+    "element": "fire",
+    "weapon_type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Angel_00.png?class=thumb",
+    "forgery_skill": "sinew",
+    "forgery_ascension": "assassin"
+  },
+  "benjamin": {
+    "game_id": 8204040010,
+    "display_name": "Benjamin",
+    "rarity": 4,
+    "element": "lightning",
+    "weapon_type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Benjamin_00.png?class=thumb",
+    "forgery_skill": "cartilage",
+    "forgery_ascension": "assassin"
+  },
+  "bonnie": {
+    "game_id": 8204030011,
+    "display_name": "Bonnie",
+    "rarity": 4,
+    "element": "wind",
+    "weapon_type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Bonney_00.png?class=thumb",
+    "forgery_skill": "powder",
+    "forgery_ascension": "support"
+  },
+  "cloud": {
+    "game_id": 8204020012,
+    "display_name": "Cloud",
+    "rarity": 4,
+    "element": "ice",
+    "weapon_type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Cloud_00.png?class=thumb",
+    "forgery_skill": "fur",
+    "forgery_ascension": "destroyer"
+  },
+  "daisy": {
+    "game_id": 8204050013,
+    "display_name": "Daisy",
+    "rarity": 4,
+    "element": "earth",
+    "weapon_type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Daisy_00.png?class=thumb",
+    "forgery_skill": "carapace",
+    "forgery_ascension": "support"
+  },
+  "ellie": {
+    "game_id": 8204050014,
+    "display_name": "Ellie",
+    "rarity": 4,
+    "element": "earth",
+    "weapon_type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Ellie_00.png?class=thumb",
+    "forgery_skill": "carapace",
+    "forgery_ascension": "destroyer"
+  },
+  "francis": {
+    "game_id": 8204050015,
+    "display_name": "Francis",
+    "rarity": 4,
+    "element": "earth",
+    "weapon_type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Francis_00.png?class=thumb",
+    "forgery_skill": "carapace",
+    "forgery_ascension": "support"
+  },
+  "leeho": {
+    "game_id": 8204010016,
+    "display_name": "Leeho",
+    "rarity": 4,
+    "element": "fire",
+    "weapon_type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Leeho_00.png?class=thumb",
+    "forgery_skill": "sinew",
+    "forgery_ascension": "assassin"
+  },
+  "reina": {
+    "game_id": 8204040017,
+    "display_name": "Reina",
+    "rarity": 4,
+    "element": "lightning",
+    "weapon_type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Reina_00.png?class=thumb",
+    "forgery_skill": "cartilage",
+    "forgery_ascension": "destroyer"
+  },
+  "sera": {
+    "game_id": 8204020018,
+    "display_name": "Sera",
+    "rarity": 4,
+    "element": "ice",
+    "weapon_type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Sera_00.png?class=thumb",
+    "forgery_skill": "fur",
+    "forgery_ascension": "fighter"
+  },
+  "verna": {
+    "game_id": 8204010019,
+    "display_name": "Verna",
+    "rarity": 4,
+    "element": "fire",
+    "weapon_type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Verna_00.png?class=thumb",
+    "forgery_skill": "sinew",
+    "forgery_ascension": "fighter"
+  },
+  "yeonhwa": {
+    "game_id": 8204040020,
+    "display_name": "Yeonhwa",
+    "rarity": 4,
+    "element": "lightning",
+    "weapon_type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Yeonhwa_00.png?class=thumb",
+    "forgery_skill": "cartilage",
+    "forgery_ascension": "assassin"
+  },
+  "narae": {
+    "game_id": 8205020021,
+    "display_name": "Narae",
+    "rarity": 5,
+    "element": "ice",
+    "weapon_type": "supporter",
+    "icon": "https://www.kaiden.gg/img/mongil/portraits/portrait_Narae_01.webp",
+    "forgery_skill": "cartilage",
+    "forgery_ascension": "support"
+  },
+  "nagi": {
+    "game_id": 8205030022,
+    "display_name": "Nagi",
+    "rarity": 5,
+    "element": "wind",
+    "weapon_type": "destroyer",
+    "icon": "https://www.kaiden.gg/img/mongil/portraits/portrait_Nagi_01.webp",
+    "forgery_skill": "cartilage",
+    "forgery_ascension": "destroyer"
+  }
+}
