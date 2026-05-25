@@ -1229,8 +1229,9 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--bg-surface);
+    background-color: var(--bg-surface-hover);
     border-radius: 12px;
+    border: 1px solid var(--border);
     /* ?κ렐 紐⑥꽌由?*/
     padding: 12px;
     /* 移대뱶 ?대? ?щ갚 */

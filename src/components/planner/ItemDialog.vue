@@ -346,6 +346,7 @@ watch(() => props.item, () => {
     padding: 16px;
     border-radius: 10px;
     background: var(--bg-subtle);
+    border: 1px solid var(--border);
     margin-bottom: 16px;
 }
 
@@ -433,6 +434,7 @@ watch(() => props.item, () => {
     padding: 16px;
     border-radius: 10px;
     background: var(--bg-subtle);
+    border: 1px solid var(--border);
     text-align: center;
 }
 
