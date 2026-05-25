@@ -67,11 +67,38 @@ src/games/{gameid}/
 **tiers.js 생성 기준:**
 - materials.json에서 tier 필드가 있는 항목들을 SubCategory별로 그룹화
 
-### Step 4: Register plugin in src/main.js
+### Step 4: Register plugin in src/games/index.js AND src/main.js
 
+**src/games/index.js** — 이 파일이 실제로 게임 목록을 표시하는 곳. 반드시 여기에 추가해야 게임 선택 화면에 보임.
+
+1. import 추가:
+```javascript
+import {gameid}Plugin from './{gameid}';
+```
+
+2. `games` 객체에 추가:
+```javascript
+const games = {
+  ...
+  {gameid}: {gameid}Plugin,
+};
+```
+
+3. `supportedGames` 배열에 추가:
+```javascript
+{
+  id: '{gameid}',
+  name: '{GameName}',
+  shortName: '{SHORT}',
+  icon: '⭐',  // 게임에 맞는 이모지
+  enabled: true,
+},
+```
+
+**src/main.js** — gameRegistry 등록도 함께:
 ```javascript
 import {gameid}Plugin from './games/{gameid}';
-gameStore.registerGame({gameid}Plugin);
+gameRegistry.registerGame({gameid}Plugin);
 ```
 
 ### Step 5: Create test file
@@ -98,7 +125,7 @@ gameStore.registerGame({gameid}Plugin);
   src/games/{gameid}/data/tiers.js
   tests/games/{gameid}-materialProcessor.test.js
 
-🔌 src/main.js 에 플러그인 등록 완료
+🔌 src/games/index.js + src/main.js 에 플러그인 등록 완료
 
 브라우저에서 확인해주세요:
   npm run dev

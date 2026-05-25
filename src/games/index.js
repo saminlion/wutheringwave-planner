@@ -6,6 +6,7 @@ import wutheringWavePlugin from './wutheringwave';
 import endfieldPlugin from './endfield';
 import gfl2Plugin from './gfl2';
 import ntePlugin from './nte';
+import mongilstardivePlugin from './mongilstardive';
 
 // 등록된 게임 플러그인
 const games = {
@@ -13,6 +14,7 @@ const games = {
   endfield: endfieldPlugin,
   gfl2: gfl2Plugin,
   nte: ntePlugin,
+  mongilstardive: mongilstardivePlugin,
 };
 
 // 지원 게임 목록
@@ -43,6 +45,13 @@ export const supportedGames = [
     name: 'Neverness To Everness',
     shortName: 'NTE',
     icon: '🌙',
+    enabled: true,
+  },
+  {
+    id: 'mongilstardive',
+    name: 'Mongil StarDive',
+    shortName: 'MSD',
+    icon: '⭐',
     enabled: true,
   },
 ];
