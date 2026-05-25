@@ -156,7 +156,7 @@ onMounted(() => {
 }
 
 .backup-section {
-  background: white;
+  background: var(--bg-surface);
   border-radius: 8px;
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -164,42 +164,42 @@ onMounted(() => {
 
 h3 {
   margin: 0 0 20px 0;
-  color: #333;
+  color: var(--text);
   font-size: 20px;
 }
 
 .storage-info {
   margin-bottom: 24px;
   padding: 16px;
-  background: #f5f5f5;
+  background: var(--bg-subtle);
   border-radius: 6px;
 }
 
 .info-text {
   margin: 0 0 8px 0;
   font-size: 14px;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .progress-bar {
   height: 8px;
-  background: #e0e0e0;
+  background: var(--border);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: #4caf50;
+  background: var(--color-success);
   transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .progress-fill.warning {
-  background: #ff9800;
+  background: var(--color-warning);
 }
 
 .progress-fill.danger {
-  background: #f44336;
+  background: var(--color-danger);
 }
 
 .actions {
@@ -217,7 +217,7 @@ h3 {
 .action-desc {
   margin: 0;
   font-size: 13px;
-  color: #999;
+  color: var(--text-muted);
   padding-left: 4px;
 }
 
@@ -239,30 +239,33 @@ h3 {
 }
 
 .btn-primary {
-  background: #2196f3;
+  background: var(--color-info);
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #1976d2;
+  background: var(--color-info);
+  filter: brightness(0.9);
 }
 
 .btn-secondary {
-  background: #4caf50;
+  background: var(--color-success);
   color: white;
 }
 
 .btn-secondary:hover:not(:disabled):not(.disabled) {
-  background: #388e3c;
+  background: var(--color-success);
+  filter: brightness(0.9);
 }
 
 .btn-danger {
-  background: #f44336;
+  background: var(--color-danger);
   color: white;
 }
 
 .btn-danger:hover:not(:disabled) {
-  background: #d32f2f;
+  background: var(--color-danger);
+  filter: brightness(0.9);
 }
 
 @media (max-width: 640px) {

@@ -162,7 +162,7 @@ const setQuantity = (materialId) => {
   font-size: 24px;
   margin-top: 16px;
   padding-bottom: 8px;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid var(--text);
 }
 
 /* Subcategory title */
@@ -170,7 +170,7 @@ const setQuantity = (materialId) => {
   font-size: 20px;
   margin-top: 12px;
   padding-bottom: 4px;
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid var(--text-muted);
 }
 
 /* Grid layout for inventory cards */
@@ -183,8 +183,8 @@ const setQuantity = (materialId) => {
 
 /* Individual inventory card */
 .inventory-card {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 16px;
   text-align: center;

@@ -27,6 +27,30 @@
   --link-active: #35495e;
   --nav-bg: #f8f9fa;
 
+  /* Aliases used by game CharacterDialog components */
+  --bg-primary: var(--bg-surface);
+  --bg-secondary: var(--bg-subtle);
+  --text-primary: var(--text);
+  --text-secondary: var(--text-muted);
+  --border-color: var(--border);
+  --accent-color: #4a90e2;
+  --btn-secondary: var(--border);
+  --btn-secondary-hover: var(--bg-surface-hover);
+  --success-color: var(--color-success);
+
+  /* Semantic status colors */
+  --color-success: #27ae60;
+  --color-success-bg: #d1fae5;
+  --color-success-text: #047857;
+  --color-danger: #e74c3c;
+  --color-warning: #f39c12;
+  --color-warning-bg: #fef3c7;
+  --color-warning-text: #b45309;
+  --color-info: #3498db;
+  --color-info-bg: #e8f4f8;
+  --bg-subtle: #f8f9fa;
+  --input-bg: #ffffff;
+
   color: var(--text);
   background-color: var(--bg);
 }
@@ -47,6 +71,23 @@
   --link: #68d391;
   --link-active: #a0aec0;
   --nav-bg: #0d1117;
+
+  /* Aliases used by game CharacterDialog components */
+  --accent-color: #60a5fa;
+  --success-color: var(--color-success);
+
+  /* Semantic status colors */
+  --color-success: #4ade80;
+  --color-success-bg: #14532d;
+  --color-success-text: #86efac;
+  --color-danger: #f87171;
+  --color-warning: #fbbf24;
+  --color-warning-bg: #451a03;
+  --color-warning-text: #fcd34d;
+  --color-info: #60a5fa;
+  --color-info-bg: #1e3a5f;
+  --bg-subtle: #1f2937;
+  --input-bg: #1a2035;
 }
 
 /* ── Global Resets ── */
@@ -105,6 +146,13 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+/* ── Global input/select theming ── */
+input, select, textarea {
+  background-color: var(--input-bg, #fff);
+  color: var(--text);
+  border-color: var(--border);
 }
 
 /* ── Dark mode overrides for components using hardcoded colors ── */

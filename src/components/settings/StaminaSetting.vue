@@ -82,7 +82,7 @@ function reset() {
 }
 
 .card {
-  background: white;
+  background: var(--bg-surface);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -113,7 +113,7 @@ function reset() {
 
 .setting-description {
   margin: 0 0 1rem;
-  color: #666;
+  color: var(--text-muted);
   font-size: 0.9rem;
 }
 
@@ -126,8 +126,10 @@ function reset() {
 .stamina-input {
   width: 120px;
   padding: 0.6rem 0.75rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: 8px;
+  background: var(--input-bg);
+  color: var(--text);
   font-size: 1.1rem;
   text-align: center;
   transition: border-color 0.2s ease;
@@ -135,37 +137,37 @@ function reset() {
 
 .stamina-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: var(--primary);
 }
 
 .stamina-input::placeholder {
-  color: #bbb;
+  color: var(--text-muted);
 }
 
 .stamina-unit {
-  color: #666;
+  color: var(--text-muted);
   font-size: 0.95rem;
 }
 
 .reset-btn {
   padding: 0.5rem 1rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: 8px;
-  background: white;
-  color: #666;
+  background: var(--bg-surface);
+  color: var(--text);
   font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .reset-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .default-hint {
   margin: 0.5rem 0 0;
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.8rem;
 }
 </style>

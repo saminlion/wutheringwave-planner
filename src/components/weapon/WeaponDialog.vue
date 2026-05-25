@@ -227,7 +227,7 @@ onMounted(() => {
 
 .level-arrow {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-muted);
 }
 
 .tabs {
@@ -239,19 +239,19 @@ onMounted(() => {
 .tabs button {
     padding: 10px 20px;
     border: none;
-    background: #f0f0f0;
+    background: var(--bg-subtle);
     cursor: pointer;
     border-radius: 4px;
     transition: background 0.3s;
 }
 
 .tabs button.active {
-    background: #4a90e2;
+    background: var(--color-info);
     color: white;
 }
 
 .tabs button:hover {
-    background: #d0d0d0;
+    background: var(--border);
 }
 
 .skills-wrapper {
@@ -272,7 +272,7 @@ onMounted(() => {
 }
 
 .skill-card {
-    background: #f9f9f9;
+    background: var(--bg-subtle);
     padding: 5px;
     margin-bottom: 0;
     border-radius: 8px;
@@ -281,7 +281,7 @@ onMounted(() => {
 }
 
 .collapsible-header {
-    background-color: #e0e0e0;
+    background-color: var(--border);
     padding: 10px;
     margin-bottom: 10px;
     cursor: pointer;
@@ -290,7 +290,7 @@ onMounted(() => {
 
 .skill-collapsible-content {
     padding: 0 8px;
-    background-color: #f9f9f9;
+    background-color: var(--bg-subtle);
     border-radius: 2px;
 }
 
@@ -313,15 +313,17 @@ onMounted(() => {
     width: 40px;
     height: 30px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
     border-radius: 4px;
+    background: var(--input-bg);
+    color: var(--text);
     font-size: 14px;
 }
 
 .control-buttons button {
     width: 30px;
     height: 30px;
-    background-color: #e0e0e0;
+    background-color: var(--border);
     border-radius: 4px;
     cursor: pointer;
     border: none;
@@ -330,7 +332,7 @@ onMounted(() => {
 }
 
 .control-buttons button:hover {
-    background-color: #4a90e2;
+    background-color: var(--color-info);
     color: white;
 }
 
@@ -341,7 +343,7 @@ onMounted(() => {
 
 button.close-dialog {
     padding: 8px 16px;
-    background-color: #4a90e2;
+    background-color: var(--color-info);
     color: white;
     border: none;
     border-radius: 8px;
@@ -353,13 +355,13 @@ button.close-dialog {
 .materials-section {
     margin-top: 20px;
     padding: 12px;
-    background: #f5f5f5;
+    background: var(--bg-subtle);
     border-radius: 8px;
 }
 
 .materials-title {
     font-size: 12px;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -376,9 +378,9 @@ button.close-dialog {
     align-items: center;
     gap: 4px;
     padding: 6px 10px;
-    background: #fff;
+    background: var(--bg-surface);
     border-radius: 6px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
 }
 
 .material-icon {
@@ -390,16 +392,16 @@ button.close-dialog {
 .material-qty {
     font-size: 13px;
     font-weight: 600;
-    color: #333;
+    color: var(--text);
 }
 
 .no-materials {
     margin-top: 20px;
     padding: 16px;
     text-align: center;
-    color: #999;
+    color: var(--text-muted);
     font-size: 13px;
-    background: #f5f5f5;
+    background: var(--bg-subtle);
     border-radius: 8px;
 }
 
@@ -411,7 +413,7 @@ button.close-dialog {
 
 .complete-tab-btn {
     padding: 8px 20px;
-    background: #4a90e2;
+    background: var(--color-info);
     color: #fff;
     border: none;
     border-radius: 6px;

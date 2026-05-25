@@ -64,7 +64,7 @@ export default {
 
 .spinner {
   border: 3px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #3b82f6;
+  border-top-color: var(--color-info);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -89,7 +89,7 @@ export default {
 
 .loading-message {
   margin: 0;
-  color: #666;
+  color: var(--text-muted);
   font-size: 14px;
 }
 

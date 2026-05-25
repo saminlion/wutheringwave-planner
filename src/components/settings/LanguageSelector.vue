@@ -37,7 +37,7 @@ const changeLanguage = async (langCode) => {
 }
 
 .card {
-  background: white;
+  background: var(--bg-surface);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -74,22 +74,23 @@ const changeLanguage = async (langCode) => {
 .language-btn {
   flex: 1;
   padding: 0.75rem 1rem;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--border);
   border-radius: 8px;
-  background: white;
+  background: var(--bg-surface);
+  color: var(--text);
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .language-btn:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
+  border-color: var(--primary);
+  background: var(--bg-surface-hover);
 }
 
 .language-btn.active {
-  border-color: #667eea;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-end) 100%);
   color: white;
 }
 </style>

@@ -299,7 +299,7 @@ watch(() => props.item, () => {
 }
 
 .dialog-content {
-    background: white;
+    background: var(--bg-surface);
     border-radius: 16px;
     min-width: 416px;
     max-width: 90vw;
@@ -313,13 +313,13 @@ watch(() => props.item, () => {
     justify-content: space-between;
     align-items: center;
     padding: 21px 26px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border);
 }
 
 .dialog-header h2 {
     margin: 0;
     font-size: 23px;
-    color: #2c3e50;
+    color: var(--text);
 }
 
 .close-btn {
@@ -327,13 +327,13 @@ watch(() => props.item, () => {
     border: none;
     font-size: 31px;
     cursor: pointer;
-    color: #7f8c8d;
+    color: var(--text-muted);
     padding: 0;
     line-height: 1;
 }
 
 .close-btn:hover {
-    color: #e74c3c;
+    color: var(--color-danger);
 }
 
 .dialog-body {
@@ -345,7 +345,7 @@ watch(() => props.item, () => {
     gap: 21px;
     padding: 16px;
     border-radius: 10px;
-    background: #f8f9fa;
+    background: var(--bg-subtle);
     margin-bottom: 16px;
 }
 
@@ -354,7 +354,7 @@ watch(() => props.item, () => {
 }
 
 .item-row.item-complete {
-    background: #e8f5e9;
+    background: var(--color-success-bg);
     opacity: 0.7;
 }
 
@@ -371,7 +371,7 @@ watch(() => props.item, () => {
 .item-name {
     font-weight: bold;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: var(--text);
 }
 
 .detail-row {
@@ -382,36 +382,36 @@ watch(() => props.item, () => {
 }
 
 .detail-row .label {
-    color: #7f8c8d;
+    color: var(--text-muted);
 }
 
 .detail-row .value {
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text);
 }
 
 .detail-row .value.synthesis {
-    color: #f39c12;
+    color: var(--color-warning);
 }
 
 .detail-row .value.decomp-out {
-    color: #c2410c;
+    color: var(--color-warning-text);
 }
 
 .detail-row .value.decomp-in {
-    color: #047857;
+    color: var(--color-success-text);
 }
 
 .detail-row .value.complete {
-    color: #27ae60;
+    color: var(--color-success);
 }
 
 .detail-row .value.incomplete {
-    color: #e74c3c;
+    color: var(--color-danger);
 }
 
 .need-row {
-    border-top: 1px dashed #ddd;
+    border-top: 1px dashed var(--border);
     margin-top: 5px;
     padding-top: 10px;
 }
@@ -432,12 +432,12 @@ watch(() => props.item, () => {
     min-width: 130px;
     padding: 16px;
     border-radius: 10px;
-    background: #f8f9fa;
+    background: var(--bg-subtle);
     text-align: center;
 }
 
 .tier-card.item-complete {
-    background: #e8f5e9;
+    background: var(--color-success-bg);
     opacity: 0.7;
 }
 
@@ -451,7 +451,7 @@ watch(() => props.item, () => {
 .tier-name {
     font-weight: bold;
     font-size: 14px;
-    color: #2c3e50;
+    color: var(--text);
     margin-bottom: 5px;
     line-height: 1.2;
     word-break: keep-all;
@@ -459,7 +459,7 @@ watch(() => props.item, () => {
 
 .tier-exp {
     font-size: 13px;
-    color: #7f8c8d;
+    color: var(--text-muted);
     margin-bottom: 8px;
 }
 
@@ -472,36 +472,36 @@ watch(() => props.item, () => {
 }
 
 .tier-stat .stat-label {
-    color: #7f8c8d;
+    color: var(--text-muted);
 }
 
 .tier-stat .stat-value {
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--text);
 }
 
 .tier-stat .stat-value.synthesis {
-    color: #f39c12;
+    color: var(--color-warning);
 }
 
 .tier-stat .stat-value.decomp-out {
-    color: #c2410c;
+    color: var(--color-warning-text);
 }
 
 .tier-stat .stat-value.decomp-in {
-    color: #047857;
+    color: var(--color-success-text);
 }
 
 .tier-stat .stat-value.complete {
-    color: #27ae60;
+    color: var(--color-success);
 }
 
 .tier-stat .stat-value.incomplete {
-    color: #e74c3c;
+    color: var(--color-danger);
 }
 
 .tier-stat.need-stat {
-    border-top: 1px dashed #ddd;
+    border-top: 1px dashed var(--border);
     margin-top: 3px;
     padding-top: 5px;
 }
@@ -513,14 +513,16 @@ watch(() => props.item, () => {
 .tier-input {
     width: 78px;
     padding: 5px 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 5px;
+    background: var(--input-bg);
+    color: var(--text);
     font-size: 16px;
     text-align: center;
 }
 
 .tier-input:focus {
-    border-color: #3498db;
+    border-color: var(--color-info);
     outline: none;
 }
 
@@ -531,7 +533,7 @@ watch(() => props.item, () => {
 
 .save-all-btn {
     padding: 10px 24px;
-    background: #3498db;
+    background: var(--color-info);
     color: white;
     border: none;
     border-radius: 8px;
@@ -541,13 +543,14 @@ watch(() => props.item, () => {
 }
 
 .save-all-btn:hover {
-    background: #2980b9;
+    background: var(--color-info);
+    filter: brightness(0.9);
 }
 
 .dialog-footer {
     padding: 21px 26px;
-    border-top: 1px solid #eee;
-    background: #f8f9fa;
+    border-top: 1px solid var(--border);
+    background: var(--bg-subtle);
     border-radius: 0 0 16px 16px;
 }
 
@@ -559,20 +562,22 @@ watch(() => props.item, () => {
 
 .inventory-input label {
     font-size: 18px;
-    color: #7f8c8d;
+    color: var(--text-muted);
 }
 
 .inventory-input input {
     flex: 1;
     padding: 10px 16px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 8px;
+    background: var(--input-bg);
+    color: var(--text);
     font-size: 18px;
 }
 
 .inventory-input button {
     padding: 10px 21px;
-    background: #3498db;
+    background: var(--color-info);
     color: white;
     border: none;
     border-radius: 8px;
@@ -581,7 +586,8 @@ watch(() => props.item, () => {
 }
 
 .inventory-input button:hover {
-    background: #2980b9;
+    background: var(--color-info);
+    filter: brightness(0.9);
 }
 
 </style>

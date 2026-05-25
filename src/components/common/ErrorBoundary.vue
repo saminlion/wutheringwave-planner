@@ -145,14 +145,14 @@ const handleGoBack = () => {
 
 .error-title {
   margin: 0 0 12px 0;
-  color: #d32f2f;
+  color: var(--color-danger);
   font-size: 24px;
   font-weight: 600;
 }
 
 .error-message {
   margin: 0 0 24px 0;
-  color: #666;
+  color: var(--text-muted);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -165,23 +165,23 @@ const handleGoBack = () => {
 .toggle-btn {
   width: 100%;
   padding: 10px 16px;
-  background: #f5f5f5;
-  border: 1px solid #ddd;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
   border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
-  color: #666;
+  color: var(--text-muted);
   transition: background 0.2s;
 }
 
 .toggle-btn:hover {
-  background: #e0e0e0;
+  background: var(--border);
 }
 
 .details-content {
   margin-top: 12px;
   padding: 16px;
-  background: #f5f5f5;
+  background: var(--bg-subtle);
   border-radius: 6px;
   max-height: 300px;
   overflow-y: auto;
@@ -190,7 +190,7 @@ const handleGoBack = () => {
 .details-content pre {
   margin: 0;
   font-size: 12px;
-  color: #333;
+  color: var(--text);
   white-space: pre-wrap;
   word-break: break-word;
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
@@ -214,21 +214,23 @@ const handleGoBack = () => {
 }
 
 .btn-primary {
-  background: #2196f3;
+  background: var(--color-info);
   color: white;
 }
 
 .btn-primary:hover {
-  background: #1976d2;
+  background: var(--color-info);
+  filter: brightness(0.9);
 }
 
 .btn-secondary {
-  background: #757575;
+  background: var(--text-muted);
   color: white;
 }
 
 .btn-secondary:hover {
-  background: #616161;
+  background: var(--text-muted);
+  filter: brightness(0.8);
 }
 
 @media (max-width: 640px) {

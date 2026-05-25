@@ -1151,7 +1151,7 @@ onMounted(() => {
 }
 
 .summary-card {
-    background-color: #f0f8ff;
+    background-color: var(--color-info-bg);
     border-radius: 12px;
     padding: 16px;
     text-align: center;
@@ -1161,13 +1161,13 @@ onMounted(() => {
 .summary-card h3 {
     font-size: 16px;
     margin-bottom: 8px;
-    color: #2c3e50;
+    color: var(--text);
 }
 
 .summary-card p {
     font-size: 24px;
     font-weight: bold;
-    color: #34495e;
+    color: var(--text);
 }
 
 .category-card {
@@ -1175,8 +1175,7 @@ onMounted(() => {
     /* 移댄뀒怨좊━ 媛꾧꺽 */
     padding: 16px;
     /* ?대? ?щ갚 */
-    background-color: #f7f9fc;
-    /* 諛곌꼍??*/
+    background-color: var(--bg-subtle);
     border-radius: 8px;
     /* ?κ렐 紐⑥꽌由?*/
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -1186,7 +1185,7 @@ onMounted(() => {
 .category-title {
     font-size: 18px;
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--text);
     margin-bottom: 12px;
     /* 移댄뀒怨좊━ ??댄? ?꾨옒 媛꾧꺽 */
 }
@@ -1202,7 +1201,7 @@ onMounted(() => {
 .subcategory-card {
     flex: 1 1 calc(33.33% - 16px);
     /* 3媛쒖쓽 移대뱶媛 ???됱뿉 ?섏뿴 */
-    background-color: #ffffff;
+    background-color: var(--bg-surface);
     border-radius: 8px;
     padding: 12px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -1230,7 +1229,7 @@ onMounted(() => {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    background-color: #ffffff;
+    background-color: var(--bg-surface);
     border-radius: 12px;
     /* ?κ렐 紐⑥꽌由?*/
     padding: 12px;
@@ -1254,14 +1253,14 @@ onMounted(() => {
 .material-info {
     text-align: center;
     font-size: 14px;
-    color: #333;
+    color: var(--text);
     font-weight: bold;
     line-height: 1.5;
     /* ?띿뒪??媛꾧꺽 */
 }
 
 .material-quantity {
-    color: #27ae60;
+    color: var(--color-success);
     /* ?띿뒪??媛뺤“ ?됱긽 */
     font-size: 16px;
     /* ?띿뒪???ш린 */
@@ -1281,36 +1280,32 @@ onMounted(() => {
 }
 
 .badge-need {
-    background-color: #e74c3c;
-    /* 鍮④컙??*/
+    background-color: var(--color-danger);
     color: white;
 }
 
 .badge-synthesize {
-    background-color: #f1c40f;
-    /* ?몃???*/
+    background-color: var(--color-warning);
     color: white;
 }
 
 .badge-owned {
-    background-color: #27ae60;
+    background-color: var(--color-success);
     color: white;
 }
 
 .badge-complete {
-    background-color: #27ae60;
+    background-color: var(--color-success);
     color: white;
 }
 
 .badge-owned-green {
-    background-color: #27ae60;
-    /* 珥덈줉??*/
+    background-color: var(--color-success);
     color: white;
 }
 
 .badge-owned-red {
-    background-color: #e74c3c;
-    /* 鍮④컙??*/
+    background-color: var(--color-danger);
     color: white;
 }
 
@@ -1325,14 +1320,16 @@ onMounted(() => {
     width: 60px;
     padding: 4px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border);
     border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text);
     margin-top: 4px;
 }
 
 .material-set {
     font-size: 14px;
-    color: #e74c3c;
+    color: var(--color-danger);
     /* 媛뺤“ ?됱긽 */
     font-weight: bold;
     text-align: center;
@@ -1343,8 +1340,7 @@ onMounted(() => {
 }
 
 .final-container {
-    background-color: #ecf0f1;
-    /* 諛곌꼍??*/
+    background-color: var(--bg-subtle);
     padding: 20px;
     /* ?щ갚 */
     border-radius: 8px;
@@ -1354,8 +1350,7 @@ onMounted(() => {
 .estimate-container p {
     font-size: 14px;
     /* ?고듃 ?ш린 */
-    color: #7f8c8d;
-    /* ?띿뒪???됱긽 */
+    color: var(--text-muted);
     margin: 4px 0;
     /* ?띿뒪??媛꾧꺽 */
 }
@@ -1367,31 +1362,32 @@ onMounted(() => {
     gap: 12px;
     margin-bottom: 16px;
     padding: 12px 16px;
-    background-color: #e8f4f8;
+    background-color: var(--color-info-bg);
     border-radius: 8px;
-    border: 1px solid #b8d4e3;
+    border: 1px solid var(--border);
 }
 
 .dungeon-level-selector label {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--text);
 }
 
 .dungeon-level-selector select {
     padding: 6px 12px;
     border-radius: 6px;
-    border: 1px solid #3498db;
-    background-color: white;
+    border: 1px solid var(--color-info);
+    background-color: var(--input-bg);
+    color: var(--text);
     font-size: 14px;
     cursor: pointer;
 }
 
 .dungeon-level-selector select:hover {
-    border-color: #2980b9;
+    border-color: var(--color-info);
 }
 
 .dungeon-level-selector .dungeon-info {
-    color: #7f8c8d;
+    color: var(--text-muted);
     font-size: 13px;
 }
 
@@ -1400,36 +1396,36 @@ onMounted(() => {
     padding: 8px;
     margin: 4px 0;
     border-radius: 6px;
-    background-color: #f8f9fa;
+    background-color: var(--bg-subtle);
 }
 
 .tier2-estimate {
-    border-left: 3px solid #3498db;
+    border-left: 3px solid var(--color-info);
 }
 
 .tier3-estimate {
-    border-left: 3px solid #9b59b6;
+    border-left: 3px solid var(--primary);
 }
 
 .tier-label {
     font-weight: bold;
-    color: #2c3e50;
+    color: var(--text);
     margin-bottom: 2px;
 }
 
 .tier-total {
     margin-top: 8px;
     padding-top: 8px;
-    border-top: 1px dashed #bdc3c7;
+    border-top: 1px dashed var(--border);
 }
 
 .tier-total p {
-    color: #2c3e50;
+    color: var(--text);
 }
 
 .estimate-note {
     font-size: 12px;
-    color: #e67e22;
+    color: var(--color-warning);
     font-style: italic;
     margin-top: 4px;
 }
@@ -1453,7 +1449,7 @@ onMounted(() => {
 .need-number {
     font-size: 18px;
     font-weight: bold;
-    color: #e74c3c;
+    color: var(--color-danger);
 }
 
 /* 合成・分解情報バッジ */
@@ -1481,33 +1477,33 @@ onMounted(() => {
 }
 
 .conv-badge.conv-synth {
-    background-color: #fef3c7;
-    color: #b45309;
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning-text);
 }
 
 .conv-badge.conv-decomp-out {
-    background-color: #fed7aa;
-    color: #c2410c;
+    background-color: var(--color-warning-bg);
+    color: var(--color-warning-text);
 }
 
 .conv-badge.conv-decomp-in {
-    background-color: #d1fae5;
-    color: #047857;
+    background-color: var(--color-success-bg);
+    color: var(--color-success-text);
 }
 
 /* Crafting Plan */
 .crafting-plan {
     margin-bottom: 24px;
     padding: 20px 24px;
-    background-color: #1a2035;
+    background-color: var(--input-bg);
     border-radius: 12px;
-    border: 1px solid #2e3a52;
+    border: 1px solid var(--border);
 }
 
 .crafting-plan-title {
     font-size: 16px;
     font-weight: 700;
-    color: #e2e8f0;
+    color: var(--text);
     margin: 0 0 16px 0;
 }
 
@@ -1536,13 +1532,13 @@ onMounted(() => {
 }
 
 .crafting-synth-label {
-    background-color: #92400e;
-    color: #fef3c7;
+    background-color: var(--color-warning-text);
+    color: var(--color-warning-bg);
 }
 
 .crafting-decomp-label {
-    background-color: #1e3a8a;
-    color: #dbeafe;
+    background-color: var(--color-info);
+    color: white;
 }
 
 .crafting-actions-row {
@@ -1555,10 +1551,10 @@ onMounted(() => {
     display: flex;
     align-items: center;
     gap: 6px;
-    background-color: #273044;
+    background-color: var(--bg-subtle);
     border-radius: 10px;
     padding: 8px 12px;
-    border: 1px solid #374357;
+    border: 1px solid var(--border);
 }
 
 .crafting-icon {
@@ -1571,17 +1567,17 @@ onMounted(() => {
 .crafting-qty {
     font-size: 15px;
     font-weight: 700;
-    color: #94a3b8;
+    color: var(--text-muted);
 }
 
 .crafting-qty-result {
-    color: #6ee7b7;
+    color: var(--color-success);
     font-size: 16px;
 }
 
 .crafting-arrow {
     font-size: 18px;
-    color: #475569;
+    color: var(--text-muted);
     padding: 0 2px;
 }
 </style>

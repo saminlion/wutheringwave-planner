@@ -1115,7 +1115,7 @@ onMounted(() => {
 }
 
 .goal-card {
-  background-color: #f4f4f4;
+  background-color: var(--bg-surface);
   border-radius: 8px;
   padding: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1177,7 +1177,7 @@ onMounted(() => {
 .action-btn svg {
   width: 16px;
   height: 16px;
-  color: #333;
+  color: var(--text);
 }
 
 .action-btn:hover {
@@ -1186,18 +1186,18 @@ onMounted(() => {
 }
 
 .action-btn.edit-btn:hover svg {
-  color: #4a90e2;
+  color: var(--color-info);
 }
 
 .action-btn.hide-btn:hover svg {
-  color: #666;
+  color: var(--text-muted);
 }
 
 .action-btn.complete-btn:hover svg {
-  color: #4caf50;
+  color: var(--color-success);
 }
 
 .action-btn.delete-btn:hover svg {
-  color: #e53935;
+  color: var(--color-danger);
 }
 </style>

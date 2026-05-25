@@ -42,7 +42,7 @@ const { tUI } = useLocale();
 }
 
 .settings-description {
-  color: #4a4a4a;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 

@@ -194,7 +194,7 @@ function formatDate(date) {
 
 <style scoped>
 .cloud-sync {
-  background: #f8f9fa;
+  background: var(--bg-subtle);
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -202,12 +202,12 @@ function formatDate(date) {
 
 .cloud-sync h3 {
   margin: 0 0 15px 0;
-  color: #333;
+  color: var(--text);
 }
 
 .warning-box {
-  background: #fff3cd;
-  border: 1px solid #ffc107;
+  background: var(--color-warning-bg);
+  border: 1px solid var(--color-warning);
   border-radius: 4px;
   padding: 15px;
 }
@@ -218,7 +218,7 @@ function formatDate(date) {
 
 .hint {
   font-size: 0.85em;
-  color: #856404;
+  color: var(--color-warning-text);
   margin-top: 5px !important;
 }
 
@@ -232,8 +232,8 @@ function formatDate(date) {
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
@@ -241,7 +241,7 @@ function formatDate(date) {
 }
 
 .google-btn:hover:not(:disabled) {
-  background: #f5f5f5;
+  background: var(--bg-surface-hover);
 }
 
 .google-btn:disabled {
@@ -260,7 +260,7 @@ function formatDate(date) {
   align-items: center;
   gap: 12px;
   padding: 10px;
-  background: white;
+  background: var(--bg-surface);
   border-radius: 4px;
 }
 
@@ -282,12 +282,12 @@ function formatDate(date) {
 
 .user-email {
   font-size: 0.85em;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .sign-out-btn {
   padding: 6px 12px;
-  background: #dc3545;
+  background: var(--color-danger);
   color: white;
   border: none;
   border-radius: 4px;
@@ -296,12 +296,13 @@ function formatDate(date) {
 }
 
 .sign-out-btn:hover:not(:disabled) {
-  background: #c82333;
+  background: var(--color-danger);
+  filter: brightness(0.9);
 }
 
 .cloud-info {
   padding: 10px;
-  background: #e9ecef;
+  background: var(--bg-subtle);
   border-radius: 4px;
   font-size: 0.9em;
 }
@@ -327,21 +328,23 @@ function formatDate(date) {
 }
 
 .sync-btn.save {
-  background: #28a745;
+  background: var(--color-success);
   color: white;
 }
 
 .sync-btn.save:hover:not(:disabled) {
-  background: #218838;
+  background: var(--color-success);
+  filter: brightness(0.9);
 }
 
 .sync-btn.load {
-  background: #007bff;
+  background: var(--color-info);
   color: white;
 }
 
 .sync-btn.load:hover:not(:disabled) {
-  background: #0069d9;
+  background: var(--color-info);
+  filter: brightness(0.9);
 }
 
 .sync-btn:disabled {
@@ -356,17 +359,17 @@ function formatDate(date) {
 }
 
 .message.success {
-  background: #d4edda;
-  color: #155724;
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
 }
 
 .message.error {
-  background: #f8d7da;
-  color: #721c24;
+  background: color-mix(in srgb, var(--color-danger) 15%, var(--bg-surface));
+  color: var(--color-danger);
 }
 
 .message.info {
-  background: #d1ecf1;
-  color: #0c5460;
+  background: var(--color-info-bg);
+  color: var(--color-info);
 }
 </style>
