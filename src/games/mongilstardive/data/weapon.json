@@ -1,8 +1,82 @@
 {
-  "8304010001": {
-    "game_id": 8304010001,
-    "display_name": "",
-    "rarity": 4,
-    "type": "brawler"
+  "blazing_kumiho": {
+    "game_id": 8305010001,
+    "display_name": "Blazing Kumiho",
+    "rarity": 5,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactMina.png?class=hero",
+    "forgery": "chain"
+  },
+  "celestial_halo_of_life": {
+    "game_id": 8305040002,
+    "display_name": "Celestial Halo of Life",
+    "rarity": 5,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSupport5A.png?class=hero",
+    "forgery": "chain"
+  },
+  "exquisite_dragon_fire": {
+    "game_id": 8305020003,
+    "display_name": "Exquisite Dragon Fire",
+    "rarity": 5,
+    "type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactFlare.png?class=hero",
+    "forgery": "chain"
+  },
+  "frenzied_struggle": {
+    "game_id": 8305010004,
+    "display_name": "Frenzied Struggle",
+    "rarity": 5,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactBrawler5A.png?class=hero",
+    "forgery": "chain"
+  },
+  "held_close_by_nature": {
+    "game_id": 8305010005,
+    "display_name": "Held Close by Nature",
+    "rarity": 5,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSangun.png?class=hero",
+    "forgery": "chain"
+  },
+  "melody_played_on_heartstrings": {
+    "game_id": 8305040006,
+    "display_name": "Melody Played on Heartstrings",
+    "rarity": 5,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactJiwon.png?class=hero",
+    "forgery": "chain"
+  },
+  "savvy_investment": {
+    "game_id": 8305010007,
+    "display_name": "Savvy Investment",
+    "rarity": 5,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactPenny.png?class=hero",
+    "forgery": "chain"
+  },
+  "subzero_verdict": {
+    "game_id": 8305010008,
+    "display_name": "Subzero Verdict",
+    "rarity": 5,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactOphelia.png?class=hero",
+    "forgery": "chain"
+  },
+  "suffocating_darkness": {
+    "game_id": 8305030009,
+    "display_name": "Suffocating Darkness",
+    "rarity": 5,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSlayer5A.png?class=hero",
+    "forgery": "chain"
+  },
+  "thunder-raising_tremors": {
+    "game_id": 8305020010,
+    "display_name": "Thunder-raising Tremors",
+    "rarity": 5,
+    "type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactDestroyer5A.png?class=hero",
+    "forgery": "chain"
   }
 }

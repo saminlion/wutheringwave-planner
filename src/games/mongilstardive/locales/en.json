@@ -82,5 +82,16 @@
     "8120100003": "Red-Hot Chain",
     "8120100004": "Chain of Divine Retribution"
   },
-  "weapons": {}
+  "weapons": {
+    "8305010001": "Blazing Kumiho",
+    "8305040002": "Celestial Halo of Life",
+    "8305020003": "Exquisite Dragon Fire",
+    "8305010004": "Frenzied Struggle",
+    "8305010005": "Held Close by Nature",
+    "8305040006": "Melody Played on Heartstrings",
+    "8305010007": "Savvy Investment",
+    "8305010008": "Subzero Verdict",
+    "8305030009": "Suffocating Darkness",
+    "8305020010": "Thunder-raising Tremors"
+  }
 }
