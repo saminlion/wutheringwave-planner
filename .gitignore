@@ -25,3 +25,6 @@ dist-ssr
 *.sw?
 /.history
 /.history
+
+# Local-only files (planning docs, personal notes)
+LocalOnly/
