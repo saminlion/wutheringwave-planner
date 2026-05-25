@@ -88,6 +88,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      ui: 'UI_i18n',
     },
   },
   endfield: {
@@ -103,6 +104,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      ui: 'UI_i18n',
     },
   },
   gfl2: {
@@ -118,6 +120,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      ui: 'UI_i18n',
     },
   },
   nte: {
@@ -134,6 +137,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      ui: 'UI_i18n',
     },
   },
   mongilstardive: {
@@ -150,6 +154,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      ui: 'UI_i18n',
     },
   },
 };
@@ -624,11 +629,21 @@ function transformI18n(rows, lang) {
   const result = {};
 
   for (const row of rows) {
-    if (!row.game_id) continue;
+    // UI_i18n 탭은 'key' 컬럼 사용, 기타 i18n 탭은 'game_id' 사용 (하위 호환)
+    const rowKey = row.key ?? row.game_id;
+    if (!rowKey) continue;
 
     const value = row[lang];
     if (value != null && value !== '') {
-      result[String(row.game_id)] = value;
+      result[String(rowKey)] = value;
+    }
+
+    // icon 컬럼: game.name.{gameId} 행에만 입력 → game.icon.{gameId} 키로 저장
+    if (row.icon != null && row.icon !== '') {
+      const k = String(rowKey);
+      if (k.startsWith('game.name.')) {
+        result[k.replace('game.name.', 'game.icon.')] = row.icon;
+      }
     }
   }
 
@@ -734,12 +749,10 @@ async function syncGame(gameId, config) {
       try {
         const rows = await fetchSheetData(config.sheetId, tab);
 
-        // Map data type to locale key
-        const localeKey = dataType; // 'characters', 'materials', 'weapons'
-
         for (const lang of ['en', 'ko']) {
           const translations = transformI18n(rows, lang);
-          locales[lang][localeKey] = translations;
+          // ui 탭은 locale의 ui 섹션에 merge (다른 탭들과 동일 키 이름 사용)
+          locales[lang][dataType] = translations;
         }
       } catch (error) {
         console.error(`  Error syncing ${tabLabel}: ${error.message}`);

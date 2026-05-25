@@ -133,5 +133,37 @@
     "5360500063": "Brigand's Calling",
     "5360100064": "Lupine Scarlet",
     "5360400065": "Lone Barge"
+  },
+  "ui": {
+    "game.name.endfield": "Arknights: Endfield"
+  },
+  "guide": {
+    "title": "How to Use the Planner",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Select Operators",
+        "description": "In the Character tab, select the Operators you want to develop and configure their levels and skills."
+      },
+      {
+        "step": 2,
+        "title": "Select Weapons",
+        "description": "In the Weapon tab, select weapons to upgrade and set their target levels."
+      },
+      {
+        "step": 3,
+        "title": "Check Planner",
+        "description": "In the Planner tab, review required materials. Estimated time adjusts based on dungeon level settings."
+      },
+      {
+        "step": 4,
+        "title": "Update Inventory",
+        "description": "Enter your owned materials in the Inventory tab to automatically calculate exact shortfalls."
+      }
+    ],
+    "notes": [
+      "Ascension materials are required separately for level cap breaks.",
+      "Skill upgrades require Forgery materials."
+    ]
   }
 }

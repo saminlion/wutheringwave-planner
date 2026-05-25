@@ -2,8 +2,15 @@
   <div id="app">
     <header>
       <div class="header-content">
-        <h1>{{ tUI('app.title') }}</h1>
-        <GameSelector />
+        <h1 class="app-title">{{ tUI('app.title') }}</h1>
+        <div class="header-right">
+          <GameSelector compact @gameChanged="onGameChanged" />
+          <button class="theme-toggle" @click="toggleTheme" :title="themeLabel">
+            <span v-if="theme === 'light'">☀️</span>
+            <span v-else-if="theme === 'dark'">🌙</span>
+            <span v-else>💻</span>
+          </button>
+        </div>
       </div>
       <nav>
         <router-link to="/">{{ tUI('nav.home') }}</router-link>
@@ -21,11 +28,12 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import { usePlannerStore } from './store/planner.js';
 import { useInventoryStore } from './store/inventory.js';
 import { useGameStore } from './store/game.js';
 import { useLocale } from '@/composables/useLocale';
+import { useTheme } from '@/composables/useTheme';
 import GameSelector from './components/common/GameSelector.vue';
 import logger from '@/utils/logger';
 
@@ -33,17 +41,24 @@ const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 const gameStore = useGameStore();
 const { initLocale, loadGameLocales, tUI } = useLocale();
+const { theme, toggleTheme, initTheme } = useTheme();
 
-// Load data from localStorage on app start
+const themeLabel = computed(() => tUI(`settings.theme.${theme.value}`));
+
+const onGameChanged = (gameId) => {
+  logger.debug(`[App] Game changed to: ${gameId}`);
+};
+
 onMounted(async () => {
-  // Initialize locale first
-  await initLocale();
+  initTheme();
+
+  const allGameIds = gameStore.enabledGames.map(g => g.id);
+  await initLocale(allGameIds);
 
   const gameId = gameStore.currentGameId || 'wutheringwave';
   plannerStore.hydrate();
   inventoryStore.hydrate(gameId);
 
-  // 게임별 번역 파일 로드
   await loadGameLocales(gameId);
 
   logger.debug(`[App] Data loaded for game: ${gameId}`);
@@ -54,14 +69,20 @@ onMounted(async () => {
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 20px;
+  color: var(--text, #2c3e50);
+  margin-top: 0;
+  min-height: 100vh;
+  background-color: var(--bg, #f5f5f7);
 }
 
 header {
-  background-color: #f8f9fa;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  background-color: var(--bg-header, #ffffff);
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border, #ddd);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.2s ease;
 }
 
 .header-content {
@@ -70,25 +91,64 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
+  gap: 12px;
 }
 
-header h1 {
+.app-title {
   margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text, #2c3e50);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.theme-toggle {
+  padding: 4px 8px;
+  border: 1.5px solid var(--border, #ddd);
+  border-radius: 6px;
+  background: var(--bg-surface, #fff);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-focus, #667eea);
+  background: var(--bg-surface-hover, #f5f5f5);
 }
 
 nav {
-  margin-top: 10px;
+  margin-top: 8px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav a {
-  margin: 0 15px;
+  margin: 0 12px;
   text-decoration: none;
-  color: #42b983;
+  color: var(--link, #42b983);
+  font-size: 0.9rem;
 }
 
 nav a.router-link-active {
   font-weight: bold;
-  color: #35495e;
+  color: var(--link-active, #35495e);
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 </style>

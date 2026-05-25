@@ -1,5 +1,36 @@
 {
   "characters": {},
   "materials": {},
-  "weapons": {}
+  "weapons": {},
+  "ui": {
+    "game.name.gfl2": "Girls' Frontline 2: Exilium"
+  },
+  "guide": {
+    "title": "How to Use the Planner",
+    "steps": [
+      {
+        "step": 1,
+        "title": "Select Dolls",
+        "description": "In the Character tab, select the Tactical Dolls you want to develop and set their current/target levels and skills."
+      },
+      {
+        "step": 2,
+        "title": "Select Weapons",
+        "description": "In the Weapon tab, select dedicated weapons and set their target levels."
+      },
+      {
+        "step": 3,
+        "title": "Check Planner",
+        "description": "In the Planner tab, review required materials. Click any material card to view details and update quantities."
+      },
+      {
+        "step": 4,
+        "title": "Manage Inventory",
+        "description": "Enter your owned materials in the Inventory tab to automatically calculate what you still need."
+      }
+    ],
+    "notes": [
+      "Each ascension phase requires dedicated materials."
+    ]
+  }
 }

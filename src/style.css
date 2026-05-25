@@ -2,28 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── CSS Variables (Light mode default) ── */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg: #f5f5f7;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f0f0f5;
+  --bg-header: #ffffff;
+  --text: #213547;
+  --text-muted: #666;
+  --border: #e0e0e0;
+  --border-focus: #667eea;
+  --primary: #667eea;
+  --primary-end: #764ba2;
+  --shadow: rgba(0, 0, 0, 0.08);
+  --link: #42b983;
+  --link-active: #35495e;
+  --nav-bg: #f8f9fa;
+
+  color: var(--text);
+  background-color: var(--bg);
 }
 
+/* ── Dark Mode ── */
+:root.dark {
+  --bg: #1a1a2e;
+  --bg-surface: #16213e;
+  --bg-surface-hover: #1f2b4a;
+  --bg-header: #0d1117;
+  --text: rgba(255, 255, 255, 0.87);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --border: #2d3748;
+  --border-focus: #818cf8;
+  --primary: #818cf8;
+  --primary-end: #c084fc;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --link: #68d391;
+  --link-active: #a0aec0;
+  --nav-bg: #0d1117;
+}
+
+/* ── Global Resets ── */
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--link);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  opacity: 0.8;
 }
 
 body {
@@ -32,6 +65,9 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1 {
@@ -46,12 +82,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--bg-surface);
+  color: var(--text);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--border-focus);
 }
 button:focus,
 button:focus-visible {
@@ -60,6 +97,7 @@ button:focus-visible {
 
 .card {
   padding: 2em;
+  background: var(--bg-surface);
 }
 
 #app {
@@ -69,15 +107,34 @@ button:focus-visible {
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* ── Dark mode overrides for components using hardcoded colors ── */
+:root.dark header {
+  background-color: var(--bg-header) !important;
+  border-color: var(--border) !important;
+}
+
+:root.dark nav a {
+  color: var(--link) !important;
+}
+
+:root.dark nav a.router-link-active {
+  color: var(--link-active) !important;
+}
+
+:root.dark .game-card,
+:root.dark .nav-card {
+  background: var(--bg-surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+:root.dark .game-card:hover,
+:root.dark .nav-card:hover {
+  border-color: var(--border-focus) !important;
+}
+
+:root.dark .selector-title,
+:root.dark .game-name,
+:root.dark .nav-label {
+  color: var(--text) !important;
 }

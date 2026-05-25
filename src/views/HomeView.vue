@@ -1,28 +1,29 @@
 <template>
   <div class="home-view">
-    <h1 class="home-title">{{ tUI('home.welcome') }}</h1>
+    <!-- 사용 가이드 -->
+    <div v-if="guide" class="guide-section">
+      <h2 class="guide-title">{{ guide.title }}</h2>
 
-    <!-- 게임 선택 -->
-    <GameSelector @gameChanged="onGameChanged" />
+      <div class="guide-steps">
+        <div v-for="step in guide.steps" :key="step.step" class="guide-step">
+          <div class="step-number">{{ step.step }}</div>
+          <div class="step-content">
+            <h3 class="step-title">{{ step.title }}</h3>
+            <p class="step-desc">{{ step.description }}</p>
+          </div>
+        </div>
+      </div>
 
-    <!-- 네비게이션 -->
-    <div class="nav-cards">
-      <router-link to="/planner" class="nav-card">
-        <span class="nav-icon">📋</span>
-        <span class="nav-label">{{ tUI('nav.planner') }}</span>
-      </router-link>
-      <router-link to="/character" class="nav-card">
-        <span class="nav-icon">👤</span>
-        <span class="nav-label">{{ tUI('nav.character') }}</span>
-      </router-link>
-      <router-link to="/weapon" class="nav-card">
-        <span class="nav-icon">⚔️</span>
-        <span class="nav-label">{{ tUI('nav.weapon') }}</span>
-      </router-link>
-      <router-link to="/inventory" class="nav-card">
-        <span class="nav-icon">🎒</span>
-        <span class="nav-label">{{ tUI('nav.inventory') }}</span>
-      </router-link>
+      <div v-if="guide.notes && guide.notes.length" class="guide-notes">
+        <p v-for="(note, i) in guide.notes" :key="i" class="guide-note">
+          💡 {{ note }}
+        </p>
+      </div>
+    </div>
+
+    <!-- 게임 미선택 시 안내 -->
+    <div v-else class="guide-placeholder">
+      <p>{{ tUI('home.selectGame') }}</p>
     </div>
   </div>
 </template>
@@ -34,77 +35,122 @@ import { useInventoryStore } from '@/store/inventory';
 import { useGameStore } from '@/store/game';
 import { useUserProfileStore } from '@/store/userProfile';
 import { useLocale } from '@/composables/useLocale';
-import GameSelector from '@/components/common/GameSelector.vue';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
 const gameStore = useGameStore();
 const userProfileStore = useUserProfileStore();
-const { tUI, loadGameLocales } = useLocale();
+const { tUI, loadGameLocales, currentTranslations } = useLocale();
 
-const onGameChanged = (gameId) => {
-  // GameSelector에서 이미 hydrate 처리됨
-};
+const guide = computed(() => currentTranslations.value?.guide ?? null);
 
 onMounted(async () => {
-  // 초기 로드
   gameStore.hydrate();
   const gameId = gameStore.currentGameId;
   plannerStore.hydrate(gameId);
   inventoryStore.hydrate(gameId);
   userProfileStore.hydrate(gameId);
 
-  // 게임별 번역 파일 로드
   await loadGameLocales(gameId);
 });
 </script>
 
 <style scoped>
 .home-view {
-  max-width: 800px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem 2rem;
+  text-align: left;
 }
 
-.home-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-.nav-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.nav-card {
+.guide-section {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+}
+
+.guide-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text, #213547);
+  margin: 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border, #e0e0e0);
+}
+
+.guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guide-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem;
+  background: var(--bg-surface, #fff);
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 10px;
+  transition: border-color 0.15s;
+}
+
+.guide-step:hover {
+  border-color: var(--border-focus, #667eea);
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary, #667eea), var(--primary-end, #764ba2));
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1.5rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  background: white;
-  text-decoration: none;
-  color: #333;
-  transition: all 0.2s ease;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.nav-card:hover {
-  border-color: #667eea;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+.step-content {
+  flex: 1;
 }
 
-.nav-icon {
-  font-size: 2rem;
-}
-
-.nav-label {
+.step-title {
+  font-size: 0.95rem;
   font-weight: 600;
+  color: var(--text, #213547);
+  margin: 0 0 0.25rem;
+}
+
+.step-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted, #666);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.guide-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: color-mix(in srgb, var(--primary, #667eea) 8%, var(--bg-surface, #fff));
+  border-left: 3px solid var(--primary, #667eea);
+  border-radius: 0 8px 8px 0;
+}
+
+.guide-note {
+  font-size: 0.85rem;
+  color: var(--text-muted, #666);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.guide-placeholder {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-muted, #888);
 }
 </style>
