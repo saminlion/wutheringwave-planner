@@ -103,6 +103,34 @@ export const usePlannerStore = defineStore('planner', {
       this.saveGoals(this.currentGameId);
     },
 
+    moveGoalUp(goalId, goalType) {
+      const idx = this.goals.findIndex((g) => g.id === goalId && g.type === goalType);
+      if (idx <= 0) return;
+      const newGoals = [...this.goals];
+      [newGoals[idx - 1], newGoals[idx]] = [newGoals[idx], newGoals[idx - 1]];
+      this.goals = newGoals;
+      this.saveGoals(this.currentGameId);
+    },
+
+    moveGoalDown(goalId, goalType) {
+      const idx = this.goals.findIndex((g) => g.id === goalId && g.type === goalType);
+      if (idx === -1 || idx >= this.goals.length - 1) return;
+      const newGoals = [...this.goals];
+      [newGoals[idx], newGoals[idx + 1]] = [newGoals[idx + 1], newGoals[idx]];
+      this.goals = newGoals;
+      this.saveGoals(this.currentGameId);
+    },
+
+    moveGoalToIndex(fromIndex, toIndex) {
+      if (fromIndex === toIndex || fromIndex < 0 || toIndex < 0) return;
+      if (fromIndex >= this.goals.length || toIndex >= this.goals.length) return;
+      const newGoals = [...this.goals];
+      const [moved] = newGoals.splice(fromIndex, 1);
+      newGoals.splice(toIndex, 0, moved);
+      this.goals = newGoals;
+      this.saveGoals(this.currentGameId);
+    },
+
     // 저장 부분
     async saveGoals(gameId) {
       if (!gameId) return;

@@ -4,9 +4,15 @@
     <div>
       <h2>{{ tUI('planner.goals') }}</h2>
       <div class="goals-container">
-        <div class="goal-border" v-for="goal in goals" :key="goal.name"
-          :class="{ hidden: goal.isHidden }"
-          :style="setGradientStyle(getRawData(goal), true)">
+        <div class="goal-border" v-for="(goal, index) in goals" :key="goal.name"
+          :class="{ hidden: goal.isHidden, satisfied: !goal.isHidden && isGoalSatisfied(goal), dragging: draggedIndex === index, 'drag-over': dragOverIndex === index && draggedIndex !== index }"
+          :style="setGradientStyle(getRawData(goal), true)"
+          draggable="true"
+          @dragstart="onDragStart($event, index)"
+          @dragover="onDragOver($event, index)"
+          @drop="onDrop($event, index)"
+          @dragend="onDragEnd">
+          <div class="priority-badge">{{ index + 1 }}</div>
           <div class="goal-card">
             <!-- Icon -->
             <div class="card-icon-wrapper">
@@ -525,6 +531,104 @@ const openDialog = (goal) => {
   logger.debug('Dialog Visible:', dialogVisible.value);
 
   dialogVisible.value = true;
+};
+
+// Per-goal satisfaction check (synthesis-aware, sequential inventory allocation)
+const goalSatisfactionStatus = computed(() => {
+  const status = {};
+  if (!tieredMaterials.value) return status;
+
+  let remaining = { ...inventory.value };
+
+  for (const goal of checkGoals.value) {
+    if (!getRawData(goal) || !goal.materials) continue;
+
+    const key = `${goal.type}_${goal.id}`;
+    const tieredShortages = {};
+    let satisfied = true;
+
+    for (const [matId, qty] of Object.entries(goal.materials)) {
+      if (matId === 'processed') continue;
+      if (isExpCategory(matId)) {
+        const expItems = getExpMaterials(matId);
+        const totalOwned = expItems.reduce((sum, item) => sum + ((remaining[item.id] || 0) * item.value), 0);
+        if (totalOwned < qty) satisfied = false;
+        continue;
+      }
+      const subcat = getMaterialFieldById(matId, 'SubCategory') || getMaterialFieldById(matId, 'Category') || '';
+      if (subcat in tieredMaterials.value) {
+        tieredShortages[matId] = qty;
+      } else {
+        if ((remaining[matId] || 0) < qty) satisfied = false;
+      }
+    }
+
+    if (satisfied && Object.keys(tieredShortages).length > 0) {
+      const result = calculateMaterials({ ...remaining }, tieredMaterials.value, tieredShortages);
+      if (!Object.values(result.final_needs).every(v => v <= 0)) {
+        satisfied = false;
+      } else {
+        remaining = { ...result.final_inventory };
+      }
+    }
+
+    if (satisfied) {
+      for (const [matId, qty] of Object.entries(goal.materials)) {
+        if (matId === 'processed') continue;
+        if (isExpCategory(matId)) {
+          let toDeduct = qty;
+          const expItems = getExpMaterials(matId);
+          for (const item of expItems) {
+            const owned = remaining[item.id] || 0;
+            const use = Math.min(owned, Math.ceil(toDeduct / item.value));
+            remaining[item.id] = Math.max(0, owned - use);
+            toDeduct -= use * item.value;
+            if (toDeduct <= 0) break;
+          }
+          continue;
+        }
+        const subcat = getMaterialFieldById(matId, 'SubCategory') || getMaterialFieldById(matId, 'Category') || '';
+        if (!(subcat in tieredMaterials.value)) {
+          remaining[matId] = Math.max(0, (remaining[matId] || 0) - qty);
+        }
+      }
+    }
+
+    status[key] = satisfied;
+  }
+
+  return status;
+});
+
+const isGoalSatisfied = (goal) => goalSatisfactionStatus.value[`${goal.type}_${goal.id}`] === true;
+
+// Drag & drop reordering
+const draggedIndex = ref(null);
+const dragOverIndex = ref(null);
+
+const onDragStart = (event, index) => {
+  draggedIndex.value = index;
+  event.dataTransfer.effectAllowed = 'move';
+};
+
+const onDragOver = (event, index) => {
+  event.preventDefault();
+  event.dataTransfer.dropEffect = 'move';
+  dragOverIndex.value = index;
+};
+
+const onDrop = (event, index) => {
+  event.preventDefault();
+  if (draggedIndex.value !== null && draggedIndex.value !== index) {
+    plannerStore.moveGoalToIndex(draggedIndex.value, index);
+  }
+  draggedIndex.value = null;
+  dragOverIndex.value = null;
+};
+
+const onDragEnd = () => {
+  draggedIndex.value = null;
+  dragOverIndex.value = null;
 };
 
 // Remove goal
@@ -1112,6 +1216,58 @@ onMounted(() => {
 .goal-border.hidden {
   filter: grayscale(100%) !important;
   opacity: 0.6 !important;
+}
+
+.goal-border.satisfied {
+  opacity: 0.45;
+}
+
+.goal-border.satisfied::after {
+  content: '✓';
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: var(--color-success, #4caf50);
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 0 0 4px rgba(0,0,0,0.6);
+}
+
+.priority-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 0 4px;
+}
+
+.goal-border[draggable="true"] {
+  cursor: grab;
+}
+
+.goal-border[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.goal-border.dragging {
+  opacity: 0.3;
+  transform: scale(0.97);
+}
+
+.goal-border.drag-over {
+  outline: 2px dashed var(--color-info, #60a5fa);
+  outline-offset: 2px;
 }
 
 .goal-card {
