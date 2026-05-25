@@ -5,7 +5,7 @@
       "label": "Gold",
       "Category": "credit",
       "SubCategory": "credit",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_3.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_goods/item_goods_gold_01.png",
       "tier": 1,
       "value": 0
     }

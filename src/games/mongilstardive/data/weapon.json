@@ -78,5 +78,189 @@
     "type": "destroyer",
     "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactDestroyer5A.png?class=hero",
     "forgery": "chain"
+  },
+  "to_whom_the_dokkaebi_kneel": {
+    "game_id": 8305010011,
+    "display_name": "To Whom the Dokkaebi Kneel",
+    "rarity": 5,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactGabi.png?class=hero",
+    "forgery": "chain"
+  },
+  "wind-harboring_broom": {
+    "game_id": 8305030012,
+    "display_name": "Wind-Harboring Broom",
+    "rarity": 5,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactEsde.png?class=hero",
+    "forgery": "chain"
+  },
+  "bloody_struggle": {
+    "game_id": 8304010013,
+    "display_name": "Bloody Struggle",
+    "rarity": 4,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactBrawler4A.png?class=hero",
+    "forgery": "chain"
+  },
+  "celestial_halo_of_protection": {
+    "game_id": 8304040014,
+    "display_name": "Celestial Halo of Protection",
+    "rarity": 4,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSupport4A.png?class=hero",
+    "forgery": "chain"
+  },
+  "celestial_halo_of_wisdom": {
+    "game_id": 8304040015,
+    "display_name": "Celestial Halo of Wisdom",
+    "rarity": 4,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSupport4A.png?class=hero",
+    "forgery": "chain"
+  },
+  "dreaming_adventurer": {
+    "game_id": 8304020016,
+    "display_name": "Dreaming Adventurer",
+    "rarity": 4,
+    "type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactCloud.png?class=hero",
+    "forgery": "chain"
+  },
+  "fall_from_grace": {
+    "game_id": 8304030017,
+    "display_name": "Fall from Grace",
+    "rarity": 4,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactAngel.png?class=hero",
+    "forgery": "chain"
+  },
+  "forest_fragrance": {
+    "game_id": 8304040018,
+    "display_name": "Forest Fragrance",
+    "rarity": 4,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactDaisy.png?class=hero",
+    "forgery": "chain"
+  },
+  "ground-shaking_tremors": {
+    "game_id": 8304020019,
+    "display_name": "Ground-Shaking Tremors",
+    "rarity": 4,
+    "type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactDestroyer4A.png?class=hero",
+    "forgery": "chain"
+  },
+  "hawk's_flight": {
+    "game_id": 8304030020,
+    "display_name": "Hawk's Flight",
+    "rarity": 4,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactBenjamin.png?class=hero",
+    "forgery": "chain"
+  },
+  "key_for_locks_yet_to_come": {
+    "game_id": 8304010021,
+    "display_name": "Key for Locks Yet to Come",
+    "rarity": 4,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSera.png?class=hero",
+    "forgery": "chain"
+  },
+  "military_band's_offbeat_marcher": {
+    "game_id": 8304040022,
+    "display_name": "Military Band's Offbeat Marcher",
+    "rarity": 4,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactBonney.png?class=hero",
+    "forgery": "chain"
+  },
+  "overflowing_love": {
+    "game_id": 8304040023,
+    "display_name": "Overflowing Love",
+    "rarity": 4,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactFrancis.png?class=hero",
+    "forgery": "chain"
+  },
+  "shadow_lotus": {
+    "game_id": 8304030024,
+    "display_name": "Shadow Lotus",
+    "rarity": 4,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactYeonhwa.png?class=hero",
+    "forgery": "chain"
+  },
+  "sinister_darkness": {
+    "game_id": 8304030025,
+    "display_name": "Sinister Darkness",
+    "rarity": 4,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSlayer4A.png?class=hero",
+    "forgery": "chain"
+  },
+  "sugar_spike": {
+    "game_id": 8304020026,
+    "display_name": "Sugar Spike",
+    "rarity": 4,
+    "type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactEllie.png?class=hero",
+    "forgery": "chain"
+  },
+  "tiger_hunter's_resolve": {
+    "game_id": 8304030027,
+    "display_name": "Tiger Hunter's Resolve",
+    "rarity": 4,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactLeeho.png?class=hero",
+    "forgery": "chain"
+  },
+  "unrelenting_chivalry": {
+    "game_id": 8304020028,
+    "display_name": "Unrelenting Chivalry",
+    "rarity": 4,
+    "type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactReina.png?class=hero",
+    "forgery": "chain"
+  },
+  "upright_sword_of_fire": {
+    "game_id": 8304010029,
+    "display_name": "Upright Sword of Fire",
+    "rarity": 4,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactVerna.png?class=hero",
+    "forgery": "chain"
+  },
+  "encroaching_rift": {
+    "game_id": 8303020030,
+    "display_name": "Encroaching Rift",
+    "rarity": 3,
+    "type": "destroyer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactDestroyer3A.png?class=hero",
+    "forgery": "chain"
+  },
+  "heart-piercing_blade": {
+    "game_id": 8303030031,
+    "display_name": "Heart-Piercing Blade",
+    "rarity": 3,
+    "type": "slayer",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSlayer3A.png?class=hero",
+    "forgery": "chain"
+  },
+  "surging_conviction": {
+    "game_id": 8303010032,
+    "display_name": "Surging Conviction",
+    "rarity": 3,
+    "type": "brawler",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactBrawler3A.png?class=hero",
+    "forgery": "chain"
+  },
+  "wings_embracing_silver_light": {
+    "game_id": 8303040033,
+    "display_name": "Wings Embracing Silver Light",
+    "rarity": 3,
+    "type": "supporter",
+    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSupport3A.png?class=hero",
+    "forgery": "chain"
   }
 }
