@@ -135,35 +135,18 @@
     "5360400065": "Lone Barge"
   },
   "ui": {
-    "game.name.endfield": "Arknights: Endfield"
-  },
-  "guide": {
-    "title": "How to Use the Planner",
-    "steps": [
-      {
-        "step": 1,
-        "title": "Select Operators",
-        "description": "In the Character tab, select the Operators you want to develop and configure their levels and skills."
-      },
-      {
-        "step": 2,
-        "title": "Select Weapons",
-        "description": "In the Weapon tab, select weapons to upgrade and set their target levels."
-      },
-      {
-        "step": 3,
-        "title": "Check Planner",
-        "description": "In the Planner tab, review required materials. Estimated time adjusts based on dungeon level settings."
-      },
-      {
-        "step": 4,
-        "title": "Update Inventory",
-        "description": "Enter your owned materials in the Inventory tab to automatically calculate exact shortfalls."
-      }
-    ],
-    "notes": [
-      "Ascension materials are required separately for level cap breaks.",
-      "Skill upgrades require Forgery materials."
-    ]
+    "game.name.endfield": "Arknights: Endfield",
+    "game.icon.endfield": "https://i.namu.wiki/i/BhqnQUG--DaHIsxSZCTxQleW1uHadp5-YqEXecmu5rGtxgRcl4vvj2uToOGyoCsbrBVnQsjh242_dBCkdDEzIC9q54zyMVzmaaCHycuiOOZmjc7bZutArA9Rg1Opo7aS6sIGO8gzgyPQb26dh4FQbw.webp",
+    "category.bolete": "Bolete",
+    "category.odendra": "Odendra",
+    "category.onyx": "Onyx",
+    "category.cast_die": "Cast Die",
+    "category.proto_asc": "Proto Disc",
+    "category.proto_skill": "Proto Prism",
+    "category.perseverance": "Perseverance",
+    "category.special": "Special",
+    "category.player_exp": "Combat Record",
+    "category.weapon_exp": "Arms Kit",
+    "category.credit": "T-Creds"
   }
 }

@@ -305,35 +305,33 @@
     "4350100102": "Frostburn"
   },
   "ui": {
-    "game.name.wutheringwave": "Wuthering Waves"
-  },
-  "guide": {
-    "title": "How to Use the Planner",
-    "steps": [
-      {
-        "step": 1,
-        "title": "Select Resonators",
-        "description": "In the Character tab, select the Resonators you want to build and set their current/target levels and skill levels."
-      },
-      {
-        "step": 2,
-        "title": "Select Weapons",
-        "description": "In the Weapon tab, select weapons to upgrade and set their target levels."
-      },
-      {
-        "step": 3,
-        "title": "Check Planner",
-        "description": "In the Planner tab, review required materials. Click any material card to view details and update quantities."
-      },
-      {
-        "step": 4,
-        "title": "Manage Inventory",
-        "description": "Enter your owned materials in the Inventory tab to automatically calculate what you still need."
-      }
-    ],
-    "notes": [
-      "Resonator skills can be leveled up to level 10.",
-      "Material synthesis follows a 3:1 ratio."
-    ]
+    "game.name.wutheringwave": "Wuthering Waves",
+    "game.icon.wutheringwave": "https://i.namu.wiki/i/eDAoYN4PpEN9TMk9lquaBujEm2UQe9C7kok50F-98_c6Mw6yx_TIGu9Pq-Ga7PADbZ9PWSB7xwKZYbYIpnkAqNe6dwYWgmbLl_vP-UGveS2lVmG7GQ-F2TBc0E14vBZemXC3Oj3eHWTYzDcuAkqiEg.webp",
+    "category.whisperin_core": "Whisperin Core",
+    "category.howler_core": "Howler Core",
+    "category.ring": "Ring",
+    "category.mask": "Mask",
+    "category.mech": "Mech",
+    "category.string": "String",
+    "category.exoswarm": "Exoswarm",
+    "category.metallic_drip": "Metallic Drip",
+    "category.combustor": "Combustor",
+    "category.cadence": "Cadence",
+    "category.helix": "Helix",
+    "category.residuum": "Residuum",
+    "category.polarizer": "Polarizer",
+    "category.phlogiston": "Phlogiston",
+    "category.residue": "Residue",
+    "category.crystal": "Crystal",
+    "category.shard": "Shard",
+    "category.pendant": "Pendant",
+    "category.polygon": "Polygon",
+    "category.ascension": "Ascension",
+    "category.boss": "Boss",
+    "category.weeklyboss": "Weekly Boss",
+    "category.credit": "Credit",
+    "category.player_exp": "Player Exp",
+    "category.weapon_exp": "Weapon Exp",
+    "stamina.name": "Plate"
   }
 }

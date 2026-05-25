@@ -118,34 +118,21 @@
     "8303040033": "Wings Embracing Silver Light"
   },
   "ui": {
-    "game.name.mongilstardive": "Mongil StarDive"
-  },
-  "guide": {
-    "title": "How to Use the Planner",
-    "steps": [
-      {
-        "step": 1,
-        "title": "Select Characters",
-        "description": "In the Character tab, select the characters you want to develop and set their current/target levels and skills."
-      },
-      {
-        "step": 2,
-        "title": "Select Weapons",
-        "description": "In the Weapon tab, select weapons and set their target levels."
-      },
-      {
-        "step": 3,
-        "title": "Check Planner",
-        "description": "In the Planner tab, review required materials. Click any material card to view details and update quantities."
-      },
-      {
-        "step": 4,
-        "title": "Manage Inventory",
-        "description": "Enter your owned materials in the Inventory tab to automatically calculate what you still need."
-      }
-    ],
-    "notes": [
-      "Plan your StarDive journey efficiently!"
-    ]
+    "game.name.mongilstardive": "Mongil StarDive",
+    "game.icon.mongilstardive": "https://i.namu.wiki/i/En_4PGKFRVKrnsT-ul9FPwI9yLJKS065s3QibfQhsPkQ7E7zEEuDUl0koM03LeOdjARedIgLbQFgMajfRceYH7xWEV6JVotENe1fVxAlMdLQ0PDQAPhdbJy72VKF4fFyj_yGFCdgFm7JQvI0FVDArw.webp",
+    "category.carapace": "Carapace",
+    "category.cartilage": "Carapace",
+    "category.fur": "Fur",
+    "category.powder": "Powder",
+    "category.sinew": "Sinew",
+    "category.chain": "Chain",
+    "category.assassin": "Assassin Coin",
+    "category.destroyer": "Destroyer Insignia",
+    "category.fighter": "Fighter Medallion",
+    "category.support": "Support Bead",
+    "category.mastery": "Advanced Combat",
+    "category.player_exp": "Experience Book",
+    "category.weapon_exp": "Mana Core",
+    "category.credit": "Gold"
   }
 }

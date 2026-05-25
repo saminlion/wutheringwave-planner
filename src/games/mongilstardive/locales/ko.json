@@ -118,34 +118,21 @@
     "8303040033": "온빛을 품은 날개"
   },
   "ui": {
-    "game.name.mongilstardive": "몽길 스타다이브"
-  },
-  "guide": {
-    "title": "플래너 사용 방법",
-    "steps": [
-      {
-        "step": 1,
-        "title": "캐릭터 선택",
-        "description": "캐릭터 탭에서 육성할 캐릭터를 선택하고 현재/목표 레벨과 스킬을 설정하세요."
-      },
-      {
-        "step": 2,
-        "title": "무기 선택",
-        "description": "무기 탭에서 무기를 선택하고 목표 레벨을 설정하세요."
-      },
-      {
-        "step": 3,
-        "title": "플래너 확인",
-        "description": "플래너 탭에서 필요 재료를 확인하세요. 재료 카드를 클릭하면 상세 정보와 수량 입력이 가능합니다."
-      },
-      {
-        "step": 4,
-        "title": "인벤토리 관리",
-        "description": "인벤토리 탭에서 보유 재료를 입력하면 부족량이 자동 계산됩니다."
-      }
-    ],
-    "notes": [
-      "스타다이브 여정을 효율적으로 관리해보세요!"
-    ]
+    "game.name.mongilstardive": "몬길: 스타다이브",
+    "game.icon.mongilstardive": "https://i.namu.wiki/i/En_4PGKFRVKrnsT-ul9FPwI9yLJKS065s3QibfQhsPkQ7E7zEEuDUl0koM03LeOdjARedIgLbQFgMajfRceYH7xWEV6JVotENe1fVxAlMdLQ0PDQAPhdbJy72VKF4fFyj_yGFCdgFm7JQvI0FVDArw.webp",
+    "category.carapace": "각질",
+    "category.cartilage": "연골",
+    "category.fur": "털",
+    "category.powder": "가루",
+    "category.sinew": "힘줄",
+    "category.chain": "사슬",
+    "category.assassin": "암살자 코인",
+    "category.destroyer": "파괴의 인장",
+    "category.fighter": "난투의 휘장",
+    "category.support": "지원의 혼",
+    "category.mastery": "고급 전투학",
+    "category.player_exp": "경험서",
+    "category.weapon_exp": "마력핵",
+    "category.credit": "골드"
   }
 }

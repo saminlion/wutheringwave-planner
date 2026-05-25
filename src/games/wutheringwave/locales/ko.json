@@ -305,35 +305,33 @@
     "4350100102": "한기"
   },
   "ui": {
-    "game.name.wutheringwave": "명조: 워더링 웨이브"
-  },
-  "guide": {
-    "title": "플래너 사용 방법",
-    "steps": [
-      {
-        "step": 1,
-        "title": "공명자 선택",
-        "description": "캐릭터 탭에서 육성할 공명자를 선택하고 현재/목표 레벨과 스킬 레벨을 설정하세요."
-      },
-      {
-        "step": 2,
-        "title": "무기 선택",
-        "description": "무기 탭에서 강화할 무기를 선택하고 목표 레벨을 설정하세요."
-      },
-      {
-        "step": 3,
-        "title": "플래너 확인",
-        "description": "플래너 탭에서 필요 재료를 확인하세요. 재료 카드를 클릭하면 상세 정보와 수량 입력이 가능합니다."
-      },
-      {
-        "step": 4,
-        "title": "인벤토리 관리",
-        "description": "인벤토리 탭에서 보유 재료를 입력하면 부족량이 자동 계산됩니다."
-      }
-    ],
-    "notes": [
-      "공명자 스킬은 최대 10레벨까지 육성할 수 있습니다.",
-      "재료 합성은 3:1 비율로 진행됩니다."
-    ]
+    "game.name.wutheringwave": "명조",
+    "game.icon.wutheringwave": "https://i.namu.wiki/i/eDAoYN4PpEN9TMk9lquaBujEm2UQe9C7kok50F-98_c6Mw6yx_TIGu9Pq-Ga7PADbZ9PWSB7xwKZYbYIpnkAqNe6dwYWgmbLl_vP-UGveS2lVmG7GQ-F2TBc0E14vBZemXC3Oj3eHWTYzDcuAkqiEg.webp",
+    "category.whisperin_core": "의음 성핵",
+    "category.howler_core": "포효 성핵",
+    "category.ring": "구속팔찌",
+    "category.mask": "마스크",
+    "category.mech": "메카 성핵",
+    "category.string": "현",
+    "category.exoswarm": "엑소스웜 성핵",
+    "category.metallic_drip": "금속 액적",
+    "category.combustor": "결정화 연소",
+    "category.cadence": "음류",
+    "category.helix": "와전류",
+    "category.residuum": "침식 선형 구조물",
+    "category.polarizer": "편광체",
+    "category.phlogiston": "결정화 연소",
+    "category.residue": "비명 이상 카메라",
+    "category.crystal": "절단된 결정",
+    "category.shard": "비명 이상 결정 조각",
+    "category.pendant": "펜던트",
+    "category.polygon": "취합 성핵",
+    "category.ascension": "채집 재료",
+    "category.boss": "보스 재료",
+    "category.weeklyboss": "주간 보스",
+    "category.credit": "클램 코인",
+    "category.player_exp": "공명 촉진제",
+    "category.weapon_exp": "에너지 코어",
+    "stamina.name": "플레이트"
   }
 }

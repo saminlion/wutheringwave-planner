@@ -128,35 +128,5 @@
     "7365000043": "Stellar Veil",
     "7364000044": "The Rain That Shook the World"
   },
-  "ui": {
-    "game.name.nte": "Neverness To Everness"
-  },
-  "guide": {
-    "title": "How to Use the Planner",
-    "steps": [
-      {
-        "step": 1,
-        "title": "Select Characters",
-        "description": "In the Character tab, select the characters you want to develop and set their current/target levels and skills."
-      },
-      {
-        "step": 2,
-        "title": "Select Weapons",
-        "description": "In the Weapon tab, select weapons and set their target levels."
-      },
-      {
-        "step": 3,
-        "title": "Check Planner",
-        "description": "In the Planner tab, review required materials. Click any material card to view details and update quantities."
-      },
-      {
-        "step": 4,
-        "title": "Update Inventory",
-        "description": "Enter your owned materials in the Inventory tab to automatically calculate what you still need."
-      }
-    ],
-    "notes": [
-      "Weekly boss materials have a weekly acquisition limit."
-    ]
-  }
+  "ui": {}
 }
