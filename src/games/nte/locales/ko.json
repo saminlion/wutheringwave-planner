@@ -128,5 +128,27 @@
     "7365000043": "은하의 찰나",
     "7364000044": "세상을 뒤흔든 비"
   },
-  "ui": {}
+  "ui": {
+    "game.name.nte": "이환",
+    "game.icon.nte": "https://i.namu.wiki/i/c0aIWxbIjCBxSKxBRFLpfw2LxNXcY_AJ5DxocHHZqECQuyos57UclvoYgAZjwrbLJkTrc8D50-OO9Cc6TF46F32DSVViGIRyFT5nCSZ9UJUUimQ4qcq48qoVU_qbaeOTKtabue_d3URdxrWixnw64g.webp",
+    "category.delusions": "망상",
+    "category.numeral": "숫자 부호",
+    "category.silhouette": "실루엣",
+    "category.whispers": "속삭임",
+    "category.appleseed": "사과씨",
+    "category.bird": "비둘기 조심",
+    "category.can": "나선형 선율",
+    "category.core": "드라마 코어",
+    "category.dessert": "냉디저트",
+    "category.dream": "리퀴드 드림",
+    "category.flower": "포커 티 파티",
+    "category.hang": "탈옥의 예술",
+    "category.heart": "텔레파시",
+    "category.magic": "서프라이즈 파티",
+    "category.boss": "보스 재료",
+    "category.weeklyBoss": "주간 보스 재료",
+    "category.player_exp": "헌터 가이드",
+    "category.weapon_exp": "염료",
+    "category.credit": "비틀 코인"
+  }
 }

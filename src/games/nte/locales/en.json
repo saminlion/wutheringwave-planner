@@ -128,5 +128,27 @@
     "7365000043": "Stellar Veil",
     "7364000044": "The Rain That Shook the World"
   },
-  "ui": {}
+  "ui": {
+    "game.name.nte": "Neverness To Everness",
+    "game.icon.nte": "https://i.namu.wiki/i/c0aIWxbIjCBxSKxBRFLpfw2LxNXcY_AJ5DxocHHZqECQuyos57UclvoYgAZjwrbLJkTrc8D50-OO9Cc6TF46F32DSVViGIRyFT5nCSZ9UJUUimQ4qcq48qoVU_qbaeOTKtabue_d3URdxrWixnw64g.webp",
+    "category.delusions": "Delusions",
+    "category.numeral": "Numeral",
+    "category.silhouette": "Silhouette",
+    "category.whispers": "Whispers",
+    "category.appleseed": "Apple Core",
+    "category.bird": "Pigeons",
+    "category.can": "Spiral Tune",
+    "category.core": "Drama Core",
+    "category.dessert": "Cold Dessert",
+    "category.dream": "Liquid Dream",
+    "category.flower": "Tea Party",
+    "category.hang": "Escape",
+    "category.heart": "Telepathy",
+    "category.magic": "Surprise Party",
+    "category.boss": "Boss Material",
+    "category.weeklyBoss": "Weekly Boss Material",
+    "category.player_exp": "Hunter Guide",
+    "category.weapon_exp": "Dye",
+    "category.credit": "Beetle Coin"
+  }
 }
