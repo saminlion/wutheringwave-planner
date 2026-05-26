@@ -1,17 +1,17 @@
 {
   "credit": {
-    "drops": 0,
+    "drops": 412582,
     "stamina": 10
   },
   "mastery": {
     "unobtainable": true
   },
   "forgery_ascension": {
-    "drops": 20.166666666666668,
+    "drops": 21.066666666666666,
     "stamina": 10
   },
   "forgery_skill": {
-    "drops": 0,
+    "drops": 15,
     "stamina": 10
   },
   "player_exp": {
@@ -19,7 +19,7 @@
     "stamina": 10
   },
   "weapon_exp": {
-    "drops": 0,
+    "drops": 52000,
     "stamina": 10
   }
 }
