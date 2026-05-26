@@ -115,236 +115,238 @@
       "value": 0
     }
   },
-  "forgery": {
+  "forgery_skill": {
     "thin_sinew": {
-      "game_id": 8120010001,
+      "game_id": 8130010001,
       "label": "Thin Sinew",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "sinew",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_01.png",
       "tier": 1,
       "value": 0
     },
     "chewy_sinew": {
-      "game_id": 8120010002,
+      "game_id": 8130010002,
       "label": "Chewy Sinew",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "sinew",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_02.png",
       "tier": 2,
       "value": 0
     },
     "tough_sinew": {
-      "game_id": 8120010003,
+      "game_id": 8130010003,
       "label": "Tough Sinew",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "sinew",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_03.png",
       "tier": 3,
       "value": 0
     },
     "heavy_sinew": {
-      "game_id": 8120010004,
+      "game_id": 8130010004,
       "label": "Heavy Sinew",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "sinew",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_04.png",
       "tier": 4,
       "value": 0
     },
     "indestructible_sinew": {
-      "game_id": 8120010005,
+      "game_id": 8130010005,
       "label": "Indestructible Sinew",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "sinew",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_05.png",
       "tier": 5,
       "value": 0
     },
     "torn_cartilage": {
-      "game_id": 8120020001,
+      "game_id": 8130020001,
       "label": "Torn Cartilage",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "cartilage",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_01.png",
       "tier": 1,
       "value": 0
     },
     "hardened_cartilage": {
-      "game_id": 8120020002,
+      "game_id": 8130020002,
       "label": "Hardened Cartilage",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "cartilage",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_02.png",
       "tier": 2,
       "value": 0
     },
     "elastic_cartilage": {
-      "game_id": 8120020003,
+      "game_id": 8130020003,
       "label": "Elastic Cartilage",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "cartilage",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_03.png",
       "tier": 3,
       "value": 0
     },
     "resilient_cartilage": {
-      "game_id": 8120020004,
+      "game_id": 8130020004,
       "label": "Resilient Cartilage",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "cartilage",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_04.png",
       "tier": 4,
       "value": 0
     },
     "regenerative_cartilage": {
-      "game_id": 8120020005,
+      "game_id": 8130020005,
       "label": "Regenerative Cartilage",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "cartilage",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_05.png",
       "tier": 5,
       "value": 0
     },
     "tawny_fur": {
-      "game_id": 8120030001,
+      "game_id": 8130030001,
       "label": "Tawny Fur",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "fur",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_01.png",
       "tier": 1,
       "value": 0
     },
     "matted_fur": {
-      "game_id": 8120030002,
+      "game_id": 8130030002,
       "label": "Matted Fur",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "fur",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_02.png",
       "tier": 2,
       "value": 0
     },
     "soft_fur": {
-      "game_id": 8120030003,
+      "game_id": 8130030003,
       "label": "Soft Fur",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "fur",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_03.png",
       "tier": 3,
       "value": 0
     },
     "sleek_fur": {
-      "game_id": 8120030004,
+      "game_id": 8130030004,
       "label": "Sleek Fur",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "fur",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_04.png",
       "tier": 4,
       "value": 0
     },
     "rippling_fur": {
-      "game_id": 8120030005,
+      "game_id": 8130030005,
       "label": "Rippling Fur",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "fur",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_05.png",
       "tier": 5,
       "value": 0
     },
     "nasty_powder": {
-      "game_id": 8120040001,
+      "game_id": 8130040001,
       "label": "Nasty Powder",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "powder",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_01.png",
       "tier": 1,
       "value": 0
     },
     "dusty_powder": {
-      "game_id": 8120040002,
+      "game_id": 8130040002,
       "label": "Dusty Powder",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "powder",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_02.png",
       "tier": 2,
       "value": 0
     },
     "fragrant_powder": {
-      "game_id": 8120040003,
+      "game_id": 8130040003,
       "label": "Fragrant Powder",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "powder",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_03.png",
       "tier": 3,
       "value": 0
     },
     "invigorating_powder": {
-      "game_id": 8120040004,
+      "game_id": 8130040004,
       "label": "Invigorating Powder",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "powder",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_04.png",
       "tier": 4,
       "value": 0
     },
     "mystical_powder": {
-      "game_id": 8120040005,
+      "game_id": 8130040005,
       "label": "Mystical Powder",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "powder",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_05.png",
       "tier": 5,
       "value": 0
     },
     "brittle_carapace": {
-      "game_id": 8120050001,
+      "game_id": 8130050001,
       "label": "Brittle Carapace",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "carapace",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_01.png",
       "tier": 1,
       "value": 0
     },
     "flexible_carapace": {
-      "game_id": 8120050002,
+      "game_id": 8130050002,
       "label": "Flexible Carapace",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "carapace",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_02.png",
       "tier": 2,
       "value": 0
     },
     "hardened_carapace": {
-      "game_id": 8120050003,
+      "game_id": 8130050003,
       "label": "Hardened Carapace",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "carapace",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_03.png",
       "tier": 3,
       "value": 0
     },
     "intricate_carapace": {
-      "game_id": 8120050004,
+      "game_id": 8130050004,
       "label": "Intricate Carapace",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "carapace",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_04.png",
       "tier": 4,
       "value": 0
     },
     "perfect_carapace": {
-      "game_id": 8120050005,
+      "game_id": 8130050005,
       "label": "Perfect Carapace",
-      "Category": "forgery",
+      "Category": "forgery_skill",
       "SubCategory": "carapace",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_05.png",
       "tier": 5,
       "value": 0
-    },
+    }
+  },
+  "forgery_ascension": {
     "basic_fighter_medallion": {
       "game_id": 8120060001,
       "label": "Basic Fighter Medallion",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "fighter",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_1.png",
       "tier": 2,
@@ -353,7 +355,7 @@
     "standard_fighter_medallion": {
       "game_id": 8120060002,
       "label": "Standard Fighter Medallion",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "fighter",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_2.png",
       "tier": 3,
@@ -362,7 +364,7 @@
     "greater_fighter_medallion": {
       "game_id": 8120060003,
       "label": "Greater Fighter Medallion",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "fighter",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_3.png",
       "tier": 4,
@@ -371,7 +373,7 @@
     "superior_fighter_medallion": {
       "game_id": 8120060004,
       "label": "Superior Fighter Medallion",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "fighter",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_4.png",
       "tier": 5,
@@ -380,7 +382,7 @@
     "basic_destroyer_insignia": {
       "game_id": 8120070001,
       "label": "Basic Destroyer Insignia",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "destroyer",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_1.png",
       "tier": 2,
@@ -389,7 +391,7 @@
     "standard_destroyer_insignia": {
       "game_id": 8120070002,
       "label": "Standard Destroyer Insignia",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "destroyer",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_2.png",
       "tier": 3,
@@ -398,7 +400,7 @@
     "greater_destroyer_insignia": {
       "game_id": 8120070003,
       "label": "Greater Destroyer Insignia",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "destroyer",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_3.png",
       "tier": 4,
@@ -407,7 +409,7 @@
     "superior_destroyer_insignia": {
       "game_id": 8120070004,
       "label": "Superior Destroyer Insignia",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "destroyer",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_4.png",
       "tier": 5,
@@ -416,7 +418,7 @@
     "basic_support_bead": {
       "game_id": 8120080001,
       "label": "Basic Support Bead",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "support",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_1.png",
       "tier": 2,
@@ -425,7 +427,7 @@
     "standard_support_bead": {
       "game_id": 8120080002,
       "label": "Standard Support Bead",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "support",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_2.png",
       "tier": 3,
@@ -434,7 +436,7 @@
     "greater_support_bead": {
       "game_id": 8120080003,
       "label": "Greater Support Bead",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "support",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_3.png",
       "tier": 4,
@@ -443,7 +445,7 @@
     "superior_support_bead": {
       "game_id": 8120080004,
       "label": "Superior Support Bead",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "support",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_4.png",
       "tier": 5,
@@ -452,7 +454,7 @@
     "basic_assassin_coin": {
       "game_id": 8120090001,
       "label": "Basic Assassin Coin",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "assassin",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_1.png",
       "tier": 2,
@@ -461,7 +463,7 @@
     "standard_assassin_coin": {
       "game_id": 8120090002,
       "label": "Standard Assassin Coin",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "assassin",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_2.png",
       "tier": 3,
@@ -470,7 +472,7 @@
     "greater_assassin_coin": {
       "game_id": 8120090003,
       "label": "Greater Assassin Coin",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "assassin",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_3.png",
       "tier": 4,
@@ -479,7 +481,7 @@
     "superior_assassin_coin": {
       "game_id": 8120090004,
       "label": "Superior Assassin Coin",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "assassin",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_4.png",
       "tier": 5,
@@ -488,7 +490,7 @@
     "rusty_chain": {
       "game_id": 8120100001,
       "label": "Rusty Chain",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "chain",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_1.png",
       "tier": 2,
@@ -497,7 +499,7 @@
     "split_chain": {
       "game_id": 8120100002,
       "label": "Split Chain",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "chain",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_2.png",
       "tier": 3,
@@ -506,7 +508,7 @@
     "red-hot_chain": {
       "game_id": 8120100003,
       "label": "Red-Hot Chain",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "chain",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_3.png",
       "tier": 4,
@@ -515,7 +517,7 @@
     "chain_of_divine_retribution": {
       "game_id": 8120100004,
       "label": "Chain of Divine Retribution",
-      "Category": "forgery",
+      "Category": "forgery_ascension",
       "SubCategory": "chain",
       "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_4.png",
       "tier": 5,
