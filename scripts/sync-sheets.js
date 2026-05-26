@@ -616,6 +616,18 @@ function transformFarmingRates(rows) {
     }
   }
 
+  // If forgery_ascension/forgery_skill exist but 'forgery' doesn't,
+  // synthesize a combined 'forgery' key so FinalMaterialNeeds can find it.
+  if (!result.forgery) {
+    const splitRates = ['forgery_ascension', 'forgery_skill', 'forgery_weapon']
+      .map(k => result[k])
+      .filter(r => r && !r.unobtainable && r.drops > 0);
+    if (splitRates.length > 0) {
+      const avgDrops = splitRates.reduce((s, r) => s + r.drops, 0) / splitRates.length;
+      result.forgery = { drops: avgDrops, stamina: splitRates[0].stamina };
+    }
+  }
+
   return result;
 }
 

@@ -18,14 +18,14 @@ export const processMaterial = (materials, key, value, characterInfo) => {
     // Tiered forgery: all three types look up materials['forgery'] by SubCategory
     if (key === 'forgery_skill' || key === 'forgery_ascension' || key === 'forgery_weapon') {
         const [qty, tier] = value;
-        // forgery_skill → character.forgery_skill, forgery_ascension → character.forgery_ascension
-        // forgery_weapon → weapon.forgery
+        // forgery_weapon uses weapon.forgery (chain, fighter, etc.) → stored in forgery_ascension category
         const subCategory = key === 'forgery_weapon'
             ? characterInfo.forgery
             : characterInfo[key];
+        const materialCategory = key === 'forgery_weapon' ? 'forgery_ascension' : key;
 
-        logger.debug('[Mongil] processMaterial:', key, 'subCategory:', subCategory, 'tier:', tier);
-        const material = findMaterial('forgery', subCategory, tier);
+        logger.debug('[Mongil] processMaterial:', key, 'category:', materialCategory, 'subCategory:', subCategory, 'tier:', tier);
+        const material = findMaterial(materialCategory, subCategory, tier);
         if (material) {
             const mKey = getMaterialField(material, 'game_id');
             if (mKey) materials[mKey] = (materials[mKey] || 0) + qty;

@@ -1,35 +1,36 @@
 <template>
-  <div>
+  <div class="inventory-page">
     <h1>{{ tUI('inventory.title') }}</h1>
 
-    <!-- Inventory Cards -->
-     <div class="inventory-container">
+    <div class="inventory-container">
       <div v-for="(subCategories, category) in groupedMaterials" :key="category" class="category-section">
         <h2 class="category-title">{{ translateCategoryName(category) }}</h2>
-      <div v-for="(materials, subcategory) in subCategories" :key="subcategory" class="subcategory-section">
-        <h3 class="subcategory-title">{{ translateCategoryName(subcategory) }}</h3>
 
-    <div class="inventory-grid">
-      <div class="inventory-card" v-for="material in materials" :key="material.game_id">
-        <img :src="material.icon" :alt="tMaterial(material.game_id, material.label)" class="material-icon" />
-        <div class="material-info">
-          <h3>{{ tMaterial(material.game_id, material.label) }}</h3>
-          <h3>{{ logMessage(material) }}</h3>
-          <div class="current-quantity">{{ quantities[material.game_id] || 0 }}</div>
-          <input
-            type="number"
-            class="quantity-input"
-            v-model.number="newQuantities[material.game_id]"
-            placeholder="0"
-            @keyup.enter="setQuantity(material.game_id)"
-            @change="setQuantity(material.game_id)"
-          />
+        <div v-for="(materials, subcategory) in subCategories" :key="subcategory" class="subcategory-block">
+          <div class="subcategory-label">{{ translateCategoryName(subcategory) }}</div>
+          <div class="inventory-grid">
+            <div
+              class="inventory-card"
+              v-for="material in materials"
+              :key="material.game_id"
+              :title="tMaterial(material.game_id, material.label)"
+            >
+              <img :src="material.icon" :alt="tMaterial(material.game_id, material.label)" class="material-icon" />
+              <div class="material-qty">{{ quantities[material.game_id] || 0 }}</div>
+              <input
+                type="number"
+                class="quantity-input"
+                v-model.number="newQuantities[material.game_id]"
+                placeholder="0"
+                min="0"
+                @keyup.enter="setQuantity(material.game_id)"
+                @change="setQuantity(material.game_id)"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
   </div>
 </template>
 
@@ -39,15 +40,12 @@ import { toast } from 'vue3-toastify';
 import { useInventoryStore } from '../store/inventory.js';
 import { useGameStore } from '@/store/game';
 import { useLocale } from '@/composables/useLocale';
-import logger from '@/utils/logger';
 
-// i18n翻訳関数を取得
 const { tMaterial, tUI } = useLocale();
 
-// カテゴリ名の翻訳ヘルパー関数
 const translateCategoryName = (categoryName) => {
-    const translated = tUI(`category.${categoryName}`);
-    return translated !== `category.${categoryName}` ? translated : categoryName;
+  const translated = tUI(`category.${categoryName}`);
+  return translated !== `category.${categoryName}` ? translated : categoryName;
 };
 
 const inventoryStore = useInventoryStore();
@@ -55,18 +53,15 @@ const gameStore = useGameStore();
 
 const inventory = computed(() => inventoryStore.inventory);
 
-// 현재 게임의 재료 데이터 (반응형)
 const materials = computed(() => {
   const data = gameStore.getData('materials');
   if (!data) return [];
   return Object.values(data).flatMap((category) => Object.values(category));
 });
 
-// Local state to manage input values
 const quantities = ref({});
 const newQuantities = ref({});
 
-// Watch materials changes and sync quantities
 watch(
   materials,
   (newMaterials) => {
@@ -79,7 +74,6 @@ watch(
   { immediate: true }
 );
 
-// Watch inventory changes and sync to quantities
 watch(
   inventory,
   (newInventory) => {
@@ -90,37 +84,19 @@ watch(
   { deep: true }
 );
 
-// Initialize quantities on mount
 onMounted(() => {
-  // Ensure inventory is loaded from localStorage first
   const gameId = gameStore.currentGameId;
   inventoryStore.hydrate(gameId);
-
-  // Then sync quantities with loaded inventory
   materials.value.forEach((material) => {
     quantities.value[material.game_id] = inventory.value[material.game_id] || 0;
   });
-
-  logger.debug('Inventory loaded and quantities synced:', inventory.value);
 });
 
-const logMessage = (material) => {
-  logger.debug('Check Material Set:', material);
-};
-
-const groupedMaterials = computed(()=>{
-  return materials.value.reduce((acc, material)=>{
-    if (!acc[material.Category]){
-      acc[material.Category] = {};
-    }
-
-    if (!acc[material.Category][material.SubCategory])
-    {
-      acc[material.Category][material.SubCategory] = [];
-    }
-
+const groupedMaterials = computed(() => {
+  return materials.value.reduce((acc, material) => {
+    if (!acc[material.Category]) acc[material.Category] = {};
+    if (!acc[material.Category][material.SubCategory]) acc[material.Category][material.SubCategory] = [];
     acc[material.Category][material.SubCategory].push(material);
-
     return acc;
   }, {});
 });
@@ -142,82 +118,111 @@ const setQuantity = (materialId) => {
   newQuantities.value[materialId] = null;
 
   if (difference !== 0) {
-    toast.success(`Item updated: ${materialId}, Quantity: ${newQty}`, {
+    toast.success(`Updated: ${newQty}`, {
       position: 'bottom-center',
-      autoClose: 2000,
+      autoClose: 1500,
       theme: 'dark',
     });
   }
 };
 </script>
 
-<style>
-/* Main container style */
+<style scoped>
+.inventory-page {
+  padding: 0 16px 32px;
+}
+
 .inventory-container {
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Category title */
+.category-section {
+  background: var(--bg-surface, #f9f9f9);
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
 .category-title {
-  font-size: 24px;
-  margin-top: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--text);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--text-secondary, #666);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border, #e0e0e0);
 }
 
-/* Subcategory title */
-.subcategory-title {
-  font-size: 20px;
-  margin-top: 12px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--text-muted);
+.subcategory-block {
+  margin-bottom: 10px;
 }
 
-/* Grid layout for inventory cards */
+.subcategory-block:last-child {
+  margin-bottom: 0;
+}
+
+.subcategory-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted, #999);
+  margin-bottom: 6px;
+}
+
 .inventory-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-/* Individual inventory card */
 .inventory-card {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-primary, #fff);
+  border: 1px solid var(--border, #e0e0e0);
   border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px 6px;
+  width: 88px;
+  cursor: default;
+  transition: border-color 0.15s;
 }
 
-/* Material icon */
+.inventory-card:hover {
+  border-color: var(--accent-color, #4a90e2);
+}
+
 .material-icon {
-  width: 64px;
-  height: 64px;
-  margin-bottom: 8px;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
 }
 
-/* Material info */
-.material-info {
-  font-size: 14px;
+.material-qty {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary, #333);
+  line-height: 1;
 }
 
-/* Current quantity display */
-.current-quantity {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 6px 0 4px;
-}
-
-/* Quantity input */
 .quantity-input {
-  width: 80px;
+  width: 72px;
+  padding: 3px 4px;
   text-align: center;
+  font-size: 12px;
+  border: 1px solid var(--border, #ccc);
+  border-radius: 4px;
+  background: var(--bg-secondary, #f5f5f5);
+  color: var(--text-primary, #333);
 }
 
-.vue3-toastify__toast-container {
-  font-size: 14px;
-  border-radius: 8px;
+.quantity-input:focus {
+  outline: none;
+  border-color: var(--accent-color, #4a90e2);
 }
 </style>

@@ -14,6 +14,10 @@
     "drops": 15,
     "stamina": 10
   },
+  "forgery": {
+    "drops": 18.033333333333333,
+    "stamina": 10
+  },
   "player_exp": {
     "drops": 508000,
     "stamina": 10
