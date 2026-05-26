@@ -16,7 +16,7 @@
       "label": "Basic Experience Book",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_01.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_exp_book_01.png",
       "tier": 1,
       "value": 500
     },
@@ -25,7 +25,7 @@
       "label": "Uncommon Experience Book",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_exp_book_02.png",
       "tier": 2,
       "value": 2000
     },
@@ -34,7 +34,7 @@
       "label": "Rare Experience Book",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_03.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_exp_book_03.png",
       "tier": 3,
       "value": 10000
     },
@@ -43,7 +43,7 @@
       "label": "Hero Experience Book",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_04.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_exp_book_04.png",
       "tier": 4,
       "value": 50000
     },
@@ -52,7 +52,7 @@
       "label": "Legendary Experience Book",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/item_exp_book_05.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_exp_book_05.png",
       "tier": 5,
       "value": 250000
     }
@@ -63,7 +63,7 @@
       "label": "Faint Mana Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_01.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_cubeexp_01.png",
       "tier": 1,
       "value": 325
     },
@@ -72,7 +72,7 @@
       "label": "Glimmering Mana Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_cubeexp_02.png",
       "tier": 2,
       "value": 1250
     },
@@ -81,7 +81,7 @@
       "label": "Condensed Mana Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_03.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_cubeexp_03.png",
       "tier": 3,
       "value": 4500
     },
@@ -90,7 +90,7 @@
       "label": "Liberated Mana Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_04.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_cubeexp_04.png",
       "tier": 4,
       "value": 15500
     },
@@ -99,7 +99,7 @@
       "label": "Impeccable Mana Core",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_CUBEEXP_05.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_cubeexp_05.png",
       "tier": 5,
       "value": 47500
     }
@@ -110,7 +110,7 @@
       "label": "Advanced Combat Theory",
       "Category": "mastery",
       "SubCategory": "mastery",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_ACTIVE_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_active_02.png",
       "tier": 3,
       "value": 0
     }
@@ -121,7 +121,7 @@
       "label": "Thin Sinew",
       "Category": "forgery",
       "SubCategory": "sinew",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_01.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_01.png",
       "tier": 1,
       "value": 0
     },
@@ -130,7 +130,7 @@
       "label": "Chewy Sinew",
       "Category": "forgery",
       "SubCategory": "sinew",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_02.png",
       "tier": 2,
       "value": 0
     },
@@ -139,7 +139,7 @@
       "label": "Tough Sinew",
       "Category": "forgery",
       "SubCategory": "sinew",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_03.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_03.png",
       "tier": 3,
       "value": 0
     },
@@ -148,7 +148,7 @@
       "label": "Heavy Sinew",
       "Category": "forgery",
       "SubCategory": "sinew",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_04.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_04.png",
       "tier": 4,
       "value": 0
     },
@@ -157,7 +157,7 @@
       "label": "Indestructible Sinew",
       "Category": "forgery",
       "SubCategory": "sinew",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_A_05.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_a_05.png",
       "tier": 5,
       "value": 0
     },
@@ -166,7 +166,7 @@
       "label": "Torn Cartilage",
       "Category": "forgery",
       "SubCategory": "cartilage",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_01.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_01.png",
       "tier": 1,
       "value": 0
     },
@@ -175,7 +175,7 @@
       "label": "Hardened Cartilage",
       "Category": "forgery",
       "SubCategory": "cartilage",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_02.png",
       "tier": 2,
       "value": 0
     },
@@ -184,7 +184,7 @@
       "label": "Elastic Cartilage",
       "Category": "forgery",
       "SubCategory": "cartilage",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_03.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_03.png",
       "tier": 3,
       "value": 0
     },
@@ -193,7 +193,7 @@
       "label": "Resilient Cartilage",
       "Category": "forgery",
       "SubCategory": "cartilage",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_04.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_04.png",
       "tier": 4,
       "value": 0
     },
@@ -202,7 +202,7 @@
       "label": "Regenerative Cartilage",
       "Category": "forgery",
       "SubCategory": "cartilage",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_B_05.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_b_05.png",
       "tier": 5,
       "value": 0
     },
@@ -211,7 +211,7 @@
       "label": "Tawny Fur",
       "Category": "forgery",
       "SubCategory": "fur",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_01.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_01.png",
       "tier": 1,
       "value": 0
     },
@@ -220,7 +220,7 @@
       "label": "Matted Fur",
       "Category": "forgery",
       "SubCategory": "fur",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_02.png",
       "tier": 2,
       "value": 0
     },
@@ -229,7 +229,7 @@
       "label": "Soft Fur",
       "Category": "forgery",
       "SubCategory": "fur",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_03.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_03.png",
       "tier": 3,
       "value": 0
     },
@@ -238,7 +238,7 @@
       "label": "Sleek Fur",
       "Category": "forgery",
       "SubCategory": "fur",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_04.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_04.png",
       "tier": 4,
       "value": 0
     },
@@ -247,7 +247,7 @@
       "label": "Rippling Fur",
       "Category": "forgery",
       "SubCategory": "fur",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_C_05.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_c_05.png",
       "tier": 5,
       "value": 0
     },
@@ -256,7 +256,7 @@
       "label": "Nasty Powder",
       "Category": "forgery",
       "SubCategory": "powder",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_01.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_01.png",
       "tier": 1,
       "value": 0
     },
@@ -265,7 +265,7 @@
       "label": "Dusty Powder",
       "Category": "forgery",
       "SubCategory": "powder",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_02.png",
       "tier": 2,
       "value": 0
     },
@@ -274,7 +274,7 @@
       "label": "Fragrant Powder",
       "Category": "forgery",
       "SubCategory": "powder",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_03.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_03.png",
       "tier": 3,
       "value": 0
     },
@@ -283,7 +283,7 @@
       "label": "Invigorating Powder",
       "Category": "forgery",
       "SubCategory": "powder",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_04.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_04.png",
       "tier": 4,
       "value": 0
     },
@@ -292,7 +292,7 @@
       "label": "Mystical Powder",
       "Category": "forgery",
       "SubCategory": "powder",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_D_05.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_d_05.png",
       "tier": 5,
       "value": 0
     },
@@ -301,7 +301,7 @@
       "label": "Brittle Carapace",
       "Category": "forgery",
       "SubCategory": "carapace",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_01.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_01.png",
       "tier": 1,
       "value": 0
     },
@@ -310,7 +310,7 @@
       "label": "Flexible Carapace",
       "Category": "forgery",
       "SubCategory": "carapace",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_02.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_02.png",
       "tier": 2,
       "value": 0
     },
@@ -319,7 +319,7 @@
       "label": "Hardened Carapace",
       "Category": "forgery",
       "SubCategory": "carapace",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_03.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_03.png",
       "tier": 3,
       "value": 0
     },
@@ -328,7 +328,7 @@
       "label": "Intricate Carapace",
       "Category": "forgery",
       "SubCategory": "carapace",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_04.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_04.png",
       "tier": 4,
       "value": 0
     },
@@ -337,7 +337,7 @@
       "label": "Perfect Carapace",
       "Category": "forgery",
       "SubCategory": "carapace",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_MATERIAL_MOB_E_05.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_material_mob_e_05.png",
       "tier": 5,
       "value": 0
     },
@@ -346,7 +346,7 @@
       "label": "Basic Fighter Medallion",
       "Category": "forgery",
       "SubCategory": "fighter",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_1.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_1.png",
       "tier": 2,
       "value": 0
     },
@@ -355,7 +355,7 @@
       "label": "Standard Fighter Medallion",
       "Category": "forgery",
       "SubCategory": "fighter",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_2.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_2.png",
       "tier": 3,
       "value": 0
     },
@@ -364,7 +364,7 @@
       "label": "Greater Fighter Medallion",
       "Category": "forgery",
       "SubCategory": "fighter",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_3.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_3.png",
       "tier": 4,
       "value": 0
     },
@@ -373,7 +373,7 @@
       "label": "Superior Fighter Medallion",
       "Category": "forgery",
       "SubCategory": "fighter",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_BRAWLER_4.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_brawler_4.png",
       "tier": 5,
       "value": 0
     },
@@ -382,7 +382,7 @@
       "label": "Basic Destroyer Insignia",
       "Category": "forgery",
       "SubCategory": "destroyer",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_1.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_1.png",
       "tier": 2,
       "value": 0
     },
@@ -391,7 +391,7 @@
       "label": "Standard Destroyer Insignia",
       "Category": "forgery",
       "SubCategory": "destroyer",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_2.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_2.png",
       "tier": 3,
       "value": 0
     },
@@ -400,7 +400,7 @@
       "label": "Greater Destroyer Insignia",
       "Category": "forgery",
       "SubCategory": "destroyer",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_3.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_3.png",
       "tier": 4,
       "value": 0
     },
@@ -409,7 +409,7 @@
       "label": "Superior Destroyer Insignia",
       "Category": "forgery",
       "SubCategory": "destroyer",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_DESTROYER_4.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_destroyer_4.png",
       "tier": 5,
       "value": 0
     },
@@ -418,7 +418,7 @@
       "label": "Basic Support Bead",
       "Category": "forgery",
       "SubCategory": "support",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_1.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_1.png",
       "tier": 2,
       "value": 0
     },
@@ -427,7 +427,7 @@
       "label": "Standard Support Bead",
       "Category": "forgery",
       "SubCategory": "support",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_2.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_2.png",
       "tier": 3,
       "value": 0
     },
@@ -436,7 +436,7 @@
       "label": "Greater Support Bead",
       "Category": "forgery",
       "SubCategory": "support",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_3.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_3.png",
       "tier": 4,
       "value": 0
     },
@@ -445,7 +445,7 @@
       "label": "Superior Support Bead",
       "Category": "forgery",
       "SubCategory": "support",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SUPPORTER_4.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_supporter_4.png",
       "tier": 5,
       "value": 0
     },
@@ -454,7 +454,7 @@
       "label": "Basic Assassin Coin",
       "Category": "forgery",
       "SubCategory": "assassin",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_1.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_1.png",
       "tier": 2,
       "value": 0
     },
@@ -463,7 +463,7 @@
       "label": "Standard Assassin Coin",
       "Category": "forgery",
       "SubCategory": "assassin",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_2.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_2.png",
       "tier": 3,
       "value": 0
     },
@@ -472,7 +472,7 @@
       "label": "Greater Assassin Coin",
       "Category": "forgery",
       "SubCategory": "assassin",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_3.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_3.png",
       "tier": 4,
       "value": 0
     },
@@ -481,7 +481,7 @@
       "label": "Superior Assassin Coin",
       "Category": "forgery",
       "SubCategory": "assassin",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_GRADEUP_SLAYER_4.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_gradeup_slayer_4.png",
       "tier": 5,
       "value": 0
     },
@@ -490,7 +490,7 @@
       "label": "Rusty Chain",
       "Category": "forgery",
       "SubCategory": "chain",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_1.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_1.png",
       "tier": 2,
       "value": 0
     },
@@ -499,7 +499,7 @@
       "label": "Split Chain",
       "Category": "forgery",
       "SubCategory": "chain",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_2.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_2.png",
       "tier": 3,
       "value": 0
     },
@@ -508,7 +508,7 @@
       "label": "Red-Hot Chain",
       "Category": "forgery",
       "SubCategory": "chain",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_3.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_3.png",
       "tier": 4,
       "value": 0
     },
@@ -517,7 +517,7 @@
       "label": "Chain of Divine Retribution",
       "Category": "forgery",
       "SubCategory": "chain",
-      "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Char_Material/ITEM_ARTIFACT_GRADEUP_DESTROYER_4.png?class=hero",
+      "icon": "https://stardive.7dso.xyz/ui/texture/icon_char_material/item_artifact_gradeup_destroyer_4.png",
       "tier": 5,
       "value": 0
     }

@@ -5,7 +5,7 @@
     "rarity": 5,
     "element": "fire",
     "weapon_type": "brawler",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Mina_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_mina_01.png",
     "forgery_skill": "sinew",
     "forgery_ascension": "fighter"
   },
@@ -15,7 +15,7 @@
     "rarity": 5,
     "element": "wind",
     "weapon_type": "slayer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Esde_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_esde_01.png",
     "forgery_skill": "powder",
     "forgery_ascension": "assassin"
   },
@@ -25,7 +25,7 @@
     "rarity": 5,
     "element": "fire",
     "weapon_type": "destroyer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Flare_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_flare_01.png",
     "forgery_skill": "sinew",
     "forgery_ascension": "destroyer"
   },
@@ -35,7 +35,7 @@
     "rarity": 5,
     "element": "earth",
     "weapon_type": "brawler",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Gabi_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_gabi_01.png",
     "forgery_skill": "carapace",
     "forgery_ascension": "fighter"
   },
@@ -45,7 +45,7 @@
     "rarity": 5,
     "element": "wind",
     "weapon_type": "supporter",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Jiwon_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_jiwon_01.png",
     "forgery_skill": "powder",
     "forgery_ascension": "support"
   },
@@ -55,7 +55,7 @@
     "rarity": 5,
     "element": "ice",
     "weapon_type": "brawler",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Ophelia_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_ophelia_01.png",
     "forgery_skill": "fur",
     "forgery_ascension": "fighter"
   },
@@ -65,7 +65,7 @@
     "rarity": 5,
     "element": "lightning",
     "weapon_type": "brawler",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Penny_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_penny_01.png",
     "forgery_skill": "cartilage",
     "forgery_ascension": "fighter"
   },
@@ -75,7 +75,7 @@
     "rarity": 5,
     "element": "wind",
     "weapon_type": "brawler",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Sangun_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_sangun_01.png",
     "forgery_skill": "powder",
     "forgery_ascension": "fighter"
   },
@@ -85,7 +85,7 @@
     "rarity": 4,
     "element": "fire",
     "weapon_type": "slayer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Angel_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_angel_01.png",
     "forgery_skill": "sinew",
     "forgery_ascension": "assassin"
   },
@@ -95,7 +95,7 @@
     "rarity": 4,
     "element": "lightning",
     "weapon_type": "slayer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Benjamin_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_benjamin_01.png",
     "forgery_skill": "cartilage",
     "forgery_ascension": "assassin"
   },
@@ -105,7 +105,7 @@
     "rarity": 4,
     "element": "wind",
     "weapon_type": "supporter",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Bonney_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_bonney_01.png",
     "forgery_skill": "powder",
     "forgery_ascension": "support"
   },
@@ -115,7 +115,7 @@
     "rarity": 4,
     "element": "ice",
     "weapon_type": "destroyer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Cloud_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_cloud_01.png",
     "forgery_skill": "fur",
     "forgery_ascension": "destroyer"
   },
@@ -125,7 +125,7 @@
     "rarity": 4,
     "element": "earth",
     "weapon_type": "supporter",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Daisy_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_daisy_01.png",
     "forgery_skill": "carapace",
     "forgery_ascension": "support"
   },
@@ -135,7 +135,7 @@
     "rarity": 4,
     "element": "earth",
     "weapon_type": "destroyer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Ellie_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_ellie_01.png",
     "forgery_skill": "carapace",
     "forgery_ascension": "destroyer"
   },
@@ -145,7 +145,7 @@
     "rarity": 4,
     "element": "earth",
     "weapon_type": "supporter",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Francis_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_francis_01.png",
     "forgery_skill": "carapace",
     "forgery_ascension": "support"
   },
@@ -155,7 +155,7 @@
     "rarity": 4,
     "element": "fire",
     "weapon_type": "slayer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Leeho_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_leeho_01.png",
     "forgery_skill": "sinew",
     "forgery_ascension": "assassin"
   },
@@ -165,7 +165,7 @@
     "rarity": 4,
     "element": "lightning",
     "weapon_type": "destroyer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Reina_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_reina_01.png",
     "forgery_skill": "cartilage",
     "forgery_ascension": "destroyer"
   },
@@ -175,7 +175,7 @@
     "rarity": 4,
     "element": "ice",
     "weapon_type": "brawler",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Sera_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_sera_01.png",
     "forgery_skill": "fur",
     "forgery_ascension": "fighter"
   },
@@ -185,7 +185,7 @@
     "rarity": 4,
     "element": "fire",
     "weapon_type": "brawler",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Verna_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_verna_01.png",
     "forgery_skill": "sinew",
     "forgery_ascension": "fighter"
   },
@@ -195,7 +195,7 @@
     "rarity": 4,
     "element": "lightning",
     "weapon_type": "slayer",
-    "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Portrait/portrait_Yeonhwa_00.png?class=thumb",
+    "icon": "https://stardive.7dso.xyz/ui/texture/portraitl/portrait_yeonhwa_01.png",
     "forgery_skill": "cartilage",
     "forgery_ascension": "assassin"
   },
