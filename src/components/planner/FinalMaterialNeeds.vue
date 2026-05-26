@@ -150,7 +150,7 @@
                                     v-for="task in sortedTasks(subCategory.task)"
                                     :key="task.id"
                                     v-show="!isTaskComplete(task)"
-                                    @click="openItemDialog(task, category, subCategory)"
+                                    @click="openItemDialog(task, category, subCategory.id)"
                                 >
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
@@ -183,7 +183,7 @@
                                     v-for="task in sortedTasks(subCategory.task)"
                                     :key="task.id"
                                     v-show="!isTaskComplete(task)"
-                                    @click="openItemDialog(task, category, subCategory)"
+                                    @click="openItemDialog(task, category, subCategory.id)"
                                 >
                                     <div class="material-info">
                                         <img v-if="getMaterialIcon(task.id)" :src="getMaterialIcon(task.id)"
@@ -319,10 +319,11 @@ const expCategoryMaterials = computed(() => {
     const materials = gameStore.getData('materials') || {};
     const result = {};
 
-    // 全カテゴリをスキャンしてvalueフィールドを持つものをexp扱い
+    // 全カテゴリをスキャンしてvalue > 0のフィールドを持つものをexp扱い
+    // (value: 0 は実際のEXPではないため除外 — 例: MSDのforgeryアイテム)
     Object.entries(materials).forEach(([categoryName, categoryData]) => {
         const firstItem = Object.values(categoryData || {})[0];
-        if (firstItem && typeof firstItem.value === 'number') {
+        if (firstItem && typeof firstItem.value === 'number' && firstItem.value > 0) {
             // このカテゴリはexpカテゴリ
             const mapping = {};
             Object.values(categoryData).forEach(material => {
@@ -419,7 +420,11 @@ const categoryHasRequiredMaterials = (category) => {
 };
 
 // ItemDialogを開く
-const openItemDialog = (task, category, subCategory) => {
+const openItemDialog = (task, category, subCategoryId) => {
+    // IDで正確なsubcategoryを検索 (Vue reactiveクロージャの参照問題を回避)
+    const subCategory = category.subCategories.find(sc => sc.id === subCategoryId);
+    if (!subCategory) return;
+
     // ティアがあるラインナップかどうか判定
     // 複数の異なるティアがある場合のみ、同じsubcategoryのアイテムを全て表示
     const tiers = subCategory.task.map(t => t.tier).filter(t => t !== undefined && t !== null);

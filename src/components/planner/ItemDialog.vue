@@ -299,13 +299,16 @@ watch(() => props.item, () => {
 }
 
 .dialog-content {
+    position: relative;
+    z-index: 1;
     background: var(--bg-surface);
     border-radius: 16px;
     min-width: 416px;
     max-width: 90vw;
     max-height: 80vh;
     overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
 }
 
 .dialog-header {
@@ -552,7 +555,7 @@ watch(() => props.item, () => {
 .dialog-footer {
     padding: 21px 26px;
     border-top: 1px solid var(--border);
-    background: var(--bg-subtle);
+    background: var(--bg-surface);
     border-radius: 0 0 16px 16px;
 }
 
@@ -570,11 +573,18 @@ watch(() => props.item, () => {
 .inventory-input input {
     flex: 1;
     padding: 10px 16px;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 8px;
     background: var(--input-bg);
     color: var(--text);
     font-size: 18px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.inventory-input input:focus {
+    outline: none;
+    border-color: var(--border-focus);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 3px rgba(102, 126, 234, 0.15);
 }
 
 .inventory-input button {

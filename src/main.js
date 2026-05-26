@@ -6,6 +6,7 @@ import router from './router';
 import { setupGlobalErrorHandler } from './utils/errorHandler';
 import LoadingSpinner from './components/common/LoadingSpinner.vue';
 import 'vue3-toastify/dist/index.css';
+import './style.css';
 
 // Game plugins
 import wutheringwavePlugin from './games/wutheringwave';
