@@ -1,4 +1,4 @@
-import { characters, weapons, materials, costs, tieredMaterials, tieredMaterialsByGameId } from './data';
+import { characters, weapons, materials, costs, farmingRates, tieredMaterials, tieredMaterialsByGameId } from './data';
 
 export const mongilstardiveConfig = {
   id: 'mongilstardive',
@@ -88,16 +88,7 @@ export const mongilstardiveConfig = {
   stamina: {
     name: 'Key',
     dailyLimit: 100,
-    farmingRates: {
-      credit:              { drops: 0,  stamina: 10 },
-      forgery_skill:       { drops: 0,  stamina: 10 },
-      forgery_ascension:   { drops: 0,  stamina: 10 },
-      forgery_weapon:      { drops: 0,  stamina: 10 },
-      mastery:             { unobtainable: true },
-      player_exp:          { drops: 0,  stamina: 10 },
-      weapon_exp:          { drops: 0,  stamina: 10 },
-    },
-    useDynamicFarmingRates: true,
+    farmingRates,
   },
 
   materials: {
@@ -117,7 +108,7 @@ export const mongilstardiveConfig = {
     showDungeonLevelSelector: false,
     getDungeonLevelOptions() { return []; },
     useTierSeparatedEstimates() { return false; },
-    useDynamicFarmingRates: true,
+    useDynamicFarmingRates: false,
   },
 
   createCharacterInitialSettings() {

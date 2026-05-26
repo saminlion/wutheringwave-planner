@@ -33,7 +33,7 @@
 
     <WeaponDialog v-if="dialogVisible && selectedweapon" :visible="dialogVisible" :weapon="selectedweapon"
       :settings="currentSettings" :levelItems="weaponLevelItems"
-      @close="dialogVisible = false" @updateweapon="updateweapon" />
+      @close="dialogVisible = false" @updateweapon="updateweapon" @completeTab="handleCompleteTab" />
   </div>
 </template>
 
@@ -119,6 +119,12 @@ const openDialog = (weapon) => {
 
 const logweapon = (weapon) => {
   logger.debug("Selected weapon:", weapon);
+};
+
+const handleCompleteTab = ({ settingsUpdate }) => {
+  if (!selectedweapon.value || !settingsUpdate) return;
+  Object.assign(currentSettings.value, settingsUpdate);
+  updateweapon();
 };
 
 // 무기 업데이트
