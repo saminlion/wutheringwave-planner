@@ -188,21 +188,19 @@ const updateCharacter = () => {
 
 .character-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1.245rem;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
 }
 
 .character-card {
-  padding: 0.245rem;
   border-radius: 8px;
   cursor: pointer;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s;
-  width: 150px;
-  /* 너비 설정 */
-  aspect-ratio: 1 / 1;
-  /* 정사각형 비율 유지 */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .character-card:hover {
@@ -210,14 +208,25 @@ const updateCharacter = () => {
 }
 
 .character-card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 50%;
-  margin-bottom: 10px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.character-info {
+  padding: 0.3rem 0.4rem;
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .character-info span {
-  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-weight: bold;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  color: #fff;
 }
 </style>
