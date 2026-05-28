@@ -4,7 +4,7 @@
     <div>
       <h2>{{ tUI('planner.goals') }}</h2>
       <div class="goals-container">
-        <div class="goal-border" v-for="(goal, index) in goals" :key="goal.name"
+        <div class="goal-border" v-for="(goal, index) in goals" :key="`${goal.type}_${goal.id}`"
           :class="{ hidden: goal.isHidden, satisfied: !goal.isHidden && isGoalSatisfied(goal), dragging: draggedIndex === index, 'drag-over': dragOverIndex === index && draggedIndex !== index }"
           :style="setGradientStyle(getRawData(goal), true)"
           draggable="true"
@@ -563,34 +563,36 @@ const goalSatisfactionStatus = computed(() => {
       }
     }
 
-    if (satisfied && Object.keys(tieredShortages).length > 0) {
+    if (Object.keys(tieredShortages).length > 0) {
       const result = calculateMaterials({ ...remaining }, tieredMaterials.value, tieredShortages);
       if (!Object.values(result.final_needs).every(v => v <= 0)) {
         satisfied = false;
-      } else {
-        remaining = { ...result.final_inventory };
+      }
+      remaining = { ...result.final_inventory };
+      for (const [matId, qty] of Object.entries(tieredShortages)) {
+        remaining[matId] = Math.max(0, (remaining[matId] || 0) - qty);
       }
     }
 
-    if (satisfied) {
-      for (const [matId, qty] of Object.entries(goal.materials)) {
-        if (matId === 'processed') continue;
-        if (isExpCategory(matId)) {
-          let toDeduct = qty;
-          const expItems = getExpMaterials(matId);
-          for (const item of expItems) {
-            const owned = remaining[item.id] || 0;
-            const use = Math.min(owned, Math.ceil(toDeduct / item.value));
-            remaining[item.id] = Math.max(0, owned - use);
-            toDeduct -= use * item.value;
-            if (toDeduct <= 0) break;
-          }
-          continue;
+    // Always deduct to reserve materials for this priority level,
+    // preventing lower-priority goals from consuming them when this goal is unsatisfied.
+    for (const [matId, qty] of Object.entries(goal.materials)) {
+      if (matId === 'processed') continue;
+      if (isExpCategory(matId)) {
+        let toDeduct = qty;
+        const expItems = getExpMaterials(matId);
+        for (const item of expItems) {
+          const owned = remaining[item.id] || 0;
+          const use = Math.min(owned, Math.ceil(toDeduct / item.value));
+          remaining[item.id] = Math.max(0, owned - use);
+          toDeduct -= use * item.value;
+          if (toDeduct <= 0) break;
         }
-        const subcat = getMaterialFieldById(matId, 'SubCategory') || getMaterialFieldById(matId, 'Category') || '';
-        if (!(subcat in tieredMaterials.value)) {
-          remaining[matId] = Math.max(0, (remaining[matId] || 0) - qty);
-        }
+        continue;
+      }
+      const subcat = getMaterialFieldById(matId, 'SubCategory') || getMaterialFieldById(matId, 'Category') || '';
+      if (!(subcat in tieredMaterials.value)) {
+        remaining[matId] = Math.max(0, (remaining[matId] || 0) - qty);
       }
     }
 
