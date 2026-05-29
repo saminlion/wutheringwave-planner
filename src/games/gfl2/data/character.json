@@ -430,5 +430,37 @@
     "element": "electric",
     "weapon_type": "bld",
     "icon": "https://gf2.mcc.wiki/image/doll/Avatar_Bust_SextansSSR.png"
+  },
+  "nemesis_gnosis": {
+    "game_id": 6205020055,
+    "display_name": "Nemesis Gnosis",
+    "rarity": 5,
+    "element": "corrosion",
+    "weapon_type": "rf",
+    "icon": "https://cdn.dandegate.net/dolls/nemesis-gnosis/b2a116df60146e142a6f60682c1f0fefc625d1dcee2058880f017b41e7dce18c.webp"
+  },
+  "ots-14": {
+    "game_id": 6205070056,
+    "display_name": "OTs-14",
+    "rarity": 5,
+    "element": "omni",
+    "weapon_type": "ar",
+    "icon": "https://cdn.dandegate.net/dolls/ots-14/000d18d15e33f0080cd3df9939ba980fd5590e2a09ddcb818266c48c3dd28783.webp"
+  },
+  "soppo": {
+    "game_id": 6205040057,
+    "display_name": "Soppo",
+    "rarity": 5,
+    "element": "freeze",
+    "weapon_type": "ar",
+    "icon": "https://cdn.dandegate.net/dolls/soppo/628a220ed5d7240963f1bd8d68f10570138988099a554813036a72081e0f7c3c.webp"
+  },
+  "welrod": {
+    "game_id": 6205020058,
+    "display_name": "Welrod",
+    "rarity": 5,
+    "element": "corrosion",
+    "weapon_type": "hg",
+    "icon": "https://cdn.dandegate.net/dolls/welrod/e00e71c83c0757d3f88bdf5a7fccf2f0a78f4d65ae50fc47fddd080769f59ac8.webp"
   }
 }

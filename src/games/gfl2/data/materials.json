@@ -4,23 +4,141 @@
       "game_id": 6100000001,
       "label": "Sardis Gold",
       "Category": "credit",
-      "SubCategory": "credit"
+      "SubCategory": "credit",
+      "icon": "https://cdn.dandegate.net/items/1757546032434-Sardis_Gold.webp",
+      "tier": 2
     }
   },
   "forgery": {
-    "stock_boost_bar_t1": {
-      "game_id": 6120010002,
-      "label": "Stock Boost Bar T1",
+    "combat_report": {
+      "game_id": 6120030002,
+      "label": "Combat Report",
+      "Category": "forgery",
+      "SubCategory": "player_exp",
+      "icon": "https://cdn.dandegate.net/items/1757482278588-Combat_Report.webp",
+      "tier": 2
+    },
+    "analysis_blueprint": {
+      "game_id": 6120040003,
+      "label": "Analysis Blueprint",
+      "Category": "forgery",
+      "SubCategory": "weapon_exp",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_WeaponBlueprint_2.png",
+      "tier": 2
+    },
+    "boost_stock_bar_t1": {
+      "game_id": 6120010005,
+      "label": "Boost Stock Bar T1",
       "Category": "forgery",
       "SubCategory": "stock_boost_bar",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_2.png",
       "tier": 1
     },
-    "stock_boost_bar_t2": {
-      "game_id": 6120010003,
-      "label": "Stock Boost Bar T2",
+    "boost_stock_bar_t2": {
+      "game_id": 6120010006,
+      "label": "Boost Stock Bar T2",
       "Category": "forgery",
       "SubCategory": "stock_boost_bar",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_3.png",
       "tier": 2
+    },
+    "boost_stock_bar_t3": {
+      "game_id": 6120010007,
+      "label": "Boost Stock Bar T3",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_4.png",
+      "tier": 3
+    },
+    "boost_stock_bar_t4": {
+      "game_id": 6120010008,
+      "label": "Boost Stock Bar T4",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_5.png",
+      "tier": 4
+    },
+    "boost_stock_bar_t5": {
+      "game_id": 6120010009,
+      "label": "Boost Stock Bar T5",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_6.png",
+      "tier": 5
+    },
+    "boost_stock_bar_t6": {
+      "game_id": 6120010010,
+      "label": "Boost Stock Bar T6",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_7.png",
+      "tier": 6
+    },
+    "boost_stock_bar_t7": {
+      "game_id": 6120010011,
+      "label": "Boost Stock Bar T7",
+      "Category": "forgery",
+      "SubCategory": "stock_boost_bar",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_Ram_7.png",
+      "tier": 7
+    },
+    "transcription_conductor_i": {
+      "game_id": 6120020012,
+      "label": "Transcription Conductor I",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_1.png",
+      "tier": 1
+    },
+    "transcription_conductor_ii": {
+      "game_id": 6120020013,
+      "label": "Transcription Conductor II",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_2.png",
+      "tier": 2
+    },
+    "transcription_conductor_iii": {
+      "game_id": 6120020014,
+      "label": "Transcription Conductor III",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_3.png",
+      "tier": 3
+    },
+    "transcription_conductor_iv": {
+      "game_id": 6120020015,
+      "label": "Transcription Conductor IV",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_4.png",
+      "tier": 4
+    },
+    "transcription_conductor_v": {
+      "game_id": 6120020016,
+      "label": "Transcription Conductor V",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_5.png",
+      "tier": 5
+    },
+    "transcription_conductor_vi": {
+      "game_id": 6120020017,
+      "label": "Transcription Conductor VI",
+      "Category": "forgery",
+      "SubCategory": "transcription_conductor",
+      "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_6.png",
+      "tier": 6
+    }
+  },
+  "common": {
+    "basic_info_core": {
+      "game_id": 6100010004,
+      "label": "Basic Info Core",
+      "Category": "common",
+      "SubCategory": "unique",
+      "icon": "https://cdn.dandegate.net/items/1757631727247-Basic_Info_Core.webp",
+      "tier": 4
     }
   }
 }
