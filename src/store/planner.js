@@ -68,10 +68,10 @@ export const usePlannerStore = defineStore('planner', {
       if (existingGoalIndex !== -1) {
         logger.debug(`Found existing goal with id: ${goal.id} and type: ${goal.type}`);
         // 기존 goal을 새로운 객체로 교체하여 반응성 트리거
+        // isHidden은 기존 상태를 보존 (재계산/업데이트 시 숨김 해제 방지)
         this.goals[existingGoalIndex] = {
           ...this.goals[existingGoalIndex],
           materials: goal.materials,
-          isHidden: false, // 숨겨져 있던 목표를 다시 활성화
         };
       } else {
         this.goals.push({ ...goal, isHidden: false });
