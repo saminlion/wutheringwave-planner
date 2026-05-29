@@ -16,7 +16,8 @@
     "7830600014": "Daffodill",
     "7840200015": "Jiuyuan",
     "7650400016": "Aurelia",
-    "7820300017": "Chiz"
+    "7820300017": "Chiz",
+    "7810500018": "Chaos"
   },
   "materials": {
     "7100010001": "Beetle Coin",
@@ -126,7 +127,9 @@
     "7364000041": "Marching Beyond Time",
     "7363000042": "The Last Rose",
     "7365000043": "Stellar Veil",
-    "7364000044": "The Rain That Shook the World"
+    "7364000044": "The Rain That Shook the World",
+    "7361000045": "众人追寻之物",
+    "7361000046": "众人追寻之物"
   },
   "ui": {
     "game.name.nte": "Neverness To Everness",

@@ -394,5 +394,14 @@
     "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_worldrain_256.webp",
     "common": "whispers",
     "forgery": "can"
+  },
+  "众人追寻之物": {
+    "game_id": 7361000046,
+    "display_name": "众人追寻之物",
+    "rarity": 6,
+    "type": "synthesis",
+    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_GoldWool_256.webp",
+    "common": "delusions",
+    "forgery": "dessert"
   }
 }

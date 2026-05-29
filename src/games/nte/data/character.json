@@ -202,5 +202,17 @@
     "forgery": "bird",
     "boss": 7140010007,
     "weeklyBoss": 7150010001
+  },
+  "chaos": {
+    "game_id": 7810500018,
+    "display_name": "Chaos",
+    "rarity": 6,
+    "element": "lakshana",
+    "weapon_type": "synthesis",
+    "icon": "https://assets.akademiya.app/nte/UI/Gacha/YH_lihui_character_xiaozhi.webp",
+    "common": "whispers",
+    "forgery": "bird",
+    "boss": 7140010007,
+    "weeklyBoss": 7150010001
   }
 }
