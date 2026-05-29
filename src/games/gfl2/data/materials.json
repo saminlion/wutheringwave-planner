@@ -9,25 +9,39 @@
       "tier": 2
     }
   },
-  "forgery": {
+  "doll_exp": {
     "combat_report": {
-      "game_id": 6120030002,
+      "game_id": 6160010002,
       "label": "Combat Report",
-      "Category": "forgery",
+      "Category": "doll_exp",
       "SubCategory": "doll_exp",
       "icon": "https://cdn.dandegate.net/items/1757482278588-Combat_Report.webp",
       "tier": 2,
       "value": 1
-    },
+    }
+  },
+  "weapon_exp": {
     "analysis_blueprint": {
-      "game_id": 6120040003,
+      "game_id": 6170010003,
       "label": "Analysis Blueprint",
-      "Category": "forgery",
+      "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
       "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_WeaponBlueprint_2.png",
       "tier": 2,
       "value": 1
-    },
+    }
+  },
+  "common": {
+    "basic_info_core": {
+      "game_id": 6100010004,
+      "label": "Basic Info Core",
+      "Category": "common",
+      "SubCategory": "unique",
+      "icon": "https://cdn.dandegate.net/items/1757631727247-Basic_Info_Core.webp",
+      "tier": 4
+    }
+  },
+  "forgery": {
     "boost_stock_bar_t1": {
       "game_id": 6120010005,
       "label": "Boost Stock Bar T1",
@@ -131,16 +145,6 @@
       "SubCategory": "transcription_conductor",
       "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_TalentConductor_6.png",
       "tier": 6
-    }
-  },
-  "common": {
-    "basic_info_core": {
-      "game_id": 6100010004,
-      "label": "Basic Info Core",
-      "Category": "common",
-      "SubCategory": "unique",
-      "icon": "https://cdn.dandegate.net/items/1757631727247-Basic_Info_Core.webp",
-      "tier": 4
     }
   }
 }
