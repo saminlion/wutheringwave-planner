@@ -561,7 +561,7 @@
     "display_name": "Brigand's Calling",
     "rarity": 6,
     "type": "pistol",
-    "icon": "https://img.game8.co/4428605/52ade6cd92efca962ea57909a22eccb3.png/show",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_pistol_0011.webp",
     "onyx": 5110030015,
     "special": 5130010033
   },
@@ -570,7 +570,7 @@
     "display_name": "Lupine Scarlet",
     "rarity": 6,
     "type": "sword",
-    "icon": "https://img.game8.co/4428604/2f1a59eafec83b799549de90e86cc361.png/show",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_sword_0022.webp",
     "onyx": 5110030015,
     "special": 5130010033
   },
@@ -580,6 +580,42 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0015.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
+  },
+  "amaranthine_tassel": {
+    "game_id": 5360200066,
+    "display_name": "Amaranthine Tassel",
+    "rarity": 6,
+    "type": "greatsword",
+    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_claymores.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
+  },
+  "phantom_pain": {
+    "game_id": 5360200067,
+    "display_name": "Phantom Pain",
+    "rarity": 6,
+    "type": "greatsword",
+    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_claymores.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
+  },
+  "beacon_of_duty": {
+    "game_id": 5360300068,
+    "display_name": "Beacon of Duty",
+    "rarity": 6,
+    "type": "polearm",
+    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_lance.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
+  },
+  "blessing_of_lustrous_carmine": {
+    "game_id": 5360300069,
+    "display_name": "Blessing of Lustrous Carmine",
+    "rarity": 6,
+    "type": "polearm",
+    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_lance.webp",
     "onyx": 5110030016,
     "special": 5130010031
   }

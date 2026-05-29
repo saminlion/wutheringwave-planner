@@ -302,7 +302,10 @@
     "4350500099": "Boson Astrolabe",
     "4350300100": "Solsworn Ciphers",
     "4350500101": "Forged Dwarf Star",
-    "4350100102": "Frostburn"
+    "4350100102": "Frostburn",
+    "4350400103": "Spectral Trigger",
+    "4350400104": "Skull Thrasher",
+    "4350500105": "Freeze Frame"
   },
   "ui": {
     "game.name.wutheringwave": "Wuthering Waves",

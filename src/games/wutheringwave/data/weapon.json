@@ -916,5 +916,32 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
     "common": "pendant",
     "forgery": "polarizer"
+  },
+  "spectral_trigger": {
+    "game_id": 4350400103,
+    "display_name": "Spectral Trigger",
+    "rarity": 5,
+    "type": "pistols",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+    "common": "pendant",
+    "forgery": "combustor"
+  },
+  "skull_thrasher": {
+    "game_id": 4350400104,
+    "display_name": "Skull Thrasher",
+    "rarity": 5,
+    "type": "pistols",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+    "common": "pendant",
+    "forgery": "combustor"
+  },
+  "freeze_frame": {
+    "game_id": 4350500105,
+    "display_name": "Freeze Frame",
+    "rarity": 5,
+    "type": "rectifier",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+    "common": "exoswarm",
+    "forgery": "string"
   }
 }
