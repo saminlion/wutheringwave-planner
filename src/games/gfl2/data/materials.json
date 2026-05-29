@@ -14,9 +14,10 @@
       "game_id": 6120030002,
       "label": "Combat Report",
       "Category": "forgery",
-      "SubCategory": "player_exp",
+      "SubCategory": "doll_exp",
       "icon": "https://cdn.dandegate.net/items/1757482278588-Combat_Report.webp",
-      "tier": 2
+      "tier": 2,
+      "value": 1
     },
     "analysis_blueprint": {
       "game_id": 6120040003,
@@ -24,7 +25,8 @@
       "Category": "forgery",
       "SubCategory": "weapon_exp",
       "icon": "https://gf2.mcc.wiki/image/item/Item_Icon_WeaponBlueprint_2.png",
-      "tier": 2
+      "tier": 2,
+      "value": 1
     },
     "boost_stock_bar_t1": {
       "game_id": 6120010005,

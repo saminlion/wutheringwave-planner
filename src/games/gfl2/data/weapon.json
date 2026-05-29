@@ -2,990 +2,1155 @@
   "416": {
     "game_id": 6304020045,
     "display_name": "416",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/416/d6cc6d1caa79528dda72b1fe3e259dbb0e50beabbcf983ef5a2651f6f5db3f23.webp"
   },
   "retired_stechkin": {
     "game_id": 6303010001,
     "display_name": "Retired Stechkin",
+    "rarity": 3,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/retired-stechkin/1cce54740881196ebae22c366717b4bfef2ebdafd1254b43e7212fea4174668e.webp"
   },
   "retired_pistolet_15": {
     "game_id": 6303010002,
     "display_name": "Retired Pistolet 15",
+    "rarity": 3,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/retired-pistolet-15/d361bc0529f3dc6b8c3d13501ddaa50ca11bad483f8dd48c0a8b146f26c4453c.webp"
   },
   "retired_nagant_m1895": {
     "game_id": 6303010003,
     "display_name": "Retired Nagant M1895",
+    "rarity": 3,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/4316e83957110461761c9e76ba840719.webp"
   },
   "retired_mk23": {
     "game_id": 6303010004,
     "display_name": "Retired MK23",
+    "rarity": 3,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/retired-mk23/f5a3a837d1ccba6d4283db9d2bbcbfeb16c07ee5d322970bff914d1df22321c1.webp"
   },
   "retired_cz75": {
     "game_id": 6303010005,
     "display_name": "Retired CZ75",
+    "rarity": 3,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/584799340f4505bacb723199a5c641e3.webp"
   },
   "retired_.380_curva": {
     "game_id": 6303010006,
     "display_name": "Retired .380 Curva",
+    "rarity": 3,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/22f86ae6fb4145b160d1423be8053e82.webp"
   },
   "stechkin": {
     "game_id": 6304010007,
     "display_name": "Stechkin",
+    "rarity": 4,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/stechkin/a4dd3f0f4fedf03b569af67321a46bc8eeecd136f98a156a7f312356cc59cd64.webp"
   },
   "pistolet_15": {
     "game_id": 6304010008,
     "display_name": "Pistolet 15",
+    "rarity": 4,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/pistolet-15/4f9d2de6bf82946da1037742b40e0f91631405adeca98a816db0b199cbe63183.webp"
   },
   "nagant_m1895": {
     "game_id": 6304010009,
     "display_name": "Nagant M1895",
+    "rarity": 4,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/272a5efaf37b15f4390bdd5e372b6f9b.webp"
   },
   "mk23": {
     "game_id": 6304010010,
     "display_name": "MK23",
+    "rarity": 4,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/mk23/5e5fc0b6f58985ce31816368bf55579e1701ae44852698beb7eb3ae9004bb8f2.webp"
   },
   "cz75": {
     "game_id": 6304010011,
     "display_name": "CZ75",
+    "rarity": 4,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/309a90aa2a44ec350e9a1c024f21353f.webp"
   },
   ".380_curva": {
     "game_id": 6304010012,
     "display_name": ".380 Curva",
+    "rarity": 4,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/c10691e945e6f52cd7d2c92130fd9419.webp"
   },
   "silent_conviction": {
     "game_id": 6305010013,
     "display_name": "Silent Conviction",
+    "rarity": 5,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/silent-conviction/409f4e6c111da23775c568c4a11fd13c0abde7126c99439a398688447478b250.webp"
   },
   "papa-figo": {
     "game_id": 6305010014,
     "display_name": "Papa-Figo",
+    "rarity": 5,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/e90af356be18e67f4fe6ed7bbf0adb43.webp"
   },
   "iaso": {
     "game_id": 6305010015,
     "display_name": "Iaso",
+    "rarity": 5,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/iaso/2b876df0405fd668b368508d9aa2aa7ae8116df6d82af2a07f04ff6bf3d56c86.webp"
   },
   "hestia": {
     "game_id": 6305010016,
     "display_name": "Hestia",
+    "rarity": 5,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/92602ded2c8e20db1def7c180b3f0741.webp"
   },
   "dona_eis_requiem": {
     "game_id": 6305010017,
     "display_name": "Dona Eis Requiem",
+    "rarity": 5,
     "type": "hg",
     "icon": "https://cdn.dandegate.net/weapons/death-s-psalm/bc262eabefbcfabb0c5a601dc4b5abf5c258b9c907b343d72cbfeaa445292fb3.webp"
   },
   "retired_type_97": {
     "game_id": 6303020018,
     "display_name": "Retired Type 97",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/4f6220bc03f7b04d9132221f1f9f98ae.webp"
   },
   "retired_type_95": {
     "game_id": 6303020019,
     "display_name": "Retired Type 95",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-type-95/c68f4856f1d2f861866e577723a386dd0bb9e886f2d52d1fee448d9def8f50e8.webp"
   },
   "retired_sturmgewehr_36": {
     "game_id": 6303020020,
     "display_name": "Retired Sturmgewehr 36",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-sturmgewehr-36/5fb729c1c6025c0de690a2305a5b9c60f921861bb6c1a4d72f4d33fb602254a5.webp"
   },
   "retired_sturmgewehr_28": {
     "game_id": 6303020021,
     "display_name": "Retired Sturmgewehr 28",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-sturmgewehr-28/b781c47e1e63fa32c78ee043071a7f6c42a832479f55e39af3bb55686085707e.webp"
   },
   "retired_robinson_modular_rifle": {
     "game_id": 6303020022,
     "display_name": "Retired Robinson Modular Rifle",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-robinson-modular-rifle/7f7ea5e9bf0c0aed304a52116bcda1d547eb46920c7ae8d730ee77a2527b1d34.webp"
   },
   "retired_qbz-191": {
     "game_id": 6303020023,
     "display_name": "Retired QBZ-191",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/34e851a8d224edcd538f35ef460223e0.webp"
   },
   "retired_ots-14": {
     "game_id": 6303020024,
     "display_name": "Retired OTs-14",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/f9bdb92a8dbf07e1cba14f6eb4344059.webp"
   },
   "retired_nikonov_assault_rifle_94": {
     "game_id": 6303020025,
     "display_name": "Retired Nikonov Assault Rifle 94",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-nikonov-assault-rifle-94/0961d1abaafe3044ae943fdf2ec8f6845b3f85a2437209fbaf8d3b17f4239b77.webp"
   },
   "retired_model_alpha": {
     "game_id": 6303020026,
     "display_name": "Retired Model Alpha",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-model-alpha/fb63d61e8e9ff4507ee3b769d812f2cb930a3dd0a02eb440edb9d2bcb9194f90.webp"
   },
   "retired_kalashnikov_assault_rifle_15": {
     "game_id": 6303020027,
     "display_name": "Retired Kalashnikov Assault Rifle 15",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-kalashnikov-assault-rifle-15/47e1e9d27da8106903907c7dfd88f72f1e4c7ef3b98bfad6026fe1e65722b863.webp"
   },
   "retired_k2": {
     "game_id": 6303020028,
     "display_name": "Retired K2",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-k2/987d8642181c5135838a81bd7d7f5fd8a0548675c723b41d2cf43a130a446074.webp"
   },
   "retired_g36k-ksk": {
     "game_id": 6303020029,
     "display_name": "Retired G36K-KSK",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/f1e32d93ce3e8f76b1160ca9277858c8.webp"
   },
   "retired_g11": {
     "game_id": 6303020030,
     "display_name": "Retired G11",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-g11/2f7ae91af5bb500a0413cb8e7665a0d31509aad388a5a5962649030c063376ed.webp"
   },
   "retired_416": {
     "game_id": 6303020031,
     "display_name": "Retired 416",
+    "rarity": 3,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/retired-416/9b4d80f192222cef4a82ed8045a542566ee66b2929c9cff4d22f2a63f2e62bc2.webp"
   },
   "type_97": {
     "game_id": 6304020032,
     "display_name": "Type 97",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/bc8d6237e90d55f4b3ed1c20e77ad0c2.webp"
   },
   "type_95": {
     "game_id": 6304020033,
     "display_name": "Type 95",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/type-95/8dfc962e9798590fa34c47674fd5ef755077e390d229d67f21122bd7da68b2d9.webp"
   },
   "sturmgewehr_36": {
     "game_id": 6304020034,
     "display_name": "Sturmgewehr 36",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/sturmgewher-36/281adea5e255a22f4af9bd1756a425009cfcf4c78ec57c6230265084ac27937e.webp"
   },
   "sturmgewehr_28": {
     "game_id": 6304020035,
     "display_name": "Sturmgewehr 28",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/sturmgewehr-28/b023a2c1375e0363393d08b17446c8b5a6fe7a4400d12359aec7c499190206d4.webp"
   },
   "robinson_modular_rifle": {
     "game_id": 6304020036,
     "display_name": "Robinson Modular Rifle",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/robinson-modular-rife/e5ce368c11d65e37a50c81a2d0d56547eb0852e7d41a19b92298f98e899a06c4.webp"
   },
   "qbz-191": {
     "game_id": 6304020037,
     "display_name": "QBZ-191",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/d5f93051d7278a2d8fcd54676a4e5a6a.webp"
   },
   "ots-14": {
     "game_id": 6304020038,
     "display_name": "OTs-14",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/87a1eac3d0e4e8fbe575736895ebe3f5.webp"
   },
   "nikonov_assault_rifle_94": {
     "game_id": 6304020039,
     "display_name": "Nikonov Assault Rifle 94",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/nikonov-assault-rifle-94/a6f09354d013297a73fd6ed812ae0705eaa17d1894bd861caaea95c42fb2078e.webp"
   },
   "model_alpha": {
     "game_id": 6304020040,
     "display_name": "Model Alpha",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/model-alpha/ea7ba3ff0f09b22b713be0be5541fbeaed88354c8bf97bc6be71b53734ef9df3.webp"
   },
   "kalashnikov_assault_rifle_15": {
     "game_id": 6304020041,
     "display_name": "Kalashnikov Assault Rifle 15",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/kalashnikov-assault-rifle-15/803238eba9989e99cbbfea7c619e62147817160457d2d2ce07e4e1be8bdcbb7a.webp"
   },
   "k2": {
     "game_id": 6304020042,
     "display_name": "K2",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/k2/d667d30715bcdc76f9c10c86b0385e877c7b78a2f02d0c9f76f4d545321c9d26.webp"
   },
   "g36k-ksk": {
     "game_id": 6304020043,
     "display_name": "G36K-KSK",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/fe9b9ef3b4bdc014af2b6ef85146afab.webp"
   },
   "g11": {
     "game_id": 6304020044,
     "display_name": "G11",
+    "rarity": 4,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/g11/8c0f31cd28c577ccde561395fbbda95a11929b37eaf8c2a842402e28eeeb6d0e.webp"
   },
   "sylvan_elf": {
     "game_id": 6305020046,
     "display_name": "Sylvan Elf",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/sylvan-elf/429e0992bd067a5d43f54896b0b428607a0a3400c32f9ee7edea4e4e4342f62f.webp"
   },
   "sparkling_centerstage": {
     "game_id": 6305020047,
     "display_name": "Sparkling Centerstage",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/sparkling-centerstage/97193cb2c51721d6cf78a12c8128a489e055758f8aa7e443a57ba42f04c8c583.webp"
   },
   "skysunderer's_howl": {
     "game_id": 6305020048,
     "display_name": "Skysunderer's Howl",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/skysunderer-s-howl/d1c5cd554587fa2e71e29056b5d953d808d8e4b4b87ebc311fc07c549859c2a4.webp"
   },
   "skylla": {
     "game_id": 6305020049,
     "display_name": "Skylla",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/97d1c58df30fb4f49ae31cf39e4cf324.webp"
   },
   "planeta": {
     "game_id": 6305020050,
     "display_name": "Planeta",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/c2cefeff9061bd4b54517b0164b8f339.webp"
   },
   "maid's_rules": {
     "game_id": 6305020051,
     "display_name": "Maid's Rules",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/1792091870d6cfd888ab3562f2b44454.webp"
   },
   "leaping_tiger": {
     "game_id": 6305020052,
     "display_name": "Leaping Tiger",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/e2bd09c248c70fb7ec41a9d77d97674b.webp"
   },
   "heavy_strings": {
     "game_id": 6305020053,
     "display_name": "Heavy Strings",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/9a820fa11f180d08182319cb2e271903.webp"
   },
   "guerno": {
     "game_id": 6305020054,
     "display_name": "Guerno",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/899a1fc1ed1dbfa25439cbf2384d2036.webp"
   },
   "golden_melody": {
     "game_id": 6305020055,
     "display_name": "Golden Melody",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/64111d2dacf250a428ca4639dece164e.webp"
   },
   "daydream": {
     "game_id": 6305020056,
     "display_name": "Daydream",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/59e19b0d80fa30812d600c5f828f882e.webp"
   },
   "capitoline": {
     "game_id": 6305020057,
     "display_name": "Capitoline",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/capitoline/3dc6e30158fb250b37aa72a0dd98d47d4001a99e4ef021d4e8b2a4ebe6e5accb.webp"
   },
   "aglaea": {
     "game_id": 6305020058,
     "display_name": "Aglaea",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/4afc6e2d0efaacbd637f997b8e2d04a5.webp"
   },
   "6p71": {
     "game_id": 6305020059,
     "display_name": "6P71",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/ak-15/805fdbcb7a5bbc6b93c4f52e447a9c6ba77e12a0c10e53a4d4d2851ae5c42881.webp"
   },
   "6p33": {
     "game_id": 6305020060,
     "display_name": "6P33",
+    "rarity": 5,
     "type": "ar",
     "icon": "https://cdn.dandegate.net/weapons/an-94/bac8cff6e7791487b222bdc7be28ec94c6e8cf84b79b9e65de70d82a7e73e16f.webp"
   },
   "retired_universal_submachine_gun_40": {
     "game_id": 6303050061,
     "display_name": "Retired Universal Submachine Gun 40",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-universal-submachine-gun-40/68739cb761901ef606a151ea028d2b52f695b1717a098eb7a8650952ff9a13fb.webp"
   },
   "retired_ump9": {
     "game_id": 6303050062,
     "display_name": "Retired UMP9",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-universal-submachine-gun-9/81d2bb69d722367c9cf2b8f28e69e8c0d889f7802066f67ec60f0a2e5e918b52.webp"
   },
   "retired_ump45": {
     "game_id": 6303050063,
     "display_name": "Retired UMP45",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-universal-submachine-gun-45/4bd9d9aff0ebadfba01db8ece76270ed65e8bc1b5197a447aa11ab7018b96500.webp"
   },
   "retired_suomi": {
     "game_id": 6303050064,
     "display_name": "Retired Suomi",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-suomi/753e2363ef28cc5578eadd95baa23ef04899687d45abd2530fcbac9273f9e50e.webp"
   },
   "retired_steyr_tmp": {
     "game_id": 6303050065,
     "display_name": "Retired Steyr TMP",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-steyr-tmp/1d0fb77f586f6ddf9618f6b0c9b9d323eda94e0c9186a70a98abbfc7f05f3c17.webp"
   },
   "retired_ro635": {
     "game_id": 6303050066,
     "display_name": "Retired RO635",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-colt-model-635-submachine-gun/debfeaae77cdba55c5e12be98a19caea75127c1685fdca7524d69db0120eef73.webp"
   },
   "retired_ppsh-41": {
     "game_id": 6303050067,
     "display_name": "Retired PPSh-41",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-ppsh-41/16f6ff9279a4e19b114103b5b3255c00185467582bfff19c149e502811dfcd84.webp"
   },
   "retired_mp7h1": {
     "game_id": 6303050068,
     "display_name": "Retired MP7H1",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-mp7h1/95ad308a188c8b7f57e64579897b8166cf5e878f5a9425f62d7c16c11de08180.webp"
   },
   "retired_mp5h1": {
     "game_id": 6303050069,
     "display_name": "Retired MP5H1",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/6136179d6559dd835c48b3f26d7f9150.webp"
   },
   "retired_model_100": {
     "game_id": 6303050070,
     "display_name": "Retired Model 100",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/retired-sakura-submachine-gun/297d5dbbf73e580890cd850874d2afb88c2a9b027eeddc6ee155217edbbd2d14.webp"
   },
   "retired_ksvec_.45_acp": {
     "game_id": 6303050071,
     "display_name": "Retired Ksvec .45 ACP",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/62c32570aea6ea72219a82b194c63bc2.webp"
   },
   "retired_cs/ls06": {
     "game_id": 6303050072,
     "display_name": "Retired CS/LS06",
+    "rarity": 3,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/d4ffe0676218ab161d5c473f4d57106b.webp"
   },
   "universal_submachine_gun_40": {
     "game_id": 6304050073,
     "display_name": "Universal Submachine Gun 40",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/universal-submachine-gun-40/2d0c47329ce44f94c4480792817b1f5644f1acdb10416a61e867203be47b9252.webp"
   },
   "ump9": {
     "game_id": 6304050074,
     "display_name": "UMP9",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/universal-submachine-gun-9/52073d2397de6ec385974c27d6a91b62820237e6a62339759a5f4a9205c7f9f1.webp"
   },
   "ump45": {
     "game_id": 6304050075,
     "display_name": "UMP45",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/universal-submachine-gun-45/b018c85d2ffc034d8c9573d1b9acfd58be4b42655258f909b8faa2884bb60be7.webp"
   },
   "suomi": {
     "game_id": 6304050076,
     "display_name": "Suomi",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/suomi/033044747e1516f9654876defa89e97c145b907658e5810e2b59b3366a93f5c1.webp"
   },
   "steyr_tmp": {
     "game_id": 6304050077,
     "display_name": "Steyr TMP",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/steyr-tmp/6336fabc504316fa8e5328d5784c45fdcdc8314cd25d79df3613890684f0b43c.webp"
   },
   "ro635": {
     "game_id": 6304050078,
     "display_name": "RO635",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/colt-model-635-submachine-gun/d3503fdeeb5818910b64dc49853bc5cbf99d94a836fdd2e7f20ca5fbdeaa040c.webp"
   },
   "ppsh-41": {
     "game_id": 6304050079,
     "display_name": "PPSh-41",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/ppsh-41/4cc90f128bb2bb71955c174efbe2051029adae2fadc92e25af22a2d9b8fa45d0.webp"
   },
   "mp7h1": {
     "game_id": 6304050080,
     "display_name": "MP7H1",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/mp7h1/27659365e83ee629faa7c7b0fb65efafc9ea182b4d9d2ca66bc80cf6adf00930.webp"
   },
   "mp5h1": {
     "game_id": 6304050081,
     "display_name": "MP5H1",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/82a0c155b0bf050c495de3caec32a502.webp"
   },
   "model_100": {
     "game_id": 6304050082,
     "display_name": "Model 100",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/sakura-submachine-gun/ac3bab1fcd4a13e1d80bcfe1daf6fb5e93c21a97f13db73afc51901d5e52a74a.webp"
   },
   "ksvec_.45_acp": {
     "game_id": 6304050083,
     "display_name": "Ksvec .45 ACP",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/97479ca5502d577a40f3009412184f87.webp"
   },
   "cs/ls06": {
     "game_id": 6304050084,
     "display_name": "CS/LS06",
+    "rarity": 4,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/6932b7909b5897a88e8c04c6d4fe29db.webp"
   },
   "wanderer's_magnum": {
     "game_id": 6305050085,
     "display_name": "Wanderer's Magnum",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/wanderer-s-hymn/624a0bf6ddd3e2fa738dadf494e8556a696878ec76de85a313622a38808480cf.webp"
   },
   "unspoken_calling": {
     "game_id": 6305050086,
     "display_name": "Unspoken Calling",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/64b7f0203dec3d5cea92a10d8614306c.webp"
   },
   "svarog": {
     "game_id": 6305050087,
     "display_name": "Svarog",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/a169c810c08e804d612b641f4d264325.webp"
   },
   "schlitzohr": {
     "game_id": 6305050088,
     "display_name": "Schlitzohr",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/7dfbaa242cff34ea941a9b2928e20404.webp"
   },
   "perihelion": {
     "game_id": 6305050089,
     "display_name": "Perihelion",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/project-helios/b4eb5bd17066719d13a7b48ac7e180e9c22d2d7f806181be2a26e1347c42f048.webp"
   },
   "löwenjunges": {
     "game_id": 6305050090,
     "display_name": "Löwenjunges",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/l%C3%B6wenjunges/9b8376e754ad874ebb75ca65e5e47e2f9be8e7f270787c9e6dcbfb4ed837d04e.webp"
   },
   "juggernaut": {
     "game_id": 6305050091,
     "display_name": "Juggernaut",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/af81403996a8dc29d4c85a2402153143.webp"
   },
   "crimson_covenant": {
     "game_id": 6305050092,
     "display_name": "Crimson Covenant",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/scarlet-contract/ca928a20fea3ef545b3e1f0bff316e18879b79872f5602416ae17c416ad789a4.webp"
   },
   "classified_manuscript": {
     "game_id": 6305050093,
     "display_name": "Classified Manuscript",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/efea314092cea88927fdb9f127ee0a1c.webp"
   },
   "chinchilla_nova": {
     "game_id": 6305050094,
     "display_name": "Chinchilla Nova",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/chinchilla-nova/8fba285f582ccd0ac8618ea47fca3e69cf7e86a728337b5340fc472143ddc315.webp"
   },
   "banshee's_whisper": {
     "game_id": 6305050095,
     "display_name": "Banshee's Whisper",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/7ec114d902964b08664a2b2790533ca3.webp"
   },
   "antinomy": {
     "game_id": 6305050096,
     "display_name": "Antinomy",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/antinomy/5146a33664bfb96692a5c80a12d554d83c286bdb84384ba97ca6378fd34f8911.webp"
   },
   "amanita": {
     "game_id": 6305050097,
     "display_name": "Amanita",
+    "rarity": 5,
     "type": "smg",
     "icon": "https://cdn.dandegate.net/weapons/6d8d144c78fb33bf74b6ad446f404d52.webp"
   },
   "retired_vepr-12": {
     "game_id": 6303040098,
     "display_name": "Retired Vepr-12",
+    "rarity": 3,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/retired-vepr-12/dbe7398b9542678343e5c854462d83fa4d787eb003b4c7c5aa6fbdafac1d5484.webp"
   },
   "retired_type_97_shotgun": {
     "game_id": 6303040099,
     "display_name": "Retired Type 97 Shotgun",
+    "rarity": 3,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/776a2919d023ee4d486edeb43da17efe.webp"
   },
   "retired_type_12_double-barrel_shotgun": {
     "game_id": 6303040100,
     "display_name": "Retired Type 12 Double-Barrel Shotgun",
+    "rarity": 3,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/retired-type-12-double-barrel-shotgun/5697b361564f7def0adca84f2b5334bdda18971408bd08bcf0c9c3c2eb964b44.webp"
   },
   "retired_sportivo_calibro_12": {
     "game_id": 6303040101,
     "display_name": "Retired Sportivo Calibro 12",
+    "rarity": 3,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/20e6af3eceb590ccc1f9432a66443e40.webp"
   },
   "retired_m1_super_90": {
     "game_id": 6303040102,
     "display_name": "Retired M1 Super 90",
+    "rarity": 3,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/retired-m1-super-90/3b7b4724c483a7d433a27e9bbca02622cb33ac5acc00981af0e9119de90a6515.webp"
   },
   "retired_auto-12": {
     "game_id": 6303040103,
     "display_name": "Retired Auto-12",
+    "rarity": 3,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/retired-auto-12/8339d55d4e9da763a540327cb3cca98945c2b120240c40a546c85f2b2f695327.webp"
   },
   "vepr-12": {
     "game_id": 6304040104,
     "display_name": "Vepr-12",
+    "rarity": 4,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/vepr-12/cc750c741c7c901e0431b4d81984de2c182944bdfc152ad3b430a43496739aab.webp"
   },
   "type_97_shotgun": {
     "game_id": 6304040105,
     "display_name": "Type 97 Shotgun",
+    "rarity": 4,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/dfea326f3adca799d8649494695d158a.webp"
   },
   "type_12_double-barrel_shotgun": {
     "game_id": 6304040106,
     "display_name": "Type 12 Double-Barrel Shotgun",
+    "rarity": 4,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/type-12-double-barrel-shotgun/75956fc5e640ad01d8227156467b81974b976a2b96e0e7ac694d5ef4955931d9.webp"
   },
   "sportivo_calibro_12": {
     "game_id": 6304040107,
     "display_name": "Sportivo Calibro 12",
+    "rarity": 4,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/0c89e9d1bc1a17f6d3bbfa9f670c88d8.webp"
   },
   "m1_super_90": {
     "game_id": 6304040108,
     "display_name": "M1 Super 90",
+    "rarity": 4,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/m1-super-90/8bf54375889a2e753639c45135a23f9cbcec8a68ed19da28c31cad5ff7f7ecaa.webp"
   },
   "auto-12": {
     "game_id": 6304040109,
     "display_name": "Auto-12",
+    "rarity": 4,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/auto-12/2c031705f79a579fc64d782133f2f9aa05dcc39b0174cbb5dcaadc448ff3e964.webp"
   },
   "trailblazer": {
     "game_id": 6305040110,
     "display_name": "Trailblazer",
+    "rarity": 5,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/2b9ca35c5373105ae5a97aecd48b053f.webp"
   },
   "thorn_criterion": {
     "game_id": 6305040111,
     "display_name": "Thorn Criterion",
+    "rarity": 5,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/law-of-thorns/0469560b9975378f398abc3bdf5e8b1c1b96e0e309eede135e100c579f5c0083.webp"
   },
   "mezzaluna": {
     "game_id": 6305040112,
     "display_name": "Mezzaluna",
+    "rarity": 5,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/7e4e079856594d7bc2536cc521e8c4f3.webp"
   },
   "heart_seeker": {
     "game_id": 6305040113,
     "display_name": "Heart Seeker",
+    "rarity": 5,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/bfc9fc8d3ca1f4facbe97cab573fb0a0.webp"
   },
   "expeditionary_pigeon": {
     "game_id": 6305040114,
     "display_name": "Expeditionary Pigeon",
+    "rarity": 5,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/e1eed5d3fc8b44fae1d36284ccb3fff0.webp"
   },
   "dulcet_defender": {
     "game_id": 6305040115,
     "display_name": "Dulcet Defender",
+    "rarity": 5,
     "type": "sg",
     "icon": "https://cdn.dandegate.net/weapons/ad5308f2cfafb2f8c4bc81e65a558a08.webp"
   },
   "retired_pecheneg-sp": {
     "game_id": 6303060116,
     "display_name": "Retired Pecheneg-SP",
+    "rarity": 3,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/retired-pecheneg-sp/d4aa48a7eb32faa0cfe14b03f27ef9a8a90a718185ac4d0cc33849a526c525ac.webp"
   },
   "retired_model_arm": {
     "game_id": 6303060117,
     "display_name": "Retired Model ARM",
+    "rarity": 3,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/ba7f96ce3f42250c930c1fb66e04b58b.webp"
   },
   "retired_lewis'_light_machine_gun": {
     "game_id": 6303060118,
     "display_name": "Retired Lewis' Light Machine Gun",
+    "rarity": 3,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/retired-lewis's-light-machine-gun/027a00c2610dbdfb7fc0e80e0dd65a75193627d2d2943252f417d1eaa00001b3.webp"
   },
   "retired_lahti-saloranta_m/26": {
     "game_id": 6303060119,
     "display_name": "Retired Lahti-Saloranta M/26",
+    "rarity": 3,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/retired-lahti-saloranta-m-26/87ec5aaaa3e8c19e62760d47a08ff0eb27dd0f6956abc8f4f533bb1097cd0e67.webp"
   },
   "pecheneg-sp": {
     "game_id": 6304060120,
     "display_name": "Pecheneg-SP",
+    "rarity": 4,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/pecheneg-sp/b9665ab45c977442cb4e21087e6a3c35bea0c6eeea1d979274d5e3bc96e61462.webp"
   },
   "model_arm": {
     "game_id": 6304060121,
     "display_name": "Model ARM",
+    "rarity": 4,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/7ce8ed655164fdbded3371f805cabc91.webp"
   },
   "lewis'_light_machine_gun": {
     "game_id": 6304060122,
     "display_name": "Lewis' Light Machine Gun",
+    "rarity": 4,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/lewis's-light-machine-gun/d5d22b80633eb0c73c5db640cc0d0f0534766f92c16a19ea8b2e05be3ea45a75.webp"
   },
   "lahti-saloranta_m/26": {
     "game_id": 6304060123,
     "display_name": "Lahti-Saloranta M/26",
+    "rarity": 4,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/lahti-saloranta-m-26/43ac05cc066a060754897e8967d2ef4dd16b4aed4d23daa1d7dbc422869fec5a.webp"
   },
   "toysmith": {
     "game_id": 6305060124,
     "display_name": "Toysmith",
+    "rarity": 5,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/toy-maker/80fdeeb0343268192c043acdf7f4a6cabbe1aedf2a38cebd86768181f451a47a.webp"
   },
   "optical_illusion": {
     "game_id": 6305060125,
     "display_name": "Optical Illusion",
+    "rarity": 5,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/8f3407ba06b54b5371b33a4f00b6785e.webp"
   },
   "njörðr": {
     "game_id": 6305060126,
     "display_name": "Njörðr",
+    "rarity": 5,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/njor-r/764ba142e8282679185ef27fd7973f020420fe087ffdabb4cb0581224f8a1ed9.webp"
   },
   "mjölnir": {
     "game_id": 6305060127,
     "display_name": "Mjölnir",
+    "rarity": 5,
     "type": "mg",
     "icon": "https://cdn.dandegate.net/weapons/97ee7372e330da450069fdc0564fcd5c.webp"
   },
   "retired_w_2000": {
     "game_id": 6303030128,
     "display_name": "Retired W 2000",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/5e5eaecedf2393a8492c8ce4e7b4b43a.webp"
   },
   "retired_vsk-94": {
     "game_id": 6303030129,
     "display_name": "Retired VSK-94",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/7863c6665847f1f6937e1d921d659374.webp"
   },
   "retired_three-line_rifle_m1891": {
     "game_id": 6303030130,
     "display_name": "Retired Three-Line Rifle M1891",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/retired-three-line-rifle-m1891/c14572e75e6dd952ff9f1f151819b0674c84254435d71f1e2a5a7072d2f28c15.webp"
   },
   "retired_m200": {
     "game_id": 6303030131,
     "display_name": "Retired M200",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/retired-m200/45d748a97a75b3cd5988301f2908a7be7cbcca6ea47f2b419de9a3730b1107e7.webp"
   },
   "retired_m1903": {
     "game_id": 6303030132,
     "display_name": "Retired M1903",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/ae7dbe2f8a2e5e361d283faa1186ea5d.webp"
   },
   "retired_liushih_rifle": {
     "game_id": 6303030133,
     "display_name": "Retired Liushih Rifle",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/retired-liushih-rifle/be004a906b0500dd15795267972d786aedaffc5fab74e0cce7339d7b7071323a.webp"
   },
   "retired_ksvk": {
     "game_id": 6303030134,
     "display_name": "Retired KSVK",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/retired-ksvk/011c300fb1fb72be50aa40b525299136f438257f643e72e55a37f1b5fa56015c.webp"
   },
   "retired_dsr": {
     "game_id": 6303030135,
     "display_name": "Retired DSR",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/retired-dsr/27d165ef10fe0051d628cc176e1460d2e740156e5a1bfe9cac19ee98130fb108.webp"
   },
   "retired_.50_nemesis": {
     "game_id": 6303030136,
     "display_name": "Retired .50 Nemesis",
+    "rarity": 3,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/90055856abcdea77b930a9fb13a6a95a.webp"
   },
   "w_2000": {
     "game_id": 6304030137,
     "display_name": "W 2000",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/3a9b8aa75e5256779a3202daa0b36ef7.webp"
   },
   "vsk-94": {
     "game_id": 6304030138,
     "display_name": "VSK-94",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/2d979d230128b962b3824533053570c7.webp"
   },
   "three-line_rifle_m1891": {
     "game_id": 6304030139,
     "display_name": "Three-Line Rifle M1891",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/three-line-rifle-m1891/c1a38e9c41b39014c03b8ca11e6e91d34869563120dd91faab71b9d8dce312a7.webp"
   },
   "m200": {
     "game_id": 6304030140,
     "display_name": "M200",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/m200/6190af8048da21d44e410c62c6eac80aee58a76af502e84c7aa23974138b8a6c.webp"
   },
   "m1903": {
     "game_id": 6304030141,
     "display_name": "M1903",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/b9aa7549a19b5a9b558aae5300361f0d.webp"
   },
   "liushih_rifle": {
     "game_id": 6304030142,
     "display_name": "Liushih Rifle",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/liushih-rifle/7710e5ddf37df7d8b1c51715dbae8a328f35a94fc55dc6430effc54d47b2b862.webp"
   },
   "ksvk": {
     "game_id": 6304030143,
     "display_name": "KSVK",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/ksvk/5e5e740356dfa3d14afc05bf8f750b5b5a9f3bef4fe49cec359a39e79c2f2e21.webp"
   },
   "dsr50": {
     "game_id": 6304030144,
     "display_name": "DSR50",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/dsr50/b4275c781ad830bfc1a4d0a157a08530346c6f1ea6ff3b37c6f319a3b5b1495a.webp"
   },
   ".50_nemesis": {
     "game_id": 6304030145,
     "display_name": ".50 Nemesis",
+    "rarity": 4,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/e280f1dca0c02660b698d67a9354d89c.webp"
   },
   "tidal_nocturne": {
     "game_id": 6305030146,
     "display_name": "Tidal Nocturne",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/tidal-nocturne/426793cd14c680985197f2ddf4530ba7133a303e8a147ab6326cbe39f62951a3.webp"
   },
   "sibyl": {
     "game_id": 6305030147,
     "display_name": "Sibyl",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/sibyl/47ac3e57da832faf2b91f1888d33d44e4be00aa323a083bca0429027f47ac6f7.webp"
   },
   "shadow_runner": {
     "game_id": 6305030148,
     "display_name": "Shadow Runner",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/liushih/7e658181bb5034fb7a9e3b61445d99631b7f092733adbdea0edf7d489c9d7817.webp"
   },
   "samosek": {
     "game_id": 6305030149,
     "display_name": "Samosek",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/b425b096ca431b29856143f2d92091d1.webp"
   },
   "radiance": {
     "game_id": 6305030150,
     "display_name": "Radiance",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/f2ae4b05e3e966ff180040b3f5224a78.webp"
   },
   "night-wayfaring_cardamom": {
     "game_id": 6305030151,
     "display_name": "Night-Wayfaring Cardamom",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/night-wayfaring-cardamom/90b1c7b3cd0e39fd998837460068820030f5dca95ce4379cbba91284d108835e.webp"
   },
   "guardian_silverwing": {
     "game_id": 6305030152,
     "display_name": "Guardian Silverwing",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/8d6a3b599fddd64086220ef4fba6f13a.webp"
   },
   "eulogistic_verse": {
     "game_id": 6305030153,
     "display_name": "Eulogistic Verse",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/7c7781f1c8a4359c564a13d8c17173b7.webp"
   },
   "bittersweet_caramel": {
     "game_id": 6305030154,
     "display_name": "Bittersweet Caramel",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/283a7d59e51acf74b5725c9d884af128.webp"
   },
   "arcana": {
     "game_id": 6305030155,
     "display_name": "Arcana",
+    "rarity": 5,
     "type": "rf",
     "icon": "https://cdn.dandegate.net/weapons/747d6522fa80171a25c4f1977b6b5ea4.webp"
   },
   "retired_pluma_edge": {
     "game_id": 6303060156,
     "display_name": "Retired Pluma Edge",
+    "rarity": 3,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/0dc3141d95c61c7006083719d13ca79d.webp"
   },
   "retired_hare": {
     "game_id": 6303060157,
     "display_name": "Retired Hare",
+    "rarity": 3,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/ba132bb667f5ed5bb26a89de5f8958fd.webp"
   },
   "retired_gray_thorn": {
     "game_id": 6303060158,
     "display_name": "Retired Gray Thorn",
+    "rarity": 3,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/retired-grey-thorn/acdcd0d2efe1cbee351826fe8ff0c3e005738a51669f71e27bb801384b40f92f.webp"
   },
   "pluma_edge": {
     "game_id": 6304060159,
     "display_name": "Pluma Edge",
+    "rarity": 4,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/13e8b7ef5d7647d4b8c3d8430a6c9af4.webp"
   },
   "hare": {
     "game_id": 6304060160,
     "display_name": "Hare",
+    "rarity": 4,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/5b48065ad12ad56dbb76fb7b96383faf.webp"
   },
   "gray_thorn": {
     "game_id": 6304060161,
     "display_name": "Gray Thorn",
+    "rarity": 4,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/gray-thorn/16cc268c2ae010d69c4830cce1c275b09ad6c54cc985c3ff124eb23bd25f9748.webp"
   },
   "twilight_rose": {
     "game_id": 6305060162,
     "display_name": "Twilight Rose",
+    "rarity": 5,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/twilight-rose/4a0c86db8fc0bd6319b48d06c01e267593eb8d06301dfcfba4df664c1d98538e.webp"
   },
   "rectrix": {
     "game_id": 6305060163,
     "display_name": "Rectrix",
+    "rarity": 5,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/df3c5c914d72ec05b1446322925a9193.webp"
   },
   "crowned_jackalope": {
     "game_id": 6305060164,
     "display_name": "Crowned Jackalope",
+    "rarity": 5,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/482acd803adaf721def6e92abb0e6b88.webp"
   },
   "cause_and_effect": {
     "game_id": 6305060165,
     "display_name": "Cause and Effect",
+    "rarity": 5,
     "type": "bld",
     "icon": "https://cdn.dandegate.net/weapons/principle-of-causality/b745b9929cc4e819926d771b7890ebf9eab4e90c820fdae85e2415385d63e564.webp"
   }
