@@ -1,7 +1,18 @@
 {
   "permissions": {
     "allow": [
-      "Bash(powershell -Command:*)"
+      "Bash(powershell -Command:*)",
+      "Bash(git -C /Users/saminhong/Documents/GitHub/wutheringwave-planner status)",
+      "Bash(git -C /Users/saminhong/Documents/GitHub/wutheringwave-planner diff)",
+      "Bash(git -C /Users/saminhong/Documents/GitHub/wutheringwave-planner pull origin master)",
+      "Bash(python3 -c ' *)",
+      "Bash(git -C /Users/saminhong/Documents/GitHub/wutheringwave-planner diff --stat)",
+      "Bash(git -C /Users/saminhong/Documents/GitHub/wutheringwave-planner add scripts/sync-sheets.js src/games/mongilstardive/data/farmingRates.json src/games/mongilstardive/data/tiers.js src/games/mongilstardive/materialProcessor.js src/views/InventoryView.vue)",
+      "Bash(git -C /Users/saminhong/Documents/GitHub/wutheringwave-planner commit -m ' *)",
+      "Bash(git -C /Users/saminhong/Documents/GitHub/wutheringwave-planner push origin master)",
+      "Bash(python3 -c \"import json; d=json.load\\(open\\('/Users/saminhong/Documents/GitHub/wutheringwave-planner/src/games/mongilstardive/data/materials.json'\\)\\); print\\(list\\(d.keys\\(\\)\\)\\)\")",
+      "Bash(npx playwright *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\([k for k in d.keys\\(\\)]\\)\")"
     ]
   }
 }

@@ -954,7 +954,10 @@ const CalculateEstimatedRun = (data) => {
     Object.entries(data.subCategories).forEach(([subcategoryName, subcategoryData]) => {
         if (!unobtainable) {
 
-            if (categoryName === "forgery" || categoryName === "common") {
+            // tiered 라인업 일반 판정: forgery_skill/forgery_ascension 처럼 Category 이름이
+            // "forgery"/"common"이 아니어도, subcategory가 게임 tiers 데이터에 있으면 tier 가중(3:1) 계산 적용.
+            const isTieredSubCategory = subcategoryName in tieredSubCategories.value;
+            if (isTieredSubCategory || categoryName === "forgery" || categoryName === "common") {
                 const missing = [0, 0, 0, 0]; // rarity蹂??꾩쟻 ?꾩슂?됱쓣 ??ν븯??諛곗뿴
 
                 // 媛?task瑜??쒗쉶?섎㈃???덉뼱?꾨퀎 ?꾩슂?됱쓣 ?꾩쟻
