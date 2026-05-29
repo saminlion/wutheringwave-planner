@@ -45,9 +45,9 @@ export const processMaterial = (materials, key, value, characterInfo) => {
     return true;
   }
 
-  // Direct rare_material (no tier)
+  // Direct rare_material — the "unique" material (Basic Info Core), stored as common/unique
   if (key === 'rare_material') {
-    const material = findMaterial('rare_material', 'rare_material', null);
+    const material = findMaterial('common', 'unique', null);
     if (material) {
       const gameId = getMaterialField(material, 'game_id');
       if (gameId) {

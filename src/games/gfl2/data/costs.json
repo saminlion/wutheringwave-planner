@@ -29,7 +29,7 @@
         "passive_skill_6": { "rare_material": 2, "credit": 12000 }
       }
     },
-    "bonus_stat": {
+    "attribute": {
       "bonus_stat_1": { "forgery_transcription_conductor": [20, 1], "credit": 1000 },
       "bonus_stat_2": { "forgery_transcription_conductor": [20, 2], "credit": 2000 },
       "bonus_stat_3": { "forgery_transcription_conductor": [40, 3], "credit": 4000 },
@@ -39,7 +39,23 @@
     }
   },
   "weapon": {
-    "level": {
+    "level_3": {
+      "10": { "weapon_exp": 620 },
+      "20": { "weapon_exp": 4945 },
+      "30": { "weapon_exp": 22390 },
+      "40": { "weapon_exp": 91000 },
+      "50": { "weapon_exp": 323690 },
+      "60": { "weapon_exp": 667935 }
+    },
+    "level_4": {
+      "10": { "weapon_exp": 620 },
+      "20": { "weapon_exp": 4945 },
+      "30": { "weapon_exp": 22390 },
+      "40": { "weapon_exp": 91000 },
+      "50": { "weapon_exp": 323690 },
+      "60": { "weapon_exp": 667935 }
+    },
+    "level_5": {
       "10": { "weapon_exp": 620 },
       "20": { "weapon_exp": 4945 },
       "30": { "weapon_exp": 22390 },

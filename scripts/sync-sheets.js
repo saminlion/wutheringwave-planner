@@ -500,9 +500,10 @@ function transformWeapons(rows) {
       display_name: row.display_name || '',
     };
 
-    // Rarity
-    if (row.Rarity != null && row.Rarity !== '') {
-      weapon.rarity = parseInt(row.Rarity, 10);
+    // Rarity (tolerate the "Rairty" header typo seen in some sheets, e.g. GFL2)
+    const rarityVal = row.Rarity ?? row.Rairty;
+    if (rarityVal != null && rarityVal !== '') {
+      weapon.rarity = parseInt(rarityVal, 10);
     }
 
     // Type (text) -> type field (lowercase to match existing data)

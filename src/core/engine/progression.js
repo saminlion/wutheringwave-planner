@@ -212,6 +212,33 @@ export class ProgressionEngine {
       });
     }
 
+    // === GFL2 structure ===
+    // passive keyed by character rarity, then passive_skill_N (flat unlock cost, 0→1)
+    // settings.special = { passive_1: { current_level, target_level }, ... }
+    if (settings.special && typeof settings.special === 'object' && characterInfo?.rarity != null) {
+      const rarityPassiveTable = passiveCostsTable[String(characterInfo.rarity)];
+      if (rarityPassiveTable && typeof rarityPassiveTable === 'object') {
+        Object.entries(settings.special).forEach(([passiveKey, passiveData]) => {
+          if (!passiveData || typeof passiveData !== 'object') return;
+
+          const currentLevel = Number.parseInt(passiveData.current_level, 10) || 0;
+          const targetLevel = Number.parseInt(passiveData.target_level, 10) || 0;
+
+          if (currentLevel >= targetLevel) return;
+
+          // passive_1 → passive_skill_1
+          const costKey = passiveKey.replace('passive_', 'passive_skill_');
+          const costs = rarityPassiveTable[costKey];
+
+          if (costs) {
+            Object.entries(costs).forEach(([materialKey, amount]) => {
+              this._process(result, materialKey, amount, characterInfo);
+            });
+          }
+        });
+      }
+    }
+
     // baseSkill: settings.baseSkill = { base_skill_1: { current_level, target_level } }
     if (settings.baseSkill && typeof settings.baseSkill === 'object') {
       const baseSkillCosts = characterCosts.baseskill ?? {};
