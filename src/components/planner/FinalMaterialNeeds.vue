@@ -419,15 +419,56 @@ const categoryHasRequiredMaterials = (category) => {
     return category.subCategories.some(subCategory => hasRequiredMaterials(category, subCategory));
 };
 
+// 同じCategory+SubCategoryの全ティアを静的materials DBから構築する
+// (subCategory.taskは「最終必要量に残ったティア」のみを含むため、
+//  上位ティア単独クリック時にラインナップが欠ける問題への対策)
+const buildFullTierLineup = (category, subCategory) => {
+    const materialsDb = gameStore.getData('materials') || {};
+    const categoryData = materialsDb[category.name];
+    if (!categoryData) return null;
+
+    // 必要量データ(need/synthesize等)はsubCategory.taskから引く
+    const taskById = {};
+    subCategory.task.forEach(t => { taskById[t.id] = t; });
+
+    // 同一SubCategoryに属するDB材料を全て収集
+    const dbItems = Object.values(categoryData).filter(
+        m => m && m.SubCategory === subCategory.id && m.game_id != null
+    );
+    if (!dbItems.length) return null;
+
+    return dbItems.map(m => {
+        const existing = taskById[m.game_id] || {};
+        return {
+            id: m.game_id,
+            name: existing.name ?? m.label ?? m.game_id,
+            need: existing.need ?? 0,
+            owned: getMaterialQuantity(m.game_id),
+            synthesize: existing.synthesize ?? 0,
+            decomposedConsumed: existing.decomposedConsumed ?? 0,
+            decomposedGained: existing.decomposedGained ?? 0,
+            tier: m.tier ?? existing.tier ?? null,
+            shortage: existing.shortage ?? 0,
+            subCategory: subCategory.id,
+            icon: getMaterialIcon(m.game_id),
+        };
+    });
+};
+
 // ItemDialogを開く
 const openItemDialog = (task, category, subCategoryId) => {
     // IDで正確なsubcategoryを検索 (Vue reactiveクロージャの参照問題を回避)
     const subCategory = category.subCategories.find(sc => sc.id === subCategoryId);
     if (!subCategory) return;
 
+    // ティアラインナップは静的DBの全ティアから構築 (必要量に残ったティアのみのsubCategory.taskではなく)
+    // → 上位ティア単独クリック時も全ティアが表示され、クリックしたティアに依存しなくなる
+    const fullLineup = buildFullTierLineup(category, subCategory);
+    const lineupItems = (fullLineup && fullLineup.length) ? fullLineup : subCategory.task;
+
     // ティアがあるラインナップかどうか判定
     // 複数の異なるティアがある場合のみ、同じsubcategoryのアイテムを全て表示
-    const tiers = subCategory.task.map(t => t.tier).filter(t => t !== undefined && t !== null);
+    const tiers = lineupItems.map(t => t.tier).filter(t => t !== undefined && t !== null);
     const uniqueTiers = new Set(tiers);
     const isTieredLineup = tiers.length > 1 && uniqueTiers.size > 1;
 
@@ -440,7 +481,7 @@ const openItemDialog = (task, category, subCategoryId) => {
             icon: getMaterialIcon(task.id),
         };
         // 全ティアを表示
-        selectedRelatedItems.value = subCategory.task.map(t => ({
+        selectedRelatedItems.value = lineupItems.map(t => ({
             ...t,
             owned: getMaterialQuantity(t.id),
             icon: getMaterialIcon(t.id),

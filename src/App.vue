@@ -89,7 +89,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
   gap: 12px;
 }
@@ -129,9 +128,6 @@ header {
 
 nav {
   margin-top: 8px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 nav a {
@@ -147,8 +143,7 @@ nav a.router-link-active {
 }
 
 main {
-  max-width: 1200px;
-  margin: 0 auto;
+  /* 1200px 캡 제거 — 넓은 화면에서 양옆 여백 낭비를 없애고 가로를 꽉 채움 */
   padding: 1rem;
 }
 </style>

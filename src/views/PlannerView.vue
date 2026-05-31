@@ -63,7 +63,7 @@
       </div>
     </div>
 
-    <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :craftingActions="finalMaterialNeeds.craftingActions" :key="refreshKey" @updateInventory="handleInventoryUpdate" />
+    <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :craftingActions="finalMaterialNeeds.craftingActions" @updateInventory="handleInventoryUpdate" />
 
     <component
       :is="CharacterDialogComponent"
@@ -181,9 +181,6 @@ const currentSettings = ref(null);
 // 媛?goal???④? ?곹깭瑜???ν븯??媛앹껜
 const hiddenGoals = ref({});
 
-const refreshKey = ref(0);
-
-
 const getRawData = (goal) => {
   // id??泥????먮━ 異붿텧
   // goal.typeを使用してキャラクター/武器を判別 (ゲーム共通)
@@ -224,7 +221,6 @@ const flushPendingUpdates = useDebounceFn(() => {
 
   // Recalculate after all updates applied
   updateFinalMaterialNeeds();
-  refreshFinalMaterialNeeds();
 }, 1000);
 
 const handleInventoryUpdate = ({ id, quantity }) => {
@@ -242,10 +238,6 @@ watch(
   },
   { deep: true }
 );
-
-const refreshFinalMaterialNeeds = () => {
-  refreshKey.value++;
-};
 
 const updateFinalMaterialNeeds = () => {
   const totalNeeds = {};
@@ -648,9 +640,8 @@ const hideGoal = (id, type) => {
   } else {
     plannerStore.revealGoal(id, type);
   }
-
-  // Estimated Planner部分を即座に更新
-  refreshFinalMaterialNeeds();
+  // finalMaterialNeeds は checkGoals(visibleGoals) に依存する computed のため、
+  // hide/reveal で自動再計算される (強制 remount は不要)
 };
 
 const updateCharacter = () => {
@@ -673,9 +664,7 @@ const updateCharacter = () => {
   });
 
   logger.debug('Updated Goals:', plannerStore.goals);
-
-  // Force refresh of FinalMaterialNeeds display
-  refreshFinalMaterialNeeds();
+  // finalMaterialNeeds は plannerStore.goals 依存の computed のため自動更新される
 };
 
 // Update weapon
@@ -699,9 +688,7 @@ const updateweapon = () => {
   });
 
   logger.debug('Updated Goals:', plannerStore.goals);
-
-  // Force refresh of FinalMaterialNeeds display
-  refreshFinalMaterialNeeds();
+  // finalMaterialNeeds は plannerStore.goals 依存の computed のため自動更新される
 };
 
 /**
@@ -1086,8 +1073,7 @@ const completeGoal = (id, type) => {
         materials: calculatedMaterials,
       });
 
-      // Refresh final material display (triggers re-render)
-      refreshFinalMaterialNeeds();
+      // finalMaterialNeeds は computed のため addGoal で自動再計算される
     }, 0);
   } catch (error) {
     logger.error('Error completing goal:', error);
@@ -1190,8 +1176,7 @@ const handleCompleteTab = ({ tabType, materials, settingsUpdate }) => {
 
     const calculatedMaterials = plannerStore.calculateAllMaterials(id, type);
     plannerStore.addGoal({ id, type, materials: calculatedMaterials });
-
-    refreshFinalMaterialNeeds();
+    // finalMaterialNeeds は computed のため addGoal で自動再計算される
   }, 0);
 };
 
@@ -1225,6 +1210,8 @@ onMounted(() => {
   background-clip: border-box;
   position: relative;
   aspect-ratio: 1 / 1;
+  /* hide/reveal・satisfied 切り替え時のレイアウトジャンプを避け、滑らかにフェードさせる */
+  transition: opacity 0.2s ease, filter 0.2s ease;
 }
 
 .goal-border.hidden {

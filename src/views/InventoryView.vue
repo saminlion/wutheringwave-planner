@@ -132,10 +132,14 @@ const setQuantity = (materialId) => {
   padding: 0 16px 32px;
 }
 
+/* 카테고리 섹션을 행 우선(row-major) 그리드로 배치.
+   원래 카테고리 순서를 좌→우로 유지해 가시성/전달성을 지키면서(우선순위 ①),
+   여러 열로 채워 세로 스크롤도 단축(우선순위 ②). 화면 폭 따라 열 수 자동 조정. */
 .inventory-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 12px;
+  align-items: start; /* 같은 행에서 섹션이 최대 높이로 늘어나지 않게 */
 }
 
 .category-section {
@@ -174,8 +178,8 @@ const setQuantity = (materialId) => {
 }
 
 .inventory-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
   gap: 8px;
 }
 
@@ -188,7 +192,7 @@ const setQuantity = (materialId) => {
   border: 1px solid var(--border, #e0e0e0);
   border-radius: 8px;
   padding: 8px 6px;
-  width: 88px;
+  width: auto;
   cursor: default;
   transition: border-color 0.15s;
 }
@@ -211,7 +215,8 @@ const setQuantity = (materialId) => {
 }
 
 .quantity-input {
-  width: 72px;
+  width: 100%;
+  box-sizing: border-box;
   padding: 3px 4px;
   text-align: center;
   font-size: 12px;
