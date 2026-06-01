@@ -7,11 +7,11 @@
     "unobtainable": true
   },
   "forgery_ascension": {
-    "drops": 29.833333333333332,
+    "drops": 28.933333333333334,
     "stamina": 10
   },
   "forgery_skill": {
-    "drops": 31.266666666666666,
+    "drops": 31.81666666666667,
     "stamina": 10
   },
   "player_exp": {
@@ -23,7 +23,7 @@
     "stamina": 10
   },
   "forgery": {
-    "drops": 30.549999999999997,
+    "drops": 30.375,
     "stamina": 10
   }
 }
