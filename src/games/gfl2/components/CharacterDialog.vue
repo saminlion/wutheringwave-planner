@@ -101,7 +101,7 @@
                             </div>
                         </div>
 
-                        <!-- Right: Bonus Stats (4-star only) -->
+                        <!-- Right: Bonus Stats -->
                         <div v-if="hasBonusStats" class="skills-right">
                             <div class="checklist-title">Bonus Stats</div>
                             <div v-for="(attr, index) in characterAttributes" :key="attr.model_value" class="checklist-item">
@@ -167,9 +167,9 @@ const props = defineProps({
 const characterSpecial = computed(() => gameStore.formFields?.characterSpecial || []);
 const characterAttributes = computed(() => gameStore.formFields?.characterAttributes || []);
 
-// 4-star characters have bonus_stats
+// All GFL2 characters have bonus stats; render based on config attributes
 const hasBonusStats = computed(() => {
-    return props.character?.bonus_stats && props.character.bonus_stats.length > 0;
+    return characterAttributes.value.length > 0;
 });
 
 const tabs = [
