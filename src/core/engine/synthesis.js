@@ -32,41 +32,84 @@ export class SynthesisEngine {
       const materialData = tieredMaterials[category];
       this.logger.debug?.('Category material data', { category, materialData });
 
-      for (const key in materialData) {
-        const currentLevel = materialData[key];
-        const nextLevel = materialData[Number(key) + 1];
-        if (!nextLevel) {
+      // Ascending tier list. Chains may start above 1 (e.g. ascension T2~T5).
+      const tiers = Object.keys(materialData)
+        .map(Number)
+        .filter((t) => !Number.isNaN(t))
+        .sort((a, b) => a - b);
+
+      if (tiers.length === 0) {
+        continue;
+      }
+
+      for (const tier of tiers) {
+        const gid = materialData[tier].game_id;
+        rawNeedResults[gid] = { from: gid, rawNeed: shortages[gid] ?? 0 };
+      }
+
+      /**
+       * Pass 1 (top-down demand): compute how many units must be crafted INTO each
+       * tier to cover its own shortage plus the demand propagated from tiers above.
+       * Synthesize only the minimum required — never the full lower-tier surplus —
+       * so we don't overshoot middle tiers or strand materials.
+       */
+      const craftInto = {};
+      let demand = 0; // demanded units, expressed in the current tier's own units
+      for (let i = tiers.length - 1; i >= 0; i -= 1) {
+        const tier = tiers[i];
+        const gid = materialData[tier].game_id;
+        const required = (shortages[gid] ?? 0) + demand;
+        const available = inventory[gid] ?? 0;
+
+        if (available >= required) {
+          // Owned (incl. surplus) covers this tier's own need plus demand from above.
+          craftInto[tier] = 0;
+          demand = 0;
+        } else {
+          const deficit = required - available;
+          craftInto[tier] = deficit;
+          if (i > 0) {
+            const lower = materialData[tiers[i - 1]];
+            const ratio = lower.synthesizable?.count ?? this.ratio;
+            demand = deficit * ratio; // lower-tier units needed to craft `deficit`
+          } else {
+            // Lowest tier: cannot synthesize further. The remaining deficit stays in
+            // inventory and is reported as a real shortage by backward().
+            demand = 0;
+          }
+        }
+      }
+
+      /**
+       * Pass 2 (bottom-up apply): craft each tier from the one below, limited by what
+       * is actually available (owned + already-crafted lower tiers).
+       */
+      for (let i = 1; i < tiers.length; i += 1) {
+        const tier = tiers[i];
+        const want = craftInto[tier];
+        if (!want || want <= 0) {
           continue;
         }
 
-        const currentGameId = currentLevel.game_id;
-        const nextGameId = nextLevel.game_id;
+        const gid = materialData[tier].game_id;
+        const lower = materialData[tiers[i - 1]];
+        const lowerGid = lower.game_id;
+        const ratio = lower.synthesizable?.count ?? this.ratio;
 
-        const currentCount = inventory[currentGameId] ?? 0;
-        const synthesisCount = currentLevel.synthesizable?.count ?? 1;
-        const needed = shortages[currentGameId] ?? 0;
-
-        /**
-         * Config: Only use excess materials beyond shortage for synthesis.
-         */
-        const availableForSynthesis = Math.max(0, currentCount - needed);
-        const synthesisQty = Math.floor(availableForSynthesis / synthesisCount);
-
-        if (synthesisQty > 0) {
-          inventory[currentGameId] -= synthesisQty * synthesisCount;
-          inventory[nextGameId] = (inventory[nextGameId] ?? 0) + synthesisQty;
-
-          synthesisResults[nextGameId] = {
-            from: currentGameId,
-            used: synthesisQty * synthesisCount,
-            synthesized: synthesisQty,
-            rawNeed: shortages[nextGameId] ?? 0,
-          };
+        const haveLower = inventory[lowerGid] ?? 0;
+        const craftable = Math.min(want, Math.floor(haveLower / ratio));
+        if (craftable <= 0) {
+          continue;
         }
 
-        rawNeedResults[currentGameId] = {
-          from: currentGameId,
-          rawNeed: shortages[currentGameId] ?? 0,
+        inventory[lowerGid] = haveLower - craftable * ratio;
+        inventory[gid] = (inventory[gid] ?? 0) + craftable;
+
+        synthesisResults[gid] = {
+          from: lowerGid,
+          used: craftable * ratio,
+          synthesized: craftable,
+          rawNeed: shortages[gid] ?? 0,
         };
       }
     }

@@ -375,7 +375,9 @@ const selectedRelatedItems = ref([]);
 // アイテムが完了状態かどうか判定
 const isTaskComplete = (task) => {
     if (!task.need || task.need <= 0) return false;
-    if (supportsDecomposition.value && isTieredTask(task) && task.shortage !== undefined) {
+    // Tiered materials: shortage (final_needs) already accounts for cross-tier synthesis,
+    // so it is the source of truth for both decomposition and synthesis-only games.
+    if (isTieredTask(task) && task.shortage !== undefined) {
         return task.shortage <= 0;
     }
     const owned = getMaterialQuantity(task.id);
@@ -385,7 +387,7 @@ const isTaskComplete = (task) => {
 
 // 実際の不足量を計算
 const calculateActualNeed = (task) => {
-    if (supportsDecomposition.value && isTieredTask(task) && task.shortage !== undefined) {
+    if (isTieredTask(task) && task.shortage !== undefined) {
         return Math.max(0, task.shortage);
     }
     return Math.max(0, task.need - getMaterialQuantity(task.id) - (task.synthesize || 0));
@@ -540,17 +542,19 @@ const closeDialog = () => {
 // ダイアログからのインベントリ更新
 const handleDialogUpdateInventory = (data) => {
     emit("updateInventory", data);
-    // 更新後、selectedItemのowned値も更新
+    // 入力値は既存保有量に「加算」されるため、owned表示も加算で更新
     if (selectedItem.value.id === data.id) {
-        selectedItem.value.owned = data.quantity;
+        selectedItem.value.owned = (selectedItem.value.owned || 0) + data.quantity;
     }
     // relatedItemsも更新
     selectedRelatedItems.value = selectedRelatedItems.value.map(item => {
         if (item.id === data.id) {
-            return { ...item, owned: data.quantity };
+            return { ...item, owned: (item.owned || 0) + data.quantity };
         }
         return item;
     });
+    // 保存後はダイアログを閉じる
+    closeDialog();
 };
 
 const resetCaches = () => {
@@ -1003,7 +1007,7 @@ const CalculateEstimatedRun = (data) => {
 
                 // 媛?task瑜??쒗쉶?섎㈃???덉뼱?꾨퀎 ?꾩슂?됱쓣 ?꾩쟻
                 subcategoryData.task.forEach((task) => {
-                    const actualNeed = (supportsDecomposition.value && task.shortage !== undefined)
+                    const actualNeed = (task.shortage !== undefined)
                         ? Math.max(0, task.shortage)
                         : Math.max(0, task.need - getMaterialQuantity(task.id) - (task.synthesize || 0));
 
