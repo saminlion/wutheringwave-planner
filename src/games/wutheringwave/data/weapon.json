@@ -922,7 +922,7 @@
     "display_name": "Spectral Trigger",
     "rarity": 5,
     "type": "pistols",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030056_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
   },
@@ -931,7 +931,7 @@
     "display_name": "Skull Thrasher",
     "rarity": 5,
     "type": "pistols",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030066_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
   },
@@ -940,7 +940,7 @@
     "display_name": "Freeze Frame",
     "rarity": 5,
     "type": "rectifier",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020086_UI.webp",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050086_UI.webp",
     "common": "exoswarm",
     "forgery": "string"
   }

@@ -789,6 +789,14 @@
       "SubCategory": "boss",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_024_UI.webp",
       "tier": 4
+    },
+    "nightmare_flashdrive": {
+      "game_id": 4140030022,
+      "label": "Nightmare Flashdrive",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_027_UI.webp",
+      "tier": 4
     }
   },
   "weekly": {
@@ -1105,6 +1113,13 @@
       "SubCategory": "ascension",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_077_UI.webp",
       "tier": 3
+    },
+    "past_reveries": {
+      "game_id": 4130010030,
+      "label": "Past Reveries",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconA/T_IconA_23_UI.webp"
     }
   },
   "player_exp": {

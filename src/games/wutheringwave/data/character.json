@@ -658,6 +658,8 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luxi_UI.webp",
     "common": "exoswarm",
     "forgery": "combustor",
+    "ascension": 4130010030,
+    "boss": 4140030022,
     "weeklyBoss": 4150030008
   },
   "rebecca": {
@@ -669,6 +671,8 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_LiBeiKa_UI.webp",
     "common": "mech",
     "forgery": "combustor",
+    "ascension": 4130010030,
+    "boss": 4140030022,
     "weeklyBoss": 4150030009
   },
   "lucilla": {

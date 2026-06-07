@@ -588,18 +588,18 @@
     "display_name": "Amaranthine Tassel",
     "rarity": 6,
     "type": "greatsword",
-    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_claymores.webp",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_claym_0017.webp",
     "onyx": 5110030016,
-    "special": 5130010031
+    "special": 5130010034
   },
   "phantom_pain": {
     "game_id": 5360200067,
     "display_name": "Phantom Pain",
     "rarity": 6,
     "type": "greatsword",
-    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_claymores.webp",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_claym_0016.webp",
     "onyx": 5110030016,
-    "special": 5130010031
+    "special": 5130010033
   },
   "beacon_of_duty": {
     "game_id": 5360300068,
