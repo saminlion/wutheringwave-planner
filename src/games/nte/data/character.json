@@ -210,8 +210,8 @@
     "element": "lakshana",
     "weapon_type": "synthesis",
     "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI/Gacha/YH_lihui_fashionshop_kaesi.webp",
-    "common": "whispers",
-    "forgery": "bird",
+    "common": "delusions",
+    "forgery": "heart",
     "boss": 7140010007,
     "weeklyBoss": 7150010003
   }
