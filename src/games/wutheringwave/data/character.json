@@ -687,5 +687,25 @@
     "ascension": 4130010029,
     "boss": 4140030019,
     "weeklyBoss": 4150030009
+  },
+  "yangyang_xuanling": {
+    "game_id": 4250500054,
+    "display_name": "Yangyang Xuanling",
+    "rarity": 5,
+    "element": "havoc",
+    "weapon": "sword",
+    "icon": "https://img.game8.co/4535620/1dec41807ec9c36f03bbd9bde9f51c71.png/show",
+    "common": "null",
+    "forgery": "polarizer"
+  },
+  "suisui": {
+    "game_id": 4250100055,
+    "display_name": "SuiSui",
+    "rarity": 5,
+    "element": "glacio",
+    "weapon": "rectifier",
+    "icon": "https://img.game8.co/4535729/c9fa446cf56e72453e943b2173e3f97a.png/show",
+    "common": "null",
+    "forgery": "string"
   }
 }

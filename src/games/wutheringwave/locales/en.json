@@ -17,6 +17,7 @@
     "4250100006": "Carlotta",
     "4250100049": "Hiyuki",
     "4250100053": "Lucilla",
+    "4250100055": "SuiSui",
     "4250200008": "Encore",
     "4250200010": "Changli",
     "4250200031": "Brant",
@@ -44,6 +45,7 @@
     "4250500032": "Cantarella",
     "4250500037": "Phrolova",
     "4250500042": "Chisa",
+    "4250500054": "Yangyang Xuanling",
     "4250600014": "Jinshi",
     "4250600020": "Rover (Spectro)",
     "4250600023": "Verina",
@@ -307,7 +309,9 @@
     "4350100102": "Frostburn",
     "4350400103": "Spectral Trigger",
     "4350400104": "Skull Thrasher",
-    "4350500105": "Freeze Frame"
+    "4350500105": "Freeze Frame",
+    "4350100106": "Azure Oath",
+    "4350500107": "Firstlight's Herald"
   },
   "ui": {
     "game.name.wutheringwave": "Wuthering Waves",

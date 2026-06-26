@@ -943,5 +943,23 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050086_UI.webp",
     "common": "exoswarm",
     "forgery": "string"
+  },
+  "azure_oath": {
+    "game_id": 4350100106,
+    "display_name": "Azure Oath",
+    "rarity": 5,
+    "type": "sword",
+    "icon": "https://img.game8.co/4543804/3c03dda81500a0cce5667a7e32de45e7.png/show",
+    "common": "exoswarm",
+    "forgery": "polarizer"
+  },
+  "firstlights_herald": {
+    "game_id": 4350500107,
+    "display_name": "Firstlight's Herald",
+    "rarity": 5,
+    "type": "rectifier",
+    "icon": "https://img.game8.co/4543805/b26e04b0cffb602f5691acef0bce42ba.png/show",
+    "common": "exoswarm",
+    "forgery": "string"
   }
 }
