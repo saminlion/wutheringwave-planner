@@ -21,7 +21,7 @@
     "common": "whispers",
     "forgery": "hang",
     "boss": 7140010001,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "skia": {
     "game_id": 7620500003,
@@ -33,7 +33,7 @@
     "common": "delusions",
     "forgery": "heart",
     "boss": 7140010001,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "nanally": {
     "game_id": 7850200004,
@@ -69,7 +69,7 @@
     "common": "numeral",
     "forgery": "hang",
     "boss": 7140010005,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "edgar": {
     "game_id": 7630300007,
@@ -117,7 +117,7 @@
     "common": "numeral",
     "forgery": "magic",
     "boss": 7140010004,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "fadia": {
     "game_id": 7810400011,
@@ -129,7 +129,7 @@
     "common": "silhouette",
     "forgery": "heart",
     "boss": 7140010004,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "zero": {
     "game_id": 7840300012,
@@ -153,7 +153,7 @@
     "common": "whispers",
     "forgery": "bird",
     "boss": 7140010001,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "daffodill": {
     "game_id": 7830600014,
@@ -165,7 +165,7 @@
     "common": "delusions",
     "forgery": "hang",
     "boss": 7140010002,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "jiuyuan": {
     "game_id": 7840200015,
@@ -177,7 +177,7 @@
     "common": "silhouette",
     "forgery": "flower",
     "boss": 7140010007,
-    "weeklyBoss": 7150010004
+    "weeklyBoss": 7150010002
   },
   "aurelia": {
     "game_id": 7650400016,
@@ -209,10 +209,10 @@
     "rarity": 6,
     "element": "lakshana",
     "weapon_type": "synthesis",
-    "icon": "https://assets.akademiya.app/nte/UI/Gacha/YH_lihui_character_xiaozhi.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI/Gacha/YH_lihui_fashionshop_kaesi.webp",
     "common": "whispers",
     "forgery": "bird",
     "boss": 7140010007,
-    "weeklyBoss": 7150010001
+    "weeklyBoss": 7150010003
   }
 }

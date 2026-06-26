@@ -47,11 +47,8 @@
     "7140010006": "Colorful Ticket Stub",
     "7140010007": "Tear of the Sea",
     "7150010001": "Good Boy Stamp",
-    "7150010002": "The Good Boy's Fluff",
-    "7150010003": "Dandelion's Pass",
-    "7150010004": "Dress Sleeves of Vanity",
-    "7150010005": "Crown Called Nobility",
-    "7150010006": "Scepter Called Prestige",
+    "7150010002": "Dress Sleeves of Vanity",
+    "7150010003": "Eternal Memory",
     "7120010001": "Nestling's Longing",
     "7120010002": "Dove's Flutter",
     "7120010003": "The Olive Branch",
@@ -128,8 +125,7 @@
     "7363000042": "The Last Rose",
     "7365000043": "Stellar Veil",
     "7364000044": "The Rain That Shook the World",
-    "7361000045": "众人追寻之物",
-    "7361000046": "众人追寻之物"
+    "7361000045": "What's Desired"
   },
   "ui": {
     "game.name.nte": "Neverness To Everness",

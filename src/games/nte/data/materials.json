@@ -232,44 +232,20 @@
       "icon": "https://api.everness.info/data/assets/UI_Icon/Item/mofeikesi_yinzhang.webp",
       "tier": 4
     },
-    "the_good_boy's_fluff": {
-      "game_id": 7150010002,
-      "label": "The Good Boy's Fluff",
-      "Category": "weeklyBoss",
-      "SubCategory": "weeklyBoss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/mofeikesi_maoqiu.webp",
-      "tier": 4
-    },
-    "dandelion's_pass": {
-      "game_id": 7150010003,
-      "label": "Dandelion's Pass",
-      "Category": "weeklyBoss",
-      "SubCategory": "weeklyBoss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/mofeikesi_hunhuan.webp",
-      "tier": 4
-    },
     "dress_sleeves_of_vanity": {
-      "game_id": 7150010004,
+      "game_id": 7150010002,
       "label": "Dress Sleeves of Vanity",
       "Category": "weeklyBoss",
       "SubCategory": "weeklyBoss",
       "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a02_01.webp",
       "tier": 4
     },
-    "crown_called_nobility": {
-      "game_id": 7150010005,
-      "label": "Crown Called Nobility",
+    "eternal_memory": {
+      "game_id": 7150010003,
+      "label": "Eternal Memory",
       "Category": "weeklyBoss",
       "SubCategory": "weeklyBoss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a02_02.webp",
-      "tier": 4
-    },
-    "scepter_called_prestige": {
-      "game_id": 7150010006,
-      "label": "Scepter Called Prestige",
-      "Category": "weeklyBoss",
-      "SubCategory": "weeklyBoss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a02_03.webp",
+      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a03_01.webp",
       "tier": 4
     }
   },
