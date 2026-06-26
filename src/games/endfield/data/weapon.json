@@ -606,7 +606,7 @@
     "display_name": "Beacon of Duty",
     "rarity": 6,
     "type": "polearm",
-    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_lance.webp",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0007.webp",
     "onyx": 5110030016,
     "special": 5130010031
   },
@@ -615,7 +615,7 @@
     "display_name": "Blessing of Lustrous Carmine",
     "rarity": 6,
     "type": "polearm",
-    "icon": "https://cdn.perlica.moe/images/icons/weapons/icon_wiki_group_weapon_lance.webp",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
     "onyx": 5110030016,
     "special": 5130010031
   }

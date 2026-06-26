@@ -1303,11 +1303,11 @@
     "icon": "https://cdn.perlica.moe/images/operators/portraits/camille.webp",
     "bolete": 5110010005,
     "odendra": 5110020010,
-    "special": 5130010035,
-    "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010032,
-    "mastery_combo_skill": 5130010032,
-    "mastery_ultimate": 5130010033,
+    "special": 5130010031,
+    "mastery_basic_attack": 5130010031,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {

@@ -262,5 +262,21 @@
     "type": "supporter",
     "icon": "https://cdn.holst.network/mongil/Assets/UI/Texture/Icon_Artifact/ArtifactSupport3A.png?class=hero",
     "forgery": "chain"
+  },
+  "plains_embroidering_dew": {
+    "game_id": 8305020034,
+    "display_name": "Plains Embroidering Dew",
+    "rarity": 5,
+    "type": "destroyer",
+    "icon": "https://stardive.7dso.xyz/ui/texture/icon_artifact/artifactnagi.png",
+    "forgery": "chain"
+  },
+  "serpent_dragon's_white_scale": {
+    "game_id": 8305040035,
+    "display_name": "Serpent Dragon's White Scale",
+    "rarity": 5,
+    "type": "supporter",
+    "icon": "https://stardive.7dso.xyz/ui/texture/icon_artifact/artifactnarae.png",
+    "forgery": "chain"
   }
 }
