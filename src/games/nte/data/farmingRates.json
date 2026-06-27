@@ -1,13 +1,13 @@
 {
   "credit": {
-    "drops": 108000,
+    "drops": 120000,
     "stamina": 40
   },
   "common": {
     "unobtainable": true
   },
   "boss": {
-    "drops": 6.8,
+    "drops": 7,
     "stamina": 60
   },
   "weeklyBoss": {
@@ -15,15 +15,15 @@
     "stamina": 60
   },
   "forgery": {
-    "drops": 5.733333333333333,
+    "drops": 6,
     "stamina": 40
   },
   "player_exp": {
-    "drops": 202000,
+    "drops": 225000,
     "stamina": 40
   },
   "weapon_exp": {
-    "drops": 113500,
+    "drops": 125000,
     "stamina": 40
   }
 }
