@@ -17,7 +17,9 @@
     "7840200015": "Jiuyuan",
     "7650400016": "Aurelia",
     "7820300017": "Chiz",
-    "7810500018": "Chaos"
+    "7810500018": "Chaos",
+    "7810300019": "Shinku",
+    "7830200020": "Iroi"
   },
   "materials": {
     "7100010001": "Beetle Coin",
@@ -125,7 +127,9 @@
     "7363000042": "The Last Rose",
     "7365000043": "Stellar Veil",
     "7364000044": "The Rain That Shook the World",
-    "7361000045": "What's Desired"
+    "7361000045": "What's Desired",
+    "7363000046": "The Wrong Gate",
+    "7361000047": "Blushing Mirage"
   },
   "ui": {
     "game.name.nte": "Neverness To Everness",

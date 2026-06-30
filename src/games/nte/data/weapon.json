@@ -4,7 +4,7 @@
     "display_name": "Umbrella",
     "rarity": 4,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_yuren_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_yuren_256.webp",
     "common": "numeral",
     "forgery": "appleseed"
   },
@@ -13,7 +13,7 @@
     "display_name": "Cosmos Daze, Wild Reverie",
     "rarity": 4,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_bopu_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_bopu_256.webp",
     "common": "whispers",
     "forgery": "core"
   },
@@ -22,7 +22,7 @@
     "display_name": "Good Boy's Grand Adventure",
     "rarity": 6,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_mofeikesi_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_mofeikesi_256.webp",
     "common": "numeral",
     "forgery": "dessert"
   },
@@ -31,7 +31,7 @@
     "display_name": "Shiny Days",
     "rarity": 4,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_jiaojuan_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_jiaojuan_256.webp",
     "common": "whispers",
     "forgery": "dream"
   },
@@ -40,7 +40,7 @@
     "display_name": "The Forgotten",
     "rarity": 4,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_wuhuakuang_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_wuhuakuang_256.webp",
     "common": "whispers",
     "forgery": "appleseed"
   },
@@ -49,7 +49,7 @@
     "display_name": "Camellia Society",
     "rarity": 6,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_jingmotingyuan_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_jingmotingyuan_256.webp",
     "common": "numeral",
     "forgery": "core"
   },
@@ -58,7 +58,7 @@
     "display_name": "Oraora!",
     "rarity": 4,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_oulaquantao_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_oulaquantao_256.webp",
     "common": "silhouette",
     "forgery": "can"
   },
@@ -67,7 +67,7 @@
     "display_name": "Mind Royale",
     "rarity": 4,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_lingganzhongjiezhe_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_lingganzhongjiezhe_256.webp",
     "common": "silhouette",
     "forgery": "can"
   },
@@ -76,7 +76,7 @@
     "display_name": "Day Off",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_rishi_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_rishi_256.webp",
     "common": "whispers",
     "forgery": "can"
   },
@@ -85,7 +85,7 @@
     "display_name": "Dangerous Game",
     "rarity": 3,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_dustbin_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_dustbin_256.webp",
     "common": "whispers",
     "forgery": "appleseed"
   },
@@ -94,7 +94,7 @@
     "display_name": "First Step to Success",
     "rarity": 3,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_nonos_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_nonos_256.webp",
     "common": "silhouette",
     "forgery": "can"
   },
@@ -103,7 +103,7 @@
     "display_name": "Be Happy",
     "rarity": 3,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_HugVine_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_HugVine_256.webp",
     "common": "numeral",
     "forgery": "dream"
   },
@@ -112,7 +112,7 @@
     "display_name": "Us.",
     "rarity": 3,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_yuanheti_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_yuanheti_256.webp",
     "common": "delusions",
     "forgery": "dessert"
   },
@@ -121,7 +121,7 @@
     "display_name": "The Good, The Bad, The Bitter",
     "rarity": 4,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BitterCake_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_BitterCake_256.webp",
     "common": "numeral",
     "forgery": "can"
   },
@@ -130,7 +130,7 @@
     "display_name": "Real Music",
     "rarity": 3,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_fudianling_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_fudianling_256.webp",
     "common": "delusions",
     "forgery": "core"
   },
@@ -139,7 +139,7 @@
     "display_name": "Ready-Ready",
     "rarity": 6,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_TigerTally_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_TigerTally_256.webp",
     "common": "whispers",
     "forgery": "can"
   },
@@ -148,7 +148,7 @@
     "display_name": "Blow up the Crowd",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BitGame_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_BitGame_256.webp",
     "common": "numeral",
     "forgery": "can"
   },
@@ -157,7 +157,7 @@
     "display_name": "Youthful Fantasy",
     "rarity": 6,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BlackBook_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_BlackBook_256.webp",
     "common": "delusions",
     "forgery": "dream"
   },
@@ -166,7 +166,7 @@
     "display_name": "Contemplative Cat",
     "rarity": 6,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_mamen_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_mamen_256.webp",
     "common": "whispers",
     "forgery": "dream"
   },
@@ -175,7 +175,7 @@
     "display_name": "Your Happiness is Priceless",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Nakupeda_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Nakupeda_256.webp",
     "common": "whispers",
     "forgery": "appleseed"
   },
@@ -184,7 +184,7 @@
     "display_name": "Raging Flames",
     "rarity": 6,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_wushoutieyu_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_wushoutieyu_256.webp",
     "common": "delusions",
     "forgery": "dream"
   },
@@ -193,7 +193,7 @@
     "display_name": "Eternal Waltz",
     "rarity": 6,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Arachne_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Arachne_256.webp",
     "common": "silhouette",
     "forgery": "dessert"
   },
@@ -202,7 +202,7 @@
     "display_name": "Hethereau's Keeper",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_PoliceRat_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_PoliceRat_256.webp",
     "common": "silhouette",
     "forgery": "appleseed"
   },
@@ -211,7 +211,7 @@
     "display_name": "The Great Thief",
     "rarity": 4,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_tuansanlang_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_tuansanlang_256.webp",
     "common": "numeral",
     "forgery": "dessert"
   },
@@ -220,7 +220,7 @@
     "display_name": "Watch Your Heads!",
     "rarity": 4,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Kite_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Kite_256.webp",
     "common": "delusions",
     "forgery": "dessert"
   },
@@ -229,7 +229,7 @@
     "display_name": "Clear Skies",
     "rarity": 4,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_PaperPlane_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_PaperPlane_256.webp",
     "common": "silhouette",
     "forgery": "dessert"
   },
@@ -238,7 +238,7 @@
     "display_name": "Failing You, Heavy in My Heart",
     "rarity": 4,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_spider_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_spider_256.webp",
     "common": "delusions",
     "forgery": "appleseed"
   },
@@ -247,7 +247,7 @@
     "display_name": "Drawn Blade",
     "rarity": 4,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_yaodao_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_yaodao_256.webp",
     "common": "delusions",
     "forgery": "dream"
   },
@@ -256,7 +256,7 @@
     "display_name": "A Time Will Come",
     "rarity": 4,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_koinobori_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_koinobori_256.webp",
     "common": "whispers",
     "forgery": "dream"
   },
@@ -265,7 +265,7 @@
     "display_name": "The Fool's Spring",
     "rarity": 4,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_snowman_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_snowman_256.webp",
     "common": "silhouette",
     "forgery": "core"
   },
@@ -274,7 +274,7 @@
     "display_name": "Fluff of Fortitude",
     "rarity": 6,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BoxingCandy_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_BoxingCandy_256.webp",
     "common": "numeral",
     "forgery": "appleseed"
   },
@@ -283,7 +283,7 @@
     "display_name": "Fluff of Ferocity",
     "rarity": 6,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_KnightCandy_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_KnightCandy_256.webp",
     "common": "numeral",
     "forgery": "appleseed"
   },
@@ -292,7 +292,7 @@
     "display_name": "Fluff of Finesse",
     "rarity": 6,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_ThiefCandy_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_ThiefCandy_256.webp",
     "common": "delusions",
     "forgery": "can"
   },
@@ -301,7 +301,7 @@
     "display_name": "Fluff of Fleetness",
     "rarity": 6,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_MotorCandy_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_MotorCandy_256.webp",
     "common": "delusions",
     "forgery": "dream"
   },
@@ -310,7 +310,7 @@
     "display_name": "Fluff of Fearlessness",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_BlastCandy_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_BlastCandy_256.webp",
     "common": "delusions",
     "forgery": "dessert"
   },
@@ -319,7 +319,6 @@
     "display_name": "Time Bandit",
     "rarity": 4,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Qiaoqiao_256.webp",
     "common": "delusions",
     "forgery": "appleseed"
   },
@@ -328,7 +327,6 @@
     "display_name": "Call of the Twisted City",
     "rarity": 4,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Castle_256.webp",
     "common": "numeral",
     "forgery": "core"
   },
@@ -337,7 +335,7 @@
     "display_name": "Reality Refuge",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Butterfly_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Butterfly_256.webp",
     "common": "silhouette",
     "forgery": "core"
   },
@@ -346,7 +344,7 @@
     "display_name": "Tears Beneath the Mask",
     "rarity": 6,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_NestBird_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_NestBird_256.webp",
     "common": "silhouette",
     "forgery": "dessert"
   },
@@ -355,7 +353,7 @@
     "display_name": "Song of the Whale",
     "rarity": 6,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Whale_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Whale_256.webp",
     "common": "silhouette",
     "forgery": "core"
   },
@@ -364,7 +362,7 @@
     "display_name": "Marching Beyond Time",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Time_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Time_256.webp",
     "common": "whispers",
     "forgery": "core"
   },
@@ -373,7 +371,7 @@
     "display_name": "The Last Rose",
     "rarity": 6,
     "type": "liquid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_Rose_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Rose_256.webp",
     "common": "whispers",
     "forgery": "appleseed"
   },
@@ -382,7 +380,7 @@
     "display_name": "Stellar Veil",
     "rarity": 6,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_moon_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_moon_256.webp",
     "common": "delusions",
     "forgery": "dream"
   },
@@ -391,7 +389,7 @@
     "display_name": "The Rain That Shook the World",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_worldrain_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_worldrain_256.webp",
     "common": "whispers",
     "forgery": "can"
   },
@@ -400,8 +398,26 @@
     "display_name": "What's Desired",
     "rarity": 6,
     "type": "synthesis",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_GoldWool_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_GoldWool_256.webp",
     "common": "delusions",
     "forgery": "dessert"
+  },
+  "the_wrong_gate": {
+    "game_id": 7363000046,
+    "display_name": "The Wrong Gate",
+    "rarity": 6,
+    "type": "liquid",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Door_256.webp",
+    "common": "silhouette",
+    "forgery": "appleseed"
+  },
+  "blushing_mirage": {
+    "game_id": 7361000047,
+    "display_name": "Blushing Mirage",
+    "rarity": 6,
+    "type": "synthesis",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_LunarPhase_256.webp",
+    "common": "whispers",
+    "forgery": "core"
   }
 }

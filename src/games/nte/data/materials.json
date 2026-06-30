@@ -5,7 +5,7 @@
       "label": "Beetle Coin",
       "Category": "credit",
       "SubCategory": "credit",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/item_Coin_Beetle.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/item_Coin_Beetle.webp",
       "tier": 2
     }
   },
@@ -15,7 +15,7 @@
       "label": "Rising Hunter Guide",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/CharacterUpMaterial_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/CharacterUpMaterial_lv1.webp",
       "tier": 1,
       "value": 1000
     },
@@ -24,7 +24,7 @@
       "label": "Senior Hunter Guide",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/CharacterUpMaterial_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/CharacterUpMaterial_lv2.webp",
       "tier": 2,
       "value": 5000
     },
@@ -33,7 +33,7 @@
       "label": "Elite Hunter Guide",
       "Category": "player_exp",
       "SubCategory": "player_exp",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/CharacterUpMaterial_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/CharacterUpMaterial_lv3.webp",
       "tier": 3,
       "value": 20000
     }
@@ -44,7 +44,7 @@
       "label": "Light Dye",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weaponexp_lv1_256x256.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weaponexp_lv1_256x256.webp",
       "tier": 1,
       "value": 500
     },
@@ -53,7 +53,7 @@
       "label": "Colorless Dye",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weaponexp_lv2_256x256.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weaponexp_lv2_256x256.webp",
       "tier": 2,
       "value": 2500
     },
@@ -62,7 +62,7 @@
       "label": "Chaotic Dye",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weaponexp_lv3_256x256.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weaponexp_lv3_256x256.webp",
       "tier": 3,
       "value": 10000
     }
@@ -73,7 +73,7 @@
       "label": "Lost Whispers",
       "Category": "common",
       "SubCategory": "whispers",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/OrdinaryMonMaterial_01_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/OrdinaryMonMaterial_01_lv1.webp",
       "tier": 1
     },
     "obscure_whispers": {
@@ -81,7 +81,7 @@
       "label": "Obscure Whispers",
       "Category": "common",
       "SubCategory": "whispers",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/OrdinaryMonMaterial_01_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/OrdinaryMonMaterial_01_lv2.webp",
       "tier": 2
     },
     "paradoxical_whispers": {
@@ -89,7 +89,7 @@
       "label": "Paradoxical Whispers",
       "Category": "common",
       "SubCategory": "whispers",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/OrdinaryMonMaterial_01_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/OrdinaryMonMaterial_01_lv3.webp",
       "tier": 3
     },
     "fading_silhouette": {
@@ -97,7 +97,7 @@
       "label": "Fading Silhouette",
       "Category": "common",
       "SubCategory": "silhouette",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_tuiselveying.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_tuiselveying.webp",
       "tier": 1
     },
     "blurred_silhouette": {
@@ -105,7 +105,7 @@
       "label": "Blurred Silhouette",
       "Category": "common",
       "SubCategory": "silhouette",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_shijiaolveying.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_shijiaolveying.webp",
       "tier": 2
     },
     "chaos_silhouette": {
@@ -113,7 +113,7 @@
       "label": "Chaos Silhouette",
       "Category": "common",
       "SubCategory": "silhouette",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_huianlveying.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_huianlveying.webp",
       "tier": 3
     },
     "blurred_numeral": {
@@ -121,7 +121,7 @@
       "label": "Blurred Numeral",
       "Category": "common",
       "SubCategory": "numeral",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_mohushufu.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_mohushufu.webp",
       "tier": 1
     },
     "unsolved_numeral": {
@@ -129,7 +129,7 @@
       "label": "Unsolved Numeral",
       "Category": "common",
       "SubCategory": "numeral",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_bianxingshufu.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_bianxingshufu.webp",
       "tier": 2
     },
     "distorted_numeral": {
@@ -137,7 +137,7 @@
       "label": "Distorted Numeral",
       "Category": "common",
       "SubCategory": "numeral",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_niuqushufu.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_niuqushufu.webp",
       "tier": 3
     },
     "suspended_delusions": {
@@ -145,7 +145,7 @@
       "label": "Suspended Delusions",
       "Category": "common",
       "SubCategory": "delusions",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_xuannianwangning.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_xuannianwangning.webp",
       "tier": 1
     },
     "yearning_delusions": {
@@ -153,7 +153,7 @@
       "label": "Yearning Delusions",
       "Category": "common",
       "SubCategory": "delusions",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_kewangwangning.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_kewangwangning.webp",
       "tier": 2
     },
     "transcendent_delusion": {
@@ -161,7 +161,7 @@
       "label": "Transcendent Delusion",
       "Category": "common",
       "SubCategory": "delusions",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_chaoyanwangning.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_chaoyanwangning.webp",
       "tier": 3
     }
   },
@@ -171,7 +171,7 @@
       "label": "Confessional Flower Seed",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_huafang3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_huafang3.webp",
       "tier": 3
     },
     "charging_knight_spark_plug": {
@@ -179,7 +179,7 @@
       "label": "Charging Knight Spark Plug",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_02.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/Worldboss_material_02.webp",
       "tier": 3
     },
     "a_page_from_delusion's_shore": {
@@ -187,7 +187,7 @@
       "label": "A Page from Delusion's Shore",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_03.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/Worldboss_material_03.webp",
       "tier": 3
     },
     "water_moon_pick": {
@@ -195,7 +195,7 @@
       "label": "Water Moon Pick",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_04.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/Worldboss_material_04.webp",
       "tier": 3
     },
     "nest_guard_fragment": {
@@ -203,7 +203,7 @@
       "label": "Nest Guard Fragment",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_05.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/Worldboss_material_05.webp",
       "tier": 3
     },
     "colorful_ticket_stub": {
@@ -211,7 +211,7 @@
       "label": "Colorful Ticket Stub",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_06.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/Worldboss_material_06.webp",
       "tier": 3
     },
     "tear_of_the_sea": {
@@ -219,7 +219,7 @@
       "label": "Tear of the Sea",
       "Category": "boss",
       "SubCategory": "boss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/Worldboss_material_07.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/Worldboss_material_07.webp",
       "tier": 3
     }
   },
@@ -229,7 +229,7 @@
       "label": "Good Boy Stamp",
       "Category": "weeklyBoss",
       "SubCategory": "weeklyBoss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/mofeikesi_yinzhang.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/mofeikesi_yinzhang.webp",
       "tier": 4
     },
     "dress_sleeves_of_vanity": {
@@ -237,7 +237,7 @@
       "label": "Dress Sleeves of Vanity",
       "Category": "weeklyBoss",
       "SubCategory": "weeklyBoss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a02_01.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weeklycloneboss_a02_01.webp",
       "tier": 4
     },
     "eternal_memory": {
@@ -245,7 +245,7 @@
       "label": "Eternal Memory",
       "Category": "weeklyBoss",
       "SubCategory": "weeklyBoss",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/weeklycloneboss_a03_01.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weeklycloneboss_a03_01.webp",
       "tier": 4
     }
   },
@@ -255,7 +255,7 @@
       "label": "Nestling's Longing",
       "Category": "forgery",
       "SubCategory": "bird",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/characterskill_01_lv1_256x256_.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/characterskill_01_lv1_256x256_.webp",
       "tier": 1
     },
     "dove's_flutter": {
@@ -263,7 +263,7 @@
       "label": "Dove's Flutter",
       "Category": "forgery",
       "SubCategory": "bird",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/characterskill_01_lv2_256x256_.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/characterskill_01_lv2_256x256_.webp",
       "tier": 2
     },
     "the_olive_branch": {
@@ -271,7 +271,7 @@
       "label": "The Olive Branch",
       "Category": "forgery",
       "SubCategory": "bird",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/characterskill_01_lv3_256x256_.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/characterskill_01_lv3_256x256_.webp",
       "tier": 3
     },
     "fng": {
@@ -279,7 +279,7 @@
       "label": "FNG",
       "Category": "forgery",
       "SubCategory": "flower",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_02_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_02_lv1.webp",
       "tier": 1
     },
     "co": {
@@ -287,7 +287,7 @@
       "label": "CO",
       "Category": "forgery",
       "SubCategory": "flower",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_02_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_02_lv2.webp",
       "tier": 2
     },
     "white_rose": {
@@ -295,7 +295,7 @@
       "label": "White Rose",
       "Category": "forgery",
       "SubCategory": "flower",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_02_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_02_lv3.webp",
       "tier": 3
     },
     "first_expectations": {
@@ -303,7 +303,7 @@
       "label": "First Expectations",
       "Category": "forgery",
       "SubCategory": "magic",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_03_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_03_lv1.webp",
       "tier": 1
     },
     "known_weariness": {
@@ -311,7 +311,7 @@
       "label": "Known Weariness",
       "Category": "forgery",
       "SubCategory": "magic",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_03_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_03_lv2.webp",
       "tier": 2
     },
     "black_hat": {
@@ -319,7 +319,7 @@
       "label": "Black Hat",
       "Category": "forgery",
       "SubCategory": "magic",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_03_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_03_lv3.webp",
       "tier": 3
     },
     "synchronicity_of_thought": {
@@ -327,7 +327,7 @@
       "label": "Synchronicity of Thought",
       "Category": "forgery",
       "SubCategory": "heart",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_04_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_04_lv1.webp",
       "tier": 1
     },
     "resonance_of_faith": {
@@ -335,7 +335,7 @@
       "label": "Resonance of Faith",
       "Category": "forgery",
       "SubCategory": "heart",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_04_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_04_lv2.webp",
       "tier": 2
     },
     "heart-racing_night": {
@@ -343,7 +343,7 @@
       "label": "Heart-Racing Night",
       "Category": "forgery",
       "SubCategory": "heart",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_04_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_04_lv3.webp",
       "tier": 3
     },
     "hesitation_of_the_waves": {
@@ -351,7 +351,7 @@
       "label": "Hesitation of the Waves",
       "Category": "forgery",
       "SubCategory": "hang",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_05_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_05_lv1.webp",
       "tier": 1
     },
     "suspend_whispers": {
@@ -359,7 +359,7 @@
       "label": "Suspend Whispers",
       "Category": "forgery",
       "SubCategory": "hang",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_05_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_05_lv2.webp",
       "tier": 2
     },
     "the_second_self": {
@@ -367,7 +367,7 @@
       "label": "The Second Self",
       "Category": "forgery",
       "SubCategory": "hang",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/SkillUpMaterial_05_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/SkillUpMaterial_05_lv3.webp",
       "tier": 3
     },
     "iron_appleseed": {
@@ -375,7 +375,7 @@
       "label": "Iron Appleseed",
       "Category": "forgery",
       "SubCategory": "appleseed",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_01_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_01_lv1.webp",
       "tier": 1
     },
     "silver_appleseed": {
@@ -383,7 +383,7 @@
       "label": "Silver Appleseed",
       "Category": "forgery",
       "SubCategory": "appleseed",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_01_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_01_lv2.webp",
       "tier": 2
     },
     "golden_appleseed": {
@@ -391,7 +391,7 @@
       "label": "Golden Appleseed",
       "Category": "forgery",
       "SubCategory": "appleseed",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_01_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_01_lv3.webp",
       "tier": 3
     },
     "beaty": {
@@ -399,7 +399,7 @@
       "label": "Beaty",
       "Category": "forgery",
       "SubCategory": "can",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_02_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_02_lv1.webp",
       "tier": 1
     },
     "versey": {
@@ -407,7 +407,7 @@
       "label": "Versey",
       "Category": "forgery",
       "SubCategory": "can",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_02_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_02_lv2.webp",
       "tier": 2
     },
     "harmony": {
@@ -415,7 +415,7 @@
       "label": "Harmony",
       "Category": "forgery",
       "SubCategory": "can",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_02_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_02_lv3.webp",
       "tier": 3
     },
     "liquid_dream_trial_kit": {
@@ -423,7 +423,7 @@
       "label": "Liquid Dream Trial Kit",
       "Category": "forgery",
       "SubCategory": "dream",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_03_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_03_lv1.webp",
       "tier": 1
     },
     "liquid_dream_travel_kit": {
@@ -431,7 +431,7 @@
       "label": "Liquid Dream Travel Kit",
       "Category": "forgery",
       "SubCategory": "dream",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_03_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_03_lv2.webp",
       "tier": 2
     },
     "liquid_dream_can": {
@@ -439,7 +439,7 @@
       "label": "Liquid Dream Can",
       "Category": "forgery",
       "SubCategory": "dream",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_03_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_03_lv3.webp",
       "tier": 3
     },
     "flavorless_cold_dessert": {
@@ -447,7 +447,7 @@
       "label": "Flavorless Cold Dessert",
       "Category": "forgery",
       "SubCategory": "dessert",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_04_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_04_lv2.webp",
       "tier": 1
     },
     "plain_cold_dessert": {
@@ -455,7 +455,7 @@
       "label": "Plain Cold Dessert",
       "Category": "forgery",
       "SubCategory": "dessert",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_04_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_04_lv1.webp",
       "tier": 2
     },
     "special_cold_dessert": {
@@ -463,7 +463,7 @@
       "label": "Special Cold Dessert",
       "Category": "forgery",
       "SubCategory": "dessert",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_04_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_04_lv3.webp",
       "tier": 3
     },
     "beginner_drama_core": {
@@ -471,7 +471,7 @@
       "label": "Beginner Drama Core",
       "Category": "forgery",
       "SubCategory": "core",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_05_lv1.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_04_lv3.webp",
       "tier": 1
     },
     "master_drama_core": {
@@ -479,7 +479,7 @@
       "label": "Master Drama Core",
       "Category": "forgery",
       "SubCategory": "core",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_05_lv2.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_05_lv2.webp",
       "tier": 2
     },
     "collector's_drama_core": {
@@ -487,7 +487,7 @@
       "label": "Collector's Drama Core",
       "Category": "forgery",
       "SubCategory": "core",
-      "icon": "https://api.everness.info/data/assets/UI_Icon/Item/material_wpbreak_05_lv3.webp",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/material_wpbreak_05_lv3.webp",
       "tier": 3
     }
   }
