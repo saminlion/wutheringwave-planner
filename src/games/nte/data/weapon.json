@@ -319,6 +319,7 @@
     "display_name": "Time Bandit",
     "rarity": 4,
     "type": "solid",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Qiaoqiao_256.webp",
     "common": "delusions",
     "forgery": "appleseed"
   },
@@ -327,6 +328,7 @@
     "display_name": "Call of the Twisted City",
     "rarity": 4,
     "type": "liquid",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_Castle_256.webp",
     "common": "numeral",
     "forgery": "core"
   },
