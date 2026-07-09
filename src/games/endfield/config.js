@@ -128,6 +128,7 @@ export default {
     // farmingRates는 동적으로 계산됨 (getDungeonRates 메서드 사용)
     farmingRates: {
       credit: { drops: 34000, stamina: 80 },       // Lv.5 기본값
+      special: { drops: 12, stamina: 80 },         // 캐릭터 고유 재료 (Lv.5 던전만 존재, 획득량 고정)
       player_exp_early: { drops: 170000, stamina: 80 },  // Lv.5 기본값 (Combat Record - Lv.1-60)
       player_exp_late: { drops: 170000, stamina: 80 },   // Lv.5 기본값 (Cognitive Carrier - Lv.61-90)
       weapon_exp: { drops: 170000, stamina: 80 },  // Lv.5 기본값
@@ -206,6 +207,11 @@ export default {
       credit: {
         drops: dungeonData.credit[lv].drops,
         stamina: dungeonData.credit[lv].stamina,
+      },
+      // 캐릭터 고유 재료: Lv.5 던전만 존재하므로 던전 레벨과 무관하게 고정
+      special: {
+        drops: 12,
+        stamina: 80,
       },
       player_exp_early: {
         drops: dungeonData.player_exp[lv].early || 0,
