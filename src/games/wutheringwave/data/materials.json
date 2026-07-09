@@ -303,28 +303,32 @@
       "label": "Low Frequency Autopuppet Kernel",
       "Category": "common",
       "SubCategory": "autopuppet",
-      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_1_UI.webp"
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_1_UI.webp",
+      "tier": 2
     },
     "mid_frequency_autopuppet_kernel": {
       "game_id": 4110100002,
       "label": "Mid Frequency Autopuppet Kernel",
       "Category": "common",
       "SubCategory": "autopuppet",
-      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_2_UI.webp"
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_2_UI.webp",
+      "tier": 3
     },
     "high_frequency_autopuppet_kernel": {
       "game_id": 4110100003,
       "label": "High Frequency Autopuppet Kernel",
       "Category": "common",
       "SubCategory": "autopuppet",
-      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_3_UI.webp"
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_3_UI.webp",
+      "tier": 4
     },
     "full_frequency_autopuppet_kernel": {
       "game_id": 4110100004,
       "label": "Full Frequency Autopuppet Kernel",
       "Category": "common",
       "SubCategory": "autopuppet",
-      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_4_UI.webp"
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_4_UI.webp",
+      "tier": 5
     }
   },
   "forgery": {
