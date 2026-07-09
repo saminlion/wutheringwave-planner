@@ -297,6 +297,34 @@
       "SubCategory": "pendant",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_4_UI.webp",
       "tier": 5
+    },
+    "low_frequency_autopuppet_kernel": {
+      "game_id": 4110100001,
+      "label": "Low Frequency Autopuppet Kernel",
+      "Category": "common",
+      "SubCategory": "autopuppet",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_1_UI.webp"
+    },
+    "mid_frequency_autopuppet_kernel": {
+      "game_id": 4110100002,
+      "label": "Mid Frequency Autopuppet Kernel",
+      "Category": "common",
+      "SubCategory": "autopuppet",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_2_UI.webp"
+    },
+    "high_frequency_autopuppet_kernel": {
+      "game_id": 4110100003,
+      "label": "High Frequency Autopuppet Kernel",
+      "Category": "common",
+      "SubCategory": "autopuppet",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_3_UI.webp"
+    },
+    "full_frequency_autopuppet_kernel": {
+      "game_id": 4110100004,
+      "label": "Full Frequency Autopuppet Kernel",
+      "Category": "common",
+      "SubCategory": "autopuppet",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_4_UI.webp"
     }
   },
   "forgery": {
@@ -797,6 +825,14 @@
       "SubCategory": "boss",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_027_UI.webp",
       "tier": 4
+    },
+    "solidaritys_loneflame": {
+      "game_id": 4140030023,
+      "label": "Solidarity's Loneflame",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_029_UI.webp",
+      "tier": 4
     }
   },
   "weekly": {
@@ -871,6 +907,13 @@
       "SubCategory": "weeklyboss",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_L_026_UI.webp",
       "tier": 4
+    },
+    "skyward_glazed_heart": {
+      "game_id": 4150030010,
+      "label": "Skyward Glazed Heart",
+      "Category": "weekly",
+      "SubCategory": "weeklyboss",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_028_UI.webp"
     }
   },
   "ascension": {
@@ -1120,6 +1163,20 @@
       "Category": "ascension",
       "SubCategory": "ascension",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconA/T_IconA_23_UI.webp"
+    },
+    "cloudperch_seed": {
+      "game_id": 4130010031,
+      "label": "Cloudperch Seed",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_083_UI.webp"
+    },
+    "flowborne_dream": {
+      "game_id": 4130010032,
+      "label": "Flowborne Dream",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_087_UI.webp"
     }
   },
   "player_exp": {

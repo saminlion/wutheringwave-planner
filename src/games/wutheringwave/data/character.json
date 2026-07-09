@@ -694,9 +694,12 @@
     "rarity": 5,
     "element": "havoc",
     "weapon": "sword",
-    "icon": "https://img.game8.co/4535620/1dec41807ec9c36f03bbd9bde9f51c71.png/show",
-    "common": "null",
-    "forgery": "polarizer"
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_XuanLing_UI.webp",
+    "common": "autopuppet",
+    "forgery": "polarizer",
+    "ascension": 4130010031,
+    "boss": 4140030023,
+    "weeklyBoss": 4150030010
   },
   "suisui": {
     "game_id": 4250100055,
@@ -704,8 +707,24 @@
     "rarity": 5,
     "element": "glacio",
     "weapon": "rectifier",
-    "icon": "https://img.game8.co/4535729/c9fa446cf56e72453e943b2173e3f97a.png/show",
-    "common": "null",
-    "forgery": "string"
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_SuiSui_UI.webp",
+    "common": "autopuppet",
+    "forgery": "string",
+    "ascension": 4130010032,
+    "boss": 4140030023,
+    "weeklyBoss": 4150030010
+  },
+  "rover_electro": {
+    "game_id": 4250400056,
+    "display_name": "Rover (Electro)",
+    "rarity": 5,
+    "element": "electro",
+    "weapon": "sword",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
+    "common": "whisperin_core",
+    "forgery": "polarizer",
+    "ascension": 4130010004,
+    "boss": 4140010001,
+    "weeklyBoss": 4150030009
   }
 }
