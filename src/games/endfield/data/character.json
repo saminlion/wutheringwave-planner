@@ -1342,5 +1342,250 @@
         }
       }
     }
+  },
+  "arcane": {
+    "game_id": 5260300029,
+    "display_name": "Arcane",
+    "rarity": 6,
+    "element": "nature",
+    "weapon": "arts",
+    "icon": "https://endfieldtools.dev/assets/images/endfield/charicon/icon_chr_0032_lizhiyan.png",
+    "bolete": 5110010005,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "mastery_basic_attack": 5130010031,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "liino": {
+    "game_id": 5260500030,
+    "display_name": "Liino",
+    "rarity": 6,
+    "element": "electric",
+    "weapon": "polearm",
+    "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_liino.png",
+    "bolete": 5110010005,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "mastery_basic_attack": 5130010031,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "si": {
+    "game_id": 5260300031,
+    "display_name": "Si",
+    "rarity": 6,
+    "element": "nature",
+    "weapon": "sword",
+    "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_si.png",
+    "bolete": 5110010005,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "mastery_basic_attack": 5130010031,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "hongshan": {
+    "game_id": 5260100032,
+    "display_name": "Hongshan",
+    "rarity": 6,
+    "element": "physical",
+    "weapon": "polearm",
+    "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_preview_hongshan_guard.png",
+    "bolete": 5110010005,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "mastery_basic_attack": 5130010031,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "sarkaz": {
+    "game_id": 5260400033,
+    "display_name": "Sarkaz",
+    "rarity": 6,
+    "element": "cryo",
+    "weapon": "arts",
+    "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_preview_sarkaz_archer.png",
+    "bolete": 5110010005,
+    "odendra": 5110020010,
+    "special": 5130010031,
+    "mastery_basic_attack": 5130010031,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   }
 }

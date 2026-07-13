@@ -27,7 +27,12 @@
     "5260100025": "Rossi",
     "5260500026": "Zhuang Fangyi",
     "5260100027": "Mi Fu",
-    "5260200028": "Camille"
+    "5260200028": "Camille",
+    "5260300029": "Arcane",
+    "5260500030": "Liino",
+    "5260300031": "Si",
+    "5260100032": "Hongshan",
+    "5260400033": "Sarkaz"
   },
   "materials": {
     "5100010001": "T-Creds",
@@ -136,7 +141,11 @@
     "5360200066": "Amaranthine Tassel",
     "5360200067": "Phantom Pain",
     "5360300068": "Beacon of Duty",
-    "5360300069": "Blessing of Lustrous Carmine"
+    "5360300069": "Blessing of Lustrous Carmine",
+    "5360400070": "Junction Point",
+    "5360300071": "Golden Age",
+    "5360400072": "Type 42: Solemn Phalanx",
+    "5360300073": "Bedazzling Night Debut"
   },
   "ui": {
     "game.name.endfield": "Arknights: Endfield",

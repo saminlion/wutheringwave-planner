@@ -618,5 +618,41 @@
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
     "onyx": 5110030016,
     "special": 5130010031
+  },
+  "junction_point": {
+    "game_id": 5360400070,
+    "display_name": "Junction Point",
+    "rarity": 6,
+    "type": "arts",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
+  },
+  "golden_age": {
+    "game_id": 5360300071,
+    "display_name": "Golden Age",
+    "rarity": 6,
+    "type": "polearm",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
+  },
+  "type_42_solemn_phalanx": {
+    "game_id": 5360400072,
+    "display_name": "Type 42: Solemn Phalanx",
+    "rarity": 6,
+    "type": "arts",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
+  },
+  "bedazzling_night_debut": {
+    "game_id": 5360300073,
+    "display_name": "Bedazzling Night Debut",
+    "rarity": 6,
+    "type": "polearm",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
+    "onyx": 5110030016,
+    "special": 5130010031
   }
 }
