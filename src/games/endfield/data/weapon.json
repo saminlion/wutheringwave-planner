@@ -5,8 +5,8 @@
     "rarity": 3,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0003.webp",
-    "onyx": 5110030015,
-    "special": 5130010032
+    "onyx": 5110030017,
+    "special": 5130010035
   },
   "wave_tide": {
     "game_id": 5340100002,
@@ -14,8 +14,8 @@
     "rarity": 4,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0009.webp",
-    "onyx": 5110030015,
-    "special": 5130010034
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "contingent_measure": {
     "game_id": 5340100003,
@@ -23,8 +23,8 @@
     "rarity": 4,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0008.webp",
-    "onyx": 5110030016,
-    "special": 5130010033
+    "onyx": 5110030018,
+    "special": 5130010036
   },
   "obj_edge_of_lightness": {
     "game_id": 5350100004,
@@ -32,8 +32,8 @@
     "rarity": 5,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0019.webp",
-    "onyx": 5110030016,
-    "special": 5130010032
+    "onyx": 5110030018,
+    "special": 5130010035
   },
   "aspirant": {
     "game_id": 5350100005,
@@ -41,8 +41,8 @@
     "rarity": 5,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0015.webp",
-    "onyx": 5110030015,
-    "special": 5130010034
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "sundering_steel": {
     "game_id": 5350100006,
@@ -50,8 +50,8 @@
     "rarity": 5,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0005.webp",
-    "onyx": 5110030015,
-    "special": 5130010032
+    "onyx": 5110030017,
+    "special": 5130010035
   },
   "finchaser_30": {
     "game_id": 5350100007,
@@ -59,8 +59,8 @@
     "rarity": 5,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0020.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "twelve_questions": {
     "game_id": 5350100008,
@@ -68,8 +68,8 @@
     "rarity": 5,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0018.webp",
-    "onyx": 5110030015,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010034
   },
   "fortmaker": {
     "game_id": 5350100009,
@@ -77,8 +77,8 @@
     "rarity": 5,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0007.webp",
-    "onyx": 5110030016,
-    "special": 5130010033
+    "onyx": 5110030018,
+    "special": 5130010036
   },
   "grand_vision": {
     "game_id": 5360100010,
@@ -86,8 +86,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0021.webp",
-    "onyx": 5110030015,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010034
   },
   "thermite_cutter": {
     "game_id": 5360100011,
@@ -95,8 +95,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0012.webp",
-    "onyx": 5110030016,
-    "special": 5130010032
+    "onyx": 5110030018,
+    "special": 5130010035
   },
   "never_rest": {
     "game_id": 5360100012,
@@ -104,8 +104,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0016.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "forgeborn_scathe": {
     "game_id": 5360100013,
@@ -113,8 +113,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0006.webp",
-    "onyx": 5110030015,
-    "special": 5130010032
+    "onyx": 5110030017,
+    "special": 5130010035
   },
   "white_night_nova": {
     "game_id": 5360100014,
@@ -122,8 +122,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0014.webp",
-    "onyx": 5110030016,
-    "special": 5130010034
+    "onyx": 5110030018,
+    "special": 5130010037
   },
   "umbral_torch": {
     "game_id": 5360100015,
@@ -131,8 +131,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0010.webp",
-    "onyx": 5110030016,
-    "special": 5130010034
+    "onyx": 5110030018,
+    "special": 5130010037
   },
   "rapid_ascent": {
     "game_id": 5360100016,
@@ -140,8 +140,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0011.webp",
-    "onyx": 5110030015,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010034
   },
   "eminent_repute": {
     "game_id": 5360100017,
@@ -149,8 +149,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_sword_0013.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "jiminy_12": {
     "game_id": 5330400018,
@@ -158,8 +158,8 @@
     "rarity": 3,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0002.webp",
-    "onyx": 5110030016,
-    "special": 5130010033
+    "onyx": 5110030018,
+    "special": 5130010036
   },
   "hypernova_auto": {
     "game_id": 5340400019,
@@ -167,8 +167,8 @@
     "rarity": 4,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0001.webp",
-    "onyx": 5110030016,
-    "special": 5130010035
+    "onyx": 5110030018,
+    "special": 5130010038
   },
   "fluorescent_roc": {
     "game_id": 5340400020,
@@ -176,8 +176,8 @@
     "rarity": 4,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0003.webp",
-    "onyx": 5110030015,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010034
   },
   "obj_arts_identifier": {
     "game_id": 5350400021,
@@ -185,8 +185,8 @@
     "rarity": 5,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0014.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "freedom_to_proselytize": {
     "game_id": 5350400022,
@@ -194,8 +194,8 @@
     "rarity": 5,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0012.webp",
-    "onyx": 5110030015,
-    "special": 5130010032
+    "onyx": 5110030017,
+    "special": 5130010035
   },
   "monaihe": {
     "game_id": 5350400023,
@@ -203,8 +203,8 @@
     "rarity": 5,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0007.webp",
-    "onyx": 5110030016,
-    "special": 5130010035
+    "onyx": 5110030018,
+    "special": 5130010038
   },
   "stanza_of_memorials": {
     "game_id": 5350400024,
@@ -212,8 +212,8 @@
     "rarity": 5,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0005.webp",
-    "onyx": 5110030015,
-    "special": 5130010034
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "wild_wanderer": {
     "game_id": 5350400025,
@@ -221,8 +221,8 @@
     "rarity": 5,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0004.webp",
-    "onyx": 5110030016,
-    "special": 5130010033
+    "onyx": 5110030018,
+    "special": 5130010036
   },
   "dreams_of_the_starry_beach": {
     "game_id": 5360400026,
@@ -230,8 +230,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0013.webp",
-    "onyx": 5110030016,
-    "special": 5130010034
+    "onyx": 5110030018,
+    "special": 5130010037
   },
   "delivery_guaranteed": {
     "game_id": 5360400027,
@@ -239,8 +239,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0011.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "detonation_unit": {
     "game_id": 5360400028,
@@ -248,8 +248,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0010.webp",
-    "onyx": 5110030015,
-    "special": 5130010035
+    "onyx": 5110030017,
+    "special": 5130010038
   },
   "opus_etch_figure": {
     "game_id": 5360400029,
@@ -257,8 +257,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0006.webp",
-    "onyx": 5110030015,
-    "special": 5130010034
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "chivalric_virtues": {
     "game_id": 5360400030,
@@ -266,8 +266,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0008.webp",
-    "onyx": 5110030015,
-    "special": 5130010032
+    "onyx": 5110030017,
+    "special": 5130010035
   },
   "oblivion": {
     "game_id": 5360400031,
@@ -275,8 +275,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_funnel_0009.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "darhoff_7": {
     "game_id": 5330200032,
@@ -284,8 +284,8 @@
     "rarity": 3,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0010.webp",
-    "onyx": 5110030016,
-    "special": 5130010035
+    "onyx": 5110030018,
+    "special": 5130010038
   },
   "quencher": {
     "game_id": 5340200033,
@@ -293,8 +293,8 @@
     "rarity": 4,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0009.webp",
-    "onyx": 5110030015,
-    "special": 5130010035
+    "onyx": 5110030017,
+    "special": 5130010038
   },
   "industry_01": {
     "game_id": 5340200034,
@@ -302,8 +302,8 @@
     "rarity": 4,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0003.webp",
-    "onyx": 5110030016,
-    "special": 5130010034
+    "onyx": 5110030018,
+    "special": 5130010037
   },
   "obj_heavy_burden": {
     "game_id": 5350200035,
@@ -311,8 +311,8 @@
     "rarity": 5,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0015.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "ancient_canal": {
     "game_id": 5350200036,
@@ -320,8 +320,8 @@
     "rarity": 5,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0014.webp",
-    "onyx": 5110030015,
-    "special": 5130010035
+    "onyx": 5110030017,
+    "special": 5130010038
   },
   "finishing_call": {
     "game_id": 5350200037,
@@ -329,8 +329,8 @@
     "rarity": 5,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0012.webp",
-    "onyx": 5110030016,
-    "special": 5130010034
+    "onyx": 5110030018,
+    "special": 5130010037
   },
   "seeker_of_dark_lung": {
     "game_id": 5350200038,
@@ -338,8 +338,8 @@
     "rarity": 5,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0011.webp",
-    "onyx": 5110030016,
-    "special": 5130010032
+    "onyx": 5110030018,
+    "special": 5130010035
   },
   "khravengger": {
     "game_id": 5360200039,
@@ -347,8 +347,8 @@
     "rarity": 6,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0013.webp",
-    "onyx": 5110030015,
-    "special": 5130010035
+    "onyx": 5110030017,
+    "special": 5130010038
   },
   "thunderberge": {
     "game_id": 5360200040,
@@ -356,8 +356,8 @@
     "rarity": 6,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0007.webp",
-    "onyx": 5110030016,
-    "special": 5130010032
+    "onyx": 5110030018,
+    "special": 5130010035
   },
   "former_finery": {
     "game_id": 5360200041,
@@ -365,8 +365,8 @@
     "rarity": 6,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0006.webp",
-    "onyx": 5110030015,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010034
   },
   "sundered_prince": {
     "game_id": 5360200042,
@@ -374,8 +374,8 @@
     "rarity": 6,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0008.webp",
-    "onyx": 5110030016,
-    "special": 5130010032
+    "onyx": 5110030018,
+    "special": 5130010035
   },
   "exemplar": {
     "game_id": 5360200043,
@@ -383,8 +383,8 @@
     "rarity": 6,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_claym_0004.webp",
-    "onyx": 5110030016,
-    "special": 5130010035
+    "onyx": 5110030018,
+    "special": 5130010038
   },
   "opero_77": {
     "game_id": 5330300044,
@@ -392,8 +392,8 @@
     "rarity": 3,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0009.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "pathfinders_beacon": {
     "game_id": 5340300045,
@@ -401,8 +401,8 @@
     "rarity": 4,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0003.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "aggeloslayer": {
     "game_id": 5340300046,
@@ -410,8 +410,8 @@
     "rarity": 4,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0008.webp",
-    "onyx": 5110030015,
-    "special": 5130010032
+    "onyx": 5110030017,
+    "special": 5130010035
   },
   "obj_razorhorn": {
     "game_id": 5350300047,
@@ -419,8 +419,8 @@
     "rarity": 5,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0013.webp",
-    "onyx": 5110030016,
-    "special": 5130010034
+    "onyx": 5110030018,
+    "special": 5130010037
   },
   "chimeric_justice": {
     "game_id": 5350300048,
@@ -428,7 +428,7 @@
     "rarity": 5,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0004.webp",
-    "onyx": 5110030016
+    "onyx": 5110030018
   },
   "cohesive_traction": {
     "game_id": 5350300049,
@@ -436,8 +436,8 @@
     "rarity": 5,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0006.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "mountain_bearer": {
     "game_id": 5360300050,
@@ -445,8 +445,8 @@
     "rarity": 6,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0012.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "jet": {
     "game_id": 5360300051,
@@ -454,8 +454,8 @@
     "rarity": 6,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0011.webp",
-    "onyx": 5110030015,
-    "special": 5130010034
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "valiant": {
     "game_id": 5360300052,
@@ -463,8 +463,8 @@
     "rarity": 6,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0010.webp",
-    "onyx": 5110030016,
-    "special": 5130010033
+    "onyx": 5110030018,
+    "special": 5130010036
   },
   "peco_5": {
     "game_id": 5330500053,
@@ -472,8 +472,8 @@
     "rarity": 3,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0001.webp",
-    "onyx": 5110030015,
-    "special": 5130010034
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "long_road": {
     "game_id": 5340500054,
@@ -481,8 +481,8 @@
     "rarity": 4,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0003.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "howling_guard": {
     "game_id": 5340500055,
@@ -490,8 +490,8 @@
     "rarity": 4,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0002.webp",
-    "onyx": 5110030016,
-    "special": 5130010032
+    "onyx": 5110030018,
+    "special": 5130010035
   },
   "obj_velocitous": {
     "game_id": 5350500056,
@@ -499,8 +499,8 @@
     "rarity": 5,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0012.webp",
-    "onyx": 5110030015,
-    "special": 5130010035
+    "onyx": 5110030017,
+    "special": 5130010038
   },
   "rational_farewell": {
     "game_id": 5350500057,
@@ -508,8 +508,8 @@
     "rarity": 5,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0004.webp",
-    "onyx": 5110030016,
-    "special": 5130010035
+    "onyx": 5110030018,
+    "special": 5130010038
   },
   "opus_the_living": {
     "game_id": 5350500058,
@@ -517,8 +517,8 @@
     "rarity": 5,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0006.webp",
-    "onyx": 5110030015,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010034
   },
   "clannibal": {
     "game_id": 5360500059,
@@ -526,8 +526,8 @@
     "rarity": 6,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0009.webp",
-    "onyx": 5110030015,
-    "special": 5130010034
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "wedge": {
     "game_id": 5360500060,
@@ -535,8 +535,8 @@
     "rarity": 6,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0008.webp",
-    "onyx": 5110030016,
-    "special": 5130010033
+    "onyx": 5110030018,
+    "special": 5130010036
   },
   "navigator": {
     "game_id": 5360500061,
@@ -544,8 +544,8 @@
     "rarity": 6,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0005.webp",
-    "onyx": 5110030015,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010034
   },
   "artzy_tyrannical": {
     "game_id": 5360500062,
@@ -553,8 +553,8 @@
     "rarity": 6,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_pistol_0010.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "brigands_calling": {
     "game_id": 5360500063,
@@ -562,8 +562,8 @@
     "rarity": 6,
     "type": "pistol",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_pistol_0011.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "lupine_scarlet": {
     "game_id": 5360100064,
@@ -571,8 +571,8 @@
     "rarity": 6,
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_sword_0022.webp",
-    "onyx": 5110030015,
-    "special": 5130010033
+    "onyx": 5110030017,
+    "special": 5130010036
   },
   "lone_barge": {
     "game_id": 5360400065,
@@ -580,8 +580,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0015.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "amaranthine_tassel": {
     "game_id": 5360200066,
@@ -589,8 +589,8 @@
     "rarity": 6,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_claym_0017.webp",
-    "onyx": 5110030016,
-    "special": 5130010034
+    "onyx": 5110030018,
+    "special": 5130010037
   },
   "phantom_pain": {
     "game_id": 5360200067,
@@ -598,8 +598,8 @@
     "rarity": 6,
     "type": "greatsword",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_claym_0016.webp",
-    "onyx": 5110030016,
-    "special": 5130010033
+    "onyx": 5110030018,
+    "special": 5130010036
   },
   "beacon_of_duty": {
     "game_id": 5360300068,
@@ -607,8 +607,8 @@
     "rarity": 6,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0007.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "blessing_of_lustrous_carmine": {
     "game_id": 5360300069,
@@ -616,8 +616,8 @@
     "rarity": 6,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "junction_point": {
     "game_id": 5360400070,
@@ -625,8 +625,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030018,
+    "special": 5130010035
   },
   "golden_age": {
     "game_id": 5360300071,
@@ -634,8 +634,8 @@
     "rarity": 6,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030017,
+    "special": 5130010037
   },
   "type_42_solemn_phalanx": {
     "game_id": 5360400072,
@@ -643,8 +643,8 @@
     "rarity": 6,
     "type": "arts",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030019,
+    "special": 5130010038
   },
   "bedazzling_night_debut": {
     "game_id": 5360300073,
@@ -652,7 +652,7 @@
     "rarity": 6,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
-    "onyx": 5110030016,
-    "special": 5130010031
+    "onyx": 5110030019,
+    "special": 5130010034
   }
 }

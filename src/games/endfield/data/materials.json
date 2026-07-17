@@ -49,8 +49,16 @@
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_mushroom_2_1.webp",
       "tier": 5
     },
+    "taloscap": {
+      "game_id": 5110010007,
+      "label": "Taloscap",
+      "Category": "ascension",
+      "SubCategory": "bolete",
+      "icon": "https://static.warfarin.wiki/v4/itemicon/item_plant_mushroom_2_3.webp",
+      "tier": 5
+    },
     "kalkodendra": {
-      "game_id": 5110020007,
+      "game_id": 5110020008,
       "label": "Kalkodendra",
       "Category": "ascension",
       "SubCategory": "odendra",
@@ -58,7 +66,7 @@
       "tier": 2
     },
     "chrysodendra": {
-      "game_id": 5110020008,
+      "game_id": 5110020009,
       "label": "Chrysodendra",
       "Category": "ascension",
       "SubCategory": "odendra",
@@ -66,7 +74,7 @@
       "tier": 3
     },
     "vitrodendra": {
-      "game_id": 5110020009,
+      "game_id": 5110020010,
       "label": "Vitrodendra",
       "Category": "ascension",
       "SubCategory": "odendra",
@@ -74,7 +82,7 @@
       "tier": 4
     },
     "false_aggela": {
-      "game_id": 5110020010,
+      "game_id": 5110020011,
       "label": "False Aggela",
       "Category": "ascension",
       "SubCategory": "odendra",
@@ -82,15 +90,23 @@
       "tier": 5
     },
     "blighted_jadeleaf": {
-      "game_id": 5110020011,
+      "game_id": 5110020012,
       "label": "Blighted Jadeleaf",
       "Category": "ascension",
       "SubCategory": "odendra",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_crylplant_2_1.webp",
       "tier": 5
     },
+    "crimson_spearleaf": {
+      "game_id": 5110020013,
+      "label": "Crimson Spearleaf",
+      "Category": "ascension",
+      "SubCategory": "odendra",
+      "icon": "https://static.warfarin.wiki/v4/itemicon/item_plant_crylplant_2_3.webp",
+      "tier": 5
+    },
     "kalkonyx": {
-      "game_id": 5110030012,
+      "game_id": 5110030014,
       "label": "Kalkonyx",
       "Category": "ascension",
       "SubCategory": "onyx",
@@ -98,7 +114,7 @@
       "tier": 2
     },
     "auronyx": {
-      "game_id": 5110030013,
+      "game_id": 5110030015,
       "label": "Auronyx",
       "Category": "ascension",
       "SubCategory": "onyx",
@@ -106,7 +122,7 @@
       "tier": 3
     },
     "umbronyx": {
-      "game_id": 5110030014,
+      "game_id": 5110030016,
       "label": "Umbronyx",
       "Category": "ascension",
       "SubCategory": "onyx",
@@ -114,7 +130,7 @@
       "tier": 4
     },
     "wulingstone": {
-      "game_id": 5110030015,
+      "game_id": 5110030017,
       "label": "Wulingstone",
       "Category": "ascension",
       "SubCategory": "onyx",
@@ -122,17 +138,25 @@
       "tier": 5
     },
     "igneosite": {
-      "game_id": 5110030016,
+      "game_id": 5110030018,
       "label": "Igneosite",
       "Category": "ascension",
       "SubCategory": "onyx",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_plant_spcstone_2_1.webp",
       "tier": 5
+    },
+    "protocolith": {
+      "game_id": 5110030019,
+      "label": "Protocolith",
+      "Category": "ascension",
+      "SubCategory": "onyx",
+      "icon": "https://static.warfarin.wiki/v4/itemicon/item_plant_spcstone_2_3.webp",
+      "tier": 5
     }
   },
   "forgery": {
     "protodisk": {
-      "game_id": 5120010017,
+      "game_id": 5120010020,
       "label": "Protodisk",
       "Category": "forgery",
       "SubCategory": "proto_asc",
@@ -140,7 +164,7 @@
       "tier": 2
     },
     "protoset": {
-      "game_id": 5120010018,
+      "game_id": 5120010021,
       "label": "Protoset",
       "Category": "forgery",
       "SubCategory": "proto_asc",
@@ -148,7 +172,7 @@
       "tier": 3
     },
     "protoprism": {
-      "game_id": 5120020019,
+      "game_id": 5120020022,
       "label": "Protoprism",
       "Category": "forgery",
       "SubCategory": "proto_skill",
@@ -156,7 +180,7 @@
       "tier": 2
     },
     "protohedron": {
-      "game_id": 5120020020,
+      "game_id": 5120020023,
       "label": "Protohedron",
       "Category": "forgery",
       "SubCategory": "proto_skill",
@@ -164,7 +188,7 @@
       "tier": 3
     },
     "cast_die": {
-      "game_id": 5120030021,
+      "game_id": 5120030024,
       "label": "Cast Die",
       "Category": "forgery",
       "SubCategory": "cast_die",
@@ -172,7 +196,7 @@
       "tier": 2
     },
     "heavy_cast_die": {
-      "game_id": 5120030022,
+      "game_id": 5120030025,
       "label": "Heavy Cast Die",
       "Category": "forgery",
       "SubCategory": "cast_die",
@@ -182,7 +206,7 @@
   },
   "player_exp_early": {
     "elementary_combat_record": {
-      "game_id": 5160010023,
+      "game_id": 5160010026,
       "label": "Elementary Combat Record",
       "Category": "player_exp_early",
       "SubCategory": "player_exp",
@@ -191,7 +215,7 @@
       "value": 200
     },
     "intermediate_combat_record": {
-      "game_id": 5160010024,
+      "game_id": 5160010027,
       "label": "Intermediate Combat Record",
       "Category": "player_exp_early",
       "SubCategory": "player_exp",
@@ -200,7 +224,7 @@
       "value": 1000
     },
     "advanced_combat_record": {
-      "game_id": 5160010025,
+      "game_id": 5160010028,
       "label": "Advanced Combat Record",
       "Category": "player_exp_early",
       "SubCategory": "player_exp",
@@ -211,7 +235,7 @@
   },
   "player_exp_late": {
     "elementary_cognitive_carrier": {
-      "game_id": 5170010026,
+      "game_id": 5170010029,
       "label": "Elementary Cognitive Carrier",
       "Category": "player_exp_late",
       "SubCategory": "player_exp",
@@ -220,7 +244,7 @@
       "value": 1000
     },
     "advanced_cognitive_carrier": {
-      "game_id": 5170010027,
+      "game_id": 5170010030,
       "label": "Advanced Cognitive Carrier",
       "Category": "player_exp_late",
       "SubCategory": "player_exp",
@@ -231,7 +255,7 @@
   },
   "weapon_exp": {
     "arms_insp_kit": {
-      "game_id": 5180020028,
+      "game_id": 5180020031,
       "label": "Arms INSP Kit",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
@@ -240,7 +264,7 @@
       "value": 200
     },
     "arms_insp_set": {
-      "game_id": 5180020029,
+      "game_id": 5180020032,
       "label": "Arms INSP Set",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
@@ -249,7 +273,7 @@
       "value": 1000
     },
     "arms_inspector": {
-      "game_id": 5180020030,
+      "game_id": 5180020033,
       "label": "Arms Inspector",
       "Category": "weapon_exp",
       "SubCategory": "weapon_exp",
@@ -260,7 +284,7 @@
   },
   "special": {
     "metadiastima_photoemission_tube": {
-      "game_id": 5130010031,
+      "game_id": 5130010034,
       "label": "Metadiastima Photoemission Tube",
       "Category": "special",
       "SubCategory": "special",
@@ -268,7 +292,7 @@
       "tier": 5
     },
     "d96_steel_sample_4": {
-      "game_id": 5130010032,
+      "game_id": 5130010035,
       "label": "D96 Steel Sample 4",
       "Category": "special",
       "SubCategory": "special",
@@ -276,7 +300,7 @@
       "tier": 5
     },
     "tachyon_screening_lattice": {
-      "game_id": 5130010033,
+      "game_id": 5130010036,
       "label": "Tachyon Screening Lattice",
       "Category": "special",
       "SubCategory": "special",
@@ -284,7 +308,7 @@
       "tier": 5
     },
     "quadrant_fitting_fluid": {
-      "game_id": 5130010034,
+      "game_id": 5130010037,
       "label": "Quadrant Fitting Fluid",
       "Category": "special",
       "SubCategory": "special",
@@ -292,7 +316,7 @@
       "tier": 5
     },
     "triphasic_nanoflake": {
-      "game_id": 5130010035,
+      "game_id": 5130010038,
       "label": "Triphasic Nanoflake",
       "Category": "special",
       "SubCategory": "special",
@@ -302,7 +326,7 @@
   },
   "mastery": {
     "mark_of_perseverance": {
-      "game_id": 5140010036,
+      "game_id": 5140010039,
       "label": "Mark of Perseverance",
       "Category": "mastery",
       "SubCategory": "perseverance",

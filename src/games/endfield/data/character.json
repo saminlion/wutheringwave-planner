@@ -7,12 +7,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/akekuri.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010032,
-    "mastery_basic_attack": 5130010032,
-    "mastery_battle_skill": 5130010032,
-    "mastery_combo_skill": 5130010032,
-    "mastery_ultimate": 5130010032,
+    "odendra": 5110020011,
+    "special": 5130010035,
+    "mastery_basic_attack": 5130010035,
+    "mastery_battle_skill": 5130010035,
+    "mastery_combo_skill": 5130010035,
+    "mastery_ultimate": 5130010035,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -49,12 +49,12 @@
     "weapon": "pistol",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/fluorite.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010035,
-    "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
-    "mastery_combo_skill": 5130010035,
-    "mastery_ultimate": 5130010035,
+    "odendra": 5110020011,
+    "special": 5130010038,
+    "mastery_basic_attack": 5130010038,
+    "mastery_battle_skill": 5130010038,
+    "mastery_combo_skill": 5130010038,
+    "mastery_ultimate": 5130010038,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -98,12 +98,12 @@
     "weapon": "arts",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/antal.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -147,12 +147,12 @@
     "weapon": "greatsword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/catcher.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -196,12 +196,12 @@
     "weapon": "polearm",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/estella.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010034,
-    "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "odendra": 5110020011,
+    "special": 5130010037,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -245,12 +245,12 @@
     "weapon": "greatsword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/da-pan.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010035,
-    "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
-    "mastery_combo_skill": 5130010035,
-    "mastery_ultimate": 5130010035,
+    "odendra": 5110020011,
+    "special": 5130010038,
+    "mastery_basic_attack": 5130010038,
+    "mastery_battle_skill": 5130010038,
+    "mastery_combo_skill": 5130010038,
+    "mastery_ultimate": 5130010038,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -294,12 +294,12 @@
     "weapon": "polearm",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/avywenna.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -343,12 +343,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/alesh.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -392,12 +392,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/arclight.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -441,12 +441,12 @@
     "weapon": "arts",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/perlica.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -483,12 +483,12 @@
     "weapon": "pistol",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/wulfgard.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010035,
-    "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
-    "mastery_combo_skill": 5130010035,
-    "mastery_ultimate": 5130010035,
+    "odendra": 5110020011,
+    "special": 5130010038,
+    "mastery_basic_attack": 5130010038,
+    "mastery_battle_skill": 5130010038,
+    "mastery_combo_skill": 5130010038,
+    "mastery_ultimate": 5130010038,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -532,12 +532,12 @@
     "weapon": "arts",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/xaihi.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -574,12 +574,12 @@
     "weapon": "greatsword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/snowshine.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010034,
-    "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "odendra": 5110020011,
+    "special": 5130010037,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -623,12 +623,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/chen-qianyu.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010034,
-    "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "odendra": 5110020011,
+    "special": 5130010037,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -672,12 +672,12 @@
     "weapon": "greatsword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/last-rite.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010035,
-    "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010035,
-    "mastery_combo_skill": 5130010035,
-    "mastery_ultimate": 5130010035,
+    "odendra": 5110020011,
+    "special": 5130010038,
+    "mastery_basic_attack": 5130010038,
+    "mastery_battle_skill": 5130010038,
+    "mastery_combo_skill": 5130010038,
+    "mastery_ultimate": 5130010038,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -721,12 +721,12 @@
     "weapon": "pistol",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/yvonne.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -770,12 +770,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/laevatain.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "2": {
@@ -819,12 +819,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/pogranichnik.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -868,12 +868,12 @@
     "weapon": "arts",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/ardelia.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010034,
-    "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "odendra": 5110020011,
+    "special": 5130010037,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "2": {
@@ -910,12 +910,12 @@
     "weapon": "arts",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/gilberta.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -959,12 +959,12 @@
     "weapon": "greatsword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/ember.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010033,
-    "mastery_basic_attack": 5130010033,
-    "mastery_battle_skill": 5130010033,
-    "mastery_combo_skill": 5130010033,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010036,
+    "mastery_basic_attack": 5130010036,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1008,12 +1008,12 @@
     "weapon": "polearm",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/lifeng.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1057,12 +1057,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/endministrator-a.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1106,12 +1106,12 @@
     "weapon": "pistol",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/tangtang.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1155,12 +1155,12 @@
     "weapon": "sword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/rossi.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010031,
-    "mastery_combo_skill": 5130010031,
-    "mastery_ultimate": 5130010031,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1204,12 +1204,12 @@
     "weapon": "arts",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/zhuang-fangyi.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010035,
-    "mastery_basic_attack": 5130010035,
-    "mastery_battle_skill": 5130010032,
-    "mastery_combo_skill": 5130010032,
-    "mastery_ultimate": 5130010033,
+    "odendra": 5110020011,
+    "special": 5130010038,
+    "mastery_basic_attack": 5130010038,
+    "mastery_battle_skill": 5130010035,
+    "mastery_combo_skill": 5130010035,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1253,12 +1253,12 @@
     "weapon": "greatsword",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/mi-fu.webp",
     "bolete": 5110010006,
-    "odendra": 5110020010,
-    "special": 5130010032,
-    "mastery_basic_attack": 5130010032,
-    "mastery_battle_skill": 5130010035,
-    "mastery_combo_skill": 5130010035,
-    "mastery_ultimate": 5130010035,
+    "odendra": 5110020011,
+    "special": 5130010035,
+    "mastery_basic_attack": 5130010035,
+    "mastery_battle_skill": 5130010038,
+    "mastery_combo_skill": 5130010038,
+    "mastery_ultimate": 5130010038,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1302,12 +1302,12 @@
     "weapon": "polearm",
     "icon": "https://cdn.perlica.moe/images/operators/portraits/camille.webp",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1351,41 +1351,34 @@
     "weapon": "arts",
     "icon": "https://endfieldtools.dev/assets/images/endfield/charicon/icon_chr_0032_lizhiyan.png",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "odendra": 5110020011,
+    "special": 5130010038,
+    "mastery_basic_attack": 5130010038,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010036,
+    "mastery_ultimate": 5130010036,
     "talent_costs": {
       "talent1": {
-        "1": {
-          "credit": 2400,
-          "proto_skill": [
-            12,
-            2
-          ]
-        },
         "2": {
-          "credit": 86000,
+          "credit": 108000,
           "proto_skill": [
-            40,
+            48,
             2
           ]
         }
       },
       "talent2": {
         "1": {
-          "credit": 10000,
+          "credit": 24000,
           "proto_skill": [
-            48,
+            12,
             2
           ]
         },
         "2": {
-          "credit": 24000,
+          "credit": 32000,
           "proto_skill": [
-            28,
+            36,
             3
           ]
         }
@@ -1400,12 +1393,12 @@
     "weapon": "polearm",
     "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_liino.png",
     "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1448,13 +1441,13 @@
     "element": "nature",
     "weapon": "sword",
     "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_si.png",
-    "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "bolete": 5110010007,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1497,13 +1490,13 @@
     "element": "physical",
     "weapon": "polearm",
     "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_preview_hongshan_guard.png",
-    "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "bolete": 5110010007,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
@@ -1546,13 +1539,13 @@
     "element": "cryo",
     "weapon": "arts",
     "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_preview_sarkaz_archer.png",
-    "bolete": 5110010005,
-    "odendra": 5110020010,
-    "special": 5130010031,
-    "mastery_basic_attack": 5130010031,
-    "mastery_battle_skill": 5130010034,
-    "mastery_combo_skill": 5130010034,
-    "mastery_ultimate": 5130010034,
+    "bolete": 5110010007,
+    "odendra": 5110020011,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010034,
+    "mastery_battle_skill": 5130010037,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010037,
     "talent_costs": {
       "talent1": {
         "1": {
