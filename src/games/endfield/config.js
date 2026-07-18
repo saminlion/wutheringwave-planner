@@ -210,7 +210,7 @@ export default {
       },
       // 캐릭터 고유 재료: Lv.5 던전만 존재하므로 던전 레벨과 무관하게 고정
       special: {
-        drops: 12,
+        drops: 6,
         stamina: 80,
       },
       player_exp_early: {
