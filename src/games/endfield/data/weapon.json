@@ -624,7 +624,7 @@
     "display_name": "Junction Point",
     "rarity": 6,
     "type": "arts",
-    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0018.webp",
     "onyx": 5110030018,
     "special": 5130010035
   },
@@ -633,7 +633,7 @@
     "display_name": "Golden Age",
     "rarity": 6,
     "type": "polearm",
-    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0016.webp",
     "onyx": 5110030017,
     "special": 5130010037
   },
@@ -642,7 +642,7 @@
     "display_name": "Type 42: Solemn Phalanx",
     "rarity": 6,
     "type": "arts",
-    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0015.webp",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0016.webp",
     "onyx": 5110030019,
     "special": 5130010038
   },
