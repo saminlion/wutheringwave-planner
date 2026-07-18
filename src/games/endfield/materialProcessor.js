@@ -47,7 +47,17 @@ export const processMaterial = (materials, key, value, characterInfo) => {
         // Get game_id from characterInfo, then find SubCategory
         const charMaterialId = characterInfo[key];
         if (charMaterialId) {
-            // Get SubCategory from game_id
+            // The character/weapon-specific material is the final (highest) tier.
+            // Multiple variants share the same SubCategory at that tier (e.g. bolete t5 =
+            // cosmagaric/bloodcap/taloscap), so a SubCategory+tier lookup is ambiguous and
+            // always resolves to the first variant. When the requested tier matches the
+            // character's specific material tier, use its exact game_id directly.
+            const charTier = getMaterialFieldById(charMaterialId, 'tier');
+            if (charTier != null && Number(charTier) === Number(tier)) {
+                materials[charMaterialId] = (materials[charMaterialId] || 0) + qty;
+                return true;
+            }
+            // Lower tiers are shared within a SubCategory (one material per tier).
             const subCategory = getMaterialFieldById(charMaterialId, 'SubCategory');
             if (subCategory) {
                 // Search in ascension category with SubCategory and tier
@@ -79,9 +89,9 @@ export const processMaterial = (materials, key, value, characterInfo) => {
         return true;
     }
 
-    // Fixed perseverance material: Mark of Perseverance (5130010036)
+    // Fixed perseverance material: Mark of Perseverance (5140010039)
     if (key === 'perseverance') {
-        const gameId = 5130010036;
+        const gameId = 5140010039;
         if (typeof value === 'number') {
             materials[gameId] = (materials[gameId] || 0) + value;
         }

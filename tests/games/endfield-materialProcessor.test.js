@@ -22,6 +22,11 @@ vi.mock('@/services/materialHelper/dbUtils', () => ({
     if (type === 'ascension' && identifier === 'odendra_beta' && tier === 3) {
       return { game_id: 51301103, label: 'Odendra Beta Tier 3' };
     }
+    // Tier 5 is ambiguous: multiple variants share a SubCategory. A SubCategory
+    // lookup returns the WRONG (first) variant, which the processor must NOT use.
+    if (type === 'ascension' && identifier === 'bolete_alpha' && tier === 5) {
+      return { game_id: 51301005, label: 'Bolete Alpha Tier 5 (first variant)' };
+    }
     return null;
   }),
   getMaterialField: vi.fn((material, field) => {
@@ -37,6 +42,11 @@ vi.mock('@/services/materialHelper/dbUtils', () => ({
     }
     if (id === '51301101' && field === 'SubCategory') {
       return 'odendra_beta';
+    }
+    // Character-specific tier-5 material: exact game_id must be used directly
+    if (id === '51301009') {
+      if (field === 'SubCategory') return 'bolete_alpha';
+      if (field === 'tier') return 5;
     }
     return null;
   }),
@@ -116,6 +126,17 @@ describe('Endfield MaterialProcessor', () => {
       expect(materials[51301103]).toBe(4);
     });
 
+    it('should use exact game_id for character-specific tier-5 ascension material', () => {
+      // The character's tier-5 material (51301009) shares its SubCategory with other
+      // tier-5 variants, so a SubCategory lookup would return the wrong one (51301005).
+      const infoT5 = { ...characterInfo, bolete: '51301009' };
+      const handled = processMaterial(materials, 'bolete', [8, 5], infoT5);
+
+      expect(handled).toBe(true);
+      expect(materials['51301009']).toBe(8);       // exact character material used
+      expect(materials[51301005]).toBeUndefined(); // ambiguous first variant NOT used
+    });
+
     it('should process special material directly', () => {
       const handled = processMaterial(materials, 'special', 2, characterInfo);
 
@@ -123,26 +144,25 @@ describe('Endfield MaterialProcessor', () => {
       expect(materials['51400001']).toBe(2);
     });
 
-    it('should process perseverance using per-skill mastery material', () => {
-      const infoWithSkill = { ...characterInfo, _masterySkill: 'basic_attack' };
-      const handled = processMaterial(materials, 'perseverance', 2, infoWithSkill);
+    it('should process perseverance as the fixed Mark of Perseverance material', () => {
+      const handled = processMaterial(materials, 'perseverance', 2, characterInfo);
 
       expect(handled).toBe(true);
-      expect(materials[51500001]).toBe(2);
+      expect(materials[5140010039]).toBe(2);
     });
 
-    it('should process perseverance with different material for different skill', () => {
+    it('should use the same perseverance material regardless of skill', () => {
       const infoWithSkill = { ...characterInfo, _masterySkill: 'battle_skill' };
       processMaterial(materials, 'perseverance', 1, infoWithSkill);
 
-      expect(materials[51500002]).toBe(1);
+      expect(materials[5140010039]).toBe(1);
     });
 
-    it('should silently skip perseverance when _masterySkill is missing', () => {
-      const handled = processMaterial(materials, 'perseverance', 1, characterInfo);
+    it('should accumulate perseverance quantities', () => {
+      processMaterial(materials, 'perseverance', 1, characterInfo);
+      processMaterial(materials, 'perseverance', 3, characterInfo);
 
-      expect(handled).toBe(true);
-      expect(Object.keys(materials)).toHaveLength(0);
+      expect(materials[5140010039]).toBe(4);
     });
 
     it('should return false for unsupported keys', () => {
