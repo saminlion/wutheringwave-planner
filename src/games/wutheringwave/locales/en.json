@@ -26,6 +26,7 @@
     "4250200045": "Mornye",
     "4250200046": "Aemeath",
     "4250200050": "Denia",
+    "4250200058": "Qinyian",
     "4250300018": "Jiyan",
     "4250300019": "Jianxin",
     "4250300022": "Rover (Aero)",
@@ -34,6 +35,7 @@
     "4250300039": "Iuno",
     "4250300041": "Qiuyuan",
     "4250300048": "Sigrika",
+    "4250300057": "Qingxiao",
     "4250400011": "Calcharo",
     "4250400012": "Yinlin",
     "4250400015": "Xiangli Yao",
@@ -320,7 +322,9 @@
     "4350400104": "Skull Thrasher",
     "4350500105": "Freeze Frame",
     "4350100106": "Azure Oath",
-    "4350500107": "Firstlight's Herald"
+    "4350500107": "Firstlight's Herald",
+    "4350100108": "Cloud Jasper",
+    "4350200109": "Thousandfold Deliverance"
   },
   "ui": {
     "game.name.wutheringwave": "Wuthering Waves",

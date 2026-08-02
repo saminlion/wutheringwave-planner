@@ -726,5 +726,25 @@
     "ascension": 4130010004,
     "boss": 4140010001,
     "weeklyBoss": 4150030009
+  },
+  "qingxiao": {
+    "game_id": 4250300057,
+    "display_name": "Qingxiao",
+    "rarity": 5,
+    "element": "aero",
+    "weapon": "sword",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
+    "common": "autopuppet",
+    "forgery": "polarizer"
+  },
+  "qinyian": {
+    "game_id": 4250200058,
+    "display_name": "Qinyian",
+    "rarity": 5,
+    "element": "fusion",
+    "weapon": "broadblade",
+    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
+    "common": "autopuppet",
+    "forgery": "crystal"
   }
 }
