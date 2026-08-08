@@ -44,6 +44,7 @@ app.use(router);
 app.use(Toast, {
     autoClose: 3000,
     position: 'bottom-left',
+    pauseOnFocusLoss: false,
 });
 
 app.mount('#app');
