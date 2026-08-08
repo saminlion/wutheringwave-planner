@@ -735,7 +735,9 @@
     "weapon": "sword",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "autopuppet",
-    "forgery": "polarizer"
+    "forgery": "polarizer",
+    "ascension": 4130010033,
+    "weeklyBoss": 4150030009
   },
   "qinyian": {
     "game_id": 4250200058,
@@ -744,7 +746,9 @@
     "element": "fusion",
     "weapon": "broadblade",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
-    "common": "autopuppet",
-    "forgery": "crystal"
+    "common": "whisperin_core",
+    "forgery": "crystal",
+    "ascension": 4130010031,
+    "weeklyBoss": 4150030010
   }
 }

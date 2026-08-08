@@ -238,5 +238,17 @@
     "forgery": "flower",
     "boss": 7140010003,
     "weeklyBoss": 7150010001
+  },
+  "zankou": {
+    "game_id": 7830100021,
+    "display_name": "Zankou",
+    "rarity": 6,
+    "element": "incantation",
+    "weapon_type": "liquid",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/AvatarImage/256/player_yiluoyi_256.webp",
+    "common": "numeral",
+    "forgery": "magic",
+    "boss": 7140010005,
+    "weeklyBoss": 7150010003
   }
 }

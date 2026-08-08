@@ -1166,21 +1166,32 @@
       "label": "Past Reveries",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconA/T_IconA_23_UI.webp"
+      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconA/T_IconA_23_UI.webp",
+      "tier": 3
     },
     "cloudperch_seed": {
       "game_id": 4130010031,
       "label": "Cloudperch Seed",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_083_UI.webp"
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_083_UI.webp",
+      "tier": 3
     },
     "flowborne_dream": {
       "game_id": 4130010032,
       "label": "Flowborne Dream",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_087_UI.webp"
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_087_UI.webp",
+      "tier": 3
+    },
+    "blade_blossom": {
+      "game_id": 4130010033,
+      "label": "Blade Blossom",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_078_UI.webp",
+      "tier": 3
     }
   },
   "player_exp": {
