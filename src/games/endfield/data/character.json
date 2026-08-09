@@ -1391,14 +1391,14 @@
     "rarity": 6,
     "element": "electric",
     "weapon": "polearm",
-    "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_liino.png",
+    "icon": "https://static.warfarin.wiki/v4/charicon/icon_chr_0035_liino.webp",
     "bolete": 5110010007,
     "odendra": 5110020013,
-    "special": 5130010034,
-    "mastery_basic_attack": 5130010034,
-    "mastery_battle_skill": 5130010037,
-    "mastery_combo_skill": 5130010037,
-    "mastery_ultimate": 5130010037,
+    "special": 5130010037,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010034,
+    "mastery_combo_skill": 5130010034,
+    "mastery_ultimate": 5130010034,
     "talent_costs": {
       "talent1": {
         "1": {
