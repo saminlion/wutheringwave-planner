@@ -20,7 +20,8 @@
     "7810500018": "Chaos",
     "7810300019": "Shinku",
     "7830200020": "Iroi",
-    "7830100021": "Zankou"
+    "7820100021": "Zankou",
+    "7850200022": "Lingkou"
   },
   "materials": {
     "7100010001": "Beetle Coin",
@@ -130,7 +131,9 @@
     "7364000044": "The Rain That Shook the World",
     "7361000045": "What's Desired",
     "7363000046": "The Wrong Gate",
-    "7361000047": "Blushing Mirage"
+    "7361000047": "Blushing Mirage",
+    "7362000048": "Heart Sword",
+    "7365000049": "Voice of some"
   },
   "ui": {
     "game.name.nte": "Neverness To Everness",

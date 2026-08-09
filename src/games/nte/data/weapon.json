@@ -421,5 +421,23 @@
     "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_LunarPhase_256.webp",
     "common": "whispers",
     "forgery": "core"
+  },
+  "heart_sword": {
+    "game_id": 7362000048,
+    "display_name": "Heart Sword",
+    "rarity": 6,
+    "type": "gas",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_LunarPhase_256.webp",
+    "common": "whispers",
+    "forgery": "core"
+  },
+  "voice_of_some": {
+    "game_id": 7365000049,
+    "display_name": "Voice of some",
+    "rarity": 6,
+    "type": "plasma",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_LunarPhase_256.webp",
+    "common": "whispers",
+    "forgery": "core"
   }
 }

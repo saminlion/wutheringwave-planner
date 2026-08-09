@@ -240,15 +240,27 @@
     "weeklyBoss": 7150010001
   },
   "zankou": {
-    "game_id": 7830100021,
+    "game_id": 7820100021,
     "display_name": "Zankou",
     "rarity": 6,
     "element": "incantation",
-    "weapon_type": "liquid",
+    "weapon_type": "gas",
     "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/AvatarImage/256/player_yiluoyi_256.webp",
     "common": "numeral",
     "forgery": "magic",
     "boss": 7140010005,
     "weeklyBoss": 7150010003
+  },
+  "lingkou": {
+    "game_id": 7850200022,
+    "display_name": "Lingkou",
+    "rarity": 6,
+    "element": "anima",
+    "weapon_type": "plasma",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/AvatarImage/256/player_yiluoyi_256.webp",
+    "common": "silhouette",
+    "forgery": "flower",
+    "boss": 7140010004,
+    "weeklyBoss": 7150010002
   }
 }
