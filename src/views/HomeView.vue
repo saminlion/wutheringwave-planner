@@ -1,5 +1,17 @@
 <template>
   <div class="home-view">
+    <!-- 진행 중 이벤트 요약 -->
+    <section v-if="hasEvents" class="events-section">
+      <div class="events-head">
+        <h2 class="events-title">{{ tUI('home.events') }}</h2>
+        <router-link to="/timeline" class="events-more">
+          {{ tUI('home.eventsMore') }} →
+        </router-link>
+      </div>
+
+      <EventList :events="homeEvents" compact :limit="3" :show-ended="false" />
+    </section>
+
     <!-- 사용 가이드 -->
     <div v-if="guide" class="guide-section">
       <h2 class="guide-title">{{ guide.title }}</h2>
@@ -35,6 +47,8 @@ import { useInventoryStore } from '@/store/inventory';
 import { useGameStore } from '@/store/game';
 import { useUserProfileStore } from '@/store/userProfile';
 import { useLocale } from '@/composables/useLocale';
+import { useEvents } from '@/composables/useEvents';
+import EventList from '@/components/timeline/EventList.vue';
 
 const plannerStore = usePlannerStore();
 const inventoryStore = useInventoryStore();
@@ -42,7 +56,13 @@ const gameStore = useGameStore();
 const userProfileStore = useUserProfileStore();
 const { tUI, loadGameLocales, currentTranslations } = useLocale();
 
+const { endingSoon, upcoming, hasEvents } = useEvents();
+
 const guide = computed(() => currentTranslations.value?.guide ?? null);
+
+// Ongoing first (soonest deadline), topped up with upcoming so the widget is
+// never empty right after a patch ends.
+const homeEvents = computed(() => [...endingSoon.value, ...upcoming.value]);
 
 onMounted(async () => {
   gameStore.hydrate();
@@ -61,6 +81,41 @@ onMounted(async () => {
   margin: 0 auto;
   padding: 1.5rem 1rem 2rem;
   text-align: left;
+}
+
+.events-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.75rem;
+}
+
+.events-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border, #e0e0e0);
+}
+
+.events-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text, #213547);
+  margin: 0;
+}
+
+.events-more {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary, #667eea);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.events-more:hover {
+  text-decoration: underline;
 }
 
 .guide-section {

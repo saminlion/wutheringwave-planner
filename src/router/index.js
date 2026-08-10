@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import PlannerView from '../views/PlannerView.vue';
+import TimelineView from '../views/TimelineView.vue';
 import CharacterView from '../views/CharacterView.vue';
 import InventoryView from '../views/InventoryView.vue';
 import WeaponView from '../views/WeaponView.vue';
@@ -16,6 +17,11 @@ const routes = [
     path: '/planner',
     name: 'planner',
     component: PlannerView,
+  },
+  {
+    path: '/timeline',
+    name: 'timeline',
+    component: TimelineView,
   },
   {
     path: '/inventory',

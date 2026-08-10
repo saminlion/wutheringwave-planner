@@ -39,17 +39,20 @@
         <div v-if="showDungeonLevelSelector" class="dungeon-level-selector">
             <label for="dungeon-level">{{ tUI('final.dungeon_level') }}:</label>
             <select id="dungeon-level" v-model="selectedDungeonLevel" @change="onDungeonLevelChange">
-                <option v-for="level in 5" :key="level" :value="level">
+                <option v-for="level in dungeonLevelOptions" :key="level" :value="level">
                     Lv.{{ level }}
                 </option>
             </select>
-            <span class="dungeon-info">
+            <span class="dungeon-info" v-if="hasStamina">
                 ({{ staminaName }}: {{ currentDungeonStamina }})
             </span>
         </div>
 
         <!-- Total Material Calculation Section -->
-        <div class="summary-container">
+        <!-- Hidden for games with no stamina resource: both figures are denominated
+             in stamina, so there is nothing meaningful to show. Per-category run
+             counts below remain valid. -->
+        <div class="summary-container" v-if="hasStamina">
             <div class="summary-card">
                 <h3><i class="fas fa-fire"></i> {{ tUI('final.total_required') }} {{ staminaName }}</h3>
                 <p>{{ totalValues.totalResin }}</p>
@@ -106,16 +109,26 @@
                             </template>
                             <!-- 通常表示 (WW / Endfield non-forgery) -->
                             <template v-else>
-                                <p>{{ tUI('final.estimated_runs') }}: {{ estimate.run }}</p>
-                                <p>{{ tUI('final.estimated_stamina') }} {{ staminaName }}: {{ estimate.resin }}</p>
-                                <p v-if="subCategory.name?.toLowerCase() !== 'weeklyboss'">
-                                    {{ tUI('final.estimated_time') }}:
-                                    <span class="font-semibold">{{ estimate.date }} {{ tUI('final.days') }}</span>
+                                <!-- No farming route at all (e.g. DNA's event-only
+                                     Twilight Tread). Run counts would read as 0 and
+                                     look like "nothing needed", so say it outright. -->
+                                <p v-if="estimate.unobtainable" class="estimate-unobtainable">
+                                    {{ tUI('final.unobtainable') }}
                                 </p>
-                                <p v-else>
-                                    {{ tUI('final.estimated_date') }}:
-                                    <span class="font-semibold">{{ estimate.date }} {{ estimate.date === 1 ? tUI('final.week') : tUI('final.weeks') }}</span>
-                                </p>
+                                <template v-else>
+                                    <p>{{ tUI('final.estimated_runs') }}: {{ estimate.run }}</p>
+                                    <p v-if="hasStamina">{{ tUI('final.estimated_stamina') }} {{ staminaName }}: {{ estimate.resin }}</p>
+                                    <template v-if="hasStamina">
+                                        <p v-if="subCategory.name?.toLowerCase() !== 'weeklyboss'">
+                                            {{ tUI('final.estimated_time') }}:
+                                            <span class="font-semibold">{{ estimate.date }} {{ tUI('final.days') }}</span>
+                                        </p>
+                                        <p v-else>
+                                            {{ tUI('final.estimated_date') }}:
+                                            <span class="font-semibold">{{ estimate.date }} {{ estimate.date === 1 ? tUI('final.week') : tUI('final.weeks') }}</span>
+                                        </p>
+                                    </template>
+                                </template>
                                 <p v-if="estimate.note" class="estimate-note">{{ estimate.note }}</p>
                             </template>
                         </div>
@@ -273,6 +286,17 @@ const showDungeonLevelSelector = computed(() => {
     return gameConfig.value.uiHandlers?.showDungeonLevelSelector || false;
 });
 
+// Games with no stamina resource set config.stamina = null. Everything measured
+// in stamina (daily limit, estimated days) is hidden for them; run counts stay.
+const hasStamina = computed(() => Boolean(gameConfig.value?.stamina));
+
+// Dungeon/wave depth choices come from the game config so a game with more than
+// five depths isn't capped by the UI.
+const dungeonLevelOptions = computed(() => {
+    const options = gameConfig.value.uiHandlers?.getDungeonLevelOptions?.();
+    return Array.isArray(options) && options.length > 0 ? options : [1, 2, 3, 4, 5];
+});
+
 const useDynamicFarmingRates = computed(() => {
     return gameConfig.value.uiHandlers?.useDynamicFarmingRates || false;
 });
@@ -350,10 +374,12 @@ const getExpMaterialForCategory = (categoryName) => {
 
 // Get stamina config from current game (uses custom dailyStamina from userProfile if set)
 const getStaminaConfig = () => {
-    const currentGame = gameStore.currentGame;
-    const config = currentGame?.config?.stamina || {
+    const gameCfg = gameStore.currentGame?.config;
+    const config = gameCfg?.stamina || {
         dailyLimit: 240,
-        farmingRates: {}
+        // Stamina-less games publish farmingRates at the config root — effort is
+        // counted in runs, so the rates still exist even with no stamina block.
+        farmingRates: gameCfg?.farmingRates || {},
     };
     return {
         ...config,
@@ -593,6 +619,7 @@ const getEstimates = (category, subCategory) => {
         resin: esimatedResin.value(data),
         date: esimatedDate.value(data),
         isTierSeparated: false,
+        unobtainable: GetRateValueForCategory(data).declaredUnobtainable,
     };
 };
 
@@ -951,7 +978,11 @@ const updateTotalValues = () => {
 
 // Calculate drops and stamina values per category (game-agnostic)
 const GetRateValueForCategory = (data) => {
-    let drops = 0, resin = 0, unobtainable = false, categoryName = "";
+    // `unobtainable` gates the run/stamina maths — a zero drop rate can't be
+    // divided by, whatever the reason. `declaredUnobtainable` is narrower: the
+    // rate explicitly says there is no farming route, so the UI can say so
+    // instead of implying the rate merely hasn't been measured yet.
+    let drops = 0, resin = 0, unobtainable = false, declaredUnobtainable = false, categoryName = "";
     const staminaConfig = getStaminaConfig();
     let farmingRates = staminaConfig.farmingRates || {};
 
@@ -970,7 +1001,8 @@ const GetRateValueForCategory = (data) => {
                 // tier2ベースでdrops設定 (tier分離はgetTierSeparatedForgeryEstimatesで処理)
                 drops = rate.drops || rate.tier2 || 0;
                 resin = rate.stamina || 0;
-                unobtainable = rate.unobtainable || drops <= 0;
+                declaredUnobtainable = Boolean(rate.unobtainable);
+                unobtainable = declaredUnobtainable || drops <= 0;
             } else {
                 unobtainable = true;
             }
@@ -979,7 +1011,7 @@ const GetRateValueForCategory = (data) => {
     });
 
 
-    return { drops, resin, unobtainable, categoryName };
+    return { drops, resin, unobtainable, declaredUnobtainable, categoryName };
 };
 
 const esimatedRun = computed(() => (data) => {
@@ -1482,6 +1514,12 @@ onMounted(() => {
     color: var(--color-warning);
     font-style: italic;
     margin-top: 4px;
+}
+
+.estimate-unobtainable {
+    font-size: 12px;
+    color: var(--color-warning);
+    font-weight: 600;
 }
 
 /* クリック可能なカードスタイル */

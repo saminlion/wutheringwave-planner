@@ -1,0 +1,710 @@
+{
+  "credit": {
+    "coin": {
+      "game_id": 9100010001,
+      "label": "Coin",
+      "Category": "credit",
+      "SubCategory": "credit",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/9/9c/Item_Coin.png/revision/latest?cb=20251101183120",
+      "rarity": 3
+    }
+  },
+  "common": {
+    "stone_powder": {
+      "game_id": 9110010001,
+      "label": "Stone Powder",
+      "Category": "common",
+      "SubCategory": "stone",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/7/7b/Item_Stone_Powder.png/revision/latest?cb=20251219224837",
+      "tier": 1,
+      "rarity": 2
+    },
+    "insulation_coating": {
+      "game_id": 9110010002,
+      "label": "Insulation Coating",
+      "Category": "common",
+      "SubCategory": "stone",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/8/8c/Item_Insulation_Coating.png/revision/latest?cb=20251219224912",
+      "tier": 2,
+      "rarity": 3
+    },
+    "damaged_sal_volatile": {
+      "game_id": 9110020001,
+      "label": "Damaged Sal Volatile",
+      "Category": "common",
+      "SubCategory": "volatile",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/3/31/Item_Damaged_Sal_Volatile.png/revision/latest?cb=20251219223145",
+      "tier": 1,
+      "rarity": 2
+    },
+    "fuel_reagent": {
+      "game_id": 9110020002,
+      "label": "Fuel Reagent",
+      "Category": "common",
+      "SubCategory": "volatile",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/3/3a/Item_Fuel_Reagent.png/revision/latest?cb=20251219223241",
+      "tier": 2,
+      "rarity": 3
+    },
+    "vermilion_teardrop": {
+      "game_id": 9110030001,
+      "label": "Vermilion Teardrop",
+      "Category": "common",
+      "SubCategory": "teardrop",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/b/bf/Item_Vermilion_Teardrop.png/revision/latest?cb=20251219220708",
+      "tier": 1,
+      "rarity": 2
+    },
+    "snowswift_tail_feather": {
+      "game_id": 9110030002,
+      "label": "Snowswift Tail Feather",
+      "Category": "common",
+      "SubCategory": "teardrop",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/c/c1/Item_Snowswift_Tail_Feather.png/revision/latest?cb=20251219221558",
+      "tier": 2,
+      "rarity": 3
+    },
+    "chain": {
+      "game_id": 9110040001,
+      "label": "Chain",
+      "Category": "common",
+      "SubCategory": "chain",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/a/a5/Item_Chain.png/revision/latest?cb=20251102082845",
+      "tier": 1,
+      "rarity": 2
+    },
+    "vehicle_armour": {
+      "game_id": 9110040002,
+      "label": "Vehicle Armour",
+      "Category": "common",
+      "SubCategory": "chain",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/3/38/Item_Vehicle_Armour.png/revision/latest?cb=20251219223815",
+      "tier": 2,
+      "rarity": 3
+    },
+    "filthoid_clot": {
+      "game_id": 9110050001,
+      "label": "Filthoid Clot",
+      "Category": "common",
+      "SubCategory": "filthoid",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/6/64/Item_Filthoid_Clot.png/revision/latest?cb=20251102082624",
+      "tier": 1,
+      "rarity": 2
+    },
+    "statue_debris": {
+      "game_id": 9110050002,
+      "label": "Statue Debris",
+      "Category": "common",
+      "SubCategory": "filthoid",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/7/74/Item_Statue_Debris.png/revision/latest?cb=20251102082053",
+      "tier": 2,
+      "rarity": 3
+    }
+  },
+  "forgery": {
+    "filthoid_tentacle": {
+      "game_id": 9120010001,
+      "label": "Filthoid Tentacle",
+      "Category": "forgery",
+      "SubCategory": "tentacle",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/8/8a/Item_Filthoid_Tentacle.png/revision/latest?cb=20251221043249",
+      "tier": 1,
+      "rarity": 4
+    },
+    "filthoid_polymer": {
+      "game_id": 9120010002,
+      "label": "Filthoid Polymer",
+      "Category": "forgery",
+      "SubCategory": "tentacle",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/4/4a/Item_Filthoid_Polymer.png/revision/latest?cb=20251221043158",
+      "tier": 2
+    },
+    "sacred_candle": {
+      "game_id": 9120020001,
+      "label": "Sacred Candle",
+      "Category": "forgery",
+      "SubCategory": "sacred",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/8/85/Item_Sacred_Candle.png/revision/latest?cb=20251221054104",
+      "tier": 1,
+      "rarity": 4
+    },
+    "serum_syringe": {
+      "game_id": 9120020002,
+      "label": "Serum Syringe",
+      "Category": "forgery",
+      "SubCategory": "sacred",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/b/bf/Item_Serum_Syringe.png/revision/latest?cb=20251221053936",
+      "tier": 2
+    },
+    "luno_memento": {
+      "game_id": 9120030001,
+      "label": "Luno Memento",
+      "Category": "forgery",
+      "SubCategory": "luno",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/2/28/Item_Luno_Memento.png/revision/latest?cb=20251221034700",
+      "rarity": 3
+    }
+  },
+  "ascension": {
+    "azure_pearl": {
+      "game_id": 9130010001,
+      "label": "Azure Pearl",
+      "Category": "ascension",
+      "SubCategory": "pearl",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/b/ba/Item_Azure_Pearl.png/revision/latest?cb=20251219224951",
+      "tier": 1,
+      "rarity": 2
+    },
+    "humectant": {
+      "game_id": 9130010002,
+      "label": "Humectant",
+      "Category": "ascension",
+      "SubCategory": "pearl",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/9/98/Item_Humectant.png/revision/latest?cb=20251219225029",
+      "tier": 2,
+      "rarity": 3
+    },
+    "water_purifier": {
+      "game_id": 9130010003,
+      "label": "Water Purifier",
+      "Category": "ascension",
+      "SubCategory": "pearl",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/c/c4/Item_Water_Purifier.png/revision/latest?cb=20251219225114",
+      "tier": 3,
+      "rarity": 4
+    },
+    "flame_lizard_scale": {
+      "game_id": 9130020001,
+      "label": "Flame Lizard Scale",
+      "Category": "ascension",
+      "SubCategory": "flame",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/1/1f/Item_Flame_Lizard_Scale.png/revision/latest?cb=20251219223314",
+      "tier": 1,
+      "rarity": 2
+    },
+    "everbright_flame": {
+      "game_id": 9130020002,
+      "label": "Everbright Flame",
+      "Category": "ascension",
+      "SubCategory": "flame",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/a/a6/Item_Everbright_Flame.png/revision/latest?cb=20251219223354",
+      "tier": 2,
+      "rarity": 3
+    },
+    "fire_tempered_shackles": {
+      "game_id": 9130020003,
+      "label": "Fire-Tempered Shackles",
+      "Category": "ascension",
+      "SubCategory": "flame",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/b/b4/Item_Fire-Tempered_Shackles.png/revision/latest?cb=20251219223455",
+      "tier": 3,
+      "rarity": 4
+    },
+    "withered_bough": {
+      "game_id": 9130030001,
+      "label": "Withered Bough",
+      "Category": "ascension",
+      "SubCategory": "bough",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/6/61/Item_Withered_Bough.png/revision/latest?cb=20251219221431",
+      "tier": 1,
+      "rarity": 2
+    },
+    "galeweaver": {
+      "game_id": 9130030002,
+      "label": "Galeweaver",
+      "Category": "ascension",
+      "SubCategory": "bough",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/b/b0/Item_Galeweaver.png/revision/latest?cb=20251219221646",
+      "tier": 2,
+      "rarity": 3
+    },
+    "oceanifly": {
+      "game_id": 9130030003,
+      "label": "Oceanifly",
+      "Category": "ascension",
+      "SubCategory": "bough",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/8/8c/Item_Oceanifly.png/revision/latest?cb=20251219221740",
+      "tier": 3,
+      "rarity": 4
+    },
+    "lightning_rod": {
+      "game_id": 9130040001,
+      "label": "Lightning Rod",
+      "Category": "ascension",
+      "SubCategory": "rod",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/f/fb/Item_Lightning_Rod.png/revision/latest?cb=20251219224003",
+      "tier": 1,
+      "rarity": 2
+    },
+    "stormfall_jade": {
+      "game_id": 9130040002,
+      "label": "Stormfall Jade",
+      "Category": "ascension",
+      "SubCategory": "rod",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/0/02/Item_Stormfall_Jade.png/revision/latest?cb=20251219224122",
+      "tier": 2,
+      "rarity": 3
+    },
+    "golden_wool": {
+      "game_id": 9130040003,
+      "label": "Golden Wool",
+      "Category": "ascension",
+      "SubCategory": "rod",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/5/59/Item_Golden_Wool.png/revision/latest?cb=20251219224153",
+      "tier": 3,
+      "rarity": 4
+    },
+    "lense_of_enlightenment": {
+      "game_id": 9130050001,
+      "label": "Lense of Enlightenment",
+      "Category": "ascension",
+      "SubCategory": "lense",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/7/7f/Item_Lense_of_Enlightenment.png/revision/latest?cb=20251219221918",
+      "tier": 1,
+      "rarity": 2
+    },
+    "golden_floriated_diadem": {
+      "game_id": 9130050002,
+      "label": "Golden Floriated Diadem",
+      "Category": "ascension",
+      "SubCategory": "lense",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/e/e6/Item_Golden_Floriated_Diadem.png/revision/latest?cb=20251219222006",
+      "tier": 2,
+      "rarity": 3
+    },
+    "copy_of_elysian_hymnal": {
+      "game_id": 9130050003,
+      "label": "Copy of Elysian Hymnal",
+      "Category": "ascension",
+      "SubCategory": "lense",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/3/3f/Item_Copy_of_Elysian_Hymnal.png/revision/latest?cb=20251219222050",
+      "tier": 3,
+      "rarity": 4
+    },
+    "rust_etched_dagger": {
+      "game_id": 9130060001,
+      "label": "Rust-Etched Dagger",
+      "Category": "ascension",
+      "SubCategory": "dagger",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/6/62/Item_Rust-Etched_Dagger.png/revision/latest?cb=20251102081541",
+      "tier": 1,
+      "rarity": 2
+    },
+    "obsidian_key": {
+      "game_id": 9130060002,
+      "label": "Obsidian Key",
+      "Category": "ascension",
+      "SubCategory": "dagger",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/5/53/Item_Obsidian_Key.png/revision/latest?cb=20251102081527",
+      "tier": 2,
+      "rarity": 3
+    },
+    "tome_of_the_noclunism_ritual": {
+      "game_id": 9130060003,
+      "label": "Tome of the Noclunism Ritual",
+      "Category": "ascension",
+      "SubCategory": "dagger",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/2/26/Item_Tome_of_the_Noclunism_Ritual.png/revision/latest?cb=20251102081605",
+      "tier": 3,
+      "rarity": 4
+    }
+  },
+  "weeklyBoss": {
+    "ring_of_chronal_reversion": {
+      "game_id": 9150010001,
+      "label": "Ring of Chronal Reversion",
+      "Category": "weeklyBoss",
+      "SubCategory": "ring",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/0/02/Item_Ring_of_Chronal_Reversion.png/revision/latest?cb=20251221052636",
+      "rarity": 4
+    },
+    "ring_of_escaped_entropy": {
+      "game_id": 9150010002,
+      "label": "Ring of Escaped Entropy",
+      "Category": "weeklyBoss",
+      "SubCategory": "ring",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/7/7f/Item_Ring_of_Escaped_Entropy.png/revision/latest?cb=20251221052611",
+      "rarity": 4
+    },
+    "ring_of_justice_rekindled": {
+      "game_id": 9150010003,
+      "label": "Ring of Justice Rekindled",
+      "Category": "weeklyBoss",
+      "SubCategory": "ring",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/b/bf/Item_Ring_of_Justice_Rekindled.png/revision/latest?cb=20251221052656",
+      "rarity": 4
+    },
+    "ring_of_severed_fear": {
+      "game_id": 9150010004,
+      "label": "Ring of Severed Fear",
+      "Category": "weeklyBoss",
+      "SubCategory": "ring",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/0/09/Item_Ring_of_Severed_Fear.png/revision/latest?cb=20251221042604",
+      "rarity": 4
+    }
+  },
+  "event": {
+    "twilight_tread": {
+      "game_id": 9145010001,
+      "label": "Twilight Tread",
+      "Category": "event",
+      "SubCategory": "twilight",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/0/05/Item_Twilight_Tread.png/revision/latest?cb=20251221035735",
+      "rarity": 5
+    }
+  },
+  "player_exp": {
+    "combat_melody_i": {
+      "game_id": 9160010001,
+      "label": "Combat Melody I",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/8/8a/Item_Combat_Melody_I.png/revision/latest?cb=20251229232746",
+      "tier": 1,
+      "value": 1,
+      "rarity": 2
+    },
+    "combat_melody_ii": {
+      "game_id": 9160010002,
+      "label": "Combat Melody II",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/6/60/Item_Combat_Melody_II.png/revision/latest?cb=20251223073117",
+      "tier": 2,
+      "value": 4,
+      "rarity": 3
+    },
+    "combat_melody_iii": {
+      "game_id": 9160010003,
+      "label": "Combat Melody III",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/e/e3/Item_Combat_Melody_III.png/revision/latest?cb=20251226194628",
+      "tier": 3,
+      "value": 16,
+      "rarity": 4
+    },
+    "combat_melody_iv": {
+      "game_id": 9160010004,
+      "label": "Combat Melody IV",
+      "Category": "player_exp",
+      "SubCategory": "player_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/f/fc/Item_Combat_Melody_IV.png/revision/latest?cb=20251229233525",
+      "tier": 4,
+      "value": 40,
+      "rarity": 5
+    }
+  },
+  "weapon_exp": {
+    "weapon_manual_i": {
+      "game_id": 9170010001,
+      "label": "Weapon Manual I",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/a/a9/Item_Weapon_Manual_I.png/revision/latest?cb=20251229234022",
+      "tier": 1,
+      "value": 1,
+      "rarity": 2
+    },
+    "weapon_manual_ii": {
+      "game_id": 9170010002,
+      "label": "Weapon Manual II",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/9/92/Item_Weapon_Manual_II.png/revision/latest?cb=20251223073043",
+      "tier": 2,
+      "value": 4,
+      "rarity": 3
+    },
+    "weapon_manual_iii": {
+      "game_id": 9170010003,
+      "label": "Weapon Manual III",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/4/44/Item_Weapon_Manual_III.png/revision/latest?cb=20251226194606",
+      "tier": 3,
+      "value": 16,
+      "rarity": 4
+    },
+    "weapon_manual_iv": {
+      "game_id": 9170010004,
+      "label": "Weapon Manual IV",
+      "Category": "weapon_exp",
+      "SubCategory": "weapon_exp",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/5/5c/Item_Weapon_Manual_IV.png/revision/latest?cb=20251229234430",
+      "tier": 4,
+      "value": 40,
+      "rarity": 5
+    }
+  },
+  "weapon_component": {
+    "basic_weapon_component_blade": {
+      "game_id": 9180010001,
+      "label": "Basic Weapon Component: Blade",
+      "Category": "weapon_component",
+      "SubCategory": "blade",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/c/c1/Item_Basic_Weapon_Component_Blade.png/revision/latest?cb=20251224141616",
+      "tier": 1,
+      "rarity": 2
+    },
+    "intermediate_weapon_component_blade": {
+      "game_id": 9180010002,
+      "label": "Intermediate Weapon Component: Blade",
+      "Category": "weapon_component",
+      "SubCategory": "blade",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/c/c1/Item_Basic_Weapon_Component_Blade.png/revision/latest?cb=20251224141616",
+      "tier": 2,
+      "rarity": 3
+    },
+    "advanced_weapon_component_blade": {
+      "game_id": 9180010003,
+      "label": "Advanced Weapon Component: Blade",
+      "Category": "weapon_component",
+      "SubCategory": "blade",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/c/c1/Item_Basic_Weapon_Component_Blade.png/revision/latest?cb=20251224141616",
+      "tier": 3,
+      "rarity": 4
+    },
+    "basic_weapon_component_decoration": {
+      "game_id": 9180020001,
+      "label": "Basic Weapon Component: Decoration",
+      "Category": "weapon_component",
+      "SubCategory": "decoration",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/5/5b/Item_Basic_Weapon_Component_Decoration.png/revision/latest?cb=20251224141734",
+      "tier": 1,
+      "rarity": 2
+    },
+    "intermediate_weapon_component_decoration": {
+      "game_id": 9180020002,
+      "label": "Intermediate Weapon Component: Decoration",
+      "Category": "weapon_component",
+      "SubCategory": "decoration",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/5/5b/Item_Basic_Weapon_Component_Decoration.png/revision/latest?cb=20251224141734",
+      "tier": 2,
+      "rarity": 3
+    },
+    "advanced_weapon_component_decoration": {
+      "game_id": 9180020003,
+      "label": "Advanced Weapon Component: Decoration",
+      "Category": "weapon_component",
+      "SubCategory": "decoration",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/5/5b/Item_Basic_Weapon_Component_Decoration.png/revision/latest?cb=20251224141734",
+      "tier": 3,
+      "rarity": 4
+    },
+    "basic_weapon_component_grip": {
+      "game_id": 9180030001,
+      "label": "Basic Weapon Component: Grip",
+      "Category": "weapon_component",
+      "SubCategory": "grip",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/2/21/Item_Basic_Weapon_Component_Grip.png/revision/latest?cb=20251224141125",
+      "tier": 1,
+      "rarity": 2
+    },
+    "intermediate_weapon_component_grip": {
+      "game_id": 9180030002,
+      "label": "Intermediate Weapon Component: Grip",
+      "Category": "weapon_component",
+      "SubCategory": "grip",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/2/21/Item_Basic_Weapon_Component_Grip.png/revision/latest?cb=20251224141125",
+      "tier": 2,
+      "rarity": 3
+    },
+    "advanced_weapon_component_grip": {
+      "game_id": 9180030003,
+      "label": "Advanced Weapon Component: Grip",
+      "Category": "weapon_component",
+      "SubCategory": "grip",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/2/21/Item_Basic_Weapon_Component_Grip.png/revision/latest?cb=20251224141125",
+      "tier": 3,
+      "rarity": 4
+    },
+    "basic_weapon_component_bolt": {
+      "game_id": 9180040001,
+      "label": "Basic Weapon Component: Bolt",
+      "Category": "weapon_component",
+      "SubCategory": "bolt",
+      "icon": "https://img.game8.co/4322539/e73e93697339bf6f420bdf33f54c4aed.png/show",
+      "tier": 1,
+      "rarity": 2
+    },
+    "intermediate_weapon_component_bolt": {
+      "game_id": 9180040002,
+      "label": "Intermediate Weapon Component: Bolt",
+      "Category": "weapon_component",
+      "SubCategory": "bolt",
+      "icon": "https://img.game8.co/4322529/556f742aa8c1f673f40725dc087d7962.png/show",
+      "tier": 2,
+      "rarity": 3
+    },
+    "advanced_weapon_component_bolt": {
+      "game_id": 9180040003,
+      "label": "Advanced Weapon Component: Bolt",
+      "Category": "weapon_component",
+      "SubCategory": "bolt",
+      "icon": "https://img.game8.co/4323261/7381314309736509bdfa760a0003b407.png/show",
+      "tier": 3,
+      "rarity": 4
+    },
+    "basic_weapon_component_frame": {
+      "game_id": 9180050001,
+      "label": "Basic Weapon Component: Frame",
+      "Category": "weapon_component",
+      "SubCategory": "frame",
+      "icon": "https://img.game8.co/4322527/d86c1788aff077e5bc1653076e43e27d.png/show",
+      "tier": 1,
+      "rarity": 2
+    },
+    "intermediate_weapon_component_frame": {
+      "game_id": 9180050002,
+      "label": "Intermediate Weapon Component: Frame",
+      "Category": "weapon_component",
+      "SubCategory": "frame",
+      "icon": "https://img.game8.co/4322528/97cf5a72d3442900d8cf1f66028ce525.png/show",
+      "tier": 2,
+      "rarity": 3
+    },
+    "advanced_weapon_component_frame": {
+      "game_id": 9180050003,
+      "label": "Advanced Weapon Component: Frame",
+      "Category": "weapon_component",
+      "SubCategory": "frame",
+      "icon": "https://img.game8.co/4323263/95591cd0dd9e83558818b1e68c30084f.png/show",
+      "tier": 3,
+      "rarity": 4
+    },
+    "basic_weapon_component_barrel": {
+      "game_id": 9180060001,
+      "label": "Basic Weapon Component: Barrel",
+      "Category": "weapon_component",
+      "SubCategory": "barrel",
+      "icon": "https://img.game8.co/4322538/9c4feb232c71a2b479752ee58060b61f.png/show",
+      "tier": 1,
+      "rarity": 2
+    },
+    "intermediate_weapon_component_barrel": {
+      "game_id": 9180060002,
+      "label": "Intermediate Weapon Component: Barrel",
+      "Category": "weapon_component",
+      "SubCategory": "barrel",
+      "icon": "https://img.game8.co/4322530/47a312f1fe3c4ea59eb98f9736045a50.png/show",
+      "tier": 2,
+      "rarity": 3
+    },
+    "advanced_weapon_component_barrel": {
+      "game_id": 9180060003,
+      "label": "Advanced Weapon Component: Barrel",
+      "Category": "weapon_component",
+      "SubCategory": "barrel",
+      "icon": "https://img.game8.co/4323260/0ba0b6cf5603ab90e2e45b17a9d24933.png/show",
+      "tier": 3,
+      "rarity": 4
+    }
+  },
+  "talent": {
+    "herbal_sprig": {
+      "game_id": 9190010001,
+      "label": "Herbal Sprig",
+      "Category": "talent",
+      "SubCategory": "herbal",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/2/2a/Item_Herbal_Sprig.png/revision/latest?cb=20251229015653",
+      "tier": 1,
+      "rarity": 2
+    },
+    "processed_herb": {
+      "game_id": 9190010002,
+      "label": "Processed Herb",
+      "Category": "talent",
+      "SubCategory": "herbal",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/c/ce/Item_Processed_Herb.png/revision/latest?cb=20251229015711",
+      "tier": 2,
+      "rarity": 3
+    },
+    "compound_potion": {
+      "game_id": 9190010003,
+      "label": "Compound Potion",
+      "Category": "talent",
+      "SubCategory": "herbal",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/d/da/Item_Compound_Potion.png/revision/latest?cb=20251229015727",
+      "tier": 3
+    },
+    "iron_emblem": {
+      "game_id": 9190020001,
+      "label": "Iron Emblem",
+      "Category": "talent",
+      "SubCategory": "emblem",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/a/a3/Item_Iron_Emblem.png/revision/latest?cb=20251229014043",
+      "tier": 1,
+      "rarity": 2
+    },
+    "silver_emblem": {
+      "game_id": 9190020002,
+      "label": "Silver Emblem",
+      "Category": "talent",
+      "SubCategory": "emblem",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/4/4e/Item_Silver_Emblem.png/revision/latest?cb=20251229014102",
+      "tier": 2,
+      "rarity": 3
+    },
+    "gilded_emblem": {
+      "game_id": 9190020003,
+      "label": "Gilded Emblem",
+      "Category": "talent",
+      "SubCategory": "emblem",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/b/bb/Item_Gilded_Emblem.png/revision/latest?cb=20251228235334",
+      "tier": 3
+    },
+    "veil_of_silence": {
+      "game_id": 9190030001,
+      "label": "Veil of Silence",
+      "Category": "talent",
+      "SubCategory": "veil",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/7/78/Item_Veil_of_Silence.png/revision/latest?cb=20251229015830",
+      "tier": 1,
+      "rarity": 2
+    },
+    "eye_of_infinity": {
+      "game_id": 9190030002,
+      "label": "Eye of Infinity",
+      "Category": "talent",
+      "SubCategory": "veil",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/c/cf/Item_Eye_of_Infinity.png/revision/latest?cb=20251229015848",
+      "tier": 2,
+      "rarity": 3
+    },
+    "crown_of_enlightenment": {
+      "game_id": 9190030003,
+      "label": "Crown of Enlightenment",
+      "Category": "talent",
+      "SubCategory": "veil",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/4/42/Item_Crown_of_Enlightenment.png/revision/latest?cb=20251229015917",
+      "tier": 3
+    },
+    "gleaming_arrow": {
+      "game_id": 9190040001,
+      "label": "Gleaming Arrow",
+      "Category": "talent",
+      "SubCategory": "gleaming",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/5/5e/Item_Gleaming_Arrow.png/revision/latest?cb=20251229015354",
+      "tier": 1,
+      "rarity": 2
+    },
+    "gleaming_precision_scope": {
+      "game_id": 9190040002,
+      "label": "Gleaming Precision Scope",
+      "Category": "talent",
+      "SubCategory": "gleaming",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/d/db/Item_Gleaming_Precision_Scope.png/revision/latest?cb=20251229015410",
+      "tier": 2,
+      "rarity": 3
+    },
+    "gleaming_quiver": {
+      "game_id": 9190040003,
+      "label": "Gleaming Quiver",
+      "Category": "talent",
+      "SubCategory": "gleaming",
+      "icon": "https://static.wikia.nocookie.net/duetnightabyss/images/7/7e/Item_Gleaming_Quiver.png/revision/latest?cb=20251229015427",
+      "tier": 3
+    }
+  }
+}

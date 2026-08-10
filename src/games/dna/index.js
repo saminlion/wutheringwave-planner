@@ -1,7 +1,7 @@
 /**
- * NTE (Neverness To Everness) Game Plugin Entry Point
+ * Duet Night Abyss Game Plugin Entry Point
  */
-import config, { nteConfig } from './config.js';
+import config from './config.js';
 import {
   characters,
   weapons,
@@ -24,10 +24,10 @@ const dataCache = {
   tiers: tieredMaterials,
 };
 
-const ntePlugin = {
-  id: 'nte',
-  name: 'Neverness To Everness',
-  displayName: 'NTE',
+const dnaPlugin = {
+  id: 'dna',
+  name: 'Duet Night Abyss',
+  displayName: 'DNA',
   version: '1.0.0',
 
   config,
@@ -45,6 +45,7 @@ const ntePlugin = {
     synthesis: {
       ratio: 3,
       tierLevels: 3,
+      supportsDecomposition: false,
     },
   },
   costs,
@@ -64,14 +65,4 @@ const ntePlugin = {
   },
 };
 
-export default ntePlugin;
-export {
-  config,
-  nteConfig,
-  characters,
-  weapons,
-  materials,
-  costs,
-  tieredMaterials,
-  tieredMaterialsByGameId,
-};
+export default dnaPlugin;

@@ -83,6 +83,7 @@ const GAMES = {
       characters: 'Characters',
       materials: 'Materials',
       weapons: 'Weapons',
+      events: 'Events',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -99,6 +100,7 @@ const GAMES = {
       characters: 'Characters',
       materials: 'Materials',
       weapons: 'Weapons',
+      events: 'Events',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -115,6 +117,7 @@ const GAMES = {
       characters: 'Characters',
       materials: 'Materials',
       weapons: 'Weapons',
+      events: 'Events',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -132,6 +135,25 @@ const GAMES = {
       materials: 'Materials',
       weapons: 'Weapons',
       farmingRates: 'FarmingRates',
+      events: 'Events',
+    },
+    i18nTabs: {
+      characters: 'Characters_i18n',
+      materials: 'Materials_i18n',
+      weapons: 'Weapons_i18n',
+      ui: 'UI_i18n',
+    },
+  },
+  dna: {
+    sheetId: extractSheetId(process.env.SHEET_ID_DNA),
+    dataPath: 'src/games/dna/data',
+    localePath: 'src/games/dna/locales',
+    tabs: {
+      characters: 'Characters',
+      materials: 'Materials',
+      weapons: 'Weapons',
+      farmingRates: 'FarmingRates',
+      events: 'Events',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -149,6 +171,7 @@ const GAMES = {
       materials: 'Materials',
       weapons: 'Weapons',
       farmingRates: 'FarmingRates',
+      events: 'Events',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -314,6 +337,10 @@ function transformCharacters(rows) {
     if (row.weapon_type) {
       character.weapon_type = row.weapon_type;
     }
+    // DNA: characters equip a melee AND a ranged weapon simultaneously
+    if (row.weapon_type_ranged) {
+      character.weapon_type_ranged = row.weapon_type_ranged;
+    }
 
     // icon
     if (row.icon) {
@@ -359,10 +386,13 @@ function transformCharacters(rows) {
     if (row.boss != null && row.boss !== '') {
       character.boss = parseNumberOrString(row.boss);
     }
-    const weeklyBossVal = row.weeklyBoss ?? row.weeklyboss;
+    const weeklyBossVal = row.weeklyBoss ?? row.weeklyboss ?? row.weekly_boss;
     if (weeklyBossVal != null && weeklyBossVal !== '') {
       character.weeklyBoss = parseNumberOrString(weeklyBossVal);
     }
+
+    // DNA: per-character talent/passive unlock material SubCategory
+    if (row.talent) character.talent = row.talent;
 
     // GFL2 specific fields
     if (row.forgery_stock_boost_bar) {
@@ -430,6 +460,15 @@ function transformCharacters(rows) {
  * Sheet columns: Category, CategoryCode, SubCategory, SubCatCode, Seq,
  *                game_id, key, label, tier, value, icon
  */
+// Category spellings that differ between sheets. The canonical form is what
+// FarmingRates and UI_i18n already use, so aliasing here keeps all three in sync.
+const CATEGORY_ALIASES = {
+  weekly_boss: 'weeklyBoss',
+  weeklyboss: 'weeklyBoss',
+  player_experience: 'player_exp',
+  weapon_experience: 'weapon_exp',
+};
+
 function transformMaterials(rows) {
   const result = {};
 
@@ -437,7 +476,7 @@ function transformMaterials(rows) {
     if (!row.game_id) continue;
 
     // Use Category (text) for category key
-    const category = row.Category;
+    const category = CATEGORY_ALIASES[row.Category] ?? row.Category;
     if (!category) continue;
 
     const key = row.key || String(row.label || row.game_id).toLowerCase().replace(/\s+/g, '_');
@@ -532,6 +571,10 @@ function transformWeapons(rows) {
     // WutheringWaves specific
     if (row.common) weapon.common = row.common;
     if (row.forgery) weapon.forgery = row.forgery;
+
+    // DNA: ascension needs two distinct weapon_component SubCategories
+    if (row.component_a) weapon.component_a = row.component_a;
+    if (row.component_b) weapon.component_b = row.component_b;
 
     result[key] = weapon;
   }
@@ -666,6 +709,68 @@ function transformI18n(rows, lang) {
 }
 
 /**
+ * Transform event rows into the timeline event array.
+ *
+ * Sheet columns (header names are case-insensitive):
+ *   id          - stable key; auto-generated from name+startDate when blank
+ *   name        - required
+ *   description - optional blurb shown on cards
+ *   category    - "banner" or "event" (defaults to "event")
+ *   cover       - full image URL; blank falls back to a color tile in the UI
+ *   color       - hex accent color (defaults to #667eea)
+ *   sourceUrl   - link to the official announcement
+ *   startDate   - "YYYY-MM-DD HH:mm" in the event's own timezone (required)
+ *   endDate     - same format (required)
+ *   utcOffset   - hours; defaults to 8 (server time for most gacha games)
+ *
+ * Unlike the other transforms this returns an array — event order is
+ * chronological, not keyed by id.
+ */
+function transformEvents(rows) {
+  const result = [];
+
+  for (const row of rows) {
+    // Normalize headers so "Name"/"name"/"NAME" all work.
+    const get = (key) => {
+      const match = Object.keys(row).find((h) => h.trim().toLowerCase() === key);
+      const value = match ? row[match] : null;
+      return value === null || value === undefined ? '' : String(value).trim();
+    };
+
+    const name = get('name');
+    const startDate = get('startdate');
+    const endDate = get('enddate');
+
+    if (!name || !startDate || !endDate) {
+      if (name || startDate || endDate) {
+        console.log(`    Skipping event row (missing name/startDate/endDate): ${name || '(unnamed)'}`);
+      }
+      continue;
+    }
+
+    const category = get('category').toLowerCase() === 'banner' ? 'banner' : 'event';
+    const utcOffsetRaw = get('utcoffset');
+    const utcOffset = utcOffsetRaw === '' ? 8 : Number(utcOffsetRaw);
+
+    result.push({
+      id: get('id') || `${name}__${startDate}`.replace(/\s+/g, '-').toLowerCase(),
+      name,
+      description: get('description'),
+      category,
+      cover: get('cover'),
+      color: get('color') || '#667eea',
+      sourceUrl: get('sourceurl'),
+      startDate,
+      endDate,
+      utcOffset: Number.isFinite(utcOffset) ? utcOffset : 8,
+    });
+  }
+
+  result.sort((a, b) => a.startDate.localeCompare(b.startDate));
+  return result;
+}
+
+/**
  * Parse a value as number if it looks like one, otherwise keep as string
  */
 function parseNumberOrString(value) {
@@ -728,6 +833,9 @@ async function syncGame(gameId, config) {
             break;
           case 'farmingRates':
             transformed = transformFarmingRates(rows);
+            break;
+          case 'events':
+            transformed = transformEvents(rows);
             break;
           default:
             console.log(`    Unknown data type: ${dataType}`);

@@ -9,7 +9,8 @@
       <LanguageSelector />
     </section>
 
-    <section class="settings-section">
+    <!-- Games with no stamina resource (config.stamina = null) have nothing to set -->
+    <section class="settings-section" v-if="hasStamina">
       <StaminaSetting />
     </section>
 
@@ -28,9 +29,13 @@ import DataBackup from '@/components/common/DataBackup.vue';
 import CloudSync from '@/components/settings/CloudSync.vue';
 import LanguageSelector from '@/components/settings/LanguageSelector.vue';
 import StaminaSetting from '@/components/settings/StaminaSetting.vue';
+import { computed } from 'vue';
+import { useGameStore } from '@/store/game';
 import { useLocale } from '@/composables/useLocale';
 
 const { tUI } = useLocale();
+const gameStore = useGameStore();
+const hasStamina = computed(() => Boolean(gameStore.currentGame?.config?.stamina));
 </script>
 
 <style scoped>

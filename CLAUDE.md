@@ -582,6 +582,68 @@ const isTieredLineup = tiers.length > 1 && uniqueTiers.size > 1;
 
 ---
 
+## Event Timeline System
+
+Displays game events (banners, limited-time events) on `/timeline`, with an "ongoing events" summary on `/`.
+
+### Where the data comes from
+
+**There is no public API for game event schedules.** Reference sites do the same thing we do:
+- **wuwatracker.com** — Next.js SSG; the event array is baked into the prerendered HTML
+- **seelie.me** — Vite SPA; events are hardcoded as object literals in the JS bundle
+
+Both are hand-curated from official announcements. Kuro Games' news site is an SPA shell with no
+scrapable HTML and a useless `og:image`, so automation is not viable.
+
+**Our approach:** events are entered in the `Events` tab of each game's Google Sheet and synced by
+`scripts/sync-sheets.js` → `src/games/{gameid}/data/events.json`. No code changes per patch —
+just add sheet rows and run the sync.
+
+### Sheet columns (`Events` tab)
+
+Headers are case-insensitive. Rows missing `name`, `startDate`, or `endDate` are skipped.
+
+| Column | Required | Notes |
+|--------|----------|-------|
+| `id` | No | Stable key; auto-generated from name+startDate when blank |
+| `name` | **Yes** | Display name |
+| `description` | No | Blurb on cards (hidden in compact mode) |
+| `category` | No | `banner` or `event` (default). Drives track separation in the gantt |
+| `cover` | No | Full image URL. **Blank or broken → automatic color-tile fallback** |
+| `color` | No | Hex accent color (default `#667eea`) |
+| `sourceUrl` | No | Official announcement link; card becomes clickable when set |
+| `startDate` | **Yes** | `YYYY-MM-DD HH:mm` in the event's own timezone |
+| `endDate` | **Yes** | Same format |
+| `utcOffset` | No | Hours; defaults to `8` (server time for most gacha games) |
+
+Dates are wall-clock in `utcOffset`, so `2026-08-12 04:00` with `utcOffset: 8` is the same instant
+for every viewer regardless of their local timezone.
+
+### Files
+
+```
+src/composables/useEvents.js            # Parsing, live status/progress, lane packing
+src/components/timeline/EventCover.vue  # Image with color-tile fallback
+src/components/timeline/EventList.vue   # Card list (seelie-style)
+src/components/timeline/EventGantt.vue  # Gantt chart (wuwatracker-style)
+src/views/TimelineView.vue              # /timeline route, tab toggle
+```
+
+`useEvents()` returns decorated events (`status`, `progress`, `daysLeft`, `daysUntil`,
+`durationDays`) plus `ongoing` / `upcoming` / `ended` / `endingSoon` / `hasEvents`. It ticks every
+60s so badges and progress bars stay live without a reload.
+
+### Adding events for a new game
+
+1. Create `src/games/{gameid}/data/events.json` containing `[]`
+2. Export it from `data/index.js` and add `events` to the plugin's `dataCache`
+3. Add an `Events` tab to the game's Google Sheet (`events: 'Events'` is already registered in
+   `sync-sheets.js` for all games)
+
+An empty array renders the empty-state hint — nothing breaks.
+
+---
+
 ## Utilities
 
 **logger.js** - Environment-aware logging

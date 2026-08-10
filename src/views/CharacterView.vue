@@ -101,10 +101,21 @@ watch(() => gameStore.currentGameId, () => {
   filters.value = { element: 'all', weapon: 'all', rarity: 'all' };
 });
 
+/**
+ * A character matches a weapon-type filter if ANY of its slots matches.
+ * Most games expose one slot (`weapon` or `weapon_type`); DNA characters equip a
+ * melee and a ranged weapon at once, and a few can equip every type ('all').
+ */
+const matchesWeaponFilter = (character, selected) => {
+  if (selected === 'all') return true;
+  const slots = [character.weapon, character.weapon_type, character.weapon_type_ranged];
+  return slots.some(slot => slot === selected || slot === 'all');
+};
+
 const filteredCharacters = computed(() => {
   return characters.value.filter(character => {
     const elementMatch = filters.value.element === 'all' || character.element === filters.value.element;
-    const weaponMatch = filters.value.weapon === 'all' || character.weapon === filters.value.weapon;
+    const weaponMatch = matchesWeaponFilter(character, filters.value.weapon);
     const rarityMatch = filters.value.rarity === 'all' || character.rarity === parseInt(filters.value.rarity);
     return elementMatch && weaponMatch && rarityMatch;
   });

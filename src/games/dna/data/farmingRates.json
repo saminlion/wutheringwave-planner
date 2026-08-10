@@ -1,0 +1,38 @@
+{
+  "credit": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "common": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "forgery": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "ascension": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "boss": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "weeklyBoss": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "player_exp": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "weapon_exp": {
+    "drops": 0,
+    "stamina": 0
+  },
+  "weapon_component": {
+    "drops": 0,
+    "stamina": 0
+  }
+}

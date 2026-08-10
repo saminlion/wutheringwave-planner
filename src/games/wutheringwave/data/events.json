@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ww-3-5-reverb-weapon-convene",
+    "name": "Tideforge Reverbs - Reverb Weapon Convene",
+    "description": "Pick one of the featured 5-star weapons as your Convene target. The target can be changed at any time during the event.",
+    "category": "banner",
+    "cover": "",
+    "color": "#BDAE92",
+    "sourceUrl": "https://wutheringwaves.kurogames.com/en/main/news/",
+    "startDate": "2026-07-10 10:00",
+    "endDate": "2026-08-19 11:59",
+    "utcOffset": 8
+  },
+  {
+    "id": "ww-3-5-whimpering-wastes",
+    "name": "Whimpering Wastes",
+    "description": "Build distinct lineups and equip Tokens to clear escalating challenge stages.",
+    "category": "event",
+    "cover": "",
+    "color": "#313042",
+    "sourceUrl": "https://wutheringwaves.kurogames.com/en/main/news/",
+    "startDate": "2026-08-03 04:00",
+    "endDate": "2026-08-31 03:59",
+    "utcOffset": 8
+  },
+  {
+    "id": "ww-3-5-lollo-campaign",
+    "name": "Lollo Campaign: New Journey",
+    "description": "Clear Lollo Campaigns to collect Lollo Stamps and exchange them for special deliveries.",
+    "category": "event",
+    "cover": "",
+    "color": "#71473E",
+    "sourceUrl": "https://wutheringwaves.kurogames.com/en/main/news/",
+    "startDate": "2026-08-06 04:00",
+    "endDate": "2026-08-19 03:59",
+    "utcOffset": 8
+  },
+  {
+    "id": "ww-3-5-chord-cleansing-double-drop",
+    "name": "Chord Cleansing: Echo Double Drop",
+    "description": "Tacet Suppression clears grant double rewards for Waveplates spent during the event window.",
+    "category": "event",
+    "cover": "",
+    "color": "#3C3222",
+    "sourceUrl": "https://wutheringwaves.kurogames.com/en/main/news/",
+    "startDate": "2026-08-12 04:00",
+    "endDate": "2026-08-19 03:59",
+    "utcOffset": 8
+  },
+  {
+    "id": "ww-3-5-tower-of-adversity",
+    "name": "Tower of Adversity: Hazard Revisited",
+    "description": "Rotating endgame tower. Clear hazard floors for Astrite before the cycle resets.",
+    "category": "event",
+    "cover": "",
+    "color": "#18235F",
+    "sourceUrl": "https://wutheringwaves.kurogames.com/en/main/news/",
+    "startDate": "2026-08-17 04:00",
+    "endDate": "2026-09-14 03:59",
+    "utcOffset": 8
+  }
+]

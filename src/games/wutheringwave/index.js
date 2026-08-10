@@ -4,6 +4,7 @@ import {
   weapons as weaponData,
   materials as inventoryMaterials,
   costs as costData,
+  events as eventData,
   tieredMaterials,
   tieredMaterialsByGameId,
   player_exp_material as playerExpMaterial,
@@ -20,6 +21,7 @@ const dataCache = {
   weapons: weaponData,
   materials: inventoryMaterials,
   costs: costData,
+  events: eventData,
   tiers: tieredMaterials,
 };
 
@@ -56,6 +58,7 @@ export {
   weaponData,
   inventoryMaterials,
   costData,
+  eventData,
   tieredMaterials,
   tieredMaterialsByGameId,
   playerExpMaterial,

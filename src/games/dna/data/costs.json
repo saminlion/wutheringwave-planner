@@ -1,0 +1,52 @@
+{
+  "character": {
+    "level": {
+      "20": { "player_exp": 57, "credit": 5700 },
+      "20A": { "common": [10, 1], "ascension": [5, 1], "credit": 5200 },
+      "30": { "player_exp": 91, "credit": 9100 },
+      "30A": { "common": [5, 2], "ascension": [7, 2], "credit": 10400 },
+      "40": { "player_exp": 111, "credit": 11100 },
+      "40A": { "common": [10, 2], "ascension": [15, 2], "credit": 16300 },
+      "50": { "player_exp": 230, "credit": 23000 },
+      "50A": { "common": [20, 2], "ascension": [6, 3], "credit": 34700 },
+      "60": { "player_exp": 465, "credit": 46500 },
+      "60A": { "common": [40, 2], "ascension": [12, 3], "credit": 81600 },
+      "70": { "player_exp": 738, "credit": 73800 },
+      "70A": { "common": [80, 2], "ascension": [25, 3], "credit": 243000 }
+    },
+    "skill": {
+      "2": { "common": [[3, 1], [1, 2]], "credit": 1400 },
+      "3": { "common": [[6, 1], [2, 2]], "credit": 2600 },
+      "4": { "common": [[9, 1], [3, 2]], "forgery_luno": 4, "credit": 3200 },
+      "5": { "common": [[15, 1], [5, 2]], "forgery_luno": 6, "credit": 7300 },
+      "6": { "common": [[30, 1], [10, 2]], "forgery_luno": 8, "credit": 9000 },
+      "7": { "forgery_luno": 10, "forgery": [6, 1], "weeklyBoss": 1, "credit": 30000 },
+      "8": { "forgery_luno": 10, "forgery": [8, 1], "weeklyBoss": 1, "credit": 47000 },
+      "9": { "forgery_luno": 150, "weeklyBoss": 2, "event": 1, "credit": 90000 },
+      "10": { "forgery_luno": 300, "weeklyBoss": 2, "event": 1, "credit": 170000 }
+    },
+    "passive": {
+      "passive_1": { "talent": [3, 1], "weeklyBoss": 1, "credit": 10000 },
+      "passive_2": { "talent": [3, 2], "credit": 20000 },
+      "passive_3": { "talent": [3, 2], "credit": 20000 },
+      "passive_4": { "talent": [5, 2], "weeklyBoss": 1, "credit": 40000 },
+      "passive_5": { "talent": [5, 3], "weeklyBoss": 1, "event": 1, "credit": 80000 },
+      "passive_6": { "talent": [5, 3], "weeklyBoss": 2, "event": 1, "credit": 160000 }
+    }
+  },
+  "weapon": {
+    "level_5": {
+      "20": { "weapon_exp": 33, "credit": 3300 },
+      "20A": { "common": [6, 1], "weapon_component_a": [2, 1], "credit": 2800 },
+      "30": { "weapon_exp": 55, "credit": 5500 },
+      "30A": { "common": [3, 2], "weapon_component_a": [4, 1], "weapon_component_b": [2, 1], "credit": 6100 },
+      "40": { "weapon_exp": 80, "credit": 8000 },
+      "40A": { "common": [6, 2], "weapon_component_a": [3, 2], "weapon_component_b": [1, 2], "credit": 6900 },
+      "50": { "weapon_exp": 137, "credit": 13700 },
+      "50A": { "common": [12, 2], "weapon_component_a": [6, 3], "weapon_component_b": [2, 3], "credit": 17000 },
+      "60": { "weapon_exp": 203, "credit": 20300 },
+      "60A": { "common": [24, 2], "weapon_component_a": [10, 3], "weapon_component_b": [4, 3], "credit": 49000 },
+      "70A": { "common": [48, 2], "weapon_component_a": [20, 3], "weapon_component_b": [8, 3], "credit": 180000 }
+    }
+  }
+}

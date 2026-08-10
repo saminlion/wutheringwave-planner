@@ -15,6 +15,7 @@
       <nav>
         <router-link to="/">{{ tUI('nav.home') }}</router-link>
         <router-link to="/planner">{{ tUI('nav.planner') }}</router-link>
+        <router-link to="/timeline">{{ tUI('nav.timeline') }}</router-link>
         <router-link to="/inventory">{{ tUI('nav.inventory') }}</router-link>
         <router-link to="/character">{{ tUI('nav.character') }}</router-link>
         <router-link to="/weapon">{{ tUI('nav.weapon') }}</router-link>

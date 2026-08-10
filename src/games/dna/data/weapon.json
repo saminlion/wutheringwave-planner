@@ -1,0 +1,461 @@
+{
+  "aureate_yore": {
+    "game_id": 9305010001,
+    "display_name": "Aureate Yore",
+    "rarity": 5,
+    "type": "dual_blades",
+    "common": "teardrop",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "exiled_fangs": {
+    "game_id": 9305010002,
+    "display_name": "Exiled Fangs",
+    "rarity": 5,
+    "type": "dual_blades",
+    "common": "teardrop",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "fathomless_sharkgaze": {
+    "game_id": 9305010003,
+    "display_name": "Fathomless Sharkgaze",
+    "rarity": 5,
+    "type": "dual_blades",
+    "common": "teardrop",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "skyfall_duality": {
+    "game_id": 9305010004,
+    "display_name": "Skyfall Duality",
+    "rarity": 5,
+    "type": "dual_blades",
+    "common": "teardrop",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "eternal_farewell": {
+    "game_id": 9305020005,
+    "display_name": "Eternal Farewell",
+    "rarity": 5,
+    "type": "greatsword",
+    "common": "filthoid",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "ironforger": {
+    "game_id": 9305020006,
+    "display_name": "Ironforger",
+    "rarity": 5,
+    "type": "greatsword",
+    "common": "filthoid",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "punitive_inferno": {
+    "game_id": 9305020007,
+    "display_name": "Punitive Inferno",
+    "rarity": 5,
+    "type": "greatsword",
+    "common": "filthoid",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "pyrothirst": {
+    "game_id": 9305020008,
+    "display_name": "Pyrothirst",
+    "rarity": 5,
+    "type": "greatsword",
+    "common": "filthoid",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "momiji_itteki": {
+    "game_id": 9305030009,
+    "display_name": "Momiji Itteki",
+    "rarity": 5,
+    "type": "katana",
+    "common": "teardrop",
+    "component_a": "grip",
+    "component_b": "decoration"
+  },
+  "sacred_favour": {
+    "game_id": 9305030010,
+    "display_name": "Sacred Favour",
+    "rarity": 5,
+    "type": "katana",
+    "common": "teardrop",
+    "component_a": "grip",
+    "component_b": "decoration"
+  },
+  "withershade": {
+    "game_id": 9305030011,
+    "display_name": "Withershade",
+    "rarity": 5,
+    "type": "katana",
+    "common": "teardrop",
+    "component_a": "grip",
+    "component_b": "decoration"
+  },
+  "dove_of_tomorrow": {
+    "game_id": 9305040012,
+    "display_name": "Dove of Tomorrow",
+    "rarity": 5,
+    "type": "polearm",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "elpides_abound": {
+    "game_id": 9305040013,
+    "display_name": "Elpides Abound",
+    "rarity": 5,
+    "type": "polearm",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "venial_sinscales": {
+    "game_id": 9305040014,
+    "display_name": "Venial Sinscales",
+    "rarity": 5,
+    "type": "polearm",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "vernal_jade_halberd": {
+    "game_id": 9305040015,
+    "display_name": "Vernal Jade Halberd",
+    "rarity": 5,
+    "type": "polearm",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "wanewraith": {
+    "game_id": 9305040016,
+    "display_name": "Wanewraith",
+    "rarity": 5,
+    "type": "polearm",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "blade_amberglow": {
+    "game_id": 9305050017,
+    "display_name": "Blade Amberglow",
+    "rarity": 5,
+    "type": "sword",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "ingenious_tactics": {
+    "game_id": 9305050018,
+    "display_name": "Ingenious Tactics",
+    "rarity": 5,
+    "type": "sword",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "remanent_reminiscence": {
+    "game_id": 9305050019,
+    "display_name": "Remanent Reminiscence",
+    "rarity": 5,
+    "type": "sword",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "shackle_of_lonewolf": {
+    "game_id": 9305050020,
+    "display_name": "Shackle of Lonewolf",
+    "rarity": 5,
+    "type": "sword",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "wandering_rose": {
+    "game_id": 9305050021,
+    "display_name": "Wandering Rose",
+    "rarity": 5,
+    "type": "sword",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "halcyon_gracefall": {
+    "game_id": 9305060022,
+    "display_name": "Halcyon Gracefall",
+    "rarity": 5,
+    "type": "whipblade",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "tetherlash": {
+    "game_id": 9305060023,
+    "display_name": "Tetherlash",
+    "rarity": 5,
+    "type": "whipblade",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "undying_oneiros": {
+    "game_id": 9305060024,
+    "display_name": "Undying Oneiros",
+    "rarity": 5,
+    "type": "whipblade",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "virdis_reefs": {
+    "game_id": 9305060025,
+    "display_name": "Virdis Reefs",
+    "rarity": 5,
+    "type": "whipblade",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "cloudveil_unfurl": {
+    "game_id": 9305070026,
+    "display_name": "Cloudveil Unfurl",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "daybreak_hymn": {
+    "game_id": 9305070027,
+    "display_name": "Daybreak Hymn",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "ephemeral_lumina": {
+    "game_id": 9305070028,
+    "display_name": "Ephemeral Lumina",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "exiled_thunderwyrm": {
+    "game_id": 9305070029,
+    "display_name": "Exiled Thunderwyrm",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "flamme_de_epuration": {
+    "game_id": 9305070030,
+    "display_name": "Flamme De Epuration",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "osteobreaker": {
+    "game_id": 9305070031,
+    "display_name": "Osteobreaker",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "submerged_serenade": {
+    "game_id": 9305070032,
+    "display_name": "Submerged Serenade",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "trigon_muse": {
+    "game_id": 9305070033,
+    "display_name": "Trigon Muse",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "arclight_apocalypses": {
+    "game_id": 9305080034,
+    "display_name": "Arclight Apocalypses",
+    "rarity": 5,
+    "type": "bow",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "barrel"
+  },
+  "embla_inflorescence": {
+    "game_id": 9305080035,
+    "display_name": "Embla Inflorescence",
+    "rarity": 5,
+    "type": "bow",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "barrel"
+  },
+  "searing_sandwhisper": {
+    "game_id": 9305080036,
+    "display_name": "Searing Sandwhisper",
+    "rarity": 5,
+    "type": "bow",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "barrel"
+  },
+  "soulrend": {
+    "game_id": 9305080037,
+    "display_name": "Soulrend",
+    "rarity": 5,
+    "type": "bow",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "barrel"
+  },
+  "bluecurrent_pulse": {
+    "game_id": 9305090038,
+    "display_name": "Bluecurrent Pulse",
+    "rarity": 5,
+    "type": "dual_pistols",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "excresduo": {
+    "game_id": 9305090039,
+    "display_name": "Excresduo",
+    "rarity": 5,
+    "type": "dual_pistols",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "sacrosanct_chorus": {
+    "game_id": 9305090040,
+    "display_name": "Sacrosanct Chorus",
+    "rarity": 5,
+    "type": "dual_pistols",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "destructo": {
+    "game_id": 9305100041,
+    "display_name": "Destructo",
+    "rarity": 5,
+    "type": "grenade_launcher",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "bolt"
+  },
+  "guixu_ratchet": {
+    "game_id": 9305100042,
+    "display_name": "Guixu Ratchet",
+    "rarity": 5,
+    "type": "grenade_launcher",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "bolt"
+  },
+  "silverwhite_edict": {
+    "game_id": 9305100043,
+    "display_name": "Silverwhite Edict",
+    "rarity": 5,
+    "type": "grenade_launcher",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "bolt"
+  },
+  "stellar_finality": {
+    "game_id": 9305100044,
+    "display_name": "Stellar Finality",
+    "rarity": 5,
+    "type": "grenade_launcher",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "bolt"
+  },
+  "entropic_singularity": {
+    "game_id": 9305110045,
+    "display_name": "Entropic Singularity",
+    "rarity": 5,
+    "type": "pistol",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "rendhusk": {
+    "game_id": 9305110046,
+    "display_name": "Rendhusk",
+    "rarity": 5,
+    "type": "pistol",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "sacrosanct_decree": {
+    "game_id": 9305110047,
+    "display_name": "Sacrosanct Decree",
+    "rarity": 5,
+    "type": "pistol",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "blast_artistry": {
+    "game_id": 9305120048,
+    "display_name": "Blast Artistry",
+    "rarity": 5,
+    "type": "shotgun",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "day_of_sacred_verdict": {
+    "game_id": 9305120049,
+    "display_name": "Day of Sacred Verdict",
+    "rarity": 5,
+    "type": "shotgun",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "screamshot": {
+    "game_id": 9305120050,
+    "display_name": "Screamshot",
+    "rarity": 5,
+    "type": "shotgun",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "silent_sower": {
+    "game_id": 9305120051,
+    "display_name": "Silent Sower",
+    "rarity": 5,
+    "type": "shotgun",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  }
+}

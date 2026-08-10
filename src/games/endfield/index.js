@@ -7,6 +7,7 @@ import {
   weapons,
   materials,
   costs,
+  events,
   synthesisRecipes,
   tieredMaterials,
   tieredMaterialsByGameId,
@@ -24,6 +25,7 @@ const dataCache = {
   weapons,
   materials,
   costs,
+  events,
   tiers: tieredMaterials,
 };
 
