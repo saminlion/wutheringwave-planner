@@ -331,18 +331,20 @@ function transformCharacters(rows) {
       character.special = parseNumberOrString(row.special_id);
     }
 
-    // Endfield per-skill mastery material IDs
-    if (row.mastery_basic_attack_id != null && row.mastery_basic_attack_id !== '') {
-      character.mastery_basic_attack = parseNumberOrString(row.mastery_basic_attack_id);
-    }
-    if (row.mastery_battle_skill_id != null && row.mastery_battle_skill_id !== '') {
-      character.mastery_battle_skill = parseNumberOrString(row.mastery_battle_skill_id);
-    }
-    if (row.mastery_combo_skill_id != null && row.mastery_combo_skill_id !== '') {
-      character.mastery_combo_skill = parseNumberOrString(row.mastery_combo_skill_id);
-    }
-    if (row.mastery_ultimate_id != null && row.mastery_ultimate_id !== '') {
-      character.mastery_ultimate = parseNumberOrString(row.mastery_ultimate_id);
+    // Endfield per-skill mastery material IDs.
+    // The sheet has drifted on column naming (e.g. the Battle Skill column is
+    // headed `mastery_battle_attack_id`), so each skill accepts several aliases.
+    const MASTERY_COLUMNS = {
+      mastery_basic_attack: ['mastery_basic_attack_id', 'mastery_basic_skill_id'],
+      mastery_battle_skill: ['mastery_battle_skill_id', 'mastery_battle_attack_id'],
+      mastery_combo_skill: ['mastery_combo_skill_id', 'mastery_combo_attack_id'],
+      mastery_ultimate: ['mastery_ultimate_id', 'mastery_ultimate_skill_id'],
+    };
+    for (const [field, columns] of Object.entries(MASTERY_COLUMNS)) {
+      const column = columns.find((c) => row[c] != null && row[c] !== '');
+      if (column) {
+        character[field] = parseNumberOrString(row[column]);
+      }
     }
 
     // WutheringWaves specific fields

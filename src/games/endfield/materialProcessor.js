@@ -80,9 +80,17 @@ export const processMaterial = (materials, key, value, characterInfo) => {
     // In mastery context (_masterySkill set), use per-skill mastery material instead
     if (key === 'special') {
         const skillName = characterInfo._masterySkill;
-        const charMaterialId = skillName
-            ? characterInfo[`mastery_${skillName}`]
-            : characterInfo[key];
+        let charMaterialId = characterInfo[key];
+        if (skillName) {
+            const perSkillId = characterInfo[`mastery_${skillName}`];
+            if (perSkillId) {
+                charMaterialId = perSkillId;
+            } else {
+                // Missing per-skill column in the sheet: fall back to the generic
+                // `special` material rather than silently dropping the cost.
+                logger.warn(`[Endfield] No mastery_${skillName} material for character; falling back to 'special'`);
+            }
+        }
         if (charMaterialId && typeof value === 'number') {
             materials[charMaterialId] = (materials[charMaterialId] || 0) + value;
         }
