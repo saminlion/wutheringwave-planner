@@ -193,7 +193,13 @@ export const usePlannerStore = defineStore('planner', {
     calculateCharacterMaterials(characterId) {
       const settings = this.characterSettings[characterId];
       const characterData = getGameData('characters');
-      const characterInfo = Object.values(characterData).find((char) => char.game_id === characterId);
+      // Compare as strings: goal ids round-tripped through localStorage or bound
+      // from the DOM arrive as strings, and a strict miss here returns {} — which
+      // recalculateAllGoals() treats as "nothing to update", silently preserving a
+      // stale goal snapshot instead of recomputing it.
+      const characterInfo = Object.values(characterData).find(
+        (char) => String(char.game_id) === String(characterId),
+      );
       if (!settings || !characterInfo) return {};
 
       const result = calculateCharacterMaterials(settings, characterInfo);
@@ -203,7 +209,7 @@ export const usePlannerStore = defineStore('planner', {
     calculateWeaponMaterials(weaponId) {
       const settings = this.weaponSettings[weaponId];
       const weaponData = getGameData('weapons');
-      const weaponInfo = Object.values(weaponData).find((w) => w.game_id === weaponId);
+      const weaponInfo = Object.values(weaponData).find((w) => String(w.game_id) === String(weaponId));
       const rarity = getWeaponField(weaponId, 'rarity');
 
       logger.debug('calculateWeaponMaterials - settings:', settings);
