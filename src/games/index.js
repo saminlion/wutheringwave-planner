@@ -7,6 +7,7 @@ import endfieldPlugin from './endfield';
 import gfl2Plugin from './gfl2';
 import ntePlugin from './nte';
 import mongilstardivePlugin from './mongilstardive';
+import dnaPlugin from './dna';
 
 // 등록된 게임 플러그인
 const games = {
@@ -15,6 +16,7 @@ const games = {
   gfl2: gfl2Plugin,
   nte: ntePlugin,
   mongilstardive: mongilstardivePlugin,
+  dna: dnaPlugin,
 };
 
 // 지원 게임 목록
@@ -52,6 +54,13 @@ export const supportedGames = [
     name: 'Mongil StarDive',
     shortName: 'MSD',
     icon: '⭐',
+    enabled: true,
+  },
+  {
+    id: 'dna',
+    name: 'Duet Night Abyss',
+    shortName: 'DNA',
+    icon: '🌗',
     enabled: true,
   },
 ];
