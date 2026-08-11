@@ -279,6 +279,37 @@ export const tieredMaterials = {
     },
   },
 
+  autopuppet: {
+    2: {
+      name: "lf_autopuppet_kernel",
+      game_id: 4110100001,
+      synthesizable: {
+        to: 3,
+        count: 3,
+      },
+    },
+    3: {
+      name: "mf_autopuppet_kernel",
+      game_id: 4110100002,
+      synthesizable: {
+        to: 4,
+        count: 3,
+      },
+    },
+    4: {
+      name: "hf_autopuppet_kernel",
+      game_id: 4110100003,
+      synthesizable: {
+        to: 5,
+        count: 3,
+      },
+    },
+    5: {
+      name: "ff_autopuppet_kernel",
+      game_id: 4110100004,
+    },
+  },
+
   // ========== FORGERY MATERIALS ==========
   metallic_drip: {
     2: {
