@@ -670,11 +670,16 @@ function transformWeapons(rows) {
 /**
  * Transform farming rates rows to config format
  *
- * Sheet columns: category, stamina, unobtainable, value_per_item, sample_count, avg, run_1, run_2, ...
+ * Sheet columns: category, stamina, unobtainable, source, value_per_item, sample_count, avg, run_1, run_2, ...
  *
  * Plain rows (credit, common, boss, weeklyBoss):
  *   unobtainable=TRUE → { unobtainable: true }
  *   otherwise → { drops: avg, stamina }
+ *
+ * `source` explains *why* a category is unobtainable and is optional — the
+ * planner falls back to a plain "no farming route" line when it is blank.
+ * Recognised values: event, field, shop, quest, unused (see locales
+ * `final.unobtainable.*`). Never assume one; a wrong reason is worse than none.
  *
  * Tier-suffixed rows (forgery_1/2/3, player_exp_1/2/3, weapon_exp_1/2/3):
  *   forgery: combined to T2-equivalent drops = t1/3 + t2 + t3*3
@@ -683,6 +688,12 @@ function transformWeapons(rows) {
 function transformFarmingRates(rows) {
   const tierRows = {};
   const plainRows = {};
+
+  // Blank/whitespace source columns must stay absent, not become `source: ''`
+  const sourceOf = (row) => {
+    const source = String(row.source || '').trim();
+    return source ? { source } : {};
+  };
 
   for (const row of rows) {
     const category = row.category || row.Category;
@@ -704,7 +715,7 @@ function transformFarmingRates(rows) {
   for (const [category, row] of Object.entries(plainRows)) {
     const unobtainable = row.unobtainable || row.unobtaniable;
     if (String(unobtainable).toUpperCase() === 'TRUE') {
-      result[category] = { unobtainable: true };
+      result[category] = { unobtainable: true, ...sourceOf(row) };
     } else {
       result[category] = {
         drops: parseFloat(row.avg) || 0,
@@ -718,7 +729,8 @@ function transformFarmingRates(rows) {
       row => String(row.unobtainable || row.unobtaniable).toUpperCase() === 'TRUE'
     );
     if (allUnobtainable) {
-      result[base] = { unobtainable: true };
+      const sourceRow = Object.values(tiers).find(r => sourceOf(r).source);
+      result[base] = { unobtainable: true, ...sourceOf(sourceRow || {}) };
       continue;
     }
 

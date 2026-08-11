@@ -132,8 +132,8 @@ export default {
       player_exp_early: { drops: 170000, stamina: 80 },  // Lv.5 기본값 (Combat Record - Lv.1-60)
       player_exp_late: { drops: 170000, stamina: 80 },   // Lv.5 기본값 (Cognitive Carrier - Lv.61-90)
       weapon_exp: { drops: 170000, stamina: 80 },  // Lv.5 기본값
-      common: { drops: 0, stamina: 0, unobtainable: true },  // Endfield에서 사용 안 함
-      ascension: { drops: 0, stamina: 0, unobtainable: true },  // bolete/odendra/onyx - 필드 파밍
+      common: { drops: 0, stamina: 0, unobtainable: true, source: 'unused' },  // Endfield에서 사용 안 함
+      ascension: { drops: 0, stamina: 0, unobtainable: true, source: 'field' },  // bolete/odendra/onyx - 필드 파밍
       forgery: { drops: 85, stamina: 80 },         // Lv.5 proto_skill tier2 기본값
       boss: { drops: 0, stamina: 0, unobtainable: true },
       weeklyBoss: { drops: 0, stamina: 0, unobtainable: true },
@@ -225,8 +225,8 @@ export default {
         drops: dungeonData.weapon_exp[lv].totalExp,
         stamina: dungeonData.weapon_exp[lv].stamina,
       },
-      common: { drops: 0, stamina: 0, unobtainable: true },
-      ascension: { drops: 0, stamina: 0, unobtainable: true },
+      common: { drops: 0, stamina: 0, unobtainable: true, source: 'unused' },
+      ascension: { drops: 0, stamina: 0, unobtainable: true, source: 'field' },
       // forgery는 tier별로 분리하여 반환
       forgery: {
         stamina: dungeonData.proto_skill[lv].stamina,

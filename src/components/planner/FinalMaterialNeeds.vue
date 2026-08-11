@@ -110,10 +110,12 @@
                             <!-- 通常表示 (WW / Endfield non-forgery) -->
                             <template v-else>
                                 <!-- No farming route at all (e.g. DNA's event-only
-                                     Twilight Tread). Run counts would read as 0 and
-                                     look like "nothing needed", so say it outright. -->
+                                     Twilight Tread, WW's open-world gathering). Run
+                                     counts would read as 0 and look like "nothing
+                                     needed", so say it outright — and say *why* only
+                                     when the rate declares a source. -->
                                 <p v-if="estimate.unobtainable" class="estimate-unobtainable">
-                                    {{ tUI('final.unobtainable') }}
+                                    {{ unobtainableLabel(estimate) }}
                                 </p>
                                 <template v-else>
                                     <p>{{ tUI('final.estimated_runs') }}: {{ estimate.run }}</p>
@@ -614,13 +616,27 @@ const getEstimates = (category, subCategory) => {
         return getChoiceSeparatedExpEstimates(category, subCategory);
     }
 
+    const rate = GetRateValueForCategory(data);
     return {
         run: esimatedRun.value(data),
         resin: esimatedResin.value(data),
         date: esimatedDate.value(data),
         isTierSeparated: false,
-        unobtainable: GetRateValueForCategory(data).declaredUnobtainable,
+        unobtainable: rate.declaredUnobtainable,
+        unobtainableSource: rate.unobtainableSource,
     };
+};
+
+// Why a material has no farming route differs per game and per category — open
+// world gathering, shop, quest, event-only. The rate declares it via `source`;
+// without one we only claim there is no farming route, never a reason.
+const unobtainableLabel = (estimate) => {
+    const source = estimate?.unobtainableSource;
+    if (!source) return tUI('final.unobtainable');
+    const key = `final.unobtainable.${source}`;
+    const label = tUI(key);
+    // tUI echoes the key back when the translation is missing
+    return label === key ? tUI('final.unobtainable') : label;
 };
 
 // ティア分離Estimated計算 (configでhasTierChoiceをサポートするゲーム用)
@@ -983,6 +999,7 @@ const GetRateValueForCategory = (data) => {
     // rate explicitly says there is no farming route, so the UI can say so
     // instead of implying the rate merely hasn't been measured yet.
     let drops = 0, resin = 0, unobtainable = false, declaredUnobtainable = false, categoryName = "";
+    let unobtainableSource = null;
     const staminaConfig = getStaminaConfig();
     let farmingRates = staminaConfig.farmingRates || {};
 
@@ -1003,6 +1020,7 @@ const GetRateValueForCategory = (data) => {
                 resin = rate.stamina || 0;
                 declaredUnobtainable = Boolean(rate.unobtainable);
                 unobtainable = declaredUnobtainable || drops <= 0;
+                unobtainableSource = rate.source || null;
             } else {
                 unobtainable = true;
             }
@@ -1011,7 +1029,7 @@ const GetRateValueForCategory = (data) => {
     });
 
 
-    return { drops, resin, unobtainable, declaredUnobtainable, categoryName };
+    return { drops, resin, unobtainable, declaredUnobtainable, unobtainableSource, categoryName };
 };
 
 const esimatedRun = computed(() => (data) => {

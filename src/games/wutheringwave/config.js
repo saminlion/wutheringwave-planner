@@ -125,8 +125,9 @@ export const wutheringWaveConfig = {
       credit: { drops: 84000, stamina: 40 },
       player_exp: { drops: 76000, stamina: 40 },
       weapon_exp: { drops: 76000, stamina: 40 },
-      common: { drops: 0, stamina: 0, unobtainable: true },
-      ascension: { drops: 0, stamina: 0, unobtainable: true },
+      // 오픈월드 몹 드랍/채집 — 웨이브플레이트를 쓰는 파밍 루트가 없음
+      common: { drops: 0, stamina: 0, unobtainable: true, source: 'field' },
+      ascension: { drops: 0, stamina: 0, unobtainable: true, source: 'field' },
       forgery: { drops: 51, stamina: 40 },
       boss: { drops: 4.3, stamina: 60 },
       weekly: { drops: 3, stamina: 60 },  // materials.jsonのCategory名に合わせる
