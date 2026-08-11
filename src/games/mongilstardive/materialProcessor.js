@@ -15,7 +15,8 @@ const getMasteryGameId = () => {
 };
 
 export const processMaterial = (materials, key, value, characterInfo) => {
-    // Tiered forgery: all three types look up materials['forgery'] by SubCategory
+    // Tiered forgery: materials.json has no 'forgery' category — skill and ascension
+    // forgery are separate top-level categories, looked up by SubCategory
     if (key === 'forgery_skill' || key === 'forgery_ascension' || key === 'forgery_weapon') {
         const [qty, tier] = value;
         // forgery_weapon uses weapon.forgery (chain, fighter, etc.) → stored in forgery_ascension category

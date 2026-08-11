@@ -35,11 +35,13 @@ describe('Mongil StarDive MaterialProcessor', () => {
     expect(SUPPORTED_KEYS).toContain('mastery');
   });
 
+  // materials.json has no 'forgery' category: skill and ascension forgery live in
+  // separate top-level categories, and forgery_weapon reads from forgery_ascension.
   it('processes forgery_skill with character subCategory', () => {
     const materials = {};
     const result = processMaterial(materials, 'forgery_skill', [10, 1], { forgery_skill: 'sinew' });
     expect(result).toBe(true);
-    expect(findMaterial).toHaveBeenCalledWith('forgery', 'sinew', 1);
+    expect(findMaterial).toHaveBeenCalledWith('forgery_skill', 'sinew', 1);
     expect(materials[8120010001]).toBe(10);
   });
 
@@ -47,14 +49,14 @@ describe('Mongil StarDive MaterialProcessor', () => {
     const materials = {};
     const result = processMaterial(materials, 'forgery_ascension', [120, 2], { forgery_ascension: 'fighter' });
     expect(result).toBe(true);
-    expect(findMaterial).toHaveBeenCalledWith('forgery', 'fighter', 2);
+    expect(findMaterial).toHaveBeenCalledWith('forgery_ascension', 'fighter', 2);
   });
 
   it('processes forgery_weapon using weapon.forgery subCategory', () => {
     const materials = {};
     const result = processMaterial(materials, 'forgery_weapon', [4, 3], { forgery: 'chain' });
     expect(result).toBe(true);
-    expect(findMaterial).toHaveBeenCalledWith('forgery', 'chain', 3);
+    expect(findMaterial).toHaveBeenCalledWith('forgery_ascension', 'chain', 3);
   });
 
   it('processes mastery as single item', () => {

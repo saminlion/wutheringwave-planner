@@ -24,9 +24,9 @@ vi.mock('@/services/materialHelper/dbUtils', () => ({
     if (type === 'forgery' && identifier === 'transcription_conductor' && tier === 5) {
       return { game_id: '6120020005', label: 'Metallic Drip T5' };
     }
-    // Rare material
-    if (type === 'rare_material' && identifier === 'rare_material') {
-      return { game_id: '6130010001', label: 'Basic Info Core' };
+    // Rare material — Basic Info Core is stored under common/unique in materials.json
+    if (type === 'common' && identifier === 'unique') {
+      return { game_id: '6100010004', label: 'Basic Info Core' };
     }
     return null;
   }),
@@ -103,7 +103,7 @@ describe('GFL2 MaterialProcessor', () => {
       const handled = processMaterial(materials, 'rare_material', 3, characterInfo);
 
       expect(handled).toBe(true);
-      expect(materials['6130010001']).toBe(3);
+      expect(materials['6100010004']).toBe(3);
     });
 
     it('should process doll_exp as numeric total', () => {

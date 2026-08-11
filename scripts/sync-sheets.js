@@ -16,6 +16,12 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import endfieldMastery from './overrides/endfield-mastery.js';
+
+// Per-game corrections layered on top of the sheet, keyed by character game_id
+const CHARACTER_OVERRIDES = {
+  endfield: endfieldMastery,
+};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -297,14 +303,63 @@ function parseCSVLine(line) {
   return result;
 }
 
+// Endfield: [character field, sheet name column, sheet id column]
+const MASTERY_COLUMNS = [
+  ['mastery_basic_attack', 'mastery_basic_attack_special_name', 'mastery_basic_attack_id'],
+  ['mastery_battle_skill', 'mastery_battle_skill_special_name', 'mastery_battle_skill_id'],
+  ['mastery_combo_skill', 'mastery_combo_skill_special_name', 'mastery_combo_skill_id'],
+  ['mastery_ultimate', 'mastery_ultimate_special_name', 'mastery_ultimate_id'],
+];
+
+/**
+ * Build a material label -> game_id index from Materials tab rows.
+ * Labels that appear more than once are dropped: an ambiguous name must not
+ * silently resolve to whichever row happened to come last.
+ */
+function buildMaterialLabelIndex(rows) {
+  const index = new Map();
+  const ambiguous = new Set();
+
+  for (const row of rows) {
+    const label = String(row?.label ?? '').trim().toLowerCase();
+    if (!label || row.game_id == null || row.game_id === '') continue;
+    if (index.has(label)) {
+      ambiguous.add(label);
+      continue;
+    }
+    index.set(label, parseNumberOrString(row.game_id));
+  }
+
+  for (const label of ambiguous) {
+    index.delete(label);
+  }
+  if (ambiguous.size > 0) {
+    console.log(`    Ambiguous material labels ignored for name lookup: ${[...ambiguous].join(', ')}`);
+  }
+  return index;
+}
+
+function resolveMaterialIdByName(name, materialIdByLabel) {
+  if (!materialIdByLabel) return null;
+  const label = String(name ?? '').trim().toLowerCase();
+  if (!label) return null;
+  return materialIdByLabel.get(label) ?? null;
+}
+
 /**
  * Transform character rows to the expected JSON structure
  *
  * Sheet columns: Seq, Rariy, Element, ElementCode, game_id, key, display_name,
  *                weapon, bolete_name, bolete_id, odendra_name, odendra_id,
  *                special_name, special_id, icon
+ *
+ * @param {Array<Object>} rows
+ * @param {Map<string, number|string>} [materialIdByLabel] material label -> game_id,
+ *        used to resolve columns whose `_id` counterpart is unreliable
+ * @param {Object} [overrides] game_id -> { field: materialName } corrections applied
+ *        on top of the sheet row
  */
-function transformCharacters(rows) {
+function transformCharacters(rows, materialIdByLabel, overrides) {
   const result = {};
 
   for (const row of rows) {
@@ -359,18 +414,48 @@ function transformCharacters(rows) {
     }
 
     // Endfield per-skill mastery material IDs.
-    // The sheet has drifted on column naming (e.g. the Battle Skill column is
-    // headed `mastery_battle_attack_id`), so each skill accepts several aliases.
-    const MASTERY_COLUMNS = {
-      mastery_basic_attack: ['mastery_basic_attack_id', 'mastery_basic_skill_id'],
-      mastery_battle_skill: ['mastery_battle_skill_id', 'mastery_battle_attack_id'],
-      mastery_combo_skill: ['mastery_combo_skill_id', 'mastery_combo_attack_id'],
-      mastery_ultimate: ['mastery_ultimate_id', 'mastery_ultimate_skill_id'],
-    };
-    for (const [field, columns] of Object.entries(MASTERY_COLUMNS)) {
-      const column = columns.find((c) => row[c] != null && row[c] !== '');
-      if (column) {
-        character[field] = parseNumberOrString(row[column]);
+    //
+    // The `mastery_*_id` columns are formula cells and their references are off by
+    // one (and by two for combo), so each one reports the material named in a
+    // *different* column: mastery_battle_skill_id and mastery_combo_skill_id both
+    // resolve from the Basic Attack name, which is why every character came out with
+    // battle == combo. The hand-entered `_special_name` columns are the source of
+    // truth — resolve them against the Materials tab and keep the id column only as
+    // a fallback for sheets that don't carry the name column.
+    for (const [field, nameColumn, idColumn] of MASTERY_COLUMNS) {
+      const byName = resolveMaterialIdByName(row[nameColumn], materialIdByLabel);
+      const byId = row[idColumn] != null && row[idColumn] !== ''
+        ? parseNumberOrString(row[idColumn])
+        : null;
+
+      if (byName != null) {
+        if (byId != null && String(byName) !== String(byId)) {
+          console.log(
+            `    ${character.display_name}: ${field} — using "${row[nameColumn]}" (${byName}); `
+            + `${idColumn} says ${byId} (stale formula in sheet)`,
+          );
+        }
+        character[field] = byName;
+      } else if (byId != null) {
+        character[field] = byId;
+      }
+    }
+
+    // Verified corrections for fields the sheet has never carried correctly.
+    // See scripts/overrides/endfield-mastery.js — delete it once the sheet is fixed.
+    const override = overrides?.[character.game_id];
+    if (override) {
+      for (const [field, materialName] of Object.entries(override)) {
+        const id = resolveMaterialIdByName(materialName, materialIdByLabel);
+        if (id == null) {
+          console.log(`    ${character.display_name}: override for ${field} names an unknown material "${materialName}" — ignored`);
+          continue;
+        }
+        if (String(character[field]) === String(id)) continue;
+        console.log(
+          `    ${character.display_name}: ${field} — override to "${materialName}" (${id}); sheet had ${character[field] ?? '(none)'}`,
+        );
+        character[field] = id;
       }
     }
 
@@ -814,16 +899,36 @@ async function syncGame(gameId, config) {
   }
 
   try {
+    // Characters reference materials by name, so the Materials tab is fetched up
+    // front and its rows reused when that tab comes around in the loop below.
+    const rowsByTab = new Map();
+    const fetchTabOnce = async (tab) => {
+      const tabLabel = typeof tab === 'object' ? tab.name : tab;
+      if (!rowsByTab.has(tabLabel)) {
+        rowsByTab.set(tabLabel, await fetchSheetData(config.sheetId, tab));
+      }
+      return rowsByTab.get(tabLabel);
+    };
+
+    let materialIdByLabel = null;
+    if (config.tabs.materials) {
+      try {
+        materialIdByLabel = buildMaterialLabelIndex(await fetchTabOnce(config.tabs.materials));
+      } catch (error) {
+        console.error(`  Could not index materials by name: ${error.message}`);
+      }
+    }
+
     // Sync data files
     for (const [dataType, tab] of Object.entries(config.tabs)) {
       const tabLabel = typeof tab === 'object' ? tab.name : tab;
       try {
-        const rows = await fetchSheetData(config.sheetId, tab);
+        const rows = await fetchTabOnce(tab);
 
         let transformed;
         switch (dataType) {
           case 'characters':
-            transformed = transformCharacters(rows);
+            transformed = transformCharacters(rows, materialIdByLabel, CHARACTER_OVERRIDES[gameId]);
             break;
           case 'materials':
             transformed = transformMaterials(rows);
