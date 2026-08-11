@@ -27,10 +27,15 @@ export class MaterialCalculator {
       this.materialDatabase,
     );
 
+    /**
+     * Cross-subcategory recipes make forward synthesis discover extra ingredient
+     * demand that was not in the original shortages. Carry that forward so those
+     * ingredients show up as real needs instead of silently vanishing.
+     */
     const backwardResult = this.synthesis.backward(
       forwardResult.updatedInventory,
       tieredMaterials,
-      shortages,
+      forwardResult.effectiveShortages ?? shortages,
     );
     const { finalNeeds, decomposedConsumed, decomposedGained } = backwardResult;
 
