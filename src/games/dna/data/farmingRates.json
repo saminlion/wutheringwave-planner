@@ -34,9 +34,5 @@
   "weapon_component": {
     "drops": 0,
     "stamina": 0
-  },
-  "event": {
-    "unobtainable": true,
-    "source": "event"
   }
 }
