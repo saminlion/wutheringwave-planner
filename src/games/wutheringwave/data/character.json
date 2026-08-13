@@ -733,19 +733,19 @@
     "rarity": 5,
     "element": "aero",
     "weapon": "sword",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
+    "icon": "https://img.game8.co/4572124/28f66b42f6b05d0cfaab0e7f071859af.png/show",
     "common": "autopuppet",
     "forgery": "polarizer",
     "ascension": 4130010033,
     "weeklyBoss": 4150030009
   },
-  "qinyian": {
+  "jingran": {
     "game_id": 4250200058,
-    "display_name": "Qinyian",
+    "display_name": "Jingran",
     "rarity": 5,
     "element": "fusion",
     "weapon": "broadblade",
-    "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
+    "icon": "https://img.game8.co/4572123/18932eed923cdd845d400e0990924543.png/show",
     "common": "whisperin_core",
     "forgery": "crystal",
     "ascension": 4130010031,
