@@ -4,6 +4,7 @@
     "display_name": "Aureate Yore",
     "rarity": 5,
     "type": "dual_blades",
+    "icon": "https://img.game8.co/4319107/6a88e7b6afc80f6b0382a1930b996cf4.png/show",
     "common": "teardrop",
     "component_a": "blade",
     "component_b": "decoration"
@@ -13,6 +14,7 @@
     "display_name": "Exiled Fangs",
     "rarity": 5,
     "type": "dual_blades",
+    "icon": "https://img.game8.co/4319067/e35918880183f2586bae4f15a7b11121.png/show",
     "common": "teardrop",
     "component_a": "blade",
     "component_b": "decoration"
@@ -22,6 +24,7 @@
     "display_name": "Fathomless Sharkgaze",
     "rarity": 5,
     "type": "dual_blades",
+    "icon": "https://img.game8.co/4319075/396ccdd0d8a3d31ab1628d82845b1a49.png/show",
     "common": "teardrop",
     "component_a": "blade",
     "component_b": "decoration"
@@ -31,6 +34,7 @@
     "display_name": "Skyfall Duality",
     "rarity": 5,
     "type": "dual_blades",
+    "icon": "https://img.game8.co/4400550/11bf7f5478667091f3d394239a97adb2.png/show",
     "common": "teardrop",
     "component_a": "blade",
     "component_b": "decoration"
@@ -40,6 +44,7 @@
     "display_name": "Eternal Farewell",
     "rarity": 5,
     "type": "greatsword",
+    "icon": "https://img.game8.co/4400551/c5998910895ad03e98f2d8cbd8a15316.png/show",
     "common": "filthoid",
     "component_a": "blade",
     "component_b": "decoration"
@@ -49,6 +54,7 @@
     "display_name": "Ironforger",
     "rarity": 5,
     "type": "greatsword",
+    "icon": "https://img.game8.co/4319068/c5ab17c5586421302b1d8bfa855ee276.png/show",
     "common": "filthoid",
     "component_a": "blade",
     "component_b": "decoration"
@@ -58,6 +64,7 @@
     "display_name": "Punitive Inferno",
     "rarity": 5,
     "type": "greatsword",
+    "icon": "https://img.game8.co/4319073/7fc970aeda95ddd9bff779acba62aa4a.png/show",
     "common": "filthoid",
     "component_a": "blade",
     "component_b": "decoration"
@@ -67,6 +74,7 @@
     "display_name": "Pyrothirst",
     "rarity": 5,
     "type": "greatsword",
+    "icon": "https://img.game8.co/4319082/be14c380c2db50c02c40191306f9461a.png/show",
     "common": "filthoid",
     "component_a": "blade",
     "component_b": "decoration"
@@ -76,6 +84,7 @@
     "display_name": "Momiji Itteki",
     "rarity": 5,
     "type": "katana",
+    "icon": "https://img.game8.co/4319074/1730f7558e860b0b6da964b3fddaa777.png/show",
     "common": "teardrop",
     "component_a": "grip",
     "component_b": "decoration"
@@ -85,6 +94,7 @@
     "display_name": "Sacred Favour",
     "rarity": 5,
     "type": "katana",
+    "icon": "https://img.game8.co/4319078/88f0be31599ee61477af03b311c3ea3c.png/show",
     "common": "teardrop",
     "component_a": "grip",
     "component_b": "decoration"
@@ -94,6 +104,7 @@
     "display_name": "Withershade",
     "rarity": 5,
     "type": "katana",
+    "icon": "https://img.game8.co/4319070/7b05c4ed572f1343d11419fd3746501c.png/show",
     "common": "teardrop",
     "component_a": "grip",
     "component_b": "decoration"
@@ -103,6 +114,7 @@
     "display_name": "Dove of Tomorrow",
     "rarity": 5,
     "type": "polearm",
+    "icon": "https://img.game8.co/4366260/f2da1cbf607215f5ace84e64b0582b45.png/show",
     "common": "stone",
     "component_a": "grip",
     "component_b": "blade"
@@ -112,6 +124,7 @@
     "display_name": "Elpides Abound",
     "rarity": 5,
     "type": "polearm",
+    "icon": "https://img.game8.co/4319072/f1f30f0f3189437a17d8c3953fc96a07.png/show",
     "common": "stone",
     "component_a": "grip",
     "component_b": "blade"
@@ -121,6 +134,7 @@
     "display_name": "Venial Sinscales",
     "rarity": 5,
     "type": "polearm",
+    "icon": "https://img.game8.co/4400548/ca0b6010c039dfc9290fff774fdb715c.png/show",
     "common": "stone",
     "component_a": "grip",
     "component_b": "blade"
@@ -130,6 +144,7 @@
     "display_name": "Vernal Jade Halberd",
     "rarity": 5,
     "type": "polearm",
+    "icon": "https://img.game8.co/4319080/fd5985ad26a67c86e83a72910bcb89f2.png/show",
     "common": "stone",
     "component_a": "grip",
     "component_b": "blade"
@@ -139,6 +154,7 @@
     "display_name": "Wanewraith",
     "rarity": 5,
     "type": "polearm",
+    "icon": "https://img.game8.co/4319071/52c97e1973eb297ca6e6e1a0ba944265.png/show",
     "common": "stone",
     "component_a": "grip",
     "component_b": "blade"
@@ -148,6 +164,7 @@
     "display_name": "Blade Amberglow",
     "rarity": 5,
     "type": "sword",
+    "icon": "https://img.game8.co/4316112/a8c89a2699fb5a481c53cb8d3d01ca4f.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -157,6 +174,7 @@
     "display_name": "Ingenious Tactics",
     "rarity": 5,
     "type": "sword",
+    "icon": "https://img.game8.co/4319077/b5621fb6e6e016701d9caeaf8157df91.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -166,6 +184,7 @@
     "display_name": "Remanent Reminiscence",
     "rarity": 5,
     "type": "sword",
+    "icon": "https://img.game8.co/4319083/bad58c48ec7606b0f2e1dab7f3d20214.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -175,6 +194,7 @@
     "display_name": "Shackle of Lonewolf",
     "rarity": 5,
     "type": "sword",
+    "icon": "https://img.game8.co/4319066/501d5ced7cb368548f8302cbe48d1c1b.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -184,6 +204,7 @@
     "display_name": "Wandering Rose",
     "rarity": 5,
     "type": "sword",
+    "icon": "https://img.game8.co/4319076/fddeeb40c4bcf1ecab86090c3b90a14c.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -193,6 +214,7 @@
     "display_name": "Halcyon Gracefall",
     "rarity": 5,
     "type": "whipblade",
+    "icon": "https://img.game8.co/4366258/5aecbef2b1d0d6a4a9526b28eef9b67e.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -202,6 +224,7 @@
     "display_name": "Tetherlash",
     "rarity": 5,
     "type": "whipblade",
+    "icon": "https://img.game8.co/4319093/6a2c55ac7f509ad15462d5bd824dcbec.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -211,6 +234,7 @@
     "display_name": "Undying Oneiros",
     "rarity": 5,
     "type": "whipblade",
+    "icon": "https://img.game8.co/4319096/d1dd01a43f04a1be6107dc3940a6ef2d.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -220,6 +244,7 @@
     "display_name": "Virdis Reefs",
     "rarity": 5,
     "type": "whipblade",
+    "icon": "https://img.game8.co/4319111/a67412c9d72bdb14d77ca04514059d2e.png/show",
     "common": "volatile",
     "component_a": "grip",
     "component_b": "blade"
@@ -229,6 +254,7 @@
     "display_name": "Cloudveil Unfurl",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4366259/a8099cba4d2943a2812c11338b1203dc.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -238,6 +264,7 @@
     "display_name": "Daybreak Hymn",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4319115/210c1115a36a3a2dcd11601a005b4a9e.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -247,6 +274,7 @@
     "display_name": "Ephemeral Lumina",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4366261/584b05ef4c37d5cf4800a5019d8f24eb.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -256,6 +284,7 @@
     "display_name": "Exiled Thunderwyrm",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4319104/c90ff795081b392d01b51a9236050f58.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -265,6 +294,7 @@
     "display_name": "Flamme De Epuration",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4319108/395bfe035f88d8a88352fedcfebd0300.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -274,6 +304,7 @@
     "display_name": "Osteobreaker",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4316113/46dc2226f60d529ca4a8f6acde7d1f65.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -283,6 +314,7 @@
     "display_name": "Submerged Serenade",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4319098/40be6b8207f037a35010ebe5542171c6.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -292,6 +324,7 @@
     "display_name": "Trigon Muse",
     "rarity": 5,
     "type": "assault_rifle",
+    "icon": "https://img.game8.co/4400549/c1e045c690df0d0932a07afe4214ade1.png/show",
     "common": "teardrop",
     "component_a": "bolt",
     "component_b": "frame"
@@ -301,6 +334,7 @@
     "display_name": "Arclight Apocalypses",
     "rarity": 5,
     "type": "bow",
+    "icon": "https://img.game8.co/4319116/e93a9448321c80166ebca837625fc49c.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "barrel"
@@ -310,6 +344,7 @@
     "display_name": "Embla Inflorescence",
     "rarity": 5,
     "type": "bow",
+    "icon": "https://img.game8.co/4319102/92dd50bb5d8864c94654188cac181f00.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "barrel"
@@ -319,6 +354,7 @@
     "display_name": "Searing Sandwhisper",
     "rarity": 5,
     "type": "bow",
+    "icon": "https://img.game8.co/4319094/d65136ff58eec01f01dba569ad3f5f05.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "barrel"
@@ -328,6 +364,7 @@
     "display_name": "Soulrend",
     "rarity": 5,
     "type": "bow",
+    "icon": "https://img.game8.co/4319100/6c5fb94637e93178a21032ab90f62332.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "barrel"
@@ -337,6 +374,7 @@
     "display_name": "Bluecurrent Pulse",
     "rarity": 5,
     "type": "dual_pistols",
+    "icon": "https://img.game8.co/4319095/4eff15f3a4126a8fae7c23f7931bb22d.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -346,6 +384,7 @@
     "display_name": "Excresduo",
     "rarity": 5,
     "type": "dual_pistols",
+    "icon": "https://img.game8.co/4319101/4b24a206b8ac2e52d09bbe5a6f3fab32.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -355,6 +394,7 @@
     "display_name": "Sacrosanct Chorus",
     "rarity": 5,
     "type": "dual_pistols",
+    "icon": "https://img.game8.co/4319113/748b41b89f811f7a722dfd9126da0d1d.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -364,6 +404,7 @@
     "display_name": "Destructo",
     "rarity": 5,
     "type": "grenade_launcher",
+    "icon": "https://img.game8.co/4319112/38af98152a16d4941cbee11770d97762.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "bolt"
@@ -373,6 +414,7 @@
     "display_name": "Guixu Ratchet",
     "rarity": 5,
     "type": "grenade_launcher",
+    "icon": "https://img.game8.co/4319105/58c7223490ceec858fc445605b4aa350.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "bolt"
@@ -382,6 +424,7 @@
     "display_name": "Silverwhite Edict",
     "rarity": 5,
     "type": "grenade_launcher",
+    "icon": "https://img.game8.co/4319081/eac6e8c358af5f77a9da79f4c89bdad9.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "bolt"
@@ -391,6 +434,7 @@
     "display_name": "Stellar Finality",
     "rarity": 5,
     "type": "grenade_launcher",
+    "icon": "https://img.game8.co/4319114/3af5766efaac82003d8e357dd80715d1.png/show",
     "common": "teardrop",
     "component_a": "frame",
     "component_b": "bolt"
@@ -400,6 +444,7 @@
     "display_name": "Entropic Singularity",
     "rarity": 5,
     "type": "pistol",
+    "icon": "https://img.game8.co/4319110/da7c03c78f451ac27fbb501c1f26e8dd.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -409,6 +454,7 @@
     "display_name": "Rendhusk",
     "rarity": 5,
     "type": "pistol",
+    "icon": "https://img.game8.co/4319103/71a246d41ff8163413812516dbf75e9f.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -418,6 +464,7 @@
     "display_name": "Sacrosanct Decree",
     "rarity": 5,
     "type": "pistol",
+    "icon": "https://img.game8.co/4319097/e8ff0bc4b506bfc2e928032c3bf311ec.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -427,6 +474,7 @@
     "display_name": "Blast Artistry",
     "rarity": 5,
     "type": "shotgun",
+    "icon": "https://img.game8.co/4319106/8cdab17f432dc02a2f6a79be17ff2df9.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -436,6 +484,7 @@
     "display_name": "Day of Sacred Verdict",
     "rarity": 5,
     "type": "shotgun",
+    "icon": "https://img.game8.co/4319109/fd99f817609c99ac3d11035e5a181cd0.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -445,6 +494,7 @@
     "display_name": "Screamshot",
     "rarity": 5,
     "type": "shotgun",
+    "icon": "https://img.game8.co/4319079/93d4e246aa27572f7a644a1459022e22.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
@@ -454,8 +504,169 @@
     "display_name": "Silent Sower",
     "rarity": 5,
     "type": "shotgun",
+    "icon": "https://img.game8.co/4319117/3903091c18df18a2df7607eafa551e7d.png/show",
     "common": "teardrop",
     "component_a": "barrel",
     "component_b": "frame"
+  },
+  "dreamweavers_feather": {
+    "game_id": 9305070052,
+    "display_name": "Dreamweaver's Feather",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "icon": "https://img.game8.co/4319099/1ee176a511f85ed2ac0b5c89faac4945.png/show",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "dregs_of_glimmer": {
+    "game_id": 9305070053,
+    "display_name": "Dregs of Glimmer",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "icon": "https://img.game8.co/4457781/664eb1cb17b168722c599b55eac16a62.png/show",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "gloam_oath": {
+    "game_id": 9305070054,
+    "display_name": "Gloam Oath",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "icon": "https://img.game8.co/4517496/85d5e63f34b412c05d5bdde6c973932e.png/show",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "thorned_requiem": {
+    "game_id": 9305070055,
+    "display_name": "Thorned Requiem",
+    "rarity": 5,
+    "type": "assault_rifle",
+    "icon": "https://img.game8.co/4517498/2a5c1780cb78e0134a203aeca8c77f60.png/show",
+    "common": "teardrop",
+    "component_a": "bolt",
+    "component_b": "frame"
+  },
+  "the_best_day": {
+    "game_id": 9305090056,
+    "display_name": "The Best Day",
+    "rarity": 5,
+    "type": "dual_pistols",
+    "icon": "https://img.game8.co/4569710/4c06f87688e427de68e02a5f7c6cab4b.png/show",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "aureate_drift": {
+    "game_id": 9305020057,
+    "display_name": "Aureate Drift",
+    "rarity": 5,
+    "type": "greatsword",
+    "icon": "https://img.game8.co/4457780/4e56239cc839379e527d0bf7634b8ad0.png/show",
+    "common": "filthoid",
+    "component_a": "blade",
+    "component_b": "decoration"
+  },
+  "firearm_feast": {
+    "game_id": 9305100058,
+    "display_name": "Firearm Feast",
+    "rarity": 5,
+    "type": "grenade_launcher",
+    "icon": "https://img.game8.co/4517499/26ad6b047c9fc01579df19a097c7c6b0.png/show",
+    "common": "teardrop",
+    "component_a": "frame",
+    "component_b": "bolt"
+  },
+  "sanguis_sanctus_katana": {
+    "game_id": 9305030059,
+    "display_name": "Sanguis Sanctus - Katana",
+    "rarity": 5,
+    "type": "katana",
+    "icon": "https://img.game8.co/4517501/36cd5811c0139565148d20a7945af69f.png/show",
+    "common": "teardrop",
+    "component_a": "grip",
+    "component_b": "decoration"
+  },
+  "sanguis_sanctus_pistol": {
+    "game_id": 9305110060,
+    "display_name": "Sanguis Sanctus - Pistol",
+    "rarity": 5,
+    "type": "pistol",
+    "icon": "https://img.game8.co/4569800/09c7c0dbf11acfca5323189d2d1df160.png/show",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "prepetual_strife": {
+    "game_id": 9305040061,
+    "display_name": "Prepetual Strife",
+    "rarity": 5,
+    "type": "polearm",
+    "icon": "https://img.game8.co/4517500/51e93d2f300a99991987e50a90fd0277.png/show",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "sirens_kiss": {
+    "game_id": 9305040062,
+    "display_name": "Siren's Kiss",
+    "rarity": 5,
+    "type": "polearm",
+    "icon": "https://img.game8.co/4319069/51ec2122379194b429c7e075f8d1af8e.png/show",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "fledglings_gleam": {
+    "game_id": 9305120063,
+    "display_name": "Fledgling's Gleam",
+    "rarity": 5,
+    "type": "shotgun",
+    "icon": "https://img.game8.co/4457783/585e876c7bfe9eb7adac0e249fa86920.png/show",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "jagged_growl": {
+    "game_id": 9305120064,
+    "display_name": "Jagged Growl",
+    "rarity": 5,
+    "type": "shotgun",
+    "icon": "https://img.game8.co/4457782/b398147854d6c4b4de59dd16a59e5d6c.png/show",
+    "common": "teardrop",
+    "component_a": "barrel",
+    "component_b": "frame"
+  },
+  "chainbreak_pinion": {
+    "game_id": 9305050065,
+    "display_name": "Chainbreak Pinion",
+    "rarity": 5,
+    "type": "sword",
+    "icon": "https://img.game8.co/4517497/f67327ef61ed7341e9c96fcf4d0309c3.png/show",
+    "common": "volatile",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "obsidian_heart_reaper": {
+    "game_id": 9305040066,
+    "display_name": "Obsidian Heart-Reaper",
+    "rarity": 5,
+    "type": "polearm",
+    "icon": "https://img.game8.co/4563758/2916ef036ab2fdba949a54775d556582.png/show",
+    "common": "stone",
+    "component_a": "grip",
+    "component_b": "blade"
+  },
+  "sovereign_ember": {
+    "game_id": 9305020067,
+    "display_name": "Sovereign Ember",
+    "rarity": 5,
+    "type": "greatsword",
+    "icon": "https://img.game8.co/4563756/37b3f20b14ee7d91fe9e3e5e21d4cbb8.png/show",
+    "common": "filthoid",
+    "component_a": "blade",
+    "component_b": "decoration"
   }
 }
