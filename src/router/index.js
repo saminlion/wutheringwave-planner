@@ -14,14 +14,14 @@ const routes = [
     component: HomeView,
   },
   {
-    path: '/planner',
-    name: 'planner',
-    component: PlannerView,
-  },
-  {
     path: '/timeline',
     name: 'timeline',
     component: TimelineView,
+  },
+  {
+    path: '/planner',
+    name: 'planner',
+    component: PlannerView,
   },
   {
     path: '/inventory',

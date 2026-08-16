@@ -2,7 +2,7 @@
   <div class="inventory-page">
     <h1>{{ tUI('inventory.title') }}</h1>
 
-    <div class="inventory-container">
+    <div class="inventory-container" ref="containerRef" @keydown.tab="moveFocus">
       <div v-for="(subCategories, category) in groupedMaterials" :key="category" class="category-section">
         <h2 class="category-title">{{ translateCategoryName(category) }}</h2>
 
@@ -25,6 +25,7 @@
                 min="0"
                 @keyup.enter="setQuantity(material.game_id)"
                 @change="setQuantity(material.game_id)"
+                @focus="$event.target.select()"
               />
             </div>
           </div>
@@ -35,7 +36,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, onMounted, watch, nextTick } from 'vue';
 import { toast } from 'vue3-toastify';
 import { useInventoryStore } from '../store/inventory.js';
 import { useGameStore } from '@/store/game';
@@ -61,6 +62,53 @@ const materials = computed(() => {
 
 const quantities = ref({});
 const newQuantities = ref({});
+
+const containerRef = ref(null);
+
+/* Tab 이동 순서를 화면 읽기 순서(좌→우, 상→하)로 고정한다.
+   카테고리 섹션은 화면 폭에 따라 여러 열로 나란히 배치되므로, 이동은 섹션 안에서만
+   좌→우로 진행하고 섹션 끝에 도달하면 다음(Shift+Tab이면 이전) 섹션의 첫/마지막 칸으로 넘어간다.
+   기본 DOM 순서에 맡기면 재렌더(수량 반영·토스트) 타이밍에 따라 포커스가 흔들려서 직접 제어한다. */
+const moveFocus = (event) => {
+  const container = containerRef.value;
+  const current = event.target;
+  if (!container || !current.classList?.contains('quantity-input')) return;
+
+  const section = current.closest('.category-section');
+  if (!section) return;
+
+  const inputsIn = (el) => Array.from(el.querySelectorAll('.quantity-input'));
+  const step = event.shiftKey ? -1 : 1;
+
+  const siblings = inputsIn(section);
+  let next = siblings[siblings.indexOf(current) + step];
+
+  if (!next) {
+    // 섹션 경계 — 비어 있는 섹션은 건너뛰고 다음 입력 칸을 찾는다
+    const sections = Array.from(container.querySelectorAll('.category-section'));
+    for (let i = sections.indexOf(section) + step; i >= 0 && i < sections.length; i += step) {
+      const candidates = inputsIn(sections[i]);
+      if (candidates.length) {
+        next = step > 0 ? candidates[0] : candidates[candidates.length - 1];
+        break;
+      }
+    }
+  }
+
+  if (!next) return; // 페이지 처음/끝 — 브라우저 기본 동작(헤더·다음 영역)에 맡긴다
+
+  event.preventDefault();
+  next.focus();
+  next.select();
+
+  // @change 로 인한 재렌더가 포커스를 놓쳐도 되돌린다
+  nextTick(() => {
+    if (document.activeElement !== next) {
+      next.focus();
+      next.select();
+    }
+  });
+};
 
 watch(
   materials,
