@@ -380,6 +380,19 @@ const finalMaterialNeeds = computed(() => {
   );
   logger.debug("Player EXP Results:", playerExpResults);
 
+  // Lower-tier stock eaten by forward synthesis, keyed by the tier that was spent.
+  // Without it `owned` looks like it still covers the requirement even after the
+  // engine has already spent that stock on higher tiers.
+  const synthesisConsumed = {};
+  Object.values(synthesis_results || {}).forEach(({ from, used, usedExtra }) => {
+    if (from != null && used > 0) {
+      synthesisConsumed[from] = (synthesisConsumed[from] || 0) + used;
+    }
+    Object.entries(usedExtra || {}).forEach(([extraId, qty]) => {
+      synthesisConsumed[extraId] = (synthesisConsumed[extraId] || 0) + qty;
+    });
+  });
+
   // Combine needs, synthesize, and owned materials
   const formattedResults = {};
 
@@ -410,6 +423,7 @@ const finalMaterialNeeds = computed(() => {
       need: needQty,
       shortage,
       synthesize,
+      synthesisConsumed: synthesisConsumed[materialId] || 0,
       decomposedConsumed,
       decomposedGained,
       owned,

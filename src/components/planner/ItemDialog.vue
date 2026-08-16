@@ -24,6 +24,10 @@
                                 <span class="label">{{ tUI('dialog.synthesis') }}:</span>
                                 <span class="value synthesis">+{{ formatNumber(item.synthesize) }}</span>
                             </div>
+                            <div class="detail-row" v-if="item.synthesisConsumed > 0">
+                                <span class="label">Synthesis ↓:</span>
+                                <span class="value decomp-out">-{{ formatNumber(item.synthesisConsumed) }}</span>
+                            </div>
                             <div class="detail-row" v-if="supportsDecomposition && item.decomposedConsumed > 0">
                                 <span class="label">Decompose ↓:</span>
                                 <span class="value decomp-out">-{{ formatNumber(item.decomposedConsumed) }}</span>
@@ -72,6 +76,10 @@
                                 <div class="tier-stat" v-if="tierItem.synthesize > 0">
                                     <span class="stat-label">{{ tUI('dialog.syn') }}</span>
                                     <span class="stat-value synthesis">+{{ formatNumber(tierItem.synthesize) }}</span>
+                                </div>
+                                <div class="tier-stat" v-if="tierItem.synthesisConsumed > 0">
+                                    <span class="stat-label">Syn ↓</span>
+                                    <span class="stat-value decomp-out">-{{ formatNumber(tierItem.synthesisConsumed) }}</span>
                                 </div>
                                 <div class="tier-stat" v-if="supportsDecomposition && tierItem.decomposedConsumed > 0">
                                     <span class="stat-label">Dec ↓</span>
@@ -219,8 +227,15 @@ const formatNumber = (num) => {
     return num.toLocaleString();
 };
 
-// 必要量計算 (Required - Owned - Synthesis)
+// 必要量計算
+// The parent's shortage figure already accounts for cross-tier synthesis and
+// decomposition, so it wins whenever it is supplied. Re-deriving it here from
+// need/owned would ignore the owned stock the engine already spent on higher
+// tiers and report 0 where the planner card correctly reports a shortage.
 const calculateNeed = (item) => {
+    if (item.actualNeed !== undefined && item.actualNeed !== null) {
+        return Math.max(0, item.actualNeed);
+    }
     const need = item.need || 0;
     const owned = item.owned || 0;
     const synthesize = item.synthesize || 0;

@@ -469,12 +469,13 @@ const buildFullTierLineup = (category, subCategory) => {
 
     return dbItems.map(m => {
         const existing = taskById[m.game_id] || {};
-        return {
+        const item = {
             id: m.game_id,
             name: existing.name ?? m.label ?? m.game_id,
             need: existing.need ?? 0,
             owned: getMaterialQuantity(m.game_id),
             synthesize: existing.synthesize ?? 0,
+            synthesisConsumed: existing.synthesisConsumed ?? 0,
             decomposedConsumed: existing.decomposedConsumed ?? 0,
             decomposedGained: existing.decomposedGained ?? 0,
             tier: m.tier ?? existing.tier ?? null,
@@ -482,6 +483,9 @@ const buildFullTierLineup = (category, subCategory) => {
             subCategory: subCategory.id,
             icon: getMaterialIcon(m.game_id),
         };
+        // The dialog must not re-derive the shortage from need/owned: owned is the
+        // pre-synthesis stock, part of which the engine already spent on higher tiers.
+        return { ...item, actualNeed: calculateActualNeed(item) };
     });
 };
 
@@ -508,12 +512,14 @@ const openItemDialog = (task, category, subCategoryId) => {
             ...task,
             name: subCategory.name, // SubCategory名をタイトルに使用
             owned: getMaterialQuantity(task.id),
+            actualNeed: calculateActualNeed(task),
             icon: getMaterialIcon(task.id),
         };
         // 全ティアを表示
         selectedRelatedItems.value = lineupItems.map(t => ({
             ...t,
             owned: getMaterialQuantity(t.id),
+            actualNeed: t.actualNeed ?? calculateActualNeed(t),
             icon: getMaterialIcon(t.id),
         }));
     } else {
@@ -521,6 +527,7 @@ const openItemDialog = (task, category, subCategoryId) => {
         selectedItem.value = {
             ...task,
             owned: getMaterialQuantity(task.id),
+            actualNeed: calculateActualNeed(task),
             icon: getMaterialIcon(task.id),
         };
         selectedRelatedItems.value = [];
@@ -910,7 +917,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
         logger.debug('Details:', details);
 
         // Data extraction protection
-        let subCategory, category, name, owned, synthesize, need, shortage, decomposedConsumed, decomposedGained;
+        let subCategory, category, name, owned, synthesize, need, shortage, synthesisConsumed, decomposedConsumed, decomposedGained;
 
         // player_exp ?먮뒗 weapon_exp???밸퀎 泥섎━
         if (isExpCategory(materialId)) {
@@ -921,6 +928,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             synthesize = details.synthesize || 0;
             need = details.need || 0;
             shortage = details.shortage ?? 0;
+            synthesisConsumed = details.synthesisConsumed || 0;
             decomposedConsumed = details.decomposedConsumed || 0;
             decomposedGained = details.decomposedGained || 0;
         }
@@ -935,6 +943,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             synthesize = details.synthesize || 0;
             need = details.need || 0;
             shortage = details.shortage ?? 0;
+            synthesisConsumed = details.synthesisConsumed || 0;
             decomposedConsumed = details.decomposedConsumed || 0;
             decomposedGained = details.decomposedGained || 0;
         }
@@ -967,6 +976,7 @@ const groupMaterialsByCategoryAndSubCategory = (data) => {
             need: need,
             owned: owned,
             synthesize: synthesize,
+            synthesisConsumed: synthesisConsumed,
             decomposedConsumed: decomposedConsumed,
             decomposedGained: decomposedGained,
             tier: tier,  // common/forgery用のtier情報
