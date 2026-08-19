@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "resonance-sim-realm__2026-08-22-11:00",
+    "name": "Resonance Sim Realm",
+    "description": "Combat event where you can use abilities provided by your other resonator friends to win and get rewards!",
+    "category": "event",
+    "cover": "https://img.game8.co/4581552/a26f71f20948f7a697078b6a4b45b9a6.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
+    "startDate": "2026-08-22 11:00",
+    "endDate": "2026-09-29 12:59",
+    "utcOffset": 9
+  }
+]

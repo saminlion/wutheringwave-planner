@@ -1,1 +1,134 @@
-[]
+[
+  {
+    "id": "volley-star__2026-08-19-11:00",
+    "name": "Volley Star",
+    "description": "Sunshine, sandy beaches, and beach volleyball! Team up with others to dash across the sand and unleash a powerful spike. It’s the perfect way to enjoy the thrill of sports alongside the relaxed vibes of a summer vacation. Participate in the event to earn limited-time rewards, including the \"Radiant Summer\" profile frame, \"Ideal Court\" nameplate, Phantasm Stones, Dice of Deception, Ponds, Drifting Ice Theater Tickets, Premium Hunter Guides, Chaos Dye, and more.",
+    "category": "event",
+    "cover": "https://img.game8.co/4581945/c0550c9208248f7e99768a98e744ff16.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-19 11:00",
+    "endDate": "2026-09-30 06:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "surf-breaker__2026-08-19-11:00",
+    "name": "Surf Breaker",
+    "description": "Enjoy thrilling racing accompanied by cool sea breezes this hot summer! Complete racing challenges during the event period to earn a variety of rewards, such as Hwanseok, Pons, Drifting Ice Theater tickets, Premium Hunter Guides, Chaos Dye, and more.",
+    "category": "event",
+    "cover": "https://img.game8.co/4581948/a52c832231e8686423846b1de0b80748.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-19 11:00",
+    "endDate": "2026-09-30 06:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "hunter's-crucible__2026-08-19-11:00",
+    "name": "Hunter's Crucible",
+    "description": "Becoming strong requires enduring greater trials. New \"Mamon\" and \"Mophix\" challenge stages have been added for this event. By clearing these challenge stages during the event period, you can earn various rewards—such as the \"Banquet: Honing Skills\" event title, Phantom Stones, Dice of Deception, Ponds, Premium Hunter Guides, and Chaos Dyes—based on your cumulative progress.",
+    "category": "event",
+    "cover": "https://img.game8.co/4581958/3999f7b83a940f8270f7b012bd65ffb1.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-19 11:00",
+    "endDate": "2026-09-30 06:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "circle-gifts__2026-08-19-11:00",
+    "name": "Circle Gifts",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4581957/32d8fb74603eab851a3066609fd5d6ac.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-19 11:00",
+    "endDate": "2026-09-30 06:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "stamina-recharge__2026-08-24-05:00",
+    "name": "Stamina Recharge",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4581951/3c1e8bd20d14ae920ff56d3d4678b50b.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-24 05:00",
+    "endDate": "2026-08-31 04:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "beyond-the-rails__2026-08-27-05:00",
+    "name": "Beyond the Rails",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4581952/040044390bb244650ea4c0d91f4b06eb.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-27 05:00",
+    "endDate": "2026-09-10 04:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "shipwreck-salvage__2026-08-28-11:00",
+    "name": "Shipwreck Salvage",
+    "description": "I’m out collecting bottles again today, just like always. During the event, you can earn the event currency \"Drifting Message in a Bottle\" and exchange it in the event shop for rewards such as the \"Armful\" profile frame, the \"Treasure Hunt Journey\" namecard, Primogems, Dice of Deception, and Ponds.",
+    "category": "event",
+    "cover": "https://img.game8.co/4581946/bfa1bca55c36ff270c1a1fc4f1354f95.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-28 11:00",
+    "endDate": "2026-09-30 06:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "gold-clash__2026-08-31-05:00",
+    "name": "Gold Clash",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4581953/f4580b04f4bccf7235bc27398c76a61f.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-08-31 05:00",
+    "endDate": "2026-09-14 04:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "pixel-surge__2026-09-14-05:00",
+    "name": "Pixel Surge",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4581954/5118088c5a4decb576e9f1c951a57115.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-09-14 05:00",
+    "endDate": "2026-09-21 04:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "breezy-tour__2026-09-17-11:00",
+    "name": "Breezy Tour",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4581950/56a2524dd925365434e92f411c91a3d6.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-09-17 11:00",
+    "endDate": "2026-09-30 06:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "fons-rush__2026-09-21-05:00",
+    "name": "Fons Rush",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4581955/8c5e3a301d7eb3c42eedf296f7531031.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/nte/board/detail/8074318",
+    "startDate": "2026-09-21 05:00",
+    "endDate": "2026-09-28 04:59",
+    "utcOffset": 9
+  }
+]
