@@ -197,6 +197,7 @@
     "4140030021": "우리의 선택",
     "4140030022": "악몽의 잔재",
     "4140030023": "화염에 새겨진 정의",
+    "4140030024": "가짜 선인의 한숨",
     "4150010001": "비문 고종",
     "4150010002": "끊임없는 파괴",
     "4150010003": "무망의 깃털",
@@ -329,7 +330,7 @@
   },
   "ui": {
     "game.name.wutheringwave": "명조",
-    "game.icon.wutheringwave": "https://i.namu.wiki/i/eDAoYN4PpEN9TMk9lquaBujEm2UQe9C7kok50F-98_c6Mw6yx_TIGu9Pq-Ga7PADbZ9PWSB7xwKZYbYIpnkAqNe6dwYWgmbLl_vP-UGveS2lVmG7GQ-F2TBc0E14vBZemXC3Oj3eHWTYzDcuAkqiEg.webp",
+    "game.icon.wutheringwave": "https://nanoka.cc/images/ww.webp",
     "category.whisperin_core": "의음 성핵",
     "category.howler_core": "포효 성핵",
     "category.ring": "구속팔찌",

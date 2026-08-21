@@ -427,7 +427,7 @@
     "display_name": "Heart Sword",
     "rarity": 6,
     "type": "gas",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_DemonBlade_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_DemonBlade_256.webp",
     "common": "numeral",
     "forgery": "can"
   },
@@ -436,7 +436,7 @@
     "display_name": "Voice of some",
     "rarity": 6,
     "type": "plasma",
-    "icon": "https://api.everness.info/data/assets/UI_Icon/Fork/fork_GoldRecord_256.webp",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_GoldRecord_256.webp",
     "common": "silhouette",
     "forgery": "dream"
   }

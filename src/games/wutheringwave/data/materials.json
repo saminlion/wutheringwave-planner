@@ -5,7 +5,7 @@
       "label": "Shell Credit",
       "Category": "credit",
       "SubCategory": "credit",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconA/T_IconA_hsb_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconA/T_IconA_hsb_UI.webp",
       "tier": 2
     }
   },
@@ -15,7 +15,7 @@
       "label": "Low Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.webp",
       "tier": 2
     },
     "mid_frequency_whisperin_core": {
@@ -23,7 +23,7 @@
       "label": "Mid Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_2_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_2_UI.webp",
       "tier": 3
     },
     "high_frequency_whisperin_core": {
@@ -31,7 +31,7 @@
       "label": "High Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_3_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_3_UI.webp",
       "tier": 4
     },
     "full_frequency_whisperin_core": {
@@ -39,7 +39,7 @@
       "label": "Full Frequency Whisperin Core",
       "Category": "common",
       "SubCategory": "whisperin_core",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_002_4_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_4_UI.webp",
       "tier": 5
     },
     "low_frequency_howler_core": {
@@ -337,7 +337,7 @@
       "label": "Inert Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_1_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_1_UI.webp",
       "tier": 2
     },
     "reactive_metallic_drip": {
@@ -345,7 +345,7 @@
       "label": "Reactive Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_2_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_2_UI.webp",
       "tier": 3
     },
     "polarized_metallic_drip": {
@@ -353,7 +353,7 @@
       "label": "Polarized Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_3_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_3_UI.webp",
       "tier": 4
     },
     "heterized_metallic_drip": {
@@ -361,7 +361,7 @@
       "label": "Heterized Metallic Drip",
       "Category": "forgery",
       "SubCategory": "metallic_drip",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_4_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_4_UI.webp",
       "tier": 5
     },
     "impure_phlogiston": {
@@ -369,7 +369,7 @@
       "label": "Impure Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_01_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_01_UI.webp",
       "tier": 2
     },
     "extracted_phlogiston": {
@@ -377,7 +377,7 @@
       "label": "Extracted Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_02_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_02_UI.webp",
       "tier": 3
     },
     "refined_phlogiston": {
@@ -385,7 +385,7 @@
       "label": "Refined Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_03_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_03_UI.webp",
       "tier": 4
     },
     "flawless_phlogiston": {
@@ -393,7 +393,7 @@
       "label": "Flawless Phlogiston",
       "Category": "forgery",
       "SubCategory": "phlogiston",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_04_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_04_UI.webp",
       "tier": 5
     },
     "lento_helix": {
@@ -401,7 +401,7 @@
       "label": "Lento Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_005_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_005_UI.webp",
       "tier": 2
     },
     "adagio_helix": {
@@ -409,7 +409,7 @@
       "label": "Adagio Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_006_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_006_UI.webp",
       "tier": 3
     },
     "andante_helix": {
@@ -417,7 +417,7 @@
       "label": "Andante Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_007_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_007_UI.webp",
       "tier": 4
     },
     "presto_helix": {
@@ -425,7 +425,7 @@
       "label": "Presto Helix",
       "Category": "forgery",
       "SubCategory": "helix",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_008_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_008_UI.webp",
       "tier": 5
     },
     "waveworn_residue_210": {
@@ -433,7 +433,7 @@
       "label": "Waveworn Residue 210",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_009_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_009_UI.webp",
       "tier": 2
     },
     "waveworn_residue_226": {
@@ -441,7 +441,7 @@
       "label": "Waveworn Residue 226",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_010_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_010_UI.webp",
       "tier": 3
     },
     "waveworn_residue_235": {
@@ -449,7 +449,7 @@
       "label": "Waveworn Residue 235",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_011_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_011_UI.webp",
       "tier": 4
     },
     "waveworn_residue_239": {
@@ -457,7 +457,7 @@
       "label": "Waveworn Residue 239",
       "Category": "forgery",
       "SubCategory": "residue",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_012_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_012_UI.webp",
       "tier": 5
     },
     "cadence_seed": {
@@ -465,7 +465,7 @@
       "label": "Cadence Seed",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_013_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_013_UI.webp",
       "tier": 2
     },
     "cadence_bud": {
@@ -473,7 +473,7 @@
       "label": "Cadence Bud",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_014_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_014_UI.webp",
       "tier": 3
     },
     "cadence_leaf": {
@@ -481,7 +481,7 @@
       "label": "Cadence Leaf",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_015_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_015_UI.webp",
       "tier": 4
     },
     "cadence_blossom": {
@@ -489,7 +489,7 @@
       "label": "Cadence Blossom",
       "Category": "forgery",
       "SubCategory": "cadence",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_016_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_016_UI.webp",
       "tier": 5
     },
     "broken_wing_polarizer": {
@@ -497,7 +497,7 @@
       "label": "Broken Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_1_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_1_UI.webp",
       "tier": 2
     },
     "mono_wing_polarizer": {
@@ -505,7 +505,7 @@
       "label": "Mono Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_2_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_2_UI.webp",
       "tier": 3
     },
     "poly_wing_polarizer": {
@@ -513,7 +513,7 @@
       "label": "Poly Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_3_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_3_UI.webp",
       "tier": 4
     },
     "layered_wing_polarizer": {
@@ -521,7 +521,7 @@
       "label": "Layered Wing Polarizer",
       "Category": "forgery",
       "SubCategory": "polarizer",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_010_4_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_4_UI.webp",
       "tier": 5
     },
     "incomplete_combustor": {
@@ -529,7 +529,7 @@
       "label": "Incomplete Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_1_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_1_UI.webp",
       "tier": 2
     },
     "aftertune_combustor": {
@@ -537,7 +537,7 @@
       "label": "Aftertune Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_2_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_2_UI.webp",
       "tier": 3
     },
     "remnant_combustor": {
@@ -545,7 +545,7 @@
       "label": "Remnant Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_3_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_3_UI.webp",
       "tier": 4
     },
     "reverb_combustor": {
@@ -553,7 +553,7 @@
       "label": "Reverb Combustor",
       "Category": "forgery",
       "SubCategory": "combustor",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_009_4_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_4_UI.webp",
       "tier": 5
     },
     "spliced_string": {
@@ -561,7 +561,7 @@
       "label": "Spliced String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_1_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_1_UI.webp",
       "tier": 2
     },
     "broken_string": {
@@ -569,7 +569,7 @@
       "label": "Broken String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_2_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_2_UI.webp",
       "tier": 3
     },
     "solidified_string": {
@@ -577,7 +577,7 @@
       "label": "Solidified String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_3_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_3_UI.webp",
       "tier": 4
     },
     "melodic_string": {
@@ -585,7 +585,7 @@
       "label": "Melodic String",
       "Category": "forgery",
       "SubCategory": "string",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_012_4_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_4_UI.webp",
       "tier": 5
     },
     "low_frequency_carved_crystal": {
@@ -593,7 +593,7 @@
       "label": "Low Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_1_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_1_UI.webp",
       "tier": 2
     },
     "mid_frequency_carved_crystal": {
@@ -601,7 +601,7 @@
       "label": "Mid Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_2_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_2_UI.webp",
       "tier": 3
     },
     "high_frequency_carved_crystal": {
@@ -609,7 +609,7 @@
       "label": "High Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_3_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_3_UI.webp",
       "tier": 4
     },
     "full_frequency_carved_crystal": {
@@ -617,7 +617,7 @@
       "label": "Full Frequency Carved Crystal",
       "Category": "forgery",
       "SubCategory": "crystal",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_011_4_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_4_UI.webp",
       "tier": 5
     },
     "low_frequency_waveworn_shard": {
@@ -625,7 +625,7 @@
       "label": "Low Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_1_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_1_UI.webp",
       "tier": 2
     },
     "mid_frequency_waveworn_shard": {
@@ -633,7 +633,7 @@
       "label": "Mid Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_2_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_2_UI.webp",
       "tier": 3
     },
     "high_frequency_waveworn_shard": {
@@ -641,7 +641,7 @@
       "label": "High Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_3_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_3_UI.webp",
       "tier": 4
     },
     "full_frequency_waveworn_shard": {
@@ -649,7 +649,7 @@
       "label": "Full Frequency Waveworn Shard",
       "Category": "forgery",
       "SubCategory": "shard",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_008_4_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_4_UI.webp",
       "tier": 5
     }
   },
@@ -837,6 +837,14 @@
       "SubCategory": "boss",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_029_UI.webp",
       "tier": 4
+    },
+    "forged_empyreans_sigh": {
+      "game_id": 4140030024,
+      "label": "Forged Empyrean's Sigh",
+      "Category": "boss",
+      "SubCategory": "boss",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_030_UI.webp",
+      "tier": 4
     }
   },
   "weekly": {
@@ -917,7 +925,8 @@
       "label": "Skyward Glazed Heart",
       "Category": "weekly",
       "SubCategory": "weeklyboss",
-      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_028_UI.webp"
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_028_UI.webp",
+      "tier": 4
     }
   },
   "ascension": {
@@ -926,7 +935,7 @@
       "label": "Iris",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_33A_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_33A_UI.webp",
       "tier": 3
     },
     "terraspawn_fungus": {
@@ -934,7 +943,7 @@
       "label": "Terraspawn Fungus",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_HuiYanGu_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_HuiYanGu_UI.webp",
       "tier": 3
     },
     "lanternberry": {
@@ -942,7 +951,7 @@
       "label": "Lanternberry",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_denglongguo_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_denglongguo_UI.webp",
       "tier": 3
     },
     "pecok_flower": {
@@ -950,7 +959,7 @@
       "label": "Pecok Flower",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_18A_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_18A_UI.webp",
       "tier": 3
     },
     "belle_poppy": {
@@ -958,7 +967,7 @@
       "label": "Belle Poppy",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_29A_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_29A_UI.webp",
       "tier": 3
     },
     "coriolus": {
@@ -966,7 +975,7 @@
       "label": "Coriolus",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_30A_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_30A_UI.webp",
       "tier": 3
     },
     "wintry_bell": {
@@ -974,7 +983,7 @@
       "label": "Wintry Bell",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_31A_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRup/T_IconRup_SM_Gat_31A_UI.webp",
       "tier": 3
     },
     "violet_coral": {
@@ -982,7 +991,7 @@
       "label": "Violet Coral",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_Sep_061_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_Sep_061_UI.webp",
       "tier": 3
     },
     "pavo_plum": {
@@ -990,7 +999,7 @@
       "label": "Pavo Plum",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_029_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_029_UI.webp",
       "tier": 3
     },
     "loongs_pearl": {
@@ -998,7 +1007,7 @@
       "label": "Loong's Pearl",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_030_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_030_UI.webp",
       "tier": 3
     },
     "nova": {
@@ -1006,7 +1015,7 @@
       "label": "Nova",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconTask/T_IconTask_Task_084_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconTask/T_IconTask_Task_084_UI.webp",
       "tier": 3
     },
     "golden_fleece": {
@@ -1014,7 +1023,7 @@
       "label": "Golden Fleece",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_045_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_045_UI.webp",
       "tier": 3
     },
     "sword_acorus": {
@@ -1022,7 +1031,7 @@
       "label": "Sword Acorus",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_044_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_044_UI.webp",
       "tier": 3
     },
     "firecracker_jewelweed": {
@@ -1030,7 +1039,7 @@
       "label": "Firecracker Jewelweed",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_043_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_043_UI.webp",
       "tier": 3
     },
     "seaside_cendrelis": {
@@ -1038,7 +1047,7 @@
       "label": "Seaside Cendrelis",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconTask/T_IconTask_Task_144_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconTask/T_IconTask_Task_144_UI.webp",
       "tier": 3
     },
     "bamboo_iris": {
@@ -1046,7 +1055,7 @@
       "label": "Bamboo Iris",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_bianzhuhua_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_bianzhuhua_UI.webp",
       "tier": 3
     },
     "bloodleaf_viburnum": {
@@ -1054,7 +1063,7 @@
       "label": "Bloodleaf Viburnum",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_xueyejiami_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_xueyejiami_UI.webp",
       "tier": 3
     },
     "afterlife": {
@@ -1062,7 +1071,7 @@
       "label": "Afterlife",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_054_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_054_UI.webp",
       "tier": 3
     },
     "stone_rose": {
@@ -1070,7 +1079,7 @@
       "label": "Stone Rose",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_056_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_056_UI.webp",
       "tier": 3
     },
     "sliverglow_bloom": {
@@ -1078,7 +1087,7 @@
       "label": "Sliverglow Bloom",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_057_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_057_UI.webp",
       "tier": 3
     },
     "luminous_calendula": {
@@ -1086,7 +1095,7 @@
       "label": "Luminous Calendula",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_058_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_058_UI.webp",
       "tier": 3
     },
     "summer_flower": {
@@ -1094,7 +1103,7 @@
       "label": "Summer Flower",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_060_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_060_UI.webp",
       "tier": 3
     },
     "gemini_spore": {
@@ -1102,7 +1111,7 @@
       "label": "Gemini Spore",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_060_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_066_UI.webp",
       "tier": 3
     },
     "rimewisp": {
@@ -1110,7 +1119,7 @@
       "label": "Rimewisp",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_067_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_067_UI.webp",
       "tier": 3
     },
     "arithmetic_shell": {
@@ -1118,7 +1127,7 @@
       "label": "Arithmetic Shell",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_063_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_063_UI.webp",
       "tier": 3
     },
     "moss_amber": {
@@ -1126,7 +1135,7 @@
       "label": "Moss Amber",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_072_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_072_UI.webp",
       "tier": 3
     },
     "edelschnee": {
@@ -1134,7 +1143,7 @@
       "label": "Edelschnee",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_074_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_074_UI.webp",
       "tier": 3
     },
     "dream_of_stars": {
@@ -1142,7 +1151,7 @@
       "label": "Dream of Stars",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_075_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_075_UI.webp",
       "tier": 3
     },
     "redbell": {
@@ -1150,7 +1159,7 @@
       "label": "Redbell",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_076_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_076_UI.webp",
       "tier": 3
     },
     "forget_me_not": {
@@ -1158,7 +1167,7 @@
       "label": "Forget Me Not",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconC/T_IconC_077_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_077_UI.webp",
       "tier": 3
     },
     "past_reveries": {
@@ -1166,7 +1175,7 @@
       "label": "Past Reveries",
       "Category": "ascension",
       "SubCategory": "ascension",
-      "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconA/T_IconA_23_UI.webp",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconA/T_IconA_23_UI.webp",
       "tier": 3
     },
     "cloudperch_seed": {

@@ -197,6 +197,7 @@
     "4140030021": "Our Choice",
     "4140030022": "Nightmare Flashdrive",
     "4140030023": "Solidarity's Loneflame",
+    "4140030024": "Forged Empyrean's Sigh",
     "4150010001": "Monument Bell",
     "4150010002": "Unending Destruction",
     "4150010003": "Dreamless Feather",
@@ -324,12 +325,12 @@
     "4350500105": "Freeze Frame",
     "4350100106": "Azure Oath",
     "4350500107": "Firstlight's Herald",
-    "4350100108": "Cloud Jasper",
+    "4350100108": "Glint of Clouds",
     "4350200109": "Thousandfold Deliverance"
   },
   "ui": {
     "game.name.wutheringwave": "Wuthering Waves",
-    "game.icon.wutheringwave": "https://i.namu.wiki/i/eDAoYN4PpEN9TMk9lquaBujEm2UQe9C7kok50F-98_c6Mw6yx_TIGu9Pq-Ga7PADbZ9PWSB7xwKZYbYIpnkAqNe6dwYWgmbLl_vP-UGveS2lVmG7GQ-F2TBc0E14vBZemXC3Oj3eHWTYzDcuAkqiEg.webp",
+    "game.icon.wutheringwave": "https://nanoka.cc/images/ww.webp",
     "category.whisperin_core": "Whisperin Core",
     "category.howler_core": "Howler Core",
     "category.ring": "Ring",

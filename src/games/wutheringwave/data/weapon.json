@@ -962,12 +962,12 @@
     "common": "exoswarm",
     "forgery": "string"
   },
-  "cloud_jasper": {
+  "glint_of_clouds": {
     "game_id": 4350100108,
-    "display_name": "Cloud Jasper",
+    "display_name": "Glint of Clouds",
     "rarity": 5,
     "type": "sword",
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050096_UI.webp",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020106_UI.webp",
     "common": "mech",
     "forgery": "polarizer"
   },
@@ -976,7 +976,7 @@
     "display_name": "Thousandfold Deliverance",
     "rarity": 5,
     "type": "broadblade",
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21050096_UI.webp",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010076_UI.webp",
     "common": "pendant",
     "forgery": "crystal"
   }
