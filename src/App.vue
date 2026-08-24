@@ -25,6 +25,7 @@
     <main>
       <router-view />
     </main>
+    <ConfirmDialog />
   </div>
 </template>
 
@@ -36,6 +37,7 @@ import { useGameStore } from './store/game.js';
 import { useLocale } from '@/composables/useLocale';
 import { useTheme } from '@/composables/useTheme';
 import GameSelector from './components/common/GameSelector.vue';
+import ConfirmDialog from './components/common/ConfirmDialog.vue';
 import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();

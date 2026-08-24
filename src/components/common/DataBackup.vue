@@ -58,7 +58,10 @@
 import { ref, onMounted } from 'vue';
 import { toast } from 'vue3-toastify';
 import storage from '@/utils/storage';
+import { useConfirm } from '@/composables/useConfirm';
 import logger from '@/utils/logger';
+
+const { confirmDialog } = useConfirm();
 
 const storageInfo = ref(null);
 const isProcessing = ref(false);
@@ -89,7 +92,7 @@ const handleRestore = async (event) => {
   const file = event.target.files?.[0];
   if (!file) return;
 
-  if (!confirm('⚠️ This will overwrite current data with the backup file. Continue?')) {
+  if (!(await confirmDialog('⚠️ This will overwrite current data with the backup file. Continue?', { danger: true }))) {
     event.target.value = '';
     return;
   }
@@ -116,11 +119,11 @@ const handleRestore = async (event) => {
 };
 
 const handleClear = async () => {
-  if (!confirm('⚠️ Delete all data? This action cannot be undone.')) {
+  if (!(await confirmDialog('⚠️ Delete all data? This action cannot be undone.', { danger: true }))) {
     return;
   }
 
-  if (!confirm('⚠️⚠️ Are you sure? Have you backed up your data first?')) {
+  if (!(await confirmDialog('⚠️⚠️ Are you sure? Have you backed up your data first?', { danger: true }))) {
     return;
   }
 

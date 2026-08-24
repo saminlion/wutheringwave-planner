@@ -82,6 +82,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import cloudSync from '@/services/cloudSync';
+import { useConfirm } from '@/composables/useConfirm';
+
+const { confirmDialog } = useConfirm();
 
 const isAvailable = ref(cloudSync.isCloudSyncAvailable());
 const user = ref(null);
@@ -158,7 +161,7 @@ async function handleSave() {
 }
 
 async function handleLoad() {
-  if (!confirm('This will overwrite your local data. Continue?')) {
+  if (!(await confirmDialog('This will overwrite your local data. Continue?', { danger: true }))) {
     return;
   }
 

@@ -91,9 +91,11 @@ import { usePlannerStore } from "@/store/planner";
 import { useInventoryStore } from "@/store/inventory";
 import { useGameStore } from "@/store/game";
 import { useLocale } from '@/composables/useLocale';
+import { useConfirm } from '@/composables/useConfirm';
 
 // i18n翻訳関数を取得
 const { tCharacter, tWeapon, tMaterial, tUI } = useLocale();
+const { confirmDialog } = useConfirm();
 import {
   findMaterial,
   getMaterialField,
@@ -866,7 +868,7 @@ const performSynthesis = (synthesisNeeded) => {
 };
 
 // Complete goal: Update current levels to target and deduct materials from inventory
-const completeGoal = (id, type) => {
+const completeGoal = async (id, type) => {
   const goal = goals.value.find(g => g.id === id && g.type === type);
   if (!goal) {
     toast.error('Goal not found');
@@ -922,7 +924,7 @@ const completeGoal = (id, type) => {
 
     confirmMessage += '\n- Hide this goal from planner\n\nContinue?';
 
-    if (!confirm(confirmMessage)) {
+    if (!(await confirmDialog(confirmMessage))) {
       return;
     }
 
@@ -1096,7 +1098,7 @@ const completeGoal = (id, type) => {
 };
 
 // Complete a single tab (level or skills) from within the dialog
-const handleCompleteTab = ({ tabType, materials, settingsUpdate }) => {
+const handleCompleteTab = async ({ tabType, materials, settingsUpdate }) => {
   const type = dialogType.value;
   const id = type === 'character'
     ? selectedCharacter.value?.game_id
@@ -1140,7 +1142,7 @@ const handleCompleteTab = ({ tabType, materials, settingsUpdate }) => {
   }
   confirmMessage += '\n\nThis will deduct materials from inventory.';
 
-  if (!confirm(confirmMessage)) return;
+  if (!(await confirmDialog(confirmMessage))) return;
 
   if (validation.synthesisNeeded.length > 0) {
     performSynthesis(validation.synthesisNeeded);
