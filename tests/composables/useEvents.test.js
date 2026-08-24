@@ -1,5 +1,31 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
+import { mount } from '@vue/test-utils';
 import { parseEventDate, packLanes, DEFAULT_UTC_OFFSET } from '@/composables/useEvents';
+import useEvents from '@/composables/useEvents';
+
+// Rows shaped like the synced `events.json`: `id` is the sheet's eventID formula.
+vi.mock('@/store/game', () => ({
+  useGameStore: () => ({
+    currentGame: {
+      getData: (type) => (type === 'events' ? [
+        { id: '9401260001', name: 'Daphne Convene', description: 'Featured 5-star rate-up.',
+          category: 'banner',
+          startDate: '2026-08-12 04:00', endDate: '2026-09-02 03:59', utcOffset: 8 },
+        { id: '9402260002', name: 'Twilight Tread Exchange',
+          startDate: '2026-08-12 04:00', endDate: '2026-08-26 03:59', utcOffset: 8 },
+        { id: '9402260003', name: 'Broken date row',
+          startDate: '⚠', endDate: '⚠', utcOffset: 8 },
+      ] : null),
+    },
+  }),
+}));
+
+/** useEvents needs a setup context (it registers a tick interval). */
+function runUseEvents() {
+  let api = null;
+  mount({ setup() { api = useEvents(); return () => null; } });
+  return api;
+}
 
 describe('parseEventDate', () => {
   it('parses date-only strings at midnight in the given offset', () => {
@@ -81,5 +107,33 @@ describe('packLanes', () => {
     const { events, laneCount } = packLanes([]);
     expect(events).toEqual([]);
     expect(laneCount).toBe(0);
+  });
+});
+
+
+describe('useEvents name localization', () => {
+  it('keys events by the sheet eventID', () => {
+    const { events } = runUseEvents();
+    // Same start date, so the sort tie-breaks on the earlier end date.
+    expect(events.value.map((e) => e.id)).toEqual(['9402260002', '9401260001']);
+  });
+
+  // Names go through `tEvent(id, name)`, so a missing Events_i18n row must not blank them out.
+  it('falls back to the sheet English name when no translation is loaded', () => {
+    const { events } = runUseEvents();
+    expect(events.value.map((e) => e.name))
+      .toEqual(['Twilight Tread Exchange', 'Daphne Convene']);
+  });
+
+  // The blurb resolves through `<id>.desc`, fed by the sheet's desc_ko column.
+  it('falls back to the sheet English description when no translation is loaded', () => {
+    const { events } = runUseEvents();
+    const daphne = events.value.find((e) => e.id === '9401260001');
+    expect(daphne.description).toBe('Featured 5-star rate-up.');
+  });
+
+  it('drops rows whose dates the sheet could not compute', () => {
+    const { events } = runUseEvents();
+    expect(events.value.some((e) => e.name === 'Broken date row')).toBe(false);
   });
 });

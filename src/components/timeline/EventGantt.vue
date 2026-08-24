@@ -116,7 +116,7 @@ const props = defineProps({
   now: { type: Number, default: () => Date.now() },
 });
 
-const { tUI } = useLocale();
+const { tUI, locale } = useLocale();
 
 const MS_PER_DAY = 86400000;
 const BAR_HEIGHT = 34;
@@ -192,7 +192,8 @@ const dayTicks = computed(() => {
   return ticks;
 });
 
-const monthFormat = new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short' });
+const monthFormat = computed(() =>
+  new Intl.DateTimeFormat(locale.value, { year: 'numeric', month: 'short' }));
 
 const months = computed(() => {
   const result = [];
@@ -207,7 +208,7 @@ const months = computed(() => {
     } else {
       result.push({
         key,
-        label: monthFormat.format(date),
+        label: monthFormat.value.format(date),
         left: tick.left,
         width: dayWidth.value,
       });
@@ -260,15 +261,17 @@ const bodyHeight = computed(() => {
   return last.top + TRACK_HEADER + laneCount * (BAR_HEIGHT + BAR_GAP) + TRACK_GAP;
 });
 
-const dateFormat = new Intl.DateTimeFormat(undefined, {
+// Follows the app's language picker rather than the browser locale, so switching
+// to ko does not leave English dates next to Korean event names.
+const dateFormat = computed(() => new Intl.DateTimeFormat(locale.value, {
   month: 'short',
   day: 'numeric',
   hour: '2-digit',
   minute: '2-digit',
-});
+}));
 
 const formatRange = (event) =>
-  `${dateFormat.format(new Date(event.start))} — ${dateFormat.format(new Date(event.end))}`;
+  `${dateFormat.value.format(new Date(event.start))} — ${dateFormat.value.format(new Date(event.end))}`;
 
 const scrollToToday = () => {
   const el = scroller.value;

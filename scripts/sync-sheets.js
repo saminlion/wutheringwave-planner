@@ -95,6 +95,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      events: 'Events_i18n',
       ui: 'UI_i18n',
     },
   },
@@ -112,6 +113,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      events: 'Events_i18n',
       ui: 'UI_i18n',
     },
   },
@@ -129,6 +131,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      events: 'Events_i18n',
       ui: 'UI_i18n',
     },
   },
@@ -147,6 +150,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      events: 'Events_i18n',
       ui: 'UI_i18n',
     },
   },
@@ -165,6 +169,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      events: 'Events_i18n',
       ui: 'UI_i18n',
     },
   },
@@ -183,6 +188,7 @@ const GAMES = {
       characters: 'Characters_i18n',
       materials: 'Materials_i18n',
       weapons: 'Weapons_i18n',
+      events: 'Events_i18n',
       ui: 'UI_i18n',
     },
   },
@@ -775,22 +781,42 @@ function transformFarmingRates(rows) {
 }
 
 /**
+ * Read a column case-insensitively — sheet headers keep whatever casing the author typed,
+ * so "eventID", "eventid" and "EventID" all have to resolve to the same field.
+ */
+function field(row, name) {
+  if (!row) return undefined;
+  if (row[name] !== undefined) return row[name];
+  const wanted = name.trim().toLowerCase();
+  const match = Object.keys(row).find((h) => h.trim().toLowerCase() === wanted);
+  return match ? row[match] : undefined;
+}
+
+/**
  * Transform i18n rows to locale object
  *
- * Sheet columns: game_id, en, ko
- * Returns: { "game_id": "translated_name", ... }
+ * Sheet columns: game_id, en, ko  (UI_i18n uses `key`, Events_i18n uses `eventID`)
+ * Optional `desc_en` / `desc_ko` columns land under a `<key>.desc` key — used by
+ * Events_i18n so an event's blurb can be translated alongside its name.
+ * Returns: { "game_id": "translated_name", "game_id.desc": "translated blurb", ... }
  */
 function transformI18n(rows, lang) {
   const result = {};
 
   for (const row of rows) {
-    // UI_i18n 탭은 'key' 컬럼 사용, 기타 i18n 탭은 'game_id' 사용 (하위 호환)
-    const rowKey = row.key ?? row.game_id;
+    // UI_i18n 탭은 'key', Events_i18n 탭은 'eventID', 기타 i18n 탭은 'game_id'
+    const rowKey = field(row, 'key') ?? field(row, 'game_id') ?? field(row, 'eventID');
     if (!rowKey) continue;
 
     const value = row[lang];
     if (value != null && value !== '') {
       result[String(rowKey)] = value;
+    }
+
+    // desc_{lang} 컬럼(선택): 설명 번역을 `<key>.desc` 로 저장
+    const description = field(row, `desc_${lang}`);
+    if (description != null && description !== '') {
+      result[`${String(rowKey)}.desc`] = description;
     }
 
     // icon 컬럼: game.name.{gameId} 행에만 입력 → game.icon.{gameId} 키로 저장
@@ -809,7 +835,8 @@ function transformI18n(rows, lang) {
  * Transform event rows into the timeline event array.
  *
  * Sheet columns (header names are case-insensitive):
- *   id          - stable key; auto-generated from name+startDate when blank
+ *   eventID     - stable key (sheet formula); `id` still accepted for older sheets,
+ *                 auto-generated from name+startDate when both are blank
  *   name        - required
  *   description - optional blurb shown on cards
  *   category    - "banner" or "event" (defaults to "event")
@@ -825,12 +852,13 @@ function transformI18n(rows, lang) {
  */
 function transformEvents(rows) {
   const result = [];
+  /** What the sheet's IFERROR wrappers put in a cell it could not compute. */
+  const WARN = '⚠';
 
   for (const row of rows) {
     // Normalize headers so "Name"/"name"/"NAME" all work.
     const get = (key) => {
-      const match = Object.keys(row).find((h) => h.trim().toLowerCase() === key);
-      const value = match ? row[match] : null;
+      const value = field(row, key);
       return value === null || value === undefined ? '' : String(value).trim();
     };
 
@@ -845,12 +873,20 @@ function transformEvents(rows) {
       continue;
     }
 
+    // The sheet's date formulas emit "⚠" when startAt/endAt isn't a real date.
+    // Fail loudly here — otherwise the row reaches the app and gets dropped in silence.
+    if (startDate === WARN || endDate === WARN) {
+      console.log(`    Skipping event row (sheet reports an unusable date): ${name}`);
+      continue;
+    }
+
     const category = get('category').toLowerCase() === 'banner' ? 'banner' : 'event';
     const utcOffsetRaw = get('utcoffset');
     const utcOffset = utcOffsetRaw === '' ? 8 : Number(utcOffsetRaw);
 
     result.push({
-      id: get('id') || `${name}__${startDate}`.replace(/\s+/g, '-').toLowerCase(),
+      id: [get('eventID'), get('id')].find((v) => v && v !== WARN)
+        || `${name}__${startDate}`.replace(/\s+/g, '-').toLowerCase(),
       name,
       description: get('description'),
       category,

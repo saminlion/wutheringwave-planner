@@ -597,27 +597,58 @@ scrapable HTML and a useless `og:image`, so automation is not viable.
 
 **Our approach:** events are entered in the `Events` tab of each game's Google Sheet and synced by
 `scripts/sync-sheets.js` → `src/games/{gameid}/data/events.json`. No code changes per patch —
-just add sheet rows and run the sync.
+just add sheet rows and run the sync. The sheet-side setup (columns, formulas, data-validation
+dropdowns, per-game eventID prefix) is written up in `LocalOnly/EVENTS_SHEET_SETUP.md`; the
+formulas reference nothing outside the `Events` tab, so games whose sheets have no `Lookup` tab
+use exactly the same ones.
 
 ### Sheet columns (`Events` tab)
 
 Headers are case-insensitive. Rows missing `name`, `startDate`, or `endDate` are skipped.
 
-| Column | Required | Notes |
-|--------|----------|-------|
-| `id` | No | Stable key; auto-generated from name+startDate when blank |
-| `name` | **Yes** | Display name |
-| `description` | No | Blurb on cards (hidden in compact mode) |
-| `category` | No | `banner` or `event` (default). Drives track separation in the gantt |
-| `cover` | No | Full image URL. **Blank or broken → automatic color-tile fallback** |
-| `color` | No | Hex accent color (default `#667eea`) |
-| `sourceUrl` | No | Official announcement link; card becomes clickable when set |
-| `startDate` | **Yes** | `YYYY-MM-DD HH:mm` in the event's own timezone |
-| `endDate` | **Yes** | Same format |
-| `utcOffset` | No | Hours; defaults to `8` (server time for most gacha games) |
+Entering one event means: type the name, pick `category`, click two dates. Everything else is
+optional or derived.
+
+| Column | Kind | Notes |
+|--------|------|-------|
+| `eventID` | formula | `<gameCode> 4 CC YY NNNN` — the i18n key (gameCode: ww 4 … dna 9). A legacy `id` column still works |
+| `name` | input **required** | English display name |
+| `description` | input | Blurb on cards (hidden in compact mode) |
+| `category` | input | `banner` or `event` (default). Drives track separation in the gantt |
+| `cover` | input | Full image URL. **Blank or broken → automatic color-tile fallback** |
+| `color` | input | Hex accent color (default `#667eea`) |
+| `sourceUrl` | input | Official announcement link; card becomes clickable when set |
+| `startDay` / `endDay` | input **required** | Date-only cells — calendar picker, no time typing |
+| `startTime` / `endTime` | input *(usually blank)* | Overrides the formula default (`04:00`/`03:59`) |
+| `timezone` | input *(usually blank)* | A label like `한국 KST (UTC+9)`, parsed for `UTC±N`; blank → `8` |
+| `startDate` / `endDate` | formula | `day + time` rendered as `yyyy-mm-dd hh:mm` — what the sync reads |
+| `utcOffset` | formula | `VLOOKUP(timezone, Lookup!Z:AA)`; hours, defaults to `8` |
 
 Dates are wall-clock in `utcOffset`, so `2026-08-12 04:00` with `utcOffset: 8` is the same instant
 for every viewer regardless of their local timezone.
+
+> ⚠️ **Why the day/time split.** The sync reads the sheet through its CSV export, so it receives the
+> *displayed* string. A raw datetime cell exports in the sheet's locale format
+> (`2026. 8. 12 오전 4:00`), which `parseEventDate` rejects — the row is then silently dropped.
+> `startDate`/`endDate` are formulas (`TEXT(day + time, "yyyy-mm-dd hh:mm")`), pinning the ISO
+> format regardless of cell format or locale, while humans only ever click a date.
+> The per-event time and timezone columns exist so the common case stays blank: the defaults live
+> in the `M2`/`N2`/`O2` formulas themselves, so a game with different server hours edits its own
+> two `TIME(...)` calls and depends on no other tab.
+
+### Event translation (`Events_i18n` tab)
+
+`eventID` · `en` · `ko` · `desc_en` · `desc_ko`, where A/B/D are formulas mirroring the `Events`
+tab and only the two `ko` columns are typed. `transformI18n` writes the name under the eventID and
+the blurb under `<eventID>.desc` in the `events` section of each locale file; `useEvents` resolves
+both through `tEvent()`, so either can stay blank and fall back to the sheet's English text.
+Because localization happens inside `useEvents`, every consumer (cards, gantt bars, tooltips, the
+home widget) picks it up with no per-component work.
+
+**Nothing is machine-translated** — the project has no translation API. Timeline coverage is:
+event name and description from `Events_i18n`, UI labels from `timeline.*` in the base locales,
+and dates from `Intl.DateTimeFormat(locale)` following the app's language picker. `cover`, `color`
+and `sourceUrl` are single-value fields with no per-language variant.
 
 ### Files
 
@@ -637,8 +668,10 @@ src/views/TimelineView.vue              # /timeline route, tab toggle
 
 1. Create `src/games/{gameid}/data/events.json` containing `[]`
 2. Export it from `data/index.js` and add `events` to the plugin's `dataCache`
-3. Add an `Events` tab to the game's Google Sheet (`events: 'Events'` is already registered in
-   `sync-sheets.js` for all games)
+3. Add `Events` + `Events_i18n` tabs to the game's Google Sheet (`events: 'Events'` and
+   `events: 'Events_i18n'` are already registered in `sync-sheets.js` for all games — a game
+   without those tabs just logs a fetch warning and syncs everything else). Follow
+   `LocalOnly/EVENTS_SHEET_SETUP.md` and swap the eventID prefix for the game's code.
 
 An empty array renders the empty-state hint — nothing breaks.
 

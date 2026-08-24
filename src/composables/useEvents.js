@@ -10,9 +10,9 @@
  *
  * Event schema (all fields optional except name/startDate/endDate):
  *   {
- *     "id":          "wuwa-3-5-lynae",       // stable key; falls back to name+startDate
- *     "name":        "Lynae Convene",
- *     "description": "...",
+ *     "id":          "9401260001",           // eventID from the sheet; falls back to name+startDate
+ *     "name":        "Lynae Convene",         // English; localized via the Events_i18n tab
+ *     "description": "...",           // localized via Events_i18n `desc_ko`
  *     "category":    "banner",                // "banner" | "event"
  *     "cover":       "https://.../img.png",   // optional; empty -> color-only card
  *     "color":       "#BDAE92",               // accent color
@@ -24,6 +24,7 @@
  */
 import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useGameStore } from '@/store/game';
+import { useLocale } from '@/composables/useLocale';
 import logger from '@/utils/logger';
 
 /** Most gacha games publish schedules in server time (UTC+8). */
@@ -85,6 +86,8 @@ export function packLanes(events, minGapMs = 0) {
 export function useEvents(options = {}) {
   const { tickMs = 60000 } = options;
   const gameStore = useGameStore();
+  // Event names live in the `Events_i18n` sheet tab, keyed by the same id.
+  const { tEvent } = useLocale();
 
   // Ticks so "ongoing/ended" and progress bars stay live without a reload.
   const now = ref(Date.now());
@@ -117,11 +120,14 @@ export function useEvents(options = {}) {
         continue;
       }
 
+      const id = row.id || `${row.name}__${row.startDate}`;
+
       result.push({
         ...row,
-        id: row.id || `${row.name}__${row.startDate}`,
-        name: row.name ?? '',
-        description: row.description ?? '',
+        id,
+        // Falls back to the sheet's English text while a ko row is still blank.
+        name: tEvent(id, row.name ?? ''),
+        description: tEvent(`${id}.desc`, row.description ?? ''),
         category: row.category === 'banner' ? 'banner' : 'event',
         cover: row.cover || '',
         color: row.color || '#667eea',

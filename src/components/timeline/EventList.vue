@@ -67,7 +67,7 @@ const props = defineProps({
   showEnded: { type: Boolean, default: true },
 });
 
-const { tUI } = useLocale();
+const { tUI, locale } = useLocale();
 
 const applyLimit = (items) => (props.limit > 0 ? items.slice(0, props.limit) : items);
 
@@ -107,15 +107,17 @@ const badgeText = (event) => {
   return tUI('timeline.ended');
 };
 
-const dateFormat = new Intl.DateTimeFormat(undefined, {
+// Follows the app's language picker rather than the browser locale, so switching
+// to ko does not leave English dates next to Korean event names.
+const dateFormat = computed(() => new Intl.DateTimeFormat(locale.value, {
   month: 'short',
   day: 'numeric',
   hour: '2-digit',
   minute: '2-digit',
-});
+}));
 
 const formatRange = (event) =>
-  `${dateFormat.format(new Date(event.start))} — ${dateFormat.format(new Date(event.end))}`;
+  `${dateFormat.value.format(new Date(event.start))} — ${dateFormat.value.format(new Date(event.end))}`;
 </script>
 
 <style scoped>

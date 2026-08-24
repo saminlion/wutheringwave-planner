@@ -85,6 +85,7 @@ export function useLocale() {
       characters: { ...(base.characters || {}), ...(game.characters || {}) },
       weapons: { ...(base.weapons || {}), ...(game.weapons || {}) },
       materials: { ...(base.materials || {}), ...(game.materials || {}) },
+      events: { ...(base.events || {}), ...(game.events || {}) },
       // 현재 게임 ui가 allGameUi를 덮어쓰도록 순서 유지
       ui: { ...(base.ui || {}), ...allGameUi, ...(game.ui || {}) },
       guide: game.guide || null,
@@ -102,6 +103,8 @@ export function useLocale() {
   const tCharacter = (gameId, fallback = '') => t(gameId, 'characters', fallback);
   const tWeapon = (gameId, fallback = '') => t(gameId, 'weapons', fallback);
   const tMaterial = (gameId, fallback = '') => t(gameId, 'materials', fallback);
+  /** Events_i18n 탭의 eventID → 현재 언어 이름. 번역이 없으면 시트의 영어 이름을 그대로 씁니다. */
+  const tEvent = (eventId, fallback = '') => t(eventId, 'events', fallback);
   const tUI = (key) => t(key, 'ui', key);
 
   const setLocale = async (newLocale) => {
@@ -153,6 +156,7 @@ export function useLocale() {
     tCharacter,
     tWeapon,
     tMaterial,
+    tEvent,
     tUI,
     setLocale,
     initLocale,
