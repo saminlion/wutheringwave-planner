@@ -135,6 +135,24 @@
     "7362000048": "Heart Sword",
     "7365000049": "Voice of some"
   },
+  "events": {
+    "9402990001": "Volley Star",
+    "9402990001.desc": "Sunshine, sandy beaches, and beach volleyball! Team up with others to dash across the sand and unleash a powerful spike. It’s the perfect way to enjoy the thrill of sports alongside the relaxed vibes of a summer vacation. Participate in the event to earn limited-time rewards, including the \"Radiant Summer\" profile frame, \"Ideal Court\" nameplate, Phantasm Stones, Dice of Deception, Ponds, Drifting Ice Theater Tickets, Premium Hunter Guides, Chaos Dye, and more.\r",
+    "9402990002": "Surf Breaker",
+    "9402990002.desc": "Enjoy thrilling racing accompanied by cool sea breezes this hot summer! Complete racing challenges during the event period to earn a variety of rewards, such as Hwanseok, Pons, Drifting Ice Theater tickets, Premium Hunter Guides, Chaos Dye, and more.\r",
+    "9402990003": "Shipwreck Salvage",
+    "9402990003.desc": "I’m out collecting bottles again today, just like always. During the event, you can earn the event currency \"Drifting Message in a Bottle\" and exchange it in the event shop for rewards such as the \"Armful\" profile frame, the \"Treasure Hunt Journey\" namecard, Primogems, Dice of Deception, and Ponds.\r",
+    "9402990004": "Runaway Echoes",
+    "9402990005": "Hunter's Crucible",
+    "9402990005.desc": "Becoming strong requires enduring greater trials. New \"Mamon\" and \"Mophix\" challenge stages have been added for this event. By clearing these challenge stages during the event period, you can earn various rewards—such as the \"Banquet: Honing Skills\" event title, Phantom Stones, Dice of Deception, Ponds, Premium Hunter Guides, and Chaos Dyes—based on your cumulative progress.\r",
+    "9402990006": "Breezy Tour",
+    "9402990007": "Circle Gifts",
+    "9402990008": "Stamina Recharge",
+    "9402990009": "Beyond the Rails",
+    "9402990010": "Gold Clash",
+    "9402990011": "Pixel Surge",
+    "9402990012": "Fons Rush"
+  },
   "ui": {
     "game.name.nte": "Neverness To Everness",
     "game.icon.nte": "https://nanoka.cc/images/nte.webp",

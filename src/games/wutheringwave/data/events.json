@@ -1,6 +1,6 @@
 [
   {
-    "id": "gifts-of-drifting-mist__2026-08-20-12:00",
+    "id": "9402990006",
     "name": "Gifts of Drifting Mist",
     "description": "Log-in during the event's duration for pulls and additional rewards!",
     "category": "event",
@@ -12,7 +12,7 @@
     "utcOffset": 9
   },
   {
-    "id": "qingxiao-banner__2026-08-20-12:00",
+    "id": "9402990009",
     "name": "Qingxiao Banner",
     "description": "Banner Event",
     "category": "banner",
@@ -24,7 +24,7 @@
     "utcOffset": 9
   },
   {
-    "id": "pass__2026-08-20-12:00",
+    "id": "9402990011",
     "name": "Pass",
     "description": "Pass Event",
     "category": "event",
@@ -36,7 +36,7 @@
     "utcOffset": 9
   },
   {
-    "id": "resonance-sim-realm__2026-08-22-11:00",
+    "id": "9402990001",
     "name": "Resonance Sim Realm",
     "description": "Combat event where you can use abilities provided by your other resonator friends to win and get rewards!",
     "category": "event",
@@ -48,7 +48,7 @@
     "utcOffset": 9
   },
   {
-    "id": "second-coming-of-solaris:-coded-deception__2026-08-27-05:00",
+    "id": "9402990003",
     "name": "Second Coming of Solaris: Coded Deception",
     "description": "Return of the wacky event where you must fix anomalies or make them worse to gain rewards!",
     "category": "event",
@@ -60,7 +60,7 @@
     "utcOffset": 9
   },
   {
-    "id": "the-strings-remember__2026-09-03-05:00",
+    "id": "9402990004",
     "name": "The Strings Remember",
     "description": "Play the Qin with Qingxiao and play the requested melodies, with new melodies unlocked for 7 days.",
     "category": "event",
@@ -72,7 +72,7 @@
     "utcOffset": 9
   },
   {
-    "id": "bountiful-crescendo__2026-09-03-05:00",
+    "id": "9402990008",
     "name": "Bountiful Crescendo",
     "description": "Double Event",
     "category": "event",
@@ -84,7 +84,7 @@
     "utcOffset": 9
   },
   {
-    "id": "if-dreams-still-reverberate__2026-09-10-11:00",
+    "id": "9402990002",
     "name": "If Dreams Still Reverberate",
     "description": "Cooperate with other players to defeat dangerous enemies in this combat event!",
     "category": "event",
@@ -96,7 +96,7 @@
     "utcOffset": 9
   },
   {
-    "id": "jingran-banner__2026-09-10-11:00",
+    "id": "9402990010",
     "name": "Jingran Banner",
     "description": "Banner Event",
     "category": "banner",
@@ -108,7 +108,7 @@
     "utcOffset": 9
   },
   {
-    "id": "3.6-wuthering-exploration__2026-09-17-05:00",
+    "id": "9402990005",
     "name": "3.6 Wuthering Exploration",
     "description": "Fulfill daily tasks to complete milestones and earn various rewards!",
     "category": "event",
@@ -120,7 +120,7 @@
     "utcOffset": 9
   },
   {
-    "id": "chord-cleansing__2026-09-22-05:00",
+    "id": "9402990007",
     "name": "Chord Cleansing",
     "description": "Double Event",
     "category": "event",

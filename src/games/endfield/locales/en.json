@@ -150,6 +150,10 @@
     "5360400072": "Type 42: Solemn Phalanx",
     "5360300073": "Bedazzling Night Debut"
   },
+  "events": {
+    "9402990001": "Resonance Sim Realm",
+    "9402990001.desc": "Combat event where you can use abilities provided by your other resonator friends to win and get rewards!"
+  },
   "ui": {
     "game.name.endfield": "Arknights: Endfield",
     "game.icon.endfield": "https://i.namu.wiki/i/BhqnQUG--DaHIsxSZCTxQleW1uHadp5-YqEXecmu5rGtxgRcl4vvj2uToOGyoCsbrBVnQsjh242_dBCkdDEzIC9q54zyMVzmaaCHycuiOOZmjc7bZutArA9Rg1Opo7aS6sIGO8gzgyPQb26dh4FQbw.webp",
