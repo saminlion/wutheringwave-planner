@@ -771,7 +771,7 @@
     "type": "broadblade",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21010066_UI.webp",
     "common": "pendant",
-    "forgery": "crystal"
+    "forgery": "residue"
   },
   "laser_shearer": {
     "game_id": 4350100087,
@@ -789,7 +789,7 @@
     "type": "sword",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21020056_UI.webp",
     "common": "howler_core",
-    "forgery": "metallic_drip"
+    "forgery": "polarizer"
   },
   "emerald_sentence": {
     "game_id": 4350100089,
@@ -816,7 +816,7 @@
     "type": "pistols",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.webp",
     "common": "ring",
-    "forgery": "phlogiston"
+    "forgery": "combustor"
   },
   "lux_umbra": {
     "game_id": 4350400092,
@@ -825,7 +825,7 @@
     "type": "pistols",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030036_UI.webp",
     "common": "ring",
-    "forgery": "phlogiston"
+    "forgery": "combustor"
   },
   "phasic_homogenizer": {
     "game_id": 4350400093,
