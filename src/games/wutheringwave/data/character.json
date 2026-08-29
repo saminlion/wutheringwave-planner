@@ -752,5 +752,25 @@
     "ascension": 4130010031,
     "boss": 4140030024,
     "weeklyBoss": 4150030010
+  },
+  "hsin": {
+    "game_id": 4250400059,
+    "display_name": "Hsin",
+    "rarity": 5,
+    "element": "electro",
+    "weapon": "rectifier",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jingran_UI.webp",
+    "common": "autopuppet",
+    "forgery": "string"
+  },
+  "suoming": {
+    "game_id": 4250400060,
+    "display_name": "Suoming",
+    "rarity": 5,
+    "element": "electro",
+    "weapon": "sword",
+    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jingran_UI.webp",
+    "common": "autopuppet",
+    "forgery": "polarizer"
   }
 }
