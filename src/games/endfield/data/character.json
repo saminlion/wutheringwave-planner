@@ -1532,13 +1532,62 @@
       }
     }
   },
-  "sarkaz": {
-    "game_id": 5260400033,
-    "display_name": "Sarkaz",
+  "typhoeus": {
+    "game_id": 5260300033,
+    "display_name": "Typhoeus",
     "rarity": 6,
-    "element": "cryo",
+    "element": "nature",
     "weapon": "arts",
-    "icon": "https://endfieldtools.dev/assets/images/endfield/charsplash/splash_chr_preview_sarkaz_archer.png",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/typhoeus.webp",
+    "bolete": 5110010007,
+    "odendra": 5110020013,
+    "special": 5130010034,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010036,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "purrchena": {
+    "game_id": 5250100034,
+    "display_name": "Purrchena",
+    "rarity": 5,
+    "element": "physical",
+    "weapon": "sword",
+    "icon": "https://cdn.perlica.moe/images/operators/portraits/purrchena.webp",
     "bolete": 5110010007,
     "odendra": 5110020013,
     "special": 5130010034,
