@@ -654,5 +654,23 @@
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_lance_0014.webp",
     "onyx": 5110030019,
     "special": 5130010034
+  },
+  "umbra_of_frigid_eventide": {
+    "game_id": 5360400074,
+    "display_name": "Umbra of Frigid Eventide",
+    "rarity": 6,
+    "type": "arts",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0019.webp",
+    "onyx": 5110030019,
+    "special": 5130010037
+  },
+  "sufferings_end": {
+    "game_id": 5360400075,
+    "display_name": "Suffering's End",
+    "rarity": 6,
+    "type": "arts",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0020.webp",
+    "onyx": 5110030018,
+    "special": 5130010034
   }
 }
