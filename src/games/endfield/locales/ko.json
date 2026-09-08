@@ -152,7 +152,20 @@
     "5360400074": "추운 밤의 그림자",
     "5360400075": "고난의 끝"
   },
-  "events": {},
+  "events": {
+    "9402990001": "겨울 사냥",
+    "9402990002": "한기 신청",
+    "9402990003": "우리의 거대한 필라인이 왔다!",
+    "9402990004": "러너 운동회",
+    "9402990005": "융합 버블",
+    "9402990006": "옛 도시의 종소리",
+    "9402990007": "능수도에 스미는 가을",
+    "9402990008": "벼린 화살",
+    "9402990009": "이성 보급",
+    "9402990010": "통합 지원 버블 출동",
+    "9402990011": "궁술 시련",
+    "9402990012": "눈 내리는 깊은 숲"
+  },
   "ui": {
     "game.name.endfield": "명일방주: 엔드필드",
     "game.icon.endfield": "https://i.namu.wiki/i/BhqnQUG--DaHIsxSZCTxQleW1uHadp5-YqEXecmu5rGtxgRcl4vvj2uToOGyoCsbrBVnQsjh242_dBCkdDEzIC9q54zyMVzmaaCHycuiOOZmjc7bZutArA9Rg1Opo7aS6sIGO8gzgyPQb26dh4FQbw.webp",

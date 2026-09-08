@@ -759,9 +759,10 @@
     "rarity": 5,
     "element": "electro",
     "weapon": "rectifier",
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jingran_UI.webp",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_75_UI.webp",
     "common": "autopuppet",
-    "forgery": "string"
+    "forgery": "string",
+    "boss": 4140010008
   },
   "suoming": {
     "game_id": 4250400060,
@@ -769,8 +770,9 @@
     "rarity": 5,
     "element": "electro",
     "weapon": "sword",
-    "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jingran_UI.webp",
-    "common": "autopuppet",
-    "forgery": "polarizer"
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_76_UI.webp",
+    "common": "howler_core",
+    "forgery": "polarizer",
+    "boss": 4140030024
   }
 }

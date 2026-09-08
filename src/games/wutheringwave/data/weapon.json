@@ -979,5 +979,23 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010076_UI.webp",
     "common": "pendant",
     "forgery": "crystal"
+  },
+  "blooming_jadehaven": {
+    "game_id": 4350500110,
+    "display_name": "Blooming Jadehaven",
+    "rarity": 5,
+    "type": "rectifier",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010076_UI.webp",
+    "common": "exoswarm",
+    "forgery": "string"
+  },
+  "unspoken_rue": {
+    "game_id": 4350100111,
+    "display_name": "Unspoken Rue",
+    "rarity": 5,
+    "type": "sword",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21010076_UI.webp",
+    "common": "mech",
+    "forgery": "polarizer"
   }
 }
