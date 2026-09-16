@@ -262,5 +262,29 @@
     "forgery": "flower",
     "boss": 7140010004,
     "weeklyBoss": 7150010002
+  },
+  "raven": {
+    "game_id": 7820400023,
+    "display_name": "Raven",
+    "rarity": 6,
+    "element": "psyche",
+    "weapon_type": "gas",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/AvatarImage/256/player_lingke_256.webp",
+    "common": "numeral",
+    "forgery": "hang",
+    "boss": 7140010006,
+    "weeklyBoss": 7150010003
+  },
+  "akane": {
+    "game_id": 7820500024,
+    "display_name": "Akane",
+    "rarity": 6,
+    "element": "lakshana",
+    "weapon_type": "gas",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/AvatarImage/256/player_lingke_256.webp",
+    "common": "delusions",
+    "forgery": "heart",
+    "boss": 7140010002,
+    "weeklyBoss": 7150010001
   }
 }
