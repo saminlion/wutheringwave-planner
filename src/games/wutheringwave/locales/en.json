@@ -359,7 +359,19 @@
     "9402990010": "Jingran Banner",
     "9402990010.desc": "Banner Event",
     "9402990011": "Pass",
-    "9402990011.desc": "Pass Event"
+    "9402990011.desc": "Pass Event",
+    "9402990012": "As Full as Tonight, Forever",
+    "9402990012.desc": "Hisin Banner Event",
+    "9402990013": "Horizon of Dawnbreak",
+    "9402990013.desc": "Chisa Banner Event",
+    "9402990014": "Across Time's Waxes and Wanes",
+    "9402990014.desc": "Yuno Banner Event",
+    "9402990015": "Nine Deaths, One Unbent Heart",
+    "9402990015.desc": "Suoming Banner Event",
+    "9402990016": "Tomorrow in the Frame",
+    "9402990016.desc": "Lucila Banner Event",
+    "9402990017": "Undefined Spectrum",
+    "9402990017.desc": "Linne Banner Event"
   },
   "ui": {
     "game.name.wutheringwave": "Wuthering Waves",
