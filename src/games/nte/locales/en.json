@@ -22,8 +22,8 @@
     "7830200020": "Iroi",
     "7820100021": "Zankou",
     "7850200022": "Lingkou",
-    "7820400023": "Raven",
-    "7820500024": "Akane"
+    "7820400023": "Blackbird",
+    "7820500024": "Akane Rin"
   },
   "materials": {
     "7100010001": "Beetle Coin",
@@ -135,7 +135,9 @@
     "7363000046": "The Wrong Gate",
     "7361000047": "Blushing Mirage",
     "7362000048": "Heart Sword",
-    "7365000049": "Voice of some"
+    "7365000049": "Voice of some",
+    "7362000050": "Crime and Punishment",
+    "7363000051": "Far side of the Moon"
   },
   "events": {
     "9402990001": "Volley Star",

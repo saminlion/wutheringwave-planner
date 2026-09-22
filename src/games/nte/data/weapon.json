@@ -439,5 +439,23 @@
     "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_GoldRecord_256.webp",
     "common": "silhouette",
     "forgery": "dream"
+  },
+  "crime_and_punishment": {
+    "game_id": 7362000050,
+    "display_name": "Crime and Punishment",
+    "rarity": 6,
+    "type": "gas",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_twinbirds_256.webp",
+    "common": "delusions",
+    "forgery": "dessert"
+  },
+  "far_side_of_the_moon": {
+    "game_id": 7363000051,
+    "display_name": "Far side of the Moon",
+    "rarity": 6,
+    "type": "liquid",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/1024/fork_prism.webp",
+    "common": "delusions",
+    "forgery": "core"
   }
 }

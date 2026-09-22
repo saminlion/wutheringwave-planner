@@ -140,7 +140,7 @@
     "color": "#667eea",
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-09-30 11:00",
-    "endDate": "2026-10-20 04:59",
+    "endDate": "2026-10-22 04:59",
     "utcOffset": 9
   },
   {
@@ -152,7 +152,7 @@
     "color": "#667eea",
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-09-30 11:00",
-    "endDate": "2026-10-20 04:59",
+    "endDate": "2026-10-22 04:59",
     "utcOffset": 9
   },
   {
@@ -164,7 +164,7 @@
     "color": "#667eea",
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-09-30 11:00",
-    "endDate": "2026-10-20 04:59",
+    "endDate": "2026-10-22 04:59",
     "utcOffset": 9
   },
   {
@@ -175,8 +175,8 @@
     "cover": "https://img.game8.co/4581377/1f80ecaa9bbdbb3cec33a117c46eec8f.png/show",
     "color": "#667eea",
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
-    "startDate": "2026-10-21 11:00",
-    "endDate": "2026-11-14 04:59",
+    "startDate": "2026-10-22 11:00",
+    "endDate": "2026-11-10 04:59",
     "utcOffset": 9
   },
   {
@@ -187,8 +187,8 @@
     "cover": "https://img.game8.co/4581377/1f80ecaa9bbdbb3cec33a117c46eec8f.png/show",
     "color": "#667eea",
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
-    "startDate": "2026-10-21 11:00",
-    "endDate": "2026-11-14 04:59",
+    "startDate": "2026-10-22 11:00",
+    "endDate": "2026-11-10 04:59",
     "utcOffset": 9
   },
   {
@@ -199,8 +199,20 @@
     "cover": "https://img.game8.co/4581377/1f80ecaa9bbdbb3cec33a117c46eec8f.png/show",
     "color": "#667eea",
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
-    "startDate": "2026-10-21 11:00",
-    "endDate": "2026-11-14 04:59",
+    "startDate": "2026-10-22 11:00",
+    "endDate": "2026-11-10 04:59",
+    "utcOffset": 9
+  },
+  {
+    "id": "9402990018",
+    "name": "Gifts of Singing Drizzle",
+    "description": "Log-in during the event's duration for pulls and additional rewards!",
+    "category": "event",
+    "cover": "https://img.game8.co/4625281/0aee0e2bb34eab7e9244698e1b71de72.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "2026-10-22 11:00",
+    "endDate": "2026-11-11 04:59",
     "utcOffset": 9
   }
 ]
