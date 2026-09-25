@@ -84,7 +84,8 @@ header {
   border-bottom: 1px solid var(--border, #ddd);
   position: sticky;
   top: 0;
-  z-index: 100;
+  /* Above every page's own layering, below the dialogs (1000+) that cover it on purpose. */
+  z-index: 500;
   transition: background-color 0.2s ease;
 }
 

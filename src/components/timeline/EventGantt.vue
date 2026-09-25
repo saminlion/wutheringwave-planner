@@ -22,6 +22,33 @@
       </button>
     </div>
 
+    <!-- Recurring-with-no-window and TBA events have no bar to draw: pin them above the chart. -->
+    <div v-if="unscheduled.length" class="unscheduled">
+      <span class="unscheduled-label">{{ tUI('timeline.unscheduled') }}</span>
+      <span
+        v-for="event in unscheduled"
+        :key="event.id"
+        class="unscheduled-chip"
+        :class="[`is-${event.status}`, { 'is-completed': event.completed }]"
+        :style="{ '--event-color': event.color }"
+      >
+        <component
+          :is="event.sourceUrl ? 'a' : 'span'"
+          class="chip-link"
+          :href="event.sourceUrl || null"
+          :target="event.sourceUrl ? '_blank' : null"
+          :rel="event.sourceUrl ? 'noopener noreferrer' : null"
+        >{{ event.name }}</component>
+        <button
+          type="button"
+          class="chip-check"
+          :title="event.completed ? tUI('timeline.markIncomplete') : tUI('timeline.markComplete')"
+          :aria-pressed="event.completed"
+          @click="emit('toggleComplete', event)"
+        >✓</button>
+      </span>
+    </div>
+
     <div ref="scroller" class="gantt-scroll">
       <div class="gantt-canvas" :style="{ width: `${canvasWidth}px` }">
         <!-- Month header -->
@@ -72,14 +99,14 @@
               {{ track.label }}
             </div>
 
-            <a
+            <div
               v-for="event in track.events"
               :key="event.id"
               class="gantt-bar"
-              :class="[`is-${event.status}`, { 'is-narrow': barWidth(event) < 90 }]"
-              :href="event.sourceUrl || null"
-              :target="event.sourceUrl ? '_blank' : null"
-              :rel="event.sourceUrl ? 'noopener noreferrer' : null"
+              :class="[`is-${event.status}`, {
+                'is-narrow': barWidth(event) < 90,
+                'is-completed': event.completed,
+              }]"
               :style="{
                 left: `${barLeft(event)}px`,
                 width: `${barWidth(event)}px`,
@@ -88,20 +115,37 @@
               }"
               :title="`${event.name}\n${formatRange(event)}`"
             >
-              <EventCover
-                class="bar-cover"
-                :src="event.cover"
-                :alt="event.name"
-                :color="event.color"
-              />
-              <span class="bar-name">{{ event.name }}</span>
-            </a>
+              <component
+                :is="event.sourceUrl ? 'a' : 'span'"
+                class="bar-link"
+                :href="event.sourceUrl || null"
+                :target="event.sourceUrl ? '_blank' : null"
+                :rel="event.sourceUrl ? 'noopener noreferrer' : null"
+              >
+                <EventCover
+                  class="bar-cover"
+                  :src="event.cover"
+                  :alt="event.name"
+                  :color="event.color"
+                />
+                <span class="bar-name">{{ event.name }}</span>
+              </component>
+              <button
+                type="button"
+                class="bar-check"
+                :title="event.completed ? tUI('timeline.markIncomplete') : tUI('timeline.markComplete')"
+                :aria-pressed="event.completed"
+                @click="emit('toggleComplete', event)"
+              >✓</button>
+            </div>
           </template>
         </div>
       </div>
     </div>
 
-    <p v-if="!tracks.length" class="gantt-empty">{{ tUI('timeline.empty') }}</p>
+    <p v-if="!tracks.length && !unscheduled.length" class="gantt-empty">
+      {{ tUI('timeline.empty') }}
+    </p>
   </div>
 </template>
 
@@ -116,7 +160,13 @@ const props = defineProps({
   now: { type: Number, default: () => Date.now() },
 });
 
+const emit = defineEmits(['toggleComplete']);
+
 const { tUI, locale } = useLocale();
+
+/** Only events with both ends can be placed on a date axis. */
+const scheduledEvents = computed(() => props.events.filter((e) => e.start !== null && e.end !== null));
+const unscheduled = computed(() => props.events.filter((e) => e.start === null || e.end === null));
 
 const MS_PER_DAY = 86400000;
 const BAR_HEIGHT = 34;
@@ -143,13 +193,13 @@ const startOfDay = (ms) => {
 
 /** Visible window: whole days spanning every event, padded by a day on each side. */
 const range = computed(() => {
-  if (!props.events.length) {
+  if (!scheduledEvents.value.length) {
     const today = startOfDay(props.now);
     return { start: today, end: today + MS_PER_DAY };
   }
 
-  const starts = props.events.map((e) => e.start);
-  const ends = props.events.map((e) => e.end);
+  const starts = scheduledEvents.value.map((e) => e.start);
+  const ends = scheduledEvents.value.map((e) => e.end);
   const start = startOfDay(Math.min(...starts)) - MS_PER_DAY;
   const end = startOfDay(Math.max(...ends)) + 2 * MS_PER_DAY;
 
@@ -234,7 +284,7 @@ const tracks = computed(() => {
     { key: 'event', label: tUI('timeline.events'), items: [] },
   ];
 
-  for (const event of props.events) {
+  for (const event of scheduledEvents.value) {
     const group = groups.find((g) => g.key === event.category) ?? groups[1];
     group.items.push({ ...event });
   }
@@ -445,22 +495,117 @@ watch(() => props.events.length, async () => {
   pointer-events: none;
 }
 
+.unscheduled {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.unscheduled-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted, #888);
+}
+
+.unscheduled-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.15rem 0.3rem 0.15rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--event-color) 18%, var(--bg-surface, #fff));
+  border: 1px solid var(--event-color);
+}
+
+.unscheduled-chip.is-tba {
+  border-style: dashed;
+}
+
+.unscheduled-chip.is-completed {
+  opacity: 0.45;
+}
+
+.chip-link {
+  color: var(--text, #213547);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.chip-check {
+  padding: 0 0.25rem;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--text-muted, #888);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.chip-check:hover {
+  color: var(--color-success, #27ae60);
+}
+
 .gantt-bar {
   position: absolute;
   z-index: 2;
   height: 34px;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0 0.4rem;
+  gap: 0.2rem;
+  padding: 0 0.2rem 0 0.4rem;
   border-radius: 6px;
-  text-decoration: none;
   overflow: hidden;
   white-space: nowrap;
   background: color-mix(in srgb, var(--event-color) 26%, var(--bg-surface, #fff));
   border: 1px solid var(--event-color);
   border-left: 3px solid var(--event-color);
   transition: filter 0.15s;
+}
+
+.bar-link {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.bar-check {
+  flex-shrink: 0;
+  padding: 0 0.2rem;
+  font-size: 0.7rem;
+  line-height: 1;
+  color: var(--text-muted, #888);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+}
+
+.gantt-bar:hover .bar-check,
+.bar-check:focus-visible {
+  opacity: 1;
+}
+
+.bar-check:hover {
+  color: var(--color-success, #27ae60);
+}
+
+.gantt-bar.is-completed {
+  opacity: 0.45;
+}
+
+/* A narrow bar has no room for the icon or the tick — the tooltip still names it. */
+.gantt-bar.is-narrow .bar-check {
+  display: none;
 }
 
 .gantt-bar:hover {

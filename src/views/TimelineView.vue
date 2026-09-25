@@ -24,41 +24,82 @@
         <input v-model="showEnded" type="checkbox" />
         {{ tUI('timeline.showEnded') }}
       </label>
+      <label class="filter-toggle">
+        <input v-model="showCompleted" type="checkbox" />
+        {{ tUI('timeline.showCompleted') }}
+        <span v-if="completed.length" class="filter-count">{{ completed.length }}</span>
+      </label>
     </div>
 
-    <EventGantt v-if="view === 'gantt'" :events="visibleEvents" :now="now" />
-    <EventList v-else :events="visibleEvents" :show-ended="showEnded" />
+    <EventGantt
+      v-if="view === 'gantt'"
+      :events="visibleEvents"
+      :now="now"
+      @toggle-complete="onToggleComplete"
+    />
+    <EventList
+      v-else
+      :events="visibleEvents"
+      :show-ended="showEnded"
+      @toggle-complete="onToggleComplete"
+    />
 
     <p v-if="!hasEvents" class="timeline-note">{{ tUI('timeline.emptyHint') }}</p>
   </div>
 </template>
 
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import EventGantt from '@/components/timeline/EventGantt.vue';
 import EventList from '@/components/timeline/EventList.vue';
 import { useEvents } from '@/composables/useEvents';
 import { useGameStore } from '@/store/game';
 import { useLocale } from '@/composables/useLocale';
+import { loadFromStorage, saveToStorage } from '@/utils/storage';
 
 const TABS = ['gantt', 'list'];
 /** Ended events older than this drop off the timeline unless explicitly shown. */
 const ENDED_WINDOW_DAYS = 30;
+/** View preferences are the same whichever game is selected, so they are not game-scoped. */
+const PREFS_KEY = 'timeline_prefs';
 
 const gameStore = useGameStore();
 const { tUI, loadGameLocales } = useLocale();
-const { events, hasEvents, now } = useEvents();
+const { events, active, completed, hasEvents, now, toggleComplete } = useEvents();
+
+const prefs = loadFromStorage(PREFS_KEY, null) || {};
 
 // Narrow screens open on the card list; the gantt is still one tap away.
-const view = ref(typeof window !== 'undefined' && window.innerWidth < 768 ? 'list' : 'gantt');
-const showEnded = ref(false);
+const view = ref(
+  TABS.includes(prefs.view)
+    ? prefs.view
+    : (typeof window !== 'undefined' && window.innerWidth < 768 ? 'list' : 'gantt'),
+);
+const showEnded = ref(prefs.showEnded === true);
+const showCompleted = ref(prefs.showCompleted === true);
+
+// Survives a route change or a reload — the tab used to reset to the default every time.
+watch([view, showEnded, showCompleted], () => {
+  saveToStorage(PREFS_KEY, {
+    view: view.value,
+    showEnded: showEnded.value,
+    showCompleted: showCompleted.value,
+  });
+});
 
 const visibleEvents = computed(() => {
-  if (showEnded.value) return events.value;
+  // `active` already drops the events ticked off by hand.
+  let list = showCompleted.value ? events.value : active.value;
 
-  const cutoff = now.value - ENDED_WINDOW_DAYS * 86400000;
-  return events.value.filter((e) => e.status !== 'ended' || e.end >= cutoff);
+  if (!showEnded.value) {
+    const cutoff = now.value - ENDED_WINDOW_DAYS * 86400000;
+    list = list.filter((e) => e.status !== 'ended' || e.end >= cutoff);
+  }
+
+  return list;
 });
+
+const onToggleComplete = (event) => toggleComplete(event.id);
 
 onMounted(async () => {
   gameStore.hydrate();
@@ -74,6 +115,9 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  /* Own stacking context: the gantt's layered bars and markers can never paint
+     over the app's sticky header, however high their local z-index climbs. */
+  isolation: isolate;
 }
 
 .timeline-header {
@@ -121,6 +165,8 @@ onMounted(async () => {
 .timeline-filters {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.9rem;
 }
 
 .filter-toggle {
@@ -131,6 +177,14 @@ onMounted(async () => {
   color: var(--text-muted, #666);
   cursor: pointer;
   user-select: none;
+}
+
+.filter-count {
+  font-size: 0.7rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: var(--border, #e0e0e0);
+  color: var(--text-muted, #666);
 }
 
 .timeline-note {

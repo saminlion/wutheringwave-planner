@@ -6,47 +6,63 @@
         <span class="group-count">{{ group.items.length }}</span>
       </h3>
 
-      <component
-        :is="event.sourceUrl ? 'a' : 'div'"
+      <div
         v-for="event in group.items"
         :key="event.id"
-        class="event-card"
-        :class="`is-${event.status}`"
-        :href="event.sourceUrl || null"
-        :target="event.sourceUrl ? '_blank' : null"
-        :rel="event.sourceUrl ? 'noopener noreferrer' : null"
-        :style="{ '--event-color': event.color }"
+        class="event-row"
+        :class="{ 'is-completed': event.completed }"
       >
-        <EventCover
-          class="card-cover"
-          :src="event.cover"
-          :alt="event.name"
-          :color="event.color"
-        />
+        <component
+          :is="event.sourceUrl ? 'a' : 'div'"
+          class="event-card"
+          :class="`is-${event.status}`"
+          :href="event.sourceUrl || null"
+          :target="event.sourceUrl ? '_blank' : null"
+          :rel="event.sourceUrl ? 'noopener noreferrer' : null"
+          :style="{ '--event-color': event.color }"
+        >
+          <EventCover
+            class="card-cover"
+            :src="event.cover"
+            :alt="event.name"
+            :color="event.color"
+          />
 
-        <div class="card-body">
-          <div class="card-head">
-            <span class="card-name">{{ event.name }}</span>
-            <span class="card-badge" :class="`badge-${event.status}`">
-              {{ badgeText(event) }}
-            </span>
-          </div>
+          <div class="card-body">
+            <div class="card-head">
+              <span class="card-name">{{ event.name }}</span>
+              <span class="card-badge" :class="`badge-${event.status}`">
+                {{ badgeText(event) }}
+              </span>
+            </div>
 
-          <p v-if="event.description && !compact" class="card-desc">
-            {{ event.description }}
-          </p>
+            <p v-if="event.description && !compact" class="card-desc">
+              {{ event.description }}
+            </p>
 
-          <div v-if="event.status === 'ongoing'" class="card-progress">
-            <div class="progress-track">
-              <div class="progress-fill" :style="{ width: `${event.progress}%` }" />
+            <div v-if="event.status === 'ongoing' && event.scheduled" class="card-progress">
+              <div class="progress-track">
+                <div class="progress-fill" :style="{ width: `${event.progress}%` }" />
+              </div>
+            </div>
+
+            <div class="card-dates">
+              {{ formatRange(event) }}
             </div>
           </div>
+        </component>
 
-          <div class="card-dates">
-            {{ formatRange(event) }}
-          </div>
-        </div>
-      </component>
+        <!-- Outside the anchor: a button nested in a link is invalid and unclickable. -->
+        <button
+          v-if="!compact"
+          type="button"
+          class="card-check"
+          :class="{ 'is-on': event.completed }"
+          :title="event.completed ? tUI('timeline.markIncomplete') : tUI('timeline.markComplete')"
+          :aria-pressed="event.completed"
+          @click="emit('toggleComplete', event)"
+        >✓</button>
+      </div>
     </section>
 
     <p v-if="!groups.length" class="event-empty">{{ tUI('timeline.empty') }}</p>
@@ -60,25 +76,28 @@ import { useLocale } from '@/composables/useLocale';
 
 const props = defineProps({
   events: { type: Array, default: () => [] },
-  /** Hide descriptions and ended events — used by the home widget. */
+  /** Hide descriptions, the complete button, and ended events — used by the home widget. */
   compact: { type: Boolean, default: false },
   /** Cap the number of cards rendered per group (0 = no limit). */
   limit: { type: Number, default: 0 },
   showEnded: { type: Boolean, default: true },
 });
 
+const emit = defineEmits(['toggleComplete']);
+
 const { tUI, locale } = useLocale();
 
 const applyLimit = (items) => (props.limit > 0 ? items.slice(0, props.limit) : items);
 
 const groups = computed(() => {
-  const byStatus = { ongoing: [], upcoming: [], ended: [] };
+  const byStatus = { ongoing: [], upcoming: [], tba: [], ended: [] };
   for (const event of props.events) {
     byStatus[event.status]?.push(event);
   }
 
-  // Ongoing: soonest deadline first. Upcoming: soonest start first.
-  byStatus.ongoing.sort((a, b) => a.end - b.end);
+  // Ongoing: soonest deadline first — open-ended ones have no deadline, so last.
+  const deadline = (e) => (e.end === null ? Number.MAX_SAFE_INTEGER : e.end);
+  byStatus.ongoing.sort((a, b) => deadline(a) - deadline(b));
   byStatus.upcoming.sort((a, b) => a.start - b.start);
   byStatus.ended.sort((a, b) => b.end - a.end);
 
@@ -87,17 +106,32 @@ const groups = computed(() => {
   return [
     { key: 'ongoing', label: tUI('timeline.ongoing'), items: applyLimit(byStatus.ongoing) },
     { key: 'upcoming', label: tUI('timeline.upcoming'), items: applyLimit(byStatus.upcoming) },
+    { key: 'tba', label: tUI('timeline.tba'), items: applyLimit(byStatus.tba) },
     ...(showEnded
       ? [{ key: 'ended', label: tUI('timeline.ended'), items: applyLimit(byStatus.ended) }]
       : []),
   ].filter((group) => group.items.length > 0);
 });
 
+/**
+ * "Every 16 days" / "Always on" for repeating events; '' for one-off ones.
+ * Always the raw day count — a cycle called "2 weeks" may really be 15 or 16 days,
+ * so naming the period would be less accurate, not friendlier.
+ */
+const recurrenceLabel = (event) => {
+  if (!event.recurrence) return '';
+  return event.recurrence.days === 0
+    ? tUI('timeline.always')
+    : tUI('timeline.everyDays').replace('{n}', event.recurrence.days);
+};
+
 const badgeText = (event) => {
+  if (event.status === 'tba') return tUI('timeline.tba');
+
   if (event.status === 'ongoing') {
-    return event.daysLeft <= 0
-      ? tUI('timeline.endsToday')
-      : `D-${event.daysLeft}`;
+    // An open-ended run has no countdown — say how it repeats instead.
+    if (event.daysLeft === null) return recurrenceLabel(event) || tUI('timeline.always');
+    return event.daysLeft <= 0 ? tUI('timeline.endsToday') : `D-${event.daysLeft}`;
   }
   if (event.status === 'upcoming') {
     return event.daysUntil <= 0
@@ -116,8 +150,19 @@ const dateFormat = computed(() => new Intl.DateTimeFormat(locale.value, {
   minute: '2-digit',
 }));
 
-const formatRange = (event) =>
-  `${dateFormat.value.format(new Date(event.start))} — ${dateFormat.value.format(new Date(event.end))}`;
+const formatRange = (event) => {
+  const fmt = (ms) => dateFormat.value.format(new Date(ms));
+  const repeat = recurrenceLabel(event);
+
+  let range;
+  if (event.start === null && event.end === null) range = tUI('timeline.dateTba');
+  else if (event.end === null) range = `${fmt(event.start)} — ${tUI('timeline.noEnd')}`;
+  else if (event.start === null) range = `— ${fmt(event.end)}`;
+  else range = `${fmt(event.start)} — ${fmt(event.end)}`;
+
+  // The badge already says "Every 2 weeks" when there is no countdown to show.
+  return repeat && event.daysLeft !== null ? `${range} · ${repeat}` : range;
+};
 </script>
 
 <style scoped>
@@ -153,7 +198,19 @@ const formatRange = (event) =>
   color: var(--text-muted, #666);
 }
 
+.event-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.event-row.is-completed .event-card {
+  opacity: 0.5;
+}
+
 .event-card {
+  flex: 1;
+  min-width: 0;
   display: flex;
   gap: 0.75rem;
   padding: 0.7rem;
@@ -173,6 +230,31 @@ a.event-card:hover {
 
 .event-card.is-ended {
   opacity: 0.55;
+}
+
+.card-check {
+  flex-shrink: 0;
+  width: 34px;
+  align-self: stretch;
+  font-size: 0.95rem;
+  line-height: 1;
+  color: var(--text-muted, #aaa);
+  background: var(--bg-surface, #fff);
+  border: 1px solid var(--border, #e0e0e0);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.card-check:hover {
+  color: var(--color-success, #27ae60);
+  border-color: var(--color-success, #27ae60);
+}
+
+.card-check.is-on {
+  color: #fff;
+  background: var(--color-success, #27ae60);
+  border-color: var(--color-success, #27ae60);
 }
 
 .card-cover {
@@ -221,6 +303,11 @@ a.event-card:hover {
 .badge-upcoming {
   background: color-mix(in srgb, #3b82f6 18%, transparent);
   color: #1d4ed8;
+}
+
+.badge-tba {
+  background: color-mix(in srgb, #a855f7 18%, transparent);
+  color: #7e22ce;
 }
 
 .badge-ended {

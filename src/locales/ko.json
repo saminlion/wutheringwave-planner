@@ -102,6 +102,15 @@
     "timeline.inDays": "{n}일 후",
     "timeline.empty": "표시할 이벤트가 없습니다.",
     "timeline.emptyHint": "이 게임의 이벤트 데이터가 아직 없습니다. Google Sheets의 \"Events\" 탭에 행을 추가한 뒤 데이터 동기화를 실행하세요.",
+    "timeline.tba": "미정",
+    "timeline.dateTba": "일정 미정",
+    "timeline.noEnd": "종료일 미정",
+    "timeline.always": "상시 진행",
+    "timeline.everyDays": "{n}일마다",
+    "timeline.unscheduled": "고정 일정 없음",
+    "timeline.showCompleted": "완료한 이벤트 표시",
+    "timeline.markComplete": "완료 표시",
+    "timeline.markIncomplete": "완료 해제",
     "home.events": "진행 중인 이벤트",
     "home.eventsMore": "전체 보기"
   }

@@ -102,6 +102,15 @@
     "timeline.inDays": "in {n}d",
     "timeline.empty": "No events to show.",
     "timeline.emptyHint": "No event data for this game yet. Add rows to the \"Events\" tab of the Google Sheet and run the data sync.",
+    "timeline.tba": "TBA",
+    "timeline.dateTba": "Schedule to be announced",
+    "timeline.noEnd": "until further notice",
+    "timeline.always": "Always on",
+    "timeline.everyDays": "Every {n} days",
+    "timeline.unscheduled": "No fixed dates",
+    "timeline.showCompleted": "Show completed",
+    "timeline.markComplete": "Mark as completed",
+    "timeline.markIncomplete": "Undo completed",
     "home.events": "Ongoing Events",
     "home.eventsMore": "View all"
   }

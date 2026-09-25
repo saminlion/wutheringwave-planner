@@ -612,20 +612,60 @@ optional or derived.
 | Column | Kind | Notes |
 |--------|------|-------|
 | `eventID` | formula | `<gameCode> 4 CC YY NNNN` — the i18n key (gameCode: ww 4 … dna 9). A legacy `id` column still works |
-| `name` | input **required** | English display name |
+| `name` | input **required** | English display name — the only required column |
 | `description` | input | Blurb on cards (hidden in compact mode) |
 | `category` | input | `banner` or `event` (default). Drives track separation in the gantt |
 | `cover` | input | Full image URL. **Blank or broken → automatic color-tile fallback** |
 | `color` | input | Hex accent color (default `#667eea`) |
 | `sourceUrl` | input | Official announcement link; card becomes clickable when set |
-| `startDay` / `endDay` | input **required** | Date-only cells — calendar picker, no time typing |
+| `startDay` / `endDay` | input | Date-only cells — calendar picker, no time typing. Blank for recurring/TBA events |
 | `startTime` / `endTime` | input *(usually blank)* | Overrides the formula default (`04:00`/`03:59`) |
-| `timezone` | input *(usually blank)* | A label like `한국 KST (UTC+9)`, parsed for `UTC±N`; blank → `8` |
+| `timezone` | input *(usually blank)* | Picked from a dropdown of literal labels (`한국 KST (UTC+9)`, `UTC (UTC+0)`, …); blank → `8` |
+| `recurrence` | input *(usually blank)* | Repeat period **in days** (`16`, `21`, …). `0`/`always` = runs with no cycle |
 | `startDate` / `endDate` | formula | `day + time` rendered as `yyyy-mm-dd hh:mm` — what the sync reads |
-| `utcOffset` | formula | `VLOOKUP(timezone, Lookup!Z:AA)`; hours, defaults to `8` |
+| `utcOffset` | formula | `REGEXEXTRACT` pulls `UTC±N` out of the label itself; hours, defaults to `8` |
 
 Dates are wall-clock in `utcOffset`, so `2026-08-12 04:00` with `utcOffset: 8` is the same instant
 for every viewer regardless of their local timezone.
+
+### Schedule types — why the date columns are optional
+
+Plenty of real events don't fit a fixed window: a rotation that repeats every two weeks "until
+further notice" has no published end, and an event that has only been *announced* has no dates at
+all. `useEvents` derives `event.type` from which cells are filled, so the sheet expresses all of
+them without new code:
+
+| Cells filled | `type` | Rendered as |
+|--------------|--------|-------------|
+| both dates | `fixed` | Normal bar + `D-n` countdown |
+| `recurrence` only | `permanent` | Runs until the game changes it. Badge is the period (`Every 16 days`); pinned as a chip above the gantt, since it has no bar to draw |
+| `recurrence` + `startDay` | `recurring` | The **cycle happening right now** is drawn as the bar; `endDay` (optional) is when the repeat stops |
+| name only | `tba` | Its own `TBA` group in the list, dashed chip in the gantt |
+
+A date cell that is *filled in but unparseable* is still dropped — that is a broken row, not a
+deliberate blank.
+
+**`recurrence` is a day count, never a named period.** A rotation everyone calls "every 2 weeks"
+frequently runs on 15 or 16 days, and the same event moves between 2- and 3-week cycles across
+patches — so `biweekly` would encode what someone called the schedule, not what it does. The UI
+labels it straight back as `Every 16 days` (`timeline.everyDays`). `parseRecurrence()` accepts a
+bare number, a trailing unit (`16d`, `16일`), and `0`/`always`/`상시` for a cycle-less run;
+anything else resolves to "no repeat". Unit-tested in
+`tests/composables/useEvents-schedule.test.js`.
+
+### Marking an event complete
+
+Events can be ticked off by hand (the ✓ on a card or a gantt bar) — useful for a "clear the event
+shop" style task the app can't detect on its own. Completed ids live in
+`gameplanner_timeline_completed_${gameId}` and the composable exposes
+`isCompleted` / `toggleComplete` / `clearCompleted`. `useEvents` returns two lists for this:
+`events` (everything, each flagged with `completed`) and `active` (everything not ticked off).
+`ongoing`/`upcoming`/`ended`/`endingSoon` all derive from `active`, so completing an event also
+removes it from the home widget. The timeline's **Show completed** checkbox switches the page
+between the two.
+
+View preferences — the gantt/list tab plus both filter checkboxes — persist in
+`gameplanner_timeline_prefs`, so the chosen tab survives navigating away and reloading.
 
 > ⚠️ **Why the day/time split.** The sync reads the sheet through its CSV export, so it receives the
 > *displayed* string. A raw datetime cell exports in the sheet's locale format
@@ -635,6 +675,14 @@ for every viewer regardless of their local timezone.
 > The per-event time and timezone columns exist so the common case stays blank: the defaults live
 > in the `M2`/`N2`/`O2` formulas themselves, so a game with different server hours edits its own
 > two `TIME(...)` calls and depends on no other tab.
+
+> ⚠️ **The `timezone` dropdown is a literal item list, not a range reference — keep it that way.**
+> Data validation for `L2:L` is entered as plain text (`서버시간 (UTC+8),한국 KST (UTC+9),…`), and
+> `utcOffset` reads `UTC±N` back out of the chosen label with `REGEXEXTRACT`. **There is no
+> timezone table in `Lookup`, and none should be added.** WW's `Lookup!W:AA` is already occupied by
+> its weapon-type × generation block — dropping a timezone table at `Z:AA` there would overwrite
+> `forgery`/`weapon_common` and silently corrupt `Characters!J` and `Weapons!H`/`I`.
+> Setup details: `LocalOnly/EVENTS_SHEET_SETUP.md` ⓶ `O2` and ⓸.
 
 ### Event translation (`Events_i18n` tab)
 

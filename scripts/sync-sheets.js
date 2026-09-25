@@ -841,15 +841,27 @@ function transformI18n(rows, lang) {
  * Sheet columns (header names are case-insensitive):
  *   eventID     - stable key (sheet formula); `id` still accepted for older sheets,
  *                 auto-generated from name+startDate when both are blank
- *   name        - required
+ *   name        - required — the only required column
  *   description - optional blurb shown on cards
  *   category    - "banner" or "event" (defaults to "event")
  *   cover       - full image URL; blank falls back to a color tile in the UI
  *   color       - hex accent color (defaults to #667eea)
  *   sourceUrl   - link to the official announcement
- *   startDate   - "YYYY-MM-DD HH:mm" in the event's own timezone (required)
- *   endDate     - same format (required)
+ *   startDate   - "YYYY-MM-DD HH:mm" in the event's own timezone
+ *   endDate     - same format
+ *   recurrence  - repeat period **in days** (16, 21, …). Not a named period: a
+ *                 "2 week" rotation is often really 15 or 16 days, and the same
+ *                 event can move between 2- and 3-week cycles. 0 / "always" = no cycle
  *   utcOffset   - hours; defaults to 8 (server time for most gacha games)
+ *
+ * Both dates are optional, which is what lets the sheet describe the two cases a
+ * fixed window cannot:
+ *   - a repeat with no published window ("every 16 days until further notice"):
+ *     fill `recurrence`, leave the dates blank. `startDate` is an optional anchor
+ *     that lets the app show the current cycle; `endDate` stops the repeat.
+ *   - an announced-but-unscheduled event: name only, both dates blank -> TBA.
+ * A date that is filled in but unusable is still dropped — that is a broken row,
+ * not a deliberate blank.
  *
  * Unlike the other transforms this returns an array — event order is
  * chronological, not keyed by id.
@@ -867,21 +879,20 @@ function transformEvents(rows) {
     };
 
     const name = get('name');
-    const startDate = get('startdate');
-    const endDate = get('enddate');
+    let startDate = get('startdate');
+    let endDate = get('enddate');
+    const recurrence = get('recurrence');
 
-    if (!name || !startDate || !endDate) {
-      if (name || startDate || endDate) {
-        console.log(`    Skipping event row (missing name/startDate/endDate): ${name || '(unnamed)'}`);
-      }
-      continue;
-    }
+    if (!name) continue;
 
     // The sheet's date formulas emit "⚠" when startAt/endAt isn't a real date.
-    // Fail loudly here — otherwise the row reaches the app and gets dropped in silence.
-    if (startDate === WARN || endDate === WARN) {
-      console.log(`    Skipping event row (sheet reports an unusable date): ${name}`);
-      continue;
+    // Treat that as an empty cell rather than dropping the whole row: a
+    // recurring or TBA event legitimately has nothing to compute from.
+    if (startDate === WARN) startDate = '';
+    if (endDate === WARN) endDate = '';
+
+    if (!startDate && !endDate && !recurrence) {
+      console.log(`    Event has no schedule yet, syncing as TBA: ${name}`);
     }
 
     const category = get('category').toLowerCase() === 'banner' ? 'banner' : 'event';
@@ -890,7 +901,7 @@ function transformEvents(rows) {
 
     result.push({
       id: [get('eventID'), get('id')].find((v) => v && v !== WARN)
-        || `${name}__${startDate}`.replace(/\s+/g, '-').toLowerCase(),
+        || `${name}__${startDate || recurrence || 'tba'}`.replace(/\s+/g, '-').toLowerCase(),
       name,
       description: get('description'),
       category,
@@ -899,11 +910,13 @@ function transformEvents(rows) {
       sourceUrl: get('sourceurl'),
       startDate,
       endDate,
+      recurrence,
       utcOffset: Number.isFinite(utcOffset) ? utcOffset : 8,
     });
   }
 
-  result.sort((a, b) => a.startDate.localeCompare(b.startDate));
+  // Dateless rows (recurring / TBA) sort last — they have no place on a calendar.
+  result.sort((a, b) => (a.startDate || '9999').localeCompare(b.startDate || '9999'));
   return result;
 }
 
