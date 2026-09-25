@@ -279,7 +279,11 @@ async function fetchSheetData(sheetId, tab) {
     headers.forEach((header, index) => {
       if (header) {
         const val = values[index] ?? null;
-        obj[header] = val === '' ? null : val;
+        // Empty cells and the literal `null` dropdown option both mean "not set".
+        // The dropdowns are range-backed, and Sheets skips blank source rows, so the
+        // "clear this cell" entry has to be a visible sentinel rather than a blank.
+        const trimmed = typeof val === 'string' ? val.trim() : val;
+        obj[header] = trimmed === '' || trimmed === 'null' ? null : val;
       }
     });
     return obj;

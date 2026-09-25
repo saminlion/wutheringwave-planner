@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { processMaterial, SUPPORTED_KEYS } from '@/games/nte/materialProcessor';
+import { findMaterial } from '@/services/materialHelper/dbUtils';
 
 vi.mock('@/services/materialHelper/dbUtils', () => ({
   findMaterial: vi.fn((type, identifier, tier, useId) => {
@@ -119,6 +120,36 @@ describe('NTE MaterialProcessor', () => {
       processMaterial(materials, 'boss', 2, characterInfo);
       processMaterial(materials, 'boss', 3, characterInfo);
       expect(materials['7140010001']).toBe(5);
+    });
+
+    // The sheet dropdowns end in a literal `null` option, which sync-sheets.js turns into
+    // JSON `null` exactly like a blank cell. It means "not confirmed yet", so the cost is
+    // dropped rather than resolved against a partial lookup.
+    describe('null material (unconfirmed sheet value)', () => {
+      it.each(['common', 'forgery'])('should skip the cost when %s is null', (key) => {
+        const handled = processMaterial(materials, key, [5, 1], { ...characterInfo, [key]: null });
+        expect(handled).toBe(true);
+        expect(materials).toEqual({});
+      });
+
+      it.each(['boss', 'weeklyBoss'])('should skip the cost when %s is null', (key) => {
+        const handled = processMaterial(materials, key, 2, { ...characterInfo, [key]: null });
+        expect(handled).toBe(true);
+        expect(materials).toEqual({});
+      });
+
+      it('should not consult the material database for a null value', () => {
+        findMaterial.mockClear();
+        processMaterial(materials, 'common', [5, 1], { ...characterInfo, common: null });
+        expect(findMaterial).not.toHaveBeenCalled();
+      });
+
+      it('should still process the other keys of a partially filled character', () => {
+        const partial = { ...characterInfo, forgery: null };
+        processMaterial(materials, 'common', [5, 1], partial);
+        processMaterial(materials, 'forgery', [2, 1], partial);
+        expect(materials).toEqual({ 7110010001: 5 });
+      });
     });
 
     it('should return false for unsupported keys (credit, player_exp, ascension)', () => {

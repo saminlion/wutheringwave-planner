@@ -82,14 +82,16 @@ export const processMaterial = (materials, key, value, characterInfo) => {
         const skillName = characterInfo._masterySkill;
         let charMaterialId = characterInfo[key];
         if (skillName) {
+            // A blank/`null` mastery column means the material is not known yet. Drop the
+            // cost instead of falling back to `special` — that fallback charged the
+            // promotion material for mastery, which is wrong for every operator except
+            // Akekuri. Omitting matches how WW handles an unresolved material.
             const perSkillId = characterInfo[`mastery_${skillName}`];
-            if (perSkillId) {
-                charMaterialId = perSkillId;
-            } else {
-                // Missing per-skill column in the sheet: fall back to the generic
-                // `special` material rather than silently dropping the cost.
-                logger.warn(`[Endfield] No mastery_${skillName} material for character; falling back to 'special'`);
+            if (!perSkillId) {
+                logger.debug(`[Endfield] No mastery_${skillName} material; skipping this cost`);
+                return true;
             }
+            charMaterialId = perSkillId;
         }
         if (charMaterialId && typeof value === 'number') {
             materials[charMaterialId] = (materials[charMaterialId] || 0) + value;

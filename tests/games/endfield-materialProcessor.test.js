@@ -144,6 +144,30 @@ describe('Endfield MaterialProcessor', () => {
       expect(materials['51400001']).toBe(2);
     });
 
+    it('should use the per-skill mastery material in a mastery context', () => {
+      const infoWithSkill = { ...characterInfo, _masterySkill: 'battle_skill' };
+      const handled = processMaterial(materials, 'special', 6, infoWithSkill);
+
+      expect(handled).toBe(true);
+      expect(materials[51500002]).toBe(6);
+      expect(materials['51400001']).toBeUndefined(); // promotion material untouched
+    });
+
+    it('should skip the cost when the mastery material is null', () => {
+      // A `null` dropdown pick means "not known yet". Falling back to `special` would
+      // charge the promotion material for mastery, which is wrong for every operator
+      // except Akekuri, so the cost is dropped instead.
+      const infoNoMastery = {
+        ...characterInfo,
+        mastery_battle_skill: null,
+        _masterySkill: 'battle_skill',
+      };
+      const handled = processMaterial(materials, 'special', 6, infoNoMastery);
+
+      expect(handled).toBe(true);
+      expect(materials).toEqual({});
+    });
+
     it('should process perseverance as the fixed Mark of Perseverance material', () => {
       const handled = processMaterial(materials, 'perseverance', 2, characterInfo);
 

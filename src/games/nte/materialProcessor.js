@@ -19,6 +19,14 @@ export const processMaterial = (materials, key, value, characterInfo) => {
         const [qty, tier] = value;
         const subCategory = characterInfo[key];
 
+        // A blank cell or the `null` dropdown pick means the material is not known yet.
+        // Drop the cost instead of calling findMaterial, which would log a warning for a
+        // lookup we never expected to resolve. Matches how WW/Endfield treat `null`.
+        if (!subCategory) {
+            logger.debug(`[NTE] No ${key} material for character; skipping this cost`);
+            return true;
+        }
+
         logger.debug('[NTE] processMaterial:', key, 'subCategory:', subCategory, 'tier:', tier);
         const material = findMaterial(key, subCategory, tier);
         if (material) {
@@ -33,6 +41,10 @@ export const processMaterial = (materials, key, value, characterInfo) => {
     // Direct game_id materials: boss, weeklyBoss
     if (['boss', 'weeklyBoss'].includes(key)) {
         const gameId = characterInfo[key];
+        if (!gameId) {
+            logger.debug(`[NTE] No ${key} material for character; skipping this cost`);
+            return true;
+        }
         const material = findMaterial(key, gameId, null, true);
         if (material) {
             const mKey = getMaterialField(material, 'game_id');
