@@ -9,6 +9,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-08-20 12:00",
     "endDate": "2026-09-29 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -21,6 +22,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-08-20 12:00",
     "endDate": "2026-09-10 10:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -33,6 +35,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-08-20 12:00",
     "endDate": "2026-09-29 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -45,6 +48,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-08-22 11:00",
     "endDate": "2026-09-29 12:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -57,6 +61,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-08-27 05:00",
     "endDate": "2026-09-14 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -69,6 +74,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-09-03 05:00",
     "endDate": "2026-09-21 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -81,6 +87,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-09-03 05:00",
     "endDate": "2026-09-10 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -93,6 +100,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-09-10 11:00",
     "endDate": "2026-09-29 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -105,6 +113,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-09-10 11:00",
     "endDate": "2026-09-29 12:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -117,6 +126,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-09-17 05:00",
     "endDate": "2026-09-29 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -129,6 +139,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8074976",
     "startDate": "2026-09-22 05:00",
     "endDate": "2026-09-29 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -141,6 +152,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-09-30 11:00",
     "endDate": "2026-10-22 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -153,6 +165,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-09-30 11:00",
     "endDate": "2026-10-22 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -165,6 +178,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-09-30 11:00",
     "endDate": "2026-10-22 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -177,6 +191,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-10-22 11:00",
     "endDate": "2026-11-10 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -189,6 +204,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-10-22 11:00",
     "endDate": "2026-11-10 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -201,6 +217,7 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-10-22 11:00",
     "endDate": "2026-11-10 04:59",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -213,6 +230,150 @@
     "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
     "startDate": "2026-10-22 11:00",
     "endDate": "2026-11-11 04:59",
+    "recurrence": "",
     "utcOffset": 9
+  },
+  {
+    "id": "blooms-for-the-shadow__tba",
+    "name": "Blooms for the Shadow",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625279/660d801c78cd4048bb9d7d7f49574245.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "dreams-in-the-capsule__tba",
+    "name": "Dreams in the Capsule",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625275/f1be6b5cf02d16c6f408d5ccefc9c9d7.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "past-dreams,-traced-seals__tba",
+    "name": "Past Dreams, Traced Seals",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625276/e775d96d8ac757134ab6c2669cfd88e8.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "artisan's-search__tba",
+    "name": "Artisan's Search",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625272/9cb96712819668edd2ccaa6abf048ebf.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "beyond-the-waves__tba",
+    "name": "Beyond the Waves",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625274/a030b974f44e6e00f6fb8c00e3a8199b.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "echo-erase__tba",
+    "name": "Echo Erase",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625283/830091f2dc54f0f2494dc2dc87faf7bf.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "cubie-wars__tba",
+    "name": "Cubie Wars",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625282/6c9943bfd2438e2a8302dea4e71fd2b1.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "9402260026",
+    "name": "Gifts of the Waking Moon",
+    "description": "Log-in during the event's duration for pulls and additional rewards!",
+    "category": "event",
+    "cover": "https://img.game8.co/4625280/e728776ae74877458f95a88826b73fb0.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 9
+  },
+  {
+    "id": "waking-moon-fishing__tba",
+    "name": "Waking Moon Fishing",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625277/b6dbd51ef5e9dd63570be6bfd08752fa.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "3.7-moonlit-path__tba",
+    "name": "3.7 Moonlit Path",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4626932/54872c5ccd673e77fbb8276644b5795d.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
+  },
+  {
+    "id": "back-to-solaris__tba",
+    "name": "Back to Solaris",
+    "description": "",
+    "category": "event",
+    "cover": "https://img.game8.co/4625278/8e0f314f34d6616a561d8ca858e401c3.png/show",
+    "color": "#667eea",
+    "sourceUrl": "https://game.naver.com/lounge/WutheringWaves/board/detail/8212393",
+    "startDate": "",
+    "endDate": "",
+    "recurrence": "",
+    "utcOffset": 8
   }
 ]

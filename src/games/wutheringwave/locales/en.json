@@ -373,7 +373,9 @@
     "9402990017": "Undefined Spectrum",
     "9402990017.desc": "Linne Banner Event",
     "9402990018": "Gifts of Singing Drizzle",
-    "9402990018.desc": "Log-in during the event's duration for pulls and additional rewards!"
+    "9402990018.desc": "Log-in during the event's duration for pulls and additional rewards!",
+    "9402260026": "Gifts of the Waking Moon",
+    "9402260026.desc": "Log-in during the event's duration for pulls and additional rewards!"
   },
   "ui": {
     "game.name.wutheringwave": "Wuthering Waves",

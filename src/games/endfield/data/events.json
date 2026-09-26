@@ -9,6 +9,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-02 11:00",
     "endDate": "2026-09-30 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -21,6 +22,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-02 11:00",
     "endDate": "2026-09-30 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -33,6 +35,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-02 11:00",
     "endDate": "2026-09-30 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -45,6 +48,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-09 11:00",
     "endDate": "2026-10-15 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -57,6 +61,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-16 11:00",
     "endDate": "2026-09-30 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -69,6 +74,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-17 11:00",
     "endDate": "2026-10-15 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -81,6 +87,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-24 11:00",
     "endDate": "2026-09-30 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -93,6 +100,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-24 11:00",
     "endDate": "2026-09-30 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -105,6 +113,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-09-24 11:00",
     "endDate": "2026-09-30 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -117,6 +126,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-10-01 11:00",
     "endDate": "2026-10-15 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -129,6 +139,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-10-01 11:00",
     "endDate": "2026-10-15 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -141,6 +152,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-10-01 11:00",
     "endDate": "2026-10-15 12:00",
+    "recurrence": "",
     "utcOffset": 9
   },
   {
@@ -153,6 +165,7 @@
     "sourceUrl": "https://img.game8.co/4596545/4be427261bf1e358d1fbe8d76e263d00.png/show",
     "startDate": "2026-10-08 11:00",
     "endDate": "2026-10-15 12:00",
+    "recurrence": "",
     "utcOffset": 9
   }
 ]
