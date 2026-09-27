@@ -105,11 +105,15 @@
 
                             <!-- アイテム別インベントリ入力 -->
                             <div class="tier-input-container">
+                                <span class="input-sign" :class="`sign-${inputMode}`">
+                                    {{ inputMode === 'set' ? '=' : '+' }}
+                                </span>
                                 <input
                                     type="number"
                                     class="tier-input"
+                                    min="0"
                                     v-model.number="tierInputs[tierItem.id]"
-                                    placeholder="0"
+                                    :placeholder="inputMode === 'set' ? formatNumber(tierItem.owned) : '0'"
                                 />
                             </div>
                         </div>
@@ -117,22 +121,42 @@
                 </template>
             </div>
 
-            <!-- インベントリ入力 (Tieredアイテムの場合) -->
-            <div class="dialog-footer" v-if="isTiered">
-                <div class="tiered-footer">
+            <!-- インベントリ入力: 加算 / 保有量上書き をモードで切り替え -->
+            <div class="dialog-footer">
+                <div class="mode-row">
+                    <div class="mode-tabs" role="tablist">
+                        <button
+                            v-for="mode in INPUT_MODES"
+                            :key="mode"
+                            type="button"
+                            role="tab"
+                            class="mode-tab"
+                            :class="[`is-${mode}`, { 'is-active': inputMode === mode }]"
+                            :aria-selected="inputMode === mode"
+                            @click="inputMode = mode"
+                        >
+                            {{ mode === 'set' ? '=' : '+' }} {{ tUI(`dialog.mode.${mode}`) }}
+                        </button>
+                    </div>
+                    <span class="mode-hint">{{ tUI(`dialog.mode.${inputMode}.hint`) }}</span>
+                </div>
+
+                <div v-if="isTiered" class="tiered-footer">
                     <button class="save-all-btn" @click="saveAllTierInputs">{{ tUI('common.save') }}</button>
                 </div>
-            </div>
 
-            <!-- インベントリ入力 (単一アイテムの場合のみ) -->
-            <div class="dialog-footer" v-if="!isTiered">
-                <div class="inventory-input">
-                    <label>{{ tUI('dialog.update_inventory') }}:</label>
+                <div v-else class="inventory-input">
+                    <label>
+                        {{ tUI(inputMode === 'set' ? 'dialog.set_owned' : 'dialog.update_inventory') }}:
+                    </label>
                     <input
                         type="number"
+                        min="0"
                         v-model.number="inputQuantity"
                         @keyup.enter="updateInventory"
-                        :placeholder="tUI('dialog.enter_quantity')"
+                        :placeholder="inputMode === 'set'
+                            ? tUI('dialog.enter_owned')
+                            : tUI('dialog.enter_quantity')"
                     />
                     <button @click="updateInventory">{{ tUI('common.save') }}</button>
                 </div>
@@ -176,6 +200,18 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close', 'updateInventory']);
+
+/**
+ * How the number in the input box is applied to the inventory.
+ *
+ * `add` is the original behaviour: the value is added to what you already own.
+ * `set` overwrites the owned count outright, for fixing a figure that has drifted
+ * from the game. Exactly one mode is live at a time, on purpose — two boxes per
+ * item would leave a "+3" and a "=12" fighting over the same row, and there is no
+ * sane answer for which wins.
+ */
+const INPUT_MODES = ['add', 'set'];
+const inputMode = ref('add');
 
 const inputQuantity = ref(null);
 const tierInputs = ref({});
@@ -259,43 +295,69 @@ const close = () => {
     emit('close');
 };
 
+/**
+ * An empty box means "leave this one alone". That distinction only matters in `set`
+ * mode, where treating a blank as 0 would wipe the stock the user never touched.
+ */
+const readInput = (value) => {
+    if (value === null || value === undefined || value === '') return null;
+    const parsed = parseInt(value, 10);
+    return Number.isNaN(parsed) ? null : Math.max(0, parsed);
+};
+
+/** Adding nothing is a no-op; setting to 0 is a real edit that clears the stock. */
+const isNoop = (quantity) => inputMode.value === 'add' && quantity === 0;
+
 // インベントリ更新 (単一アイテム用)
 const updateInventory = () => {
-    if (props.item.id && inputQuantity.value !== null) {
-        const quantity = Math.max(0, parseInt(inputQuantity.value, 10) || 0);
-        emit('updateInventory', {
-            id: props.item.id,
-            quantity: quantity
-        });
-    }
+    const quantity = readInput(inputQuantity.value);
+    if (!props.item.id || quantity === null || isNoop(quantity)) return;
+
+    emit('updateInventory', {
+        id: props.item.id,
+        quantity,
+        mode: inputMode.value,
+    });
 };
 
 // 全ティアの入力を一括保存
 const saveAllTierInputs = () => {
-    const inputs = tierInputs.value;
-    let hasUpdates = false;
+    for (const [itemId, value] of Object.entries(tierInputs.value)) {
+        const quantity = readInput(value);
+        if (quantity === null || isNoop(quantity)) continue;
 
-    for (const [itemId, value] of Object.entries(inputs)) {
-        if (value !== null && value !== undefined && value !== '') {
-            const quantity = Math.max(0, parseInt(value, 10) || 0);
-            emit('updateInventory', {
-                id: itemId,
-                quantity: quantity
-            });
-            hasUpdates = true;
-        }
-    }
-
-    // 入力をクリア
-    if (hasUpdates) {
-        tierInputs.value = {};
+        emit('updateInventory', {
+            id: itemId,
+            quantity,
+            mode: inputMode.value,
+        });
     }
 };
 
-// propsのitemが変わったらinputQuantityとtierInputsをリセット
-watch(() => props.item, () => {
+/**
+ * `set` prefills every box with the current stock, so the user edits a real number
+ * instead of guessing what they are overwriting. `add` starts empty.
+ */
+const syncInputs = () => {
+    if (inputMode.value === 'set') {
+        inputQuantity.value = props.item.owned ?? 0;
+        tierInputs.value = Object.fromEntries(
+            tieredItems.value.map((item) => [item.id, item.owned ?? 0]),
+        );
+        return;
+    }
     inputQuantity.value = null;
     tierInputs.value = {};
+};
+
+watch(inputMode, syncInputs);
+
+// propsのitemが変わったら入力とモードをリセット
+watch(() => props.item, () => {
+    // Every open starts in `add`: overwriting a stock should be a deliberate click,
+    // never something a sticky mode does to the next item you happen to tap.
+    inputMode.value = 'add';
+    syncInputs();
 }, { immediate: true });
 </script>
 
@@ -528,6 +590,24 @@ watch(() => props.item, () => {
 
 .tier-input-container {
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-sign {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--text-muted);
+}
+
+.input-sign.sign-add {
+    color: var(--color-success);
+}
+
+.input-sign.sign-set {
+    color: var(--color-warning);
 }
 
 .tier-input {
@@ -549,6 +629,56 @@ watch(() => props.item, () => {
 .tiered-footer {
     display: flex;
     justify-content: flex-end;
+}
+
+.mode-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.mode-tabs {
+    display: flex;
+    gap: 3px;
+    padding: 3px;
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.mode-tab {
+    padding: 6px 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.mode-tab:hover {
+    color: var(--text);
+}
+
+.mode-tab.is-active.is-add {
+    background: var(--color-success);
+    color: #fff;
+}
+
+.mode-tab.is-active.is-set {
+    background: var(--color-warning);
+    color: #fff;
+}
+
+.mode-hint {
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    color: var(--text-muted);
 }
 
 .save-all-btn {

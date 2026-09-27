@@ -538,6 +538,29 @@ Cards show only the **need number** (required - owned - synthesis). Clicking ope
 - Each item shows EXP value
 - Individual inventory input per item
 
+**Inventory write modes (`add` / `set`):**
+
+The footer has a two-way toggle that decides how the number in each box is applied:
+
+| Mode | Sign | Behaviour | Store action |
+|------|------|-----------|--------------|
+| `add` (default) | `+` | Adds to the current stock | `addMaterial()` |
+| `set` | `=` | Overwrites the owned count | `setMaterialQuantity()` |
+
+Only one mode is live at a time, deliberately — two boxes per item would leave a `+3` and a `=12`
+fighting over the same row with no sane winner. Switching to `set` prefills every box with the
+current stock so the user edits a real number; switching back to `add` empties them.
+
+Two edge cases the input parser has to keep apart:
+- **a blank box is "skip this item"**, not 0. Reading it as 0 in `set` mode would wipe a stock the
+  user never touched.
+- **0 is a real edit in `set` mode** (that is how you clear a stock) but a no-op in `add` mode.
+
+The emitted payload is `{ id, quantity, mode }`. `FinalMaterialNeeds` mirrors the change onto the
+open dialog's `owned` the same way the store will, and `PlannerView.handleInventoryUpdate` carries
+the mode through its debounced queue (`mode` defaults to `'add'`, so any other caller is
+unaffected). Covered by `tests/components/item-dialog-inventory.test.js`.
+
 ### Tiered Lineup Detection (Game-Agnostic)
 
 Tiered lineups are detected automatically based on data:

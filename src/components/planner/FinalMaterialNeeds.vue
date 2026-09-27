@@ -577,14 +577,19 @@ const closeDialog = () => {
 // ダイアログからのインベントリ更新
 const handleDialogUpdateInventory = (data) => {
     emit("updateInventory", data);
-    // 入力値は既存保有量に「加算」されるため、owned表示も加算で更新
+
+    // Mirror what the store is about to do: `add` stacks on the displayed stock,
+    // `set` replaces it. Getting this wrong would show a number the store disagrees with.
+    const applyOwned = (owned) =>
+        data.mode === 'set' ? data.quantity : (owned || 0) + data.quantity;
+
     if (selectedItem.value.id === data.id) {
-        selectedItem.value.owned = (selectedItem.value.owned || 0) + data.quantity;
+        selectedItem.value.owned = applyOwned(selectedItem.value.owned);
     }
     // relatedItemsも更新
     selectedRelatedItems.value = selectedRelatedItems.value.map(item => {
         if (item.id === data.id) {
-            return { ...item, owned: (item.owned || 0) + data.quantity };
+            return { ...item, owned: applyOwned(item.owned) };
         }
         return item;
     });
@@ -837,11 +842,6 @@ const getMaterialQuantity = (id) => {
     const stringKey = String(id);
     const qty = inventory.value[id] ?? inventory.value[stringKey] ?? 0;
     return qty;
-};
-
-const setMaterialQuantity = (id, value) => {
-    const newQuantity = Math.max(0, parseInt(value, 10) || 0); // Ensure positive integer
-    emit("updateInventory", { id, quantity: newQuantity });
 };
 
 const totalExpNeed = (category) => {

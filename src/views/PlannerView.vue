@@ -205,9 +205,14 @@ const flushPendingUpdates = useDebounceFn(() => {
   const updates = pendingUpdates.value;
   if (updates.size === 0) return;
 
-  // Apply all pending updates
-  updates.forEach((quantity, id) => {
-    inventoryStore.addMaterial(id, quantity);
+  // Apply all pending updates. `set` overwrites the stock, `add` tops it up —
+  // the dialog says which, so the same queue carries both.
+  updates.forEach(({ quantity, mode }, id) => {
+    if (mode === 'set') {
+      inventoryStore.setMaterialQuantity(id, quantity);
+    } else {
+      inventoryStore.addMaterial(id, quantity);
+    }
   });
 
   // Show single toast for batch update
@@ -225,9 +230,9 @@ const flushPendingUpdates = useDebounceFn(() => {
   updateFinalMaterialNeeds();
 }, 1000);
 
-const handleInventoryUpdate = ({ id, quantity }) => {
+const handleInventoryUpdate = ({ id, quantity, mode = 'add' }) => {
   // Queue the update (overwrites previous value for same id)
-  pendingUpdates.value.set(id, quantity);
+  pendingUpdates.value.set(id, { quantity, mode });
   // Trigger debounced flush
   flushPendingUpdates();
 };
