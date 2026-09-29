@@ -985,7 +985,7 @@
     "display_name": "Blooming Jadehaven",
     "rarity": 5,
     "type": "rectifier",
-    "icon": "https://img.game8.co/4625110/a211cc1ad42a0131613096ab7bca7737.png/show",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21050116_UI.webp",
     "common": "exoswarm",
     "forgery": "string"
   },
@@ -994,7 +994,7 @@
     "display_name": "Unspoken Rue",
     "rarity": 5,
     "type": "sword",
-    "icon": "https://img.game8.co/4625109/21242344d52f62f27f039cfd3625bde6.png/show",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020107_UI.webp",
     "common": "mech",
     "forgery": "polarizer"
   }
