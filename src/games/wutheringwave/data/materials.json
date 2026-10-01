@@ -927,6 +927,14 @@
       "SubCategory": "weeklyboss",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_028_UI.webp",
       "tier": 4
+    },
+    "remnant_of_the_wheel": {
+      "game_id": 4150030011,
+      "label": "Remnant of the Wheel",
+      "Category": "weekly",
+      "SubCategory": "weeklyboss",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_L_031_UI.webp",
+      "tier": 4
     }
   },
   "ascension": {
@@ -1200,6 +1208,22 @@
       "Category": "ascension",
       "SubCategory": "ascension",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_078_UI.webp",
+      "tier": 3
+    },
+    "bloom_of_hearkening": {
+      "game_id": 4130010034,
+      "label": "Bloom of Hearkening",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_088_UI.webp",
+      "tier": 3
+    },
+    "miasmic_branch": {
+      "game_id": 4130010035,
+      "label": "Miasmic Branch",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_089_UI.webp",
       "tier": 3
     }
   },
