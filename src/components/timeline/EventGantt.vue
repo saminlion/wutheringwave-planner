@@ -5,21 +5,31 @@
         <button
           type="button"
           class="zoom-btn"
-          :disabled="dayWidth <= MIN_DAY_WIDTH"
+          :disabled="zoomIndex === 0"
           :aria-label="tUI('timeline.zoomOut')"
           @click="zoom(-1)"
         >−</button>
         <button
           type="button"
           class="zoom-btn"
-          :disabled="dayWidth >= MAX_DAY_WIDTH"
+          :disabled="zoomIndex === ZOOM_LEVELS.length - 1"
           :aria-label="tUI('timeline.zoomIn')"
           @click="zoom(1)"
         >+</button>
       </div>
-      <button type="button" class="today-btn" @click="scrollToToday">
-        {{ tUI('timeline.today') }}
-      </button>
+      <div class="toolbar-actions">
+        <button
+          type="button"
+          class="today-btn"
+          :disabled="zoomIndex === DEFAULT_ZOOM_INDEX"
+          @click="resetZoom"
+        >
+          {{ tUI('timeline.resetZoom') }}
+        </button>
+        <button type="button" class="today-btn" @click="scrollToToday">
+          {{ tUI('timeline.today') }}
+        </button>
+      </div>
     </div>
 
     <!-- Recurring-with-no-window and TBA events have no bar to draw: pin them above the chart. -->
@@ -173,15 +183,34 @@ const BAR_HEIGHT = 34;
 const BAR_GAP = 6;
 const TRACK_HEADER = 24;
 const TRACK_GAP = 16;
-const MIN_DAY_WIDTH = 8;
-const MAX_DAY_WIDTH = 60;
+/**
+ * Fixed zoom ladder, stepped by index.
+ *
+ * Adding a constant and clamping looked equivalent but was not reversible: from
+ * the 22px default, three zoom-outs land on the 8px floor (22 → 16 → 10 → 8, the
+ * last step clamped up from 4), and zooming back in then walks 8 → 14 → 20 → 26.
+ * The 22 the user started from is off the grid for good, so the chart can never
+ * be returned to how it looked. Stepping an index keeps every level reachable
+ * from both directions.
+ */
+const ZOOM_LEVELS = [8, 12, 16, 22, 30, 40, 60];
+const DEFAULT_ZOOM_INDEX = ZOOM_LEVELS.indexOf(22);
 
-const dayWidth = ref(22);
+const zoomIndex = ref(DEFAULT_ZOOM_INDEX);
+const dayWidth = computed(() => ZOOM_LEVELS[zoomIndex.value]);
 const scroller = ref(null);
 
 const zoom = (direction) => {
-  const next = dayWidth.value + direction * 6;
-  dayWidth.value = Math.min(MAX_DAY_WIDTH, Math.max(MIN_DAY_WIDTH, next));
+  zoomIndex.value = Math.min(
+    ZOOM_LEVELS.length - 1,
+    Math.max(0, zoomIndex.value + direction),
+  );
+};
+
+/** Back to the zoom the chart opened at — the ladder alone cannot undo a scroll. */
+const resetZoom = () => {
+  zoomIndex.value = DEFAULT_ZOOM_INDEX;
+  scrollToToday();
 };
 
 /** Snap a timestamp to the start of its local day. */
@@ -323,13 +352,13 @@ const dateFormat = computed(() => new Intl.DateTimeFormat(locale.value, {
 const formatRange = (event) =>
   `${dateFormat.value.format(new Date(event.start))} — ${dateFormat.value.format(new Date(event.end))}`;
 
-const scrollToToday = () => {
+function scrollToToday() {
   const el = scroller.value;
   if (!el) return;
   const x = toX(props.now);
   // Park "today" a third of the way in so upcoming events stay visible.
   el.scrollTo({ left: Math.max(0, x - el.clientWidth / 3), behavior: 'smooth' });
-};
+}
 
 onMounted(async () => {
   await nextTick();
@@ -357,7 +386,8 @@ watch(() => props.events.length, async () => {
   gap: 0.5rem;
 }
 
-.zoom-controls {
+.zoom-controls,
+.toolbar-actions {
   display: flex;
   gap: 0.25rem;
 }

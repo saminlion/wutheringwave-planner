@@ -102,6 +102,7 @@
     "timeline.today": "오늘",
     "timeline.zoomIn": "확대",
     "timeline.zoomOut": "축소",
+    "timeline.resetZoom": "배율 초기화",
     "timeline.showEnded": "종료된 이벤트 표시",
     "timeline.endsToday": "오늘 종료",
     "timeline.startsToday": "오늘 시작",

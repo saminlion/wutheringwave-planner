@@ -156,4 +156,60 @@ describe('EventGantt', () => {
     }
     expect(zoomOut.element.disabled).toBe(true);
   });
+
+  /**
+   * Stepping the width by a constant and clamping it left the default off the
+   * grid: 22 → 16 → 10 → 8 going out, then 8 → 14 → 20 → 26 coming back, so the
+   * chart could never be returned to how it looked.
+   */
+  describe('zoom is reversible', () => {
+    const dayWidth = (wrapper) =>
+      parseFloat(wrapper.findAll('.axis-day')[0].element.style.width);
+
+    it('returns to the starting width after zooming all the way out and back', async () => {
+      const wrapper = mount(EventGantt, { props: { events: [event], now: NOW } });
+      const [zoomOut, zoomIn] = wrapper.findAll('.zoom-btn');
+      const before = dayWidth(wrapper);
+
+      let steps = 0;
+      while (!zoomOut.element.disabled) {
+        await zoomOut.trigger('click');
+        steps++;
+      }
+      expect(steps).toBeGreaterThan(0);
+      expect(dayWidth(wrapper)).toBeLessThan(before);
+
+      for (let i = 0; i < steps; i++) await zoomIn.trigger('click');
+      expect(dayWidth(wrapper)).toBe(before);
+    });
+
+    it('returns to the starting width after zooming all the way in and back', async () => {
+      const wrapper = mount(EventGantt, { props: { events: [event], now: NOW } });
+      const [zoomOut, zoomIn] = wrapper.findAll('.zoom-btn');
+      const before = dayWidth(wrapper);
+
+      let steps = 0;
+      while (!zoomIn.element.disabled) {
+        await zoomIn.trigger('click');
+        steps++;
+      }
+      for (let i = 0; i < steps; i++) await zoomOut.trigger('click');
+      expect(dayWidth(wrapper)).toBe(before);
+    });
+
+    it('reset puts the width back from anywhere', async () => {
+      const wrapper = mount(EventGantt, { props: { events: [event], now: NOW } });
+      const zoomOut = wrapper.findAll('.zoom-btn')[0];
+      const reset = wrapper.findAll('.today-btn')[0];
+      const before = dayWidth(wrapper);
+
+      expect(reset.element.disabled).toBe(true);
+      await zoomOut.trigger('click');
+      expect(reset.element.disabled).toBe(false);
+
+      await reset.trigger('click');
+      expect(dayWidth(wrapper)).toBe(before);
+      expect(reset.element.disabled).toBe(true);
+    });
+  });
 });

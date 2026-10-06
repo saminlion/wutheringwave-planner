@@ -102,6 +102,7 @@
     "timeline.today": "Today",
     "timeline.zoomIn": "Zoom in",
     "timeline.zoomOut": "Zoom out",
+    "timeline.resetZoom": "Reset zoom",
     "timeline.showEnded": "Show ended events",
     "timeline.endsToday": "Ends today",
     "timeline.startsToday": "Starts today",
