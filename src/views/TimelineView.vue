@@ -41,6 +41,7 @@
       v-else
       :events="visibleEvents"
       :show-ended="showEnded"
+      collapsible
       @toggle-complete="onToggleComplete"
     />
 

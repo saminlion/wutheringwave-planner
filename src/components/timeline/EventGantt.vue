@@ -18,12 +18,7 @@
         >+</button>
       </div>
       <div class="toolbar-actions">
-        <button
-          type="button"
-          class="today-btn"
-          :disabled="zoomIndex === DEFAULT_ZOOM_INDEX"
-          @click="resetZoom"
-        >
+        <button type="button" class="today-btn" @click="resetZoom">
           {{ tUI('timeline.resetZoom') }}
         </button>
         <button type="button" class="today-btn" @click="scrollToToday">
@@ -207,7 +202,11 @@ const zoom = (direction) => {
   );
 };
 
-/** Back to the zoom the chart opened at — the ladder alone cannot undo a scroll. */
+/**
+ * Back to the zoom the chart opened at, and re-centred on today — the ladder alone
+ * cannot undo a scroll. Always clickable: gating it on "zoom differs from default"
+ * left a button that looked ordinary but ignored clicks, which reads as missing.
+ */
 const resetZoom = () => {
   zoomIndex.value = DEFAULT_ZOOM_INDEX;
   scrollToToday();

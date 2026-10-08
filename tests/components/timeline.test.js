@@ -110,6 +110,67 @@ describe('EventList', () => {
   });
 });
 
+describe('EventList collapsible groups (timeline page)', () => {
+  const many = (prefix, n, status = 'ongoing') =>
+    Array.from({ length: n }, (_, i) => makeEvent({ id: `${prefix}${i}`, status, daysUntil: 3 }));
+  const mixed = () => [...many('o', 5), ...many('u', 4, 'upcoming'), ...many('t', 2, 'tba')];
+  const shownPerGroup = (wrapper) =>
+    wrapper.findAll('.event-group').map((g) => g.findAll('.event-card').length);
+
+  it('always shows every ongoing card, with no toggle', () => {
+    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
+    const ongoing = wrapper.findAll('.event-group')[0];
+    expect(ongoing.findAll('.event-card')).toHaveLength(5);
+    expect(ongoing.find('.group-toggle').exists()).toBe(false);
+  });
+
+  it('folds upcoming and TBA down to their heading and count', () => {
+    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
+    expect(shownPerGroup(wrapper)).toEqual([5, 0, 0]);
+
+    const [, upcoming, tba] = wrapper.findAll('.event-group');
+    expect(upcoming.find('.group-count').text()).toBe('4');
+    expect(tba.find('.group-count').text()).toBe('2');
+    expect(upcoming.find('.group-toggle').text()).toBe('timeline.showAll');
+  });
+
+  it('opens one group without touching the others', async () => {
+    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
+    await wrapper.findAll('.event-group')[1].find('.group-toggle').trigger('click');
+
+    expect(shownPerGroup(wrapper)).toEqual([5, 4, 0]);
+    expect(wrapper.findAll('.event-group')[1].find('.group-toggle').text())
+      .toBe('timeline.showLess');
+  });
+
+  it('folds back to exactly the state before View all was pressed', async () => {
+    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
+    const before = wrapper.findAll('.event-card').map((c) => c.text());
+
+    const toggle = wrapper.findAll('.event-group')[1].find('.group-toggle');
+    await toggle.trigger('click');
+    await toggle.trigger('click');
+
+    expect(wrapper.findAll('.event-card').map((c) => c.text())).toEqual(before);
+    expect(toggle.text()).toBe('timeline.showAll');
+  });
+
+  it('leaves the ended group open — it only appears when the user asked for it', () => {
+    const wrapper = mount(EventList, {
+      props: { events: [...many('o', 1), ...many('e', 3, 'ended')], collapsible: true },
+    });
+    const ended = wrapper.findAll('.event-group')[1];
+    expect(ended.findAll('.event-card')).toHaveLength(3);
+    expect(ended.find('.group-toggle').exists()).toBe(false);
+  });
+
+  it('never folds unless asked — the home widget keeps its own hard limit', () => {
+    const wrapper = mount(EventList, { props: { events: mixed() } });
+    expect(shownPerGroup(wrapper)).toEqual([5, 4, 2]);
+    expect(wrapper.find('.group-toggle').exists()).toBe(false);
+  });
+});
+
 describe('EventGantt', () => {
   const banner = makeEvent({ id: 'banner-1', category: 'banner', name: 'Banner One' });
   const event = makeEvent({ id: 'event-1', category: 'event', name: 'Event One' });
@@ -203,13 +264,23 @@ describe('EventGantt', () => {
       const reset = wrapper.findAll('.today-btn')[0];
       const before = dayWidth(wrapper);
 
-      expect(reset.element.disabled).toBe(true);
       await zoomOut.trigger('click');
-      expect(reset.element.disabled).toBe(false);
+      await zoomOut.trigger('click');
+      expect(dayWidth(wrapper)).not.toBe(before);
 
       await reset.trigger('click');
       expect(dayWidth(wrapper)).toBe(before);
-      expect(reset.element.disabled).toBe(true);
+    });
+
+    // Gating it on "zoom differs from the default" left a button that looked
+    // ordinary but ignored clicks — indistinguishable from one that isn't there.
+    it('the reset button is never disabled', async () => {
+      const wrapper = mount(EventGantt, { props: { events: [event], now: NOW } });
+      const reset = wrapper.findAll('.today-btn')[0];
+      expect(reset.element.disabled).toBe(false);
+
+      await wrapper.findAll('.zoom-btn')[0].trigger('click');
+      expect(reset.element.disabled).toBe(false);
     });
   });
 });

@@ -116,9 +116,12 @@
     "timeline.everyDays": "Every {n} days",
     "timeline.unscheduled": "No fixed dates",
     "timeline.showCompleted": "Show completed",
+    "timeline.showAll": "View all",
+    "timeline.showLess": "Show less",
     "timeline.markComplete": "Mark as completed",
     "timeline.markIncomplete": "Undo completed",
     "home.events": "Ongoing Events",
-    "home.eventsMore": "View all"
+    "home.eventsMore": "View all",
+    "home.eventsLess": "Show less"
   }
 }

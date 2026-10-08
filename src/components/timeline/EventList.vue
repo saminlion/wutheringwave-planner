@@ -1,13 +1,24 @@
 <template>
   <div class="event-list">
     <section v-for="group in groups" :key="group.key" class="event-group">
-      <h3 class="group-title">
-        {{ group.label }}
-        <span class="group-count">{{ group.items.length }}</span>
-      </h3>
+      <div class="group-head">
+        <h3 class="group-title">
+          {{ group.label }}
+          <span class="group-count">{{ group.items.length }}</span>
+        </h3>
+        <button
+          v-if="canFold(group)"
+          type="button"
+          class="group-toggle"
+          :aria-expanded="isExpanded(group)"
+          @click="toggleGroup(group)"
+        >
+          {{ isExpanded(group) ? tUI('timeline.showLess') : tUI('timeline.showAll') }}
+        </button>
+      </div>
 
       <div
-        v-for="event in group.items"
+        v-for="event in shownItems(group)"
         :key="event.id"
         class="event-row"
         :class="{ 'is-completed': event.completed }"
@@ -70,7 +81,7 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import EventCover from './EventCover.vue';
 import { useLocale } from '@/composables/useLocale';
 
@@ -81,6 +92,19 @@ const props = defineProps({
   /** Cap the number of cards rendered per group (0 = no limit). */
   limit: { type: Number, default: 0 },
   showEnded: { type: Boolean, default: true },
+  /**
+   * Let the groups in `foldGroups` collapse to just their heading and count, each
+   * behind its own "View all / Show less" toggle — the timeline page's list.
+   * Unlike `limit` (a hard cap for the home widget), nothing is lost: every group
+   * can be opened and folded back.
+   */
+  collapsible: { type: Boolean, default: false },
+  /**
+   * Which groups fold. Ongoing is deliberately absent: it is what you act on now,
+   * so it is always shown in full. Ended is absent too — it only appears when the
+   * user ticked "Show ended", and folding it would undo that choice.
+   */
+  foldGroups: { type: Array, default: () => ['upcoming', 'tba'] },
 });
 
 const emit = defineEmits(['toggleComplete']);
@@ -88,6 +112,23 @@ const emit = defineEmits(['toggleComplete']);
 const { tUI, locale } = useLocale();
 
 const applyLimit = (items) => (props.limit > 0 ? items.slice(0, props.limit) : items);
+
+// Which groups are open. In memory only, so every visit starts folded — the state
+// before "View all" was pressed is always one click away.
+const expandedGroups = ref(new Set());
+
+const canFold = (group) => props.collapsible && props.foldGroups.includes(group.key);
+const isExpanded = (group) => expandedGroups.value.has(group.key);
+
+const toggleGroup = (group) => {
+  const next = new Set(expandedGroups.value);
+  if (next.has(group.key)) next.delete(group.key);
+  else next.add(group.key);
+  expandedGroups.value = next;
+};
+
+/** A folded group shows its heading and count only — no cards at all. */
+const shownItems = (group) => (canFold(group) && !isExpanded(group) ? [] : group.items);
 
 const groups = computed(() => {
   const byStatus = { ongoing: [], upcoming: [], tba: [], ended: [] };
@@ -176,6 +217,30 @@ const formatRange = (event) => {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.group-toggle {
+  padding: 0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: var(--primary, #667eea);
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.group-toggle:hover {
+  text-decoration: underline;
 }
 
 .group-title {

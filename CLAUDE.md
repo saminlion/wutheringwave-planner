@@ -690,6 +690,20 @@ between the two.
 View preferences — the gantt/list tab plus both filter checkboxes — persist in
 `gameplanner_timeline_prefs`, so the chosen tab survives navigating away and reloading.
 
+**"View all" never navigates away.** Both summaries fold in place and fold back:
+- Home widget: 3 per group; `View all` / `Show less` toggles it (`HomeView.vue`), and a separate
+  `Timeline →` link does the navigating. It used to be a link to `/timeline`, which left nothing on
+  screen to get back to the short summary.
+- Timeline list: `EventList` with `collapsible` folds the groups in `foldGroups`
+  (`['upcoming', 'tba']`) down to their heading and count, each behind its own toggle; groups open
+  independently. **Ongoing never folds** — it is what you act on now. **Ended never folds** either:
+  it only appears when the user ticked *Show ended*, and folding it would undo that choice. `limit`
+  is a different thing — a hard cap with no way to open it — so the home widget passes `limit` and
+  the timeline page passes `collapsible`.
+
+Fold state is deliberately not persisted: every visit starts folded, so the state before
+`View all` was pressed is always one click away.
+
 > ⚠️ **Why the day/time split.** The sync reads the sheet through its CSV export, so it receives the
 > *displayed* string. A raw datetime cell exports in the sheet's locale format
 > (`2026. 8. 12 오전 4:00`), which `parseEventDate` rejects — the row is then silently dropped.

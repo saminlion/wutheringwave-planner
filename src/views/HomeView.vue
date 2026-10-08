@@ -4,12 +4,30 @@
     <section v-if="hasEvents" class="events-section">
       <div class="events-head">
         <h2 class="events-title">{{ tUI('home.events') }}</h2>
-        <router-link to="/timeline" class="events-more">
-          {{ tUI('home.eventsMore') }} →
-        </router-link>
+        <div class="events-actions">
+          <!-- Expands in place and folds back — it used to navigate away, which left
+               no control on screen to return to the 3-per-group summary. -->
+          <button
+            v-if="canExpand"
+            type="button"
+            class="events-more"
+            :aria-expanded="expanded"
+            @click="expanded = !expanded"
+          >
+            {{ expanded ? tUI('home.eventsLess') : tUI('home.eventsMore') }}
+          </button>
+          <router-link to="/timeline" class="events-link">
+            {{ tUI('nav.timeline') }} →
+          </router-link>
+        </div>
       </div>
 
-      <EventList :events="homeEvents" compact :limit="3" :show-ended="false" />
+      <EventList
+        :events="homeEvents"
+        compact
+        :limit="expanded ? 0 : HOME_LIMIT"
+        :show-ended="false"
+      />
     </section>
 
     <!-- 사용 가이드 -->
@@ -41,7 +59,7 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { usePlannerStore } from '@/store/planner';
 import { useInventoryStore } from '@/store/inventory';
 import { useGameStore } from '@/store/game';
@@ -63,6 +81,15 @@ const guide = computed(() => currentTranslations.value?.guide ?? null);
 // Ongoing first (soonest deadline), topped up with upcoming so the widget is
 // never empty right after a patch ends.
 const homeEvents = computed(() => [...endingSoon.value, ...upcoming.value]);
+
+/** Cards per group in the folded summary. */
+const HOME_LIMIT = 3;
+// Not persisted on purpose: every visit opens on the short summary.
+const expanded = ref(false);
+/** Only offer "View all" when folding actually hides something. */
+const canExpand = computed(
+  () => endingSoon.value.length > HOME_LIMIT || upcoming.value.length > HOME_LIMIT,
+);
 
 onMounted(async () => {
   gameStore.hydrate();
@@ -106,7 +133,14 @@ onMounted(async () => {
   margin: 0;
 }
 
-.events-more {
+.events-actions {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+}
+
+.events-more,
+.events-link {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--primary, #667eea);
@@ -114,7 +148,21 @@ onMounted(async () => {
   white-space: nowrap;
 }
 
-.events-more:hover {
+.events-more {
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.events-link {
+  color: var(--text-muted, #666);
+}
+
+.events-more:hover,
+.events-link:hover {
   text-decoration: underline;
 }
 
