@@ -672,5 +672,41 @@
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_funnel_0020.webp",
     "onyx": 5110030018,
     "special": 5130010034
+  },
+  "jade_vessel": {
+    "game_id": 5360200076,
+    "display_name": "Jade Vessel",
+    "rarity": 6,
+    "type": "greatsword",
+    "icon": "https://img.game8.co/4641294/3e4686c729adeb4f31180a3d977e7a16.png/show",
+    "onyx": 5110030019,
+    "special": 5130010034
+  },
+  "lunar_calling": {
+    "game_id": 5360100077,
+    "display_name": "Lunar Calling",
+    "rarity": 6,
+    "type": "sword",
+    "icon": "https://img.game8.co/4641295/27e7a796f2fe1ac915c38daf84157da1.png/show",
+    "onyx": 5110030019,
+    "special": 5130010034
+  },
+  "long_heritage": {
+    "game_id": 5360200078,
+    "display_name": "Long Heritage",
+    "rarity": 6,
+    "type": "greatsword",
+    "icon": "https://img.game8.co/4641358/425363a2ac02c47f3a277b2dfe4afe8d.png/show",
+    "onyx": 5110030019,
+    "special": 5130010034
+  },
+  "complexed_industry": {
+    "game_id": 5360100079,
+    "display_name": "Complexed Industry",
+    "rarity": 6,
+    "type": "sword",
+    "icon": "https://img.game8.co/4641357/f4637d581dc9d3702dbd7f92925b0cbc.png/show",
+    "onyx": 5110030019,
+    "special": 5130010034
   }
 }
