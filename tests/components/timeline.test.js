@@ -110,63 +110,86 @@ describe('EventList', () => {
   });
 });
 
-describe('EventList collapsible groups (timeline page)', () => {
-  const many = (prefix, n, status = 'ongoing') =>
-    Array.from({ length: n }, (_, i) => makeEvent({ id: `${prefix}${i}`, status, daysUntil: 3 }));
-  const mixed = () => [...many('o', 5), ...many('u', 4, 'upcoming'), ...many('t', 2, 'tba')];
-  const shownPerGroup = (wrapper) =>
-    wrapper.findAll('.event-group').map((g) => g.findAll('.event-card').length);
+describe('EventList View all / View less (timeline page)', () => {
+  const ongoing = (id) => makeEvent({ id, status: 'ongoing' });
+  const upcomingIn = (id, days) => makeEvent({ id, status: 'upcoming', daysUntil: days });
+  const tba = (id) => makeEvent({ id, status: 'tba', start: null, end: null, daysLeft: null, daysUntil: null });
+  const ended = (id) => makeEvent({ id, status: 'ended' });
 
-  it('always shows every ongoing card, with no toggle', () => {
-    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
-    const ongoing = wrapper.findAll('.event-group')[0];
-    expect(ongoing.findAll('.event-card')).toHaveLength(5);
-    expect(ongoing.find('.group-toggle').exists()).toBe(false);
+  const events = () => [
+    ongoing('o1'), ongoing('o2'), ongoing('o3'), ongoing('o4'),
+    upcomingIn('soon', 2), upcomingIn('week', 7), upcomingIn('later', 8), upcomingIn('far', 30),
+    tba('t1'),
+  ];
+  const groupsShown = (wrapper) => wrapper.findAll('.event-group')
+    .map((g) => [g.find('.group-title').text().split(' ')[0], g.findAll('.event-card').length]);
+
+  it('View less keeps every ongoing event and upcoming ones within 7 days', () => {
+    const wrapper = mount(EventList, { props: { events: events(), collapsible: true } });
+    expect(groupsShown(wrapper)).toEqual([['timeline.ongoing', 4], ['timeline.upcoming', 2]]);
   });
 
-  it('folds upcoming and TBA down to their heading and count', () => {
-    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
-    expect(shownPerGroup(wrapper)).toEqual([5, 0, 0]);
-
-    const [, upcoming, tba] = wrapper.findAll('.event-group');
-    expect(upcoming.find('.group-count').text()).toBe('4');
-    expect(tba.find('.group-count').text()).toBe('2');
-    expect(upcoming.find('.group-toggle').text()).toBe('timeline.showAll');
+  it('counts the 7th day as soon and the 8th as later', () => {
+    const wrapper = mount(EventList, { props: { events: events(), collapsible: true } });
+    const names = wrapper.findAll('.event-group')[1].findAll('.card-name').map((n) => n.text());
+    expect(names).toHaveLength(2);
   });
 
-  it('opens one group without touching the others', async () => {
-    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
-    await wrapper.findAll('.event-group')[1].find('.group-toggle').trigger('click');
-
-    expect(shownPerGroup(wrapper)).toEqual([5, 4, 0]);
-    expect(wrapper.findAll('.event-group')[1].find('.group-toggle').text())
-      .toBe('timeline.showLess');
+  it('puts the single toggle on the first heading, above the ongoing cards', () => {
+    const wrapper = mount(EventList, { props: { events: events(), collapsible: true } });
+    const toggles = wrapper.findAll('.group-toggle');
+    expect(toggles).toHaveLength(1);
+    expect(wrapper.findAll('.event-group')[0].find('.group-toggle').exists()).toBe(true);
+    expect(toggles[0].text()).toBe('timeline.showAll');
   });
 
-  it('folds back to exactly the state before View all was pressed', async () => {
-    const wrapper = mount(EventList, { props: { events: mixed(), collapsible: true } });
+  it('View all shows literally everything', async () => {
+    const wrapper = mount(EventList, { props: { events: events(), collapsible: true } });
+    await wrapper.find('.group-toggle').trigger('click');
+
+    expect(groupsShown(wrapper)).toEqual([
+      ['timeline.ongoing', 4], ['timeline.upcoming', 4], ['timeline.tba', 1],
+    ]);
+    expect(wrapper.find('.group-toggle').text()).toBe('timeline.showLess');
+  });
+
+  it('View less returns to exactly the state before View all was pressed', async () => {
+    const wrapper = mount(EventList, { props: { events: events(), collapsible: true } });
     const before = wrapper.findAll('.event-card').map((c) => c.text());
 
-    const toggle = wrapper.findAll('.event-group')[1].find('.group-toggle');
-    await toggle.trigger('click');
-    await toggle.trigger('click');
+    await wrapper.find('.group-toggle').trigger('click');
+    await wrapper.find('.group-toggle').trigger('click');
 
     expect(wrapper.findAll('.event-card').map((c) => c.text())).toEqual(before);
-    expect(toggle.text()).toBe('timeline.showAll');
+    expect(wrapper.find('.group-toggle').text()).toBe('timeline.showAll');
   });
 
-  it('leaves the ended group open — it only appears when the user asked for it', () => {
+  it('hides the toggle when View less would hide nothing', () => {
     const wrapper = mount(EventList, {
-      props: { events: [...many('o', 1), ...many('e', 3, 'ended')], collapsible: true },
+      props: { events: [ongoing('o1'), upcomingIn('soon', 3)], collapsible: true },
     });
-    const ended = wrapper.findAll('.event-group')[1];
-    expect(ended.findAll('.event-card')).toHaveLength(3);
-    expect(ended.find('.group-toggle').exists()).toBe(false);
+    expect(wrapper.find('.group-toggle').exists()).toBe(false);
   });
 
-  it('never folds unless asked — the home widget keeps its own hard limit', () => {
-    const wrapper = mount(EventList, { props: { events: mixed() } });
-    expect(shownPerGroup(wrapper)).toEqual([5, 4, 2]);
+  it('keeps the toggle reachable when only far-off events exist', async () => {
+    const wrapper = mount(EventList, {
+      props: { events: [upcomingIn('far', 20)], collapsible: true },
+    });
+    expect(wrapper.findAll('.event-card')).toHaveLength(0);
+    await wrapper.find('.group-toggle').trigger('click');
+    expect(wrapper.findAll('.event-card')).toHaveLength(1);
+  });
+
+  it('leaves ended events alone — they only appear when the user asked for them', () => {
+    const wrapper = mount(EventList, {
+      props: { events: [ongoing('o1'), ended('e1'), ended('e2')], collapsible: true },
+    });
+    expect(groupsShown(wrapper)).toEqual([['timeline.ongoing', 1], ['timeline.ended', 2]]);
+  });
+
+  it('never simplifies unless asked — the home widget keeps its own hard limit', () => {
+    const wrapper = mount(EventList, { props: { events: events() } });
+    expect(wrapper.findAll('.event-card')).toHaveLength(9);
     expect(wrapper.find('.group-toggle').exists()).toBe(false);
   });
 });

@@ -1,24 +1,33 @@
 <template>
   <div class="event-list">
-    <section v-for="group in groups" :key="group.key" class="event-group">
+    <!-- Nothing left to list but something is hidden: keep the toggle reachable. -->
+    <div v-if="!groups.length && showToggle" class="group-head is-toolbar-only">
+      <button type="button" class="group-toggle" :aria-expanded="showAll" @click="showAll = !showAll">
+        {{ showAll ? tUI('timeline.showLess') : tUI('timeline.showAll') }}
+      </button>
+    </div>
+
+    <section v-for="(group, index) in groups" :key="group.key" class="event-group">
       <div class="group-head">
         <h3 class="group-title">
           {{ group.label }}
           <span class="group-count">{{ group.items.length }}</span>
         </h3>
+        <!-- One toggle for the whole list, on the first heading (normally Ongoing):
+             a per-group button ended up far below the ongoing cards. -->
         <button
-          v-if="canFold(group)"
+          v-if="index === 0 && showToggle"
           type="button"
           class="group-toggle"
-          :aria-expanded="isExpanded(group)"
-          @click="toggleGroup(group)"
+          :aria-expanded="showAll"
+          @click="showAll = !showAll"
         >
-          {{ isExpanded(group) ? tUI('timeline.showLess') : tUI('timeline.showAll') }}
+          {{ showAll ? tUI('timeline.showLess') : tUI('timeline.showAll') }}
         </button>
       </div>
 
       <div
-        v-for="event in shownItems(group)"
+        v-for="event in group.items"
         :key="event.id"
         class="event-row"
         :class="{ 'is-completed': event.completed }"
@@ -93,18 +102,15 @@ const props = defineProps({
   limit: { type: Number, default: 0 },
   showEnded: { type: Boolean, default: true },
   /**
-   * Let the groups in `foldGroups` collapse to just their heading and count, each
-   * behind its own "View all / Show less" toggle — the timeline page's list.
-   * Unlike `limit` (a hard cap for the home widget), nothing is lost: every group
-   * can be opened and folded back.
+   * The timeline page's list: one "View all / View less" toggle for the whole list.
+   *
+   * View less (the default) keeps what you act on soon — every ongoing event, and
+   * upcoming ones that start within `soonDays`. Upcoming further out and TBA rows
+   * are left out. View all shows everything. Unlike `limit` (a hard cap for the
+   * home widget), nothing is lost: View all always brings every row back.
    */
   collapsible: { type: Boolean, default: false },
-  /**
-   * Which groups fold. Ongoing is deliberately absent: it is what you act on now,
-   * so it is always shown in full. Ended is absent too — it only appears when the
-   * user ticked "Show ended", and folding it would undo that choice.
-   */
-  foldGroups: { type: Array, default: () => ['upcoming', 'tba'] },
+  soonDays: { type: Number, default: 7 },
 });
 
 const emit = defineEmits(['toggleComplete']);
@@ -113,26 +119,30 @@ const { tUI, locale } = useLocale();
 
 const applyLimit = (items) => (props.limit > 0 ? items.slice(0, props.limit) : items);
 
-// Which groups are open. In memory only, so every visit starts folded — the state
-// before "View all" was pressed is always one click away.
-const expandedGroups = ref(new Set());
 
-const canFold = (group) => props.collapsible && props.foldGroups.includes(group.key);
-const isExpanded = (group) => expandedGroups.value.has(group.key);
 
-const toggleGroup = (group) => {
-  const next = new Set(expandedGroups.value);
-  if (next.has(group.key)) next.delete(group.key);
-  else next.add(group.key);
-  expandedGroups.value = next;
+// In memory only, so every visit opens on View less.
+const showAll = ref(false);
+
+/** In View less: ongoing always, upcoming only when it starts within `soonDays`. */
+const isSimplifiedAway = (event) => {
+  if (event.status === 'tba') return true;
+  if (event.status === 'upcoming') return !(event.daysUntil <= props.soonDays);
+  return false;
 };
 
-/** A folded group shows its heading and count only — no cards at all. */
-const shownItems = (group) => (canFold(group) && !isExpanded(group) ? [] : group.items);
+const simplifying = computed(() => props.collapsible && !showAll.value);
+
+const hiddenCount = computed(() =>
+  props.collapsible ? props.events.filter(isSimplifiedAway).length : 0);
+
+/** Offer the toggle only when the two views would actually differ. */
+const showToggle = computed(() => props.collapsible && hiddenCount.value > 0);
 
 const groups = computed(() => {
   const byStatus = { ongoing: [], upcoming: [], tba: [], ended: [] };
   for (const event of props.events) {
+    if (simplifying.value && isSimplifiedAway(event)) continue;
     byStatus[event.status]?.push(event);
   }
 
@@ -224,6 +234,10 @@ const formatRange = (event) => {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
+}
+
+.group-head.is-toolbar-only {
+  justify-content: flex-end;
 }
 
 .group-toggle {
