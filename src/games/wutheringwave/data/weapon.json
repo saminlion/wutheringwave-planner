@@ -997,5 +997,14 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020107_UI.webp",
     "common": "mech",
     "forgery": "polarizer"
+  },
+  "liligun": {
+    "game_id": 4350400112,
+    "display_name": "LiliGun",
+    "rarity": 5,
+    "type": "pistols",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21020107_UI.webp",
+    "common": "exoswarm",
+    "forgery": "combustor"
   }
 }

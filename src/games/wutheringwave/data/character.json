@@ -778,5 +778,16 @@
     "ascension": 4130010035,
     "boss": 4140030024,
     "weeklyBoss": 4150030011
+  },
+  "lili": {
+    "game_id": 4250600061,
+    "display_name": "Lili",
+    "rarity": 5,
+    "element": "spectro",
+    "weapon": "pistol",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_76_UI.webp",
+    "common": "howler_core",
+    "forgery": "combustor",
+    "weeklyBoss": 4150030011
   }
 }

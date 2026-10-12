@@ -59,7 +59,8 @@
     "4250600033": "Zani",
     "4250600044": "Lynae",
     "4250600047": "Luuk",
-    "4250600051": "Lucy"
+    "4250600051": "Lucy",
+    "4250600061": "Lili"
   },
   "materials": {
     "4100000001": "Shell Credit",
@@ -333,7 +334,8 @@
     "4350100108": "Glint of Clouds",
     "4350200109": "Thousandfold Deliverance",
     "4350500110": "Blooming Jadehaven",
-    "4350100111": "Unspoken Rue"
+    "4350100111": "Unspoken Rue",
+    "4350400112": "LiliGun"
   },
   "events": {
     "9402990001": "Resonance Sim Realm",

@@ -1483,9 +1483,9 @@
       }
     }
   },
-  "hongshan": {
+  "agent_flow": {
     "game_id": 5260100032,
-    "display_name": "Hongshan",
+    "display_name": "Agent Flow",
     "rarity": 6,
     "element": "physical",
     "weapon": "polearm",
