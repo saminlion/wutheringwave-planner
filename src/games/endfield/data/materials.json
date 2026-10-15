@@ -322,11 +322,19 @@
       "SubCategory": "special",
       "icon": "https://static.warfarin.wiki/v3/itemicon/item_char_skill_specialize_5.webp",
       "tier": 5
+    },
+    "warp_plasmacoated_slide": {
+      "game_id": 5130010039,
+      "label": "Warp Plasma-Coated Slide",
+      "Category": "special",
+      "SubCategory": "special",
+      "icon": "https://static.warfarin.wiki/v4/itemicon/item_char_skill_specialize_6.webp",
+      "tier": 5
     }
   },
   "mastery": {
     "mark_of_perseverance": {
-      "game_id": 5140010039,
+      "game_id": 5140010040,
       "label": "Mark of Perseverance",
       "Category": "mastery",
       "SubCategory": "perseverance",
