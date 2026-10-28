@@ -286,5 +286,29 @@
     "forgery": "heart",
     "boss": 7140010002,
     "weeklyBoss": 7150010001
+  },
+  "elyms": {
+    "game_id": 7840300025,
+    "display_name": "Elyms",
+    "rarity": 6,
+    "element": "cosmos",
+    "weapon_type": "solid",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/AvatarImage/256/player_mingyin_256.webp",
+    "common": "silhouette",
+    "forgery": "bird",
+    "boss": 7140010007,
+    "weeklyBoss": 7150010004
+  },
+  "exe": {
+    "game_id": 7850600026,
+    "display_name": "Exe",
+    "rarity": 6,
+    "element": "chaos",
+    "weapon_type": "plasma",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/AvatarImage/256/player_mingyin_256.webp",
+    "common": "numeral",
+    "forgery": "hang",
+    "boss": 7140010001,
+    "weeklyBoss": 7150010004
   }
 }

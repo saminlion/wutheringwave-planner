@@ -457,5 +457,23 @@
     "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/1024/fork_prism.webp",
     "common": "delusions",
     "forgery": "core"
+  },
+  "echoes_on_hold": {
+    "game_id": 7364000052,
+    "display_name": "Echoes on Hold",
+    "rarity": 6,
+    "type": "solid",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/1024/fork_prism.webp",
+    "common": "delusions",
+    "forgery": "core"
+  },
+  "dotted_horizon": {
+    "game_id": 7365000053,
+    "display_name": "Dotted Horizon",
+    "rarity": 6,
+    "type": "plasma",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/1024/fork_prism.webp",
+    "common": "delusions",
+    "forgery": "core"
   }
 }

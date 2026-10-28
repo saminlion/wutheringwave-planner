@@ -247,6 +247,14 @@
       "SubCategory": "weeklyBoss",
       "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weeklycloneboss_a03_01.webp",
       "tier": 4
+    },
+    "fromanima": {
+      "game_id": 7150010004,
+      "label": "FromAnima",
+      "Category": "weeklyBoss",
+      "SubCategory": "weeklyBoss",
+      "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weeklycloneboss_a03_01.webp",
+      "tier": 4
     }
   },
   "forgery": {
