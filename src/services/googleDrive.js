@@ -40,6 +40,7 @@ export class DriveAuthError extends Error {
 
 let gisPromise = null;
 let tokenClient = null;
+let pendingRequest = null; // { resolve, reject } of the requestToken() in flight
 
 function loadGis() {
   if (window.google?.accounts?.oauth2) return Promise.resolve();
@@ -74,40 +75,78 @@ export function clearToken() {
   sessionStorage.removeItem(TOKEN_KEY);
 }
 
-/**
- * Open Google's consent/account popup and get an access token.
- * Must be called from a user gesture (click), or the popup is blocked.
- * @param {string} [loginHint] email of the previously connected account, skips the chooser
- */
-export async function requestToken(loginHint) {
-  await loadGis();
+function settleRequest(error, token) {
+  const request = pendingRequest;
+  pendingRequest = null;
+  if (!request) return;
+  if (error) request.reject(error);
+  else request.resolve(token);
+}
 
-  return new Promise((resolve, reject) => {
+function handleTokenResponse(response) {
+  if (response.error) {
+    settleRequest(new DriveAuthError(response.error_description || response.error));
+    return;
+  }
+  if (!window.google.accounts.oauth2.hasGrantedAllScopes(response, SCOPE)) {
+    settleRequest(new DriveAuthError('Google Drive access was not granted'));
+    return;
+  }
+  sessionStorage.setItem(TOKEN_KEY, JSON.stringify({
+    accessToken: response.access_token,
+    expiresAt: Date.now() + Number(response.expires_in) * 1000,
+  }));
+  settleRequest(null, response.access_token);
+}
+
+function handleTokenError(error) {
+  const message = error?.type === 'popup_failed_to_open'
+    ? 'The Google sign-in popup was blocked. Allow popups for this site and try again.'
+    : error?.type === 'popup_closed'
+      ? 'Sign-in window was closed'
+      : error?.message || 'Sign-in failed';
+  settleRequest(new DriveAuthError(message));
+}
+
+/**
+ * Load the GIS script and build the token client ahead of the click.
+ *
+ * Browsers only let a click open a popup if it opens right away. Fetching the
+ * script (or anything else async) between the click and requestAccessToken()
+ * spends that permission and the popup is blocked (`popup_failed_to_open`),
+ * so whatever shows a sign-in button must call this first.
+ */
+export async function preloadGis() {
+  await loadGis();
+  if (!tokenClient) {
     tokenClient = window.google.accounts.oauth2.initTokenClient({
       client_id: CLIENT_ID,
       scope: SCOPE,
-      callback: (response) => {
-        if (response.error) {
-          reject(new DriveAuthError(response.error_description || response.error));
-          return;
-        }
-        if (!window.google.accounts.oauth2.hasGrantedAllScopes(response, SCOPE)) {
-          reject(new DriveAuthError('Google Drive access was not granted'));
-          return;
-        }
-        sessionStorage.setItem(TOKEN_KEY, JSON.stringify({
-          accessToken: response.access_token,
-          expiresAt: Date.now() + Number(response.expires_in) * 1000,
-        }));
-        resolve(response.access_token);
-      },
-      error_callback: (error) => {
-        // popup_closed / popup_failed_to_open
-        reject(new DriveAuthError(error?.message || error?.type || 'Sign-in cancelled'));
-      },
+      callback: handleTokenResponse,
+      error_callback: handleTokenError,
     });
-    tokenClient.requestAccessToken({ prompt: '', login_hint: loginHint || undefined });
+  }
+}
+
+/**
+ * Open Google's consent/account popup and get an access token.
+ * Must be called synchronously from a click handler, after preloadGis().
+ * @param {string} [loginHint] email of the previously connected account, skips the chooser
+ */
+export function requestToken(loginHint) {
+  if (!tokenClient) {
+    // Not ready yet: start loading so the next click works, and say so.
+    preloadGis().catch(() => {});
+    return Promise.reject(new DriveAuthError('Google sign-in is still loading. Please click again.'));
+  }
+
+  if (pendingRequest) handleTokenError({ message: 'Superseded by a new sign-in' });
+  const promise = new Promise((resolve, reject) => {
+    pendingRequest = { resolve, reject };
   });
+  // Called synchronously, still inside the click's user activation.
+  tokenClient.requestAccessToken({ prompt: '', login_hint: loginHint || undefined });
+  return promise;
 }
 
 export async function revokeToken() {

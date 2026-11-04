@@ -290,7 +290,15 @@ function promptReconnect() {
   });
 }
 
-/** Sign in (or back in) and sync. Call from a click handler. */
+/** Get Google sign-in ready before any button for it can be clicked. */
+export function prepareSignIn() {
+  drive.preloadGis().catch((error) => logger.warn('Google sign-in failed to load:', error));
+}
+
+/**
+ * Sign in (or back in) and sync. Call synchronously from a click handler,
+ * after prepareSignIn() — the popup must open before anything is awaited.
+ */
 export async function connect() {
   const meta = loadMeta();
   await drive.requestToken(meta?.user?.email);
@@ -329,6 +337,7 @@ export function initCloudSync() {
 
   const meta = loadMeta();
   if (meta?.user) {
+    prepareSignIn(); // the reconnect toast needs it ready
     syncState.connected = true;
     syncState.user = meta.user;
     syncState.lastSyncedAt = meta.lastSyncedAt || null;
@@ -356,6 +365,7 @@ export function initCloudSync() {
 export default {
   syncState,
   initCloudSync,
+  prepareSignIn,
   connect,
   disconnect,
   syncNow,

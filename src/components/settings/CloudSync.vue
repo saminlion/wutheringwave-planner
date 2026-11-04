@@ -85,9 +85,10 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import {
   syncState as state,
+  prepareSignIn,
   connect,
   disconnect,
   syncNow,
@@ -97,6 +98,8 @@ import {
 import { useConfirm } from '@/composables/useConfirm';
 
 const { confirmDialog } = useConfirm();
+
+onMounted(prepareSignIn);
 
 const loading = ref(false);
 const message = ref('');
