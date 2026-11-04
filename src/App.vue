@@ -5,6 +5,7 @@
         <h1 class="app-title">{{ tUI('app.title') }}</h1>
         <div class="header-right">
           <GameSelector compact @gameChanged="onGameChanged" />
+          <SyncIndicator />
           <button class="theme-toggle" @click="toggleTheme" :title="themeLabel">
             <span v-if="theme === 'light'">☀️</span>
             <span v-else-if="theme === 'dark'">🌙</span>
@@ -38,6 +39,7 @@ import { useLocale } from '@/composables/useLocale';
 import { useTheme } from '@/composables/useTheme';
 import GameSelector from './components/common/GameSelector.vue';
 import ConfirmDialog from './components/common/ConfirmDialog.vue';
+import SyncIndicator from './components/common/SyncIndicator.vue';
 import logger from '@/utils/logger';
 
 const plannerStore = usePlannerStore();

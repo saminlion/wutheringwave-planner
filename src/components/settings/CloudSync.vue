@@ -129,7 +129,7 @@ async function run(task, failPrefix) {
 
 // Navigates away to Google; the result comes back as ?cloudsync= on return.
 const handleConnect = () => connect();
-const handleSync = () => run(syncNow, 'Sync failed');
+const handleSync = () => run(() => syncNow({ force: true }), 'Sync failed');
 
 async function handleDisconnect() {
   if (!(await confirmDialog('Stop syncing on this device? Data here and on Google Drive is kept.'))) return;

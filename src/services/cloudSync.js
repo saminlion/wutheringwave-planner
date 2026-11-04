@@ -25,7 +25,10 @@ import * as drive from './googleDrive';
 // Not prefixed with `gameplanner_`, so it is never synced or backed up itself.
 const META_KEY = 'cloudsync_meta';
 const PAYLOAD_VERSION = 1;
-const POLL_MS = 10_000;
+// Change detection: a hash every TICK_MS, uploaded once it held still for a tick,
+// so a burst of edits becomes one upload ~2-4s after the last one.
+const TICK_MS = 2_000;
+const ERROR_RETRY_MS = 30_000;
 const FOCUS_RECHECK_MS = 60_000;
 
 // Per-device view state: syncing it would only make two devices fight.
@@ -41,6 +44,7 @@ export const syncState = reactive({
   authorized: false,  // and we currently hold a valid access token
   user: null,         // { name, email, photo }
   status: 'idle',     // idle | syncing | conflict | error
+  pending: false,     // local changes not on Drive yet
   lastSyncedAt: null,
   error: '',
 });
@@ -140,6 +144,8 @@ function saveMeta(patch) {
 
 let running = null;
 let lastCheckAt = 0;
+let lastErrorAt = 0;
+let lastSeenHash = null;
 let pendingConflict = null; // { file, snapshot, updatedAt } while status === 'conflict'
 let reconnectToastShown = false;
 
@@ -166,6 +172,7 @@ async function upload(fileId, snapshot) {
     cloudModifiedTime: file.modifiedTime,
     lastSyncedAt: new Date().toISOString(),
   });
+  syncState.pending = false; // the next tick re-flags it if edits landed mid-upload
   logger.info('Cloud sync: uploaded');
 }
 
@@ -232,14 +239,19 @@ function handleError(error) {
     return;
   }
   logger.error('Cloud sync failed:', error);
+  lastErrorAt = Date.now();
   syncState.status = 'error';
   syncState.error = error.message;
 }
 
-/** Bring local and Drive in line. Concurrent callers share one run. */
-export function syncNow() {
+/**
+ * Bring local and Drive in line. Concurrent callers share one run.
+ * @param {{ force?: boolean }} [options] force skips the post-error back-off (manual "Sync now")
+ */
+export function syncNow({ force = false } = {}) {
   if (running) return running;
   if (!syncState.authorized || syncState.status === 'conflict') return Promise.resolve();
+  if (!force && syncState.status === 'error' && Date.now() - lastErrorAt < ERROR_RETRY_MS) return Promise.resolve();
 
   syncState.status = 'syncing';
   syncState.error = '';
@@ -337,8 +349,20 @@ export async function disconnect() {
   localStorage.removeItem(META_KEY);
   pendingConflict = null;
   Object.assign(syncState, {
-    connected: false, authorized: false, user: null, status: 'idle', lastSyncedAt: null, error: '',
+    connected: false, authorized: false, user: null, status: 'idle', pending: false, lastSyncedAt: null, error: '',
   });
+}
+
+/** Flag unsynced edits right away; upload them once they stop changing. */
+export function tick() {
+  if (!syncState.connected) return;
+  const hash = hashSnapshot(buildSnapshot());
+  const dirty = hash !== loadMeta()?.syncedHash;
+  syncState.pending = dirty;
+
+  const settled = hash === lastSeenHash;
+  lastSeenHash = hash;
+  if (dirty && settled && syncState.authorized && syncState.status !== 'syncing') syncNow();
 }
 
 let initialized = false;
@@ -370,10 +394,7 @@ export function initCloudSync() {
     }
   }
 
-  setInterval(() => {
-    if (!syncState.authorized || syncState.status !== 'idle') return;
-    if (hashSnapshot(buildSnapshot()) !== loadMeta()?.syncedHash) syncNow();
-  }, POLL_MS);
+  setInterval(tick, TICK_MS);
 
   // Coming back to the tab is when another device most likely wrote Drive.
   window.addEventListener('focus', () => {

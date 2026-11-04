@@ -788,7 +788,10 @@ src/services/cloudSync.js    → what to sync and when
   Plain `npm run dev` has no `/api`, so sign-in only works locally under `vercel dev`.
 - **Scope is `drive.appdata` only** — non-sensitive, so the OAuth app (already *In production*)
   needs no verification. Never add the full `drive` scope: it is restricted.
-- **The app's stores don't know sync exists.** A hash of the synced keys is polled every 10s;
+- **The app's stores don't know sync exists.** A hash of the synced keys is checked every 2s
+  (`tick()`); an edit sets `syncState.pending` at once and uploads once the data held still for a
+  tick, so a burst of edits is one upload. `SyncIndicator.vue` (header, next to the theme toggle)
+  shows synced / pending / syncing / error / conflict / signed-out and links to Settings;
   `syncedHash` + `cloudModifiedTime` in `cloudsync_meta` tell which side changed. One side →
   copy it; both → `conflict`, which the user resolves in Settings. A download rewrites
   localStorage and reloads the page, because every store hydrated at boot.
@@ -796,7 +799,8 @@ src/services/cloudSync.js    → what to sync and when
 - `vercel.json` rewrites every non-`/api` path to `index.html` (history-mode router). Without it a
   direct load or refresh of `/settings`, `/planner`, … returned 404.
 
-Tested in `tests/services/cloudSync.test.js` (sync decisions) and `tests/services/oauthServer.test.js`
+Tested in `tests/services/cloudSync.test.js` (sync decisions),
+`tests/services/cloudSync-autosync.test.js` (edit → pending → one upload) and `tests/services/oauthServer.test.js`
 (open-redirect guard, cookie flags).
 
 ---
