@@ -5,7 +5,6 @@
         <h1 class="app-title">{{ tUI('app.title') }}</h1>
         <div class="header-right">
           <GameSelector compact @gameChanged="onGameChanged" />
-          <SyncIndicator />
           <button class="theme-toggle" @click="toggleTheme" :title="themeLabel">
             <span v-if="theme === 'light'">☀️</span>
             <span v-else-if="theme === 'dark'">🌙</span>
@@ -27,6 +26,7 @@
       <router-view />
     </main>
     <ConfirmDialog />
+    <SyncIndicator />
   </div>
 </template>
 

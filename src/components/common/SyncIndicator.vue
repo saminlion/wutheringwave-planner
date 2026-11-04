@@ -1,5 +1,6 @@
 <template>
-  <!-- Header badge for Google Drive sync; hidden until the user links an account -->
+  <!-- Floating bottom-right badge for Google Drive sync; hidden until the user links an account.
+       Not in the header: its right side fills up as more games are added. -->
   <router-link
     v-if="state.connected"
     to="/settings"
@@ -48,19 +49,24 @@ const view = computed(() => {
 
 <style scoped>
 .sync-indicator {
-  position: relative;
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  /* Over page content, under the header (500) and the dialogs (1000+) */
+  z-index: 400;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 4px 8px;
+  width: 44px;
+  height: 44px;
   border: 1.5px solid var(--border, #ddd);
-  border-radius: 6px;
+  border-radius: 50%;
   background: var(--bg-surface, #fff);
-  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 1.25rem;
   line-height: 1;
   text-decoration: none;
   transition: all 0.15s ease;
-  flex-shrink: 0;
 }
 
 .sync-indicator:hover {
@@ -70,8 +76,8 @@ const view = computed(() => {
 
 .badge {
   position: absolute;
-  right: -5px;
-  bottom: -5px;
+  right: -2px;
+  bottom: -2px;
   min-width: 14px;
   height: 14px;
   padding: 0 2px;
@@ -82,7 +88,7 @@ const view = computed(() => {
   text-align: center;
   color: #fff;
   background: var(--color-success, #22c55e);
-  box-shadow: 0 0 0 1.5px var(--bg-header, #fff);
+  box-shadow: 0 0 0 1.5px var(--bg-surface, #fff);
 }
 
 .is-pending .badge,

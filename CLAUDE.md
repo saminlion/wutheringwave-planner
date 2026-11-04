@@ -790,7 +790,7 @@ src/services/cloudSync.js    → what to sync and when
   needs no verification. Never add the full `drive` scope: it is restricted.
 - **The app's stores don't know sync exists.** A hash of the synced keys is checked every 2s
   (`tick()`); an edit sets `syncState.pending` at once and uploads once the data held still for a
-  tick, so a burst of edits is one upload. `SyncIndicator.vue` (header, next to the theme toggle)
+  tick, so a burst of edits is one upload. `SyncIndicator.vue` (fixed bottom-right — not the header, whose right side fills up with games)
   shows synced / pending / syncing / error / conflict / signed-out and links to Settings;
   `syncedHash` + `cloudModifiedTime` in `cloudsync_meta` tell which side changed. One side →
   copy it; both → `conflict`, which the user resolves in Settings. A download rewrites
