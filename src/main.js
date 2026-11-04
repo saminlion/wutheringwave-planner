@@ -16,6 +16,7 @@ import ntePlugin from './games/nte';
 import mongilstardivePlugin from './games/mongilstardive';
 import dnaPlugin from './games/dna';
 import { useGameRegistryStore } from './store/gameRegistry';
+import { initCloudSync } from './services/cloudSync';
 
 const app = createApp(App);
 
@@ -50,3 +51,6 @@ app.use(Toast, {
 });
 
 app.mount('#app');
+
+// Google Drive sync — inert until the user signs in once in Settings
+initCloudSync();

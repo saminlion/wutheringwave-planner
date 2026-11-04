@@ -2,183 +2,145 @@
   <div class="cloud-sync">
     <h3>Cloud Sync</h3>
 
-    <!-- Not configured warning -->
-    <div v-if="!isAvailable" class="warning-box">
-      <p>Cloud sync is not configured.</p>
-      <p class="hint">Set Firebase environment variables to enable.</p>
+    <!-- Not linked -->
+    <div v-if="!state.connected" class="auth-section">
+      <p>Sign in to sync your data across devices through your Google Drive.</p>
+      <p class="hint">Stored in a hidden app folder — this app cannot see any of your other files.</p>
+      <button class="google-btn" @click="handleConnect" :disabled="loading">
+        <svg viewBox="0 0 24 24" width="18" height="18">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Sign in with Google
+      </button>
     </div>
 
-    <!-- Auth section -->
-    <div v-else class="sync-content">
-      <!-- Not signed in -->
-      <div v-if="!user" class="auth-section">
-        <p>Sign in to sync your data across devices.</p>
-        <button
-          class="google-btn"
-          @click="handleSignIn"
-          :disabled="loading"
-        >
-          <svg viewBox="0 0 24 24" width="18" height="18">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-          </svg>
-          Sign in with Google
+    <!-- Linked -->
+    <div v-else class="user-section">
+      <div class="user-info">
+        <img
+          v-if="state.user?.photo"
+          :src="state.user.photo"
+          :alt="state.user.name"
+          class="user-avatar"
+          referrerpolicy="no-referrer"
+        />
+        <div class="user-details">
+          <span class="user-name">{{ state.user?.name }}</span>
+          <span class="user-email">{{ state.user?.email }}</span>
+        </div>
+        <button class="sign-out-btn" @click="handleDisconnect" :disabled="loading">
+          Sign Out
         </button>
       </div>
 
-      <!-- Signed in -->
-      <div v-else class="user-section">
-        <div class="user-info">
-          <img
-            v-if="user.photoURL"
-            :src="user.photoURL"
-            :alt="user.displayName"
-            class="user-avatar"
-          />
-          <div class="user-details">
-            <span class="user-name">{{ user.displayName }}</span>
-            <span class="user-email">{{ user.email }}</span>
-          </div>
-          <button class="sign-out-btn" @click="handleSignOut" :disabled="loading">
-            Sign Out
-          </button>
-        </div>
+      <div class="cloud-info">
+        <p>Status: <strong>{{ statusLabel }}</strong></p>
+        <p>Last synced: {{ formatDate(state.lastSyncedAt) }}</p>
+        <p v-if="state.status === 'error'" class="error-text">{{ state.error }}</p>
+      </div>
 
-        <!-- Cloud data info -->
-        <div v-if="cloudInfo" class="cloud-info">
-          <p>Last synced: {{ formatDate(cloudInfo.lastUpdated) }}</p>
-          <p>Items in cloud: {{ cloudInfo.itemCount }}</p>
-        </div>
-
-        <!-- Sync actions -->
+      <!-- Both sides changed since the last sync: the user picks, nothing is guessed -->
+      <div v-if="state.status === 'conflict'" class="conflict-box">
+        <p>This device and Google Drive both changed since the last sync.</p>
+        <p class="hint">Drive copy saved: {{ formatDate(conflict?.cloudUpdatedAt) }}</p>
         <div class="sync-actions">
-          <button
-            class="sync-btn save"
-            @click="handleSave"
-            :disabled="loading"
-          >
-            {{ loading ? 'Saving...' : 'Save to Cloud' }}
+          <button class="sync-btn load" @click="handleResolve('cloud')" :disabled="loading">
+            Use Drive data
           </button>
-          <button
-            class="sync-btn load"
-            @click="handleLoad"
-            :disabled="loading"
-          >
-            {{ loading ? 'Loading...' : 'Load from Cloud' }}
+          <button class="sync-btn save" @click="handleResolve('local')" :disabled="loading">
+            Keep this device
           </button>
-        </div>
-
-        <!-- Status message -->
-        <div v-if="message" :class="['message', messageType]">
-          {{ message }}
         </div>
       </div>
+
+      <div v-else class="sync-actions">
+        <button
+          v-if="!state.authorized"
+          class="sync-btn load"
+          @click="handleConnect"
+          :disabled="loading"
+        >
+          Reconnect
+        </button>
+        <button
+          v-else
+          class="sync-btn save"
+          @click="handleSync"
+          :disabled="loading || state.status === 'syncing'"
+        >
+          {{ state.status === 'syncing' ? 'Syncing...' : 'Sync now' }}
+        </button>
+      </div>
+
+      <p class="hint">Changes sync automatically while this tab is open.</p>
+    </div>
+
+    <div v-if="message" :class="['message', messageType]">
+      {{ message }}
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
-import cloudSync from '@/services/cloudSync';
+import { ref, computed } from 'vue';
+import {
+  syncState as state,
+  connect,
+  disconnect,
+  syncNow,
+  resolveConflict,
+  getConflictInfo,
+} from '@/services/cloudSync';
 import { useConfirm } from '@/composables/useConfirm';
 
 const { confirmDialog } = useConfirm();
 
-const isAvailable = ref(cloudSync.isCloudSyncAvailable());
-const user = ref(null);
-const cloudInfo = ref(null);
 const loading = ref(false);
 const message = ref('');
 const messageType = ref('info');
 
-let unsubscribe = null;
+// getConflictInfo() is plain data; re-read it whenever the status flips.
+const conflict = computed(() => (state.status === 'conflict' ? getConflictInfo() : null));
 
-onMounted(() => {
-  if (isAvailable.value) {
-    cloudSync.initAuthListener();
-    unsubscribe = cloudSync.onAuthChange(async (newUser) => {
-      user.value = newUser;
-      if (newUser) {
-        await fetchCloudInfo();
-      } else {
-        cloudInfo.value = null;
-      }
-    });
-  }
+const statusLabel = computed(() => {
+  if (!state.authorized) return 'Paused — reconnect to resume';
+  return {
+    idle: 'Up to date',
+    syncing: 'Syncing...',
+    conflict: 'Needs your choice',
+    error: 'Error',
+  }[state.status];
 });
 
-onUnmounted(() => {
-  if (unsubscribe) {
-    unsubscribe();
-  }
-});
-
-async function fetchCloudInfo() {
-  try {
-    cloudInfo.value = await cloudSync.getCloudDataInfo();
-  } catch (error) {
-    console.error('Failed to fetch cloud info:', error);
-  }
-}
-
-async function handleSignIn() {
+async function run(task, failPrefix) {
   loading.value = true;
   message.value = '';
   try {
-    await cloudSync.signInWithGoogle();
+    await task();
   } catch (error) {
-    showMessage('Sign in failed: ' + error.message, 'error');
+    showMessage(`${failPrefix}: ${error.message}`, 'error');
   } finally {
     loading.value = false;
   }
 }
 
-async function handleSignOut() {
-  loading.value = true;
-  try {
-    await cloudSync.signOut();
-  } catch (error) {
-    showMessage('Sign out failed: ' + error.message, 'error');
-  } finally {
-    loading.value = false;
-  }
+const handleConnect = () => run(connect, 'Sign in failed');
+const handleSync = () => run(syncNow, 'Sync failed');
+
+async function handleDisconnect() {
+  if (!(await confirmDialog('Stop syncing on this device? Data here and on Google Drive is kept.'))) return;
+  await run(disconnect, 'Sign out failed');
 }
 
-async function handleSave() {
-  loading.value = true;
-  message.value = '';
-  try {
-    await cloudSync.saveToCloud();
-    await fetchCloudInfo();
-    showMessage('Data saved to cloud successfully!', 'success');
-  } catch (error) {
-    showMessage('Save failed: ' + error.message, 'error');
-  } finally {
-    loading.value = false;
-  }
-}
-
-async function handleLoad() {
-  if (!(await confirmDialog('This will overwrite your local data. Continue?', { danger: true }))) {
-    return;
-  }
-
-  loading.value = true;
-  message.value = '';
-  try {
-    const result = await cloudSync.loadFromCloud();
-    if (result) {
-      showMessage(`Loaded ${result.itemCount} items. Refresh to apply.`, 'success');
-    } else {
-      showMessage('No cloud data found.', 'info');
-    }
-  } catch (error) {
-    showMessage('Load failed: ' + error.message, 'error');
-  } finally {
-    loading.value = false;
-  }
+async function handleResolve(keep) {
+  const text = keep === 'cloud'
+    ? 'Replace this device\'s data with the Google Drive copy?'
+    : 'Overwrite the Google Drive copy with this device\'s data?';
+  if (!(await confirmDialog(text, { danger: true }))) return;
+  await run(() => resolveConflict(keep), 'Sync failed');
 }
 
 function showMessage(msg, type = 'info') {
@@ -208,21 +170,10 @@ function formatDate(date) {
   color: var(--text);
 }
 
-.warning-box {
-  background: var(--color-warning-bg);
-  border: 1px solid var(--color-warning);
-  border-radius: 4px;
-  padding: 15px;
-}
-
-.warning-box p {
-  margin: 0;
-}
-
 .hint {
   font-size: 0.85em;
-  color: var(--color-warning-text);
-  margin-top: 5px !important;
+  color: var(--text-muted);
+  margin: 5px 0 0 0;
 }
 
 .auth-section {
@@ -369,6 +320,25 @@ function formatDate(date) {
 .message.error {
   background: color-mix(in srgb, var(--color-danger) 15%, var(--bg-surface));
   color: var(--color-danger);
+}
+
+.conflict-box {
+  padding: 12px;
+  border: 1px solid var(--color-warning);
+  background: var(--color-warning-bg);
+  border-radius: 4px;
+}
+
+.conflict-box p {
+  margin: 0 0 8px 0;
+}
+
+.error-text {
+  color: var(--color-danger);
+}
+
+.message {
+  margin-top: 15px;
 }
 
 .message.info {

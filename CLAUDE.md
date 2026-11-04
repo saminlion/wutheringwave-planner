@@ -764,6 +764,30 @@ An empty array renders the empty-state hint — nothing breaks.
 
 ---
 
+## Cloud Sync (Google Drive)
+
+Optional, linked from Settings. Every synced `gameplanner_*` localStorage key is mirrored into one
+file, `gameplanner-sync.json`, in the user's own Drive **appDataFolder**. There is no backend:
+`src/services/googleDrive.js` gets a browser access token through Google Identity Services and
+calls the Drive REST API directly; `src/services/cloudSync.js` decides what to sync.
+
+- **Scope is `drive.appdata` only** — non-sensitive, so the OAuth app (GCP project
+  `gameplannerdata`, already *In production*) needs no verification. Never add the full `drive`
+  scope: it is restricted and would require a security assessment.
+- **The app's stores don't know sync exists.** A hash of the synced keys is polled every 10s;
+  `syncedHash` + `cloudModifiedTime` in `cloudsync_meta` tell which side changed. One side →
+  copy it; both → `conflict`, which the user resolves in Settings. A download rewrites
+  localStorage and reloads the page, because every store hydrated at boot.
+- **Per-device keys are not synced:** theme, locale, current_game, timeline_prefs (`DEVICE_KEYS`).
+- **Tokens last ~1h with no refresh token.** Renewing opens a popup, which only a click may do, so
+  an expired session shows a "click to reconnect" toast instead of renewing silently.
+- **Sign-in only works on origins registered in the OAuth client** (production Vercel domain and
+  `http://localhost:3000`). Vercel preview URLs are not registered.
+
+Decision logic is unit-tested in `tests/services/cloudSync.test.js`.
+
+---
+
 ## Utilities
 
 **logger.js** - Environment-aware logging

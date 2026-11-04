@@ -1067,20 +1067,20 @@ const completeGoal = async (id, type) => {
       theme: 'dark',
     });
 
-    // Move all expensive operations (localStorage/Firebase writes, logging, recalculation) to background
+    // Move all expensive operations (localStorage writes, logging, recalculation) to background
     // This prevents blocking the UI thread and allows immediate user feedback
     setTimeout(() => {
-      // Save updated settings (localStorage/Firebase write - expensive!)
+      // Save updated settings (localStorage write - expensive!)
       if (type === 'character') {
         plannerStore.updateCharacterSettings(id, updatedSettings);
       } else {
         plannerStore.updateWeaponSettings(id, updatedSettings);
       }
 
-      // Apply material deductions (localStorage/Firebase write - expensive!)
+      // Apply material deductions (localStorage write - expensive!)
       inventoryStore.batchRemoveMaterials(materialsToRemove);
 
-      // Hide the goal (localStorage/Firebase write - expensive!)
+      // Hide the goal (localStorage write - expensive!)
       plannerStore.hideGoal(id, type);
 
       // Log completion (console I/O - blocks rendering)
