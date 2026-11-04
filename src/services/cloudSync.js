@@ -283,27 +283,22 @@ export function getConflictInfo() {
 function promptReconnect() {
   if (reconnectToastShown || !syncState.connected) return;
   reconnectToastShown = true;
-  // A token refresh opens a popup, which only a click may do — so ask for one.
-  toast.info('Google Drive sync paused. Click here to reconnect.', {
+  // Only reached when Google itself dropped the grant (revoked, 6 months
+  // unused, cookie cleared) — normal token expiry renews silently.
+  toast.info('Google Drive sync stopped. Click here to sign in again.', {
     autoClose: false,
-    onClick: () => connect().catch(() => {}),
+    onClick: () => connect(),
   });
 }
 
-/** Get Google sign-in ready before any button for it can be clicked. */
-export function prepareSignIn() {
-  drive.preloadGis().catch((error) => logger.warn('Google sign-in failed to load:', error));
+/** Leave for Google's sign-in page; finishConnect() runs when we come back. */
+export function connect() {
+  drive.startSignIn(loadMeta()?.user?.email);
 }
 
-/**
- * Sign in (or back in) and sync. Call synchronously from a click handler,
- * after prepareSignIn() — the popup must open before anything is awaited.
- */
-export async function connect() {
+/** Back from Google with a fresh grant: learn who signed in, then sync. */
+async function finishConnect() {
   const meta = loadMeta();
-  await drive.requestToken(meta?.user?.email);
-  reconnectToastShown = false;
-
   const user = await drive.getUser();
   const profile = { name: user?.displayName || '', email: user?.emailAddress || '', photo: user?.photoLink || '' };
 
@@ -318,9 +313,27 @@ export async function connect() {
   await syncNow();
 }
 
+const SIGN_IN_ERRORS = {
+  access_denied: 'Google sign-in was cancelled.',
+  scope_not_granted: 'Google Drive access was not granted — tick the Drive checkbox on the consent screen.',
+};
+
+/** Read and strip the `?cloudsync=` marker the OAuth callback left on the URL. */
+function takeSignInResult() {
+  const params = new URLSearchParams(window.location.search);
+  const result = params.get('cloudsync');
+  if (!result) return null;
+
+  router.isReady().then(() => {
+    const { cloudsync, ...query } = router.currentRoute.value.query;
+    router.replace({ query });
+  });
+  return result;
+}
+
 /** Unlink this device. Local data and the Drive file are both left as they are. */
 export async function disconnect() {
-  await drive.revokeToken();
+  await drive.signOut();
   localStorage.removeItem(META_KEY);
   pendingConflict = null;
   Object.assign(syncState, {
@@ -335,24 +348,30 @@ export function initCloudSync() {
   if (initialized) return;
   initialized = true;
 
+  const signInResult = takeSignInResult();
   const meta = loadMeta();
-  if (meta?.user) {
-    prepareSignIn(); // the reconnect toast needs it ready
-    syncState.connected = true;
-    syncState.user = meta.user;
-    syncState.lastSyncedAt = meta.lastSyncedAt || null;
-    syncState.authorized = !!drive.getStoredToken();
-    if (syncState.authorized) syncNow();
-    else promptReconnect();
+
+  if (signInResult === 'ok') {
+    finishConnect().catch((error) => {
+      handleError(error);
+      if (!syncState.connected) toast.error(`Google sign-in failed: ${error.message}`);
+    });
+  } else {
+    if (signInResult) {
+      toast.error(SIGN_IN_ERRORS[signInResult] || `Google sign-in failed (${signInResult}).`);
+    }
+    if (meta?.user) {
+      syncState.connected = true;
+      syncState.user = meta.user;
+      syncState.lastSyncedAt = meta.lastSyncedAt || null;
+      // Optimistic: the first sync finds out whether the server session is alive.
+      syncState.authorized = true;
+      syncNow();
+    }
   }
 
   setInterval(() => {
     if (!syncState.authorized || syncState.status !== 'idle') return;
-    if (!drive.getStoredToken()) {
-      syncState.authorized = false;
-      promptReconnect();
-      return;
-    }
     if (hashSnapshot(buildSnapshot()) !== loadMeta()?.syncedHash) syncNow();
   }, POLL_MS);
 
@@ -365,7 +384,6 @@ export function initCloudSync() {
 export default {
   syncState,
   initCloudSync,
-  prepareSignIn,
   connect,
   disconnect,
   syncNow,

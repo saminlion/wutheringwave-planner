@@ -63,7 +63,7 @@
           @click="handleConnect"
           :disabled="loading"
         >
-          Reconnect
+          Sign in again
         </button>
         <button
           v-else
@@ -85,10 +85,9 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import {
   syncState as state,
-  prepareSignIn,
   connect,
   disconnect,
   syncNow,
@@ -99,8 +98,6 @@ import { useConfirm } from '@/composables/useConfirm';
 
 const { confirmDialog } = useConfirm();
 
-onMounted(prepareSignIn);
-
 const loading = ref(false);
 const message = ref('');
 const messageType = ref('info');
@@ -109,7 +106,7 @@ const messageType = ref('info');
 const conflict = computed(() => (state.status === 'conflict' ? getConflictInfo() : null));
 
 const statusLabel = computed(() => {
-  if (!state.authorized) return 'Paused — reconnect to resume';
+  if (!state.authorized) return 'Signed out — sign in again to resume';
   return {
     idle: 'Up to date',
     syncing: 'Syncing...',
@@ -130,7 +127,8 @@ async function run(task, failPrefix) {
   }
 }
 
-const handleConnect = () => run(connect, 'Sign in failed');
+// Navigates away to Google; the result comes back as ?cloudsync= on return.
+const handleConnect = () => connect();
 const handleSync = () => run(syncNow, 'Sync failed');
 
 async function handleDisconnect() {

@@ -1,35 +1,22 @@
-import logger from '@/utils/logger';
-
 /**
- * Google Drive appDataFolder client (browser only, no backend).
+ * Google Drive appDataFolder client.
  *
- * Auth uses the Google Identity Services *token* model: the browser gets a
- * short-lived access token straight from Google, so there is no client secret
- * and nothing to host. The scope is `drive.appdata` — a non-sensitive scope,
- * so the OAuth app needs no Google verification. The file lives in a hidden
- * per-app folder of the user's own Drive that they cannot see or delete by
- * accident, and that no other app can read.
+ * Sign-in is a full-page redirect through our own Vercel functions
+ * (`api/auth/*`): they run Google's authorization-code flow and keep the
+ * refresh token in an httpOnly cookie. The page only ever asks
+ * `/api/auth/token` for a short-lived access token, so there is no popup to
+ * be blocked and no hourly "reconnect" — a session lasts until the user signs
+ * out or Google revokes the grant.
  *
- * Trade-off: the token model has no refresh token. An access token lasts ~1h,
- * and getting a new one opens a popup, which browsers only allow from a user
- * gesture — hence `needsReconnect` in cloudSync instead of silent renewal.
+ * The scope is `drive.appdata` — a non-sensitive scope, so the OAuth app needs
+ * no Google verification. The file lives in a hidden per-app folder of the
+ * user's own Drive that they cannot see or delete by accident, and that no
+ * other app can read.
  */
 
-// The client ID is public by design (it ships in every page that signs in).
-// The env var only exists so a fork can point at its own Cloud project.
-export const CLIENT_ID =
-  import.meta.env.VITE_GOOGLE_CLIENT_ID ||
-  '97986213844-q6ns3b5eqaqk5l7kusp1moc4vopsnbp4.apps.googleusercontent.com';
-
-const SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
-const GIS_SRC = 'https://accounts.google.com/gsi/client';
 const API = 'https://www.googleapis.com/drive/v3';
 const UPLOAD_API = 'https://www.googleapis.com/upload/drive/v3';
 export const SYNC_FILE_NAME = 'gameplanner-sync.json';
-
-// sessionStorage, not localStorage: the token survives the reload that follows
-// a download, but dies with the tab.
-const TOKEN_KEY = 'cloudsync_token';
 
 export class DriveAuthError extends Error {
   constructor(message) {
@@ -38,140 +25,63 @@ export class DriveAuthError extends Error {
   }
 }
 
-let gisPromise = null;
-let tokenClient = null;
-let pendingRequest = null; // { resolve, reject } of the requestToken() in flight
-
-function loadGis() {
-  if (window.google?.accounts?.oauth2) return Promise.resolve();
-  if (gisPromise) return gisPromise;
-
-  gisPromise = new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = GIS_SRC;
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => {
-      gisPromise = null;
-      reject(new Error('Failed to load Google Identity Services'));
-    };
-    document.head.appendChild(script);
-  });
-  return gisPromise;
-}
-
-export function getStoredToken() {
-  try {
-    const token = JSON.parse(sessionStorage.getItem(TOKEN_KEY));
-    // 60s margin so a request never starts with a token about to expire
-    if (token?.accessToken && token.expiresAt > Date.now() + 60_000) return token.accessToken;
-  } catch {
-    // corrupt entry — treat as no token
-  }
-  return null;
-}
-
-export function clearToken() {
-  sessionStorage.removeItem(TOKEN_KEY);
-}
-
-function settleRequest(error, token) {
-  const request = pendingRequest;
-  pendingRequest = null;
-  if (!request) return;
-  if (error) request.reject(error);
-  else request.resolve(token);
-}
-
-function handleTokenResponse(response) {
-  if (response.error) {
-    settleRequest(new DriveAuthError(response.error_description || response.error));
-    return;
-  }
-  if (!window.google.accounts.oauth2.hasGrantedAllScopes(response, SCOPE)) {
-    settleRequest(new DriveAuthError('Google Drive access was not granted'));
-    return;
-  }
-  sessionStorage.setItem(TOKEN_KEY, JSON.stringify({
-    accessToken: response.access_token,
-    expiresAt: Date.now() + Number(response.expires_in) * 1000,
-  }));
-  settleRequest(null, response.access_token);
-}
-
-function handleTokenError(error) {
-  const message = error?.type === 'popup_failed_to_open'
-    ? 'The Google sign-in popup was blocked. Allow popups for this site and try again.'
-    : error?.type === 'popup_closed'
-      ? 'Sign-in window was closed'
-      : error?.message || 'Sign-in failed';
-  settleRequest(new DriveAuthError(message));
-}
+// Memory only: a reload just asks the server again, which is cheap.
+let accessToken = null;
+let expiresAt = 0;
+let inflight = null;
 
 /**
- * Load the GIS script and build the token client ahead of the click.
- *
- * Browsers only let a click open a popup if it opens right away. Fetching the
- * script (or anything else async) between the click and requestAccessToken()
- * spends that permission and the popup is blocked (`popup_failed_to_open`),
- * so whatever shows a sign-in button must call this first.
+ * Leave the page for Google's consent screen; it comes back to the current
+ * path with `?cloudsync=ok` (or `?cloudsync=<error>`).
+ * @param {string} [loginHint] email of the previously linked account, skips the chooser
  */
-export async function preloadGis() {
-  await loadGis();
-  if (!tokenClient) {
-    tokenClient = window.google.accounts.oauth2.initTokenClient({
-      client_id: CLIENT_ID,
-      scope: SCOPE,
-      callback: handleTokenResponse,
-      error_callback: handleTokenError,
+export function startSignIn(loginHint) {
+  const params = new URLSearchParams({ returnTo: window.location.pathname });
+  if (loginHint) params.set('login_hint', loginHint);
+  window.location.assign(`/api/auth/login?${params}`);
+}
+
+/** A valid access token, refreshed through the server when needed. */
+export function getAccessToken() {
+  // 60s margin so a request never starts with a token about to expire
+  if (accessToken && expiresAt > Date.now() + 60_000) return Promise.resolve(accessToken);
+  if (inflight) return inflight;
+
+  inflight = fetch('/api/auth/token', { method: 'POST', credentials: 'same-origin' })
+    .then(async (response) => {
+      if (response.status === 401) throw new DriveAuthError('Not signed in to Google Drive');
+      // A non-JSON reply means the API is not deployed here (plain `npm run dev`).
+      const body = await response.json().catch(() => {
+        throw new Error('Sign-in server unavailable (run with `vercel dev` locally)');
+      });
+      if (!response.ok) throw new Error(`Token refresh failed: ${body.error || response.status}`);
+      accessToken = body.access_token;
+      expiresAt = Date.now() + Number(body.expires_in) * 1000;
+      return accessToken;
+    })
+    .finally(() => {
+      inflight = null;
     });
-  }
+  return inflight;
 }
 
-/**
- * Open Google's consent/account popup and get an access token.
- * Must be called synchronously from a click handler, after preloadGis().
- * @param {string} [loginHint] email of the previously connected account, skips the chooser
- */
-export function requestToken(loginHint) {
-  if (!tokenClient) {
-    // Not ready yet: start loading so the next click works, and say so.
-    preloadGis().catch(() => {});
-    return Promise.reject(new DriveAuthError('Google sign-in is still loading. Please click again.'));
-  }
-
-  if (pendingRequest) handleTokenError({ message: 'Superseded by a new sign-in' });
-  const promise = new Promise((resolve, reject) => {
-    pendingRequest = { resolve, reject };
-  });
-  // Called synchronously, still inside the click's user activation.
-  tokenClient.requestAccessToken({ prompt: '', login_hint: loginHint || undefined });
-  return promise;
+export async function signOut() {
+  accessToken = null;
+  expiresAt = 0;
+  await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' });
 }
 
-export async function revokeToken() {
-  const token = getStoredToken();
-  clearToken();
-  if (!token) return;
-  try {
-    await loadGis();
-    window.google.accounts.oauth2.revoke(token, () => {});
-  } catch (error) {
-    logger.warn('Token revoke failed:', error);
-  }
-}
-
-async function driveFetch(url, options = {}) {
-  const token = getStoredToken();
-  if (!token) throw new DriveAuthError('Not connected to Google Drive');
-
+async function driveFetch(url, options = {}, retried = false) {
+  const token = await getAccessToken();
   const response = await fetch(url, {
     ...options,
     headers: { ...options.headers, Authorization: `Bearer ${token}` },
   });
 
   if (response.status === 401) {
-    clearToken();
+    // Revoked or expired early: drop it and let the server mint one, once.
+    accessToken = null;
+    if (!retried) return driveFetch(url, options, true);
     throw new DriveAuthError('Google Drive session expired');
   }
   if (!response.ok) {

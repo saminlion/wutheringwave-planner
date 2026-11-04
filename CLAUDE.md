@@ -767,24 +767,37 @@ An empty array renders the empty-state hint — nothing breaks.
 ## Cloud Sync (Google Drive)
 
 Optional, linked from Settings. Every synced `gameplanner_*` localStorage key is mirrored into one
-file, `gameplanner-sync.json`, in the user's own Drive **appDataFolder**. There is no backend:
-`src/services/googleDrive.js` gets a browser access token through Google Identity Services and
-calls the Drive REST API directly; `src/services/cloudSync.js` decides what to sync.
+file, `gameplanner-sync.json`, in the user's own Drive **appDataFolder**.
 
-- **Scope is `drive.appdata` only** — non-sensitive, so the OAuth app (GCP project
-  `gameplannerdata`, already *In production*) needs no verification. Never add the full `drive`
-  scope: it is restricted and would require a security assessment.
+```
+api/auth/login.js     → 302 to Google consent (authorization-code flow, access_type=offline)
+api/auth/callback.js  → redeems the code with the client secret, refresh token → httpOnly cookie
+api/auth/token.js     → POST: refresh-token cookie → 1h access token (JSON)
+api/auth/logout.js    → POST: revoke at Google, clear cookie
+src/services/googleDrive.js  → getAccessToken() via /api/auth/token, Drive REST calls
+src/services/cloudSync.js    → what to sync and when
+```
+
+- **Why Vercel functions, not a browser-only flow:** the Google Identity Services popup was killed
+  by popup blockers (`popup_failed_to_open`) and has no refresh token (hourly reconnect). The
+  code flow fixes both, but Google needs the client secret to redeem a code. Sign-in is a full-page
+  redirect; the callback returns to the starting path with `?cloudsync=ok|<error>`.
+- **Env (Vercel, server-only):** `GOOGLE_CLIENT_SECRET` (required), `GOOGLE_CLIENT_ID` (optional,
+  defaults to the `gameplannerdata` client). Never `VITE_`-prefix them.
+- **OAuth client must list the redirect URI** `https://wutheringwave-planner.vercel.app/api/auth/callback`.
+  Plain `npm run dev` has no `/api`, so sign-in only works locally under `vercel dev`.
+- **Scope is `drive.appdata` only** — non-sensitive, so the OAuth app (already *In production*)
+  needs no verification. Never add the full `drive` scope: it is restricted.
 - **The app's stores don't know sync exists.** A hash of the synced keys is polled every 10s;
   `syncedHash` + `cloudModifiedTime` in `cloudsync_meta` tell which side changed. One side →
   copy it; both → `conflict`, which the user resolves in Settings. A download rewrites
   localStorage and reloads the page, because every store hydrated at boot.
 - **Per-device keys are not synced:** theme, locale, current_game, timeline_prefs (`DEVICE_KEYS`).
-- **Tokens last ~1h with no refresh token.** Renewing opens a popup, which only a click may do, so
-  an expired session shows a "click to reconnect" toast instead of renewing silently.
-- **Sign-in only works on origins registered in the OAuth client** (production Vercel domain and
-  `http://localhost:3000`). Vercel preview URLs are not registered.
+- `vercel.json` rewrites every non-`/api` path to `index.html` (history-mode router). Without it a
+  direct load or refresh of `/settings`, `/planner`, … returned 404.
 
-Decision logic is unit-tested in `tests/services/cloudSync.test.js`.
+Tested in `tests/services/cloudSync.test.js` (sync decisions) and `tests/services/oauthServer.test.js`
+(open-redirect guard, cookie flags).
 
 ---
 
