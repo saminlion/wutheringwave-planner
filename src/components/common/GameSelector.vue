@@ -2,7 +2,7 @@
   <!-- 컴팩트 탭 모드 -->
   <div v-if="compact" class="game-tabs">
     <button
-      v-for="game in enabledGames"
+      v-for="game in visibleGames"
       :key="game.id"
       :class="['game-tab', { active: currentGameId === game.id }]"
       @click="selectGame(game.id)"
@@ -21,7 +21,7 @@
     <h2 class="selector-title">{{ tUI('home.selectGame') }}</h2>
     <div class="game-cards">
       <button
-        v-for="game in enabledGames"
+        v-for="game in visibleGames"
         :key="game.id"
         :class="['game-card', { active: currentGameId === game.id }]"
         @click="selectGame(game.id)"
@@ -42,11 +42,8 @@
 <script setup>
 import { computed } from 'vue';
 import { useGameStore } from '@/store/game';
-import { usePlannerStore } from '@/store/planner';
-import { useInventoryStore } from '@/store/inventory';
-import { useUserProfileStore } from '@/store/userProfile';
 import { useLocale } from '@/composables/useLocale';
-import logger from '@/utils/logger';
+import { useGameSwitch } from '@/composables/useGameSwitch';
 
 const props = defineProps({
   compact: {
@@ -58,13 +55,12 @@ const props = defineProps({
 const emit = defineEmits(['gameChanged']);
 
 const gameStore = useGameStore();
-const plannerStore = usePlannerStore();
-const inventoryStore = useInventoryStore();
-const userProfileStore = useUserProfileStore();
-const { tUI, loadGameLocales } = useLocale();
+const { tUI } = useLocale();
+const { switchTo } = useGameSwitch();
 
 const currentGameId = computed(() => gameStore.currentGameId);
-const enabledGames = computed(() => gameStore.enabledGames);
+// Games the user hid in Settings are left out of the tabs
+const visibleGames = computed(() => gameStore.visibleGames);
 
 const getGameName = (game) => {
   const translatedName = tUI(`game.name.${game.id}`);
@@ -80,19 +76,7 @@ const getGameIcon = (game) => {
 };
 
 const selectGame = async (gameId) => {
-  if (gameId === currentGameId.value) return;
-
-  const success = gameStore.switchGame(gameId);
-  if (success) {
-    plannerStore.hydrate(gameId);
-    inventoryStore.hydrate(gameId);
-    userProfileStore.hydrate(gameId);
-
-    await loadGameLocales(gameId);
-
-    logger.info(`Game switched to: ${gameId}`);
-    emit('gameChanged', gameId);
-  }
+  if (await switchTo(gameId)) emit('gameChanged', gameId);
 };
 </script>
 

@@ -392,6 +392,10 @@ describe('NewGame MaterialProcessor', () => {
 - `registeredGames{}` - All registered game plugins
 - `currentGameId` - Currently selected game
 - `currentGame` - Current game plugin (computed)
+- `hiddenGameIds[]` / `visibleGames` - Games the user hid in Settings (`GameVisibility.vue`), stored in
+  `gameplanner_hidden_games` and cloud-synced. The header tabs list `visibleGames`; at least one stays
+  visible, and a hidden saved game falls back to the first visible one on load. Switching games goes
+  through `useGameSwitch().switchTo()`, which also re-hydrates planner/inventory/profile and locales.
 
 ---
 

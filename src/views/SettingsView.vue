@@ -9,6 +9,10 @@
       <LanguageSelector />
     </section>
 
+    <section class="settings-section">
+      <GameVisibility />
+    </section>
+
     <!-- Games with no stamina resource (config.stamina = null) have nothing to set -->
     <section class="settings-section" v-if="hasStamina">
       <StaminaSetting />
@@ -28,6 +32,7 @@
 import DataBackup from '@/components/common/DataBackup.vue';
 import CloudSync from '@/components/settings/CloudSync.vue';
 import LanguageSelector from '@/components/settings/LanguageSelector.vue';
+import GameVisibility from '@/components/settings/GameVisibility.vue';
 import StaminaSetting from '@/components/settings/StaminaSetting.vue';
 import { computed } from 'vue';
 import { useGameStore } from '@/store/game';
