@@ -16,12 +16,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import endfieldMastery from './overrides/endfield-mastery.js';
-
-// Per-game corrections layered on top of the sheet, keyed by character game_id
-const CHARACTER_OVERRIDES = {
-  endfield: endfieldMastery,
-};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -388,14 +382,6 @@ function pickMaterialId(row, nameColumn, idColumn, materialIdByLabel, who, field
   return byId;
 }
 
-/** Endfield's verified mastery shape: basic == combo, battle == ultimate, two materials. */
-function masteryLooksRight(character) {
-  const { mastery_basic_attack: basic, mastery_battle_skill: battle,
-    mastery_combo_skill: combo, mastery_ultimate: ult } = character;
-  if ([basic, battle, combo, ult].some((v) => v == null)) return false;
-  return String(basic) === String(combo) && String(battle) === String(ult) && String(basic) !== String(battle);
-}
-
 /**
  * Transform character rows to the expected JSON structure
  *
@@ -406,10 +392,8 @@ function masteryLooksRight(character) {
  * @param {Array<Object>} rows
  * @param {Map<string, number|string>} [materialIdByLabel] material label -> game_id,
  *        used to resolve columns whose `_id` counterpart is unreliable
- * @param {Object} [overrides] game_id -> { field: materialName } corrections applied
- *        on top of the sheet row
  */
-function transformCharacters(rows, materialIdByLabel, overrides) {
+function transformCharacters(rows, materialIdByLabel) {
   const result = {};
 
   for (const row of rows) {
@@ -470,30 +454,6 @@ function transformCharacters(rows, materialIdByLabel, overrides) {
     for (const [field, nameColumn, idColumn] of MASTERY_COLUMNS) {
       const id = pickMaterialId(row, nameColumn, idColumn, materialIdByLabel, character.display_name, field);
       if (id != null) character[field] = id;
-    }
-
-    // Verified corrections for fields the sheet has never carried correctly.
-    // See scripts/overrides/endfield-mastery.js — delete it once the sheet is fixed.
-    // Only while the sheet row is still broken: once someone has entered a
-    // well-formed mastery set in the sheet, the sheet wins. The override used to
-    // apply unconditionally, which silently threw away every sheet edit to these
-    // operators' mastery materials.
-    const override = overrides?.[character.game_id];
-    if (override && masteryLooksRight(character)) {
-      console.log(`    ${character.display_name}: sheet mastery looks right — override skipped`);
-    } else if (override) {
-      for (const [field, materialName] of Object.entries(override)) {
-        const id = resolveMaterialIdByName(materialName, materialIdByLabel);
-        if (id == null) {
-          console.log(`    ${character.display_name}: override for ${field} names an unknown material "${materialName}" — ignored`);
-          continue;
-        }
-        if (String(character[field]) === String(id)) continue;
-        console.log(
-          `    ${character.display_name}: ${field} — override to "${materialName}" (${id}); sheet had ${character[field] ?? '(none)'}`,
-        );
-        character[field] = id;
-      }
     }
 
     // WutheringWaves specific fields
@@ -1018,7 +978,7 @@ async function syncGame(gameId, config) {
         let transformed;
         switch (dataType) {
           case 'characters':
-            transformed = transformCharacters(rows, materialIdByLabel, CHARACTER_OVERRIDES[gameId]);
+            transformed = transformCharacters(rows, materialIdByLabel);
             break;
           case 'materials':
             transformed = transformMaterials(rows);

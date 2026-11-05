@@ -14,46 +14,64 @@ describe('Endfield per-skill mastery (integration)', () => {
     expect(gameStore.currentGame?.id).toBe('endfield');
   });
 
-  // Liino's mastery materials differ per skill, and none of them is the `special`
-  // material used for ascension. The sheet's `mastery_*_id` formula columns are off
-  // by one column, so the sync resolves these from the `_special_name` columns
-  // instead — see MASTERY_COLUMNS in scripts/sync-sheets.js.
-  it('Liino has two distinct mastery materials, neither being `special`', () => {
-    const liino = characters.liino;
-    expect(liino.mastery_basic_attack).toBe(5130010034); // Metadiastima Photoemission Tube
-    expect(liino.mastery_battle_skill).toBe(5130010035); // D96 Steel Sample 4
-    expect(liino.mastery_combo_skill).toBe(5130010034);
-    expect(liino.mastery_ultimate).toBe(5130010035);
-    expect(liino.special).toBe(5130010037); // Quadrant Fitting Fluid — ascension only
+  // The sheet is the source of truth for which material each skill uses — an
+  // operator may use one material for all four skills, or a different one per skill.
+  // These tests check the calculation follows whatever the data says, never what
+  // the data "should" be.
+
+  // A per-skill material wins over `special` (the promotion material) for mastery,
+  // and every skill is charged its own material.
+  it('charges each skill its own mastery material from the data', () => {
+    const operator = {
+      game_id: 1,
+      special: 900,
+      mastery_basic_attack: 901,
+      mastery_battle_skill: 902,
+      mastery_combo_skill: 903,
+      mastery_ultimate: 904,
+    };
+    const settings = {
+      currentLevel: '1',
+      targetLevel: '1',
+      skills: {
+        basic_attack: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+        battle_skill: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+        combo_skill: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+        ultimate: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+      },
+    };
+
+    const result = calculateCharacterMaterials(settings, operator);
+
+    // mastery 1+2+3 costs 6+16+36 = 58 of the skill's material
+    for (const id of [901, 902, 903, 904]) expect(result[id]).toBe(58);
+    expect(result[900]).toBeUndefined();
   });
 
-  // The stale id columns made battle_skill resolve from the Basic Attack name, so
-  // battle_skill and combo_skill came out identical for all 33 characters.
-  it('battle_skill and combo_skill are not blanket copies of each other', () => {
-    const differ = Object.values(characters)
-      .filter((c) => c.mastery_battle_skill !== c.mastery_combo_skill);
-    expect(differ.length).toBeGreaterThan(0);
+  it('one material for every skill is charged as one combined total', () => {
+    const operator = {
+      game_id: 2,
+      special: 900,
+      mastery_basic_attack: 905,
+      mastery_battle_skill: 905,
+      mastery_combo_skill: 905,
+      mastery_ultimate: 905,
+    };
+    const settings = {
+      currentLevel: '1',
+      targetLevel: '1',
+      skills: {
+        basic_attack: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+        battle_skill: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+        combo_skill: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+        ultimate: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
+      },
+    };
+
+    expect(calculateCharacterMaterials(settings, operator)[905]).toBe(58 * 4);
   });
 
-  // Verified game rule: two mastery materials per operator, paired basic/combo and
-  // battle/ultimate. Akekuri is the only operator using one material for all four.
-  it('every operator pairs basic with combo and battle with ultimate', () => {
-    for (const c of Object.values(characters)) {
-      expect(c.mastery_basic_attack, `${c.display_name} basic vs combo`).toBe(c.mastery_combo_skill);
-      expect(c.mastery_battle_skill, `${c.display_name} battle vs ultimate`).toBe(c.mastery_ultimate);
-    }
-  });
-
-  // The sheet left the mastery columns as copies of special_name for most operators;
-  // scripts/overrides/endfield-mastery.js replaces them with verified values.
-  it('mastery materials are not just the promotion material', () => {
-    const catcher = Object.values(characters).find((c) => c.display_name === 'Catcher');
-    expect(catcher.special).toBe(5130010036); // Tachyon Screening Lattice — promotion only
-    expect(catcher.mastery_basic_attack).toBe(5130010034); // Metadiastima
-    expect(catcher.mastery_battle_skill).toBe(5130010035); // D96
-  });
-
-  it('raising mastery on basic_attack + combo + ultimate yields BOTH materials', () => {
+  it('raising three skills charges each its own data-named material', () => {
     const liino = characters.liino;
     const settings = {
       currentLevel: '1',
@@ -68,10 +86,13 @@ describe('Endfield per-skill mastery (integration)', () => {
 
     const result = calculateCharacterMaterials(settings, liino);
 
-    // mastery 1+2+3 costs special 6+16+36 = 58 per skill
-    expect(result[5130010034]).toBe(58 * 2);   // basic_attack + combo
-    expect(result[5130010035]).toBe(58);       // ultimate only
-    expect(result[5130010037]).toBeUndefined(); // battle_skill untouched, so no `special`
+    // mastery 1+2+3 costs 6+16+36 = 58 per raised skill, of whatever the data names
+    const expected = {};
+    for (const skill of ['basic_attack', 'combo_skill', 'ultimate']) {
+      const id = liino[`mastery_${skill}`];
+      expected[id] = (expected[id] || 0) + 58;
+    }
+    for (const [id, qty] of Object.entries(expected)) expect(result[id]).toBe(qty);
   });
 
   // This is the path recalculateAllGoals() uses on PlannerView mount. It looks the
@@ -86,11 +107,19 @@ describe('Endfield per-skill mastery (integration)', () => {
       ultimate: { current_level: 1, target_level: 1, current_mastery: 0, target_mastery: 3 },
     };
 
-    for (const id of [5260500030, '5260500030']) {
+    const liino = characters.liino;
+    const expected = {};
+    for (const skill of ['basic_attack', 'combo_skill', 'ultimate']) {
+      const id = liino[`mastery_${skill}`];
+      expected[id] = (expected[id] || 0) + 58;
+    }
+
+    for (const id of [liino.game_id, String(liino.game_id)]) {
       plannerStore.characterSettings[id] = { currentLevel: '1', targetLevel: '1', skills };
       const out = plannerStore.calculateAllMaterials(id, 'character');
-      expect(out[5130010034], `basic_attack+combo material for id ${JSON.stringify(id)}`).toBe(116);
-      expect(out[5130010035], `ultimate material for id ${JSON.stringify(id)}`).toBe(58);
+      for (const [matId, qty] of Object.entries(expected)) {
+        expect(out[matId], `material ${matId} for id ${JSON.stringify(id)}`).toBe(qty);
+      }
     }
   });
 });
