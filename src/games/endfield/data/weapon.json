@@ -678,7 +678,7 @@
     "display_name": "Jade Vessel",
     "rarity": 6,
     "type": "greatsword",
-    "icon": "https://img.game8.co/4641294/3e4686c729adeb4f31180a3d977e7a16.png/show",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_claym_0018.webp",
     "onyx": 5110030019,
     "special": 5130010034
   },
@@ -687,7 +687,7 @@
     "display_name": "Lunar Calling",
     "rarity": 6,
     "type": "sword",
-    "icon": "https://img.game8.co/4641295/27e7a796f2fe1ac915c38daf84157da1.png/show",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_sword_0025.webp",
     "onyx": 5110030019,
     "special": 5130010034
   },
@@ -696,7 +696,7 @@
     "display_name": "Long Heritage",
     "rarity": 6,
     "type": "greatsword",
-    "icon": "https://img.game8.co/4641358/425363a2ac02c47f3a277b2dfe4afe8d.png/show",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_claym_0019.webp",
     "onyx": 5110030019,
     "special": 5130010034
   },
@@ -705,8 +705,8 @@
     "display_name": "Complexed Industry",
     "rarity": 6,
     "type": "sword",
-    "icon": "https://img.game8.co/4641357/f4637d581dc9d3702dbd7f92925b0cbc.png/show",
+    "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_sword_0024.webp",
     "onyx": 5110030019,
-    "special": 5130010034
+    "special": 5130010039
   }
 }
