@@ -428,7 +428,8 @@
     "rarity": 5,
     "type": "polearm",
     "icon": "https://static.warfarin.wiki/v3/itemicon/wpn_lance_0004.webp",
-    "onyx": 5110030018
+    "onyx": 5110030018,
+    "special": 5130010034
   },
   "cohesive_traction": {
     "game_id": 5350300049,
@@ -689,7 +690,7 @@
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_sword_0025.webp",
     "onyx": 5110030019,
-    "special": 5130010034
+    "special": 5130010039
   },
   "long_heritage": {
     "game_id": 5360200078,
@@ -707,6 +708,6 @@
     "type": "sword",
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_sword_0024.webp",
     "onyx": 5110030019,
-    "special": 5130010039
+    "special": 5130010038
   }
 }
