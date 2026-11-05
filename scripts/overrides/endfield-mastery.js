@@ -17,9 +17,12 @@
  * two materials total, and neither is the promotion material (Akekuri is the lone
  * exception, using one material for all four skills).
  *
- * Applied by scripts/sync-sheets.js AFTER the sheet row is read; each application is
- * logged with the sheet's value, so once the sheet is corrected the log goes quiet and
- * this file can be deleted. Materials are named, not ID'd, so they resolve through the
+ * Applied by scripts/sync-sheets.js AFTER the sheet row is read, and only while that
+ * row's mastery set is still malformed (not basic==combo / battle==ultimate with two
+ * different materials). Once someone enters a well-formed set in the sheet, the sheet
+ * wins and the log says "override skipped" — this used to apply unconditionally and
+ * silently discarded sheet edits. Each application is logged with the sheet's value,
+ * so once the sheet is corrected the log goes quiet and this file can be deleted. Materials are named, not ID'd, so they resolve through the
  * same Materials-tab label index as everything else.
  *
  * Not covered (no material data published yet): Liino, Camille, Arcane, Mi Fu, Si,

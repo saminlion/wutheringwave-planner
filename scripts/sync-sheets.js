@@ -357,6 +357,46 @@ function resolveMaterialIdByName(name, materialIdByLabel) {
 }
 
 /**
+ * Resolve one material reference from a `<x>_name` / `<x>_id` column pair.
+ *
+ * The name column is what people type; the id column is a formula that looks the
+ * name up — and in the Endfield sheet those formulas point at the wrong cells, so
+ * editing a name never changed the synced id. The name therefore wins whenever it
+ * resolves; the id is only a fallback. Both disagreements and names that match no
+ * Materials label are logged, because either one means the sheet edit did not land
+ * the way the person who made it expects.
+ *
+ * @returns {number|string|null}
+ */
+function pickMaterialId(row, nameColumn, idColumn, materialIdByLabel, who, field) {
+  const name = String(row[nameColumn] ?? '').trim();
+  const byName = resolveMaterialIdByName(name, materialIdByLabel);
+  const byId = row[idColumn] != null && row[idColumn] !== ''
+    ? parseNumberOrString(row[idColumn])
+    : null;
+
+  if (byName != null) {
+    if (byId != null && String(byName) !== String(byId)) {
+      console.log(`    ${who}: ${field} — using "${name}" (${byName}); ${idColumn} says ${byId} (stale formula in sheet)`);
+    }
+    return byName;
+  }
+  if (name && materialIdByLabel) {
+    console.log(`    ${who}: ${field} — "${name}" matches no Materials label; `
+      + (byId != null ? `falling back to ${idColumn} ${byId}` : 'left empty'));
+  }
+  return byId;
+}
+
+/** Endfield's verified mastery shape: basic == combo, battle == ultimate, two materials. */
+function masteryLooksRight(character) {
+  const { mastery_basic_attack: basic, mastery_battle_skill: battle,
+    mastery_combo_skill: combo, mastery_ultimate: ult } = character;
+  if ([basic, battle, combo, ult].some((v) => v == null)) return false;
+  return String(basic) === String(combo) && String(battle) === String(ult) && String(basic) !== String(battle);
+}
+
+/**
  * Transform character rows to the expected JSON structure
  *
  * Sheet columns: Seq, Rariy, Element, ElementCode, game_id, key, display_name,
@@ -412,15 +452,10 @@ function transformCharacters(rows, materialIdByLabel, overrides) {
       character.icon = row.icon;
     }
 
-    // Material IDs (use the _id columns)
-    if (row.bolete_id != null && row.bolete_id !== '') {
-      character.bolete = parseNumberOrString(row.bolete_id);
-    }
-    if (row.odendra_id != null && row.odendra_id !== '') {
-      character.odendra = parseNumberOrString(row.odendra_id);
-    }
-    if (row.special_id != null && row.special_id !== '') {
-      character.special = parseNumberOrString(row.special_id);
+    // Material IDs: the typed `_name` column wins over its `_id` formula (pickMaterialId)
+    for (const field of ['bolete', 'odendra', 'special']) {
+      const id = pickMaterialId(row, `${field}_name`, `${field}_id`, materialIdByLabel, character.display_name, field);
+      if (id != null) character[field] = id;
     }
 
     // Endfield per-skill mastery material IDs.
@@ -433,28 +468,20 @@ function transformCharacters(rows, materialIdByLabel, overrides) {
     // truth — resolve them against the Materials tab and keep the id column only as
     // a fallback for sheets that don't carry the name column.
     for (const [field, nameColumn, idColumn] of MASTERY_COLUMNS) {
-      const byName = resolveMaterialIdByName(row[nameColumn], materialIdByLabel);
-      const byId = row[idColumn] != null && row[idColumn] !== ''
-        ? parseNumberOrString(row[idColumn])
-        : null;
-
-      if (byName != null) {
-        if (byId != null && String(byName) !== String(byId)) {
-          console.log(
-            `    ${character.display_name}: ${field} — using "${row[nameColumn]}" (${byName}); `
-            + `${idColumn} says ${byId} (stale formula in sheet)`,
-          );
-        }
-        character[field] = byName;
-      } else if (byId != null) {
-        character[field] = byId;
-      }
+      const id = pickMaterialId(row, nameColumn, idColumn, materialIdByLabel, character.display_name, field);
+      if (id != null) character[field] = id;
     }
 
     // Verified corrections for fields the sheet has never carried correctly.
     // See scripts/overrides/endfield-mastery.js — delete it once the sheet is fixed.
+    // Only while the sheet row is still broken: once someone has entered a
+    // well-formed mastery set in the sheet, the sheet wins. The override used to
+    // apply unconditionally, which silently threw away every sheet edit to these
+    // operators' mastery materials.
     const override = overrides?.[character.game_id];
-    if (override) {
+    if (override && masteryLooksRight(character)) {
+      console.log(`    ${character.display_name}: sheet mastery looks right — override skipped`);
+    } else if (override) {
       for (const [field, materialName] of Object.entries(override)) {
         const id = resolveMaterialIdByName(materialName, materialIdByLabel);
         if (id == null) {
@@ -623,7 +650,7 @@ function transformMaterials(rows) {
  * Sheet columns: Seq, Rarity, Type, TypeCode, game_id, key, display_name,
  *                onyx_name, onyx_id, special_name, special_id, icon
  */
-function transformWeapons(rows) {
+function transformWeapons(rows, materialIdByLabel) {
   const result = {};
 
   for (const row of rows) {
@@ -655,12 +682,10 @@ function transformWeapons(rows) {
       weapon.icon = iconValue;
     }
 
-    // Material IDs
-    if (row.onyx_id != null && row.onyx_id !== '') {
-      weapon.onyx = parseNumberOrString(row.onyx_id);
-    }
-    if (row.special_id != null && row.special_id !== '') {
-      weapon.special = parseNumberOrString(row.special_id);
+    // Material IDs: the typed `_name` column wins over its `_id` formula (pickMaterialId)
+    for (const field of ['onyx', 'special']) {
+      const id = pickMaterialId(row, `${field}_name`, `${field}_id`, materialIdByLabel, weapon.display_name, field);
+      if (id != null) weapon[field] = id;
     }
 
     // WutheringWaves specific
@@ -999,7 +1024,7 @@ async function syncGame(gameId, config) {
             transformed = transformMaterials(rows);
             break;
           case 'weapons':
-            transformed = transformWeapons(rows);
+            transformed = transformWeapons(rows, materialIdByLabel);
             break;
           case 'farmingRates':
             transformed = transformFarmingRates(rows);
