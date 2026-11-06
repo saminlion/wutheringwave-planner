@@ -378,6 +378,12 @@ describe('NewGame MaterialProcessor', () => {
 
 ### planner.js
 - `goals[]` - Array of character/weapon goals with calculated materials
+- Goals store the material ids they resolved to, so `hydrate()` ends with `recalculateGoals()`:
+  every load (boot, game switch, cloud download) re-derives them from the current game data. A
+  material that was missing or a placeholder when the goal was added picks up the synced id/icon
+  without re-saving the goal. Goals whose character/weapon or settings are gone (or a weapon with no
+  rarity) are kept as saved. `PlannerView` calls it again on mount, since `App.vue` hydrates *after*
+  the child view's `onMounted` on a direct load. Tested in `tests/store/planner-recalculate.test.js`.
 - `characterSettings{}` - Per-character level/skill configurations
 - `weaponSettings{}` - Per-weapon level configurations
 - Storage keys: `wwplanner_goals_${gameId}`, `wwplanner_character_${gameId}`, `wwplanner_weapon_${gameId}`

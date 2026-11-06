@@ -1201,20 +1201,10 @@ const handleCompleteTab = async ({ tabType, materials, settingsUpdate }) => {
   }, 0);
 };
 
-// Recalculate all goals with current costs data to fix stale weapon_exp/player_exp values
-const recalculateAllGoals = () => {
-  goals.value.forEach((goal) => {
-    if (!getRawData(goal)) return;
-    const updated = plannerStore.calculateAllMaterials(goal.id, goal.type);
-    if (updated && Object.keys(updated).length > 0) {
-      plannerStore.addGoal({ id: goal.id, type: goal.type, materials: updated });
-    }
-  });
-};
-
+// Goals are also recomputed in plannerStore.hydrate(); this covers arriving here from another page
 onMounted(() => {
   logger.debug('goals', goals);
-  recalculateAllGoals();
+  plannerStore.recalculateGoals();
 });
 </script>
 

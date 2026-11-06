@@ -25,6 +25,12 @@ import errorHandler from '@/utils/errorHandler';
 
 const GLOBAL_STORAGE_KEY = 'gameplanner';
 
+const sameMaterials = (a = {}, b = {}) => {
+  const keysA = Object.keys(a || {});
+  const keysB = Object.keys(b || {});
+  return keysA.length === keysB.length && keysA.every((key) => a[key] === b[key]);
+};
+
 export const usePlannerStore = defineStore('planner', {
   state: () => ({
     goals: [], // [{ name: 'CharacterName', type: 'character', materials: { mora: 100000, itemA: 20 } }]
@@ -188,6 +194,43 @@ export const usePlannerStore = defineStore('planner', {
       this.currentGameId = targetGameId;
       this.loadGoals(targetGameId);
       this.loadSettings(targetGameId);
+      this.recalculateGoals();
+    },
+
+    /**
+     * Re-derive every goal's materials from the game data that is loaded now.
+     *
+     * A goal stores the material ids it resolved to when it was saved. If the
+     * sheet later fixes a missing or placeholder material, that snapshot keeps
+     * pointing at the old id (or at nothing) until the goal is recomputed — so
+     * this runs on every hydrate: boot, game switch, and cloud download.
+     * Goals whose character/weapon or settings are gone are left untouched.
+     */
+    recalculateGoals() {
+      let changed = false;
+      this.goals = this.goals.map((goal) => {
+        if (!this.canCalculate(goal)) return goal;
+        try {
+          const materials = this.calculateAllMaterials(goal.id, goal.type) || {};
+          if (sameMaterials(goal.materials, materials)) return goal;
+          changed = true;
+          return { ...goal, materials };
+        } catch (error) {
+          logger.warn(`recalculateGoals - ${goal.type} ${goal.id} failed, kept as saved:`, error);
+          return goal;
+        }
+      });
+      if (changed) this.saveGoals(this.currentGameId);
+    },
+
+    canCalculate(goal) {
+      const isCharacter = goal.type === 'character';
+      const settings = isCharacter ? this.characterSettings[goal.id] : this.weaponSettings[goal.id];
+      if (!settings) return false;
+      const data = getGameData(isCharacter ? 'characters' : 'weapons');
+      const exists = Object.values(data).some((item) => String(item.game_id) === String(goal.id));
+      // Without a rarity the weapon calc returns {} — that would wipe the goal, not refresh it
+      return exists && (isCharacter || !!getWeaponField(goal.id, 'rarity'));
     },
 
     calculateCharacterMaterials(characterId) {
