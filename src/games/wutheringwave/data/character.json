@@ -779,15 +779,17 @@
     "boss": 4140030024,
     "weeklyBoss": 4150030011
   },
-  "lili": {
+  "lily": {
     "game_id": 4250600061,
-    "display_name": "Lili",
+    "display_name": "Lily",
     "rarity": 5,
     "element": "spectro",
     "weapon": "pistol",
-    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_76_UI.webp",
-    "common": "howler_core",
+    "icon": "https://img.game8.co/4642917/5c9362caed681224a504595bb6195f7c.png/show",
+    "common": "exoswarm",
     "forgery": "combustor",
-    "weeklyBoss": 4150030011
+    "ascension": 4130010036,
+    "boss": 4140030019,
+    "weeklyBoss": 4150030008
   }
 }

@@ -1225,6 +1225,14 @@
       "SubCategory": "ascension",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconC/T_IconC_089_UI.webp",
       "tier": 3
+    },
+    "specialty": {
+      "game_id": 4130010036,
+      "label": "Specialty",
+      "Category": "ascension",
+      "SubCategory": "ascension",
+      "icon": "https://shop.ldrescdn.com/rms/ld-space/process/img/9429763211e84de0a7ac1a77d3b9e9831793268840.png?x-oss-process=image/format,webp",
+      "tier": 3
     }
   },
   "player_exp": {
