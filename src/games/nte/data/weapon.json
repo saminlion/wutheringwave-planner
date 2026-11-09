@@ -463,7 +463,7 @@
     "display_name": "Echoes on Hold",
     "rarity": 6,
     "type": "solid",
-    "icon": "https://img.game8.co/c20bis4pq8h91wmkkcevz2kyrzni",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_elyms_256.webp",
     "common": "delusions",
     "forgery": "can"
   },
@@ -472,7 +472,7 @@
     "display_name": "Dotted Horizon",
     "rarity": 6,
     "type": "plasma",
-    "icon": "https://img.game8.co/0svecubr1fwdm93bjz0s6531l7hv",
+    "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Fork/fork_exe_256.webp",
     "common": "delusions",
     "forgery": "core"
   }
