@@ -27,6 +27,9 @@ vi.mock('@/services/materialHelper/dbUtils', () => ({
     if (type === 'ascension' && identifier === 'bolete_alpha' && tier === 5) {
       return { game_id: 51301005, label: 'Bolete Alpha Tier 5 (first variant)' };
     }
+    if (type === 'mastery' && identifier === 'perseverance') {
+      return { game_id: 5140010040, label: 'Mark of Perseverance' };
+    }
     return null;
   }),
   getMaterialField: vi.fn((material, field) => {
@@ -168,25 +171,25 @@ describe('Endfield MaterialProcessor', () => {
       expect(materials).toEqual({});
     });
 
-    it('should process perseverance as the fixed Mark of Perseverance material', () => {
+    it('should process perseverance as whatever the data calls Mark of Perseverance', () => {
       const handled = processMaterial(materials, 'perseverance', 2, characterInfo);
 
       expect(handled).toBe(true);
-      expect(materials[5140010039]).toBe(2);
+      expect(materials[5140010040]).toBe(2);
     });
 
     it('should use the same perseverance material regardless of skill', () => {
       const infoWithSkill = { ...characterInfo, _masterySkill: 'battle_skill' };
       processMaterial(materials, 'perseverance', 1, infoWithSkill);
 
-      expect(materials[5140010039]).toBe(1);
+      expect(materials[5140010040]).toBe(1);
     });
 
     it('should accumulate perseverance quantities', () => {
       processMaterial(materials, 'perseverance', 1, characterInfo);
       processMaterial(materials, 'perseverance', 3, characterInfo);
 
-      expect(materials[5140010039]).toBe(4);
+      expect(materials[5140010040]).toBe(4);
     });
 
     it('should return false for unsupported keys', () => {

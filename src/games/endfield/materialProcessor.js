@@ -99,10 +99,15 @@ export const processMaterial = (materials, key, value, characterInfo) => {
         return true;
     }
 
-    // Fixed perseverance material: Mark of Perseverance (5140010039)
+    // Mark of Perseverance: the one material in `mastery` with SubCategory `perseverance`.
+    // Looked up, not hardcoded — the sheet once moved its id (…039 → …040), and a stale
+    // constant charged a material the planner could neither show nor let you complete.
     if (key === 'perseverance') {
-        const gameId = 5140010039;
-        if (typeof value === 'number') {
+        const material = findMaterial('mastery', 'perseverance');
+        const gameId = material && getMaterialField(material, 'game_id');
+        if (!gameId) {
+            logger.warn('[Endfield] No mastery material with SubCategory "perseverance"; skipping this cost');
+        } else if (typeof value === 'number') {
             materials[gameId] = (materials[gameId] || 0) + value;
         }
         return true;

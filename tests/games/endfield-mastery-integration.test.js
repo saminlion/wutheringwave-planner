@@ -122,4 +122,32 @@ describe('Endfield per-skill mastery (integration)', () => {
       }
     }
   });
+  // A goal entry the planner cannot find in materials.json is invisible in Final Material
+  // Needs yet still counted as missing on Complete ("insufficient" with nothing to farm).
+  it('every material a fully-built operator needs exists in materials.json', () => {
+    const config = endfieldPlugin.config;
+    const materials = endfieldPlugin.getData('materials');
+    // EXP costs are keyed by their category; everything else by game_id
+    const known = new Set(Object.keys(materials));
+    for (const category of Object.values(materials)) {
+      for (const item of Object.values(category)) known.add(String(item.game_id));
+    }
+
+    const settings = config.createCharacterInitialSettings();
+    const levels = config.formFields.characterLevelItems;
+    settings.targetLevel = levels[levels.length - 1].value;
+    for (const skill of Object.values(settings.skills)) Object.assign(skill, { target_level: 12, target_mastery: 3 });
+    for (const s of Object.values(settings.special)) s.target_level = 2;
+    for (const s of Object.values(settings.baseSkill)) s.target_level = 2;
+    for (const key of Object.keys(settings.attributes)) settings.attributes[key] = true;
+
+    const unknown = [];
+    for (const operator of Object.values(characters)) {
+      const out = calculateCharacterMaterials(structuredClone(settings), operator);
+      for (const id of Object.keys(out)) {
+        if (!known.has(id)) unknown.push(`${operator.display_name}: ${id}`);
+      }
+    }
+    expect(unknown).toEqual([]);
+  });
 });
