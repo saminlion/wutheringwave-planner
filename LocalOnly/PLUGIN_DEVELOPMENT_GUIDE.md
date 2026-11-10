@@ -21,7 +21,12 @@ src/games/{gameid}/
 - [ ] `data/weapon.json` - Weapon metadata
 - [ ] `data/materials.json` - Material catalog
 - [ ] `data/costs.json` - Leveling costs
-- [ ] `data/tiers.js` - Tiered material definitions
+- [ ] `data/tiers.js` - Tiered material definitions (keys = SubCategory, ids copied from materials.json; `{}` if no synthesis — no example ids)
+
+> ⛔ **No material `game_id` literals in code** (processor, config, components). Resolve from data —
+> a material every character shares gets its own SubCategory and is looked up by it
+> (`findMaterial('mastery', 'perseverance')`). A hardcoded Endfield id went stale when the sheet
+> renumbered it → "nothing to farm, but Complete says insufficient".
 - [ ] `materialProcessor.js` - `{ SUPPORTED_KEYS, processMaterial }`
 - [ ] `config.js` - Theme colors, constants, form fields
 - [ ] `index.js` - Plugin export
@@ -37,6 +42,8 @@ gameStore.registerGame(newgamePlugin);
 ### 4. Add Tests
 ```
 tests/games/{gameid}-materialProcessor.test.js
+# data integrity is automatic: tests/games/data-integrity.test.js covers every game in src/games/index.js
+# (unique ids, tiers.js vs data, every cost row → existing material). npm run test:run must pass.
 ```
 
 ---

@@ -7,7 +7,6 @@ import {
   events as eventData,
   tieredMaterials,
   tieredMaterialsByGameId,
-  player_exp_material as playerExpMaterial,
 } from './data';
 
 // Game-specific components
@@ -61,6 +60,5 @@ export {
   eventData,
   tieredMaterials,
   tieredMaterialsByGameId,
-  playerExpMaterial,
 };
 

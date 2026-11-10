@@ -622,21 +622,7 @@ export const tieredMaterials = {
   },
 };
 
-export const player_exp_material = {
-  // resonance_potion
-  4160010001: 1000,
-  4160010002: 3000,
-  4160010003: 8000,
-  4160010004: 20000,
-};
 
-export const weapon_exp_material = {
-  // energy_core
-  4170010001: 1000,
-  4170010002: 3000,
-  4170010003: 8000,
-  4170010004: 20000,
-};
 
 export const tieredMaterialsByGameId = Object.entries(tieredMaterials).reduce(
   (acc, [categoryName, tiers]) => {

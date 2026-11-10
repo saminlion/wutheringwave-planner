@@ -61,6 +61,23 @@ Read `LocalOnly/{gameid}/README.md` (추가 질문 답변이 반영된 최신본
 
 실제 속성/타입 값으로 IF 분기를 구체적으로 작성 (예시 코드 아닌 실제 사용 가능한 수식 제공).
 
+**⭐ game_id 안정성 원칙 (필수) — 가이드 Materials 탭 섹션에 그대로 넣을 것:**
+
+game_id는 유저의 인벤토리·플래너 목표·tiers.js가 모두 기준으로 쓰는 키다. 시트는 이것을
+Category·SubCatCode·Seq 수식으로 만들기 때문에, **이미 동기화된 행의 이 세 칸을 고치면 재료 번호가 바뀌고**
+유저 보유량이 옛 번호에 묶여 사라진다 (실제 사고: Endfield Mark of Perseverance `…039 → …040`).
+
+- 한 번 동기화된 행의 Category / SubCatCode / Seq 는 **수정 금지**. 이름·아이콘·tier·value 는 자유
+- 새 재료는 **새 행 + 새 Seq**. 행 사이 끼워 넣기, Seq 재정렬, 번호 재사용 금지
+- 재료 삭제 = 그 재료를 쓰던 보유량/목표가 사라짐 → 삭제 대신 남겨 두기
+- **중복 검사 칸**을 Materials 탭 맨 오른쪽에 추가 (동기화는 이 칸을 읽지 않음):
+  `=ARRAYFORMULA(IF(F2:F="","",IF(COUNTIF(F2:F,F2:F)>1,"⚠ 중복 game_id","")))`
+  (실제 사고: WW Moss Amber / Edelschnee 가 같은 `4130010026` — 두 캐릭터 재료가 섞임)
+- 모든 캐릭터가 같이 쓰는 고정 재료(예: 공용 마스터리 재료)는 **고유한 SubCategory**를 줘서
+  코드가 숫자 없이 찾을 수 있게 한다
+- 번호가 바뀌거나 재료가 사라지면 동기화 로그에 `material id changed` / `material removed` 경고가 뜨고,
+  동기화 뒤 테스트가 실패해 Actions 실행이 빨갛게 표시된다 — 그때 시트를 원래 번호로 되돌린다
+
 ### Step 4: Update README.md checklist
 
 `LocalOnly/{gameid}/README.md` 상단의 "진행 상황" 체크리스트를 업데이트:

@@ -72,3 +72,10 @@ jobs:
 
           Automated sync by GitHub Actions"
           git push
+
+      # Runs after the commit on purpose: the sheet is the source of truth, so synced data
+      # always lands. A red run is the alert — e.g. a material id the code or tiers.js still
+      # expects, a duplicated game_id, or a cost that resolves to nothing
+      # (tests/games/data-integrity.test.js). Fix the sheet, re-run the sync.
+      - name: Check synced data against the code
+        run: npx vitest run

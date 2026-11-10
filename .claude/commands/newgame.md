@@ -391,6 +391,17 @@ Lv9→10:
 {game_code}140010001 - 첫번째 보스 재료
 ```
 
+### ⚠️ ID 안정성 규칙 (필수)
+
+game_id는 유저 인벤토리·플래너 목표·tiers.js의 키다. 한 번 동기화된 뒤에 바뀌면 유저 보유량이
+옛 번호에 묶여 사라지고, 그 번호를 쓰던 코드가 존재하지 않는 재료를 가리킨다.
+
+- 동기화된 재료의 **CC / SS / NNNN(= Category / SubCatCode / Seq)은 절대 수정하지 않는다**
+- 새 재료는 새 번호로 **추가만**. 끼워 넣기·재정렬·번호 재사용 금지, 삭제 대신 남겨 두기
+- 같은 game_id가 두 재료에 있으면 안 된다 (Materials 탭 중복 검사 칸으로 확인)
+- 모든 캐릭터가 공유하는 고정 재료에는 **고유한 SubCategory**를 준다 — 코드는 game_id 숫자를
+  적지 않고 SubCategory로 찾는다
+
 ---
 
 ## 4. ID 매핑 테이블
@@ -638,9 +649,15 @@ I2: =ARRAYFORMULA(IF(H2:H="","",IFERROR(INDEX(Materials!$F$2:$F,MATCH(H2:H,Mater
 | H | tier | 직접 입력 (없으면 공백) |
 | I | value | 직접 입력 (EXP 아이템만) |
 | J | icon | 직접 입력 |
+| K | id_check | **자동** — 중복 game_id 경고 (동기화는 읽지 않음) |
+
+> ⚠️ **이미 동기화된 행의 Category(A) / SubCatCode(D) / Seq(E)는 고치지 마세요.** game_id(F)가 바뀌어
+> 유저가 입력한 보유량과 플래너 목표가 옛 번호에 남습니다. 새 재료는 맨 아래 새 Seq로 추가합니다.
+> 번호가 바뀌면 동기화 로그에 `material id changed` 경고가 뜨고 Actions 실행이 실패로 표시됩니다.
 
 **ARRAYFORMULA:**
 ```
+K2: =ARRAYFORMULA(IF(F2:F="","",IF(COUNTIF(F2:F,F2:F)>1,"⚠ 중복 game_id","")))
 B2: =ARRAYFORMULA(IF(A2:A="","",IF(A2:A="credit",0,IF(A2:A="common",10,IF(A2:A="forgery",20,IF(A2:A="ascension",30,IF(A2:A="boss",40,IF(A2:A="weeklyBoss",50,IF(A2:A="player_exp",60,IF(A2:A="weapon_exp",70,0))))))))))
 F2: =ARRAYFORMULA(IF(E2:E="","",{game_code}100000000+(B2:B*1000000)+(D2:D*10000)+E2:E))
 ```
@@ -935,8 +952,15 @@ env:
        ├── weapon.json
        ├── materials.json
        ├── costs.json
-       └── tiers.js
+       ├── events.json   ([])
+       └── tiers.js      (합성 없으면 {})
    ```
+
+   **Phase 4 상세 기준은 `/newgame-build`와 같다** — 특히 아래 두 가지는 반드시 지킨다:
+   - ⛔ **재료 game_id 숫자를 processor / config / 컴포넌트 코드에 적지 않는다.** 모든 캐릭터가 공유하는
+     고정 재료도 materials.json에서 SubCategory로 조회한다. (Endfield Perseverance를 숫자로 적었다가 시트에서
+     번호가 바뀌어 "필요 재료는 비었는데 완료는 insufficient" 버그가 났다.)
+   - tiers.js는 materials.json에서 복사한 실제 id만, 키는 SubCategory와 정확히 같게. 예시/가짜 id 금지.
 
    **CharacterDialog.vue template selection**:
    - Pattern 1 (Simple) → Copy from `src/games/wutheringwave/components/CharacterDialog.vue`
@@ -946,11 +970,14 @@ env:
    Both patterns are automatically supported by the `completeGoal` function in PlannerView.vue.
    No additional code changes needed when using these patterns.
 
-11. **Register plugin** in `src/main.js`
+11. **Register plugin** in `src/games/index.js` (games + supportedGames) **and** `src/main.js`,
+    then in `scripts/sync-sheets.js` (`GAMES`) and `.github/workflows/sync-data.yml` (options + env)
 
 12. **Create test file**: `tests/games/{gameid}-materialProcessor.test.js`
+    (데이터 정합성은 `tests/games/data-integrity.test.js`가 등록된 게임을 자동으로 검사 — 별도 작성 불필요)
 
-13. **Run tests**: `npm run test:run`
+13. **Run tests**: `npm run test:run` — **전부 통과해야 완료.** data-integrity 실패는 코드로 우회하지 말고
+    시트에서 고칠 항목으로 사용자에게 보고한다
 
 14. **Build check**: `npm run build`
 

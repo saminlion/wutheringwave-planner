@@ -251,6 +251,14 @@ export const processMaterial = (materials, key, value, characterInfo) => {
 export default { SUPPORTED_KEYS, processMaterial };
 ```
 
+> ⛔ **Never write a material `game_id` into code.** The sheet computes ids from
+> Category/SubCatCode/Seq, so they can change. Resolve every material from the data:
+> per-character materials from the character's column, and a **material every character shares**
+> from materials.json by its own SubCategory (`findMaterial('mastery', 'perseverance')`).
+> Endfield once charged mastery to a literal `5140010039`; the sheet renumbered it to `…040`, and
+> every operator's goal held an id the data no longer had. If a lookup finds nothing, warn and skip
+> that cost — don't fall through: `core.js` adds unknown keys verbatim, which is the same bug.
+
 ### Step 4: Create config.js
 
 ```javascript
@@ -340,6 +348,10 @@ const gameStore = useGameStore();
 gameStore.registerGame(newgamePlugin);
 ```
 
+Also add it to `src/games/index.js` (`games` + `supportedGames` — that list drives the tabs and the
+data-integrity test) and to the sheet sync: `GAMES` in `scripts/sync-sheets.js`, plus the game
+option and `SHEET_ID_{GAMEID}` env in `.github/workflows/sync-data.yml`.
+
 ### Step 7: Create CharacterDialog Component
 
 Copy from existing game and modify:
@@ -367,6 +379,17 @@ describe('NewGame MaterialProcessor', () => {
   });
 });
 ```
+
+`tests/games/data-integrity.test.js` needs nothing per game — it runs every game registered in
+`src/games/index.js` against its real data:
+- material `game_id`s are unique
+- every `tiers.js` id exists under the same SubCategory/tier, and no tiered material is left out
+- every cost row in costs.json, run through the real processor for every character/weapon,
+  yields only ids that exist in materials.json
+
+A failure there is usually a sheet problem; report it rather than working around it in code.
+`tiers.js` is the one place ids are copied into code; a game without tier synthesis exports `{}`
+(no example/placeholder ids).
 
 ### Reference Implementations
 - **WutheringWaves**: `src/games/wutheringwave/` - Simpler skill system
@@ -880,6 +903,21 @@ Synthesis ratio: 3:1
 ---
 
 ## Troubleshooting
+
+### Planner shows nothing to farm, but Complete says "insufficient"
+A goal holds a material id that materials.json doesn't have: Final Material Needs can't place it
+under a category so it's hidden, while Complete still counts it missing. Run
+`npx vitest run tests/games/data-integrity.test.js` — it names the character and the id. Usual
+causes: code holding a hardcoded id, a renumbered material in the sheet, a processor that let an
+unresolved key through.
+
+### Material game_ids must stay stable
+Inventories, goals and `tiers.js` are all keyed by `game_id`. Editing Category/SubCatCode/Seq of an
+already-synced Materials row renumbers it and orphans every user's stock of it. The sync compares
+the new materials.json with the committed one and logs `material id changed` / `material removed`
+(`scripts/lib/materialIdChanges.js`, GitHub `::warning::` annotations). After committing, the
+workflow runs the test suite, so a sync that breaks the data turns the run red — the data still
+lands (the sheet is the source of truth); fix the sheet and re-run.
 
 ### Materials not calculating
 1. Check SUPPORTED_KEYS includes your material key

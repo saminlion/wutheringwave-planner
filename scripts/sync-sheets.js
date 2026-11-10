@@ -16,6 +16,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { reportMaterialIdChanges } from './lib/materialIdChanges.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -1012,6 +1013,12 @@ async function syncGame(gameId, config) {
         }
 
         const fileName = dataType === 'characters' || dataType === 'weapons' ? dataType.slice(0, -1) : dataType;
+        if (dataType === 'materials') {
+          const previousPath = path.join(ROOT_DIR, config.dataPath, 'materials.json');
+          if (fs.existsSync(previousPath)) {
+            reportMaterialIdChanges(gameId, JSON.parse(fs.readFileSync(previousPath, 'utf8')), transformed);
+          }
+        }
         writeJsonFile(`${config.dataPath}/${fileName}.json`, transformed);
       } catch (error) {
         console.error(`  Error syncing ${tabLabel}: ${error.message}`);

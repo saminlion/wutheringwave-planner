@@ -16,25 +16,10 @@ export const costs = costsData;
 export const events = eventsData;
 export const synthesisRecipes = synthesisRecipesData;
 
-// Tiered materials for synthesis (3:1 ratio)
-export const tieredMaterials = {
-  common: {
-    example_common: {
-      1: 51101001, // LF
-      2: 51101002, // MF
-      3: 51101003, // HF
-      4: 51101004, // FF
-    },
-  },
-  forgery: {
-    example_forgery: {
-      1: 51201001, // LF
-      2: 51201002, // MF
-      3: 51201003, // HF
-      4: 51201004, // FF
-    },
-  },
-};
+// Tiered synthesis table. Empty: Endfield has no tier-up crafting the planner models.
+// If one is added, key it by SubCategory and take every game_id from materials.json —
+// tests/games/data-integrity.test.js fails on any id the data does not contain.
+export const tieredMaterials = {};
 
 // Reverse lookup: gameId -> tier info
 export const tieredMaterialsByGameId = {};
