@@ -248,9 +248,9 @@
       "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weeklycloneboss_a03_01.webp",
       "tier": 4
     },
-    "fromanima": {
+    "hollowflower_seeds": {
       "game_id": 7150010004,
-      "label": "FromAnima",
+      "label": "Hollowflower Seeds",
       "Category": "weeklyBoss",
       "SubCategory": "weeklyBoss",
       "icon": "https://static.nanoka.cc/assets/nte/Game/UI/UI_Icon/Item/weeklycloneboss_a04_01.webp",

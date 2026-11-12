@@ -1003,8 +1003,8 @@
     "display_name": "Lullaby",
     "rarity": 5,
     "type": "pistols",
-    "icon": "https://img.game8.co/g9x008fnqfvwlzdei72anrbyb2yy",
-    "common": "exoswarm",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "pendant",
     "forgery": "combustor"
   }
 }
