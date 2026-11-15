@@ -606,7 +606,7 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_54_UI.webp",
     "common": "pendant",
     "forgery": "shard",
-    "ascension": 4130010026,
+    "ascension": 4130010027,
     "boss": 4140030019,
     "weeklyBoss": 4150030008
   },
@@ -632,7 +632,7 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_67_UI.webp",
     "common": "exoswarm",
     "forgery": "polarizer",
-    "ascension": 4130010028,
+    "ascension": 4130010029,
     "boss": 4140030021,
     "weeklyBoss": 4150030009
   },
@@ -645,7 +645,7 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_daniya_UI.webp",
     "common": "mech",
     "forgery": "string",
-    "ascension": 4130010027,
+    "ascension": 4130010028,
     "boss": 4140030020,
     "weeklyBoss": 4150030009
   },
@@ -658,7 +658,7 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_68_UI.webp",
     "common": "exoswarm",
     "forgery": "combustor",
-    "ascension": 4130010030,
+    "ascension": 4130010031,
     "boss": 4140030022,
     "weeklyBoss": 4150030008
   },
@@ -671,7 +671,7 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_69_UI.webp",
     "common": "mech",
     "forgery": "combustor",
-    "ascension": 4130010030,
+    "ascension": 4130010031,
     "boss": 4140030022,
     "weeklyBoss": 4150030009
   },
@@ -684,7 +684,7 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luosela_UI.webp",
     "common": "mech",
     "forgery": "string",
-    "ascension": 4130010029,
+    "ascension": 4130010030,
     "boss": 4140030019,
     "weeklyBoss": 4150030009
   },
@@ -697,7 +697,7 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_XuanLing_UI.webp",
     "common": "autopuppet",
     "forgery": "polarizer",
-    "ascension": 4130010031,
+    "ascension": 4130010032,
     "boss": 4140030023,
     "weeklyBoss": 4150030010
   },
@@ -710,7 +710,7 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_SuiSui_UI.webp",
     "common": "autopuppet",
     "forgery": "string",
-    "ascension": 4130010032,
+    "ascension": 4130010033,
     "boss": 4140030023,
     "weeklyBoss": 4150030010
   },
@@ -736,7 +736,7 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qingxiao_UI.webp",
     "common": "autopuppet",
     "forgery": "polarizer",
-    "ascension": 4130010033,
+    "ascension": 4130010034,
     "boss": 4140030024,
     "weeklyBoss": 4150030009
   },
@@ -749,7 +749,7 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jingran_UI.webp",
     "common": "whisperin_core",
     "forgery": "crystal",
-    "ascension": 4130010031,
+    "ascension": 4130010032,
     "boss": 4140030024,
     "weeklyBoss": 4150030010
   },
@@ -762,7 +762,7 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_75_UI.webp",
     "common": "autopuppet",
     "forgery": "string",
-    "ascension": 4130010034,
+    "ascension": 4130010035,
     "boss": 4140030023,
     "weeklyBoss": 4150030011
   },
@@ -775,7 +775,7 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_76_UI.webp",
     "common": "howler_core",
     "forgery": "polarizer",
-    "ascension": 4130010035,
+    "ascension": 4130010036,
     "boss": 4140030024,
     "weeklyBoss": 4150030011
   },
@@ -788,7 +788,7 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_77_UI.webp",
     "common": "exoswarm",
     "forgery": "combustor",
-    "ascension": 4130010036,
+    "ascension": 4130010037,
     "boss": 4140030019,
     "weeklyBoss": 4150030008
   }
