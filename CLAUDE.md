@@ -838,6 +838,28 @@ Tested in `tests/services/cloudSync.test.js` (sync decisions),
 
 ---
 
+## Image Cache (service worker)
+
+All icons are on third-party CDNs, several of which forbid caching (`static.nanoka.cc` — WW/NTE —
+sends `max-age=120`; `api.encore.moe` and `stardive.7dso.xyz` send `max-age=0`), so every visit
+re-asked the CDN about hundreds of icons. `public/sw.js` serves every cross-origin `image` request
+**cache first**: a stored copy is returned without touching the network; if it is older than 3 days
+it is re-fetched in the background (`cache: 'no-cache'`) and overwritten only when ETag /
+Last-Modified changed. A miss is fetched, shown and stored.
+
+- CORS-capable CDNs are stored as readable responses; the rest (game8, warfarin, perlica,
+  dandegate, 7dso, wikia) via `no-cors` as opaque — kept too, but always replaced on revalidation.
+  Error responses are never stored; quota errors are swallowed.
+- `src/services/imageCache.js` registers the worker (**production only**) and, on boot and every
+  `currentGameId` change, posts `{ type: 'precache', urls, keep }` in idle time: `urls` = the
+  current game's character/weapon/material icons, `keep` = every game's icons + event covers.
+  Images not in `keep` and older than 30 days are pruned. Skipped under `saveData`.
+- Bump `VERSION` in `sw.js` to drop every stored image.
+
+Tested in `tests/services/imageCache.test.js` (runs the real `sw.js` against fake Cache Storage).
+
+---
+
 ## Utilities
 
 **logger.js** - Environment-aware logging

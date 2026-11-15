@@ -17,6 +17,7 @@ import mongilstardivePlugin from './games/mongilstardive';
 import dnaPlugin from './games/dna';
 import { useGameRegistryStore } from './store/gameRegistry';
 import { initCloudSync } from './services/cloudSync';
+import { initImageCache } from './services/imageCache';
 
 const app = createApp(App);
 
@@ -54,3 +55,6 @@ app.mount('#app');
 
 // Google Drive sync — inert until the user signs in once in Settings
 initCloudSync();
+
+// Icons from the game CDNs: cached by a service worker, current game downloaded up front
+initImageCache();
