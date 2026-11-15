@@ -17,6 +17,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { reportMaterialIdChanges } from './lib/materialIdChanges.js';
+import { transformBoxes } from './lib/boxes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -85,6 +86,7 @@ const GAMES = {
       materials: 'Materials',
       weapons: 'Weapons',
       events: 'Events',
+      boxes: 'Boxes',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -103,6 +105,7 @@ const GAMES = {
       materials: 'Materials',
       weapons: 'Weapons',
       events: 'Events',
+      boxes: 'Boxes',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -121,6 +124,7 @@ const GAMES = {
       materials: 'Materials',
       weapons: 'Weapons',
       events: 'Events',
+      boxes: 'Boxes',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -140,6 +144,7 @@ const GAMES = {
       weapons: 'Weapons',
       farmingRates: 'FarmingRates',
       events: 'Events',
+      boxes: 'Boxes',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -159,6 +164,7 @@ const GAMES = {
       weapons: 'Weapons',
       farmingRates: 'FarmingRates',
       events: 'Events',
+      boxes: 'Boxes',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -178,6 +184,7 @@ const GAMES = {
       weapons: 'Weapons',
       farmingRates: 'FarmingRates',
       events: 'Events',
+      boxes: 'Boxes',
     },
     i18nTabs: {
       characters: 'Characters_i18n',
@@ -243,6 +250,13 @@ async function fetchSheetData(sheetId, tab) {
 
   // Resolve gid: use explicit gid if provided, otherwise auto-discover
   let gid = typeof tab === 'object' ? tab.gid : await getTabGid(sheetId, tab);
+
+  // The `sheet=<name>` fallback below is ignored by Google's export endpoint, which then
+  // returns the FIRST tab — so a missing tab used to sync another tab's rows under its
+  // name. When discovery worked and simply has no such tab, stop here instead.
+  if (gid === undefined && typeof tab !== 'object' && tabGidCache.get(sheetId)?.size > 0) {
+    throw new Error(`Tab "${tabLabel}" not found in sheet`);
+  }
   const tabParam = gid !== undefined ? `gid=${gid}` : `sheet=${encodeURIComponent(tabLabel)}`;
   const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&${tabParam}`;
 
@@ -992,6 +1006,10 @@ async function syncGame(gameId, config) {
             break;
           case 'events':
             transformed = transformEvents(rows);
+            break;
+          case 'boxes':
+            transformed = transformBoxes(rows, (row, nameColumn, idColumn, who, field) =>
+              pickMaterialId(row, nameColumn, idColumn, materialIdByLabel, who, field));
             break;
           default:
             console.log(`    Unknown data type: ${dataType}`);

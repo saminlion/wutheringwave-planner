@@ -7,6 +7,7 @@ import weaponData from './weapon.json';
 import materialsData from './materials.json';
 import costsData from './costs.json';
 import eventsData from './events.json';
+import boxesData from './boxes.json';
 import synthesisRecipesData from './synthesisRecipes.json';
 
 export const characters = characterData;
@@ -14,6 +15,7 @@ export const weapons = weaponData;
 export const materials = materialsData;
 export const costs = costsData;
 export const events = eventsData;
+export const boxes = boxesData;
 export const synthesisRecipes = synthesisRecipesData;
 
 // Tiered synthesis table. Empty: Endfield has no tier-up crafting the planner models.
@@ -41,6 +43,7 @@ export default {
   materials,
   costs,
   events,
+  boxes,
   synthesisRecipes,
   tieredMaterials,
   tieredMaterialsByGameId,

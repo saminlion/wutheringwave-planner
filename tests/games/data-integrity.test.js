@@ -101,6 +101,21 @@ describe.each(games)('%s data integrity', (gameId, game) => {
     expect(unlisted).toEqual([]);
   });
 
+  // boxes.json comes from the Boxes tab; the sync resolves names, so an id here that
+  // materials.json lacks means a Materials row was renumbered or removed after the sync.
+  it('every box and everything in it exists in materials.json', () => {
+    const wrong = [];
+    for (const [key, box] of Object.entries(game.getData('boxes') || {})) {
+      if (!byId.has(String(box.game_id))) wrong.push(`box ${key}: ${box.game_id} not in materials.json`);
+      if (!['fixed', 'select'].includes(box.type)) wrong.push(`box ${key}: type "${box.type}"`);
+      for (const { game_id: id, qty } of box.contents || []) {
+        if (!byId.has(String(id))) wrong.push(`box ${key}: content ${id} not in materials.json`);
+        if (!(qty > 0)) wrong.push(`box ${key}: content ${id} qty ${qty}`);
+      }
+    }
+    expect(wrong).toEqual([]);
+  });
+
   for (const [type, dataType] of [['character', 'characters'], ['weapon', 'weapons']]) {
     it(`every material a ${type} can need exists in materials.json`, () => {
       const rows = collectCostRows(costs[type]);

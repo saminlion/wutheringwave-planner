@@ -2,11 +2,11 @@
  * Mongil StarDive Game Plugin
  */
 import config, { mongilstardiveConfig } from './config.js';
-import { characters, weapons, materials, costs, events, tieredMaterials, tieredMaterialsByGameId } from './data/index.js';
+import { characters, weapons, materials, costs, events, boxes, tieredMaterials, tieredMaterialsByGameId } from './data/index.js';
 import CharacterDialog from './components/CharacterDialog.vue';
 import * as materialProcessor from './materialProcessor.js';
 
-const dataCache = { characters, weapons, materials, costs, events, tiers: tieredMaterials };
+const dataCache = { characters, weapons, materials, costs, events, boxes, tiers: tieredMaterials };
 
 const mongilstardivePlugin = {
   id: 'mongilstardive',

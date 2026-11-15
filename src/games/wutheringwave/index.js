@@ -5,6 +5,7 @@ import {
   materials as inventoryMaterials,
   costs as costData,
   events as eventData,
+  boxes as boxData,
   tieredMaterials,
   tieredMaterialsByGameId,
 } from './data';
@@ -21,6 +22,7 @@ const dataCache = {
   materials: inventoryMaterials,
   costs: costData,
   events: eventData,
+  boxes: boxData,
   tiers: tieredMaterials,
 };
 

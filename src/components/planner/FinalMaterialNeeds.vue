@@ -35,6 +35,33 @@
             </div>
         </div>
 
+        <!-- Box Opening Plan: owned boxes are not counted as materials. The shortage
+             below stays as it is; this says which boxes to open to cover it. -->
+        <div class="box-plan" v-if="boxSteps.length > 0">
+            <h3 class="box-plan-title"><i class="fas fa-box-open"></i> {{ tUI('final.box_plan') }}</h3>
+            <p class="box-plan-summary">{{ boxPlanSummary }}</p>
+            <div class="box-plan-steps">
+                <div class="box-step" v-for="step in boxSteps" :key="step.boxId + ':' + (step.choice ?? '')">
+                    <div class="box-step-source" :title="materialName(step.boxId)">
+                        <img v-if="getMaterialIcon(step.boxId)" :src="getMaterialIcon(step.boxId)" class="crafting-icon" />
+                        <span class="box-step-name">{{ materialName(step.boxId) }}</span>
+                        <span class="crafting-qty">×{{ step.count }}</span>
+                    </div>
+                    <span class="crafting-arrow">→</span>
+                    <span v-if="step.type === 'select'" class="box-step-pick">{{ tUI('final.box_pick') }}</span>
+                    <div class="box-step-gains">
+                        <span class="box-gain" v-for="(qty, gid) in step.gains" :key="gid" :title="materialName(gid)">
+                            <img v-if="getMaterialIcon(gid)" :src="getMaterialIcon(gid)" class="crafting-icon" />
+                            <span class="crafting-qty crafting-qty-result">×{{ qty.toLocaleString() }}</span>
+                        </span>
+                    </div>
+                    <button type="button" class="box-open-btn" @click="emit('openBoxes', step)">
+                        {{ tUI('final.box_open') }}
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- ダンジョンレベル選択器 (ゲームConfigで制御) -->
         <div v-if="showDungeonLevelSelector" class="dungeon-level-selector">
             <label for="dungeon-level">{{ tUI('final.dungeon_level') }}:</label>
@@ -141,6 +168,7 @@
                             <template v-if="isExpCategory(category.name)">
                                 <li
                                     class="material-card clickable"
+                                    :class="{ 'box-resolvable': isBoxResolved(category.name) }"
                                     v-show="totalExpNeed(category) > 0"
                                     @click="openExpDialog(category, subCategory)"
                                 >
@@ -152,6 +180,11 @@
                                             <span class="need-number">
                                                 {{ totalExpNeed(category).toLocaleString() }}
                                             </span>
+                                            <div class="conversion-info" v-if="boxCoverOf(category.name) > 0">
+                                                <span class="conv-badge conv-box" :title="boxBadgeTitle(category.name)">
+                                                    <i class="fas fa-box-open"></i> {{ boxBadgeText(category.name) }}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
@@ -162,6 +195,7 @@
                                 <!-- common/forgery以外: クリックでダイアログ表示、Complete非表示 -->
                                 <li
                                     class="material-card clickable"
+                                    :class="{ 'box-resolvable': isBoxResolved(task.id) }"
                                     v-for="task in sortedTasks(subCategory.task)"
                                     :key="task.id"
                                     v-show="!isTaskComplete(task)"
@@ -184,6 +218,9 @@
                                                 </span>
                                                 <span class="conv-badge conv-decomp-in" v-if="supportsDecomposition && task.decomposedGained > 0" :title="'Received from higher tier decomposition'">
                                                     <i class="fas fa-arrow-up"></i> +{{ task.decomposedGained }}
+                                                </span>
+                                                <span class="conv-badge conv-box" v-if="boxCoverOf(task.id) > 0" :title="boxBadgeTitle(task.id)">
+                                                    <i class="fas fa-box-open"></i> {{ boxBadgeText(task.id) }}
                                                 </span>
                                             </div>
                                         </div>
@@ -195,6 +232,7 @@
                             <template v-else>
                                 <li
                                     class="material-card clickable"
+                                    :class="{ 'box-resolvable': isBoxResolved(task.id) }"
                                     v-for="task in sortedTasks(subCategory.task)"
                                     :key="task.id"
                                     v-show="!isTaskComplete(task)"
@@ -217,6 +255,9 @@
                                                 </span>
                                                 <span class="conv-badge conv-decomp-in" v-if="supportsDecomposition && task.decomposedGained > 0" :title="'Received from higher tier decomposition'">
                                                     <i class="fas fa-arrow-up"></i> +{{ task.decomposedGained }}
+                                                </span>
+                                                <span class="conv-badge conv-box" v-if="boxCoverOf(task.id) > 0" :title="boxBadgeTitle(task.id)">
+                                                    <i class="fas fa-box-open"></i> {{ boxBadgeText(task.id) }}
                                                 </span>
                                             </div>
                                         </div>
@@ -425,6 +466,7 @@ const calculateActualNeed = (task) => {
 const hasConversionInfo = (task) => {
     if (!task) return false;
     if (task.synthesize > 0) return true;
+    if (boxCoverOf(task.id) > 0) return true;
     if (supportsDecomposition.value && (task.decomposedConsumed > 0 || task.decomposedGained > 0)) return true;
     return false;
 };
@@ -514,6 +556,7 @@ const openItemDialog = (task, category, subCategoryId) => {
             owned: getMaterialQuantity(task.id),
             actualNeed: calculateActualNeed(task),
             icon: getMaterialIcon(task.id),
+            boxCovered: boxCoverOf(task.id),
         };
         // 全ティアを表示
         selectedRelatedItems.value = lineupItems.map(t => ({
@@ -521,6 +564,7 @@ const openItemDialog = (task, category, subCategoryId) => {
             owned: getMaterialQuantity(t.id),
             actualNeed: t.actualNeed ?? calculateActualNeed(t),
             icon: getMaterialIcon(t.id),
+            boxCovered: boxCoverOf(t.id),
         }));
     } else {
         // 独立アイテム: 単体で表示
@@ -529,6 +573,7 @@ const openItemDialog = (task, category, subCategoryId) => {
             owned: getMaterialQuantity(task.id),
             actualNeed: calculateActualNeed(task),
             icon: getMaterialIcon(task.id),
+            boxCovered: boxCoverOf(task.id),
         };
         selectedRelatedItems.value = [];
     }
@@ -816,6 +861,36 @@ const props = defineProps({
         type: Object,
         default: () => ({ synthesis: [], decomposition: [] }),
     },
+    // planBoxOpening() result — see src/services/materialHelper/boxPlan.js
+    boxPlan: {
+        type: Object,
+        default: () => ({ steps: [], before: {}, after: {}, covered: {}, resolved: [] }),
+    },
+});
+
+const boxSteps = computed(() => props.boxPlan?.steps || []);
+const boxResolvedSet = computed(() => new Set((props.boxPlan?.resolved || []).map(String)));
+
+// How much of this material's shortage the box plan covers (0 when boxes don't help)
+const boxCoverOf = (id) => props.boxPlan?.covered?.[String(id)] || 0;
+const isBoxResolved = (id) => boxResolvedSet.value.has(String(id));
+const boxBadgeText = (id) => (isBoxResolved(id) ? '✓' : `-${boxCoverOf(id).toLocaleString()}`);
+const boxBadgeTitle = (id) => (isBoxResolved(id)
+    ? tUI('final.box_resolves')
+    : tUI('final.box_covers').replace('{n}', boxCoverOf(id).toLocaleString()));
+
+const materialName = (id) => {
+    if (isExpCategory(id)) return translateCategoryName(id);
+    return tMaterial(id, getMaterialFieldById(id, 'label') || String(id));
+};
+
+const boxPlanSummary = computed(() => {
+    const resolved = props.boxPlan?.resolved?.length || 0;
+    const remaining = Object.keys(props.boxPlan?.after || {}).length;
+    const text = remaining === 0
+        ? tUI('final.box_summary_all')
+        : tUI('final.box_summary');
+    return text.replace('{resolved}', resolved).replace('{remaining}', remaining);
 });
 
 const hasCraftingActions = computed(() => {
@@ -824,7 +899,7 @@ const hasCraftingActions = computed(() => {
     return s || d;
 });
 
-const emit = defineEmits(["updateInventory"]);
+const emit = defineEmits(["updateInventory", "openBoxes"]);
 
 watch(
     () => props.materials,
@@ -1699,6 +1774,99 @@ onMounted(() => {
     font-size: 18px;
     color: var(--text-muted);
     padding: 0 2px;
+}
+/* Box Opening Plan */
+.box-plan {
+    margin-bottom: 24px;
+    padding: 20px 24px;
+    background-color: var(--input-bg);
+    border-radius: 12px;
+    border: 1px solid var(--color-info);
+}
+
+.box-plan-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 6px 0;
+}
+
+.box-plan-summary {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 14px 0;
+}
+
+.box-plan-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box-step {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: var(--bg-subtle);
+    border-radius: 10px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+}
+
+.box-step-source,
+.box-step-gains,
+.box-gain {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.box-step-gains {
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 1;
+}
+
+.box-step-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.box-step-pick {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background-color: var(--color-info);
+    color: white;
+}
+
+.box-open-btn {
+    margin-left: auto;
+    padding: 6px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-info);
+    color: white;
+}
+
+.box-open-btn:hover {
+    filter: brightness(1.1);
+}
+
+.conv-badge.conv-box {
+    background-color: var(--color-info);
+    color: white;
+}
+
+/* Still short, but opening the planned boxes completes it */
+.material-card.box-resolvable {
+    border: 1px dashed var(--color-info);
 }
 </style>
 

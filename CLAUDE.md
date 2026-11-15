@@ -797,6 +797,39 @@ An empty array renders the empty-state hint — nothing breaks.
 
 ---
 
+## Boxes (items that open into materials)
+
+A box is an inventory item that turns into other materials when opened. Data comes from each
+sheet's `Boxes` tab → `src/games/{gameid}/data/boxes.json` (`scripts/lib/boxes.js`); every game
+ships a `{}` and exposes it as `getData('boxes')`.
+
+| Column | Notes |
+|--------|-------|
+| `box` | Materials label of the box (`box_id` optional fallback). The box must also be a Materials row — that is its inventory slot |
+| `type` | `fixed` (blank) = one box gives every row's item × qty · `select` = one box gives ONE row's item × qty, player's pick |
+| `item` | Materials label of what comes out (`item_id` fallback) |
+| `qty` | Per box opened |
+
+Output: `{ "<box game_id>": { game_id, type, contents: [{ game_id, qty }] } }`. Unresolvable rows,
+bad qty/type, or a box declared both fixed and select are logged and skipped — never guessed.
+
+**Unopened boxes are not owned materials.** Final Material Needs and goal completion are unchanged;
+the shortage stays a shortage. `planBoxOpening()` (`src/services/materialHelper/boxPlan.js`) says
+which boxes to open, and what to pick from `select` boxes, to cover it — boxes before farming:
+greedy rounds, each choosing the box/pick with the best shortage reduction per box opened, with a
+binary search for the fewest boxes that reach that reduction. Every evaluation runs the real
+calculator (`createShortageEvaluator`), so T1 contents count towards a T3 shortage via synthesis,
+and EXP contents count by `value`. The score is unit-free (each initially short material weighs 1).
+
+UI: a **Box Opening Plan** section above the dungeon selector, a `fa-box-open` badge on each card
+(`-n` covered / `✓` resolved, dashed border when resolved), a box row in ItemDialog, and an
+**Open** button per step that removes the boxes and adds what they give
+(`PlannerView.handleOpenBoxes` → `batchUpdateMaterials`). The plan is skipped entirely when no
+box is owned. Tested in `tests/services/boxPlan.test.js` (plan + sync transform);
+`data-integrity.test.js` checks every box id and content id exists in materials.json.
+
+---
+
 ## Cloud Sync (Google Drive)
 
 Optional, linked from Settings. Every synced `gameplanner_*` localStorage key is mirrored into one
