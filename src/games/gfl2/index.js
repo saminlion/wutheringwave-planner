@@ -8,6 +8,7 @@ import {
   materials,
   costs,
   events,
+  boxes,
   tieredMaterials,
   tieredMaterialsByGameId,
 } from './data/index.js';
@@ -35,6 +36,7 @@ const dataCache = {
   materials,
   costs,
   events,
+  boxes,
   tiers: tieredMaterials,
 };
 

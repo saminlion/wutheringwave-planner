@@ -63,7 +63,8 @@
       </div>
     </div>
 
-    <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :craftingActions="finalMaterialNeeds.craftingActions" @updateInventory="handleInventoryUpdate" />
+    <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :craftingActions="finalMaterialNeeds.craftingActions"
+      :boxPlan="boxPlan" @updateInventory="handleInventoryUpdate" @openBoxes="handleOpenBoxes" />
 
     <component
       :is="CharacterDialogComponent"
@@ -107,6 +108,7 @@ import { getCharacterField } from "@/services/characterHelper";
 import { setGradientStyle } from '@//services/utils';
 import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
+import { planBoxOpening, createShortageEvaluator } from "@/services/materialHelper/boxPlan";
 import FinalMaterialNeeds from "../components/planner/FinalMaterialNeeds.vue";
 import { getWeaponField } from "../services/weaponHelper";
 import WeaponDialog from "../components/weapon/WeaponDialog.vue";
@@ -518,6 +520,53 @@ const finalMaterialNeeds = computed(() => {
   return { materials: formattedResults, craftingActions, player_exp: playerExpResults, totalResin: 0, totalDays: 0 };
 
 });
+
+// Material needs of every visible goal, summed. Shared by the box plan below.
+const visibleGoalNeeds = computed(() => {
+  const totalNeeds = {};
+  checkGoals.value.forEach((goal) => {
+    if (!getRawData(goal)) return;
+    Object.entries(goal.materials || {}).forEach(([materialId, qty]) => {
+      totalNeeds[materialId] = (totalNeeds[materialId] || 0) + qty;
+    });
+  });
+  return totalNeeds;
+});
+
+// Boxes (boxes.json) the player owns are not counted as materials: the shortage stays
+// a shortage, and this plan says which boxes to open to cover it.
+const boxPlan = computed(() => {
+  const boxes = gameStore.getData('boxes') || {};
+  const hasOwnedBox = Object.values(boxes).some((box) => (inventory.value[box.game_id] || 0) > 0);
+  if (!hasOwnedBox) return { steps: [], before: {}, after: {}, covered: {}, resolved: [] };
+
+  const evaluate = createShortageEvaluator({
+    totalNeeds: visibleGoalNeeds.value,
+    tieredMaterials: tieredMaterials.value,
+    expCategories: expCategories.value,
+    calculate: calculateMaterials,
+    subCategoryOf: (id) => getMaterialFieldById(id, 'SubCategory') || getMaterialFieldById(id, 'Category'),
+  });
+  return planBoxOpening({ inventory: inventory.value, boxes, evaluate });
+});
+
+// "Open" on a plan step: the boxes leave the inventory, what they give arrives.
+const handleOpenBoxes = (step) => {
+  const owned = inventory.value[step.boxId] || 0;
+  if (!step || step.count <= 0 || owned < step.count) {
+    toast.error('Not enough boxes in inventory');
+    return;
+  }
+  inventoryStore.batchUpdateMaterials([
+    { materialId: step.boxId, quantity: step.count, operation: 'remove' },
+    ...Object.entries(step.gains).map(([materialId, quantity]) => ({ materialId, quantity, operation: 'add' })),
+  ]);
+  toast.success(`${tMaterial(step.boxId, getMaterialFieldById(step.boxId, 'label') || step.boxId)} ×${step.count} opened`, {
+    position: 'bottom-center',
+    autoClose: 2000,
+    theme: 'dark',
+  });
+};
 
 const openDialog = (goal) => {
   logger.debug("Open dialog for goal:", goal);

@@ -36,6 +36,10 @@
                                 <span class="label">Decompose ↑:</span>
                                 <span class="value decomp-in">+{{ formatNumber(item.decomposedGained) }}</span>
                             </div>
+                            <div class="detail-row" v-if="item.boxCovered > 0" :title="tUI('final.box_plan')">
+                                <span class="label"><i class="fas fa-box-open"></i> {{ tUI('dialog.box') }}:</span>
+                                <span class="value box-cover">-{{ formatNumber(item.boxCovered) }}</span>
+                            </div>
                             <div class="detail-row need-row">
                                 <span class="label">{{ tUI('dialog.need') }}:</span>
                                 <span class="value" :class="needClass(item)">
@@ -88,6 +92,10 @@
                                 <div class="tier-stat" v-if="supportsDecomposition && tierItem.decomposedGained > 0">
                                     <span class="stat-label">Dec ↑</span>
                                     <span class="stat-value decomp-in">+{{ formatNumber(tierItem.decomposedGained) }}</span>
+                                </div>
+                                <div class="tier-stat" v-if="tierItem.boxCovered > 0" :title="tUI('final.box_plan')">
+                                    <span class="stat-label"><i class="fas fa-box-open"></i></span>
+                                    <span class="stat-value box-cover">-{{ formatNumber(tierItem.boxCovered) }}</span>
                                 </div>
                                 <div class="tier-stat need-stat">
                                     <span class="stat-label">{{ tUI('dialog.need') }}</span>
@@ -747,4 +755,7 @@ watch(() => props.item, () => {
     filter: brightness(0.9);
 }
 
+.box-cover {
+    color: var(--color-info);
+}
 </style>

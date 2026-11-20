@@ -4,4 +4,5 @@ export { default as materials } from './materials.json';
 export { default as costs } from './costs.json';
 export { default as farmingRates } from './farmingRates.json';
 export { default as events } from './events.json';
+export { default as boxes } from './boxes.json';
 export { tieredMaterials, tieredMaterialsByGameId } from './tiers.js';
