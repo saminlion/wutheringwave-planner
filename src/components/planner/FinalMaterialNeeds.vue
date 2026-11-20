@@ -62,6 +62,29 @@
             </div>
         </div>
 
+        <!-- Substitutes: the game spends them on whatever is still short, so there is
+             nothing to press — this only says what they will cover. -->
+        <div class="box-plan substitute-plan" v-if="substituteUses.length > 0">
+            <h3 class="box-plan-title"><i class="fas fa-exchange-alt"></i> {{ tUI('final.substitute_plan') }}</h3>
+            <p class="box-plan-summary">{{ substitutePlanSummary }}</p>
+            <div class="box-plan-steps">
+                <div class="box-step" v-for="use in substituteUses" :key="use.substituteId + ':' + use.materialId">
+                    <div class="box-step-source" :title="materialName(use.substituteId)">
+                        <img v-if="getMaterialIcon(use.substituteId)" :src="getMaterialIcon(use.substituteId)" class="crafting-icon" />
+                        <span class="box-step-name">{{ materialName(use.substituteId) }}</span>
+                        <span class="crafting-qty">×{{ use.count }}</span>
+                    </div>
+                    <span class="crafting-arrow">→</span>
+                    <div class="box-step-gains">
+                        <span class="box-gain" :title="materialName(use.materialId)">
+                            <img v-if="getMaterialIcon(use.materialId)" :src="getMaterialIcon(use.materialId)" class="crafting-icon" />
+                            <span class="crafting-qty crafting-qty-result">×{{ use.covers.toLocaleString() }}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ダンジョンレベル選択器 (ゲームConfigで制御) -->
         <div v-if="showDungeonLevelSelector" class="dungeon-level-selector">
             <label for="dungeon-level">{{ tUI('final.dungeon_level') }}:</label>
@@ -168,7 +191,7 @@
                             <template v-if="isExpCategory(category.name)">
                                 <li
                                     class="material-card clickable"
-                                    :class="{ 'box-resolvable': isBoxResolved(category.name) }"
+                                    :class="{ 'box-resolvable': isCoverResolved(category.name) }"
                                     v-show="totalExpNeed(category) > 0"
                                     @click="openExpDialog(category, subCategory)"
                                 >
@@ -195,7 +218,7 @@
                                 <!-- common/forgery以外: クリックでダイアログ表示、Complete非表示 -->
                                 <li
                                     class="material-card clickable"
-                                    :class="{ 'box-resolvable': isBoxResolved(task.id) }"
+                                    :class="{ 'box-resolvable': isCoverResolved(task.id) }"
                                     v-for="task in sortedTasks(subCategory.task)"
                                     :key="task.id"
                                     v-show="!isTaskComplete(task)"
@@ -221,6 +244,9 @@
                                                 </span>
                                                 <span class="conv-badge conv-box" v-if="boxCoverOf(task.id) > 0" :title="boxBadgeTitle(task.id)">
                                                     <i class="fas fa-box-open"></i> {{ boxBadgeText(task.id) }}
+                                                </span>
+                                                <span class="conv-badge conv-sub" v-if="substituteCoverOf(task.id) > 0" :title="substituteBadgeTitle(task.id)">
+                                                    <i class="fas fa-exchange-alt"></i> {{ substituteBadgeText(task.id) }}
                                                 </span>
                                             </div>
                                         </div>
@@ -232,7 +258,7 @@
                             <template v-else>
                                 <li
                                     class="material-card clickable"
-                                    :class="{ 'box-resolvable': isBoxResolved(task.id) }"
+                                    :class="{ 'box-resolvable': isCoverResolved(task.id) }"
                                     v-for="task in sortedTasks(subCategory.task)"
                                     :key="task.id"
                                     v-show="!isTaskComplete(task)"
@@ -258,6 +284,9 @@
                                                 </span>
                                                 <span class="conv-badge conv-box" v-if="boxCoverOf(task.id) > 0" :title="boxBadgeTitle(task.id)">
                                                     <i class="fas fa-box-open"></i> {{ boxBadgeText(task.id) }}
+                                                </span>
+                                                <span class="conv-badge conv-sub" v-if="substituteCoverOf(task.id) > 0" :title="substituteBadgeTitle(task.id)">
+                                                    <i class="fas fa-exchange-alt"></i> {{ substituteBadgeText(task.id) }}
                                                 </span>
                                             </div>
                                         </div>
@@ -466,7 +495,7 @@ const calculateActualNeed = (task) => {
 const hasConversionInfo = (task) => {
     if (!task) return false;
     if (task.synthesize > 0) return true;
-    if (boxCoverOf(task.id) > 0) return true;
+    if (boxCoverOf(task.id) > 0 || substituteCoverOf(task.id) > 0) return true;
     if (supportsDecomposition.value && (task.decomposedConsumed > 0 || task.decomposedGained > 0)) return true;
     return false;
 };
@@ -557,6 +586,7 @@ const openItemDialog = (task, category, subCategoryId) => {
             actualNeed: calculateActualNeed(task),
             icon: getMaterialIcon(task.id),
             boxCovered: boxCoverOf(task.id),
+            substituteCovered: substituteCoverOf(task.id),
         };
         // 全ティアを表示
         selectedRelatedItems.value = lineupItems.map(t => ({
@@ -565,6 +595,7 @@ const openItemDialog = (task, category, subCategoryId) => {
             actualNeed: t.actualNeed ?? calculateActualNeed(t),
             icon: getMaterialIcon(t.id),
             boxCovered: boxCoverOf(t.id),
+            substituteCovered: substituteCoverOf(t.id),
         }));
     } else {
         // 独立アイテム: 単体で表示
@@ -574,6 +605,7 @@ const openItemDialog = (task, category, subCategoryId) => {
             actualNeed: calculateActualNeed(task),
             icon: getMaterialIcon(task.id),
             boxCovered: boxCoverOf(task.id),
+            substituteCovered: substituteCoverOf(task.id),
         };
         selectedRelatedItems.value = [];
     }
@@ -866,6 +898,11 @@ const props = defineProps({
         type: Object,
         default: () => ({ steps: [], before: {}, after: {}, covered: {}, resolved: [] }),
     },
+    // allocateSubstitutes() result — see src/services/materialHelper/substitutes.js
+    substitutePlan: {
+        type: Object,
+        default: () => ({ uses: [], used: {}, covered: {}, remaining: {}, resolved: [] }),
+    },
 });
 
 const boxSteps = computed(() => props.boxPlan?.steps || []);
@@ -878,6 +915,29 @@ const boxBadgeText = (id) => (isBoxResolved(id) ? '✓' : `-${boxCoverOf(id).toL
 const boxBadgeTitle = (id) => (isBoxResolved(id)
     ? tUI('final.box_resolves')
     : tUI('final.box_covers').replace('{n}', boxCoverOf(id).toLocaleString()));
+
+const substituteUses = computed(() => props.substitutePlan?.uses || []);
+const substituteResolvedSet = computed(() => new Set((props.substitutePlan?.resolved || []).map(String)));
+
+// How much of this material's shortage owned substitutes cover (after the box plan)
+const substituteCoverOf = (id) => props.substitutePlan?.covered?.[String(id)] || 0;
+const isSubstituteResolved = (id) => substituteResolvedSet.value.has(String(id));
+const substituteBadgeText = (id) => (isSubstituteResolved(id) ? '✓' : `-${substituteCoverOf(id).toLocaleString()}`);
+const substituteBadgeTitle = (id) => (isSubstituteResolved(id)
+    ? tUI('final.substitute_resolves')
+    : tUI('final.substitute_covers').replace('{n}', substituteCoverOf(id).toLocaleString()));
+
+// Dashed border: boxes and/or substitutes cover what is left of the shortage
+const isCoverResolved = (id) => isBoxResolved(id) || isSubstituteResolved(id);
+
+const substitutePlanSummary = computed(() => {
+    const resolved = props.substitutePlan?.resolved?.length || 0;
+    const remaining = Object.keys(props.substitutePlan?.remaining || {}).length;
+    const text = remaining === 0
+        ? tUI('final.substitute_summary_all')
+        : tUI('final.substitute_summary');
+    return text.replace('{resolved}', resolved).replace('{remaining}', remaining);
+});
 
 const materialName = (id) => {
     if (isExpCategory(id)) return translateCategoryName(id);
@@ -1864,7 +1924,12 @@ onMounted(() => {
     color: white;
 }
 
-/* Still short, but opening the planned boxes completes it */
+.conv-badge.conv-sub {
+    background-color: var(--color-success, #16a34a);
+    color: white;
+}
+
+/* Still short, but the planned boxes and/or owned substitutes complete it */
 .material-card.box-resolvable {
     border: 1px dashed var(--color-info);
 }

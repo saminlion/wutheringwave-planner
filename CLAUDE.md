@@ -806,9 +806,13 @@ ships a `{}` and exposes it as `getData('boxes')`.
 | Column | Notes |
 |--------|-------|
 | `box` | Materials label of the box (`box_id` optional fallback). The box must also be a Materials row — that is its inventory slot |
-| `type` | `fixed` (blank) = one box gives every row's item × qty · `select` = one box gives ONE row's item × qty, player's pick |
-| `item` | Materials label of what comes out (`item_id` fallback) |
-| `qty` | Per box opened |
+| `type` | `fixed` (blank) = one box gives every row's item × qty · `select` = one box gives ONE row's item × qty, player's pick · `substitute` = see below |
+| `item` | Materials label of what comes out (`item_id` fallback), or a group: `@forgery` = every material whose Category **or** SubCategory is `forgery`, `@forgery:T2` = only tier 2 |
+| `qty` | Per box opened (per substitute spent) |
+
+**No game has a `Boxes` tab yet, and none needs one.** Every game ships `boxes.json` as `{}`; a
+missing tab only logs `Error syncing Boxes` and leaves that file alone, like a missing `Events` tab.
+With nothing in it, the box plan and substitutes are skipped and the planner behaves as before.
 
 Output: `{ "<box game_id>": { game_id, type, contents: [{ game_id, qty }] } }`. Unresolvable rows,
 bad qty/type, or a box declared both fixed and select are logged and skipped — never guessed.
@@ -827,6 +831,29 @@ UI: a **Box Opening Plan** section above the dungeon selector, a `fa-box-open` b
 (`PlannerView.handleOpenBoxes` → `batchUpdateMaterials`). The plan is skipped entirely when no
 box is owned. Tested in `tests/services/boxPlan.test.js` (plan + sync transform);
 `data-integrity.test.js` checks every box id and content id exists in materials.json.
+
+### Substitutes (`type: substitute`)
+
+An item the game spends on an upgrade **in place of** a material the player is short of: owned
+materials are used first, the substitute fills only what is still missing, nothing is opened
+beforehand. Which materials it covers and at what ratio differ per game/item, so all of that is
+sheet data (`@group` rows + `qty`); the code is game-agnostic.
+
+Unlike boxes, **owned substitutes count towards completion** — the game really lets the upgrade
+through. `allocateSubstitutes()` (`src/services/materialHelper/substitutes.js`) covers a shortage
+map: narrow substitutes before broad ones, the most constrained/smallest shortages first. It is
+used in three places in `PlannerView`:
+- `goalSatisfactionStatus` — each goal's leftover shortage (after owned + synthesis) is covered from
+  the substitutes still unreserved, in goal priority order; the ones used are reserved.
+- `validateMaterialsWithSynthesis` (goal Complete + tab Complete) — leftover shortages covered by
+  substitutes are not shortages; `substitutesUsed` lists them in the confirm dialog and they are
+  deducted with the materials.
+- `substitutePlan` — what substitutes cover of the shortage left **after the box plan** (specific
+  boxes are spent before wildcards). The card's shortage number does **not** change; it gets a
+  `fa-exchange-alt` badge (`-n` / `✓`), ItemDialog a row, and a **Substitutes** section lists them.
+  No button: the game spends them itself.
+
+`planBoxOpening()` ignores substitutes. Tested in `tests/services/substitutes.test.js`.
 
 ---
 

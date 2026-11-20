@@ -107,7 +107,7 @@ describe.each(games)('%s data integrity', (gameId, game) => {
     const wrong = [];
     for (const [key, box] of Object.entries(game.getData('boxes') || {})) {
       if (!byId.has(String(box.game_id))) wrong.push(`box ${key}: ${box.game_id} not in materials.json`);
-      if (!['fixed', 'select'].includes(box.type)) wrong.push(`box ${key}: type "${box.type}"`);
+      if (!['fixed', 'select', 'substitute'].includes(box.type)) wrong.push(`box ${key}: type "${box.type}"`);
       for (const { game_id: id, qty } of box.contents || []) {
         if (!byId.has(String(id))) wrong.push(`box ${key}: content ${id} not in materials.json`);
         if (!(qty > 0)) wrong.push(`box ${key}: content ${id} qty ${qty}`);

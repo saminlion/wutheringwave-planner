@@ -86,8 +86,9 @@ export function planBoxOpening({ inventory, boxes, evaluate, maxRounds = 100 }) 
   const before = positiveOnly(evaluate(current));
   const empty = { steps: [], before, after: before, covered: {}, resolved: [] };
 
+  // Substitutes (substitutes.js) are spent by the game itself, never opened.
   const owned = Object.values(boxes || {}).filter(
-    (box) => box && Array.isArray(box.contents) && box.contents.length > 0
+    (box) => box && box.type !== 'substitute' && Array.isArray(box.contents) && box.contents.length > 0
       && ownedOf(current, box.game_id) > 0,
   );
   if (owned.length === 0 || Object.keys(before).length === 0) return empty;

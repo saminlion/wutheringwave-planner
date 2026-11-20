@@ -17,7 +17,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { reportMaterialIdChanges } from './lib/materialIdChanges.js';
-import { transformBoxes } from './lib/boxes.js';
+import { transformBoxes, materialGroupExpander } from './lib/boxes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -976,9 +976,12 @@ async function syncGame(gameId, config) {
     };
 
     let materialIdByLabel = null;
+    let expandMaterialGroup = () => [];
     if (config.tabs.materials) {
       try {
-        materialIdByLabel = buildMaterialLabelIndex(await fetchTabOnce(config.tabs.materials));
+        const materialRows = await fetchTabOnce(config.tabs.materials);
+        materialIdByLabel = buildMaterialLabelIndex(materialRows);
+        expandMaterialGroup = materialGroupExpander(transformMaterials(materialRows));
       } catch (error) {
         console.error(`  Could not index materials by name: ${error.message}`);
       }
@@ -1009,7 +1012,8 @@ async function syncGame(gameId, config) {
             break;
           case 'boxes':
             transformed = transformBoxes(rows, (row, nameColumn, idColumn, who, field) =>
-              pickMaterialId(row, nameColumn, idColumn, materialIdByLabel, who, field));
+              pickMaterialId(row, nameColumn, idColumn, materialIdByLabel, who, field),
+            console.log, expandMaterialGroup);
             break;
           default:
             console.log(`    Unknown data type: ${dataType}`);

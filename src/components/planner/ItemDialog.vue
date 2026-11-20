@@ -40,6 +40,10 @@
                                 <span class="label"><i class="fas fa-box-open"></i> {{ tUI('dialog.box') }}:</span>
                                 <span class="value box-cover">-{{ formatNumber(item.boxCovered) }}</span>
                             </div>
+                            <div class="detail-row" v-if="item.substituteCovered > 0" :title="tUI('final.substitute_plan')">
+                                <span class="label"><i class="fas fa-exchange-alt"></i> {{ tUI('dialog.substitute') }}:</span>
+                                <span class="value box-cover">-{{ formatNumber(item.substituteCovered) }}</span>
+                            </div>
                             <div class="detail-row need-row">
                                 <span class="label">{{ tUI('dialog.need') }}:</span>
                                 <span class="value" :class="needClass(item)">
@@ -96,6 +100,10 @@
                                 <div class="tier-stat" v-if="tierItem.boxCovered > 0" :title="tUI('final.box_plan')">
                                     <span class="stat-label"><i class="fas fa-box-open"></i></span>
                                     <span class="stat-value box-cover">-{{ formatNumber(tierItem.boxCovered) }}</span>
+                                </div>
+                                <div class="tier-stat" v-if="tierItem.substituteCovered > 0" :title="tUI('final.substitute_plan')">
+                                    <span class="stat-label"><i class="fas fa-exchange-alt"></i></span>
+                                    <span class="stat-value box-cover">-{{ formatNumber(tierItem.substituteCovered) }}</span>
                                 </div>
                                 <div class="tier-stat need-stat">
                                     <span class="stat-label">{{ tUI('dialog.need') }}</span>

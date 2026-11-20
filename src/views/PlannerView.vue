@@ -64,7 +64,7 @@
     </div>
 
     <FinalMaterialNeeds :materials="finalMaterialNeeds.materials" :craftingActions="finalMaterialNeeds.craftingActions"
-      :boxPlan="boxPlan" @updateInventory="handleInventoryUpdate" @openBoxes="handleOpenBoxes" />
+      :boxPlan="boxPlan" :substitutePlan="substitutePlan" @updateInventory="handleInventoryUpdate" @openBoxes="handleOpenBoxes" />
 
     <component
       :is="CharacterDialogComponent"
@@ -109,6 +109,7 @@ import { setGradientStyle } from '@//services/utils';
 import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import { planBoxOpening, createShortageEvaluator } from "@/services/materialHelper/boxPlan";
+import { getSubstitutes, ownsSubstitute, allocateSubstitutes } from "@/services/materialHelper/substitutes";
 import FinalMaterialNeeds from "../components/planner/FinalMaterialNeeds.vue";
 import { getWeaponField } from "../services/weaponHelper";
 import WeaponDialog from "../components/weapon/WeaponDialog.vue";
@@ -533,22 +534,45 @@ const visibleGoalNeeds = computed(() => {
   return totalNeeds;
 });
 
+// The shortage numbers Final Material Needs shows, for any hypothetical inventory.
+const shortageEvaluator = computed(() => createShortageEvaluator({
+  totalNeeds: visibleGoalNeeds.value,
+  tieredMaterials: tieredMaterials.value,
+  expCategories: expCategories.value,
+  calculate: calculateMaterials,
+  subCategoryOf: (id) => getMaterialFieldById(id, 'SubCategory') || getMaterialFieldById(id, 'Category'),
+}));
+
 // Boxes (boxes.json) the player owns are not counted as materials: the shortage stays
 // a shortage, and this plan says which boxes to open to cover it.
 const boxPlan = computed(() => {
-  const boxes = gameStore.getData('boxes') || {};
-  const hasOwnedBox = Object.values(boxes).some((box) => (inventory.value[box.game_id] || 0) > 0);
+  const boxes = Object.values(gameStore.getData('boxes') || {}).filter((box) => box?.type !== 'substitute');
+  const hasOwnedBox = boxes.some((box) => (inventory.value[box.game_id] || 0) > 0);
   if (!hasOwnedBox) return { steps: [], before: {}, after: {}, covered: {}, resolved: [] };
 
-  const evaluate = createShortageEvaluator({
-    totalNeeds: visibleGoalNeeds.value,
-    tieredMaterials: tieredMaterials.value,
-    expCategories: expCategories.value,
-    calculate: calculateMaterials,
-    subCategoryOf: (id) => getMaterialFieldById(id, 'SubCategory') || getMaterialFieldById(id, 'Category'),
-  });
-  return planBoxOpening({ inventory: inventory.value, boxes, evaluate });
+  return planBoxOpening({ inventory: inventory.value, boxes, evaluate: shortageEvaluator.value });
 });
+
+// Substitutes (boxes.json `type: 'substitute'`) are spent by the game on whatever is still
+// short, so they count towards completion — see services/materialHelper/substitutes.js.
+const substitutes = computed(() => getSubstitutes(gameStore.getData('boxes')));
+const EMPTY_SUBSTITUTE_PLAN = { uses: [], used: {}, covered: {}, remaining: {}, resolved: [] };
+
+// What the substitutes cover of the shortage left after the box plan (boxes are specific,
+// so they are spent before anything that stands in for many materials).
+const substitutePlan = computed(() => {
+  if (!ownsSubstitute(substitutes.value, inventory.value)) return EMPTY_SUBSTITUTE_PLAN;
+  const shortages = boxPlan.value.steps.length > 0
+    ? boxPlan.value.after
+    : shortageEvaluator.value(inventory.value);
+  return allocateSubstitutes(shortages, substitutes.value, inventory.value);
+});
+
+const substituteName = (id) => tMaterial(id, getMaterialFieldById(id, 'label') || String(id));
+
+// Confirm-dialog lines for the substitutes a completion spends.
+const substituteLines = (uses) => uses.map((use) =>
+  `\n• ${substituteName(use.substituteId)} ×${use.count} → ${substituteName(use.materialId)} ×${use.covers}`).join('');
 
 // "Open" on a plan step: the boxes leave the inventory, what they give arrives.
 const handleOpenBoxes = (step) => {
@@ -607,6 +631,7 @@ const goalSatisfactionStatus = computed(() => {
 
     const key = `${goal.type}_${goal.id}`;
     const tieredShortages = {};
+    const shortages = {}; // material id → still missing (substitutes may cover these)
     let satisfied = true;
 
     for (const [matId, qty] of Object.entries(goal.materials)) {
@@ -621,14 +646,15 @@ const goalSatisfactionStatus = computed(() => {
       if (subcat in tieredMaterials.value) {
         tieredShortages[matId] = qty;
       } else {
-        if ((remaining[matId] || 0) < qty) satisfied = false;
+        const owned = remaining[matId] || 0;
+        if (owned < qty) shortages[matId] = qty - owned;
       }
     }
 
     if (Object.keys(tieredShortages).length > 0) {
       const result = calculateMaterials({ ...remaining }, tieredMaterials.value, tieredShortages);
-      if (!Object.values(result.final_needs).every(v => v <= 0)) {
-        satisfied = false;
+      for (const [matId, qty] of Object.entries(result.final_needs)) {
+        if (qty > 0) shortages[matId] = (shortages[matId] || 0) + qty;
       }
       remaining = { ...result.final_inventory };
       for (const [matId, qty] of Object.entries(tieredShortages)) {
@@ -655,6 +681,15 @@ const goalSatisfactionStatus = computed(() => {
       const subcat = getMaterialFieldById(matId, 'SubCategory') || getMaterialFieldById(matId, 'Category') || '';
       if (!(subcat in tieredMaterials.value)) {
         remaining[matId] = Math.max(0, (remaining[matId] || 0) - qty);
+      }
+    }
+
+    // What is still short, the game fills from substitutes; this goal reserves them.
+    if (Object.keys(shortages).length > 0) {
+      const covered = allocateSubstitutes(shortages, substitutes.value, remaining);
+      if (Object.keys(covered.remaining).length > 0) satisfied = false;
+      for (const [subId, count] of Object.entries(covered.used)) {
+        remaining[subId] = Math.max(0, (remaining[subId] || 0) - count);
       }
     }
 
@@ -887,12 +922,21 @@ const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tie
     }
   }
 
-  const canComplete = shortages.length === 0;
+  // The game fills what is still missing from substitutes.
+  const covered = allocateSubstitutes(
+    Object.fromEntries(shortages.map((s) => [String(s.materialId), s.needed])),
+    substitutes.value,
+    currentInventory,
+  );
+  const leftShortages = shortages
+    .filter((s) => covered.remaining[String(s.materialId)] > 0)
+    .map((s) => ({ ...s, needed: covered.remaining[String(s.materialId)] }));
 
   return {
-    canComplete,
-    shortages,
+    canComplete: leftShortages.length === 0,
+    shortages: leftShortages,
     synthesisNeeded,
+    substitutesUsed: covered.uses,
   };
 };
 
@@ -974,6 +1018,10 @@ const completeGoal = async (id, type) => {
       validation.synthesisNeeded.forEach(syn => {
         confirmMessage += `\n• ${syn.materialName} (from lower tier materials)`;
       });
+    }
+
+    if (validation.substitutesUsed.length > 0) {
+      confirmMessage += '\n\nSubstitutes will be spent:' + substituteLines(validation.substitutesUsed);
     }
 
     confirmMessage += '\n- Hide this goal from planner\n\nContinue?';
@@ -1104,10 +1152,14 @@ const completeGoal = async (id, type) => {
         return;
       }
 
-      // Normal materials
+      // Normal materials (what is not owned is covered by substitutes, removed below)
       materialsToRemove.push({ materialId, quantity });
       logger.debug(`Queued deduction: ${quantity} of ${materialId}`);
     });
+
+    for (const { substituteId, count } of validation.substitutesUsed) {
+      materialsToRemove.push({ materialId: substituteId, quantity: count });
+    }
 
     // Show success message immediately (before expensive I/O operations)
     toast.success(`Goal completed for ${entityName}!`, {
@@ -1194,6 +1246,9 @@ const handleCompleteTab = async ({ tabType, materials, settingsUpdate }) => {
       confirmMessage += `\n• ${syn.materialName} (from lower tier)`;
     });
   }
+  if (validation.substitutesUsed.length > 0) {
+    confirmMessage += '\n\nSubstitutes will be spent:' + substituteLines(validation.substitutesUsed);
+  }
   confirmMessage += '\n\nThis will deduct materials from inventory.';
 
   if (!(await confirmDialog(confirmMessage))) return;
@@ -1221,6 +1276,9 @@ const handleCompleteTab = async ({ tabType, materials, settingsUpdate }) => {
       materialsToRemove.push({ materialId, quantity });
     }
   });
+  for (const { substituteId, count } of validation.substitutesUsed) {
+    materialsToRemove.push({ materialId: substituteId, quantity: count });
+  }
 
   const tabLabel = tabType === 'level' ? 'Level' : 'Skills';
   toast.success(`${tabLabel} completed for ${entityName}!`, {
