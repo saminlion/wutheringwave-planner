@@ -17,6 +17,7 @@
     "common.loading": "로딩 중...",
     "common.selected": "선택됨",
     "common.all": "전체",
+    "common.maxAllHint": "모든 목표값을 최대로",
     "home.welcome": "플래너에 오신 것을 환영합니다",
     "home.selectGame": "게임 선택",
     "home.currentGame": "현재 게임",

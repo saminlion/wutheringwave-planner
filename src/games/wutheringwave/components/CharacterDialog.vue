@@ -6,6 +6,7 @@
                 <img :src="character?.icon || ''" :alt="character?.display_name" class="character-avatar" />
                 <span class="character-name">{{ tCharacter(character?.game_id, character?.display_name) || 'Unknown' }}</span>
                 <div class="header-spacer"></div>
+                <MaxButton @click="setAllMax" />
                 <button class="close-btn" @click="closeDialog">✕</button>
             </div>
 
@@ -86,7 +87,7 @@
                                 :value="getActiveValue(skill, 'current')"
                                 @change="onActiveSkillChange(skill, 'current', Number($event.target.value))"
                             >
-                                <option v-for="lvl in 10" :key="lvl" :value="lvl">{{ lvl }}</option>
+                                <option v-for="lvl in MAX_ACTIVE_LEVEL" :key="lvl" :value="lvl">{{ lvl }}</option>
                             </select>
                             <span class="skill-arrow">→</span>
                             <select
@@ -94,7 +95,7 @@
                                 :value="getActiveValue(skill, 'target')"
                                 @change="onActiveSkillChange(skill, 'target', Number($event.target.value))"
                             >
-                                <option v-for="lvl in 10" :key="lvl" :value="lvl">{{ lvl }}</option>
+                                <option v-for="lvl in MAX_ACTIVE_LEVEL" :key="lvl" :value="lvl">{{ lvl }}</option>
                             </select>
                         </div>
                     </div>
@@ -156,6 +157,7 @@ import { ref, computed, watch } from 'vue';
 import { useLocale } from '@/composables/useLocale';
 import { calculateLevelMaterials, calculateSkillMaterials, calculatePassiveMaterials } from '@/services/materialHelper/character';
 import { getMaterialFieldById } from '@/services/materialHelper/dbUtils';
+import MaxButton from '@/components/common/MaxButton.vue';
 
 const { tUI, tCharacter, tMaterial } = useLocale();
 
@@ -312,6 +314,30 @@ const onActiveSkillChange = (skill, type, value) => {
             props.settings.activeSkills[currentKey] = value;
         }
     }
+
+    updateCharacter();
+};
+
+/** Highest active skill level offered by the skill selects. */
+const MAX_ACTIVE_LEVEL = 10;
+
+/**
+ * MAX: every target (level, active skills, passives) → the highest value its select offers,
+ * across both tabs. Current values are left alone.
+ */
+const setAllMax = () => {
+    if (!props.settings) return;
+    const items = props.levelItems || [];
+    if (items.length) props.settings.targetLevel = items[items.length - 1].value;
+
+    (props.activeSkills || []).forEach((skill) => {
+        getActiveValue(skill, 'current'); // initialises the pair when the tab was never opened
+        props.settings.activeSkills[`${skill.model_value}_target_level`] = MAX_ACTIVE_LEVEL;
+    });
+    (props.passiveSkills || []).forEach((skill) => {
+        getPassiveValue(skill, 'current');
+        props.settings.passiveSkills[`${skill.model_value}_target_level`] = skill.max ?? 2;
+    });
 
     updateCharacter();
 };

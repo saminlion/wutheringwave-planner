@@ -17,6 +17,7 @@
     "common.loading": "Loading...",
     "common.selected": "Selected",
     "common.all": "All",
+    "common.maxAllHint": "Set every target to the highest value",
     "home.welcome": "Welcome to the Planner",
     "home.selectGame": "Select Game",
     "home.currentGame": "Current Game",

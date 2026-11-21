@@ -5,6 +5,7 @@
                 <img :src="weapon?.icon || ''" :alt="tWeapon(weapon?.game_id, weapon?.display_name) || 'Unknown'" class="weapon-avatar" />
                 <span class="weapon-name">{{ tWeapon(weapon?.game_id, weapon?.display_name) || 'Unknown' }}</span>
                 <div class="header-spacer"></div>
+                <MaxButton @click="setAllMax" />
                 <button class="close-btn" @click="closeDialog">✕</button>
             </div>
 
@@ -65,6 +66,7 @@ import { useLocale } from '@/composables/useLocale';
 import { calculateWeaponMaterials } from '@/services/materialHelper/weapon';
 import { getMaterialFieldById } from '@/services/materialHelper/dbUtils';
 import { useGameStore } from '@/store/game';
+import MaxButton from '@/components/common/MaxButton.vue';
 
 const { tUI, tWeapon } = useLocale();
 const gameStore = useGameStore();
@@ -122,6 +124,14 @@ const onLevelChange = (type, value) => {
     if (currentIdx > targetIdx) {
         props.settings[type === 'current' ? 'targetLevel' : 'currentLevel'] = value;
     }
+    emit('updateweapon');
+};
+
+/** MAX: target → the highest selectable level; current is left alone. */
+const setAllMax = () => {
+    const items = props.levelItems || [];
+    if (!props.settings || !items.length) return;
+    props.settings.targetLevel = items[items.length - 1].value;
     emit('updateweapon');
 };
 

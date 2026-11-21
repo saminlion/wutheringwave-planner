@@ -52,6 +52,13 @@ src/games/{gameid}/
 **CharacterDialog.vue 선택:**
 - Pattern 1 (Simple) → `src/games/wutheringwave/components/CharacterDialog.vue` 기반
 - Pattern 2 (Complex) → `src/games/endfield/components/CharacterDialog.vue` 기반
+- ✅ **MAX 버튼 필수** — 헤더의 `header-spacer` 뒤·닫기 버튼 앞에 `<MaxButton @click="setAllMax" />`
+  (`@/components/common/MaxButton.vue`). `setAllMax()`는 **모든 탭의 목표값**(레벨·스킬·패시브·특성 등
+  다이얼로그가 편집하는 전부)을 그 `<select>`/체크박스가 고를 수 있는 최고값으로 바꾸고, 현재값은 건드리지 않는다.
+  최고값은 템플릿 옵션과 **같은 출처**에서 가져온다(`levelItems` 마지막 값, 스킬 min/max, 이름 붙은 상수 —
+  `v-for="lvl in 10"` 같은 리터럴이면 상수로 빼서 양쪽에 쓴다). 안 열어 본 탭도 되도록 기존 getter로 키를
+  초기화한 뒤 쓰고, 마지막에 `updateCharacter()` 한 번. 예시: `src/games/wutheringwave/components/CharacterDialog.vue`.
+  `tests/games/max-button.test.js`가 모든 게임 다이얼로그에 이 버튼이 있는지 검사한다.
 
 **config.js 생성 기준:**
 - README Section 1~8 데이터 사용

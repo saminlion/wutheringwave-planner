@@ -966,6 +966,13 @@ env:
    - Pattern 1 (Simple) → Copy from `src/games/wutheringwave/components/CharacterDialog.vue`
    - Pattern 2 (Complex) → Copy from `src/games/endfield/components/CharacterDialog.vue`
 
+   **✅ MAX button (required)**:
+   Keep `<MaxButton @click="setAllMax" />` in the header (after `header-spacer`, before the close
+   button) and rewrite `setAllMax()` for the new game's fields: every target on every tab → the
+   highest value its select/checkbox offers, currents untouched, derived from the same source as the
+   template options (never a made-up number), then `updateCharacter()` once.
+   `tests/games/max-button.test.js` fails if a game's CharacterDialog lacks it. See CLAUDE.md Step 7.
+
    **✅ Complete button compatibility**:
    Both patterns are automatically supported by the `completeGoal` function in PlannerView.vue.
    No additional code changes needed when using these patterns.

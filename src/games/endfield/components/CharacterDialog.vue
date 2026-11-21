@@ -7,6 +7,7 @@
                 <img :src="character?.icon || ''" class="character-avatar" />
                 <span class="character-name">{{ tCharacter(character?.game_id, character?.display_name) || 'Unknown' }}</span>
                 <div class="header-spacer"></div>
+                <MaxButton @click="setAllMax" />
                 <button class="close-btn" @click="closeDialog">X</button>
             </div>
 
@@ -232,6 +233,7 @@ import { useLocale } from '@/composables/useLocale';
 import { useGameStore } from '@/store/game';
 import { calculateLevelMaterials, calculateSkillMaterials } from '@/services/materialHelper/character';
 import { getMaterialFieldById } from '@/services/materialHelper/dbUtils';
+import MaxButton from '@/components/common/MaxButton.vue';
 
 const { tUI, tCharacter, tMaterial } = useLocale();
 const gameStore = useGameStore();
@@ -267,6 +269,35 @@ const emit = defineEmits(['close', 'updateCharacter', 'completeTab']);
 
 const closeDialog = () => emit('close');
 const updateCharacter = () => emit('updateCharacter');
+
+// Every target -> the last option its select offers; currents are left alone. The getters run first
+// because they initialise a skill's entry when its tab was never opened.
+const setAllMax = () => {
+    if (!props.settings) return;
+    const items = props.levelItems || [];
+    if (items.length) props.settings.targetLevel = items[items.length - 1].value;
+
+    characterSkills.value.forEach((skill) => {
+        getSkillValue(skill, 'current');
+        const skillData = props.settings.skills[skill.model_value];
+        skillData.target_level = skill.maxLevel;
+        skillData.target_mastery = skill.maxMasteryLevel;
+    });
+    characterSpecial.value.forEach((skill) => {
+        getSpecialValue(skill, 'current');
+        props.settings.special[skill.model_value].target_level = skill.maxLevel;
+    });
+    characterBaseSkill.value.forEach((skill) => {
+        getBaseSkillValue(skill, 'current');
+        props.settings.baseSkill[skill.model_value].target_level = skill.maxLevel;
+    });
+    if (!props.settings.attributes) props.settings.attributes = {};
+    characterAttributes.value.forEach((attr) => {
+        props.settings.attributes[attr.model_value] = true;
+    });
+
+    updateCharacter();
+};
 
 const completeLevel = () => {
     emit('completeTab', {

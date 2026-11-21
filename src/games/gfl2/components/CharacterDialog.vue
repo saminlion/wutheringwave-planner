@@ -7,6 +7,7 @@
                 <img :src="character?.icon || ''" class="character-avatar" />
                 <span class="character-name">{{ tCharacter(character?.game_id, character?.display_name) || 'Unknown' }}</span>
                 <div class="header-spacer"></div>
+                <MaxButton @click="setAllMax" />
                 <button class="close-btn" @click="closeDialog">X</button>
             </div>
 
@@ -153,6 +154,7 @@ import { useLocale } from '@/composables/useLocale';
 import { useGameStore } from '@/store/game';
 import { calculateLevelMaterials, calculatePassiveMaterials } from '@/services/materialHelper/character';
 import { getMaterialFieldById } from '@/services/materialHelper/dbUtils';
+import MaxButton from '@/components/common/MaxButton.vue';
 
 const { tCharacter } = useLocale();
 const gameStore = useGameStore();
@@ -182,6 +184,27 @@ const emit = defineEmits(['close', 'updateCharacter', 'completeTab']);
 
 const closeDialog = () => emit('close');
 const updateCharacter = () => emit('updateCharacter');
+
+// Every target to its highest selectable value, across both tabs. Current values are untouched.
+const setAllMax = () => {
+    if (!props.settings) return;
+    const items = props.levelItems || [];
+    if (items.length) props.settings.targetLevel = items[items.length - 1].value;
+
+    characterSpecial.value.forEach((passive) => {
+        getPassiveChecked(passive); // initialises the pair when the Skills tab was never opened
+        props.settings.special[passive.model_value].target_level = PASSIVE_CHECKED_LEVEL;
+    });
+
+    if (hasBonusStats.value) {
+        if (!props.settings.attributes) props.settings.attributes = {};
+        characterAttributes.value.forEach((attr) => {
+            props.settings.attributes[attr.model_value] = true;
+        });
+    }
+
+    updateCharacter();
+};
 
 const completeLevel = () => {
     emit('completeTab', {
@@ -256,6 +279,8 @@ const updateLevel = (type, value) => {
 };
 
 // Passive helpers (special: { passive_1: { current_level: 0, target_level: 0|1 } })
+const PASSIVE_CHECKED_LEVEL = 1;
+
 const getPassiveChecked = (passive) => {
     if (!props.settings.special) props.settings.special = {};
     if (!props.settings.special[passive.model_value]) {
@@ -269,7 +294,7 @@ const togglePassive = (passive, checked) => {
     if (!props.settings.special[passive.model_value]) {
         props.settings.special[passive.model_value] = { current_level: 0, target_level: 0 };
     }
-    props.settings.special[passive.model_value].target_level = checked ? 1 : 0;
+    props.settings.special[passive.model_value].target_level = checked ? PASSIVE_CHECKED_LEVEL : 0;
     updateCharacter();
 };
 

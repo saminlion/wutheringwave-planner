@@ -361,6 +361,21 @@ Copy from existing game and modify:
 Required props: `visible`, `character`, `settings`, `levelItems`
 Required emits: `close`, `updateCharacter`
 
+**Required: a MAX button.** Every growth dialog (each game's CharacterDialog and the shared
+`WeaponDialog`) has `<MaxButton @click="setAllMax" />` (`src/components/common/MaxButton.vue`) in its
+header, after `header-spacer` and before the close button. `setAllMax()` sets **every target on every
+tab** — level, skills, passives, attributes, whatever the dialog edits — to the highest value its
+select/checkbox offers, and leaves current values alone. Rules:
+- Take the max from the same source as the template's options: last `levelItems` entry, the skill's
+  `min`/`max`, the value a checkbox writes. If the template has a literal range (`v-for="lvl in 10"`),
+  lift it into a named const used by both.
+- Initialise missing keys through the dialog's existing getters first, so a tab never opened still
+  gets its targets; write keys in the format the change handlers use; emit the update once at the end.
+- Reference: `src/games/wutheringwave/components/CharacterDialog.vue` (simple), endfield (complex).
+
+`tests/games/max-button.test.js` fails for any game in `src/games/index.js` whose CharacterDialog
+lacks it; `tests/components/max-button.test.js` checks the WW and weapon behaviour.
+
 ### Step 8: Add Tests
 
 Create `tests/games/newgame-materialProcessor.test.js`:

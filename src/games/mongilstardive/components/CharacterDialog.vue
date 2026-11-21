@@ -5,6 +5,7 @@
                 <img :src="character?.icon || ''" :alt="character?.display_name" class="character-avatar" />
                 <span class="character-name">{{ tCharacter(character?.game_id, character?.display_name) || 'Unknown' }}</span>
                 <div class="header-spacer"></div>
+                <MaxButton @click="setAllMax" />
                 <button class="close-btn" @click="closeDialog">✕</button>
             </div>
 
@@ -120,6 +121,7 @@ import { ref, computed } from 'vue';
 import { useLocale } from '@/composables/useLocale';
 import { calculateLevelMaterials, calculateSkillMaterials } from '@/services/materialHelper/character';
 import { getMaterialFieldById } from '@/services/materialHelper/dbUtils';
+import MaxButton from '@/components/common/MaxButton.vue';
 
 const { tCharacter, tMaterial } = useLocale();
 
@@ -198,6 +200,19 @@ const onActiveSkillChange = (skill, type, value) => {
         props.settings.activeSkills[tk] = value;
         if (value < props.settings.activeSkills[ck]) props.settings.activeSkills[ck] = value;
     }
+    updateCharacter();
+};
+
+const setAllMax = () => {
+    if (!props.settings) return;
+    const items = props.levelItems || [];
+    if (items.length) props.settings.targetLevel = items[items.length - 1].value;
+
+    (props.activeSkills || []).forEach((skill) => {
+        getActiveValue(skill, 'current'); // initialises the pair when the tab was never opened
+        props.settings.activeSkills[`${skill.model_value}_target_level`] = skillMaxLevel;
+    });
+
     updateCharacter();
 };
 
