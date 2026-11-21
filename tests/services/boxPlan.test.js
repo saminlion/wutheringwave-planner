@@ -116,7 +116,7 @@ describe('sync: Boxes tab', () => {
     ];
     expect(transformBoxes(rows, resolve, () => {})).toEqual({
       900: { game_id: 900, type: 'fixed', contents: [{ game_id: 1, qty: 5 }, { game_id: 2, qty: 5 }] },
-      901: { game_id: 901, type: 'select', contents: [{ game_id: 3, qty: 1 }] },
+      901: { game_id: 901, type: 'select', picks: 1, contents: [{ game_id: 3, qty: 1 }] },
     });
   });
 

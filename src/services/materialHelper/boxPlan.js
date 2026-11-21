@@ -4,6 +4,7 @@
  * A box (boxes.json) is an owned item that turns into other materials when opened:
  *   - `fixed`  — one box gives every `contents` entry × qty
  *   - `select` — one box gives ONE `contents` entry × qty, the player's pick
+ *                (`picks` times per box; planned as the same entry every pick)
  *
  * Unopened boxes are NOT counted as owned materials: the planner keeps showing the real
  * shortage, and this plan says how many boxes to open (and what to pick) to cover it.
@@ -105,8 +106,13 @@ export function planBoxOpening({ inventory, boxes, evaluate, maxRounds = 100 }) 
       const remaining = ownedOf(current, boxId);
       if (remaining <= 0) continue;
 
+      // A select box with `picks` > 1 is planned as the same choice taken every pick.
+      const pickCount = box.type === 'select' && Number.isInteger(box.picks) && box.picks > 1 ? box.picks : 1;
       const picks = box.type === 'select'
-        ? box.contents.map((entry) => ({ choice: String(entry.game_id), entries: [entry] }))
+        ? box.contents.map((entry) => ({
+          choice: String(entry.game_id),
+          entries: [{ game_id: entry.game_id, qty: entry.qty * pickCount }],
+        }))
         : [{ choice: null, entries: box.contents }];
 
       for (const { choice, entries } of picks) {

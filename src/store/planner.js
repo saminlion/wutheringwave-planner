@@ -269,6 +269,31 @@ export const usePlannerStore = defineStore('planner', {
       this.materialsCache[weaponId] = result;
       return result;
     },
+    /**
+     * The same materials as calculateAllMaterials, split by upgrade part
+     * (`character.level` / `character.skill` / `character.passive` / `weapon.level`).
+     * Substitutes may be limited to some parts (services/materialHelper/substitutes.js).
+     */
+    // Pure: called from computeds, so it must not touch materialsCache.
+    calculateMaterialParts(id, type) {
+      if (type === 'weapon') {
+        const settings = this.weaponSettings[id];
+        const weaponInfo = Object.values(getGameData('weapons')).find((w) => String(w.game_id) === String(id));
+        const rarity = getWeaponField(id, 'rarity');
+        if (!settings || !weaponInfo || !rarity) return {};
+        return { 'weapon.level': calculateWeaponMaterials(settings, weaponInfo, rarity) || {} };
+      }
+      const settings = this.characterSettings[id];
+      const characterInfo = Object.values(getGameData('characters')).find(
+        (char) => String(char.game_id) === String(id),
+      );
+      if (!settings || !characterInfo) return {};
+      return {
+        'character.level': calculateLevelMaterials(settings, characterInfo) || {},
+        'character.skill': calculateSkillMaterials(settings, characterInfo) || {},
+        'character.passive': calculatePassiveMaterials(settings, characterInfo) || {},
+      };
+    },
     calculateAllMaterials(id, type) {
       if (type == "character") {
         return this.calculateCharacterMaterials(id);

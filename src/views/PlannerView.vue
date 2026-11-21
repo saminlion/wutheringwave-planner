@@ -109,7 +109,7 @@ import { setGradientStyle } from '@//services/utils';
 import { useDebounceFn } from '@vueuse/core'
 import { toast } from 'vue3-toastify';
 import { planBoxOpening, createShortageEvaluator } from "@/services/materialHelper/boxPlan";
-import { getSubstitutes, ownsSubstitute, allocateSubstitutes } from "@/services/materialHelper/substitutes";
+import { getSubstitutes, ownsSubstitute, allocateSubstitutes, partNeedsOf } from "@/services/materialHelper/substitutes";
 import FinalMaterialNeeds from "../components/planner/FinalMaterialNeeds.vue";
 import { getWeaponField } from "../services/weaponHelper";
 import WeaponDialog from "../components/weapon/WeaponDialog.vue";
@@ -557,15 +557,23 @@ const boxPlan = computed(() => {
 // short, so they count towards completion — see services/materialHelper/substitutes.js.
 const substitutes = computed(() => getSubstitutes(gameStore.getData('boxes')));
 const EMPTY_SUBSTITUTE_PLAN = { uses: [], used: {}, covered: {}, remaining: {}, resolved: [] };
+const hasOwnedSubstitute = computed(() => ownsSubstitute(substitutes.value, inventory.value));
+
+// A goal's materials split by upgrade part, for substitutes limited to some parts.
+// Only computed while a substitute is owned.
+const goalParts = (goal) => (hasOwnedSubstitute.value
+  ? plannerStore.calculateMaterialParts(goal.id, goal.type)
+  : {});
 
 // What the substitutes cover of the shortage left after the box plan (boxes are specific,
 // so they are spent before anything that stands in for many materials).
 const substitutePlan = computed(() => {
-  if (!ownsSubstitute(substitutes.value, inventory.value)) return EMPTY_SUBSTITUTE_PLAN;
+  if (!hasOwnedSubstitute.value) return EMPTY_SUBSTITUTE_PLAN;
   const shortages = boxPlan.value.steps.length > 0
     ? boxPlan.value.after
     : shortageEvaluator.value(inventory.value);
-  return allocateSubstitutes(shortages, substitutes.value, inventory.value);
+  const partNeeds = partNeedsOf(...checkGoals.value.filter((goal) => getRawData(goal)).map(goalParts));
+  return allocateSubstitutes(shortages, substitutes.value, inventory.value, partNeeds);
 });
 
 const substituteName = (id) => tMaterial(id, getMaterialFieldById(id, 'label') || String(id));
@@ -686,7 +694,7 @@ const goalSatisfactionStatus = computed(() => {
 
     // What is still short, the game fills from substitutes; this goal reserves them.
     if (Object.keys(shortages).length > 0) {
-      const covered = allocateSubstitutes(shortages, substitutes.value, remaining);
+      const covered = allocateSubstitutes(shortages, substitutes.value, remaining, partNeedsOf(goalParts(goal)));
       if (Object.keys(covered.remaining).length > 0) satisfied = false;
       for (const [subId, count] of Object.entries(covered.used)) {
         remaining[subId] = Math.max(0, (remaining[subId] || 0) - count);
@@ -800,7 +808,7 @@ const updateweapon = () => {
  * Validate if materials can be satisfied with current inventory and synthesis.
  * Returns validation result with shortages and synthesis plan.
  */
-const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tieredMaterialsData) => {
+const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tieredMaterialsData, partNeeds = {}) => {
   const inventoryCopy = { ...currentInventory };
   const synthesisNeeded = [];
   const shortages = [];
@@ -927,6 +935,7 @@ const validateMaterialsWithSynthesis = (requiredMaterials, currentInventory, tie
     Object.fromEntries(shortages.map((s) => [String(s.materialId), s.needed])),
     substitutes.value,
     currentInventory,
+    partNeeds,
   );
   const leftShortages = shortages
     .filter((s) => covered.remaining[String(s.materialId)] > 0)
@@ -992,7 +1001,8 @@ const completeGoal = async (id, type) => {
     const validation = validateMaterialsWithSynthesis(
       goal.materials || {},
       inventory.value,
-      tieredMaterials.value
+      tieredMaterials.value,
+      partNeedsOf(goalParts(goal)),
     );
 
     if (!validation.canComplete) {
@@ -1203,6 +1213,19 @@ const completeGoal = async (id, type) => {
   }
 };
 
+// Part breakdown of one dialog tab: `level` is the level part; `skills` is every other part
+// of the saved settings, or `<type>.skill` as a whole when those don't add up to the tab.
+const tabPartNeeds = (type, tabType, materials, id) => {
+  if (!hasOwnedSubstitute.value) return {};
+  if (tabType === 'level') return partNeedsOf({ [`${type}.level`]: materials });
+  const parts = { ...plannerStore.calculateMaterialParts(id, type) };
+  delete parts[`${type}.level`];
+  const split = partNeedsOf(parts);
+  const matches = Object.entries(materials).every(([mid, qty]) =>
+    Object.values(split[String(mid)] || {}).reduce((sum, n) => sum + n, 0) === qty);
+  return matches ? split : partNeedsOf({ [`${type}.skill`]: materials });
+};
+
 // Complete a single tab (level or skills) from within the dialog
 const handleCompleteTab = async ({ tabType, materials, settingsUpdate }) => {
   const type = dialogType.value;
@@ -1226,7 +1249,9 @@ const handleCompleteTab = async ({ tabType, materials, settingsUpdate }) => {
     return;
   }
 
-  const validation = validateMaterialsWithSynthesis(filteredMaterials, inventory.value, tieredMaterials.value);
+  const validation = validateMaterialsWithSynthesis(
+    filteredMaterials, inventory.value, tieredMaterials.value, tabPartNeeds(type, tabType, filteredMaterials, id),
+  );
 
   if (!validation.canComplete) {
     const shortageDetails = validation.shortages

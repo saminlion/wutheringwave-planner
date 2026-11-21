@@ -44,6 +44,7 @@
     "settings.games.description": "Choose which games appear in the game tabs. Hidden games keep all their data.",
     "settings.games.lastOne": "At least one game must stay visible.",
     "category.credit": "Credit",
+    "category.box": "Boxes & Substitutes",
     "category.common": "Common Materials",
     "category.forgery": "Forgery Materials",
     "category.ascension": "Ascension Materials",
