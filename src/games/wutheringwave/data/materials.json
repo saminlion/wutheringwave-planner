@@ -16,7 +16,8 @@
       "Category": "common",
       "SubCategory": "whisperin_core",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "mid_frequency_whisperin_core": {
       "game_id": 4110010002,
@@ -24,7 +25,8 @@
       "Category": "common",
       "SubCategory": "whisperin_core",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "high_frequency_whisperin_core": {
       "game_id": 4110010003,
@@ -32,7 +34,8 @@
       "Category": "common",
       "SubCategory": "whisperin_core",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "full_frequency_whisperin_core": {
       "game_id": 4110010004,
@@ -40,7 +43,8 @@
       "Category": "common",
       "SubCategory": "whisperin_core",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_002_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "low_frequency_howler_core": {
       "game_id": 4110020001,
@@ -48,7 +52,8 @@
       "Category": "common",
       "SubCategory": "howler_core",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "mid_frequency_howler_core": {
       "game_id": 4110020002,
@@ -56,7 +61,8 @@
       "Category": "common",
       "SubCategory": "howler_core",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "high_frequency_howler_core": {
       "game_id": 4110020003,
@@ -64,7 +70,8 @@
       "Category": "common",
       "SubCategory": "howler_core",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "full_frequency_howler_core": {
       "game_id": 4110020004,
@@ -72,7 +79,8 @@
       "Category": "common",
       "SubCategory": "howler_core",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_E_002_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "crude_ring": {
       "game_id": 4110030001,
@@ -80,7 +88,8 @@
       "Category": "common",
       "SubCategory": "ring",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "basic_ring": {
       "game_id": 4110030002,
@@ -88,7 +97,8 @@
       "Category": "common",
       "SubCategory": "ring",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "improved_ring": {
       "game_id": 4110030003,
@@ -96,7 +106,8 @@
       "Category": "common",
       "SubCategory": "ring",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "tailored_ring": {
       "game_id": 4110030004,
@@ -104,7 +115,8 @@
       "Category": "common",
       "SubCategory": "ring",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_003_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "mask_of_constraint": {
       "game_id": 4110040001,
@@ -112,7 +124,8 @@
       "Category": "common",
       "SubCategory": "mask",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_001_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "mask_of_erosion": {
       "game_id": 4110040002,
@@ -120,7 +133,8 @@
       "Category": "common",
       "SubCategory": "mask",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_002_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "mask_of_distortion": {
       "game_id": 4110040003,
@@ -128,7 +142,8 @@
       "Category": "common",
       "SubCategory": "mask",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_003_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "mask_of_insanity": {
       "game_id": 4110040004,
@@ -136,7 +151,8 @@
       "Category": "common",
       "SubCategory": "mask",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_004_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "low_frequency_polygon_core": {
       "game_id": 4110050001,
@@ -144,7 +160,8 @@
       "Category": "common",
       "SubCategory": "polygon",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "mid_frequency_polygon_core": {
       "game_id": 4110050002,
@@ -152,7 +169,8 @@
       "Category": "common",
       "SubCategory": "polygon",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "high_frequency_polygon_core": {
       "game_id": 4110050003,
@@ -160,7 +178,8 @@
       "Category": "common",
       "SubCategory": "polygon",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "full_frequency_polygon_core": {
       "game_id": 4110050004,
@@ -168,7 +187,8 @@
       "Category": "common",
       "SubCategory": "polygon",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_004_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "low_frequency_tidal_residuum": {
       "game_id": 4110060001,
@@ -176,7 +196,8 @@
       "Category": "common",
       "SubCategory": "residuum",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "mid_frequency_tidal_residuum": {
       "game_id": 4110060002,
@@ -184,7 +205,8 @@
       "Category": "common",
       "SubCategory": "residuum",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "high_frequency_tidal_residuum": {
       "game_id": 4110060003,
@@ -192,7 +214,8 @@
       "Category": "common",
       "SubCategory": "residuum",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "full_frequency_tidal_residuum": {
       "game_id": 4110060004,
@@ -200,7 +223,8 @@
       "Category": "common",
       "SubCategory": "residuum",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_005_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "low_frequency_exowarm_core": {
       "game_id": 4110070001,
@@ -208,7 +232,8 @@
       "Category": "common",
       "SubCategory": "exoswarm",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_021_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "mid_frequency_exowarm_core": {
       "game_id": 4110070002,
@@ -216,7 +241,8 @@
       "Category": "common",
       "SubCategory": "exoswarm",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_022_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "high_frequency_exowarm_core": {
       "game_id": 4110070003,
@@ -224,7 +250,8 @@
       "Category": "common",
       "SubCategory": "exoswarm",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_023_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "full_frequency_exowarm_core": {
       "game_id": 4110070004,
@@ -232,7 +259,8 @@
       "Category": "common",
       "SubCategory": "exoswarm",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_024_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "low_frequency_mech_core": {
       "game_id": 4110080001,
@@ -240,7 +268,8 @@
       "Category": "common",
       "SubCategory": "mech",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_025_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "mid_frequency_mech_core": {
       "game_id": 4110080002,
@@ -248,7 +277,8 @@
       "Category": "common",
       "SubCategory": "mech",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_026_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "high_frequency_mech_core": {
       "game_id": 4110080003,
@@ -256,7 +286,8 @@
       "Category": "common",
       "SubCategory": "mech",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_027_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "full_frequency_mech_core": {
       "game_id": 4110080004,
@@ -264,7 +295,8 @@
       "Category": "common",
       "SubCategory": "mech",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWup/T_IconWup_028_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "fractured_exoswarm_pendant": {
       "game_id": 4110090001,
@@ -272,7 +304,8 @@
       "Category": "common",
       "SubCategory": "pendant",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "worn_exoswarm_pendant": {
       "game_id": 4110090002,
@@ -280,7 +313,8 @@
       "Category": "common",
       "SubCategory": "pendant",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "chipped_exoswarm_pendant": {
       "game_id": 4110090003,
@@ -288,7 +322,8 @@
       "Category": "common",
       "SubCategory": "pendant",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "intact_exoswarm_pendant": {
       "game_id": 4110090004,
@@ -296,7 +331,8 @@
       "Category": "common",
       "SubCategory": "pendant",
       "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconMout/T_IconMout_O_007_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "low_frequency_autopuppet_kernel": {
       "game_id": 4110100001,
@@ -304,7 +340,8 @@
       "Category": "common",
       "SubCategory": "autopuppet",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "3"
     },
     "mid_frequency_autopuppet_kernel": {
       "game_id": 4110100002,
@@ -312,7 +349,8 @@
       "Category": "common",
       "SubCategory": "autopuppet",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "3"
     },
     "high_frequency_autopuppet_kernel": {
       "game_id": 4110100003,
@@ -320,7 +358,8 @@
       "Category": "common",
       "SubCategory": "autopuppet",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "3"
     },
     "full_frequency_autopuppet_kernel": {
       "game_id": 4110100004,
@@ -328,7 +367,8 @@
       "Category": "common",
       "SubCategory": "autopuppet",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_013_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "3"
     }
   },
   "forgery": {
@@ -338,7 +378,8 @@
       "Category": "forgery",
       "SubCategory": "metallic_drip",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "reactive_metallic_drip": {
       "game_id": 4120010002,
@@ -346,7 +387,8 @@
       "Category": "forgery",
       "SubCategory": "metallic_drip",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "polarized_metallic_drip": {
       "game_id": 4120010003,
@@ -354,7 +396,8 @@
       "Category": "forgery",
       "SubCategory": "metallic_drip",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "heterized_metallic_drip": {
       "game_id": 4120010004,
@@ -362,7 +405,8 @@
       "Category": "forgery",
       "SubCategory": "metallic_drip",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_Setpup_004_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "impure_phlogiston": {
       "game_id": 4120020001,
@@ -370,7 +414,8 @@
       "Category": "forgery",
       "SubCategory": "phlogiston",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_01_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "extracted_phlogiston": {
       "game_id": 4120020002,
@@ -378,7 +423,8 @@
       "Category": "forgery",
       "SubCategory": "phlogiston",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_02_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "refined_phlogiston": {
       "game_id": 4120020003,
@@ -386,7 +432,8 @@
       "Category": "forgery",
       "SubCategory": "phlogiston",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_03_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "flawless_phlogiston": {
       "game_id": 4120020004,
@@ -394,7 +441,8 @@
       "Category": "forgery",
       "SubCategory": "phlogiston",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_04_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "lento_helix": {
       "game_id": 4120030001,
@@ -402,7 +450,8 @@
       "Category": "forgery",
       "SubCategory": "helix",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_005_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "adagio_helix": {
       "game_id": 4120030002,
@@ -410,7 +459,8 @@
       "Category": "forgery",
       "SubCategory": "helix",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_006_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "andante_helix": {
       "game_id": 4120030003,
@@ -418,7 +468,8 @@
       "Category": "forgery",
       "SubCategory": "helix",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_007_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "presto_helix": {
       "game_id": 4120030004,
@@ -426,7 +477,8 @@
       "Category": "forgery",
       "SubCategory": "helix",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_008_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "waveworn_residue_210": {
       "game_id": 4120040001,
@@ -434,7 +486,8 @@
       "Category": "forgery",
       "SubCategory": "residue",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_009_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "waveworn_residue_226": {
       "game_id": 4120040002,
@@ -442,7 +495,8 @@
       "Category": "forgery",
       "SubCategory": "residue",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_010_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "waveworn_residue_235": {
       "game_id": 4120040003,
@@ -450,7 +504,8 @@
       "Category": "forgery",
       "SubCategory": "residue",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_011_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "waveworn_residue_239": {
       "game_id": 4120040004,
@@ -458,7 +513,8 @@
       "Category": "forgery",
       "SubCategory": "residue",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_012_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "cadence_seed": {
       "game_id": 4120050001,
@@ -466,7 +522,8 @@
       "Category": "forgery",
       "SubCategory": "cadence",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_013_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "1"
     },
     "cadence_bud": {
       "game_id": 4120050002,
@@ -474,7 +531,8 @@
       "Category": "forgery",
       "SubCategory": "cadence",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_014_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "1"
     },
     "cadence_leaf": {
       "game_id": 4120050003,
@@ -482,7 +540,8 @@
       "Category": "forgery",
       "SubCategory": "cadence",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_015_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "1"
     },
     "cadence_blossom": {
       "game_id": 4120050004,
@@ -490,7 +549,8 @@
       "Category": "forgery",
       "SubCategory": "cadence",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWup/T_IconWup_016_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "1"
     },
     "broken_wing_polarizer": {
       "game_id": 4120060001,
@@ -498,7 +558,8 @@
       "Category": "forgery",
       "SubCategory": "polarizer",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "mono_wing_polarizer": {
       "game_id": 4120060002,
@@ -506,7 +567,8 @@
       "Category": "forgery",
       "SubCategory": "polarizer",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "poly_wing_polarizer": {
       "game_id": 4120060003,
@@ -514,7 +576,8 @@
       "Category": "forgery",
       "SubCategory": "polarizer",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "layered_wing_polarizer": {
       "game_id": 4120060004,
@@ -522,7 +585,8 @@
       "Category": "forgery",
       "SubCategory": "polarizer",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_010_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "incomplete_combustor": {
       "game_id": 4120070001,
@@ -530,7 +594,8 @@
       "Category": "forgery",
       "SubCategory": "combustor",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "aftertune_combustor": {
       "game_id": 4120070002,
@@ -538,7 +603,8 @@
       "Category": "forgery",
       "SubCategory": "combustor",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "remnant_combustor": {
       "game_id": 4120070003,
@@ -546,7 +612,8 @@
       "Category": "forgery",
       "SubCategory": "combustor",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "reverb_combustor": {
       "game_id": 4120070004,
@@ -554,7 +621,8 @@
       "Category": "forgery",
       "SubCategory": "combustor",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_009_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "spliced_string": {
       "game_id": 4120080001,
@@ -562,7 +630,8 @@
       "Category": "forgery",
       "SubCategory": "string",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "broken_string": {
       "game_id": 4120080002,
@@ -570,7 +639,8 @@
       "Category": "forgery",
       "SubCategory": "string",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "solidified_string": {
       "game_id": 4120080003,
@@ -578,7 +648,8 @@
       "Category": "forgery",
       "SubCategory": "string",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "melodic_string": {
       "game_id": 4120080004,
@@ -586,7 +657,8 @@
       "Category": "forgery",
       "SubCategory": "string",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_012_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "low_frequency_carved_crystal": {
       "game_id": 4120090001,
@@ -594,7 +666,8 @@
       "Category": "forgery",
       "SubCategory": "crystal",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "mid_frequency_carved_crystal": {
       "game_id": 4120090002,
@@ -602,7 +675,8 @@
       "Category": "forgery",
       "SubCategory": "crystal",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "high_frequency_carved_crystal": {
       "game_id": 4120090003,
@@ -610,7 +684,8 @@
       "Category": "forgery",
       "SubCategory": "crystal",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "full_frequency_carved_crystal": {
       "game_id": 4120090004,
@@ -618,7 +693,8 @@
       "Category": "forgery",
       "SubCategory": "crystal",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_011_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     },
     "low_frequency_waveworn_shard": {
       "game_id": 4120100001,
@@ -626,7 +702,8 @@
       "Category": "forgery",
       "SubCategory": "shard",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_1_UI.webp",
-      "tier": 2
+      "tier": 2,
+      "version": "2"
     },
     "mid_frequency_waveworn_shard": {
       "game_id": 4120100002,
@@ -634,7 +711,8 @@
       "Category": "forgery",
       "SubCategory": "shard",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_2_UI.webp",
-      "tier": 3
+      "tier": 3,
+      "version": "2"
     },
     "high_frequency_waveworn_shard": {
       "game_id": 4120100003,
@@ -642,7 +720,8 @@
       "Category": "forgery",
       "SubCategory": "shard",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_3_UI.webp",
-      "tier": 4
+      "tier": 4,
+      "version": "2"
     },
     "full_frequency_waveworn_shard": {
       "game_id": 4120100004,
@@ -650,7 +729,8 @@
       "Category": "forgery",
       "SubCategory": "shard",
       "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconMout/T_IconMout_O_008_4_UI.webp",
-      "tier": 5
+      "tier": 5,
+      "version": "2"
     }
   },
   "boss": {

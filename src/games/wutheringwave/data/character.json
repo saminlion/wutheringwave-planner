@@ -8,9 +8,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_7_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip",
-    "ascension": 4130010007,
-    "boss": 4140010008,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "baizhi": {
     "game_id": 4240100002,
@@ -21,9 +21,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_6_UI.webp",
     "common": "howler_core",
     "forgery": "helix",
-    "ascension": 4130010003,
-    "boss": 4140010008,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "lingyang": {
     "game_id": 4250100003,
@@ -34,9 +34,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_14_UI.webp",
     "common": "whisperin_core",
     "forgery": "cadence",
-    "ascension": 4130010006,
-    "boss": 4140010008,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "zhezhi": {
     "game_id": 4250100004,
@@ -47,9 +47,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_27_UI.webp",
     "common": "howler_core",
     "forgery": "helix",
-    "ascension": 4130010003,
-    "boss": 4140010008,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "youhu": {
     "game_id": 4240100005,
@@ -60,9 +60,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_31_UI.webp",
     "common": "ring",
     "forgery": "cadence",
-    "ascension": 4130010008,
-    "boss": 4140010011,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "carlotta": {
     "game_id": 4250100006,
@@ -73,9 +73,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_32_UI.webp",
     "common": "polygon",
     "forgery": "phlogiston",
-    "ascension": 4130010013,
-    "boss": 4140020013,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "chixia": {
     "game_id": 4240200007,
@@ -86,9 +86,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_2_UI.webp",
     "common": "whisperin_core",
     "forgery": "phlogiston",
-    "ascension": 4130010005,
-    "boss": 4140010005,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "encore": {
     "game_id": 4250200008,
@@ -99,9 +99,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_anke_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix",
-    "ascension": 4130010004,
-    "boss": 4140010005,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "mortefi": {
     "game_id": 4240200009,
@@ -112,9 +112,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_13_UI.webp",
     "common": "whisperin_core",
     "forgery": "phlogiston",
-    "ascension": 4130010006,
-    "boss": 4140010005,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "changli": {
     "game_id": 4250200010,
@@ -125,9 +125,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_26_UI.webp",
     "common": "ring",
     "forgery": "metallic_drip",
-    "ascension": 4130010009,
-    "boss": 4140010005,
-    "weeklyBoss": 4150010004
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "calcharo": {
     "game_id": 4250400011,
@@ -138,9 +138,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_kakaluo_UI.webp",
     "common": "ring",
     "forgery": "residue",
-    "ascension": 4130010001,
-    "boss": 4140010003,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "yinlin": {
     "game_id": 4250400012,
@@ -151,9 +151,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_17_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix",
-    "ascension": 4130010006,
-    "boss": 4140010009,
-    "weeklyBoss": 4150010003
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "yuanwu": {
     "game_id": 4240400013,
@@ -164,9 +164,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_15_UI.webp",
     "common": "ring",
     "forgery": "cadence",
-    "ascension": 4130010002,
-    "boss": 4140010010,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "jinshi": {
     "game_id": 4250600014,
@@ -177,9 +177,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jinxi_UI.webp",
     "common": "howler_core",
     "forgery": "residue",
-    "ascension": 4130010010,
-    "boss": 4140010004,
-    "weeklyBoss": 4150010004
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "xiangli_yao": {
     "game_id": 4250400015,
@@ -190,9 +190,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_25_UI.webp",
     "common": "whisperin_core",
     "forgery": "cadence",
-    "ascension": 4130010008,
-    "boss": 4140010010,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "yangyang": {
     "game_id": 4240300016,
@@ -203,9 +203,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_yangyang_UI.webp",
     "common": "ring",
     "forgery": "metallic_drip",
-    "ascension": 4130010007,
-    "boss": 4140010006,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "aalto": {
     "game_id": 4240300017,
@@ -216,9 +216,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_12_UI.webp",
     "common": "howler_core",
     "forgery": "phlogiston",
-    "ascension": 4130010007,
-    "boss": 4140010006,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "jiyan": {
     "game_id": 4250300018,
@@ -229,9 +229,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_11_UI.webp",
     "common": "howler_core",
     "forgery": "residue",
-    "ascension": 4130010004,
-    "boss": 4140010006,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "jianxin": {
     "game_id": 4250300019,
@@ -242,9 +242,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_23_UI.webp",
     "common": "whisperin_core",
     "forgery": "cadence",
-    "ascension": 4130010003,
-    "boss": 4140010006,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "rover_spectro": {
     "game_id": 4250600020,
@@ -255,9 +255,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip",
-    "ascension": 4130010004,
-    "boss": 4140010001,
-    "weeklyBoss": 4150010002
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "rover_havoc": {
     "game_id": 4250500021,
@@ -268,9 +268,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip",
-    "ascension": 4130010004,
-    "boss": 4140010001,
-    "weeklyBoss": 4150010003
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "rover_aero": {
     "game_id": 4250300022,
@@ -281,9 +281,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip",
-    "ascension": 4130010004,
-    "boss": 4140010001,
-    "weeklyBoss": 4150020006
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "verina": {
     "game_id": 4250600023,
@@ -294,9 +294,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_3_UI.webp",
     "common": "howler_core",
     "forgery": "helix",
-    "ascension": 4130010005,
-    "boss": 4140010004,
-    "weeklyBoss": 4150010001
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "shorekeeper": {
     "game_id": 4250600024,
@@ -307,9 +307,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_28_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix",
-    "ascension": 4130010011,
-    "boss": 4140010011,
-    "weeklyBoss": 4150010004
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "taoqi": {
     "game_id": 4240500025,
@@ -320,9 +320,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_9_UI.webp",
     "common": "howler_core",
     "forgery": "residue",
-    "ascension": 4130010001,
-    "boss": 4140010007,
-    "weeklyBoss": 4150010003
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "danjin": {
     "game_id": 4240500026,
@@ -333,9 +333,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_10_UI.webp",
     "common": "ring",
     "forgery": "metallic_drip",
-    "ascension": 4130010005,
-    "boss": 4140010002,
-    "weeklyBoss": 4150010003
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "camellya": {
     "game_id": 4250500027,
@@ -346,9 +346,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_chun_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip",
-    "ascension": 4130010011,
-    "boss": 4140010011,
-    "weeklyBoss": 4150010003
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "lumi": {
     "game_id": 4240500028,
@@ -359,9 +359,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_30_UI.webp",
     "common": "howler_core",
     "forgery": "residue",
-    "ascension": 4130010002,
-    "boss": 4140010003,
-    "weeklyBoss": 4150010004
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "roccia": {
     "game_id": 4250500029,
@@ -372,9 +372,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luokeke_UI.webp",
     "common": "residuum",
     "forgery": "cadence",
-    "ascension": 4130010014,
-    "boss": 4140020012,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "phoebe": {
     "game_id": 4250600030,
@@ -385,9 +385,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_45_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix",
-    "ascension": 4130010014,
-    "boss": 4140020012,
-    "weeklyBoss": 4150010004
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "brant": {
     "game_id": 4250200031,
@@ -398,9 +398,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_44_UI.webp",
     "common": "residuum",
     "forgery": "metallic_drip",
-    "ascension": 4130010012,
-    "boss": 4140020014,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "cantarella": {
     "game_id": 4250500032,
@@ -411,9 +411,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_34_UI.webp",
     "common": "polygon",
     "forgery": "helix",
-    "ascension": 4130010015,
-    "boss": 4140020012,
-    "weeklyBoss": 4150020006
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "zani": {
     "game_id": 4250600033,
@@ -424,9 +424,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zanni_UI.webp",
     "common": "polygon",
     "forgery": "cadence",
-    "ascension": 4130010013,
-    "boss": 4140020013,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "ciaccona": {
     "game_id": 4250300034,
@@ -437,9 +437,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_37_UI.webp",
     "common": "residuum",
     "forgery": "phlogiston",
-    "ascension": 4130010012,
-    "boss": 4140020014,
-    "weeklyBoss": 4150020006
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "lupa": {
     "game_id": 4250200035,
@@ -450,9 +450,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_lupa_UI.webp",
     "common": "howler_core",
     "forgery": "residue",
-    "ascension": 4130010017,
-    "boss": 4140020015,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "cartethyia": {
     "game_id": 4250300036,
@@ -463,9 +463,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_katixiya_UI.webp",
     "common": "residuum",
     "forgery": "metallic_drip",
-    "ascension": 4130010016,
-    "boss": 4140020015,
-    "weeklyBoss": 4150020006
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "phrolova": {
     "game_id": 4250500037,
@@ -476,9 +476,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_41_UI.webp",
     "common": "polygon",
     "forgery": "helix",
-    "ascension": 4130010018,
-    "boss": 4140020016,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "augusta": {
     "game_id": 4250400038,
@@ -489,9 +489,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_51_UI.webp",
     "common": "residuum",
     "forgery": "residue",
-    "ascension": 4130010021,
-    "boss": 4140020017,
-    "weeklyBoss": 4150020006
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "iuno": {
     "game_id": 4250300039,
@@ -502,9 +502,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_younuo_UI.webp",
     "common": "polygon",
     "forgery": "cadence",
-    "ascension": 4130010020,
-    "boss": 4140020018,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "galbrena": {
     "game_id": 4250200040,
@@ -515,9 +515,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_55_UI.webp",
     "common": "residuum",
     "forgery": "phlogiston",
-    "ascension": 4130010019,
-    "boss": 4140020017,
-    "weeklyBoss": 4150020007
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "qiuyuan": {
     "game_id": 4250300041,
@@ -528,9 +528,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qiuyuan_UI.webp",
     "common": "whisperin_core",
     "forgery": "metallic_drip",
-    "ascension": 4130010007,
-    "boss": 4140020016,
-    "weeklyBoss": 4150020007
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "chisa": {
     "game_id": 4250500042,
@@ -541,9 +541,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Qianxiao_UI.webp",
     "common": "polygon",
     "forgery": "residue",
-    "ascension": 4130010022,
-    "boss": 4140020018,
-    "weeklyBoss": 4150020006
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "buling": {
     "game_id": 4240400043,
@@ -554,9 +554,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_Buling_UI.webp",
     "common": "whisperin_core",
     "forgery": "helix",
-    "ascension": 4130010004,
-    "boss": 4140020017,
-    "weeklyBoss": 4150020007
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "lynae": {
     "game_id": 4250600044,
@@ -567,9 +567,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_60_UI.webp",
     "common": "exoswarm",
     "forgery": "combustor",
-    "ascension": 4130010024,
-    "boss": 4140030019,
-    "weeklyBoss": 4150010003
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "mornye": {
     "game_id": 4250200045,
@@ -580,9 +580,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_61_UI.webp",
     "common": "mech",
     "forgery": "crystal",
-    "ascension": 4130010023,
-    "boss": 4140030020,
-    "weeklyBoss": 4150020005
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "aemeath": {
     "game_id": 4250200046,
@@ -593,9 +593,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_53_UI.webp",
     "common": "exoswarm",
     "forgery": "polarizer",
-    "ascension": 4130010026,
-    "boss": 4140030021,
-    "weeklyBoss": 4150030008
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "luuk": {
     "game_id": 4250600047,
@@ -606,9 +606,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_54_UI.webp",
     "common": "pendant",
     "forgery": "shard",
-    "ascension": 4130010027,
-    "boss": 4140030019,
-    "weeklyBoss": 4150030008
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "sigrika": {
     "game_id": 4250300048,
@@ -619,9 +619,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_xigelika_UI.webp",
     "common": "pendant",
     "forgery": "shard",
-    "ascension": 4130010025,
-    "boss": 4140030021,
-    "weeklyBoss": 4150030008
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "hiyuki": {
     "game_id": 4250100049,
@@ -632,9 +632,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_67_UI.webp",
     "common": "exoswarm",
     "forgery": "polarizer",
-    "ascension": 4130010029,
-    "boss": 4140030021,
-    "weeklyBoss": 4150030009
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "denia": {
     "game_id": 4250200050,
@@ -645,9 +645,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_daniya_UI.webp",
     "common": "mech",
     "forgery": "string",
-    "ascension": 4130010028,
-    "boss": 4140030020,
-    "weeklyBoss": 4150030009
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "lucy": {
     "game_id": 4250600051,
@@ -658,9 +658,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_68_UI.webp",
     "common": "exoswarm",
     "forgery": "combustor",
-    "ascension": 4130010031,
-    "boss": 4140030022,
-    "weeklyBoss": 4150030008
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "rebecca": {
     "game_id": 4250400052,
@@ -671,9 +671,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_69_UI.webp",
     "common": "mech",
     "forgery": "combustor",
-    "ascension": 4130010031,
-    "boss": 4140030022,
-    "weeklyBoss": 4150030009
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "lucilla": {
     "game_id": 4250100053,
@@ -684,9 +684,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_luosela_UI.webp",
     "common": "mech",
     "forgery": "string",
-    "ascension": 4130010030,
-    "boss": 4140030019,
-    "weeklyBoss": 4150030009
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "yangyang_xuanling": {
     "game_id": 4250500054,
@@ -697,9 +697,9 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_XuanLing_UI.webp",
     "common": "autopuppet",
     "forgery": "polarizer",
-    "ascension": 4130010032,
-    "boss": 4140030023,
-    "weeklyBoss": 4150030010
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "suisui": {
     "game_id": 4250100055,
@@ -710,9 +710,9 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_SuiSui_UI.webp",
     "common": "autopuppet",
     "forgery": "string",
-    "ascension": 4130010033,
-    "boss": 4140030023,
-    "weeklyBoss": 4150030010
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "rover_electro": {
     "game_id": 4250400056,
@@ -723,9 +723,9 @@
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_zhujuenan_UI.webp",
     "common": "whisperin_core",
     "forgery": "polarizer",
-    "ascension": 4130010004,
-    "boss": 4140010001,
-    "weeklyBoss": 4150030009
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "qingxiao": {
     "game_id": 4250300057,
@@ -736,9 +736,9 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_qingxiao_UI.webp",
     "common": "autopuppet",
     "forgery": "polarizer",
-    "ascension": 4130010034,
-    "boss": 4140030024,
-    "weeklyBoss": 4150030009
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "jingran": {
     "game_id": 4250200058,
@@ -749,9 +749,9 @@
     "icon": "https://api.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconRolePile/T_IconRole_Pile_jingran_UI.webp",
     "common": "whisperin_core",
     "forgery": "crystal",
-    "ascension": 4130010032,
-    "boss": 4140030024,
-    "weeklyBoss": 4150030010
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "hsin": {
     "game_id": 4250400059,
@@ -762,9 +762,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_75_UI.webp",
     "common": "autopuppet",
     "forgery": "string",
-    "ascension": 4130010035,
-    "boss": 4140030023,
-    "weeklyBoss": 4150030011
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "suoming": {
     "game_id": 4250400060,
@@ -775,9 +775,9 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_76_UI.webp",
     "common": "howler_core",
     "forgery": "polarizer",
-    "ascension": 4130010036,
-    "boss": 4140030024,
-    "weeklyBoss": 4150030011
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   },
   "lily": {
     "game_id": 4250600061,
@@ -788,8 +788,8 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconRoleHead256/T_IconRoleHead256_77_UI.webp",
     "common": "exoswarm",
     "forgery": "combustor",
-    "ascension": 4130010037,
-    "boss": 4140030019,
-    "weeklyBoss": 4150030008
+    "ascension": 30,
+    "boss": 40,
+    "weeklyBoss": 50
   }
 }
