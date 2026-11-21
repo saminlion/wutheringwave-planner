@@ -35,7 +35,6 @@
     "inventory.title": "Inventory",
     "inventory.quantity": "Quantity",
     "inventory.version": "Ver. {version}",
-    "inventory.versionBase": "Base",
     "inventory.expandAll": "Expand all",
     "inventory.collapseAll": "Collapse all",
     "settings.cloud_sync": "Cloud Sync",

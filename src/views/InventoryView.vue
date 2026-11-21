@@ -173,14 +173,13 @@ onMounted(() => {
 const versionGroups = computed(() => groupMaterialsByVersion(materials.value));
 
 /** No material has a version yet (sheet column empty) → the page looks exactly as before. */
-const hasVersions = computed(() => versionGroups.value.some((g) => g.version !== NO_VERSION));
+const hasVersions = computed(() => versionGroups.value[0]?.version !== NO_VERSION);
 
-const versionLabel = (version) =>
-  version === NO_VERSION ? tUI('inventory.versionBase') : tUI('inventory.version').replace('{version}', version);
+const versionLabel = (version) => tUI('inventory.version').replace('{version}', version);
 
 /* Fold state per game: { [gameId]: { [version]: open } }. A view preference like
    timeline_prefs, so it is a device key and not cloud-synced. A version the user never
-   toggled follows isOpenByDefault (base + newest open), so a new patch shows up open. */
+   toggled follows isOpenByDefault (only the newest is open), so a new patch shows up open. */
 const FOLD_KEY = 'inventory_groups';
 const foldState = ref(loadFromStorage(FOLD_KEY, null) || {});
 

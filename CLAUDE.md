@@ -418,11 +418,13 @@ A failure there is usually a sheet problem; report it rather than working around
 - Actions: `addMaterial()`, `removeMaterial()`, `saveInventory()`, `loadInventory()`, `hydrate()`
 - `InventoryView` folds materials by **version**: the Materials tab's optional `Version` column
   (`Verison` typo accepted) syncs to `material.version`, a display-only field. Groups come from
-  `groupMaterialsByVersion()` (`src/services/inventoryGroups.js`): unversioned ("Base") first, then
-  newest first, numeric per segment (`2.10` > `2.9`). Untouched groups follow `isOpenByDefault`
-  (Base + newest open); toggles live in `gameplanner_inventory_groups` (`{ gameId: { version: open } }`,
-  a `DEVICE_KEYS` entry — not synced). Folded groups use `v-if`, so Tab skips them. With no version
-  in the data the page renders as before, without headers. Tested in `tests/services/inventoryGroups.test.js`.
+  `groupMaterialsByVersion()` (`src/services/inventoryGroups.js`): one group per version, newest
+  first, numeric per segment (`2.10` > `2.9`). **Shared materials — blank cell or `통합`/`공통`/`all`/`common`
+  — are repeated in every version group** (credits must be visible whichever version is open); each
+  copy edits the same stock. Untouched groups follow `isOpenByDefault` (only the newest open); toggles
+  live in `gameplanner_inventory_groups` (`{ gameId: { version: open } }`, a `DEVICE_KEYS` entry — not
+  synced). Folded groups use `v-if`, so Tab skips them. With no version in the data the page renders
+  as before, without headers. Tested in `tests/services/inventoryGroups.test.js`.
 
 ### game.js
 - `registeredGames{}` - All registered game plugins

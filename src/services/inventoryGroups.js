@@ -3,47 +3,61 @@
  * `Version` column → materials.json `version`), so the inventory page can fold each
  * version on its own.
  *
- * Returned order: materials without a version first (the base set — currency, EXP,
- * launch materials are usually left blank), then versions newest first, compared
- * numerically per dot segment so "2.10" sorts after "2.9".
+ * Shared materials — a blank Version cell, or one marked 통합 / all — belong to every
+ * version (credits, EXP, …), so they are repeated inside each version group rather than
+ * parked in a group of their own. Each copy edits the same stock.
+ *
+ * Versions are ordered newest first, compared numerically per dot segment so "2.10"
+ * sorts after "2.9". Within a group materials keep their materials.json order.
+ * When no material has a version, there is one group holding everything (`version: ''`),
+ * which the page renders as the plain, header-less layout.
  */
 
-/** Group key for materials whose `version` cell is blank. */
+/** Version of the single group returned when the data has no versions at all. */
 export const NO_VERSION = '';
+
+/** Version cells that mean "every version" (compared lowercased). */
+const SHARED_VERSIONS = new Set(['', '통합', '공통', 'all', 'common']);
+
+export const isSharedVersion = (version) =>
+  SHARED_VERSIONS.has(String(version ?? '').trim().toLowerCase());
 
 const compareVersionsDesc = (a, b) =>
   b.localeCompare(a, undefined, { numeric: true, sensitivity: 'base' });
+
+const nest = (materials) =>
+  materials.reduce((categories, material) => {
+    const category = (categories[material.Category] ??= {});
+    (category[material.SubCategory] ??= []).push(material);
+    return categories;
+  }, {});
 
 /**
  * @param {Array<{Category: string, SubCategory?: string, version?: string}>} materials
  * @returns {Array<{version: string, count: number, categories: Object<string, Object<string, Array>>}>}
  */
 export function groupMaterialsByVersion(materials) {
-  const byVersion = new Map();
+  const versions = [
+    ...new Set(
+      materials
+        .filter((m) => !isSharedVersion(m.version))
+        .map((m) => String(m.version).trim()),
+    ),
+  ].sort(compareVersionsDesc);
 
-  for (const material of materials) {
-    const version = material.version ? String(material.version).trim() : NO_VERSION;
-    if (!byVersion.has(version)) byVersion.set(version, { version, count: 0, categories: {} });
-
-    const group = byVersion.get(version);
-    const category = (group.categories[material.Category] ??= {});
-    (category[material.SubCategory] ??= []).push(material);
-    group.count += 1;
+  if (!versions.length) {
+    return [{ version: NO_VERSION, count: materials.length, categories: nest(materials) }];
   }
 
-  return [...byVersion.values()].sort((a, b) => {
-    if (a.version === NO_VERSION) return -1;
-    if (b.version === NO_VERSION) return 1;
-    return compareVersionsDesc(a.version, b.version);
+  return versions.map((version) => {
+    const members = materials.filter(
+      (m) => isSharedVersion(m.version) || String(m.version).trim() === version,
+    );
+    return { version, count: members.length, categories: nest(members) };
   });
 }
 
-/**
- * Whether a group starts open when the user has never toggled it: the base set and
- * the newest version are open, older versions start folded.
- */
+/** Whether a group starts open when the user has never toggled it: only the newest version. */
 export function isOpenByDefault(groups, version) {
-  if (version === NO_VERSION) return true;
-  const newest = groups.find((g) => g.version !== NO_VERSION);
-  return newest?.version === version;
+  return groups[0]?.version === version;
 }

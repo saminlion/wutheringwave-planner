@@ -614,6 +614,7 @@ function transformMaterials(rows) {
     }
 
     // version — the game patch the material arrived in; the inventory page folds by it.
+    // Blank or 통합/all = shared by every version (credits, EXP) — kept as typed, the page decides.
     // Kept as text ("1.0", "2.1") so "2.10" doesn't collapse into "2.1". Tolerates the
     // "Verison" header typo, like Rarity/"Rairty" in weapons.
     const version = String(row.Version ?? row.version ?? row.Verison ?? '').trim();
