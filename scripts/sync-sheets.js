@@ -613,6 +613,14 @@ function transformMaterials(rows) {
       material.rarity = parseInt(row.rarity, 10);
     }
 
+    // version — the game patch the material arrived in; the inventory page folds by it.
+    // Kept as text ("1.0", "2.1") so "2.10" doesn't collapse into "2.1". Tolerates the
+    // "Verison" header typo, like Rarity/"Rairty" in weapons.
+    const version = String(row.Version ?? row.version ?? row.Verison ?? '').trim();
+    if (version) {
+      material.version = version;
+    }
+
     result[category][key] = material;
   }
 

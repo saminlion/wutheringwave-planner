@@ -37,6 +37,7 @@ const DEVICE_KEYS = new Set([
   'gameplanner_locale',
   'gameplanner_current_game',
   'gameplanner_timeline_prefs',
+  'gameplanner_inventory_groups',
 ]);
 
 export const syncState = reactive({

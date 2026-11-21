@@ -416,6 +416,13 @@ A failure there is usually a sheet problem; report it rather than working around
 - `currentGameId` - Set via `hydrate(gameId)`
 - Storage key: `wwplanner_inventory_${gameId}`
 - Actions: `addMaterial()`, `removeMaterial()`, `saveInventory()`, `loadInventory()`, `hydrate()`
+- `InventoryView` folds materials by **version**: the Materials tab's optional `Version` column
+  (`Verison` typo accepted) syncs to `material.version`, a display-only field. Groups come from
+  `groupMaterialsByVersion()` (`src/services/inventoryGroups.js`): unversioned ("Base") first, then
+  newest first, numeric per segment (`2.10` > `2.9`). Untouched groups follow `isOpenByDefault`
+  (Base + newest open); toggles live in `gameplanner_inventory_groups` (`{ gameId: { version: open } }`,
+  a `DEVICE_KEYS` entry — not synced). Folded groups use `v-if`, so Tab skips them. With no version
+  in the data the page renders as before, without headers. Tested in `tests/services/inventoryGroups.test.js`.
 
 ### game.js
 - `registeredGames{}` - All registered game plugins
@@ -888,7 +895,7 @@ src/services/cloudSync.js    → what to sync and when
   `syncedHash` + `cloudModifiedTime` in `cloudsync_meta` tell which side changed. One side →
   copy it; both → `conflict`, which the user resolves in Settings. A download rewrites
   localStorage and reloads the page, because every store hydrated at boot.
-- **Per-device keys are not synced:** theme, locale, current_game, timeline_prefs (`DEVICE_KEYS`).
+- **Per-device keys are not synced:** theme, locale, current_game, timeline_prefs, inventory_groups (`DEVICE_KEYS`).
 - `vercel.json` rewrites every non-`/api` path to `index.html` (history-mode router). Without it a
   direct load or refresh of `/settings`, `/planner`, … returned 404.
 
