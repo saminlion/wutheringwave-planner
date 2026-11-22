@@ -709,5 +709,32 @@
     "icon": "https://static.warfarin.wiki/v4/itemicon/wpn_sword_0024.webp",
     "onyx": 5110030019,
     "special": 5130010038
+  },
+  "sweet_deal": {
+    "game_id": 5360300080,
+    "display_name": "Sweet Deal",
+    "rarity": 6,
+    "type": "polearm",
+    "icon": "https://img.game8.co/jc6y2xfmct1g54i715zxbm9hgk0m",
+    "onyx": 5110030019,
+    "special": 5130010038
+  },
+  "start_of_tomorrow": {
+    "game_id": 5350500081,
+    "display_name": "Start of Tomorrow",
+    "rarity": 5,
+    "type": "pistol",
+    "icon": "https://img.game8.co/z84pv2vlsbose90nlj0lnx6gohf3",
+    "onyx": 5110030019,
+    "special": 5130010038
+  },
+  "raid_comet": {
+    "game_id": 5360300082,
+    "display_name": "Raid Comet",
+    "rarity": 6,
+    "type": "polearm",
+    "icon": "https://img.game8.co/g35hgpfy45m4mltnh6l1fur0nip0",
+    "onyx": 5110030019,
+    "special": 5130010038
   }
 }

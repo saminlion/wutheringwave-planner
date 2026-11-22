@@ -33,7 +33,9 @@
     "5260300031": "Si",
     "5260100032": "Agent Flow",
     "5260300033": "Typhoeus",
-    "5250100034": "Purrchena"
+    "5250100034": "Purrchena",
+    "5260300035": "Kay",
+    "5250100036": "Mimino"
   },
   "materials": {
     "5100010001": "T-Creds",
@@ -156,7 +158,10 @@
     "5360200076": "Jade Vessel",
     "5360100077": "Lunar Calling",
     "5360200078": "Long Heritage",
-    "5360100079": "Complexed Industry"
+    "5360100079": "Complexed Industry",
+    "5360300080": "Sweet Deal",
+    "5350500081": "Start of Tomorrow",
+    "5360300082": "Raid Comet"
   },
   "events": {
     "9402990001": "Winter Hunt",
@@ -216,7 +221,33 @@
     "9402990028": "Indigo Experimental Operation",
     "9402990028.desc": "Event",
     "9402990029": "Season of Fervor",
-    "9402990029.desc": "Event"
+    "9402990029.desc": "Event",
+    "9402990030": "Anvil, Backpack, Plus A Pot o'Honey",
+    "9402990030.desc": "Character banner",
+    "9402990031": "Casual Roamer Issue",
+    "9402990031.desc": "Weapon banner",
+    "9402990032": "To Every Wish Adrift",
+    "9402990032.desc": "Character banner",
+    "9402990033": "Floaty Traveler Issue",
+    "9402990033.desc": "Weapon banner",
+    "9402990034": "Wolf Pearl",
+    "9402990034.desc": "Character banner",
+    "9402990035": "Arsenal Issue",
+    "9402990035.desc": "Weapon banner",
+    "9402990036": "Roaming Wilderpaw Sign-in",
+    "9402990036.desc": "LoginEvent",
+    "9402990037": "Sanity Supply",
+    "9402990037.desc": "DoubleEvent",
+    "9402990038": "Sanity Supply",
+    "9402990038.desc": "DoubleEvent",
+    "9402990039": "Worker's Guards: Roll Call",
+    "9402990039.desc": "Giveaway Event",
+    "9402990040": "Lucky Carrot's Games of Wonder",
+    "9402990040.desc": "Event",
+    "9402990041": "RISE! MEGA ARENA!",
+    "9402990041.desc": "Event",
+    "9402990042": "Endmin! Let's Sort the Prezzies!",
+    "9402990042.desc": "Event"
   },
   "ui": {
     "game.name.endfield": "Arknights: Endfield",

@@ -1629,5 +1629,103 @@
         }
       }
     }
+  },
+  "kay": {
+    "game_id": 5260300035,
+    "display_name": "Kay",
+    "rarity": 6,
+    "element": "nature",
+    "weapon": "polearm",
+    "icon": "https://img.game8.co/gszti5iom8x9fat7j63rwxs9e7u7",
+    "bolete": 5110010007,
+    "odendra": 5110020013,
+    "special": 5130010035,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010036,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
+  },
+  "mimino": {
+    "game_id": 5250100036,
+    "display_name": "Mimino",
+    "rarity": 5,
+    "element": "physical",
+    "weapon": "pistol",
+    "icon": "https://img.game8.co/wtq4gkihguzwueeki6e5tfja4h5f",
+    "bolete": 5110010007,
+    "odendra": 5110020013,
+    "special": 5130010035,
+    "mastery_basic_attack": 5130010037,
+    "mastery_battle_skill": 5130010036,
+    "mastery_combo_skill": 5130010037,
+    "mastery_ultimate": 5130010036,
+    "talent_costs": {
+      "talent1": {
+        "1": {
+          "credit": 2400,
+          "proto_skill": [
+            12,
+            2
+          ]
+        },
+        "2": {
+          "credit": 86000,
+          "proto_skill": [
+            40,
+            2
+          ]
+        }
+      },
+      "talent2": {
+        "1": {
+          "credit": 10000,
+          "proto_skill": [
+            48,
+            2
+          ]
+        },
+        "2": {
+          "credit": 24000,
+          "proto_skill": [
+            28,
+            3
+          ]
+        }
+      }
+    }
   }
 }
