@@ -403,6 +403,12 @@ describe('NewGame MaterialProcessor', () => {
   yields only ids that exist in materials.json
 
 A failure there is usually a sheet problem; report it rather than working around it in code.
+
+`tests/components/weapon-type-filter.test.js` renders the Weapon and Character pages with every
+game's real data: each weapon type / character weapon in the data must be a `filters.weaponTypes`
+value in `config.js` (`unknown` placeholders excepted), and each option must show exactly its rows.
+It caught `pistols` vs `pistol` (WW), `one_handed_sword` vs `sword` (Endfield) and a missing `mg` (GFL2).
+When a sheet renames a type, update the config value to match.
 `tiers.js` is the one place ids are copied into code; a game without tier synthesis exports `{}`
 (no example/placeholder ids).
 

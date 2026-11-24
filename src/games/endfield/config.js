@@ -42,8 +42,8 @@ export default {
     ],
     weaponTypes: [
       { value: 'all', label: 'All' },
-      { value: 'one_handed_sword', label: 'One-Handed Sword' },
-      { value: 'two_handed_sword', label: 'Two-Handed Sword' },
+      { value: 'sword', label: 'Sword' },
+      { value: 'greatsword', label: 'Greatsword' },
       { value: 'polearm', label: 'Polearm' },
       { value: 'arts', label: 'Arts' },
       { value: 'pistol', label: 'Pistol' },

@@ -46,6 +46,7 @@ export const gfl2Config = {
       { value: 'rf', label: 'RF' },
       { value: 'sg', label: 'SG' },
       { value: 'smg', label: 'SMG' },
+      { value: 'mg', label: 'MG' },
       { value: 'bld', label: 'Blade' },
     ],
     characterRarities: [
