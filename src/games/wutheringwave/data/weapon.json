@@ -1006,5 +1006,32 @@
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
+  },
+  "annaweapon": {
+    "game_id": 4350500113,
+    "display_name": "AnnaWeapon",
+    "rarity": 5,
+    "type": "rectifier",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "unknown",
+    "forgery": "string"
+  },
+  "lucilaweapon": {
+    "game_id": 4350400114,
+    "display_name": "LucilaWeapon",
+    "rarity": 5,
+    "type": "pistols",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "unknown",
+    "forgery": "combustor"
+  },
+  "weapon": {
+    "game_id": 4350000119,
+    "display_name": "Weapon",
+    "rarity": 5,
+    "type": "unknown",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "unknown",
+    "forgery": "⚠"
   }
 }

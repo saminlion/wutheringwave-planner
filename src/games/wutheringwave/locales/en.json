@@ -344,7 +344,14 @@
     "4350200109": "Thousandfold Deliverance",
     "4350500110": "Blooming Jadehaven",
     "4350100111": "Unspoken Rue",
-    "4350400112": "Lullaby"
+    "4350400112": "Lullaby",
+    "4350500113": "AnnaWeapon",
+    "4350400114": "LucilaWeapon",
+    "4350000115": "Weapon",
+    "4350000116": "Weapon",
+    "4350000117": "Weapon",
+    "4350000118": "Weapon",
+    "4350000119": "Weapon"
   },
   "events": {
     "9402990001": "Resonance Sim Realm",
