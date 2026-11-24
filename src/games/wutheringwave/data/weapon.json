@@ -621,22 +621,22 @@
     "forgery": "metallic_drip"
   },
   "static_mist": {
-    "game_id": 4350400070,
+    "game_id": 4350000070,
     "display_name": "Static Mist",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.webp",
     "common": "ring",
-    "forgery": "⚠"
+    "forgery": "phlogiston"
   },
   "the_last_dance": {
-    "game_id": 4350400071,
+    "game_id": 4350000071,
     "display_name": "The Last Dance",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.webp",
     "common": "ring",
-    "forgery": "⚠"
+    "forgery": "phlogiston"
   },
   "abyss_surges": {
     "game_id": 4350300072,
