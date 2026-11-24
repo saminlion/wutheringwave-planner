@@ -1059,7 +1059,8 @@ lands (the sheet is the source of truth); fix the sheet and re-run.
 JSON keys come from the display name, so several placeholder rows all named `Weapon` used to share
 one key and only the last survived (WW, 2026-11-24: 5 weapons → 1). `scripts/lib/uniqueKey.js` now
 keeps the first row's key and stores later ones as `<key>_<game_id>`, with a `key "…" is used by more
-than one row` warning in the sync log. The app keys by game_id, so nothing else changes; a `key`
+than one row` warning in the sync log — except when both rows are unreleased placeholders (`unknown`
+in type/element/weapon), which share a stand-in name on purpose. The app keys by game_id, so nothing else changes; a `key`
 column in the sheet still wins. Tested in `tests/services/uniqueKey.test.js`.
 
 ### Sync run failed with `! [rejected] master -> master (fetch first)`

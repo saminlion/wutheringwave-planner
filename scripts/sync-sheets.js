@@ -546,7 +546,7 @@ function transformCharacters(rows, materialIdByLabel) {
       character.talent_costs = talentCosts;
     }
 
-    result[uniqueKey(result, key, character.game_id, 'character')] = character;
+    result[uniqueKey(result, key, character, 'character')] = character;
   }
 
   return result;
@@ -623,7 +623,7 @@ function transformMaterials(rows) {
       material.version = version;
     }
 
-    result[category][uniqueKey(result[category], key, material.game_id, `${category} material`)] = material;
+    result[category][uniqueKey(result[category], key, material, `${category} material`)] = material;
   }
 
   return result;
@@ -681,7 +681,7 @@ function transformWeapons(rows, materialIdByLabel) {
     if (row.component_a) weapon.component_a = row.component_a;
     if (row.component_b) weapon.component_b = row.component_b;
 
-    result[uniqueKey(result, key, weapon.game_id, 'weapon')] = weapon;
+    result[uniqueKey(result, key, weapon, 'weapon')] = weapon;
   }
 
   return result;
