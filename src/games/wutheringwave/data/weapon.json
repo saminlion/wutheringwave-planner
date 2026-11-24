@@ -1026,6 +1026,42 @@
     "forgery": "unknown"
   },
   "weapon": {
+    "game_id": 4350000115,
+    "display_name": "Weapon",
+    "rarity": 5,
+    "type": "unknown",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "weapon_4350000116": {
+    "game_id": 4350000116,
+    "display_name": "Weapon",
+    "rarity": 5,
+    "type": "unknown",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "weapon_4350000117": {
+    "game_id": 4350000117,
+    "display_name": "Weapon",
+    "rarity": 5,
+    "type": "unknown",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "weapon_4350000118": {
+    "game_id": 4350000118,
+    "display_name": "Weapon",
+    "rarity": 5,
+    "type": "unknown",
+    "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "weapon_4350000119": {
     "game_id": 4350000119,
     "display_name": "Weapon",
     "rarity": 5,
