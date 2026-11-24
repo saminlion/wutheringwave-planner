@@ -18,6 +18,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { reportMaterialIdChanges } from './lib/materialIdChanges.js';
 import { transformBoxes, materialGroupExpander } from './lib/boxes.js';
+import { uniqueKey } from './lib/uniqueKey.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -545,7 +546,7 @@ function transformCharacters(rows, materialIdByLabel) {
       character.talent_costs = talentCosts;
     }
 
-    result[key] = character;
+    result[uniqueKey(result, key, character.game_id, 'character')] = character;
   }
 
   return result;
@@ -622,7 +623,7 @@ function transformMaterials(rows) {
       material.version = version;
     }
 
-    result[category][key] = material;
+    result[category][uniqueKey(result[category], key, material.game_id, `${category} material`)] = material;
   }
 
   return result;
@@ -680,7 +681,7 @@ function transformWeapons(rows, materialIdByLabel) {
     if (row.component_a) weapon.component_a = row.component_a;
     if (row.component_b) weapon.component_b = row.component_b;
 
-    result[key] = weapon;
+    result[uniqueKey(result, key, weapon.game_id, 'weapon')] = weapon;
   }
 
   return result;

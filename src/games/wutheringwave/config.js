@@ -48,7 +48,7 @@ export const wutheringWaveConfig = {
     weaponTypes: [
       { value: 'all', label: 'All' },
       { value: 'sword', label: 'Sword' },
-      { value: 'pistols', label: 'Pistols' },
+      { value: 'pistol', label: 'Pistol' },
       { value: 'rectifier', label: 'Rectifier' },
       { value: 'gauntlets', label: 'Gauntlets' },
       { value: 'broadblade', label: 'Broadblade' },

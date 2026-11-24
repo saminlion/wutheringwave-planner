@@ -25,6 +25,12 @@ on:
 permissions:
   contents: write
 
+# Two syncs at once (a manual run during the daily one) both commit to master; the second push
+# is then rejected. Queue them instead of running side by side.
+concurrency:
+  group: sync-data
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -71,7 +77,18 @@ jobs:
           git commit -m "chore: sync game data from Google Sheets
 
           Automated sync by GitHub Actions"
-          git push
+          # master may have moved since checkout (a code push during the run). The bot only
+          # commits data/locale files, so rebasing onto it is normally clean; retry a few times.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "::warning::push attempt ${attempt} failed, retrying"
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not push the synced data — master changed in a way that conflicts with it"
+          exit 1
 
       # Runs after the commit on purpose: the sheet is the source of truth, so synced data
       # always lands. A red run is the alert — e.g. a material id the code or tiers.js still

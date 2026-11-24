@@ -431,15 +431,18 @@ A failure there is usually a sheet problem; report it rather than working around
 - `currentGameId` - Set via `hydrate(gameId)`
 - Storage key: `wwplanner_inventory_${gameId}`
 - Actions: `addMaterial()`, `removeMaterial()`, `saveInventory()`, `loadInventory()`, `hydrate()`
-- `InventoryView` folds materials by **version**: the Materials tab's optional `Version` column
-  (`Verison` typo accepted) syncs to `material.version`, a display-only field. Groups come from
-  `groupMaterialsByVersion()` (`src/services/inventoryGroups.js`): one group per version, newest
-  first, numeric per segment (`2.10` > `2.9`). **Shared materials — blank cell or `통합`/`공통`/`all`/`common`
-  — are repeated in every version group** (credits must be visible whichever version is open); each
-  copy edits the same stock. Untouched groups follow `isOpenByDefault` (only the newest open); toggles
-  live in `gameplanner_inventory_groups` (`{ gameId: { version: open } }`, a `DEVICE_KEYS` entry — not
-  synced). Folded groups use `v-if`, so Tab skips them. With no version in the data the page renders
-  as before, without headers. Tested in `tests/services/inventoryGroups.test.js`.
+- `InventoryView` folds by **version inside a category**: the Materials tab's optional `Version`
+  column (`Verison` typo accepted) syncs to `material.version`, a display-only field — characters
+  pick materials through their own sheet columns, never through it. `groupInventory()`
+  (`src/services/inventoryGroups.js`) keeps the Category → SubCategory layout; only a category with
+  versioned materials gets folds (one per version, newest first, numeric per segment `2.10` > `2.9`).
+  Its versionless rows (blank / `통합` / `공통` / `all` / `common`) sit above the folds. **Every
+  material appears exactly once** — credit/boss/ascension etc. are never repeated per version.
+  Untouched folds follow `isOpenByDefault` (each category's newest open); toggles live in
+  `gameplanner_inventory_groups` (`{ gameId: { 'category::version': open } }`, a `DEVICE_KEYS` entry —
+  not synced). Folded rows use `v-if`, so Tab skips them. Tested in
+  `tests/services/inventoryGroups.test.js` and `tests/components/inventory-version-fold.test.js`
+  (renders the real WW data: every material once, folds only where the sheet has versions).
 
 ### game.js
 - `registeredGames{}` - All registered game plugins
@@ -1045,6 +1048,17 @@ the new materials.json with the committed one and logs `material id changed` / `
 (`scripts/lib/materialIdChanges.js`, GitHub `::warning::` annotations). After committing, the
 workflow runs the test suite, so a sync that breaks the data turns the run red — the data still
 lands (the sheet is the source of truth); fix the sheet and re-run.
+
+### Rows with the same name went missing after a sync
+JSON keys come from the display name, so several placeholder rows all named `Weapon` used to share
+one key and only the last survived (WW, 2026-11-24: 5 weapons → 1). `scripts/lib/uniqueKey.js` now
+keeps the first row's key and stores later ones as `<key>_<game_id>`, with a `key "…" is used by more
+than one row` warning in the sync log. The app keys by game_id, so nothing else changes; a `key`
+column in the sheet still wins. Tested in `tests/services/uniqueKey.test.js`.
+
+### Sync run failed with `! [rejected] master -> master (fetch first)`
+master moved while the sync ran. `sync-data.yml` now rebases onto it before pushing (3 tries) and
+queues overlapping runs (`concurrency: sync-data`), so this should not recur; if it does, re-run.
 
 ### Materials not calculating
 1. Check SUPPORTED_KEYS includes your material key
