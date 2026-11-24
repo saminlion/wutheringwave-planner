@@ -81,37 +81,37 @@
     "forgery": "metallic_drip"
   },
   "pistols_of_night": {
-    "game_id": 4330400010,
+    "game_id": 4330000010,
     "display_name": "Pistols of Night",
     "rarity": 3,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030013_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "originite_type_iii": {
-    "game_id": 4330400011,
+    "game_id": 4330000011,
     "display_name": "Originite: Type III",
     "rarity": 3,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030023_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "pistols_of_voyager": {
-    "game_id": 4330400012,
+    "game_id": 4330000012,
     "display_name": "Pistols of Voyager",
     "rarity": 3,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030043_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "guardian_pistols": {
-    "game_id": 4330400013,
+    "game_id": 4330000013,
     "display_name": "Guardian Pistols",
     "rarity": 3,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030053_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
@@ -333,73 +333,73 @@
     "forgery": "metallic_drip"
   },
   "cadenza": {
-    "game_id": 4340400038,
+    "game_id": 4340000038,
     "display_name": "Cadenza",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030024_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "pistols26": {
-    "game_id": 4340400039,
+    "game_id": 4340000039,
     "display_name": "Pistols#26",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030034_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "undying_flame": {
-    "game_id": 4340400040,
+    "game_id": 4340000040,
     "display_name": "Undying Flame",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030044_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "novaburst": {
-    "game_id": 4340400041,
+    "game_id": 4340000041,
     "display_name": "Novaburst",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030064_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "thunderbolt": {
-    "game_id": 4340400042,
+    "game_id": 4340000042,
     "display_name": "Thunderbolt",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030074_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "relativistic_jet": {
-    "game_id": 4340400043,
+    "game_id": 4340000043,
     "display_name": "Relativistic Jet",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030084_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "romance_in_farewell": {
-    "game_id": 4340400044,
+    "game_id": 4340000044,
     "display_name": "Romance in Farewell",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030094_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
   },
   "solar_flame": {
-    "game_id": 4340400045,
+    "game_id": 4340000045,
     "display_name": "Solar Flame",
     "rarity": 4,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030104_UI.webp",
     "common": "ring",
     "forgery": "phlogiston"
@@ -627,7 +627,7 @@
     "type": "pistols",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030015_UI.webp",
     "common": "ring",
-    "forgery": "phlogiston"
+    "forgery": "⚠"
   },
   "the_last_dance": {
     "game_id": 4350400071,
@@ -636,7 +636,7 @@
     "type": "pistols",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030017_UI.webp",
     "common": "ring",
-    "forgery": "phlogiston"
+    "forgery": "⚠"
   },
   "abyss_surges": {
     "game_id": 4350300072,
@@ -810,37 +810,37 @@
     "forgery": "polarizer"
   },
   "woodland_aria": {
-    "game_id": 4350400091,
+    "game_id": 4350000091,
     "display_name": "Woodland Aria",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030026_UI.webp",
     "common": "ring",
     "forgery": "combustor"
   },
   "lux_umbra": {
-    "game_id": 4350400092,
+    "game_id": 4350000092,
     "display_name": "Lux & Umbra",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030036_UI.webp",
     "common": "ring",
     "forgery": "combustor"
   },
   "phasic_homogenizer": {
-    "game_id": 4350400093,
+    "game_id": 4350000093,
     "display_name": "Phasic Homogenizer",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon_21030045_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
   },
   "spectrum_blaster": {
-    "game_id": 4350400094,
+    "game_id": 4350000094,
     "display_name": "Spectrum Blaster",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030046_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
@@ -918,19 +918,19 @@
     "forgery": "polarizer"
   },
   "spectral_trigger": {
-    "game_id": 4350400103,
+    "game_id": 4350000103,
     "display_name": "Spectral Trigger",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030056_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
   },
   "skull_thrasher": {
-    "game_id": 4350400104,
+    "game_id": 4350000104,
     "display_name": "Skull Thrasher",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://api-v2.encore.moe/resource/Data/Game/Aki/UI/UIResources/Common/Image/IconWeapon/T_IconWeapon21030066_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
@@ -999,10 +999,10 @@
     "forgery": "polarizer"
   },
   "lullaby": {
-    "game_id": 4350400112,
+    "game_id": 4350000112,
     "display_name": "Lullaby",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
     "common": "pendant",
     "forgery": "combustor"
@@ -1014,16 +1014,16 @@
     "type": "rectifier",
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
     "common": "unknown",
-    "forgery": "string"
+    "forgery": "unknown"
   },
   "lucilaweapon": {
-    "game_id": 4350400114,
+    "game_id": 4350000114,
     "display_name": "LucilaWeapon",
     "rarity": 5,
-    "type": "pistols",
+    "type": "pistol",
     "icon": "https://static.nanoka.cc/assets/ww/UIResources/Common/Image/IconWeapon/T_IconWeapon21030076_UI.webp",
     "common": "unknown",
-    "forgery": "combustor"
+    "forgery": "unknown"
   },
   "weapon": {
     "game_id": 4350000119,

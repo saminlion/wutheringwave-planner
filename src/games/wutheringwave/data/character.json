@@ -800,7 +800,7 @@
     "weapon": "rectifier",
     "icon": "https://img.game8.co/e19xrju72drcv7np9z0q367c5ug1",
     "common": "unknown",
-    "forgery": "string"
+    "forgery": "unknown"
   },
   "lucielle": {
     "game_id": 4250600063,
@@ -810,7 +810,7 @@
     "weapon": "pistol",
     "icon": "https://img.game8.co/um2zfykczi2p2z81ypsce553juup",
     "common": "unknown",
-    "forgery": "combustor"
+    "forgery": "unknown"
   },
   "april": {
     "game_id": 4250000064,
