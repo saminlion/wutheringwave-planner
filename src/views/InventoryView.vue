@@ -8,57 +8,85 @@
       </div>
     </div>
 
-    <div class="inventory-versions" ref="containerRef" @keydown.tab="moveFocus">
-      <section
-        v-for="group in versionGroups"
-        :key="group.version"
-        class="version-section"
-        :class="{ collapsed: hasVersions && !isOpen(group.version) }"
-      >
-        <button
-          v-if="hasVersions"
-          type="button"
-          class="version-header"
-          :aria-expanded="isOpen(group.version)"
-          @click="toggleGroup(group.version)"
+    <div class="inventory-container" ref="containerRef" @keydown.tab="moveFocus">
+      <div v-for="group in inventoryGroups" :key="group.category" class="category-section">
+        <h2 class="category-title">{{ translateCategoryName(group.category) }}</h2>
+
+        <!-- Rows of this category with no version: always shown, once -->
+        <div v-for="(materials, subcategory) in group.base" :key="subcategory" class="subcategory-block">
+          <div class="subcategory-label">{{ translateCategoryName(subcategory) }}</div>
+          <div class="inventory-grid">
+            <div
+                class="inventory-card"
+                v-for="material in materials"
+                :key="material.game_id"
+                :data-id="material.game_id"
+                :title="tMaterial(material.game_id, material.label)"
+              >
+                <img :src="material.icon" :alt="tMaterial(material.game_id, material.label)" class="material-icon" />
+                <div class="material-qty">{{ quantities[material.game_id] || 0 }}</div>
+                <input
+                  type="number"
+                  class="quantity-input"
+                  v-model.number="newQuantities[material.game_id]"
+                  placeholder="0"
+                  min="0"
+                  @keyup.enter="setQuantity(material.game_id)"
+                  @change="setQuantity(material.game_id)"
+                  @focus="$event.target.select()"
+                />
+              </div>
+          </div>
+        </div>
+
+        <!-- Version folds: only in categories whose materials carry a version -->
+        <div
+          v-for="fold in group.versions"
+          :key="fold.version"
+          class="version-section"
+          :class="{ collapsed: !isOpen(group, fold.version) }"
         >
-          <i class="fas fa-chevron-right version-chevron" :class="{ open: isOpen(group.version) }"></i>
-          <span class="version-name">{{ versionLabel(group.version) }}</span>
-          <span class="version-count">{{ group.count }}</span>
-        </button>
+          <button
+            type="button"
+            class="version-header"
+            :aria-expanded="isOpen(group, fold.version)"
+            @click="toggleGroup(group, fold.version)"
+          >
+            <i class="fas fa-chevron-right version-chevron" :class="{ open: isOpen(group, fold.version) }"></i>
+            <span class="version-name">{{ versionLabel(fold.version) }}</span>
+            <span class="version-count">{{ fold.count }}</span>
+          </button>
 
-        <!-- v-if, not v-show: folded inputs leave the DOM, so Tab never lands on a hidden box -->
-        <div v-if="!hasVersions || isOpen(group.version)" class="inventory-container">
-          <div v-for="(subCategories, category) in group.categories" :key="category" class="category-section">
-            <h2 class="category-title">{{ translateCategoryName(category) }}</h2>
-
-            <div v-for="(materials, subcategory) in subCategories" :key="subcategory" class="subcategory-block">
+          <!-- v-if, not v-show: folded inputs leave the DOM, so Tab never lands on a hidden box -->
+          <template v-if="isOpen(group, fold.version)">
+            <div v-for="(materials, subcategory) in fold.subCategories" :key="subcategory" class="subcategory-block">
               <div class="subcategory-label">{{ translateCategoryName(subcategory) }}</div>
               <div class="inventory-grid">
                 <div
-                  class="inventory-card"
-                  v-for="material in materials"
-                  :key="material.game_id"
-                  :title="tMaterial(material.game_id, material.label)"
-                >
-                  <img :src="material.icon" :alt="tMaterial(material.game_id, material.label)" class="material-icon" />
-                  <div class="material-qty">{{ quantities[material.game_id] || 0 }}</div>
-                  <input
-                    type="number"
-                    class="quantity-input"
-                    v-model.number="newQuantities[material.game_id]"
-                    placeholder="0"
-                    min="0"
-                    @keyup.enter="setQuantity(material.game_id)"
-                    @change="setQuantity(material.game_id)"
-                    @focus="$event.target.select()"
-                  />
-                </div>
+                class="inventory-card"
+                v-for="material in materials"
+                :key="material.game_id"
+                :data-id="material.game_id"
+                :title="tMaterial(material.game_id, material.label)"
+              >
+                <img :src="material.icon" :alt="tMaterial(material.game_id, material.label)" class="material-icon" />
+                <div class="material-qty">{{ quantities[material.game_id] || 0 }}</div>
+                <input
+                  type="number"
+                  class="quantity-input"
+                  v-model.number="newQuantities[material.game_id]"
+                  placeholder="0"
+                  min="0"
+                  @keyup.enter="setQuantity(material.game_id)"
+                  @change="setQuantity(material.game_id)"
+                  @focus="$event.target.select()"
+                />
+              </div>
               </div>
             </div>
-          </div>
+          </template>
         </div>
-      </section>
+      </div>
     </div>
   </div>
 </template>
@@ -70,7 +98,7 @@ import { useInventoryStore } from '../store/inventory.js';
 import { useGameStore } from '@/store/game';
 import { useLocale } from '@/composables/useLocale';
 import { loadFromStorage, saveToStorage } from '@/utils/storage';
-import { groupMaterialsByVersion, isOpenByDefault, NO_VERSION } from '@/services/inventoryGroups';
+import { groupInventory, foldKey, isOpenByDefault } from '@/services/inventoryGroups';
 
 const { tMaterial, tUI } = useLocale();
 
@@ -170,24 +198,24 @@ onMounted(() => {
   });
 });
 
-const versionGroups = computed(() => groupMaterialsByVersion(materials.value));
+const inventoryGroups = computed(() => groupInventory(materials.value));
 
-/** No material has a version yet (sheet column empty) → the page looks exactly as before. */
-const hasVersions = computed(() => versionGroups.value[0]?.version !== NO_VERSION);
+/** Some category has versioned materials → show the expand/collapse-all buttons. */
+const hasVersions = computed(() => inventoryGroups.value.some((g) => g.versions.length));
 
 const versionLabel = (version) => tUI('inventory.version').replace('{version}', version);
 
-/* Fold state per game: { [gameId]: { [version]: open } }. A view preference like
-   timeline_prefs, so it is a device key and not cloud-synced. A version the user never
-   toggled follows isOpenByDefault (only the newest is open), so a new patch shows up open. */
+/* Fold state per game: { [gameId]: { 'category::version': open } }. A view preference like
+   timeline_prefs, so it is a device key and not cloud-synced. A fold the user never toggled
+   follows isOpenByDefault (its category's newest version open), so a new patch shows up open. */
 const FOLD_KEY = 'inventory_groups';
 const foldState = ref(loadFromStorage(FOLD_KEY, null) || {});
 
 const gameFolds = () => foldState.value[gameStore.currentGameId] || {};
 
-const isOpen = (version) => {
-  const saved = gameFolds()[version];
-  return typeof saved === 'boolean' ? saved : isOpenByDefault(versionGroups.value, version);
+const isOpen = (group, version) => {
+  const saved = gameFolds()[foldKey(group.category, version)];
+  return typeof saved === 'boolean' ? saved : isOpenByDefault(group, version);
 };
 
 const saveFolds = (folds) => {
@@ -195,12 +223,14 @@ const saveFolds = (folds) => {
   saveToStorage(FOLD_KEY, foldState.value);
 };
 
-const toggleGroup = (version) => {
-  saveFolds({ ...gameFolds(), [version]: !isOpen(version) });
+const toggleGroup = (group, version) => {
+  saveFolds({ ...gameFolds(), [foldKey(group.category, version)]: !isOpen(group, version) });
 };
 
 const setAllOpen = (open) => {
-  saveFolds(Object.fromEntries(versionGroups.value.map((g) => [g.version, open])));
+  const folds = {};
+  inventoryGroups.value.forEach((g) => g.versions.forEach((f) => { folds[foldKey(g.category, f.version)] = open; }));
+  saveFolds(folds);
 };
 
 const setQuantity = (materialId) => {
@@ -261,24 +291,22 @@ const setQuantity = (materialId) => {
   border-color: var(--accent-color, #4a90e2);
 }
 
-.inventory-versions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.version-section {
+  margin-top: 10px;
 }
 
 .version-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   width: 100%;
-  padding: 8px 12px;
-  margin-bottom: 10px;
+  padding: 5px 8px;
+  margin-bottom: 6px;
   border: 1px solid var(--border, #e0e0e0);
-  border-radius: 8px;
-  background: var(--bg-surface, #f9f9f9);
+  border-radius: 6px;
+  background: var(--bg-primary, #fff);
   color: var(--text-primary, #333);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   text-align: left;
   cursor: pointer;
@@ -293,7 +321,7 @@ const setQuantity = (materialId) => {
 }
 
 .version-chevron {
-  font-size: 12px;
+  font-size: 10px;
   color: var(--text-secondary, #666);
   transition: transform 0.15s;
 }
@@ -304,7 +332,7 @@ const setQuantity = (materialId) => {
 
 .version-count {
   margin-left: auto;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--text-muted, #999);
 }

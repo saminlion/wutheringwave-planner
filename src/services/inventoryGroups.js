@@ -1,63 +1,66 @@
 /**
- * Groups inventory materials by the game version they arrived in (Materials sheet
- * `Version` column → materials.json `version`), so the inventory page can fold each
- * version on its own.
+ * Lays out the inventory page: Category → (version fold) → SubCategory → materials.
  *
- * Shared materials — a blank Version cell, or one marked 통합 / all — belong to every
- * version (credits, EXP, …), so they are repeated inside each version group rather than
- * parked in a group of their own. Each copy edits the same stock.
+ * The Materials sheet's `Version` column (→ materials.json `version`) only matters inside the
+ * categories that use it. A category with no versioned material renders exactly as before; one
+ * that has versions gets a fold per version, newest first. Versionless rows of such a category
+ * (blank, or 통합 / 공통 / all / common) sit above its folds, once. Every material appears exactly
+ * once on the page — a category without versions (credit, boss, ascension…) is never repeated.
  *
- * Versions are ordered newest first, compared numerically per dot segment so "2.10"
- * sorts after "2.9". Within a group materials keep their materials.json order.
- * When no material has a version, there is one group holding everything (`version: ''`),
- * which the page renders as the plain, header-less layout.
+ * Versions compare numerically per dot segment, so "2.10" sorts after "2.9". Categories,
+ * subcategories and materials keep their materials.json order.
  */
 
-/** Version of the single group returned when the data has no versions at all. */
-export const NO_VERSION = '';
+/** Version cells that mean "not tied to a version" (compared lowercased). */
+const UNVERSIONED = new Set(['', '통합', '공통', 'all', 'common']);
 
-/** Version cells that mean "every version" (compared lowercased). */
-const SHARED_VERSIONS = new Set(['', '통합', '공통', 'all', 'common']);
-
-export const isSharedVersion = (version) =>
-  SHARED_VERSIONS.has(String(version ?? '').trim().toLowerCase());
+export const isUnversioned = (version) =>
+  UNVERSIONED.has(String(version ?? '').trim().toLowerCase());
 
 const compareVersionsDesc = (a, b) =>
   b.localeCompare(a, undefined, { numeric: true, sensitivity: 'base' });
 
-const nest = (materials) =>
-  materials.reduce((categories, material) => {
-    const category = (categories[material.Category] ??= {});
-    (category[material.SubCategory] ??= []).push(material);
-    return categories;
-  }, {});
+const pushTo = (subCategories, material) => {
+  (subCategories[material.SubCategory] ??= []).push(material);
+};
 
 /**
  * @param {Array<{Category: string, SubCategory?: string, version?: string}>} materials
- * @returns {Array<{version: string, count: number, categories: Object<string, Object<string, Array>>}>}
+ * @returns {Array<{
+ *   category: string,
+ *   base: Object<string, Array>,                       // versionless rows, by SubCategory
+ *   versions: Array<{version: string, count: number, subCategories: Object<string, Array>}>,
+ * }>} `versions` is empty for a category that has no versioned material
  */
-export function groupMaterialsByVersion(materials) {
-  const versions = [
-    ...new Set(
-      materials
-        .filter((m) => !isSharedVersion(m.version))
-        .map((m) => String(m.version).trim()),
-    ),
-  ].sort(compareVersionsDesc);
+export function groupInventory(materials) {
+  const byCategory = new Map();
 
-  if (!versions.length) {
-    return [{ version: NO_VERSION, count: materials.length, categories: nest(materials) }];
+  for (const material of materials) {
+    if (!byCategory.has(material.Category)) {
+      byCategory.set(material.Category, { category: material.Category, base: {}, byVersion: new Map() });
+    }
+    const group = byCategory.get(material.Category);
+
+    if (isUnversioned(material.version)) {
+      pushTo(group.base, material);
+      continue;
+    }
+    const version = String(material.version).trim();
+    if (!group.byVersion.has(version)) group.byVersion.set(version, { version, count: 0, subCategories: {} });
+    const fold = group.byVersion.get(version);
+    pushTo(fold.subCategories, material);
+    fold.count += 1;
   }
 
-  return versions.map((version) => {
-    const members = materials.filter(
-      (m) => isSharedVersion(m.version) || String(m.version).trim() === version,
-    );
-    return { version, count: members.length, categories: nest(members) };
-  });
+  return [...byCategory.values()].map(({ category, base, byVersion }) => ({
+    category,
+    base,
+    versions: [...byVersion.values()].sort((a, b) => compareVersionsDesc(a.version, b.version)),
+  }));
 }
 
-/** Whether a group starts open when the user has never toggled it: only the newest version. */
-export function isOpenByDefault(groups, version) {
-  return groups[0]?.version === version;
-}
+/** Fold-state key: versions are per category, so "1" in common and "1" in forgery are separate. */
+export const foldKey = (category, version) => `${category}::${version}`;
+
+/** A fold the user never toggled starts open only if it is its category's newest version. */
+export const isOpenByDefault = (categoryGroup, version) => categoryGroup.versions[0]?.version === version;
