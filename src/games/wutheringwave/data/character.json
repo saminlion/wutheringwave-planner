@@ -791,5 +791,75 @@
     "ascension": 30,
     "boss": 40,
     "weeklyBoss": 50
+  },
+  "anna": {
+    "game_id": 4250200062,
+    "display_name": "Anna",
+    "rarity": 5,
+    "element": "fusion",
+    "weapon": "rectifier",
+    "icon": "https://img.game8.co/e19xrju72drcv7np9z0q367c5ug1",
+    "common": "unknown",
+    "forgery": "string"
+  },
+  "lucielle": {
+    "game_id": 4250600063,
+    "display_name": "Lucielle",
+    "rarity": 5,
+    "element": "spectro",
+    "weapon": "pistol",
+    "icon": "https://img.game8.co/um2zfykczi2p2z81ypsce553juup",
+    "common": "unknown",
+    "forgery": "combustor"
+  },
+  "april": {
+    "game_id": 4250000064,
+    "display_name": "April",
+    "rarity": 5,
+    "element": "unknown",
+    "weapon": "unknown",
+    "icon": "https://img.game8.co/wxs9r2c0pyy7of15y2xs44bmzy7s",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "gordia": {
+    "game_id": 4250000065,
+    "display_name": "Gordia",
+    "rarity": 5,
+    "element": "unknown",
+    "weapon": "unknown",
+    "icon": "https://img.game8.co/atqtjth6edfeey166sy1gdhi8aol",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "cairn": {
+    "game_id": 4250000066,
+    "display_name": "Cairn",
+    "rarity": 5,
+    "element": "unknown",
+    "weapon": "unknown",
+    "icon": "https://img.game8.co/m9pwocip2vt7i5zdb19okzvd150y",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "iya": {
+    "game_id": 4250000067,
+    "display_name": "IYA",
+    "rarity": 5,
+    "element": "unknown",
+    "weapon": "unknown",
+    "icon": "https://img.game8.co/oubcaenerfau1cxoviibyftnd66k",
+    "common": "unknown",
+    "forgery": "⚠"
+  },
+  "simulsys": {
+    "game_id": 4250000068,
+    "display_name": "Simulsys",
+    "rarity": 5,
+    "element": "unknown",
+    "weapon": "unknown",
+    "icon": "https://img.game8.co/wjxaz4yepzc8lu9pmm4yqxbshrw3",
+    "common": "unknown",
+    "forgery": "⚠"
   }
 }
